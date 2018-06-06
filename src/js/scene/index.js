@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import store from '../store';
 import nBodyProblem from '../Physics';
+import arena from './arena';
 import Camera from './Camera';
 import MassManifestation from './MassManifestation';
 import Star from './Star';
@@ -34,7 +35,7 @@ export default {
 
     this.camera.position.z = this.scenario.initialCameraZ;
 
-    this.scene.add(new THREE.AmbientLight(0x404040, 1.6));
+    this.scene.add(new THREE.AmbientLight(0x404040, 1.6), arena());
 
     if (this.scenario.decorativeSun) {
       const decorativeSun = new Star();
