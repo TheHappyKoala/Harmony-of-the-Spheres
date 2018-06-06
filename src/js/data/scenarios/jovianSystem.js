@@ -7,6 +7,7 @@ export default {
   dt: 9e-6,
   scale: 300,
   trails: true,
+  labels: true,
   initialCameraZ: 4,
   cameraPosition: 'Free',
   cameraFocus: 'Origo',

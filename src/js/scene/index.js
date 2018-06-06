@@ -3,17 +3,23 @@ import store from '../store';
 import nBodyProblem from '../Physics';
 import arena from './arena';
 import Camera from './Camera';
+import label from './label';
 import MassManifestation from './MassManifestation';
 import Star from './Star';
 
 export default {
-  init(webGlCanvas) {
+  init(webGlCanvas, labelsCanvas) {
     this.scenario = store.getState().scenario;
 
     this.w = window.innerWidth;
     this.h = window.innerHeight;
 
     this.webGlCanvas = webGlCanvas;
+    this.labelsCanvas = labelsCanvas;
+
+    this.labels = labelsCanvas.getContext('2d');
+    this.labelsCanvas.width = this.w;
+    this.labelsCanvas.height = this.h;
 
     this.requestAnimationFrameId = null;
 
@@ -30,7 +36,7 @@ export default {
       this.w / this.h,
       0.01,
       1500000000000,
-      this.webGlCanvas
+      this.labelsCanvas
     );
 
     this.camera.position.z = this.scenario.initialCameraZ;
@@ -77,6 +83,7 @@ export default {
       playing,
       scale,
       trails,
+      labels,
       cameraPosition,
       cameraFocus
     } = this.scenario;
@@ -92,6 +99,8 @@ export default {
       if (cameraPosition !== 'Free') this.camera.lookAt(origo);
       else this.camera.controls.target = origo;
     }
+
+    this.labels.clearRect(0, 0, this.w, this.h);
 
     for (let i = 0; i < this.massManifestations.length; i++) {
       const massManifestation = this.massManifestations[i];
@@ -120,6 +129,16 @@ export default {
         if (cameraPosition === cameraFocus) y += radius * 7;
         this.camera.position.set(x, y, z);
       }
+
+      if (labels && cameraPosition !== name)
+        label(
+          this.labels,
+          this.camera,
+          new THREE.Vector3(x, y, z),
+          this.w,
+          this.h,
+          name
+        );
     }
 
     this.requestAnimationFrameId = requestAnimationFrame(() => this.loop());

@@ -6,6 +6,7 @@ export default {
   dt: 0.01,
   scale: 2,
   trails: true,
+  labels: true,
   initialCameraZ: 400,
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
