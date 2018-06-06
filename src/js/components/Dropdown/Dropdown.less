@@ -1,0 +1,32 @@
+@import '../App/App.less';    
+
+.dropdown {
+  width: 100%;
+}
+
+.selected-option {
+  width: inherit;
+  background-color: @input;  
+  border: @border;
+  padding: @skinny-padding;
+  cursor: pointer;
+}
+
+.options {
+  .absolute();
+  width: calc(100% - 2 * @fat-padding);
+  background-color: @input;
+  border: @border;
+  border-top: none;
+  max-height: 150px;
+  overflow: auto;
+  cursor: pointer;
+  * {   
+    display: block;
+    padding: @skinny-padding;
+    border-bottom: 1px solid #000;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}    

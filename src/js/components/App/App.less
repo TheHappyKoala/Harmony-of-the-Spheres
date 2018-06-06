@@ -1,0 +1,50 @@
+@primary: rgba(0, 0, 0, 0.6);
+@secondary: #545454;
+@input: #191919;
+@font: tahoma, arial, sans;
+@font-color: #fff;
+@fat-padding: 15px;
+@skinny-padding: 5px;
+@border: 1px solid @secondary;
+
+.absolute {
+  position: absolute;
+  z-index: 2;
+}
+
+.top {
+  display: block;
+  margin-top: 15px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #191919;
+  border-left: 1px solid #545454;
+  padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #545454; 
+}
+
+a:link, a:visited {
+  text-decoration: inherit;
+  color: @font-color;
+}
+
+body {
+  overflow: hidden;
+  font-family: @font;
+  font-size: 0.75em;
+  color: @font-color;
+}    
