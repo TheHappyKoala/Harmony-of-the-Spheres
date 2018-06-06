@@ -54,6 +54,16 @@ export default function(props) {
           })
         }
       />
+      <Toggle
+        label="Labels"
+        checked={props.scenario.labels}
+        callback={() =>
+          props.modifyScenarioProperty({
+            key: 'labels',
+            value: !props.scenario.labels
+          })
+        }
+      />
       <label className="top">Camera Position</label>
       <Dropdown>
         <div
