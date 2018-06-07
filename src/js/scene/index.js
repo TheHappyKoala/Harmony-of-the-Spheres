@@ -77,7 +77,7 @@ export default {
   },
 
   loop() {
-    this.scenario = store.getState().scenario;
+    this.getScenario().updateSystem();
 
     const {
       playing,
@@ -143,6 +143,16 @@ export default {
 
     this.requestAnimationFrameId = requestAnimationFrame(() => this.loop());
     this.renderer.render(this.scene, this.camera);
+  },
+
+  getScenario() {
+    this.scenario = store.getState().scenario;
+
+    return this;
+  },
+
+  updateSystem() {
+    this.system.g = this.scenario.g;
   },
 
   reset() {

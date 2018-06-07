@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Dropdown from '../Dropdown';
 import Toggle from '../Toggle';
+import Slider from '../Slider';
 import Button from '../Button';
 import { scenarios } from '../../data/scenarios';
 import play from '../../../icons/play.png';
@@ -122,6 +123,19 @@ export default function(props) {
           </div>
         ))}
       </Dropdown>
+      <label className="top">Gravitational Constant</label>
+      <Slider
+        val={props.scenario.g}
+        callback={e =>
+          props.modifyScenarioProperty({
+            key: 'g',
+            value: e.target.value
+          })
+        }
+        max={200}
+        min={-200}
+        step={0.5}
+      />
     </div>
   );
 }
