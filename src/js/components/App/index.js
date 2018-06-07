@@ -20,6 +20,7 @@ class AppContainer extends Component {
       <App
         scenario={this.props.scenario}
         modifyScenarioProperty={this.props.modifyScenarioProperty}
+        modifyMassProperty={this.props.modifyMassProperty}
       />
     );
   }
@@ -33,8 +34,10 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => {
   return {
     getScenario: name => dispatch(scenarioActionCreators.getScenario(name)),
-    modifyScenarioProperty: property =>
-      dispatch(scenarioActionCreators.modifyScenarioProperty(property))
+    modifyScenarioProperty: payload =>
+      dispatch(scenarioActionCreators.modifyScenarioProperty(payload)),
+    modifyMassProperty: payload =>
+      dispatch(scenarioActionCreators.modifyMassProperty(payload))
   };
 };
 

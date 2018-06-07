@@ -17,3 +17,14 @@ export function modifyScenarioProperty(payload) {
     }
   };
 }
+
+export function modifyMassProperty(payload) {
+  return {
+    type: scenarioActionTypes.MODIFY_MASS_PROPERTY,
+    payload: {
+      name: payload.name,
+      key: payload.key,
+      value: payload.value
+    }
+  };
+}
