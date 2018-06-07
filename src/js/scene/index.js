@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import store from '../store';
+import { modifyScenarioProperty } from '../action-creators/scenario';
 import nBodyProblem from '../Physics';
 import arena from './arena';
 import Camera from './Camera';
@@ -90,6 +91,8 @@ export default {
 
     if (playing) this.system.updatePositionVectors().updateVelocityVectors();
 
+    this.updateScenario();
+
     if (cameraPosition === 'Free') this.camera.controls.enabled = true;
     else this.camera.controls.enabled = false;
 
@@ -153,6 +156,16 @@ export default {
 
   updateSystem() {
     this.system.g = this.scenario.g;
+    this.system.masses = this.scenario.masses;
+  },
+
+  updateScenario() {
+    store.dispatch(
+      modifyScenarioProperty({
+        key: 'masses',
+        value: this.system.masses
+      })
+    );
   },
 
   reset() {
