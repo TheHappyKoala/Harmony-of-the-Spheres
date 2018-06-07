@@ -1,0 +1,32 @@
+@import '../App/App.less';    
+
+input.slider[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: @input;
+  border: @border;
+  padding: @skinny-padding;
+}
+
+input.slider[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: @input;
+  border: @border;
+  width: 10px;
+  height: 10px;
+  border-radius: 7px;
+}
+
+input.slider[type="range"]:focus {
+  outline:none;
+}
+
+.slider-value {
+  padding: @skinny-padding;
+  border: @border;
+  border-bottom: none;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  background-color: @input;
+}
