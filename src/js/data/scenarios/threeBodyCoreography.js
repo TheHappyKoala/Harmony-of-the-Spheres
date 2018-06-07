@@ -10,6 +10,13 @@ export default {
   initialCameraZ: 400,
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
+  massBeingModified: 'Eva',
+  distMax: 400,
+  distMin: -400,
+  distStep: 0.0000023797035266666667,
+  velMax: 0.5,
+  velMin: -0.5,
+  velStep: 0.000005,
   masses: [
     {
       name: 'Eva',

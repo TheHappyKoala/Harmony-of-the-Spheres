@@ -10,6 +10,13 @@ export default {
   initialCameraZ: 45,
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
+  massBeingModified: 'Earth',
+  distMax: 0.00713911058,
+  distMin: -0.00713911058,
+  distStep: 0.0000023797035266666667,
+  velMax: 0.5,
+  velMin: -0.5,
+  velStep: 0.000005,
   masses: [
     {
       name: 'Earth',

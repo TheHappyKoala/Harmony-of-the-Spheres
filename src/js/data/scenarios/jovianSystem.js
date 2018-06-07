@@ -11,6 +11,13 @@ export default {
   initialCameraZ: 4,
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
+  massBeingModified: 'Jupiter',
+  distMax: 0.010068057744,
+  distMin: -0.010068057744,
+  distStep: 0.000007551043308,
+  velMax: 3,
+  velMin: -3,
+  velStep: 2.2222222222222222e-7,
   masses: [
     {
       name: 'Jupiter',
