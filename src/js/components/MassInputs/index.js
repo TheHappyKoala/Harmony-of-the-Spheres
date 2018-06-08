@@ -1,6 +1,7 @@
 import React from 'react';
 import Dropdown from '../Dropdown';
 import Slider from '../Slider';
+import bodies from '../../data/masses';
 import './MassInputs.less';
 
 export default function(props) {
@@ -27,6 +28,24 @@ export default function(props) {
         mass =>
           props.scenario.massBeingModified === mass.name && (
             <div key={mass.name}>
+              <label className="top">Mass</label>
+              <Dropdown>
+                {bodies.map(body => (
+                  <div
+                    name={mass.name}
+                    key={mass.name}
+                    callback={() =>
+                      props.modifyMassProperty({
+                        name: mass.name,
+                        key: 'm',
+                        value: body.m
+                      })
+                    }
+                  >
+                    {body.name}
+                  </div>
+                ))}
+              </Dropdown>
               <label className="top">X Position Vector</label>
               <Slider
                 val={mass.x}
