@@ -1,8 +1,14 @@
 import jovianSystem from './jovianSystem';
 import threeBodyCoreography from './threeBodyCoreography';
 import earthMoonSystem from './earthMoonSystem';
+import oumuamua from './oumuamua';
 
-export const scenarios = [jovianSystem, threeBodyCoreography, earthMoonSystem];
+export const scenarios = [
+  jovianSystem,
+  threeBodyCoreography,
+  earthMoonSystem,
+  oumuamua
+];
 
 export default function(scenario) {
   const selectedScenario = scenarios.filter(
