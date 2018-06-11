@@ -32,8 +32,8 @@ export default function(props) {
               <Dropdown>
                 {bodies.map(body => (
                   <div
-                    name={mass.name}
-                    key={mass.name}
+                    name={body.name}
+                    key={body.name}
                     callback={() =>
                       props.modifyMassProperty({
                         name: mass.name,
