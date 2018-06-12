@@ -17,6 +17,11 @@ export default function(state = filterScenarios('The Jovian System'), action) {
           return mass;
         })
       };
+    case scenarioActionTypes.DELETE_MASS:
+      return {
+        ...state,
+        masses: state.masses.filter(mass => mass.name !== action.name)
+      };
     default:
       return state;
   }

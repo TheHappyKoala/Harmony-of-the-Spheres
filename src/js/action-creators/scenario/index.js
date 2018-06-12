@@ -28,3 +28,10 @@ export function modifyMassProperty(payload) {
     }
   };
 }
+
+export function deleteMass(name) {
+  return {
+    type: scenarioActionTypes.DELETE_MASS,
+    name
+  };
+}
