@@ -42,6 +42,8 @@ export default {
 
     this.camera.position.z = this.scenario.initialCameraZ;
 
+    this.previousCameraFocus = this.scenario.cameraFocus;
+
     this.scene.add(new THREE.AmbientLight(0x404040, 1.6), arena());
 
     if (this.scenario.decorativeSun) {
@@ -86,7 +88,8 @@ export default {
       trails,
       labels,
       cameraPosition,
-      cameraFocus
+      cameraFocus,
+      dt
     } = this.scenario;
 
     if (playing) this.system.updatePositionVectors().updateVelocityVectors();
@@ -108,7 +111,17 @@ export default {
     for (let i = 0; i < this.massManifestations.length; i++) {
       const massManifestation = this.massManifestations[i];
 
-      let { name, x, y, z, trailVertices, radius } = this.system.masses[i];
+      let {
+        name,
+        x,
+        y,
+        z,
+        vx,
+        vy,
+        vz,
+        trailVertices,
+        radius
+      } = this.system.masses[i];
 
       x *= scale;
       y *= scale;
@@ -125,12 +138,29 @@ export default {
         const cameraTarget = new THREE.Vector3(x, y, z);
 
         if (cameraPosition !== 'Free') this.camera.lookAt(cameraTarget);
-        else this.camera.controls.target = cameraTarget;
+        else {
+          this.camera.controls.target = cameraTarget;
+
+          if (playing) {
+            this.camera.position.x += vx * dt * scale;
+            this.camera.position.y += vy * dt * scale;
+            this.camera.position.z += vz * dt * scale;
+          }
+        }
       }
 
       if (cameraPosition === name) {
         if (cameraPosition === cameraFocus) y += radius * 7;
         this.camera.position.set(x, y, z);
+      }
+
+      if (this.previousCameraFocus !== cameraFocus && cameraFocus === name) {
+        this.previousCameraFocus = cameraFocus;
+
+        if (cameraPosition === 'Free') {
+          this.camera.position.set(x, y + radius * 7, z);
+          this.camera.lookAt(new THREE.Vector3(x, y, z));
+        }
       }
 
       if (labels && cameraPosition !== name)
