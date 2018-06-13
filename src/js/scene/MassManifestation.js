@@ -4,6 +4,7 @@ export default class extends THREE.Object3D {
   constructor(mass) {
     super();
     this.mass = mass;
+    this.name = mass !== undefined ? mass.name : 'Decorative Sun';
     this.textureLoader = new THREE.TextureLoader();
     this.createManifestation();
   }
