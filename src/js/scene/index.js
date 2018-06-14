@@ -79,8 +79,25 @@ export default {
     });
   },
 
+  diffMasses(previousMasses, newMasses) {
+    let i = 0;
+
+    while (i < previousMasses.length) {
+      let entry1 = previousMasses[i];
+
+      if (newMasses.some(entry2 => entry1.name === entry2.name)) ++i;
+      else {
+        previousMasses.splice(i, 1);
+
+        this.scene.remove(this.scene.getObjectByName(entry1.name));
+      }
+    }
+  },
+
   loop() {
-    this.getScenario().updateSystem();
+    this.getScenario()
+      .updateSystem()
+      .diffMasses(this.massManifestations, this.scenario.masses);
 
     const {
       playing,
@@ -187,6 +204,8 @@ export default {
   updateSystem() {
     this.system.g = this.scenario.g;
     this.system.masses = this.scenario.masses;
+
+    return this;
   },
 
   updateScenario() {
