@@ -3,7 +3,6 @@ export default {
   playing: false,
   decorativeSun: true,
   g: 39.5,
-  law: 1.5,
   dt: 9e-6,
   scale: 300,
   trails: true,

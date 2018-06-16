@@ -57,7 +57,6 @@ export default {
 
     this.system = new nBodyProblem({
       g: this.scenario.g,
-      law: this.scenario.law,
       dt: this.scenario.dt,
       masses: this.scenario.masses
     });
@@ -95,10 +94,8 @@ export default {
   },
 
   loop() {
-    this.getScenario()
-      .updateSystem()
-      .diffMasses(this.massManifestations, this.scenario.masses);
-
+    this.getScenario().updateSystem();
+    
     const {
       playing,
       scale,
@@ -110,6 +107,8 @@ export default {
     } = this.scenario;
 
     if (playing) this.system.updatePositionVectors().updateVelocityVectors();
+
+    this.diffMasses(this.massManifestations, this.scenario.masses);
 
     this.updateScenario();
 

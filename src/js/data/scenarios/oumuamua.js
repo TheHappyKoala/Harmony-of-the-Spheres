@@ -1,7 +1,6 @@
 export default {
   name: 'Oumuamua - Visitor From Afar',
   g: 39.5,
-  law: 1.5,
   dt: 0.002,
   scale: 8,
   distMax: 60,

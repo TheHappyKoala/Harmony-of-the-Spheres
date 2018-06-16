@@ -2,7 +2,6 @@ export default {
   name: 'The Earth and Moon System',
   decorativeSun: true,
   g: 39.5,
-  law: 1.5,
   dt: 5e-5,
   scale: 6e3,
   trails: true,

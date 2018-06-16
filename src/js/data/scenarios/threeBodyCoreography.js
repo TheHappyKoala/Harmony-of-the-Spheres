@@ -2,7 +2,6 @@ export default {
   name: 'Three Body Coreography',
   playing: false,
   g: 100,
-  law: 1.5,
   dt: 0.01,
   scale: 2,
   trails: true,

@@ -1,7 +1,6 @@
 export default class {
   constructor(params) {
     this.g = params.g;
-    this.law = params.law;
     this.dt = params.dt;
     this.masses = params.masses;
 
@@ -14,6 +13,14 @@ export default class {
     this.dt *= 2.0;
 
     return this;
+  }
+
+  getDistance(p1, p2) {
+    const dx = p2.x - p1.x;
+    const dy = p2.y - p1.y;
+    const dz = p2.z - p1.z;
+
+    return { dx, dy, dz, dSquared: dx * dx + dy * dy + dz * dz };
   }
 
   updatePositionVectors() {
@@ -44,17 +51,13 @@ export default class {
         if (i !== j) {
           let massJ = this.masses[j];
 
-          let dx = massJ.x - massI.x;
-          let dy = massJ.y - massI.y;
-          let dz = massJ.z - massI.z;
+          let distance = this.getDistance(massI, massJ);
 
-          let distsq = dx * dx + dy * dy + dz * dz;
+          let fact = this.g * massJ.m / Math.pow(distance.dSquared, 1.5);
 
-          let fact = this.g * massJ.m / Math.pow(distsq, this.law);
-
-          ax += dx * fact;
-          ay += dy * fact;
-          az += dz * fact;
+          ax += distance.dx * fact;
+          ay += distance.dy * fact;
+          az += distance.dz * fact;
         }
       }
 
