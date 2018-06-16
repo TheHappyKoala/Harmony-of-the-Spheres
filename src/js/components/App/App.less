@@ -42,9 +42,56 @@ a:link, a:visited {
   color: @font-color;
 }
 
+.vertical-section-header {
+  .absolute();
+  background-color: @primary;
+  left: 0;
+  right: 80%;
+  bottom: 93%;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: @fat-padding;
+  border: @border;
+}
+
+.right-aligned-vertical-section-header {
+  left: 80%;
+  right: 0;
+}
+
+.display-control {
+  .absolute();
+  right: @fat-padding;
+  top: 50%;
+  transform: translateY(-50%);  
+  cursor: pointer;
+}
+
 body {
   overflow: hidden;
   font-family: @font;
   font-size: 0.75em;
   color: @font-color;
 }    
+
+h1, h2, h3, h4 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.slide-vertical-enter {
+  bottom: 93%;
+}
+
+.slide-vertical-enter.slide-vertical-enter-active {
+  bottom: 0;
+  transition: bottom 250ms ease-in;
+}
+
+.slide-vertical-leave {
+  bottom: 0;
+}
+
+.slide-vertical-leave.slide-vertical-leave-active {
+  bottom: 93%;
+  transition: bottom 250ms ease-in;
+}

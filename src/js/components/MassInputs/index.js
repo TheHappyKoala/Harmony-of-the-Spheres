@@ -1,6 +1,7 @@
 import React from 'react';
 import Dropdown from '../Dropdown';
 import Slider from '../Slider';
+import Button from '../Button';
 import bodies from '../../data/masses';
 import './MassInputs.less';
 
@@ -130,6 +131,9 @@ export default function(props) {
                 min={props.scenario.velMin}
                 step={props.scenario.velStep}
               />
+              <Button callback={() => props.deleteMass(mass.name)}>
+                Delete Mass
+              </Button>
             </div>
           )
       )}

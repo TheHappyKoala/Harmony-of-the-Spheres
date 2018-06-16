@@ -28,10 +28,18 @@ export default class extends Component {
 
   componentWillReceiveProps(nextProps) {
     const nextChildren = React.Children.toArray(nextProps.children);
+
+    if (!nextChildren.length) {
+      this.setSelectedOption('No Options Exist');
+
+      return;
+    }
+
     const currentChildren = React.Children.toArray(this.props.children);
 
     if (nextChildren.length !== currentChildren.length) {
       this.setSelectedOption(nextChildren[0].props.name);
+      nextChildren[0].props.callback && nextChildren[0].props.callback();
 
       return;
     }
@@ -42,6 +50,7 @@ export default class extends Component {
     for (let i = 0; i < nextChildrenKeys.length; i++) {
       if (nextChildrenKeys[i] !== currentChildrenKeys[i]) {
         this.setSelectedOption(nextChildren[0].props.name);
+        nextChildren[0].props.callback && nextChildren[0].props.callback();
 
         return;
       }
