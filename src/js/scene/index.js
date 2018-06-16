@@ -95,7 +95,7 @@ export default {
 
   loop() {
     this.getScenario().updateSystem();
-    
+
     const {
       playing,
       scale,
@@ -106,7 +106,11 @@ export default {
       dt
     } = this.scenario;
 
-    if (playing) this.system.updatePositionVectors().updateVelocityVectors();
+    if (playing)
+      this.system
+        .updatePositionVectors()
+        .updateVelocityVectors()
+        .doCollisions(scale);
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
