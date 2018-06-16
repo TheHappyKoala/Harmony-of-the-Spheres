@@ -68,4 +68,44 @@ export default class {
 
     return this;
   }
+
+  doCollisions(scale, callback) {
+    let massesLength = this.masses.length;
+
+    for (let i = 0; i < massesLength; i++) {
+      let massI = this.masses[i];
+
+      for (let j = 0; j < massesLength; j++) {
+        if (i !== j) {
+          let massJ = this.masses[j];
+
+          let dist = Math.sqrt(this.getDistance(massI, massJ).dSquared) * scale;
+
+          let radiae = massI.radius + massJ.radius;
+
+          if (radiae > dist) {
+            massI.m += this.masses[j].m;
+            massI.radius += massJ.radius / 2;   
+            
+            callback && callback(massI);
+
+            this.masses.vx +=
+              (massI.vx * massI.m + massJ.vx * massJ.m) / (massI.m + massJ.m);
+            this.masses.vy +=
+              (massI.vy * massI.m + massJ.vy * massJ.m) / (massI.m + massJ.m);
+            this.masses.vz +=
+              (massI.vz * massI.m + massJ.vz * massJ.m) / (massI.m + massJ.m);
+
+            this.masses.splice(j, 1);
+
+            massesLength -= 1;
+
+            j--;
+          }
+        }
+      }
+    }
+
+    return this;
+  }
 }
