@@ -101,16 +101,15 @@ export default {
       scale,
       trails,
       labels,
+      collisions,
       cameraPosition,
       cameraFocus,
       dt
     } = this.scenario;
 
-    if (playing)
-      this.system
-        .updatePositionVectors()
-        .updateVelocityVectors()
-        .doCollisions(scale);
+    if (playing) this.system.updatePositionVectors().updateVelocityVectors();
+
+    if (playing && collisions) this.system.doCollisions(scale);
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 

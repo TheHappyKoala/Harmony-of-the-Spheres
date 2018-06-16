@@ -85,8 +85,8 @@ export default class {
 
           if (radiae > dist) {
             massI.m += this.masses[j].m;
-            massI.radius += massJ.radius / 2;   
-            
+            massI.radius += massJ.radius / 2;
+
             callback && callback(massI);
 
             this.masses.vx +=

@@ -65,6 +65,16 @@ export default function(props) {
           })
         }
       />
+      <Toggle
+        label="Collisions"
+        checked={props.scenario.collisions}
+        callback={() =>
+          props.modifyScenarioProperty({
+            key: 'collisions',
+            value: !props.scenario.collisions
+          })
+        }
+      />
       <label className="top">Camera Position</label>
       <Dropdown>
         <div
