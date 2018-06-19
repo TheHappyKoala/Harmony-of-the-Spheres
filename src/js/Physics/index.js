@@ -79,28 +79,39 @@ export default class {
         if (i !== j) {
           let massJ = this.masses[j];
 
+          let survivor;
+          let looserIndex;
+
+          if (massI.m > massJ.m || massI.m === massJ.m) {
+            survivor = massI;
+            looserIndex = j;
+          } else {
+            survivor = massJ;
+            looserIndex = i;
+          }
+
           let dist = Math.sqrt(this.getDistance(massI, massJ).dSquared) * scale;
 
           let radiae = massI.radius + massJ.radius;
 
           if (radiae > dist) {
-            massI.m += this.masses[j].m;
-            massI.radius += massJ.radius / 2;
+            survivor.m += this.masses[i].m;
+            survivor.radius += massI.radius / 2;
 
-            callback && callback(massI);
+            callback && callback(massJ);
 
-            this.masses.vx +=
+            survivor.vx +=
               (massI.vx * massI.m + massJ.vx * massJ.m) / (massI.m + massJ.m);
-            this.masses.vy +=
+            survivor.vy +=
               (massI.vy * massI.m + massJ.vy * massJ.m) / (massI.m + massJ.m);
-            this.masses.vz +=
+            survivor.vz +=
               (massI.vz * massI.m + massJ.vz * massJ.m) / (massI.m + massJ.m);
 
-            this.masses.splice(j, 1);
+            this.masses.splice(looserIndex, 1);
 
             massesLength -= 1;
 
-            j--;
+            looserIndex--;
           }
         }
       }
