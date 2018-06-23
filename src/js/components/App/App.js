@@ -23,6 +23,7 @@ export default class extends Component {
   render() {
     return (
       <div>
+        <Renderer scenarioName={this.props.scenario.name} />
         <header className="vertical-section-header">
           <h3>Global Inputs</h3>
           {this.state.displayGlobalInputs && (
@@ -90,7 +91,6 @@ export default class extends Component {
             />
           )}
         </ReactCSSTransitionGroup>
-        <Renderer scenarioName={this.props.scenario.name} />
       </div>
     );
   }

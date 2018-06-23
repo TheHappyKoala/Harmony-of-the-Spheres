@@ -4,6 +4,7 @@ import Dropdown from '../Dropdown';
 import Toggle from '../Toggle';
 import Slider from '../Slider';
 import Button from '../Button';
+import Tooltip from '../Tooltip';
 import { scenarios } from '../../data/scenarios';
 import play from '../../../icons/play.png';
 import pause from '../../../icons/pause.png';
@@ -12,7 +13,13 @@ import './GlobalInputs.less';
 export default function(props) {
   return (
     <div className="global-inputs">
-      <label>Scenario</label>
+      <label>
+        Scenario
+        <Tooltip
+          position="right"
+          content="Select the scenario that you want to simulate. Options range from the Jovian system to a beautiful three-body coreography."
+        />
+      </label>
       <Dropdown>
         {scenarios.map(scenario => (
           <NavLink
@@ -75,7 +82,13 @@ export default function(props) {
           })
         }
       />
-      <label className="top">Camera Position</label>
+      <label className="top">
+        Camera Position{' '}
+        <Tooltip
+          position="right"
+          content="Select the position of the camera. If the position is set to free, you can zoom in on and orbit around the focus of the camera with your mouse or touch screen."
+        />
+      </label>
       <Dropdown>
         <div
           name="Free"
@@ -104,7 +117,13 @@ export default function(props) {
           </div>
         ))}
       </Dropdown>
-      <label className="top">Camera Focus</label>
+      <label className="top">
+        Camera Focus{' '}
+        <Tooltip
+          position="right"
+          content="Select the focus of the camera, or in other words, what the camera should be looking at."
+        />
+      </label>
       <Dropdown>
         <div
           name="Origo"
@@ -133,7 +152,13 @@ export default function(props) {
           </div>
         ))}
       </Dropdown>
-      <label className="top">Gravitational Constant</label>
+      <label className="top">
+        Gravitational Constant
+        <Tooltip
+          position="right"
+          content="The gravitational constant is equal to the absolute value of the gravitational force, acting on a point body with unit mass from another similar body, which is located at the unit distance. Higher values yield a more attractive gravitational force, but what happens if you set a negative value for the gravitational constant?"
+        />
+      </label>
       <Slider
         val={props.scenario.g}
         callback={e =>

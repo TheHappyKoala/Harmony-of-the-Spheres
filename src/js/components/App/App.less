@@ -9,7 +9,6 @@
 
 .absolute {
   position: absolute;
-  z-index: 2;
 }
 
 .top {
@@ -80,11 +79,13 @@ h1, h2, h3, h4 {
 
 .slide-vertical-enter {
   bottom: 93%;
+  overflow: hidden;
 }
 
 .slide-vertical-enter.slide-vertical-enter-active {
   bottom: 0;
   transition: bottom 250ms ease-in;
+  overflow: hidden;  
 }
 
 .slide-vertical-leave {
@@ -94,4 +95,23 @@ h1, h2, h3, h4 {
 .slide-vertical-leave.slide-vertical-leave-active {
   bottom: 93%;
   transition: bottom 250ms ease-in;
+  overflow: hidden;  
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
 }
