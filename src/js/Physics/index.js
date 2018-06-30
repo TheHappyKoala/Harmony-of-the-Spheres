@@ -4,6 +4,10 @@ export default class {
     this.dt = params.dt;
     this.masses = params.masses;
 
+    this.collisions = params.collisions;
+
+    this.scale = params.scale;
+
     this.leapfrog();
   }
 
@@ -15,7 +19,7 @@ export default class {
     return this;
   }
 
-  getDistance(p1, p2) {
+  getDistanceParams(p1, p2) {
     const dx = p2.x - p1.x;
     const dy = p2.y - p1.y;
     const dz = p2.z - p1.z;
@@ -37,7 +41,7 @@ export default class {
     return this;
   }
 
-  updateVelocityVectors() {
+  updateVelocityVectors(detectedCollisions, callback) {
     let massesLength = this.masses.length;
 
     for (let i = 0; i < massesLength; i++) {
@@ -51,54 +55,27 @@ export default class {
         if (i !== j) {
           let massJ = this.masses[j];
 
-          let distance = this.getDistance(massI, massJ);
+          let distanceParams = this.getDistanceParams(massI, massJ);
+          let distance = Math.sqrt(distanceParams.dSquared);
 
-          let fact = this.g * massJ.m / Math.pow(distance.dSquared, 1.5);
+          if (
+            distance * this.scale < massI.radius + massJ.radius &&
+            this.collisions
+          ) {
+            let survivor;
+            let looserIndex;
 
-          ax += distance.dx * fact;
-          ay += distance.dy * fact;
-          az += distance.dz * fact;
-        }
-      }
+            if (massI.m > massJ.m || massI.m === massJ.m) {
+              survivor = massI;
+              looserIndex = j;
+            } else {
+              survivor = massJ;
+              looserIndex = i;
+            }
 
-      massI.vx += ax * this.dt;
-      massI.vy += ay * this.dt;
-      massI.vz += az * this.dt;
-    }
+            survivor.m += this.masses[looserIndex].m;
 
-    return this;
-  }
-
-  doCollisions(scale, callback) {
-    let massesLength = this.masses.length;
-
-    for (let i = 0; i < massesLength; i++) {
-      let massI = this.masses[i];
-
-      for (let j = 0; j < massesLength; j++) {
-        if (i !== j) {
-          let massJ = this.masses[j];
-
-          let survivor;
-          let looserIndex;
-
-          if (massI.m > massJ.m || massI.m === massJ.m) {
-            survivor = massI;
-            looserIndex = j;
-          } else {
-            survivor = massJ;
-            looserIndex = i;
-          }
-
-          let dist = Math.sqrt(this.getDistance(massI, massJ).dSquared) * scale;
-
-          let radiae = massI.radius + massJ.radius;
-
-          if (radiae > dist) {
-            survivor.m += this.masses[i].m;
-            survivor.radius += massI.radius / 2;
-
-            callback && callback(massJ);
+            callback && callback(survivor, detectedCollisions);
 
             survivor.vx +=
               (massI.vx * massI.m + massJ.vx * massJ.m) / (massI.m + massJ.m);
@@ -112,9 +89,19 @@ export default class {
             massesLength -= 1;
 
             looserIndex--;
+          } else {
+            let fact = this.g * massJ.m / (distanceParams.dSquared * distance);
+
+            ax += distanceParams.dx * fact;
+            ay += distanceParams.dy * fact;
+            az += distanceParams.dz * fact;
           }
         }
       }
+
+      massI.vx += ax * this.dt;
+      massI.vy += ay * this.dt;
+      massI.vz += az * this.dt;
     }
 
     return this;
