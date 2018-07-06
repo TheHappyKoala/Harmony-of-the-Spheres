@@ -58,7 +58,9 @@ export default {
     this.system = new nBodyProblem({
       g: this.scenario.g,
       dt: this.scenario.dt,
-      masses: this.scenario.masses
+      masses: this.scenario.masses,
+      scale: this.scenario.scale,
+      collisions: true
     });
 
     this.addManifestations();
@@ -107,9 +109,12 @@ export default {
       dt
     } = this.scenario;
 
-    if (playing) this.system.updatePositionVectors().updateVelocityVectors();
+    const detectedCollisions = {};
 
-    if (playing && collisions) this.system.doCollisions(scale);
+    if (playing)
+      this.system
+        .updatePositionVectors()
+        .updateVelocityVectors(detectedCollisions, this.registerCollision);
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
@@ -145,6 +150,8 @@ export default {
       x *= scale;
       y *= scale;
       z *= scale;
+
+      if (detectedCollisions[name] != undefined) massManifestation.createExplosion(scale);
 
       massManifestation.draw(x, y, z);
 
@@ -206,6 +213,7 @@ export default {
   updateSystem() {
     this.system.g = this.scenario.g;
     this.system.masses = this.scenario.masses;
+    this.system.collisions = this.scenario.collisions;
 
     return this;
   },
@@ -217,6 +225,10 @@ export default {
         value: this.system.masses
       })
     );
+  },
+
+  registerCollision(survivor, target) {
+    target[survivor.name] = survivor.name;
   },
 
   reset() {
