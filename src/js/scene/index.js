@@ -7,6 +7,7 @@ import Camera from './Camera';
 import label from './label';
 import MassManifestation from './MassManifestation';
 import Star from './Star';
+import Model from './Model';
 
 export default {
   init(webGlCanvas, labelsCanvas) {
@@ -72,8 +73,18 @@ export default {
     this.scenario.masses.forEach(mass => {
       let manifestation;
 
-      if (mass.type === 'star') manifestation = new Star(mass);
-      else manifestation = new MassManifestation(mass);
+      switch (mass.type) {
+        case 'star':
+          manifestation = new Star(mass);
+
+          break;
+        case 'model':
+          manifestation = new Model(mass);
+
+          break;
+        default:
+          manifestation = new MassManifestation(mass);
+      }
 
       this.scene.add(manifestation);
       this.massManifestations.push(manifestation);
@@ -103,7 +114,6 @@ export default {
       scale,
       trails,
       labels,
-      collisions,
       cameraPosition,
       cameraFocus,
       dt
@@ -151,7 +161,8 @@ export default {
       y *= scale;
       z *= scale;
 
-      if (detectedCollisions[name] != undefined) massManifestation.createExplosion(scale);
+      if (detectedCollisions[name] != undefined)
+        massManifestation.createExplosion(scale);
 
       massManifestation.draw(x, y, z);
 
