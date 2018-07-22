@@ -36,7 +36,7 @@ export default {
     this.camera = new Camera(
       45,
       this.w / this.h,
-      0.01,
+      0.0001,
       1500000000000,
       this.labelsCanvas
     );
@@ -44,6 +44,7 @@ export default {
     this.camera.position.z = this.scenario.initialCameraZ;
 
     this.previousCameraFocus = this.scenario.cameraFocus;
+    this.previousRotatingReferenceFrame = this.scenario.rotatingReferenceFrame;
 
     this.scene.add(new THREE.AmbientLight(0x404040, 1.6), arena());
 
@@ -114,10 +115,17 @@ export default {
       scale,
       trails,
       labels,
+      rotatingReferenceFrame,
       cameraPosition,
       cameraFocus,
       dt
     } = this.scenario;
+
+    let frameOfRef;
+
+    for (let i = 0; i < this.system.masses.length; i++)
+      if (this.system.masses[i].name === rotatingReferenceFrame)
+        frameOfRef = this.system.masses[i];
 
     const detectedCollisions = {};
 
@@ -133,6 +141,8 @@ export default {
     if (cameraPosition === 'Free') this.camera.controls.enabled = true;
     else this.camera.controls.enabled = false;
 
+    this.labels.clearRect(0, 0, this.w, this.h);
+
     if (cameraFocus === 'Origo') {
       const origo = new THREE.Vector3(0, 0, 0);
 
@@ -140,33 +150,39 @@ export default {
       else this.camera.controls.target = origo;
     }
 
-    this.labels.clearRect(0, 0, this.w, this.h);
+    if (this.previousCameraFocus !== cameraFocus && cameraFocus === 'Origo') {
+      this.previousCameraFocus = cameraFocus;
+
+      if (cameraPosition === 'Free') {
+        this.camera.position.set(0, 0, 5);
+
+        this.camera.lookAt(new THREE.Vector3(0, 0, 0));
+      }
+    }
 
     for (let i = 0; i < this.massManifestations.length; i++) {
       const massManifestation = this.massManifestations[i];
+      const mass = this.system.masses[i];
 
-      let {
-        name,
-        x,
-        y,
-        z,
-        vx,
-        vy,
-        vz,
-        trailVertices,
-        radius
-      } = this.system.masses[i];
+      let { name, trailVertices, radius } = this.system.masses[i];
 
-      x *= scale;
-      y *= scale;
-      z *= scale;
+      let x = (frameOfRef.x - mass.x) * scale;
+      let y = (frameOfRef.y - mass.y) * scale;
+      let z = (frameOfRef.z - mass.z) * scale;
+      let vx = (frameOfRef.vx - mass.vx) * scale;
+      let vy = (frameOfRef.vy - mass.vy) * scale;
+      let vz = (frameOfRef.vz - mass.vz) * scale;
 
       if (detectedCollisions[name] != undefined)
         massManifestation.createExplosion(scale);
 
       massManifestation.draw(x, y, z);
 
-      if (trails && playing) {
+      if (
+        trails &&
+        playing &&
+        rotatingReferenceFrame === this.previousRotatingReferenceFrame
+      ) {
         if (!massManifestation.getObjectByName('Trail'))
           massManifestation.getTrail(trailVertices);
       } else massManifestation.removeTrail();
@@ -179,15 +195,15 @@ export default {
           this.camera.controls.target = cameraTarget;
 
           if (playing) {
-            this.camera.position.x += vx * dt * scale;
-            this.camera.position.y += vy * dt * scale;
-            this.camera.position.z += vz * dt * scale;
+            this.camera.position.x += vx * dt;
+            this.camera.position.y += vy * dt;
+            this.camera.position.z += vz * dt;
           }
         }
       }
 
       if (cameraPosition === name) {
-        if (cameraPosition === cameraFocus) y += radius * 7;
+        if (cameraPosition === cameraFocus) y += radius * 2;
         this.camera.position.set(x, y, z);
       }
 
@@ -196,6 +212,7 @@ export default {
 
         if (cameraPosition === 'Free') {
           this.camera.position.set(x, y + radius * 7, z);
+
           this.camera.lookAt(new THREE.Vector3(x, y, z));
         }
       }
@@ -210,6 +227,9 @@ export default {
           name
         );
     }
+
+    if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame)
+      this.previousRotatingReferenceFrame = rotatingReferenceFrame;
 
     this.requestAnimationFrameId = requestAnimationFrame(() => this.loop());
     this.renderer.render(this.scene, this.camera);

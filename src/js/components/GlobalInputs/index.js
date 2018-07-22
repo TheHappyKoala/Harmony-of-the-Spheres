@@ -83,6 +83,29 @@ export default function(props) {
         }
       />
       <label className="top">
+        Rotating Reference Frame{' '}
+        <Tooltip
+          position="right"
+          content="A rotating frame of reference is a special case of a non-inertial reference frame that is rotating relative to an inertial reference frame. In more digestable parlance, rotating reference frames allow us to observe the universe unfold relative to a fixed point, for instance Earth. While Earth orbits the Sun regardless of the reference frame being considered, in a rotating reference frame, the sun, for example, will appear to orbit the Earth, which is fixed at the center of the coordinate system. This makes observing the perturbations of the Sun on the Moon in its orbit around Earth easier to observe, while also revealing the peculiar nature of resonant orbits, like that of Cruithne, a quasi Moon of Earth."
+        />
+      </label>
+      <Dropdown>
+        {props.scenario.masses.map(mass => (
+          <div
+            name={mass.name}
+            key={mass.name}
+            callback={() =>
+              props.modifyScenarioProperty({
+                key: 'rotatingReferenceFrame',
+                value: mass.name
+              })
+            }
+          >
+            {mass.name}
+          </div>
+        ))}
+      </Dropdown>
+      <label className="top">
         Camera Position{' '}
         <Tooltip
           position="right"
