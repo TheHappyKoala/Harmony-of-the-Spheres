@@ -6,7 +6,7 @@ export default class extends MassManifestation {
     super(mass);
   }
 
-  getMain() {
+  getMain() {    
     const container = new THREE.Object3D();
     container.name = 'Main';
 
@@ -19,17 +19,16 @@ export default class extends MassManifestation {
         color: 0xffffff
       })
     );
-    corona.scale.set(3.5, 3.5, 3.5);
 
-    const light = new THREE.PointLight(0xffffff, 3, 310);
+    const scaledRadius = this.mass.radius * 10;
+
+    corona.scale.set(scaledRadius, scaledRadius, scaledRadius);
+    
+    const light = new THREE.PointLight(0xffffff, 3, 0);                  
     light.position.set(0, 0, 0);
     light.color.setHSL(0.55, 0.1, 0.5);
 
-    const sphere = new THREE.SphereGeometry(
-      this.mass !== undefined ? this.mass.radius : 0.5,
-      32,
-      32
-    );
+    const sphere = new THREE.SphereGeometry(this.mass.radius, 32, 32);
 
     const sphereMaterial = new THREE.MeshBasicMaterial({ color: 'white' });
 
