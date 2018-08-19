@@ -5,7 +5,6 @@ export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedOption: props.children[0].props.name,
       displayAllOptions: false
     };
   }
@@ -19,9 +18,6 @@ export default class extends Component {
 
   handleOutsideClick = () => this.handleClick();
 
-  setSelectedOption = selectedOption =>
-    this.setState({ ...this.state, selectedOption });
-
   displayAllOptions(displayAllOptions) {
     this.setState({ ...this.state, displayAllOptions });
   }
@@ -29,39 +25,19 @@ export default class extends Component {
   componentWillReceiveProps(nextProps) {
     const nextChildren = React.Children.toArray(nextProps.children);
 
-    if (!nextChildren.length) {
-      this.setSelectedOption('No Options Exist');
+    if (!nextChildren.length) return;
 
-      return;
-    }
+    const doesSelectedOptionExist = nextChildren
+      .map(child => child.props.name)
+      .indexOf(this.props.selectedOption);
 
-    const currentChildren = React.Children.toArray(this.props.children);
-
-    if (nextChildren.length !== currentChildren.length) {
-      this.setSelectedOption(nextChildren[0].props.name);
-      nextChildren[0].props.callback && nextChildren[0].props.callback();
-
-      return;
-    }
-
-    const nextChildrenKeys = nextChildren.map(child => child.key);
-    const currentChildrenKeys = currentChildren.map(child => child.key);
-
-    for (let i = 0; i < nextChildrenKeys.length; i++) {
-      if (nextChildrenKeys[i] !== currentChildrenKeys[i]) {
-        this.setSelectedOption(nextChildren[0].props.name);
-        nextChildren[0].props.callback && nextChildren[0].props.callback();
-
-        return;
-      }
-    }
+    if (doesSelectedOptionExist === -1) nextChildren[0].props.callback();
   }
 
   render() {
     const options = React.Children.map(this.props.children, child =>
       React.cloneElement(child, {
         onClick: () => {
-          this.setSelectedOption(child.props.name);
           child.props.callback && child.props.callback();
         }
       })
@@ -71,7 +47,7 @@ export default class extends Component {
       <div className="dropdown">
         <div>
           <div onClick={this.handleClick} className="selected-option">
-            {this.state.selectedOption}
+            {this.props.selectedOption}
           </div>
           {this.state.displayAllOptions && (
             <div className="options">{options}</div>
