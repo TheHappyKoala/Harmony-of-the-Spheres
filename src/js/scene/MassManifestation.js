@@ -5,8 +5,9 @@ export default class extends THREE.Object3D {
     super();
 
     this.mass = mass;
-    this.name = mass !== undefined ? mass.name : 'Decorative Sun';
+    this.name = this.mass.name;
     this.textureLoader = new THREE.TextureLoader();
+
     this.createManifestation();
   }
 
@@ -118,8 +119,6 @@ export default class extends THREE.Object3D {
           explosionFragment.x += explosionFragment.v.x;
           explosionFragment.y += explosionFragment.v.y;
           explosionFragment.z += explosionFragment.v.z;
-
-          //explosionFragment.v.y -= 0.5 / 10;
         }
       } else this.remove(explosion);
 
