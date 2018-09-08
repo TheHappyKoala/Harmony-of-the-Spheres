@@ -1,16 +1,15 @@
 export default {
-  name: 'The Jovian System',
+  name: 'The Sun and the Jovian System',
   playing: false,
-  decorativeSun: true,
   g: 39.5,
-  dt: 9e-6,
+  dt: 0.000009,
   scale: 300,
   trails: true,
   labels: true,
   collisions: true,
-  initialCameraZ: 4,
+  rotatingReferenceFrame: 'Jupiter',
   cameraPosition: 'Free',
-  cameraFocus: 'Origo',
+  cameraFocus: 'Jupiter',
   massBeingModified: 'Jupiter',
   distMax: 0.010068057744,
   distMin: -0.010068057744,
@@ -31,6 +30,20 @@ export default {
       vz: 1.85765499287888e-6,
       trailVertices: 500,
       radius: 0.1
+    },
+    {
+      name: 'Sun',
+      type: 'star',
+      color: 'yellow',
+      m: 1,
+      x: 5.436151339701778,
+      y: -2.691893935210006e-1,
+      z: -1.20522867020747e-1,
+      vx: 4.638501110265252e-4 * 365.25,
+      vy: 7.187356979742229e-3 * 365.25,
+      vz: -4.022800836950103e-5 * 365.25,
+      trailVertices: 500,
+      radius: 10
     },
     {
       name: 'Io',
@@ -69,7 +82,7 @@ export default {
       vy: -2.2904667534862946,
       vz: -0.08642422976208332,
       trailVertices: 5e3,
-      radius: 0.015
+      radius: 0.01
     },
     {
       name: 'Callisto',
@@ -83,6 +96,20 @@ export default {
       vz: -0.040977438627834185,
       trailVertices: 12e3,
       radius: 0.01
+    },
+    {
+      name: 'Juno',
+      type: 'model',
+      color: 'limegreen',
+      m: 0,
+      x: -5.039266773550064e-5,
+      y: -0.00788144649482092,
+      z: -0.004586041119660474,
+      vx: -0.02521299585620324,
+      vy: -2.5307649570849953,
+      vz: -0.6940820182189928,
+      trailVertices: 42e3,
+      radius: 0.002
     }
   ]
 };

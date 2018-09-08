@@ -2,12 +2,18 @@ import jovianSystem from './jovianSystem';
 import threeBodyCoreography from './threeBodyCoreography';
 import earthMoonSystem from './earthMoonSystem';
 import oumuamua from './oumuamua';
+import martianSystem from './martianSystem';
+import newHorizons from './newHorizons';
+import cruithne from './cruithne';
 
 export const scenarios = [
   jovianSystem,
   threeBodyCoreography,
   earthMoonSystem,
-  oumuamua
+  oumuamua,
+  martianSystem,
+  newHorizons,
+  cruithne
 ];
 
 export default function(scenario) {

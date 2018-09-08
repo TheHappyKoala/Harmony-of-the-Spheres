@@ -1,10 +1,10 @@
 export default {
-  name: 'The Sun, Earth and Moon System',
+  name: 'Cruithne - Quasi Moon of Earth',
   playing: false,
   g: 39.5,
   law: 1.5,
-  dt: 5e-5,
-  scale: 300,
+  dt: 8e-4,
+  scale: 100,
   distMax: 0.00713911058,
   collisions: true,
   distMin: -0.00713911058,
@@ -14,6 +14,7 @@ export default {
   velStep: 5e-6,
   trails: true,
   labels: true,
+  iteration: 0,
   rotatingReferenceFrame: 'Earth',
   cameraPosition: 'Free',
   cameraFocus: 'Earth',
@@ -29,7 +30,7 @@ export default {
       vx: -0.9740470647877054,
       vy: 6.197562901988265,
       vz: 4.1377604204935426e-4,
-      trailVertices: 2e4,
+      trailVertices: 13e3,
       radius: 0.1
     },
     {
@@ -43,20 +44,23 @@ export default {
       vx: 0.0029586689261267758,
       vy: 1.3186850299206433e-4,
       vz: -8.036276531728809e-5,
-      trailVertices: 2e4,
-      radius: 5
+      trailVertices: 13e3,
+      radius: 2
     },
     {
-      name: 'Moon',
-      m: 3.69396868e-8,
+      name: 'Cruithne',
+      type: 'asteroid',
+      m: 0,
       color: 'grey',
-      x: 0.9956218231659631,
-      y: 0.1372984436242337,
-      z: -1.963882374615497e-4,
-      vx: -1.1283327200261632,
-      vy: 6.334444083774614,
-      vz: -0.015608356925550449,
-      trailVertices: 2e4,
+      x: 1.325865390879866,
+      y: 0.2236398242275909,
+      z: -0.4321459627915762,
+      vx: -2.0878385351253206,
+      vy: 3.4644966308419827,
+      vz: -0.13743332747043174,
+      label: !0,
+      trail: !0,
+      trailVertices: 13e3,
       radius: 0.025
     }
   ]

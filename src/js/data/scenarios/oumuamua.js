@@ -1,8 +1,8 @@
 export default {
   name: 'Oumuamua - Visitor From Afar',
   g: 39.5,
-  dt: 0.002,
-  scale: 8,
+  dt: 0.001,
+  scale: 200,
   distMax: 60,
   distMin: -60,
   distStep: 0.1,
@@ -12,9 +12,9 @@ export default {
   trails: true,
   labels: true,
   collisions: true,
-  initialCameraZ: 85,
+  rotatingReferenceFrame: 'Sun',
   cameraPosition: 'Free',
-  cameraFocus: 'Origo',
+  cameraFocus: 'Oumuamua',
   massBeingModified: 'Sun',
   masses: [
     {
@@ -29,7 +29,7 @@ export default {
       vy: -9.759759745137204e-4,
       vz: -4.519598528871196e-5,
       radius: 10,
-      trailVertices: 1e3
+      trailVertices: 300
     },
     {
       name: 'Mercury',
@@ -41,8 +41,8 @@ export default {
       vx: -12.13355404048838,
       vy: -1.6528772889426246,
       vz: 0.9784692627549786,
-      radius: 0.2,
-      trailVertices: 350
+      radius: 0.3,
+      trailVertices: 600
     },
     {
       name: 'Venus',
@@ -54,8 +54,8 @@ export default {
       vx: -3.5713994857490308,
       vy: 6.445551271928175,
       vz: 0.29452473854502614,
-      radius: 0.2,
-      trailVertices: 550
+      radius: 0.6,
+      trailVertices: 1000
     },
     {
       name: 'Earth',
@@ -67,8 +67,8 @@ export default {
       vx: 2.4645428337894026,
       vy: 5.7097644117945805,
       vz: -3.3177815766459033e-4,
-      radius: 0.2,
-      trailVertices: 600
+      radius: 0.7,
+      trailVertices: 1300
     },
     {
       name: 'Mars',
@@ -80,11 +80,12 @@ export default {
       vx: 4.9225288800471425,
       vy: -1.5065904473191791,
       vz: -0.1524041758922603,
-      radius: 0.2,
-      trailVertices: 950
+      radius: 0.35,
+      trailVertices: 2000
     },
     {
       name: 'Oumuamua',
+      type: 'asteroid',
       m: 0,
       color: 'purple',
       x: 3.679682868010402,
@@ -93,7 +94,7 @@ export default {
       vx: -0.8127258738687134,
       vy: 3.0458386360240897,
       vz: -4.839022858847442,
-      radius: 0.1,
+      radius: 0.025,
       trailVertices: 3e4
     },
     {
@@ -106,8 +107,8 @@ export default {
       vx: -2.4809040175054617,
       vy: 1.3993502897811834,
       vz: 0.04970829322871863,
-      radius: 0.2,
-      trailVertices: 6e3
+      radius: 6,
+      trailVertices: 4000
     },
     {
       name: 'Saturn',
@@ -119,8 +120,8 @@ export default {
       vx: 0.919151760170189,
       vy: -1.7631987893271037,
       vz: -0.005984764290193158,
-      radius: 0.2,
-      trailVertices: 16e3
+      radius: 5,
+      trailVertices: 4000
     },
     {
       name: 'Uranus',
@@ -132,8 +133,8 @@ export default {
       vx: -0.16129339690269276,
       vy: 1.3616609675222109,
       vz: 0.007139790220137776,
-      radius: 0.2,
-      trailVertices: 24e3
+      radius: 3,
+      trailVertices: 4000
     },
     {
       name: 'Neptune',
@@ -145,8 +146,8 @@ export default {
       vx: 0.5381987172626345,
       vy: 1.015130164798585,
       vz: -0.033446435472504955,
-      radius: 0.2,
-      trailVertices: 35e3
+      radius: 3,
+      trailVertices: 4000
     }
   ]
 };
