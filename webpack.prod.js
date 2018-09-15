@@ -11,7 +11,8 @@ module.exports = merge(common, {
     extractLess,
     new CleanWebpackPlugin('dist', {}),
     new CopyWebpackPlugin([
-      {from:'src/textures',to:'textures'} 
+      {from:'src/textures',to:'textures'},
+      {from:'src/models',to:'models'}       
     ]), 
   ],
   module: {
