@@ -20,11 +20,43 @@ export default function(
           return mass;
         })
       };
-    case scenarioActionTypes.DELETE_MASS:
-      return {
-        ...state,
-        masses: state.masses.filter(mass => mass.name !== action.name)
-      };
+    case scenarioActionTypes.DELETE_MASS: {
+      const index = state.masses.map(mass => mass.name).indexOf(action.name);
+
+      const newMasses = state.masses.filter((mass, i) => index !== i);
+
+      let newState;
+
+      if (!newMasses.length)
+        newState = {
+          ...state,
+          massBeingModified: 'There are no masses',
+          masses: newMasses,
+          rotatingReferenceFrame: 'Origo',
+          cameraPosition: 'Free',
+          cameraFocus: 'Origo'
+        };
+      else
+        newState = {
+          ...state,
+          massBeingModified: newMasses[0].name,
+          masses: newMasses,
+          rotatingReferenceFrame:
+            action.name !== state.rotatingReferenceFrame
+              ? state.rotatingReferenceFrame
+              : newMasses[0].name,
+          cameraPosition:
+            action.name !== state.cameraPosition
+              ? state.cameraPosition
+              : newMasses[0].name,
+          cameraFocus:
+            action.name !== state.cameraFocus
+              ? state.cameraFocus
+              : newMasses[0].name
+        };
+
+      return newState;
+    }
     default:
       return state;
   }
