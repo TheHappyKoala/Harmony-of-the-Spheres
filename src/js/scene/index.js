@@ -41,19 +41,10 @@ export default {
       this.labelsCanvas
     );
 
-    this.camera.position.z = this.scenario.initialCameraZ;
-
-    this.previousCameraFocus = this.scenario.cameraFocus;
-    this.previousRotatingReferenceFrame = this.scenario.rotatingReferenceFrame;
+    this.previousCameraFocus = null;
+    this.previousRotatingReferenceFrame = null;
 
     this.scene.add(new THREE.AmbientLight(0x404040, 1.6), arena());
-
-    if (this.scenario.decorativeSun) {
-      const decorativeSun = new Star();
-      decorativeSun.position.y = 100;
-
-      this.scene.add(decorativeSun);
-    }
 
     this.massManifestations = [];
 
@@ -123,9 +114,13 @@ export default {
 
     let frameOfRef;
 
-    for (let i = 0; i < this.system.masses.length; i++)
-      if (this.system.masses[i].name === rotatingReferenceFrame)
-        frameOfRef = this.system.masses[i];
+    if (rotatingReferenceFrame === 'Origo')
+      frameOfRef = { x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0 };
+    else {
+      for (let i = 0; i < this.system.masses.length; i++)
+        if (this.system.masses[i].name === rotatingReferenceFrame)
+          frameOfRef = this.system.masses[i];
+    }
 
     const detectedCollisions = {};
 
