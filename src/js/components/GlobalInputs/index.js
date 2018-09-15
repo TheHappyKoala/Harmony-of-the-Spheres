@@ -20,7 +20,7 @@ export default function(props) {
           content="Select the scenario that you want to simulate. Options range from the Jovian system to a beautiful three-body coreography."
         />
       </label>
-      <Dropdown>
+      <Dropdown selectedOption={props.scenario.name}>
         {scenarios.map(scenario => (
           <NavLink
             to={`/scenario/${scenario.name}`}
@@ -89,7 +89,19 @@ export default function(props) {
           content="A rotating frame of reference is a special case of a non-inertial reference frame that is rotating relative to an inertial reference frame. In more digestable parlance, rotating reference frames allow us to observe the universe unfold relative to a fixed point, for instance Earth. While Earth orbits the Sun regardless of the reference frame being considered, in a rotating reference frame, the sun, for example, will appear to orbit the Earth, which is fixed at the center of the coordinate system. This makes observing the perturbations of the Sun on the Moon in its orbit around Earth easier to observe, while also revealing the peculiar nature of resonant orbits, like that of Cruithne, a quasi Moon of Earth."
         />
       </label>
-      <Dropdown>
+      <Dropdown selectedOption={props.scenario.rotatingReferenceFrame}>
+        <div
+          name="Origo"
+          key="Origo"
+          callback={() =>
+            props.modifyScenarioProperty({
+              key: 'rotatingReferenceFrame',
+              value: 'Origo'
+            })
+          }
+        >
+          Origo
+        </div>
         {props.scenario.masses.map(mass => (
           <div
             name={mass.name}
@@ -112,7 +124,7 @@ export default function(props) {
           content="Select the position of the camera. If the position is set to free, you can zoom in on and orbit around the focus of the camera with your mouse or touch screen."
         />
       </label>
-      <Dropdown>
+      <Dropdown selectedOption={props.scenario.cameraPosition}>
         <div
           name="Free"
           key="Free"
@@ -147,7 +159,7 @@ export default function(props) {
           content="Select the focus of the camera, or in other words, what the camera should be looking at."
         />
       </label>
-      <Dropdown>
+      <Dropdown selectedOption={props.scenario.cameraFocus}>
         <div
           name="Origo"
           key="Origo"

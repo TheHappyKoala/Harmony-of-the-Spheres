@@ -16,7 +16,7 @@ export default function(props) {
           content="Change the mass being modified. Parameters that you can modify include the mass off the mass and its state vectors."
         />
       </label>
-      <Dropdown>
+      <Dropdown selectedOption={props.scenario.massBeingModified}>
         {props.scenario.masses.map(mass => (
           <div
             name={mass.name}
