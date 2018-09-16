@@ -6,6 +6,7 @@ import martianSystem from './martianSystem';
 import newHorizons from './newHorizons';
 import cruithne from './cruithne';
 import planetNine from './planetNine';
+import rh120 from './rh120';
 
 export const scenarios = [
   jovianSystem,
@@ -15,7 +16,8 @@ export const scenarios = [
   martianSystem,
   newHorizons,
   cruithne,
-  planetNine
+  planetNine,
+  rh120
 ];
 
 export default function(scenario) {
