@@ -26,6 +26,21 @@ export default class extends Component {
     this.setState({ ...this.state, displayAllOptions });
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextProps.selectedOption !== undefined) {
+      if (nextProps.selectedOption !== this.props.selectedOption)
+        return true;      
+    } else {
+      if (nextState.selectedOption !== this.state.selectedOption)
+        return true;
+    }
+
+    if (nextState.displayAllOptions !== this.state.displayAllOptions)
+      return true;   
+        
+    return false;
+  }
+
   render() {
     const options = React.Children.map(this.props.children, child =>
       React.cloneElement(child, {
