@@ -22,7 +22,11 @@ export default class extends MassManifestation {
     loader.load(
       `./models/${massNameLowerCase}/${massNameLowerCase}.dae`,
       collada => {
-        collada.scene.scale.set(0.0005, 0.0005, 0.0005);
+        collada.scene.scale.set(
+          this.mass.radius,
+          this.mass.radius,
+          this.mass.radius
+        );
 
         container.add(collada.scene);
       }

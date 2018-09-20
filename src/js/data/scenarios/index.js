@@ -7,6 +7,7 @@ import newHorizons from './newHorizons';
 import cruithne from './cruithne';
 import planetNine from './planetNine';
 import rh120 from './rh120';
+import ulysses from './ulysses';
 
 export const scenarios = [
   jovianSystem,
@@ -17,7 +18,8 @@ export const scenarios = [
   newHorizons,
   cruithne,
   planetNine,
-  rh120
+  rh120,
+  ulysses
 ];
 
 export default function(scenario) {
