@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Modal from '../Modal';
 import GlobalInputs from '../GlobalInputs';
 import MassInputs from '../MassInputs';
 import Renderer from '../Renderer';
@@ -13,7 +14,8 @@ export default class extends Component {
 
     this.state = {
       displayGlobalInputs: true,
-      displayMassInputs: true
+      displayMassInputs: true,
+      displayCredits: false     
     };
   }
 
@@ -89,6 +91,69 @@ export default class extends Component {
                 this.displayComponent('displayMassInputs')
               }
             />
+          )}
+        </ReactCSSTransitionGroup>
+        <div onClick={() => this.displayComponent('displayCredits')} className="display-credits">
+          <h3>Credits</h3>
+        </div>
+        <ReactCSSTransitionGroup
+          transitionName="fade"
+          transitionEnterTimeout={250}
+          transitionLeaveTimeout={250}
+        >
+          {this.state.displayCredits && (
+            <Modal callback={() => this.displayComponent('displayCredits')}>
+              <h1>Credits</h1>
+              <p className="credit-item">
+                <b>&#187; </b>Programming by Darrell A. Huffman.
+              </p>
+              <p className="credit-item">
+                <b>&#187; </b>
+                <a
+                  href="http://www.feynmanlectures.caltech.edu/I_toc.html"
+                  target="blank"
+                >
+                  Volume One of the Feynman Lectures on Physics
+                </a>{' '}
+                helped me wrap my head around the gravitational n-body problem
+                and Newtonian mechanics.
+              </p>
+              <p className="credit-item">
+                <b>&#187; </b>
+                <a href="https://nasa3d.arc.nasa.gov/models" target="blank">
+                  Spacecraft 3D models
+                </a>{' '}
+                curtsey of NASA.
+              </p>
+              <p className="credit-item">
+                <b>&#187; </b>
+                <a href="http://planetpixelemporium.com/" target="blank">
+                  Planet textures
+                </a>{' '}
+                curtsey of James Hastings-Trew.
+              </p>
+              <p className="credit-item">
+                <b>&#187; </b>
+                State Vectors for solar system bodies were obtained from{' '}
+                <a href="https://ssd.jpl.nasa.gov/horizons.cgi" target="blank">
+                  NASA JPL
+                </a>.
+              </p>
+              <p className="credit-item">
+                <b>&#187; </b>
+                Uhoh and Christo at{' '}
+                <a href="https://space.stackexchange.com/" target="blank">
+                  space.stackexchange.com
+                </a>{' '}
+                helped me figure out how to implement the rotating reference
+                frame feature.
+              </p>
+              <p className="credit-item">
+                <b>&#187; </b>
+                Last, but not least, I would like to credit the Universe for
+                being awesomely weird and thought provoking!
+              </p>
+            </Modal>
           )}
         </ReactCSSTransitionGroup>
       </div>

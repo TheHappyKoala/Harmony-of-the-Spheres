@@ -77,6 +77,30 @@ h1, h2, h3, h4 {
   font-family: 'Orbitron', sans-serif;
 }
 
+.display-credits {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: @primary;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: @fat-padding;
+  cursor: pointer;
+  border: @border;
+}
+
+.credit-item {
+  font-size: 1.1em;
+  margin-left: 10px;   
+  margin-top: 16px;
+}
+
+.credit-item a {
+  font-size: 1.2em;
+  color: lightblue;
+}
+
 .slide-vertical-enter {
   bottom: 93%;
   overflow: hidden;
