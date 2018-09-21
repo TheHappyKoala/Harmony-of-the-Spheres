@@ -15,7 +15,7 @@ export default class extends Component {
     this.state = {
       displayGlobalInputs: true,
       displayMassInputs: true,
-      displayCredits: false     
+      displayCredits: false
     };
   }
 
@@ -93,7 +93,10 @@ export default class extends Component {
             />
           )}
         </ReactCSSTransitionGroup>
-        <div onClick={() => this.displayComponent('displayCredits')} className="display-credits">
+        <div
+          onClick={() => this.displayComponent('displayCredits')}
+          className="display-credits"
+        >
           <h3>Credits</h3>
         </div>
         <ReactCSSTransitionGroup
@@ -141,12 +144,11 @@ export default class extends Component {
               </p>
               <p className="credit-item">
                 <b>&#187; </b>
-                Uhoh and Christo at{' '}
+                The kind folks at{' '}
                 <a href="https://space.stackexchange.com/" target="blank">
-                  space.stackexchange.com
+                   space.stackexchange.com
                 </a>{' '}
-                helped me figure out how to implement the rotating reference
-                frame feature.
+                for kindly providing answers and feedback that helped me in the development of this application.
               </p>
               <p className="credit-item">
                 <b>&#187; </b>
