@@ -5,7 +5,7 @@ import './Tooltip.less';
 export default class extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = { display: false, position: { top: 0, left: 0 } };
   }
 
@@ -51,6 +51,12 @@ export default class extends Component {
   };
 
   handleMouseOut = () => this.setState({ display: false });
+
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextState.display !== this.state.display) return true;
+
+    return false;
+  }
 
   render() {
     const tipStyles = {
