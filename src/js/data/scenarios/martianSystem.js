@@ -16,7 +16,8 @@ export default {
   labels: true,
   rotatingReferenceFrame: 'Mars',
   cameraPosition: 'Free',
-  cameraFocus: 'Mars',
+  cameraFocus: 'Origo',
+  freeOrigoZ: 5,
   massBeingModified: 'Mars',
   masses: [
     {

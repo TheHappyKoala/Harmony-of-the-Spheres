@@ -17,7 +17,8 @@ export default {
   iteration: 0,
   rotatingReferenceFrame: 'Earth',
   cameraPosition: 'Free',
-  cameraFocus: 'Earth',
+  cameraFocus: 'Origo',
+  freeOrigoZ: 500,
   massBeingModified: 'Sun',
   masses: [
     {

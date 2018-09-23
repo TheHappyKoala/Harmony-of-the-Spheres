@@ -16,7 +16,8 @@ export default {
   labels: true,
   rotatingReferenceFrame: 'Earth',
   cameraPosition: 'Free',
-  cameraFocus: 'Earth',
+  cameraFocus: 'Origo',
+  freeOrigoZ: 40,
   massBeingModified: 'Sun',
   masses: [
     {

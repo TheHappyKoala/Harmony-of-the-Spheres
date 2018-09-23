@@ -109,6 +109,7 @@ export default {
       rotatingReferenceFrame,
       cameraPosition,
       cameraFocus,
+      freeOrigoZ,
       dt
     } = this.scenario;
 
@@ -137,9 +138,9 @@ export default {
     else this.camera.controls.enabled = false;
 
     this.labels.clearRect(0, 0, this.w, this.h);
+    const origo = new THREE.Vector3(0, 0, 0);    
 
     if (cameraFocus === 'Origo') {
-      const origo = new THREE.Vector3(0, 0, 0);
 
       if (cameraPosition !== 'Free') this.camera.lookAt(origo);
       else this.camera.controls.target = origo;
@@ -149,9 +150,9 @@ export default {
       this.previousCameraFocus = cameraFocus;
 
       if (cameraPosition === 'Free') {
-        this.camera.position.set(0, 0, 5);
+        this.camera.position.set(0, 0, freeOrigoZ);
 
-        this.camera.lookAt(new THREE.Vector3(0, 0, 0));
+        this.camera.lookAt(origo);   
       }
     }
 

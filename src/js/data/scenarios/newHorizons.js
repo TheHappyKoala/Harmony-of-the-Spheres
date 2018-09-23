@@ -15,6 +15,7 @@ export default {
   rotatingReferenceFrame: 'Sun',
   cameraPosition: 'Free',
   cameraFocus: 'New Horizons',
+  freeOrigoZ: '800',
   massBeingModified: 'Sun',
   masses: [
     {
@@ -124,7 +125,7 @@ export default {
       trailVertices: 2e4
     },
     {
-      name: 'Neptune',   
+      name: 'Neptune',
       m: 5.149e-5,
       color: 'blue',
       x: 26.3776735181941,

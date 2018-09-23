@@ -4,7 +4,7 @@ export default {
   g: 39.5,
   law: 1.5,
   dt: 1.5,
-  scale: 1.5,
+  scale: 1,
   distMax: 1000,
   collisions: true,
   distMin: -1000,
@@ -16,7 +16,8 @@ export default {
   labels: true,
   rotatingReferenceFrame: 'Sun',
   cameraPosition: 'Free',
-  cameraFocus: 'Sun',
+  cameraFocus: 'Origo',
+  freeOrigoZ: 2700,
   massBeingModified: 'Sun',
   masses: [
     {
@@ -168,7 +169,7 @@ export default {
       vy: 0.0025616755803073007,
       vz: 4.3659300823695635e-6,
       trailVertices: 2e4,
-      radius: 4
+      radius: 2
     }
   ]
 };

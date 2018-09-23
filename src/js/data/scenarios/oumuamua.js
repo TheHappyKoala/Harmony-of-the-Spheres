@@ -14,7 +14,8 @@ export default {
   collisions: true,
   rotatingReferenceFrame: 'Sun',
   cameraPosition: 'Free',
-  cameraFocus: 'Oumuamua',
+  cameraFocus: 'Origo',
+  freeOrigoZ: 5000,
   massBeingModified: 'Sun',
   masses: [
     {

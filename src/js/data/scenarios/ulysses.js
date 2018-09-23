@@ -15,6 +15,7 @@ export default {
   rotatingReferenceFrame: 'Sun',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
+  freeOrigoZ: 1700,
   massBeingModified: 'Sun',
   masses: [
     {
