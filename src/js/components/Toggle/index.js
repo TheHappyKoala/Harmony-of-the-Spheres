@@ -8,7 +8,6 @@ export default class extends Component {
     return false;
   }
   render() {
-    console.log('fart');
     return (
       <label className="toggle top">
         {this.props.label}
