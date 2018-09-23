@@ -8,13 +8,14 @@ export function getScenario(name) {
   };
 }
 
-export function modifyScenarioProperty(payload) {
-  return {
-    type: scenarioActionTypes.MODIFY_SCENARIO_PROPERTY,
-    payload: {
-      key: payload.key,
-      value: payload.value
-    }
+export function modifyScenarioProperty(...args) {
+  return dispatch => {
+    args.forEach(arg =>
+      dispatch({
+        type: scenarioActionTypes.MODIFY_SCENARIO_PROPERTY,
+        payload: { key: arg.key, value: arg.value }
+      })
+    );
   };
 }
 
