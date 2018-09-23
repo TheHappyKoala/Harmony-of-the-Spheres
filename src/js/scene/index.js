@@ -128,7 +128,8 @@ export default {
     if (playing)
       this.system
         .updatePositionVectors()
-        .updateVelocityVectors(detectedCollisions, this.registerCollision);
+        .updateVelocityVectors(detectedCollisions, this.registerCollision)
+        .incrementElapsedTime();
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
@@ -138,10 +139,9 @@ export default {
     else this.camera.controls.enabled = false;
 
     this.labels.clearRect(0, 0, this.w, this.h);
-    const origo = new THREE.Vector3(0, 0, 0);    
+    const origo = new THREE.Vector3(0, 0, 0);
 
     if (cameraFocus === 'Origo') {
-
       if (cameraPosition !== 'Free') this.camera.lookAt(origo);
       else this.camera.controls.target = origo;
     }
@@ -152,7 +152,7 @@ export default {
       if (cameraPosition === 'Free') {
         this.camera.position.set(0, 0, freeOrigoZ);
 
-        this.camera.lookAt(origo);   
+        this.camera.lookAt(origo);
       }
     }
 
@@ -247,10 +247,16 @@ export default {
 
   updateScenario() {
     store.dispatch(
-      modifyScenarioProperty({
-        key: 'masses',
-        value: this.system.masses
-      })
+      modifyScenarioProperty(
+        {
+          key: 'masses',
+          value: this.system.masses
+        },
+        {
+          key: 'elapsedTime',
+          value: this.system.elapsedTime
+        }
+      )
     );
   },
 

@@ -5,6 +5,7 @@ export default {
   g: 39.5,
   law: 1.5,
   dt: 9e-7,
+  elapsedTime: 0,
   scale: 4e3,
   distMax: 3.13640827776e-4,
   distMin: -3.13640827776e-4,

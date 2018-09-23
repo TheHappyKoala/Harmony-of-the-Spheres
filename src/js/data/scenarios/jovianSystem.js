@@ -4,6 +4,7 @@ export default {
   g: 39.5,
   dt: 0.000009,
   scale: 300,
+  elapsedTime: 0,
   trails: true,
   labels: true,
   collisions: true,

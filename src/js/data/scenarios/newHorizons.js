@@ -4,6 +4,7 @@ export default {
   law: 1.5,
   dt: 0.001,
   scale: 8,
+  elapsedTime: 0,
   distMax: 60,
   distMin: -60,
   distStep: 0.1,

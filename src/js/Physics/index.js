@@ -8,6 +8,8 @@ export default class {
 
     this.scale = params.scale;
 
+    this.elapsedTime = 0;
+
     this.leapfrog();
   }
 
@@ -105,5 +107,9 @@ export default class {
     }
 
     return this;
+  }
+
+  incrementElapsedTime() {
+    this.elapsedTime += this.dt;
   }
 }

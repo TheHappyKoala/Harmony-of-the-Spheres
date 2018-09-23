@@ -31,6 +31,11 @@ export default function(props) {
           </NavLink>
         ))}
       </Dropdown>
+      <div className="elapsed-time-wrapper">
+        <p>{`Time Elapsed (Years): ${props.scenario.elapsedTime.toFixed(
+          4
+        )}`}</p>
+      </div>
       {!props.scenario.playing && (
         <Button
           callback={() =>

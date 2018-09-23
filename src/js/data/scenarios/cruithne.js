@@ -5,6 +5,7 @@ export default {
   law: 1.5,
   dt: 8e-4,
   scale: 100,
+  elapsedTime: 0,
   distMax: 0.00713911058,
   collisions: true,
   distMin: -0.00713911058,
