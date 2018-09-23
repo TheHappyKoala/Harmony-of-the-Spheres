@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Toggle.less';
 
-export default function(props) {
-  return (
-    <label className="toggle top">
-      {props.label}
-      <input
-        type="checkbox"
-        checked={props.checked}
-        onChange={props.callback}
-      />
-      <span />
-    </label>
-  );
+export default class extends Component {
+  shouldComponentUpdate(nextProps) {
+    if (nextProps.checked !== this.props.checked) return true;
+
+    return false;
+  }
+  render() {
+    console.log('fart');
+    return (
+      <label className="toggle top">
+        {this.props.label}
+        <input
+          type="checkbox"
+          checked={this.props.checked}
+          onChange={this.props.callback}
+        />
+        <span />
+      </label>
+    );
+  }
 }
