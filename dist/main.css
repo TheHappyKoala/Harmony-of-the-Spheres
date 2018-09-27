@@ -957,6 +957,13 @@ h4 {
   border-top: none;
   border-left: none;
 }
+.elapsed-time-wrapper {
+  width: inherit;
+  background-color: #191919;
+  border: 1px solid #545454;
+  padding: 5px;
+  margin-top: 15px;
+}
 .absolute {
   position: absolute;
 }
