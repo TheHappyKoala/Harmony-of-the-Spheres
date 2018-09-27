@@ -28,16 +28,14 @@ export default class extends Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     if (nextProps.selectedOption !== undefined) {
-      if (nextProps.selectedOption !== this.props.selectedOption)
-        return true;      
+      if (nextProps.selectedOption !== this.props.selectedOption) return true;
     } else {
-      if (nextState.selectedOption !== this.state.selectedOption)
-        return true;
+      if (nextState.selectedOption !== this.state.selectedOption) return true;
     }
 
     if (nextState.displayAllOptions !== this.state.displayAllOptions)
-      return true;   
-        
+      return true;
+
     return false;
   }
 

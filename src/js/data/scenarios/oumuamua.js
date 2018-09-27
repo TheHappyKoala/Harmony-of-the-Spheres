@@ -1,5 +1,6 @@
 export default {
   name: 'Oumuamua - Visitor From Afar',
+  integrator: 'RK4',
   g: 39.5,
   dt: 0.001,
   scale: 200,

@@ -146,9 +146,10 @@ export default class extends Component {
                 <b>&#187; </b>
                 The kind folks at{' '}
                 <a href="https://space.stackexchange.com/" target="blank">
-                   space.stackexchange.com
+                  space.stackexchange.com
                 </a>{' '}
-                for kindly providing answers and feedback that helped me in the development of this application.
+                for kindly providing answers and feedback that helped me in the
+                development of this application.
               </p>
               <p className="credit-item">
                 <b>&#187; </b>

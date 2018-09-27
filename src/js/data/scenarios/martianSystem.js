@@ -1,5 +1,6 @@
 export default {
   name: 'The Sun and the Martian System',
+  integrator: 'RK4',
   playing: false,
   collisions: true,
   g: 39.5,

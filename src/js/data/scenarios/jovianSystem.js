@@ -1,5 +1,6 @@
 export default {
   name: 'The Sun and the Jovian System',
+  integrator: 'RK4',
   playing: false,
   g: 39.5,
   dt: 0.000009,

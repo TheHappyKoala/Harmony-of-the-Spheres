@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import store from '../store';
 import { modifyScenarioProperty } from '../action-creators/scenario';
-import nBodyProblem from '../Physics';
+import getIntegrator from '../Physics';
 import arena from './arena';
 import Camera from './Camera';
 import label from './label';
@@ -43,17 +43,18 @@ export default {
 
     this.previousCameraFocus = null;
     this.previousRotatingReferenceFrame = null;
+    this.previousIntegrator = this.scenario.integrator;
 
     this.scene.add(new THREE.AmbientLight(0x404040, 1.6), arena());
 
     this.massManifestations = [];
 
-    this.system = new nBodyProblem({
+    this.system = getIntegrator(this.scenario.integrator, {
       g: this.scenario.g,
       dt: this.scenario.dt,
       masses: this.scenario.masses,
       scale: this.scenario.scale,
-      collisions: true
+      collisions: this.scenario.collisions
     });
 
     this.addManifestations();
@@ -104,14 +105,28 @@ export default {
     const {
       playing,
       scale,
+      collisions,
       trails,
       labels,
       rotatingReferenceFrame,
       cameraPosition,
       cameraFocus,
       freeOrigoZ,
-      dt
+      dt,
+      integrator
     } = this.scenario;
+
+    if (integrator !== this.previousIntegrator) {
+      this.system = getIntegrator(integrator, {
+        g: this.scenario.g,
+        dt,
+        masses: this.scenario.masses,
+        scale,
+        collisions
+      });
+
+      this.previousIntegrator = integrator;
+    }
 
     let frameOfRef;
 
@@ -126,10 +141,7 @@ export default {
     const detectedCollisions = {};
 
     if (playing)
-      this.system
-        .updatePositionVectors()
-        .updateVelocityVectors(detectedCollisions, this.registerCollision)
-        .incrementElapsedTime();
+      this.system.iterate(detectedCollisions, this.registerCollision);
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 

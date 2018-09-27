@@ -1,5 +1,6 @@
 export default {
   name: 'Journey to Pluto - New Horizons',
+  integrator: 'RK4',
   g: 39.5,
   law: 1.5,
   dt: 0.001,

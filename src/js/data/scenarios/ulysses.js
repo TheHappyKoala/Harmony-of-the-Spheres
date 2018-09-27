@@ -1,5 +1,6 @@
 export default {
   name: 'Ulysses - Leaving the Ecliptic',
+  integrator: 'RK4',
   g: 39.5,
   law: 1.5,
   dt: 0.0004,

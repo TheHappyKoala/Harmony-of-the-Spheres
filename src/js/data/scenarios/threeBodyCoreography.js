@@ -1,5 +1,6 @@
 export default {
   name: 'Three Body Coreography',
+  integrator: 'RK4',
   playing: false,
   g: 100,
   dt: 0.01,

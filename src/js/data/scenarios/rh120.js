@@ -1,5 +1,6 @@
 export default {
   name: '2006 RH120 - Temporary Moon of Earth',
+  integrator: 'RK4',
   playing: false,
   g: 39.5,
   law: 1.5,

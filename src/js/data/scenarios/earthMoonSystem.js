@@ -1,5 +1,6 @@
 export default {
   name: 'The Sun, Earth and Moon System',
+  integrator: 'RK4',
   playing: false,
   g: 39.5,
   law: 1.5,

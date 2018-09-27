@@ -6,6 +6,7 @@ import Slider from '../Slider';
 import Button from '../Button';
 import Tooltip from '../Tooltip';
 import { scenarios } from '../../data/scenarios';
+import { integrators } from '../../Physics';
 import play from '../../../icons/play.png';
 import pause from '../../../icons/pause.png';
 import './GlobalInputs.less';
@@ -57,6 +58,29 @@ export default function(props) {
           <img src={pause} alt="pause" />
         </Button>
       )}
+      <label className="top">
+        Integrator
+        <Tooltip
+          position="right"
+          content="Select the scenario that you want to simulate. Options range from the Jovian system to a beautiful three-body coreography."
+        />
+      </label>
+      <Dropdown selectedOption={props.scenario.integrator}>
+        {integrators.map(integrator => (
+          <div
+            name={integrator}
+            key={integrator}
+            callback={() =>
+              props.modifyScenarioProperty({
+                key: 'integrator',
+                value: integrator
+              })
+            }
+          >
+            {integrator}
+          </div>
+        ))}
+      </Dropdown>
       <Toggle
         label="Trails"
         checked={props.scenario.trails}

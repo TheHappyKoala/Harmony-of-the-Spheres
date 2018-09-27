@@ -1,5 +1,6 @@
 export default {
   name: 'Planet Nine and the Detached Objects',
+  integrator: 'RK4',
   playing: false,
   g: 39.5,
   law: 1.5,
