@@ -235,6 +235,25 @@ export default function(props) {
         min={-200}
         step={0.5}
       />
+      <label className="top">
+        Time Step
+        <Tooltip
+          position="right"
+          content="The time step is the time that elapses for each tick of the simulation. A lower time step makes for a more accurate simulation. If you assign a negativevalue to the time step, the simulation will run backwards in time instead of forwards."
+        />
+      </label>
+      <Slider
+        val={props.scenario.dt}
+        callback={e =>
+          props.modifyScenarioProperty({
+            key: 'dt',
+            value: parseFloat(e.target.value)
+          })
+        }
+        max={3}
+        min={-3}
+        step={0.000000000000001}
+      />
     </div>
   );
 }

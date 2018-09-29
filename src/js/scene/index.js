@@ -253,6 +253,7 @@ export default {
     this.system.g = this.scenario.g;
     this.system.masses = this.scenario.masses;
     this.system.collisions = this.scenario.collisions;
+    this.system.dt =  this.scenario.dt;
 
     return this;
   },
