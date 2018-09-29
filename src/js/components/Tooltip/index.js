@@ -53,7 +53,12 @@ export default class extends Component {
   handleMouseOut = () => this.setState({ display: false });
 
   shouldComponentUpdate(nextProps, nextState) {
-    if (nextState.display !== this.state.display) return true;
+    if (
+      nextState.display !== this.state.display ||
+      nextState.position.top !== this.state.position.top ||
+      nextState.position.left !== this.state.position.left
+    )
+      return true;
 
     return false;
   }
