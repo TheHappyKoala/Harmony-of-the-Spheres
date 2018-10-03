@@ -68,14 +68,9 @@ export default function(props) {
                 />
               </label>
               <Slider
-                val={mass.x}
-                callback={e =>
-                  props.modifyMassProperty({
-                    name: mass.name,
-                    key: 'x',
-                    value: parseFloat(e.target.value)
-                  })
-                }
+                payload={{ name: mass.name, key: 'x' }}
+                value={mass.x}
+                callback={props.modifyMassProperty}
                 max={props.scenario.distMax}
                 min={props.scenario.distMin}
                 step={props.scenario.distStep}
@@ -88,14 +83,9 @@ export default function(props) {
                 />
               </label>
               <Slider
-                val={mass.y}
-                callback={e =>
-                  props.modifyMassProperty({
-                    name: mass.name,
-                    key: 'y',
-                    value: parseFloat(e.target.value)
-                  })
-                }
+                payload={{ name: mass.name, key: 'y' }}
+                value={mass.y}
+                callback={props.modifyMassProperty}
                 max={props.scenario.distMax}
                 min={props.scenario.distMin}
                 step={props.scenario.distStep}
@@ -108,14 +98,10 @@ export default function(props) {
                 />
               </label>
               <Slider
-                val={mass.z}
-                callback={e =>
-                  props.modifyMassProperty({
-                    name: mass.name,
-                    key: 'z',
-                    value: parseFloat(e.target.value)
-                  })
-                }
+                payload={{ name: mass.name, key: 'z' }}
+                property="z"
+                value={mass.z}
+                callback={props.modifyMassProperty}
                 max={props.scenario.distMax}
                 min={props.scenario.distMin}
                 step={props.scenario.distStep}
@@ -128,14 +114,9 @@ export default function(props) {
                 />
               </label>
               <Slider
-                val={mass.vx}
-                callback={e =>
-                  props.modifyMassProperty({
-                    name: mass.name,
-                    key: 'vx',
-                    value: parseFloat(e.target.value)
-                  })
-                }
+                payload={{ name: mass.name, key: 'vx' }}
+                value={mass.vx}
+                callback={props.modifyMassProperty}
                 max={props.scenario.velMax}
                 min={props.scenario.velMin}
                 step={props.scenario.velStep}
@@ -148,14 +129,9 @@ export default function(props) {
                 />
               </label>
               <Slider
-                val={mass.vy}
-                callback={e =>
-                  props.modifyMassProperty({
-                    name: mass.name,
-                    key: 'vy',
-                    value: parseFloat(e.target.value)
-                  })
-                }
+                payload={{ name: mass.name, key: 'vy' }}
+                value={mass.vy}
+                callback={props.modifyMassProperty}
                 max={props.scenario.velMax}
                 min={props.scenario.velMin}
                 step={props.scenario.velStep}
@@ -168,14 +144,9 @@ export default function(props) {
                 />
               </label>
               <Slider
-                val={mass.vz}
-                callback={e =>
-                  props.modifyMassProperty({
-                    name: mass.name,
-                    key: 'vz',
-                    value: parseFloat(e.target.value)
-                  })
-                }
+                payload={{ name: mass.name, key: 'vz' }}
+                value={mass.vz}
+                callback={props.modifyMassProperty}
                 max={props.scenario.velMax}
                 min={props.scenario.velMin}
                 step={props.scenario.velStep}

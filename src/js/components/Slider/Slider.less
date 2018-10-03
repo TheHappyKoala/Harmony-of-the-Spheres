@@ -1,10 +1,21 @@
 @import '../App/App.less';    
 
+.slider-wrapper {
+  overflow: hidden;
+}
+
+.range-wrapper {
+  width: 90%;
+  height: 50px;
+  float: left;
+}
+
 input.slider[type="range"] {
   -webkit-appearance: none;
   width: 100%;
   background: @input;
   border: @border;
+  height: 25px;
   padding: @skinny-padding;
 }
 
@@ -18,15 +29,37 @@ input.slider[type="range"]::-webkit-slider-thumb {
 }
 
 input.slider[type="range"]:focus {
-  outline:none;
+  outline: none;
 }
 
 .slider-value {
   padding: @skinny-padding;
+  height: 25px;
   border: @border;
   border-bottom: none;
   width: 100%;
   text-align: center;
   overflow: hidden;
   background-color: @input;
+}
+
+.spinner-wrapper {
+  height: 50px;
+  width: 10%;
+  float: left;
+}
+
+.spinner-wrapper button {
+  background-color: #000;
+  height: 25px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: @border;
+  border-left: none;
+  color: #fff;
+}
+
+.spinner-wrapper button:first-child {
+  border-bottom: none;
 }

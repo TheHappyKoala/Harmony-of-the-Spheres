@@ -224,13 +224,9 @@ export default function(props) {
         />
       </label>
       <Slider
-        val={props.scenario.g}
-        callback={e =>
-          props.modifyScenarioProperty({
-            key: 'g',
-            value: e.target.value
-          })
-        }
+        payload={{ key: 'g' }}
+        value={props.scenario.g}
+        callback={props.modifyScenarioProperty}
         max={200}
         min={-200}
         step={0.5}
@@ -243,13 +239,9 @@ export default function(props) {
         />
       </label>
       <Slider
-        val={props.scenario.dt}
-        callback={e =>
-          props.modifyScenarioProperty({
-            key: 'dt',
-            value: parseFloat(e.target.value)
-          })
-        }
+        payload={{ key: 'dt' }}
+        value={props.scenario.dt}
+        callback={props.modifyScenarioProperty}
         max={3}
         min={-3}
         step={0.000000000000001}
