@@ -45,7 +45,7 @@ export default {
     this.previousRotatingReferenceFrame = null;
     this.previousIntegrator = this.scenario.integrator;
 
-    this.scene.add(new THREE.AmbientLight(0x404040, 1.6), arena());
+    this.scene.add(arena());
 
     this.massManifestations = [];
 
@@ -253,7 +253,7 @@ export default {
     this.system.g = this.scenario.g;
     this.system.masses = this.scenario.masses;
     this.system.collisions = this.scenario.collisions;
-    this.system.dt =  this.scenario.dt;
+    this.system.dt = this.scenario.dt;
 
     return this;
   },

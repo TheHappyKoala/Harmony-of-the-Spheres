@@ -24,7 +24,7 @@ export default class extends MassManifestation {
 
     corona.scale.set(scaledRadius, scaledRadius, scaledRadius);
 
-    const light = new THREE.PointLight(0xffffff, 3, 0);
+    const light = new THREE.PointLight(0xffffff, 2, 0);
     light.position.set(0, 0, 0);
     light.color.setHSL(0.55, 0.1, 0.5);
 
