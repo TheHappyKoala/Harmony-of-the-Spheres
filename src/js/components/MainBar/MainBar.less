@@ -1,0 +1,33 @@
+@import '../App/App.less';    
+
+.main-bar {
+  position: fixed;
+  top: 0;
+  bottom: calc(100% - (7px + (2 * @fat-padding)));
+  left: 0;
+  right: 0;
+  background-color: @primary;
+  padding: @skinny-padding;
+  border-bottom: @border;
+  .item {
+    position: relative;
+  }
+  .scenario-dropdown-wrapper {
+    width: 260px;
+    margin-left: 7px;
+  }
+  .play-state-wrapper {
+    margin-left: 15px;
+  }
+  i {
+    cursor: pointer;
+  }
+  .elapsed-time-wrapper {
+    width: 150px;
+    margin-left: 15px;
+    .elapsed-time {
+      margin-left: 5px;
+      font-weight: bold;
+    }
+  }
+}

@@ -57,6 +57,7 @@ export default class extends Component {
             {this.props.selectedOption !== undefined
               ? this.props.selectedOption
               : this.state.selectedOption}
+            <i className="fa fa-chevron-circle-down fa-lg" />
           </div>
           {this.state.displayAllOptions && (
             <div className="options">{options}</div>

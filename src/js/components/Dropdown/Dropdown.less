@@ -10,12 +10,15 @@
   border: @border;
   padding: @skinny-padding;
   cursor: pointer;
+  i {
+    float: right;
+  }
 }
 
 .options {
   .absolute();
   z-index: 2;
-  width: calc(100% - 2 * @fat-padding);
+  width: 100%;
   background-color: @input;
   border: @border;
   border-top: none;
