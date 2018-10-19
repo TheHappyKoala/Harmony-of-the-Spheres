@@ -53,8 +53,7 @@ export default {
       g: this.scenario.g,
       dt: this.scenario.dt,
       masses: this.scenario.masses,
-      scale: this.scenario.scale,
-      collisions: this.scenario.collisions
+      scale: this.scenario.scale
     });
 
     this.addManifestations();
@@ -105,7 +104,6 @@ export default {
     const {
       playing,
       scale,
-      collisions,
       trails,
       labels,
       rotatingReferenceFrame,
@@ -121,8 +119,7 @@ export default {
         g: this.scenario.g,
         dt,
         masses: this.scenario.masses,
-        scale,
-        collisions
+        scale
       });
 
       this.previousIntegrator = integrator;
@@ -138,10 +135,7 @@ export default {
           frameOfRef = this.system.masses[i];
     }
 
-    const detectedCollisions = {};
-
-    if (playing)
-      this.system.iterate(detectedCollisions, this.registerCollision);
+    if (playing) this.system.iterate();
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
@@ -180,9 +174,6 @@ export default {
       let vx = (frameOfRef.vx - mass.vx) * scale;
       let vy = (frameOfRef.vy - mass.vy) * scale;
       let vz = (frameOfRef.vz - mass.vz) * scale;
-
-      if (detectedCollisions[name] != undefined)
-        massManifestation.createExplosion(scale);
 
       massManifestation.draw(x, y, z);
 
@@ -252,7 +243,6 @@ export default {
   updateSystem() {
     this.system.g = this.scenario.g;
     this.system.masses = this.scenario.masses;
-    this.system.collisions = this.scenario.collisions;
     this.system.dt = this.scenario.dt;
 
     return this;
@@ -271,10 +261,6 @@ export default {
         }
       )
     );
-  },
-
-  registerCollision(survivor, target) {
-    target[survivor.name] = survivor.name;
   },
 
   reset() {

@@ -1,6 +1,5 @@
 import React from 'react';
 import Dropdown from '../Dropdown';
-import Toggle from '../Toggle';
 import Slider from '../Slider';
 import Tooltip from '../Tooltip';
 import { integrators } from '../../Physics';
@@ -34,16 +33,6 @@ export default function(props) {
           ))}
         </Dropdown>
       </div>
-      <Toggle
-        label="Collisions"
-        checked={props.collisions}
-        callback={() =>
-          props.modifyScenarioProperty({
-            key: 'collisions',
-            value: !props.scenario.collisions
-          })
-        }
-      />
       <label className="top">
         Gravitational Constant
         <Tooltip

@@ -43,7 +43,7 @@ export default class {
     return this;
   }
 
-  updateVelocityVectors(detectedCollisions, callback) {
+  updateVelocityVectors() {
     let massesLength = this.masses.length;
 
     for (let i = 0; i < massesLength; i++) {
@@ -59,45 +59,11 @@ export default class {
 
           let distanceParams = this.getDistanceParams(massI, massJ);
           let distance = Math.sqrt(distanceParams.dSquared);
+          let fact = this.g * massJ.m / (distanceParams.dSquared * distance);
 
-          if (
-            distance * this.scale < massI.radius + massJ.radius &&
-            this.collisions
-          ) {
-            let survivor;
-            let looserIndex;
-
-            if (massI.m > massJ.m || massI.m === massJ.m) {
-              survivor = massI;
-              looserIndex = j;
-            } else {
-              survivor = massJ;
-              looserIndex = i;
-            }
-
-            survivor.m += this.masses[looserIndex].m;
-
-            callback && callback(survivor, detectedCollisions);
-
-            survivor.vx +=
-              (massI.vx * massI.m + massJ.vx * massJ.m) / (massI.m + massJ.m);
-            survivor.vy +=
-              (massI.vy * massI.m + massJ.vy * massJ.m) / (massI.m + massJ.m);
-            survivor.vz +=
-              (massI.vz * massI.m + massJ.vz * massJ.m) / (massI.m + massJ.m);
-
-            this.masses.splice(looserIndex, 1);
-
-            massesLength -= 1;
-
-            looserIndex--;
-          } else {
-            let fact = this.g * massJ.m / (distanceParams.dSquared * distance);
-
-            ax += distanceParams.dx * fact;
-            ay += distanceParams.dy * fact;
-            az += distanceParams.dz * fact;
-          }
+          ax += distanceParams.dx * fact;
+          ay += distanceParams.dy * fact;
+          az += distanceParams.dz * fact;
         }
       }
 
@@ -109,9 +75,9 @@ export default class {
     return this;
   }
 
-  iterate(detectedCollisions, callback) {
+  iterate() {
     this.updatePositionVectors()
-      .updateVelocityVectors(detectedCollisions, callback)
+      .updateVelocityVectors()
       .incrementElapsedTime();
   }
 
