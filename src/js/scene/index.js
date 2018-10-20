@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import store from '../store';
 import { modifyScenarioProperty } from '../action-creators/scenario';
-import getIntegrator from '../Physics';
+import getIntegrator from '../Physics/Integrators';
 import arena from './arena';
 import Camera from './Camera';
 import label from './label';
@@ -53,7 +53,7 @@ export default {
       g: this.scenario.g,
       dt: this.scenario.dt,
       masses: this.scenario.masses,
-      scale: this.scenario.scale
+      elapsedTime: this.scenario.elapsedTime
     });
 
     this.addManifestations();
@@ -119,7 +119,7 @@ export default {
         g: this.scenario.g,
         dt,
         masses: this.scenario.masses,
-        scale
+        elapsedTime: this.scenario.elapsedTime
       });
 
       this.previousIntegrator = integrator;

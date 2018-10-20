@@ -2,7 +2,7 @@ import React from 'react';
 import Dropdown from '../Dropdown';
 import Slider from '../Slider';
 import Tooltip from '../Tooltip';
-import { integrators } from '../../Physics';
+import { integrators } from '../../Physics/Integrators';
 
 export default function(props) {
   return (
