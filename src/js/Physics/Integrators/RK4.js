@@ -43,8 +43,4 @@ export default class extends Euler {
 
     this.incrementElapsedTime();
   }
-
-  incrementElapsedTime() {
-    this.elapsedTime += this.dt;
-  }
 }
