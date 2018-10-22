@@ -1,5 +1,6 @@
 import * as scenarioActionTypes from '../../action-types/scenario';
 import filterScenarios from '../../data/scenarios';
+import getIdealCircularOrbit from '../../Physics/utils';
 
 export function getScenario(name) {
   return {
@@ -27,6 +28,21 @@ export function modifyMassProperty(payload) {
       key: payload.key,
       value: payload.value
     }
+  };
+}
+
+export function addMass(payload) {
+  return (dispatch, getState) => {
+    const scenario = getState().scenario;
+
+    const primary = scenario.masses.filter(
+      mass => mass.name === payload.primary
+    );
+
+    dispatch({
+      type: scenarioActionTypes.ADD_MASS,
+      payload: getIdealCircularOrbit(primary, payload.secondary, scenario.g)
+    });
   };
 }
 

@@ -8,8 +8,10 @@ export default function(
   switch (action.type) {
     case scenarioActionTypes.GET_SCENARIO:
       return action.scenario;
+
     case scenarioActionTypes.MODIFY_SCENARIO_PROPERTY:
       return { ...state, [action.payload.key]: action.payload.value };
+
     case scenarioActionTypes.MODIFY_MASS_PROPERTY:
       return {
         ...state,
@@ -20,6 +22,10 @@ export default function(
           return mass;
         })
       };
+
+    case scenarioActionTypes.ADD_MASS:
+      return { ...state, masses: [...state.masses, action.payload] };
+
     case scenarioActionTypes.DELETE_MASS: {
       const index = state.masses.map(mass => mass.name).indexOf(action.name);
 
@@ -57,6 +63,7 @@ export default function(
 
       return newState;
     }
+    
     default:
       return state;
   }

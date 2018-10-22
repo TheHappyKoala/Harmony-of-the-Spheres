@@ -14,6 +14,7 @@ export function getIdealCircularOrbit(primary, secondary, g) {
   const vMag = Math.sqrt(g * primary.m / d);
 
   return {
+    ...secondary,
     vx: primary.vx + -dParams.dy * vMag / d,
     vy: primary.vy + dParams.dx * vMag / d,
     vz: primary.vz + dParams.dz * vMag / d
