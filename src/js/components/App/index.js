@@ -21,6 +21,7 @@ class AppContainer extends Component {
         scenario={this.props.scenario}
         modifyScenarioProperty={this.props.modifyScenarioProperty}
         modifyMassProperty={this.props.modifyMassProperty}
+        addMass={this.props.addMass}
         deleteMass={this.props.deleteMass}
       />
     );
@@ -39,6 +40,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(scenarioActionCreators.modifyScenarioProperty(payload)),
     modifyMassProperty: payload =>
       dispatch(scenarioActionCreators.modifyMassProperty(payload)),
+    addMass: payload => dispatch(scenarioActionCreators.addMass(payload)),
     deleteMass: name => dispatch(scenarioActionCreators.deleteMass(name))
   };
 };

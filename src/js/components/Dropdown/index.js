@@ -45,7 +45,6 @@ export default class extends Component {
   }
 
   render() {
-    console.log('Drop down rendering.');
     const options = React.Children.map(this.props.children, child =>
       React.cloneElement(child, {
         onClick: () => {

@@ -63,7 +63,7 @@ export default function(
 
       return newState;
     }
-    
+
     default:
       return state;
   }

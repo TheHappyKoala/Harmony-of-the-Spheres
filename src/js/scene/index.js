@@ -84,17 +84,29 @@ export default {
   },
 
   diffMasses(previousMasses, newMasses) {
-    let i = 0;
+    if (newMasses.length < previousMasses.length) {
+      let i = 0;
 
-    while (i < previousMasses.length) {
-      let entry1 = previousMasses[i];
+      while (i < previousMasses.length) {
+        let entry1 = previousMasses[i];
 
-      if (newMasses.some(entry2 => entry1.name === entry2.name)) ++i;
-      else {
-        previousMasses.splice(i, 1);
+        if (newMasses.some(entry2 => entry1.name === entry2.name)) ++i;
+        else {
+          previousMasses.splice(i, 1);
 
-        this.scene.remove(this.scene.getObjectByName(entry1.name));
+          this.scene.remove(this.scene.getObjectByName(entry1.name));
+        }
       }
+
+      return;
+    }
+
+    if (newMasses.length > previousMasses.length) {
+      let manifestation = new MassManifestation(
+        newMasses[newMasses.length - 1]
+      );
+      this.scene.add(manifestation);
+      this.massManifestations.push(manifestation);
     }
   },
 

@@ -8,6 +8,7 @@ import Physics from '../Content/Physics';
 import Graphics from '../Content/Graphics';
 import Camera from '../Content/Camera';
 import Masses from '../Content/Masses';
+import AddMass from '../Content/AddMass';
 import Credits from '../Content/Credits';
 import './App.less';
 
@@ -63,7 +64,7 @@ export default class extends Component {
               modifyScenarioProperty={this.props.modifyScenarioProperty}
             />
           </div>
-          <div label="Masses" icon="fas fa-globe fa-2x">
+          <div label="Modify Masses" icon="fas fa-globe fa-2x">
             <Masses
               massBeingModified={scenario.massBeingModified}
               masses={scenario.masses}
@@ -76,6 +77,16 @@ export default class extends Component {
               modifyScenarioProperty={this.props.modifyScenarioProperty}
               modifyMassProperty={this.props.modifyMassProperty}
               deleteMass={this.props.deleteMass}
+            />
+          </div>
+          <div label="Add Mass" icon="fas fa-plus-circle fa-2x">
+            <AddMass
+              primary={scenario.primary}
+              distanceStep={scenario.distanceStep}
+              massesAdded={scenario.massesAdded}
+              masses={scenario.masses}
+              addMass={this.props.addMass}
+              modifyScenarioProperty={this.props.modifyScenarioProperty}
             />
           </div>
         </Tabs>
