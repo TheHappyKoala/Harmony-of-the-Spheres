@@ -209,6 +209,8 @@ export default {
             this.camera.position.x += vx * dt;
             this.camera.position.y += vy * dt;
             this.camera.position.z += vz * dt;
+
+            this.camera.controls.update();
           }
         }
       }
