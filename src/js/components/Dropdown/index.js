@@ -28,6 +28,11 @@ export default class extends Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     if (nextProps.selectedOption !== undefined) {
+      if (nextProps.selectedOption.name !== undefined) {
+        if (nextProps.selectedOption.name !== this.props.selectedOption.name)
+          return true;
+      }
+
       if (nextProps.selectedOption !== this.props.selectedOption) return true;
     } else {
       if (nextState.selectedOption !== this.state.selectedOption) return true;
@@ -40,6 +45,7 @@ export default class extends Component {
   }
 
   render() {
+    console.log('Drop down rendering.');
     const options = React.Children.map(this.props.children, child =>
       React.cloneElement(child, {
         onClick: () => {
@@ -55,7 +61,9 @@ export default class extends Component {
         <div>
           <div onClick={this.handleClick} className="selected-option">
             {this.props.selectedOption !== undefined
-              ? this.props.selectedOption
+              ? this.props.selectedOption.name !== undefined
+                ? this.props.selectedOption.name
+                : this.props.selectedOption
               : this.state.selectedOption}
             <i className="fa fa-chevron-circle-down fa-lg" />
           </div>
