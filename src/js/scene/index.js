@@ -232,12 +232,14 @@ export default {
 
       if (labels && cameraPosition !== name)
         label(
-          this.labels,
+          this.labels,    
           this.camera,
           new THREE.Vector3(x, y, z),
           this.w,
           this.h,
-          name
+          name,
+          cameraPosition === 'Free' ? true : false,
+          cameraFocus === name ? true : false
         );
     }
 

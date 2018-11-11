@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 
-export default function(x, y, z, camera, w, h) {
+export default function(x, y, z, camera, w, h, isOrbital, isTarget) {
+  if (isOrbital && isTarget)
+    return { x: w / 2, y: h / 2, z: 0 };
+
   const position = new THREE.Vector3(x, y, z);
   const vector = position.project(camera);
 
