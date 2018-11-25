@@ -22,7 +22,7 @@ export default [
     radius: 24.082568807339452,
     color: 'yellow',
     name: 'Io'
-  },       
+  },
   {
     m: 2.413291634272764e-8,
     radius: 22.477064220183486,
@@ -60,7 +60,13 @@ export default [
     color: 'purple',
     name: 'Pluto'
   },
-  { m: 0, radius: 1.2, type: 'model', color: 'limegreen', name: 'New Horizons' },
+  {
+    m: 0,
+    radius: 1.2,
+    type: 'model',
+    color: 'limegreen',
+    name: 'New Horizons'
+  },
   { m: 0.00005149, radius: 8.027522935779816, color: 'red', name: 'Sedna' },
   { m: 0.00003003, radius: 355.9633027522936, color: 'blue', name: 'Planet 9' },
   { m: 1, radius: 90000, type: 'star', color: 'yellow', name: 'Sun' }

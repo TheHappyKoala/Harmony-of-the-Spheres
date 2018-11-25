@@ -6,6 +6,7 @@ export default [
   { name: 'Phobos to Mars', value: 6.26747e-5 },
   { name: 'Sun to Earth / 10', value: 0.1 },
   { name: 'Sun to Earth / 100', value: 0.01 },
+  { name: 'Sun to Earth * 10', value: 10 },
   { name: 'Moon to Earth / 10', value: 2.56955529e-4 },
   { name: 'Moon to Earth / 100', value: 0.000025695552899999998 },
   { name: 'Io to Jupiter / 10', value: 0.00028189999999999997 },

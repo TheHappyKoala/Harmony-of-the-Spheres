@@ -1,70 +1,51 @@
 export default {
   name: 'Cruithne - Quasi Moon of Earth',
-  integrator: 'RK4',
-  playing: false,
   g: 39.5,
-  law: 1.5,
-  dt: 8e-4,
-  scale: 100,
-  elapsedTime: 0,
+  dt: 20e-5,
   distMax: 0.00713911058,
-  collisions: true,
   distMin: -0.00713911058,
   distStep: 2.3797035266666667e-6,
   velMax: 0.5,
   velMin: -0.5,
   velStep: 5e-6,
-  trails: true,
-  labels: true,
-  iteration: 0,
   rotatingReferenceFrame: 'Earth',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
-  freeOrigoZ: 500,
+  freeOrigoZ: 9950000,
   massBeingModified: 'Sun',
+  primary: 'Sun',
+  distanceStep: { name: 'Sun to Earth / 10', value: 0.1 },
   masses: [
     {
       name: 'Earth',
-      color: 'blue',
-      m: 3.003e-6,
       x: 0.9939017404234283,
       y: 0.1352478854409775,
       z: -5.63711820259021e-5,
       vx: -0.9740470647877054,
       vy: 6.197562901988265,
       vz: 4.1377604204935426e-4,
-      trailVertices: 13e3,
-      radius: 0.1
+      trailVertices: 13e3
     },
     {
       name: 'Sun',
-      type: 'star',
-      color: 'yellow',
-      m: 1,
       x: 0.00257729957449904,
       y: -0.004392340734313888,
       z: -6.978730929619852e-5,
       vx: 0.0029586689261267758,
       vy: 1.3186850299206433e-4,
       vz: -8.036276531728809e-5,
-      trailVertices: 13e3,
-      radius: 2
+      trailVertices: 13e3
     },
     {
       name: 'Cruithne',
       type: 'asteroid',
-      m: 0,
-      color: 'grey',
       x: 1.325865390879866,
       y: 0.2236398242275909,
       z: -0.4321459627915762,
       vx: -2.0878385351253206,
       vy: 3.4644966308419827,
       vz: -0.13743332747043174,
-      label: !0,
-      trail: !0,
-      trailVertices: 13e3,
-      radius: 0.025
+      trailVertices: 13e3
     }
   ]
 };

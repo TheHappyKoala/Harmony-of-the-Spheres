@@ -1,18 +1,12 @@
 export default {
   name: 'Three Body Coreography',
-  integrator: 'RK4',
-  playing: false,
   g: 100,
   dt: 0.01,
-  scale: 0.35,
   elapsedTime: 0,
-  trails: true,
-  labels: true,
-  collisions: true,
   rotatingReferenceFrame: 'Origo',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
-  freeOrigoZ: 120,
+  freeOrigoZ: 800000000,
   massBeingModified: 'Eva',
   distMax: 400,
   distMin: -400,
@@ -20,48 +14,47 @@ export default {
   velMax: 0.5,
   velMin: -0.5,
   velStep: 0.000005,
+  primary: 'Arjuna',
+  distanceStep: { name: 'Sun to Earth / 10', value: 0.1 },
   masses: [
     {
       name: 'Eva',
       type: 'star',
       trailVertices: 220,
-      radius: 0.5,
+      radius: 6000000,
       m: 1e4,
       x: -100,
       y: 0,
       z: 0,
       vx: 34.7111,
       vy: 53.2728,
-      vz: 0,
-      color: 'red'
+      vz: 0
     },
     {
       name: 'Sarada',
       type: 'star',
       trailVertices: 220,
-      radius: 0.5,
+      radius: 6000000,
       m: 1e4,
       x: 100,
       y: 0,
       z: 0,
       vx: 34.7111,
       vy: 53.2728,
-      vz: 0,
-      color: 'yellow'
+      vz: 0
     },
     {
       name: 'Arjuna',
       type: 'star',
       trailVertices: 220,
-      radius: 0.5,
+      radius: 6000000,
       m: 1e4,
       x: 0,
       y: 0,
       z: 0,
       vx: -69.4222,
       vy: -106.5456,
-      vz: 0,
-      color: 'blue'
+      vz: 0
     }
   ]
 };

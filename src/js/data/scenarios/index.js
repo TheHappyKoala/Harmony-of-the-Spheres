@@ -21,26 +21,36 @@ const processScenario = scenario => ({
   masses: scenario.masses.map(mass => {
     const template = masses.filter(
       entry => entry.name.indexOf(mass.name) > -1
-    )[0];  
+    )[0];
 
     return {
       ...mass,
-      m: template === undefined ? 0 : template.m,
-      radius: template === undefined ? 1.2 : template.radius,
-      type: (template === undefined && mass.type === 'asteroid') ? 'asteroid' : template.type,
+      m:
+        template === undefined
+          ? mass.m === undefined ? 0 : mass.m
+          : template.m,
+      radius:
+        template === undefined
+          ? mass.radius === undefined ? 1.2 : mass.radius
+          : template.radius,
+      type:
+        (template === undefined && mass.type === 'asteroid') ||
+        (template === undefined && mass.type === 'star')
+          ? mass.type
+          : template.type,
       texture: template === undefined ? null : template.name,
       color: template === undefined ? 'pink' : template.color
     };
   })
 });
 
-export const scenarios = [     
+export const scenarios = [
   jovianSystem,
   threeBodyCoreography,
   earthMoonSystem,
   oumuamua,
   martianSystem,
-  newHorizons,    
+  newHorizons,
   cruithne,
   planetNine,
   rh120,
