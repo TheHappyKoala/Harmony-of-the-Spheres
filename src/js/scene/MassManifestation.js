@@ -22,7 +22,7 @@ export default class extends THREE.Object3D {
       map: this.textureLoader.load(
         this.mass.type === 'asteroid'
           ? './textures/Deimos.jpg'
-          : `./textures/${this.mass.name}.jpg`
+          : `./textures/${this.mass.texture}.jpg`
       )
     });
 

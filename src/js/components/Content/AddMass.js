@@ -11,13 +11,27 @@ export default class extends Component {
     super(props);
 
     this.state = {
-      m: 0,
+      m: bodies[0].m,
+      radius: bodies[0].radius,
+      texture: bodies[0].name,
+      color: bodies[0].color,
+      type: null,
       distance: props.distanceStep.value
     };
   }
 
   modifyProperty = payload =>
     this.setState({ ...this.state, [payload.key]: payload.value });
+
+  insertMassTemplate = payload =>
+    this.setState({
+      ...this.state,
+      m: payload.m,
+      radius: payload.radius,
+      texture: payload.texture,
+      color: payload.color,
+      type: payload.type
+    });
 
   render() {
     return (
@@ -89,10 +103,10 @@ export default class extends Component {
           step={this.props.distanceStep.value}
         />
         <label className="top">
-          Mass
+          Mass Template
           <Tooltip
             position="left"
-            content="The mass of the mass you're adding."
+            content="The mass, radius, texture, type and color of the mass you're adding."
           />
         </label>
         <div className="tabs-dropdown-wrapper">
@@ -102,9 +116,12 @@ export default class extends Component {
                 name={body.name}
                 key={body.name}
                 callback={() =>
-                  this.modifyProperty({
-                    key: 'm',
-                    value: body.m
+                  this.insertMassTemplate({
+                    m: body.m,
+                    radius: body.radius,
+                    texture: body.name,
+                    type: body.type,
+                    color: body.color
                   })
                 }
               >
@@ -119,11 +136,12 @@ export default class extends Component {
               primary: this.props.primary,
               secondary: {
                 name: `Custom Mass ${Date.now()}`,
-                color: 'limegreen',
-                type: 'asteroid',
-                m: this.state.m,
                 trailVertices: 40000,
-                radius: 0.005,
+                m: this.state.m,
+                radius: this.state.radius,
+                texture: this.state.texture,
+                type: this.state.type,
+                color: this.state.color,    
                 distance: this.state.distance
               }
             })

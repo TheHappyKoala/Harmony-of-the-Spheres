@@ -1,7 +1,11 @@
 import * as THREE from 'three';
 
 export default function() {
-  const geometry = new THREE.SphereGeometry(9200000, 32, 32);
+  const geometry = new THREE.SphereGeometry(
+    1500 * 1000000000000000000000000000,
+    32,
+    32
+  );
 
   const textureLoader = new THREE.TextureLoader();
 

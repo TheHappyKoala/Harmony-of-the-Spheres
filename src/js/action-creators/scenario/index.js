@@ -39,8 +39,6 @@ export function addMass(payload) {
       mass => mass.name.indexOf(payload.primary) > -1
     )[0];
 
-    console.log(payload);
-
     dispatch({
       type: scenarioActionTypes.ADD_MASS,
       payload: getIdealCircularOrbit(

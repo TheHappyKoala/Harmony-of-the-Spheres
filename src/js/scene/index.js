@@ -30,13 +30,12 @@ export default {
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas
     });
-
     this.renderer.setSize(this.w, this.h);
 
     this.camera = new Camera(
       45,
       this.w / this.h,
-      0.0001,
+      1,
       1500000000000,
       this.labelsCanvas
     );
@@ -61,27 +60,27 @@ export default {
     this.loop();
   },
 
+  addManifestation(mass) {
+    switch (mass.type) {
+      case 'star':
+        return new Star(mass);
+
+      case 'model':
+        return new Model(mass);      
+
+      default:
+        return new MassManifestation(mass);
+    }
+  },
+
   addManifestations() {
     this.scenario.masses.forEach(mass => {
-      let manifestation;
+      const manifestation = this.addManifestation(mass);
 
-      switch (mass.type) {
-        case 'star':
-          manifestation = new Star(mass);
-
-          break;
-        case 'model':
-          manifestation = new Model(mass);
-
-          break;
-        default:
-          manifestation = new MassManifestation(mass);
-      }
-
-      this.scene.add(manifestation);
       this.massManifestations.push(manifestation);
-    });
-  },
+      this.scene.add(manifestation);
+    });    
+  },     
 
   diffMasses(previousMasses, newMasses) {
     if (newMasses.length < previousMasses.length) {
@@ -99,14 +98,14 @@ export default {
       }
 
       return;
-    }
+    }     
 
     if (newMasses.length > previousMasses.length) {
-      let manifestation = new MassManifestation(
-        newMasses[newMasses.length - 1]
-      );
-      this.scene.add(manifestation);
-      this.massManifestations.push(manifestation);
+      const newMass = newMasses[newMasses.length - 1];
+      const manifestation = this.addManifestation(newMass);
+
+      this.massManifestations.push(manifestation);     
+      this.scene.add(manifestation);     
     }
   },
 
@@ -139,8 +138,7 @@ export default {
 
     let frameOfRef;
 
-    if (rotatingReferenceFrame === 'Origo')
-      frameOfRef = { x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0 };
+    if (rotatingReferenceFrame === 'Origo') frameOfRef = { x: 0, y: 0, z: 0 };
     else {
       for (let i = 0; i < this.system.masses.length; i++)
         if (this.system.masses[i].name === rotatingReferenceFrame)
@@ -183,9 +181,6 @@ export default {
       let x = (frameOfRef.x - mass.x) * scale;
       let y = (frameOfRef.y - mass.y) * scale;
       let z = (frameOfRef.z - mass.z) * scale;
-      let vx = (frameOfRef.vx - mass.vx) * scale;
-      let vy = (frameOfRef.vy - mass.vy) * scale;
-      let vz = (frameOfRef.vz - mass.vz) * scale;
 
       massManifestation.draw(x, y, z);
 
@@ -203,15 +198,7 @@ export default {
 
         if (cameraPosition !== 'Free') this.camera.lookAt(cameraTarget);
         else {
-          this.camera.controls.target = cameraTarget;
-
-          if (playing) {
-            this.camera.position.x += vx * dt;
-            this.camera.position.y += vy * dt;
-            this.camera.position.z += vz * dt;
-
-            this.camera.controls.update();
-          }
+          this.camera.trackMovingObjectWithControls(massManifestation);
         }
       }
 
@@ -232,7 +219,7 @@ export default {
 
       if (labels && cameraPosition !== name)
         label(
-          this.labels,    
+          this.labels,
           this.camera,
           new THREE.Vector3(x, y, z),
           this.w,
