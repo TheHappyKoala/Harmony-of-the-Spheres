@@ -1,6 +1,5 @@
 import * as THREE from 'three';
-
-const OrbitControls = require('three-orbit-controls')(THREE);
+import CustomizedOrbitControls from './CustomizedOrbitControls';
 
 export default class extends THREE.PerspectiveCamera {
   constructor(fov, aspect, near, far, target) {
@@ -8,6 +7,19 @@ export default class extends THREE.PerspectiveCamera {
 
     this.up = new THREE.Vector3(0, 0, 1);
 
-    this.controls = new OrbitControls(this, target);
+    this.controls = new CustomizedOrbitControls(this, target);
+
+    this.controls.noPan = true;
+  }
+
+  trackMovingObjectWithControls(movingObject) {
+    this.controls.customPan.add(
+      movingObject
+        .getObjectByName('Main')
+        .position.clone()
+        .sub(this.controls.target)
+    );
+
+    this.controls.update();
   }
 }
