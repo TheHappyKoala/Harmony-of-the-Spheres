@@ -28,9 +28,10 @@ export default {
     this.scene = new THREE.Scene();
 
     this.renderer = new THREE.WebGLRenderer({
-      canvas: this.webGlCanvas
+      canvas: this.webGlCanvas,
+      antialias: true
     });
-    this.renderer.setSize(this.w, this.h);
+    this.renderer.setSize(this.w, this.h);  
 
     this.camera = new Camera(
       45,
