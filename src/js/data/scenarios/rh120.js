@@ -12,6 +12,7 @@ export default {
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
   primary: 'Earth',
+  maximumDistance: { name: 'Moon to Earth * 10', value: 0.0256955529 },
   distanceStep: { name: 'Moon to Earth / 100', value: 0.0005139110579999999 },
   freeOrigoZ: 200000,
   massBeingModified: 'Sun',

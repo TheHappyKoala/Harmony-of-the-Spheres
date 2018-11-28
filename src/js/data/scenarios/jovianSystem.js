@@ -14,6 +14,7 @@ export default {
   velMin: -3,
   velStep: 2.2222222222222222e-7,
   primary: 'Jupiter',
+  maximumDistance: { name: 'Io to Jupiter * 150', value: 0.42285 },
   distanceStep: { name: 'Io to Jupiter / 10', value: 0.005637999999999999 },
   masses: [
     {

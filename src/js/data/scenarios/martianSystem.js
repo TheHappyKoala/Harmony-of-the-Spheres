@@ -14,7 +14,8 @@ export default {
   freeOrigoZ: 1000,
   massBeingModified: 'Mars',
   primary: 'Mars',
-  distanceStep: { name: 'Phobos to Mars', value: 0.0001253494 },
+  maximumDistance: { name: 'Phobos to Mars * 100', value: 0.00626747 },
+  distanceStep: { name: 'Phobos to Mars', value: 6.26747e-5 },
   masses: [
     {
       name: 'Sun',

@@ -84,11 +84,12 @@ export default class extends Component {
           <div label="Add Mass" icon="fas fa-plus-circle fa-2x">
             <AddMass
               primary={scenario.primary}
+              maximumDistance={scenario.maximumDistance}
               distanceStep={scenario.distanceStep}
               massesAdded={scenario.massesAdded}
               masses={scenario.masses}
               addMass={this.props.addMass}
-              modifyScenarioProperty={this.props.modifyScenarioProperty}
+              modifyScenarioProperty={this.props.modifyScenarioProperty}     
             />
           </div>
         </Tabs>

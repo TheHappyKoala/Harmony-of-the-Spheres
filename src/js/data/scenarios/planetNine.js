@@ -14,6 +14,7 @@ export default {
   freeOrigoZ: 6500000000,
   massBeingModified: 'Sun',
   primary: 'Sun',
+  maximumDistance: { name: 'Sun to Planet 9', value: 22000 },
   distanceStep: { name: 'Sun to Earth * 10', value: 200 },
   masses: [
     {

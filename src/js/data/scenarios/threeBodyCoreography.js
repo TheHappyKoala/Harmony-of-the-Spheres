@@ -15,6 +15,7 @@ export default {
   velMin: -0.5,
   velStep: 0.000005,
   primary: 'Arjuna',
+  maximumDistance: { name: 'Sun to Neptune', value: 30.1 },
   distanceStep: { name: 'Sun to Earth / 10', value: 0.1 },
   masses: [
     {

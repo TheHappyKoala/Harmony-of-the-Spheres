@@ -4,7 +4,8 @@ import Button from '../Button';
 import Slider from '../Slider';
 import Tooltip from '../Tooltip';
 import bodies from '../../data/masses';
-import distances from '../../data/distances';
+import maximumDistances from '../../data/distances/maximumDistances';
+import distanceSteps from '../../data/distances/distanceSteps';
 
 export default class extends Component {
   constructor(props) {
@@ -63,6 +64,31 @@ export default class extends Component {
           </Dropdown>
         </div>
         <label className="top">
+          Maximum Distance
+          <Tooltip
+            position="left"
+            content="The maximum allowed distance between the primary and the mass that you are adding."
+          />
+        </label>
+        <div className="tabs-dropdown-wrapper">
+          <Dropdown selectedOption={this.props.maximumDistance}>
+            {maximumDistances.map(distance => (
+              <div
+                name={distance.name}
+                key={distance.name}
+                callback={() =>
+                  this.props.modifyScenarioProperty({
+                    key: 'maximumDistance',
+                    value: { name: distance.name, value: distance.value }
+                  })
+                }
+              >
+                {distance.name}
+              </div>
+            ))}
+          </Dropdown>
+        </div>
+        <label className="top">
           Distance Step
           <Tooltip
             position="left"
@@ -71,7 +97,7 @@ export default class extends Component {
         </label>
         <div className="tabs-dropdown-wrapper">
           <Dropdown selectedOption={this.props.distanceStep}>
-            {distances.map(distance => (
+            {distanceSteps.map(distance => (
               <div
                 name={distance.name}
                 key={distance.name}
@@ -98,8 +124,8 @@ export default class extends Component {
           payload={{ key: 'distance' }}
           value={this.state.distance}
           callback={this.modifyProperty}
-          max={100}
-          min={this.props.distanceStep.value}
+          max={this.props.maximumDistance.value}
+          min={-this.props.maximumDistance.value}
           step={this.props.distanceStep.value}
         />
         <label className="top">
@@ -141,7 +167,7 @@ export default class extends Component {
                 radius: this.state.radius,
                 texture: this.state.texture,
                 type: this.state.type,
-                color: this.state.color,    
+                color: this.state.color,
                 distance: this.state.distance
               }
             })

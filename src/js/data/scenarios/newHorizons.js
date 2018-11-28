@@ -14,6 +14,7 @@ export default {
   freeOrigoZ: '99500000',
   massBeingModified: 'Sun',
   primary: 'Sun',
+  maximumDistance: { name: 'Sun to Kuiper Belt', value: 55 },
   distanceStep: { name: 'Sun to Earth / 10', value: 0.1 },
   masses: [
     {
