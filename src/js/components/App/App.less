@@ -68,16 +68,16 @@ h3 {
   font-size: 0.8em;
 }
 
-.credit-item {
-  font-size: 1.1em;
+.modal-item {
+  font-size: 1.3em;
   margin-left: 10px;   
   margin-top: 16px;
 }
 
-.credit-item a {
-  font-size: 1.2em;
+.modal-item a {
+  font-size: 1.35em;
   color: lightblue;
-}
+}     
 
 .sidebar-wrapper {
   .absolute();
@@ -124,6 +124,16 @@ h3 {
     text-shadow: 2px 2px 8px #eee;
   }
 }
+
+.sidebar-wrapper-left {
+  left: 0;    
+  right: calc(100% - 70px);
+  ul {
+    float: left;
+    border-left: none;
+    border-right: @border;
+  }
+}   
 
 .vector-tabs {
   margin-top: 4px;

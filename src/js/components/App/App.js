@@ -9,6 +9,7 @@ import Graphics from '../Content/Graphics';
 import Camera from '../Content/Camera';
 import Masses from '../Content/Masses';
 import AddMass from '../Content/AddMass';
+import About from '../Content/About';
 import Credits from '../Content/Credits';
 import './App.less';
 
@@ -17,6 +18,7 @@ export default class extends Component {
     super(props);
 
     this.state = {
+      displayAbout: false,
       displayCredits: false
     };
   }
@@ -90,11 +92,34 @@ export default class extends Component {
             />
           </div>
         </Tabs>
+        <div className="sidebar-wrapper sidebar-wrapper-left">
+          <ul>
+            <li
+              key="about"
+              onClick={() => this.displayComponent('displayAbout')}
+            >
+              <i className="fas fa-info-circle fa-2x" />
+              <p>About</p>
+            </li>
+            <li
+              key="credits"
+              onClick={() => this.displayComponent('displayCredits')}
+            >
+              <i className="fas fa-glass fa-2x" />
+              <p>Credits</p>
+            </li>
+          </ul>
+        </div>
         <ReactCSSTransitionGroup
           transitionName="fade"
           transitionEnterTimeout={250}
           transitionLeaveTimeout={250}
         >
+          {this.state.displayAbout && (
+            <Modal callback={() => this.displayComponent('displayAbout')}>
+              <About />
+            </Modal>
+          )}
           {this.state.displayCredits && (
             <Modal callback={() => this.displayComponent('displayCredits')}>
               <Credits />
