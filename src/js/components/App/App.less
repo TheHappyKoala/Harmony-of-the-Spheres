@@ -83,14 +83,15 @@ h3 {
   .absolute();
   bottom: 0;
   top: calc(0% + 2 * @fat-padding + 7px);
+  bottom: calc(0% + 2 * 12px + 16px);   
   right: 0;
   background: @primary;
   ul {
     list-style: none;
-    text-align: center;
+    text-align: center;    
     width: 70px;
     display: block;
-    float: right;
+    float: right;   
     height: 100%;
     border-left: @border;
   }
@@ -134,6 +135,20 @@ h3 {
     border-right: @border;
   }
 }   
+
+.bottom-bar {
+  .absolute();
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;    
+  background: @primary;
+  border-top: @border;
+  text-align: center;    
+  h2 {
+    font-size: 16px;
+  } 
+}     
 
 .vector-tabs {
   margin-top: 4px;

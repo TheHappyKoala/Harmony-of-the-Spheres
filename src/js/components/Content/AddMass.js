@@ -126,6 +126,7 @@ export default class extends Component {
           callback={this.modifyProperty}
           max={this.props.maximumDistance.value}
           min={-this.props.maximumDistance.value}
+          shouldUpdateOnMaxMinChange={true}
           step={this.props.distanceStep.value}
         />
         <label className="top">

@@ -89,7 +89,7 @@ export default class extends Component {
               massesAdded={scenario.massesAdded}
               masses={scenario.masses}
               addMass={this.props.addMass}
-              modifyScenarioProperty={this.props.modifyScenarioProperty}     
+              modifyScenarioProperty={this.props.modifyScenarioProperty}
             />
           </div>
         </Tabs>
@@ -110,6 +110,9 @@ export default class extends Component {
               <p>Credits</p>
             </li>
           </ul>
+        </div>
+        <div className="bottom-bar">
+          <h2>Harmony of the Spheres</h2>
         </div>
         <ReactCSSTransitionGroup
           transitionName="fade"
