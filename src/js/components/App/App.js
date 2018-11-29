@@ -126,8 +126,15 @@ export default class extends Component {
         <ReactCSSTransitionGroup
           transitionName="fade"
           transitionEnterTimeout={250}
-          transitionLeaveTimeout={250}
+          transitionLeaveTimeout={250}      
         >
+          {this.state.displayScenarioWiki && (
+            <Modal
+              callback={() => this.displayComponent('displayScenarioWiki')}
+            >
+              <ScenarioWiki scenarioWikiUrl={scenario.scenarioWikiUrl} />
+            </Modal>
+          )}
           {this.state.displayAbout && (
             <Modal callback={() => this.displayComponent('displayAbout')}>
               <About />
@@ -136,13 +143,6 @@ export default class extends Component {
           {this.state.displayCredits && (
             <Modal callback={() => this.displayComponent('displayCredits')}>
               <Credits />
-            </Modal>
-          )}
-          {this.state.displayScenarioWiki && (
-            <Modal
-              callback={() => this.displayComponent('displayScenarioWiki')}
-            >
-              <ScenarioWiki scenarioWikiUrl={scenario.scenarioWikiUrl} />
             </Modal>
           )}
         </ReactCSSTransitionGroup>
