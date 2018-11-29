@@ -8,6 +8,7 @@ import cruithne from './cruithne';
 import planetNine from './planetNine';
 import rh120 from './rh120';
 import ulysses from './ulysses';
+import venusPentagram from './venusPentagram';
 import masses from '../masses';
 
 const processScenario = scenario => ({
@@ -51,6 +52,7 @@ export const scenarios = [
   jovianSystem,
   threeBodyCoreography,
   earthMoonSystem,
+  venusPentagram,
   oumuamua,
   martianSystem,
   newHorizons,
