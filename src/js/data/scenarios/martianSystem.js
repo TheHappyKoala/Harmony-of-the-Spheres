@@ -42,6 +42,7 @@ export default {
     {
       name: 'Phobos',
       type: 'asteroid',
+      color: 'yellow',
       x: -4.950224547596924e-5,
       y: 2.488266909607153e-5,
       z: 2.730097984848412e-5,
@@ -53,6 +54,7 @@ export default {
     {
       name: 'Deimos',
       type: 'asteroid',
+      color: 'orange',
       x: -5.307001408938901e-5,
       y: -1.471501029650768e-4,
       z: 1.117485182006874e-5,

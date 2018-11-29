@@ -41,6 +41,7 @@ export default {
     {
       name: 'Cruithne',
       type: 'asteroid',
+      color: 'lightblue',
       x: 1.325865390879866,
       y: 0.2236398242275909,
       z: -0.4321459627915762,

@@ -70,6 +70,7 @@ export default {
     },
     {
       name: 'Oumuamua',
+      color: 'yellow',
       type: 'asteroid',
       x: 3.679682868010402,
       y: -16.90385340779421,

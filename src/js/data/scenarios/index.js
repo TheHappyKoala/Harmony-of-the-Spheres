@@ -39,7 +39,10 @@ const processScenario = scenario => ({
           ? mass.type
           : template.type,
       texture: template === undefined ? null : template.name,
-      color: template === undefined ? 'pink' : template.color
+      color:
+        template === undefined
+          ? mass.color === undefined ? 'pink' : mass.color
+          : template.color
     };
   })
 });
