@@ -1,7 +1,7 @@
 export default {
   name: 'Cruithne - Quasi Moon of Earth',
   g: 39.5,
-  dt: 20e-5,
+  dt: 0.000201,
   distMax: 0.00713911058,
   distMin: -0.00713911058,
   distStep: 2.3797035266666667e-6,
@@ -16,6 +16,7 @@ export default {
   primary: 'Sun',
   maximumDistance: { name: 'Sun to Jupiter', value: 5.2 },
   distanceStep: { name: 'Sun to Earth / 10', value: 0.1 },
+  scenarioWikiUrl: 'https://en.wikipedia.org/wiki/3753_Cruithne',
   masses: [
     {
       name: 'Earth',

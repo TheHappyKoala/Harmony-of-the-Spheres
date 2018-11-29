@@ -17,6 +17,7 @@ export default {
   primary: 'Arjuna',
   maximumDistance: { name: 'Sun to Neptune', value: 30.1 },
   distanceStep: { name: 'Sun to Earth / 10', value: 0.1 },
+  scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Three-body_problem',
   masses: [
     {
       name: 'Eva',

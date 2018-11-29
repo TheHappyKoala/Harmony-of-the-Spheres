@@ -16,6 +16,7 @@ export default {
   primary: 'Sun',
   maximumDistance: { name: 'Sun to Planet 9', value: 22000 },
   distanceStep: { name: 'Sun to Earth * 10', value: 200 },
+  scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Planet_Nine',
   masses: [
     {
       name: 'Sedna',

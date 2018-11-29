@@ -54,6 +54,14 @@ export default function() {
       </p>
       <p className="modal-item">
         <b>&#187; </b>
+        <a href="https://wikipedia.com/" target="blank">
+          WikiPedia
+        </a>{' '}
+        and all the awesome people that contribute to it with content and the
+        financial resources that keep it up and running.
+      </p>
+      <p className="modal-item">
+        <b>&#187; </b>
         Last, but not least, I would like to credit the Universe for being
         awesomely weird and thought provoking!
       </p>

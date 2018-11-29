@@ -16,6 +16,7 @@ export default {
   primary: 'Jupiter',
   maximumDistance: { name: 'Io to Jupiter * 150', value: 0.42285 },
   distanceStep: { name: 'Io to Jupiter / 10', value: 0.005637999999999999 },
+  scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Jupiter',
   masses: [
     {
       name: 'Jupiter',

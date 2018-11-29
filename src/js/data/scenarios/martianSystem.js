@@ -16,6 +16,7 @@ export default {
   primary: 'Mars',
   maximumDistance: { name: 'Phobos to Mars * 100', value: 0.00626747 },
   distanceStep: { name: 'Phobos to Mars', value: 6.26747e-5 },
+  scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Mars',
   masses: [
     {
       name: 'Sun',

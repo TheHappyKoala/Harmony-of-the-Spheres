@@ -16,6 +16,7 @@ export default {
   primary: 'Sun',
   maximumDistance: { name: 'Sun to Kuiper Belt', value: 55 },
   distanceStep: { name: 'Sun to Earth / 10', value: 0.1 },
+  scenarioWikiUrl: 'https://en.wikipedia.org/wiki/New_Horizons',
   masses: [
     {
       name: 'Sun',

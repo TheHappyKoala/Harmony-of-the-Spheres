@@ -11,6 +11,7 @@ import Masses from '../Content/Masses';
 import AddMass from '../Content/AddMass';
 import About from '../Content/About';
 import Credits from '../Content/Credits';
+import ScenarioWiki from '../Content/ScenarioWiki';
 import './App.less';
 
 export default class extends Component {
@@ -19,7 +20,8 @@ export default class extends Component {
 
     this.state = {
       displayAbout: false,
-      displayCredits: false
+      displayCredits: false,
+      displayScenarioWiki: false
     };
   }
 
@@ -109,6 +111,13 @@ export default class extends Component {
               <i className="fas fa-glass fa-2x" />
               <p>Credits</p>
             </li>
+            <li
+              key="scenarioWiki"
+              onClick={() => this.displayComponent('displayScenarioWiki')}
+            >
+              <i className="fas fa-wikipedia-w fa-2x" />
+              <p>Scenario Wiki</p>
+            </li>
           </ul>
         </div>
         <div className="bottom-bar">
@@ -127,6 +136,13 @@ export default class extends Component {
           {this.state.displayCredits && (
             <Modal callback={() => this.displayComponent('displayCredits')}>
               <Credits />
+            </Modal>
+          )}
+          {this.state.displayScenarioWiki && (
+            <Modal
+              callback={() => this.displayComponent('displayScenarioWiki')}
+            >
+              <ScenarioWiki scenarioWikiUrl={scenario.scenarioWikiUrl} />
             </Modal>
           )}
         </ReactCSSTransitionGroup>

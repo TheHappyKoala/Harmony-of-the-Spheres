@@ -16,6 +16,7 @@ export default {
   distanceStep: { name: 'Moon to Earth / 100', value: 0.0005139110579999999 },
   freeOrigoZ: 200000,
   massBeingModified: 'Sun',
+  scenarioWikiUrl: 'https://en.wikipedia.org/wiki/2006_RH120',
   masses: [
     {
       name: 'Earth',
