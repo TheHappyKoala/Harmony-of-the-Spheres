@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import store from '../store';
 import { modifyScenarioProperty } from '../action-creators/scenario';
 import getIntegrator from '../Physics/Integrators';
+import { getDistanceParams } from '../Physics/utils';
 import arena from './arena';
 import Camera from './Camera';
 import label from './label';
@@ -31,7 +32,7 @@ export default {
       canvas: this.webGlCanvas,
       antialias: true
     });
-    this.renderer.setSize(this.w, this.h);  
+    this.renderer.setSize(this.w, this.h);
 
     this.camera = new Camera(
       45,
@@ -67,7 +68,7 @@ export default {
         return new Star(mass);
 
       case 'model':
-        return new Model(mass);      
+        return new Model(mass);
 
       default:
         return new MassManifestation(mass);
@@ -80,8 +81,8 @@ export default {
 
       this.massManifestations.push(manifestation);
       this.scene.add(manifestation);
-    });    
-  },     
+    });
+  },
 
   diffMasses(previousMasses, newMasses) {
     if (newMasses.length < previousMasses.length) {
@@ -99,14 +100,14 @@ export default {
       }
 
       return;
-    }     
+    }
 
     if (newMasses.length > previousMasses.length) {
       const newMass = newMasses[newMasses.length - 1];
       const manifestation = this.addManifestation(newMass);
 
-      this.massManifestations.push(manifestation);     
-      this.scene.add(manifestation);     
+      this.massManifestations.push(manifestation);
+      this.scene.add(manifestation);
     }
   },
 
@@ -185,26 +186,69 @@ export default {
 
       massManifestation.draw(x, y, z);
 
+      const trail = massManifestation.getObjectByName('Trail');
+      const main = massManifestation.getObjectByName('Main');
+
       if (
         trails &&
         playing &&
         rotatingReferenceFrame === this.previousRotatingReferenceFrame
       ) {
-        if (!massManifestation.getObjectByName('Trail'))
-          massManifestation.getTrail(trailVertices);
+        if (!trail) massManifestation.getTrail(trailVertices);
       } else massManifestation.removeTrail();
+
+      let zOffset;
+
+      if (dt < 0.0002) zOffset = radius * 80;
+      if (dt > 0.0002) zOffset = radius !== 1.2 ? radius * 1500 : 60000;
+      if (dt > 0.5) zOffset = radius !== 1.2 ? radius * 500000 : 4000000;
+
+      if (trail) {
+        if (trail.visible) {
+          if (
+            cameraPosition === name ||
+            (cameraPosition === 'Free' &&
+              cameraFocus === name &&
+              Math.sqrt(
+                getDistanceParams(this.camera.position, main.position).dSquared
+              ) <
+                zOffset * 0.5)
+          ) {
+            trail.visible = false;
+          }
+        }
+
+        if (!trail.visible) {
+          if (
+            (cameraPosition === 'Free' && cameraFocus !== name) ||
+            (cameraPosition === 'Free' &&
+              cameraFocus === name &&
+              Math.sqrt(
+                getDistanceParams(this.camera.position, main.position).dSquared
+              ) >
+                zOffset * 0.5)
+          ) {
+            trail.visible = true;
+          }
+
+          if (cameraPosition !== 'Free' && cameraPosition !== name) {
+            trail.visible = true;
+          }
+        }
+      }
 
       if (cameraFocus === name) {
         const cameraTarget = new THREE.Vector3(x, y, z);
 
         if (cameraPosition !== 'Free') this.camera.lookAt(cameraTarget);
-        else {
+        else if (cameraPosition === 'Free' && cameraFocus !== 'Origo') {
           this.camera.trackMovingObjectWithControls(massManifestation);
         }
       }
 
       if (cameraPosition === name) {
-        if (cameraPosition === cameraFocus) y += radius * 2;
+        if (cameraPosition === cameraFocus) y += radius * 7;
+
         this.camera.position.set(x, y, z);
       }
 
@@ -212,7 +256,7 @@ export default {
         this.previousCameraFocus = cameraFocus;
 
         if (cameraPosition === 'Free') {
-          this.camera.position.set(x, y + radius * 7, z);
+          this.camera.position.set(x, y, z + zOffset);
 
           this.camera.lookAt(new THREE.Vector3(x, y, z));
         }
