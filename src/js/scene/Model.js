@@ -13,7 +13,7 @@ export default class extends MassManifestation {
 
     container.name = 'Main';
 
-    this.add(container);    
+    this.add(container);
 
     const massNameLowerCase = this.mass.texture.toLowerCase();
 

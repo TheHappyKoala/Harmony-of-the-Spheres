@@ -1,6 +1,15 @@
 import worldToScreenCoordinates from './worldToScreenCoordinates';
 
-export default function(ctx, camera, massManifestationPosition, w, h, name, isOrbital, isTarget) {
+export default function(
+  ctx,
+  camera,
+  massManifestationPosition,
+  w,
+  h,
+  name,
+  isOrbital,
+  isTarget
+) {
   const position = worldToScreenCoordinates(
     massManifestationPosition.x,
     massManifestationPosition.y,

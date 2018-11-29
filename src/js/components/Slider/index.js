@@ -15,7 +15,7 @@ export default class extends Component {
   handleMouseUp = () => {
     clearTimeout(this.timeout);
 
-    this.start = 100;   
+    this.start = 100;
   };
 
   repeat = direction => {
