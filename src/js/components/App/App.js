@@ -98,6 +98,13 @@ export default class extends Component {
         <div className="sidebar-wrapper sidebar-wrapper-left">
           <ul>
             <li
+              key="scenarioWiki"
+              onClick={() => this.displayComponent('displayScenarioWiki')}
+            >
+              <i className="fas fa-wikipedia-w fa-2x" />
+              <p>Scenario Wiki</p>
+            </li>
+            <li
               key="about"
               onClick={() => this.displayComponent('displayAbout')}
             >
@@ -111,13 +118,6 @@ export default class extends Component {
               <i className="fas fa-glass fa-2x" />
               <p>Credits</p>
             </li>
-            <li
-              key="scenarioWiki"
-              onClick={() => this.displayComponent('displayScenarioWiki')}
-            >
-              <i className="fas fa-wikipedia-w fa-2x" />
-              <p>Scenario Wiki</p>
-            </li>
           </ul>
         </div>
         <div className="bottom-bar">
@@ -126,7 +126,7 @@ export default class extends Component {
         <ReactCSSTransitionGroup
           transitionName="fade"
           transitionEnterTimeout={250}
-          transitionLeaveTimeout={250}      
+          transitionLeaveTimeout={250}
         >
           {this.state.displayScenarioWiki && (
             <Modal
