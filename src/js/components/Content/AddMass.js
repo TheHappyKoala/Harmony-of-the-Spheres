@@ -127,6 +127,13 @@ export default class extends Component {
           max={this.props.maximumDistance.value}
           min={-this.props.maximumDistance.value}
           shouldUpdateOnMaxMinChange={true}
+          onMaxMinChange={{
+            payload: {
+              key: 'distanceStep',
+              value: { name: 'Max distance / 100' }
+            },
+            callback: this.props.modifyScenarioProperty
+          }}
           step={this.props.distanceStep.value}
         />
         <label className="top">

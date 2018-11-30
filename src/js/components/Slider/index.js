@@ -53,6 +53,8 @@ export default class extends Component {
         return true;
     }
 
+    if (nextProps.step !== this.props.step) return true;
+
     return false;
   }
 
@@ -62,9 +64,19 @@ export default class extends Component {
         prevProps.max !== this.props.max ||
         prevProps.min !== this.props.min
       ) {
+        if (this.props.onMaxMinChange) {
+          this.props.onMaxMinChange.callback({
+            ...this.props.onMaxMinChange.payload,
+            value: {
+              ...this.props.onMaxMinChange.payload.value,
+              value: this.props.max / 100
+            }
+          });
+        }
+
         this.props.callback({
           ...this.props.payload,
-          value: this.props.step * 10
+          value: this.props.max / 100 * 10
         });
       }
     }
