@@ -57,6 +57,8 @@ export default {
       elapsedTime: this.scenario.elapsedTime
     });
 
+    window.addEventListener('resize', () => this.onWindowResize(), false);
+
     this.addManifestations();
 
     this.loop();
@@ -309,6 +311,18 @@ export default {
         }
       )
     );
+  },
+
+  onWindowResize() {
+    this.w = window.innerWidth;
+    this.h = window.innerHeight;
+
+    this.camera.aspect = this.w / this.h;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(this.w, this.h);
+
+    this.labelsCanvas.width = this.w;
+    this.labelsCanvas.height = this.h;
   },
 
   reset() {
