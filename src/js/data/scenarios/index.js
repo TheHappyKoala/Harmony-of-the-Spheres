@@ -2,6 +2,7 @@ import jovianSystem from './jovianSystem';
 import threeBodyCoreography from './threeBodyCoreography';
 import earthMoonSystem from './earthMoonSystem';
 import oumuamua from './oumuamua';
+import tess from './tess';
 import martianSystem from './martianSystem';
 import newHorizons from './newHorizons';
 import cruithne from './cruithne';
@@ -54,6 +55,7 @@ export const scenarios = [
   earthMoonSystem,
   venusPentagram,
   oumuamua,
+  tess,
   martianSystem,
   newHorizons,
   cruithne,
