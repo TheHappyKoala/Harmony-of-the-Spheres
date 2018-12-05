@@ -18,6 +18,7 @@ export default [
   { m: 0, radius: 1.2, type: 'model', color: 'limegreen', name: 'Juno' },
   { m: 0, radius: 1.2, type: 'model', color: 'red', name: 'Ulysses' },
   { m: 0, radius: 1.2, type: 'model', color: 'red', name: 'TESS' },
+  { m: 0, radius: 1.2, color: 'limegreen', name: 'Apollo 11' },
   {
     m: 4.490848296995278e-8,
     radius: 24.082568807339452,

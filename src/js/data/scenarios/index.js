@@ -10,6 +10,7 @@ import planetNine from './planetNine';
 import rh120 from './rh120';
 import ulysses from './ulysses';
 import venusPentagram from './venusPentagram';
+import lunarFreeReturn from './lunarFreeReturn';
 import masses from '../masses';
 
 const processScenario = scenario => ({
@@ -57,6 +58,7 @@ export const scenarios = [
   oumuamua,
   tess,
   martianSystem,
+  lunarFreeReturn,
   newHorizons,
   cruithne,
   planetNine,
