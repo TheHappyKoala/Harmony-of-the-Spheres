@@ -59,8 +59,14 @@ export default [
   {
     m: 6.58086572e-9,
     radius: 16.05504587155963,
-    color: 'purple',
+    color: 'red',
     name: 'Pluto'
+  },
+  {
+    m: 4.504e-10,
+    radius: 16.05504587155963,
+    color: 'green',
+    name: 'Ceres'
   },
   {
     m: 0,
