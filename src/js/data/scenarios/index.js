@@ -13,6 +13,7 @@ import ulysses from './ulysses';
 import venusPentagram from './venusPentagram';
 import lunarFreeReturn from './lunarFreeReturn';
 import masses from '../masses';
+import { getRandomColor } from '../../utils';
 
 const processScenario = scenario => ({
   ...scenario,
@@ -45,7 +46,7 @@ const processScenario = scenario => ({
       texture: template === undefined ? null : template.name,
       color:
         template === undefined
-          ? mass.color === undefined ? 'pink' : mass.color
+          ? mass.color === undefined ? getRandomColor() : mass.color
           : template.color
     };
   })
@@ -53,10 +54,10 @@ const processScenario = scenario => ({
 
 export const scenarios = [
   jovianSystem,
-  solarSystem,   
+  solarSystem,
   threeBodyCoreography,
   lunarFreeReturn,
-  venusPentagram,     
+  venusPentagram,
   oumuamua,
   earthMoonSystem,
   tess,
