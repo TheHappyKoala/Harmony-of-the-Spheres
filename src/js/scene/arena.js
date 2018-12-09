@@ -10,7 +10,7 @@ export default function() {
   const textureLoader = new THREE.TextureLoader();
 
   const material = new THREE.MeshBasicMaterial();
-  material.map = textureLoader.load('./textures/starfield.jpg');
+  material.map = textureLoader.load('./textures/starfield.png');
   material.side = THREE.BackSide;
 
   const mesh = new THREE.Mesh(geometry, material);

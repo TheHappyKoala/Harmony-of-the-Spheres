@@ -20,3 +20,7 @@ export function getIdealCircularOrbit(primary, secondary, g) {
     vz: primary.vz + dParams.dz * vMag / d
   };
 }
+
+export function degreesToRadians(degrees) {
+  return Math.PI / 180 * degrees;
+}

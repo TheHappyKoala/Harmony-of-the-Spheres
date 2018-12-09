@@ -1,17 +1,52 @@
 export default [
-  { m: 1.652e-7, radius: 36.101083032490976, color: 'grey', name: 'Mercury' },
-  { m: 0.000002447, radius: 86.95652173913044, color: 'beige', name: 'Venus' },
+  {
+    m: 1.652e-7,
+    radius: 36.101083032490976,
+    tilt: -0.03,
+    color: 'grey',
+    name: 'Mercury',
+    bump: true
+  },
+  {
+    m: 0.000002447,
+    radius: 86.95652173913044,
+    tilt: 2.63,
+    atmosphere: { color: '#ffffe6', scaleFactor: 80 },
+    color: 'beige',
+    name: 'Venus'
+  },
   {
     m: 0.000003003,
     radius: 91.74311926605505,
+    tilt: -23.44,
+    atmosphere: { color: '#93cfef', scaleFactor: 110 },
+    clouds: true,
     color: 'limegreen',
-    name: 'Earth'
+    name: 'Earth',
+    bump: true
   },
-  { m: 3.69396868e-8, radius: 22.93577981651376, color: 'grey', name: 'Moon' },
-  { m: 3.213e-7, radius: 48.62385321100918, color: 'red', name: 'Mars' },
+  {
+    m: 3.69396868e-8,
+    radius: 22.93577981651376,
+    tilt: -1.54,
+    color: 'grey',
+    name: 'Moon',
+    bump: true
+  },
+  {
+    m: 3.213e-7,
+    radius: 48.62385321100918,
+    tilt: -25.19,
+    atmosphere: { color: '#ffccb3', scaleFactor: 40 },
+    color: 'red',
+    name: 'Mars',
+    bump: true
+  },
   {
     m: 0.0009543,
     radius: 1027.5229357798166,
+    tilt: -3.13,
+    atmosphere: { color: '#ffccb3', scaleFactor: 1100 },
     color: 'orange',
     name: 'Jupiter'
   },
@@ -43,30 +78,46 @@ export default [
     color: 'brown',
     name: 'Callisto'
   },
-  { m: 0.0002857, radius: 862.3853211009175, color: 'beige', name: 'Saturn' },
+  {
+    m: 0.0002857,
+    radius: 862.3853211009175,
+    tilt: -26.73,
+    atmosphere: { color: '#ffffe6', scaleFactor: 900 },
+    color: 'beige',
+    name: 'Saturn'
+  },
   {
     m: 0.00004365,
     radius: 370.6422018348624,
+    tilt: -82.23,
+    atmosphere: { color: '#93cfef', scaleFactor: 250 },
     color: 'lightblue',
     name: 'Uranus'
   },
   {
     m: 0.00005149,
     radius: 355.9633027522936,
+    tilt: -28.32,
+    atmosphere: { color: '#93cfef', scaleFactor: 250 },
     color: 'lightblue',
     name: 'Neptune'
   },
   {
     m: 6.58086572e-9,
     radius: 16.05504587155963,
+    tilt: -57.47,
+    atmosphere: { color: '#93cfef', scaleFactor: 20 },
     color: 'red',
-    name: 'Pluto'
+    name: 'Pluto',
+    bump: true
   },
   {
     m: 4.504e-10,
     radius: 16.05504587155963,
+    tilt: -3,
     color: 'green',
-    name: 'Ceres'
+    name: 'Ceres',
+    bump: true
   },
   {
     m: 0,

@@ -38,12 +38,16 @@ const processScenario = scenario => ({
         template === undefined
           ? mass.radius === undefined ? 1.2 : mass.radius
           : template.radius,
+      tilt: template === undefined ? false : template.tilt,
+      atmosphere: template === undefined ? false : template.atmosphere,
+      clouds: template === undefined ? false : template.clouds,
       type:
         (template === undefined && mass.type === 'asteroid') ||
         (template === undefined && mass.type === 'star')
           ? mass.type
           : template.type,
       texture: template === undefined ? null : template.name,
+      bump: template === undefined ? null : template.bump,
       color:
         template === undefined
           ? mass.color === undefined ? getRandomColor() : mass.color

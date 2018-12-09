@@ -186,10 +186,19 @@ export default {
       let y = (frameOfRef.y - mass.y) * scale;
       let z = (frameOfRef.z - mass.z) * scale;
 
-      massManifestation.draw(x, y, z);
+      const cameraDistanceToFocus = Math.sqrt(
+        getDistanceParams(this.camera.position, { x, y, z }).dSquared
+      );
+
+      massManifestation.draw(
+        x,
+        y,
+        z,
+        this.camera.position,
+        cameraDistanceToFocus
+      );
 
       const trail = massManifestation.getObjectByName('Trail');
-      const main = massManifestation.getObjectByName('Main');
 
       if (
         trails &&
@@ -211,24 +220,18 @@ export default {
             cameraPosition === name ||
             (cameraPosition === 'Free' &&
               cameraFocus === name &&
-              Math.sqrt(
-                getDistanceParams(this.camera.position, main.position).dSquared
-              ) <
-                zOffset * 0.5)
+              cameraDistanceToFocus < zOffset * 0.5)
           ) {
             trail.visible = false;
           }
         }
 
-        if (!trail.visible) {
+        if (!trail.visible || !massManifestation.visible) {
           if (
             (cameraPosition === 'Free' && cameraFocus !== name) ||
             (cameraPosition === 'Free' &&
               cameraFocus === name &&
-              Math.sqrt(
-                getDistanceParams(this.camera.position, main.position).dSquared
-              ) >
-                zOffset * 0.5)
+              cameraDistanceToFocus > zOffset * 0.5)
           ) {
             trail.visible = true;
           }
@@ -275,6 +278,26 @@ export default {
           cameraPosition === 'Free' ? true : false,
           cameraFocus === name ? true : false
         );
+
+      const main = massManifestation.getObjectByName('Main');
+
+      if (cameraPosition === name) main.visible = false;
+      else main.visible = true;
+
+      const atmosphere = massManifestation.getObjectByName('Atmosphere');
+
+      if (atmosphere) {
+        if (radius * 28 > cameraDistanceToFocus && cameraPosition !== name)
+          atmosphere.visible = true;
+        else atmosphere.visible = false;
+      }
+
+      const clouds = massManifestation.getObjectByName('Clouds');
+
+      if (clouds) {
+        if (cameraPosition === name) clouds.visible = false;
+        else clouds.visible = false;
+      }
     }
 
     if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame)
