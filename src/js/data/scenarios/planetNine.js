@@ -25,8 +25,7 @@ export default {
       z: -17.69797309937861,
       vx: -0.8786934171061775,
       vy: 0.2632429999008391,
-      vz: 0.06283058581762681,
-      trailVertices: 2e4
+      vz: 0.06283058581762681
     },
     {
       name: '2012 VP113',
@@ -39,7 +38,7 @@ export default {
       vx: -0.5111395588148426,
       vy: 0.6970250725047209,
       vz: 0.22374993379492533,
-      trailVertices: 2e4
+      orbitalPeriod: 4178
     },
     {
       name: '2015 RX245',
@@ -51,7 +50,7 @@ export default {
       vx: -0.6934022307643856,
       vy: 0.8158515667986989,
       vz: 0.19582132781023276,
-      trailVertices: 2e4
+      orbitalPeriod: 8512
     },
     {
       name: '2007 TG422',
@@ -63,7 +62,7 @@ export default {
       vx: -1.0842273041349613,
       vy: 0.9082669790407174,
       vz: 0.21704402810434492,
-      trailVertices: 2e4
+      orbitalPeriod: 10279
     },
     {
       name: '2013 RF98',
@@ -75,7 +74,7 @@ export default {
       vx: -0.5261738597896148,
       vy: 1.2162644308278474,
       vz: 0.5379705831730853,
-      trailVertices: 2e4
+      orbitalPeriod: 6900
     },
     {
       name: '2013 SY99',
@@ -87,7 +86,7 @@ export default {
       vx: -0.6709433971501547,
       vy: 0.9030773959704005,
       vz: 0.0824821132421107,
-      trailVertices: 2e4
+      orbitalPeriod: 19700
     },
     {
       name: '2010 GB174',
@@ -99,7 +98,7 @@ export default {
       vx: -0.34734541075474157,
       vy: -0.8783881659553672,
       vz: 0.3304636744569901,
-      trailVertices: 2e4
+      orbitalPeriod: 7000
     },
     {
       name: '2004 VN112',
@@ -111,7 +110,7 @@ export default {
       vx: -0.674746776160621,
       vy: 0.925698442234389,
       vz: 0.47451735847972515,
-      trailVertices: 2e4
+      orbitalPeriod: 5918
     },
     {
       name: 'Neptune',
@@ -120,8 +119,7 @@ export default {
       z: -0.4383752463170039,
       vx: 0.38350012707216175,
       vy: 1.084509054408742,
-      vz: -0.03108004390475038,
-      trailVertices: 2e4
+      vz: -0.03108004390475038
     },
     {
       name: 'Planet 9',
@@ -130,8 +128,7 @@ export default {
       z: -279.9986653203301,
       vx: -0.08898721639544392,
       vy: 0.05936371301920076,
-      vz: 0.05138621266882957,
-      trailVertices: 2e4
+      vz: 0.05138621266882957
     },
     {
       name: 'Sun',

@@ -49,7 +49,7 @@ export default {
       vx: -0.17192317024186732,
       vy: -0.4188471330676279,
       vz: 0.06563852508203072,
-      trailVertices: 6e3
+      orbitalPeriod: 0.00091324109589
     },
     {
       name: 'Deimos',
@@ -61,7 +61,7 @@ export default {
       vx: 0.23923264692446428,
       vy: -0.09551050573749158,
       vz: -0.12195270680186761,
-      trailVertices: 6e3
+      orbitalPeriod: 0.003424658
     }
   ]
 };

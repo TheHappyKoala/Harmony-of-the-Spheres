@@ -1,5 +1,4 @@
 import jovianSystem from './jovianSystem';
-import solarSystem from './solarSystem';
 import threeBodyCoreography from './threeBodyCoreography';
 import earthMoonSystem from './earthMoonSystem';
 import oumuamua from './oumuamua';
@@ -13,6 +12,7 @@ import ulysses from './ulysses';
 import venusPentagram from './venusPentagram';
 import lunarFreeReturn from './lunarFreeReturn';
 import masses from '../masses';
+import { calculateOrbitalVertices } from '../../Physics/utils';
 import { getRandomColor } from '../../utils';
 
 const processScenario = scenario => ({
@@ -38,6 +38,12 @@ const processScenario = scenario => ({
         template === undefined
           ? mass.radius === undefined ? 1.2 : mass.radius
           : template.radius,
+      trailVertices:
+        mass.trailVertices !== undefined
+          ? mass.trailVertices
+          : template === undefined
+            ? calculateOrbitalVertices(mass.orbitalPeriod, scenario.dt)
+            : calculateOrbitalVertices(template.orbitalPeriod, scenario.dt),
       tilt: template === undefined ? false : template.tilt,
       atmosphere: template === undefined ? false : template.atmosphere,
       clouds: template === undefined ? false : template.clouds,
@@ -58,7 +64,6 @@ const processScenario = scenario => ({
 
 export const scenarios = [
   jovianSystem,
-  solarSystem,
   threeBodyCoreography,
   lunarFreeReturn,
   venusPentagram,

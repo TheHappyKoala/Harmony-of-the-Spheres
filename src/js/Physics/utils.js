@@ -24,3 +24,7 @@ export function getIdealCircularOrbit(primary, secondary, g) {
 export function degreesToRadians(degrees) {
   return Math.PI / 180 * degrees;
 }
+
+export function calculateOrbitalVertices(orbitalPeriod, dt) {
+  return (orbitalPeriod / dt * 1.1).toFixed(0);
+}

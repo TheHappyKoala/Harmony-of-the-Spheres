@@ -5,7 +5,7 @@ export default {
   rotatingReferenceFrame: 'Jupiter',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
-  freeOrigoZ: 70000,
+  freeOrigoZ: 30000,
   massBeingModified: 'Jupiter',
   distMax: 0.010068057744,
   distMin: -0.010068057744,
@@ -45,8 +45,7 @@ export default {
       z: -9.213389019387901e-5,
       vx: 3.632459716708889,
       vy: 0.5331313883142663,
-      vz: 0.07191321713719195,
-      trailVertices: 30000
+      vz: 0.07191321713719195
     },
     {
       name: 'Europa',
@@ -55,8 +54,7 @@ export default {
       z: -1.948699591675548e-4,
       vx: 2.867825888888589,
       vy: 0.1479315881074277,
-      vz: 0.053531172951165384,
-      trailVertices: 30000
+      vz: 0.053531172951165384
     },
     {
       name: 'Ganymede',
@@ -65,8 +63,7 @@ export default {
       z: -9.466593207081436e-5,
       vx: 0.009854944632595801,
       vy: -2.2904667534862946,
-      vz: -0.08642422976208332,
-      trailVertices: 30000
+      vz: -0.08642422976208332
     },
     {
       name: 'Callisto',
@@ -75,8 +72,7 @@ export default {
       z: -3.148071350588741e-4,
       vx: 0.6828251398971682,
       vy: -1.5765023231560384,
-      vz: -0.040977438627834185,
-      trailVertices: 30000
+      vz: -0.040977438627834185
     },
     {
       name: 'Juno',
@@ -85,8 +81,7 @@ export default {
       z: -0.004586041119660474,
       vx: -0.02521299585620324,
       vy: -2.5307649570849953,
-      vz: -0.6940820182189928,
-      trailVertices: 30000
+      vz: -0.6940820182189928
     }
   ]
 };
