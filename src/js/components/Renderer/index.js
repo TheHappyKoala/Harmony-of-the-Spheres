@@ -7,11 +7,16 @@ export default class extends Component {
     scene.init(this._webGlCanvas, this._labelsCanvas);
   }
 
-  componentWillReceiveProps(nextProps) {
+  shouldComponentUpdate(nextProps) {
     const nextScenarioName = nextProps.scenarioName;
 
-    if (nextScenarioName !== this.props.scenarioName)
-      scene.reset().init(this._webGlCanvas, this._labelsCanvas);
+    if (nextScenarioName !== this.props.scenarioName) return true;
+
+    return false;
+  }
+
+  componentDidUpdate() {
+    scene.reset().init(this._webGlCanvas, this._labelsCanvas);
   }
 
   render() {
