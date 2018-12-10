@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import LoadingScreen from '../LoadingScreen';
 import Modal from '../Modal';
 import Renderer from '../Renderer';
 import MainBar from '../MainBar';
@@ -146,6 +147,7 @@ export default class extends Component {
             </Modal>
           )}
         </ReactCSSTransitionGroup>
+        {!scenario.isLoaded && <LoadingScreen />}
       </div>
     );
   }

@@ -28,6 +28,8 @@ export default {
 
     this.scene = new THREE.Scene();
 
+    this.manager = new THREE.LoadingManager();
+
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas,
       antialias: true
@@ -61,19 +63,27 @@ export default {
 
     this.addManifestations();
 
-    this.loop();
+    this.manager.onLoad = () => {
+      window.setTimeout(() => {
+        store.dispatch(
+          modifyScenarioProperty({ key: 'isLoaded', value: true })
+        );
+
+        this.loop();
+      }, 1000);
+    };
   },
 
   addManifestation(mass) {
     switch (mass.type) {
       case 'star':
-        return new Star(mass);
+        return new Star(mass, this.manager);
 
       case 'model':
-        return new Model(mass);
+        return new Model(mass, this.manager);
 
       default:
-        return new MassManifestation(mass);
+        return new MassManifestation(mass, this.manager);
     }
   },
 

@@ -2,8 +2,8 @@ import * as THREE from 'three';
 import MassManifestation from './MassManifestation';
 
 export default class extends MassManifestation {
-  constructor(mass) {
-    super(mass);
+  constructor(mass, manager) {
+    super(mass, manager);
   }
 
   getMain() {
@@ -24,7 +24,7 @@ export default class extends MassManifestation {
 
     corona.scale.set(scaledRadius, scaledRadius, scaledRadius);
 
-    const light = new THREE.PointLight(0xffffff, 2, 0);
+    const light = new THREE.PointLight(0xffffff, 2.7, 0);
     light.position.set(0, 0, 0);
     light.color.setHSL(0.55, 0.1, 0.5);
 

@@ -17,6 +17,7 @@ import { getRandomColor } from '../../utils';
 
 const processScenario = scenario => ({
   ...scenario,
+  isLoaded: false,
   playing: false,
   integrator: 'RK4',
   elapsedTime: 0,
