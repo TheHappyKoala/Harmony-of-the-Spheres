@@ -127,7 +127,7 @@ export default {
       freeOrigo,
       dt,
       integrator
-    } = this.scenario;   
+    } = this.scenario;
 
     if (integrator !== this.previousIntegrator) {
       this.system = getIntegrator(integrator, {
@@ -296,7 +296,7 @@ export default {
 
       if (clouds) {
         if (cameraPosition === name) clouds.visible = false;
-        else clouds.visible = false;
+        else clouds.visible = true;
       }
     }
 

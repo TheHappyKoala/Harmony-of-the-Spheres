@@ -17,13 +17,13 @@ export default class extends THREE.Object3D {
   }
 
   getMain() {
-    const sphere = new THREE.SphereGeometry(
+    const geometry = new THREE.SphereGeometry(
       this.mass.radius,
       this.mass.type !== 'asteroid' ? this.segments : 6,
       this.mass.type !== 'asteroid' ? this.segments : 6
     );
 
-    const sphereMaterial = new THREE.MeshPhongMaterial({
+    const material = new THREE.MeshPhongMaterial({
       map: this.textureLoader.load(
         this.mass.type === 'asteroid'
           ? './textures/Deimos.jpg'
@@ -35,17 +35,17 @@ export default class extends THREE.Object3D {
       bumpScale: 1
     });
 
-    const sphereMesh = new THREE.Mesh(sphere, sphereMaterial);
-    sphereMesh.name = 'Main';
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.name = 'Main';
 
-    sphereMesh.rotateX(degreesToRadians(90));
+    mesh.rotateX(degreesToRadians(90));
     this.mass.tilt &&
-      sphereMesh.rotateOnAxis(
+      mesh.rotateOnAxis(
         new THREE.Vector3(1, 0, 0),
         degreesToRadians(this.mass.tilt)
       );
 
-    this.add(sphereMesh);
+    this.add(mesh);
   }
 
   getAtmosphere() {
@@ -137,7 +137,16 @@ export default class extends THREE.Object3D {
       atmosphere.position.set(x, y, z);
     }
 
+    if (this.mass.clouds) {
+      const clouds = this.getObjectByName('Clouds');
+
+      clouds.position.set(x, y, z);
+      clouds.rotation.z += 0.0005;
+    }
+
     main.position.set(x, y, z);
+
+    main.rotation.y += 0.001;
 
     if (trail !== undefined) {
       trail.geometry.vertices.unshift(new THREE.Vector3().copy(main.position));
