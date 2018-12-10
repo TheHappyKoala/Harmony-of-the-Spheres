@@ -11,7 +11,7 @@ export default {
   rotatingReferenceFrame: 'Sun',
   cameraPosition: 'Free',
   cameraFocus: 'New Horizons',
-  freeOrigoZ: '99500000',
+  freeOrigo: { x: 0, y: 0, z: 9950000 },
   massBeingModified: 'Sun',
   primary: 'Sun',
   maximumDistance: { name: 'Sun to Kuiper Belt', value: 55 },

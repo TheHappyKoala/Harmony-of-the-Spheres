@@ -11,7 +11,7 @@ export default {
   rotatingReferenceFrame: 'Earth',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
-  freeOrigoZ: 9950000,
+  freeOrigo: { x: 0, y: 0, z: 9950000 },
   massBeingModified: 'Sun',
   primary: 'Sun',
   maximumDistance: { name: 'Sun to Jupiter', value: 5.2 },

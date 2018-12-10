@@ -124,10 +124,10 @@ export default {
       rotatingReferenceFrame,
       cameraPosition,
       cameraFocus,
-      freeOrigoZ,
+      freeOrigo,
       dt,
       integrator
-    } = this.scenario;
+    } = this.scenario;   
 
     if (integrator !== this.previousIntegrator) {
       this.system = getIntegrator(integrator, {
@@ -170,7 +170,7 @@ export default {
       this.previousCameraFocus = cameraFocus;
 
       if (cameraPosition === 'Free') {
-        this.camera.position.set(0, 0, freeOrigoZ);
+        this.camera.position.set(freeOrigo.x, freeOrigo.y, freeOrigo.z);
 
         this.camera.lookAt(origo);
       }

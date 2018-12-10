@@ -6,7 +6,7 @@ export default {
   rotatingReferenceFrame: 'Origo',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
-  freeOrigoZ: 800000000,
+  freeOrigo: { x: 0, y: 0, z: 800000000 },
   massBeingModified: 'Eva',
   distMax: 400,
   distMin: -400,

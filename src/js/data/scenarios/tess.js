@@ -11,7 +11,11 @@ export default {
   rotatingReferenceFrame: 'Earth',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
-  freeOrigoZ: 16000,
+  freeOrigo: {
+    x: 31.634445180052754,
+    y: 551.9256768615364,
+    z: 117.69438629186993
+  },
   massBeingModified: 'Sun',
   primary: 'Earth',
   maximumDistance: { name: 'Moon to Earth * 10', value: 0.0256955529 },

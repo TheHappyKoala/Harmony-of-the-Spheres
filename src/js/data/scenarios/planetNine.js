@@ -11,7 +11,11 @@ export default {
   rotatingReferenceFrame: 'Sun',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
-  freeOrigoZ: 6500000000,
+  freeOrigo: {
+    x: 5191960505.287371,
+    y: -1366929125.5562208,
+    z: 3664021134.9333267
+  },
   massBeingModified: 'Sun',
   primary: 'Sun',
   maximumDistance: { name: 'Sun to Planet 9', value: 22000 },

@@ -14,7 +14,11 @@ export default {
   primary: 'Earth',
   maximumDistance: { name: 'Moon to Earth * 10', value: 0.0256955529 },
   distanceStep: { name: 'Moon to Earth / 100', value: 0.0005139110579999999 },
-  freeOrigoZ: 200000,
+  freeOrigo: {
+    x: 17606.193632543513,
+    y: 48372.61945116485,
+    z: 11305.982517894732
+  },
   massBeingModified: 'Sun',
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/2006_RH120',
   masses: [

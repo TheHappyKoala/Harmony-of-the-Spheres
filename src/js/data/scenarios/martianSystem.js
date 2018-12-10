@@ -11,7 +11,11 @@ export default {
   rotatingReferenceFrame: 'Mars',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
-  freeOrigoZ: 1000,
+  freeOrigo: {
+    x: -9.401642562455261e-14,
+    y: -306.1964940362069,
+    z: 102.79005884167552
+  },
   massBeingModified: 'Mars',
   primary: 'Mars',
   maximumDistance: { name: 'Phobos to Mars * 100', value: 0.00626747 },
