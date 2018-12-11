@@ -64,6 +64,24 @@ export default [
     color: 'limegreen',
     name: 'Juno'
   },
+
+  {
+    m: 5.359189909029e-15,
+    orbitalPeriod: 0.00091324109589,
+    radius: 0.1,
+    type: 'model',
+    color: 'limegreen',
+    name: 'Phobos'
+  },
+  {
+    m: 7.422118532422e-16,
+    orbitalPeriod: 0.003424658,
+    radius: 0.1,
+    type: 'model',
+    color: 'orange',   
+    name: 'Deimos'
+  },
+
   {
     m: 0,
     orbitalPeriod: 6.2,
