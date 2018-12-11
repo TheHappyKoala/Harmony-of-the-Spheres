@@ -5,7 +5,11 @@ export default {
   rotatingReferenceFrame: 'Jupiter',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
-  freeOrigo: { x: 0, y: 13000, z: 2000 },
+  freeOrigo: {
+    x: -7480.213284753809,
+    y: -8163.220347463112,
+    z: 2139.892485956284
+  },
   massBeingModified: 'Jupiter',
   distMax: 0.010068057744,
   distMin: -0.010068057744,
