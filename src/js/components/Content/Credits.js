@@ -27,14 +27,28 @@ export default function() {
         <a href="https://nasa3d.arc.nasa.gov/models" target="blank">
           Spacecraft 3D models
         </a>{' '}
-        curtsey of NASA.
+        courtesy of NASA.
       </p>
       <p className="modal-item">
         <b>&#187; </b>
-        <a href="http://planetpixelemporium.com/" target="blank">
-          Planet textures
+        Planet and moon textures courtesy of the dazzling{' '}
+        <a href="https://www.deviantart.com/magentameteorite" target="blank">
+          MagentaMeteorite (Brie Limburger)
+        </a>.
+      </p>
+      <p className="modal-item">
+        <b>&#187; </b>
+        <a href="http://openuniverse.sourceforge.net/" target="blank">
+          Phobos and Deimos 3D models
         </a>{' '}
-        curtsey of James Hastings-Trew.
+        courtesy of Raul Alvarez.
+      </p>
+      <p className="modal-item">
+        <b>&#187; </b>
+        <a href="http://planetpixelemporium.com/mars.html" target="blank">
+          Phobos and Deimos textures
+        </a>{' '}
+        courtesy of James Hastings-Trew.
       </p>
       <p className="modal-item">
         <b>&#187; </b>
@@ -49,6 +63,10 @@ export default function() {
         <a href="https://space.stackexchange.com/" target="blank">
           space.stackexchange.com
         </a>{' '}
+        and{' '}
+        <a href="https://scicomp.stackexchange.com/" target="blank">
+          scicomp.stackexchange.com
+        </a>{' '}
         for kindly providing answers and feedback that helped me in the
         development of this application.
       </p>
@@ -59,6 +77,13 @@ export default function() {
         </a>{' '}
         and all the awesome people that contribute to it with content and the
         financial resources that keep it up and running.
+      </p>
+      <p className="modal-item">
+        <b>&#187; </b>
+        Mr. Doob and all the other people that created the{' '}
+        <a href="https://threejs.org/" target="blank">
+          THREE.js WebGL library
+        </a>.
       </p>
       <p className="modal-item">
         <b>&#187; </b>
