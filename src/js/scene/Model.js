@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import MassManifestation from './MassManifestation';
 
 const ColladaLoader = require('three-collada-loader');
@@ -9,12 +8,6 @@ export default class extends MassManifestation {
   }
 
   getMain() {
-    const container = new THREE.Object3D();
-
-    container.name = 'Main';
-
-    this.add(container);
-
     const massNameLowerCase = this.mass.texture.toLowerCase();
 
     const loader = new ColladaLoader(this.manager);
@@ -28,7 +21,9 @@ export default class extends MassManifestation {
           this.mass.radius
         );
 
-        container.add(collada.scene);
+        collada.scene.name = 'Main';
+
+        this.add(collada.scene);
       }
     );
   }
