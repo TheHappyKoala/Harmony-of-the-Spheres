@@ -29,9 +29,10 @@ export default class extends THREE.Object3D {
           ? './textures/Deimos.jpg'
           : `./textures/${this.mass.texture}.jpg`
       ),
-      bumpMap: this.textureLoader.load(
-        `./textures/${this.mass.texture}Bump.jpg`
-      ),
+      bumpMap:
+        this.mass.bump === true
+          ? this.textureLoader.load(`./textures/${this.mass.texture}Bump.jpg`)
+          : null,
       bumpScale: 1
     });
 
