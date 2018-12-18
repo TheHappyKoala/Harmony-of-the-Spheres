@@ -1,4 +1,5 @@
 import jovianSystem from './jovianSystem';
+import voyagerNeptune from './voyagerNeptune';
 import threeBodyCoreography from './threeBodyCoreography';
 import earthMoonSystem from './earthMoonSystem';
 import oumuamua from './oumuamua';
@@ -65,6 +66,7 @@ const processScenario = scenario => ({
 
 export const scenarios = [
   jovianSystem,
+  voyagerNeptune,
   threeBodyCoreography,
   lunarFreeReturn,
   venusPentagram,

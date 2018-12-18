@@ -15,8 +15,9 @@ export default [
   { name: 'Moon to Earth / 100', value: 0.000025695552899999998 },
   { name: 'Io to Jupiter / 10', value: 0.00028189999999999997 },
   { name: 'Io to Jupiter / 100', value: 2.819e-5 },
-  { name: 'Titan to Saturn / 10', value: 8.167562775299999e-4 },
+  { name: 'Titan to Saturn / 10', value: 8.167562775299999e-4 },        
   { name: 'Titan to Saturn / 100', value: 8.167562775299999e-5 },
+  { name: 'Triton to Neptune / 100', value: 0.000023716915100000003 },
   { name: 'Phobos to Mars / 10', value: 6.26747e-6 },
   { name: 'Phobos to Mars / 100', value: 6.26747e-7 }
 ];

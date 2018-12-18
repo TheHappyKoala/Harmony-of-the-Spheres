@@ -78,7 +78,7 @@ export default [
     orbitalPeriod: 0.003424658,
     radius: 0.1,
     type: 'model',
-    color: 'orange',   
+    color: 'orange',
     name: 'Deimos'
   },
 
@@ -141,7 +141,7 @@ export default [
     radius: 370.6422018348624,
     tilt: -82.23,
     orbitalPeriod: 84.01,
-    atmosphere: { color: '#93cfef', scaleFactor: 250 },
+    atmosphere: { color: '#93cfef', scaleFactor: 350 },
     color: 'lightblue',
     name: 'Uranus'
   },
@@ -150,13 +150,31 @@ export default [
     radius: 355.9633027522936,
     tilt: -28.32,
     orbitalPeriod: 164.8,
-    atmosphere: { color: '#93cfef', scaleFactor: 250 },
+    atmosphere: { color: '#93cfef', scaleFactor: 350 },
     color: 'lightblue',
     name: 'Neptune'
   },
   {
+    m: 1.0780769999999999e-8,
+    radius: 19.467889908256883,
+    tilt: 0,
+    orbitalPeriod: 0.01609589,
+    color: 'lightblue',
+    name: 'Triton',
+    bump: true
+  },
+  {
+    m: 2.531524645085e-11,
+    radius: 6,
+    tilt: 0,
+    type: 'model',
+    orbitalPeriod: 0.0030739726,
+    color: 'orange',
+    name: 'Proteus'
+  },
+  {
     m: 6.58086572e-9,
-    radius: 16.05504587155963,
+    radius: 19.467889908256883,
     tilt: -57.47,
     orbitalPeriod: 248,
     atmosphere: { color: '#93cfef', scaleFactor: 20 },
@@ -179,6 +197,13 @@ export default [
     type: 'model',
     color: 'limegreen',
     name: 'New Horizons'
+  },
+  {
+    m: 0,
+    radius: 1.2,
+    type: 'model',
+    color: 'limegreen',
+    name: 'Voyager 2'
   },
   {
     m: 0.00005149,
