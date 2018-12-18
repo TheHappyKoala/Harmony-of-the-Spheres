@@ -1,13 +1,13 @@
 import * as THREE from 'three';
 
-export default function() {
+export default function(manager) {
   const geometry = new THREE.SphereGeometry(
     1500 * 1000000000000000000000000000,
     32,
     32
   );
 
-  const textureLoader = new THREE.TextureLoader();
+  const textureLoader = new THREE.TextureLoader(manager);
 
   const material = new THREE.MeshBasicMaterial();
   material.map = textureLoader.load('./textures/starfield.png');

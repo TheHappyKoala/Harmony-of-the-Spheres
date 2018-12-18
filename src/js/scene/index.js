@@ -48,7 +48,7 @@ export default {
     this.previousRotatingReferenceFrame = null;
     this.previousIntegrator = this.scenario.integrator;
 
-    this.scene.add(arena());
+    this.scene.add(arena(this.manager));
 
     this.massManifestations = [];
 
