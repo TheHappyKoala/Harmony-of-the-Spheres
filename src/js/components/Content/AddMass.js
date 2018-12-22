@@ -3,6 +3,7 @@ import Dropdown from '../Dropdown';
 import Button from '../Button';
 import Slider from '../Slider';
 import Tooltip from '../Tooltip';
+import { getRandomColor } from '../../utils';
 import bodies from '../../data/masses';
 import maximumDistances from '../../data/distances/maximumDistances';
 import distanceSteps from '../../data/distances/distanceSteps';
@@ -15,7 +16,6 @@ export default class extends Component {
       m: bodies[0].m,
       radius: bodies[0].radius,
       texture: bodies[0].name,
-      color: bodies[0].color,
       type: null,
       distance: props.distanceStep.value
     };
@@ -154,8 +154,7 @@ export default class extends Component {
                     m: body.m,
                     radius: body.radius,
                     texture: body.name,
-                    type: body.type,
-                    color: body.color
+                    type: body.type
                   })
                 }
               >
@@ -170,12 +169,12 @@ export default class extends Component {
               primary: this.props.primary,
               secondary: {
                 name: `Custom Mass ${Date.now()}`,
-                trailVertices: 20000,
+                trailVertices: 6000,
                 m: this.state.m,
                 radius: this.state.radius,
                 texture: this.state.texture,
                 type: this.state.type,
-                color: this.state.color,
+                color: getRandomColor(),
                 distance: this.state.distance
               }
             })
