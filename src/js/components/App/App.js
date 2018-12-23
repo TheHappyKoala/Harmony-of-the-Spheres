@@ -147,7 +147,7 @@ export default class extends Component {
             </Modal>
           )}
         </ReactCSSTransitionGroup>
-        {!scenario.isLoaded && <LoadingScreen />}
+        {!scenario.isLoaded && <LoadingScreen scenarioName={scenario.name} />}
       </div>
     );
   }
