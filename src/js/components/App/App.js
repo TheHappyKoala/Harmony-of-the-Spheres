@@ -114,8 +114,15 @@ export default class extends Component {
               <i className="fas fa-info-circle fa-2x" />
               <p>About</p>
             </li>
+            <li key="tweet">
+            <a href="http://twitter.com/share" target="blank">
+
+              <i className="fas fa-twitter fa-2x" />
+              <p>Tweet</p>          
+              </a> 
+            </li>
             <li
-              key="credits"
+              key="contact"
               onClick={() => this.displayComponent('displayContact')}
             >
               <i className="fas fa-envelope-open fa-2x" />
@@ -132,11 +139,11 @@ export default class extends Component {
         </div>
         <div className="bottom-bar">
           <h2>Harmony of the Spheres</h2>
-        </div>
+        </div>    
         <ReactCSSTransitionGroup
           transitionName="fade"
           transitionEnterTimeout={250}
-          transitionLeaveTimeout={250}
+          transitionLeaveTimeout={250}    
         >
           {this.state.displayScenarioWiki && (
             <Modal
