@@ -8,9 +8,10 @@ import Tabs from '../Tabs';
 import Physics from '../Content/Physics';
 import Graphics from '../Content/Graphics';
 import Camera from '../Content/Camera';
-import Masses from '../Content/Masses';
+import Masses from '../Content/Masses';      
 import AddMass from '../Content/AddMass';
 import About from '../Content/About';
+import Contact from '../Content/Contact';   
 import Credits from '../Content/Credits';
 import ScenarioWiki from '../Content/ScenarioWiki';
 import './App.less';
@@ -21,6 +22,7 @@ export default class extends Component {
 
     this.state = {
       displayAbout: false,
+      displayContact: false,   
       displayCredits: false,
       displayScenarioWiki: false
     };
@@ -114,6 +116,13 @@ export default class extends Component {
             </li>
             <li
               key="credits"
+              onClick={() => this.displayComponent('displayContact')}
+            >
+              <i className="fas fa-envelope-open fa-2x" />
+              <p>Contact</p> 
+            </li>
+            <li
+              key="credits"
               onClick={() => this.displayComponent('displayCredits')}
             >
               <i className="fas fa-glass fa-2x" />
@@ -139,6 +148,11 @@ export default class extends Component {
           {this.state.displayAbout && (
             <Modal callback={() => this.displayComponent('displayAbout')}>
               <About />
+            </Modal>
+          )}          
+          {this.state.displayContact && (
+            <Modal callback={() => this.displayComponent('displayContact')}>   
+              <Contact />
             </Modal>
           )}
           {this.state.displayCredits && (
