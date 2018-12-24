@@ -113,14 +113,7 @@ export default class extends Component {
             >
               <i className="fas fa-info-circle fa-2x" />
               <p>About</p>
-            </li>
-            <li key="tweet">
-            <a href="http://twitter.com/share" target="blank">
-
-              <i className="fas fa-twitter fa-2x" />
-              <p>Tweet</p>          
-              </a> 
-            </li>
+            </li>     
             <li
               key="contact"
               onClick={() => this.displayComponent('displayContact')}
