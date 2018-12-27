@@ -88,24 +88,26 @@ export default class extends THREE.Object3D {
   }
 
   getTrail() {
-    const trailGeometry = new THREE.Geometry();
+    const geometry = new THREE.Geometry();
 
-    for (let i = 0; i < this.mass.trailVertices; i++)
-      trailGeometry.vertices.push(
+    const trailVertices = this.mass.trailVertices;
+
+    for (let i = 0; i < trailVertices; i++)
+      geometry.vertices.push(
         new THREE.Vector3().copy(this.getObjectByName('Main').position)
       );
 
-    const trailMaterial = new THREE.LineBasicMaterial({
+    const material = new THREE.LineBasicMaterial({
       color: this.mass.color
     });
 
-    const trail = new THREE.Line(trailGeometry, trailMaterial);
+    const mesh = new THREE.Line(geometry, material);
 
-    trail.name = 'Trail';
+    mesh.name = 'Trail';    
 
-    trail.frustumCulled = false;
+    mesh.frustumCulled = false;
 
-    this.add(trail);
+    this.add(mesh);
   }
 
   removeTrail() {
@@ -150,7 +152,7 @@ export default class extends THREE.Object3D {
     main.rotation.y += 0.001;
 
     if (trail !== undefined) {
-      trail.geometry.vertices.unshift(new THREE.Vector3().copy(main.position));
+      trail.geometry.vertices.unshift(new THREE.Vector3().copy(main.position));   
       trail.geometry.vertices.length = this.mass.trailVertices;
       trail.geometry.verticesNeedUpdate = true;
     }
