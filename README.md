@@ -1,16 +1,11 @@
 # Harmony of the Spheres
 Newtonian n-body gravity simulator
 
-## Run the App Locally
-```npm run dev```
-   
-## Create a Production Build
-```npm run build```
+Copyright (c) 2018 Darrell Huffman. All rights reserved. 
 
-## Prettify
-```npm run prettier```
+No one may reproduce, distribute, or create derivative works from this work. As per GitHub's Terms of Service, you are, of course, allowed to view and fork the repository. 
 
-[DEMO](https://thehappykoala.github.io/Harmony-of-the-Spheres/)
+Now over to the fun part...
 
 ## To Do List
 
@@ -24,9 +19,9 @@ Newtonian n-body gravity simulator
 * Add controllable spacecraft that obey the laws of physics (at least things like thrust, attitude control and orbital insertion maneuvers)
 * Any cool ideas you might have! 
 
-## Contribute
+[DEMO](https://thehappykoala.github.io/Harmony-of-the-Spheres/)
 
-Got some time to spare and feel like contributing to this project? Awesome! If you find a bug or want to submit a new feature, hit me up with a pull request and we'll take it from there. 
+
 
 
 
