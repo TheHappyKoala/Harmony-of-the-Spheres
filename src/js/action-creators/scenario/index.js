@@ -1,5 +1,6 @@
 import * as scenarioActionTypes from '../../action-types/scenario';
 import filterScenarios from '../../data/scenarios';
+import { getObjFromArrByKeyValuePair } from '../../utils';    
 import { getIdealCircularOrbit } from '../../Physics/utils';
 
 export function getScenario(name) {
@@ -35,9 +36,11 @@ export function addMass(payload) {
   return (dispatch, getState) => {
     const scenario = getState().scenario;
 
-    const primary = scenario.masses.filter(
-      mass => mass.name.indexOf(payload.primary) > -1
-    )[0];
+    const primary = getObjFromArrByKeyValuePair(
+      scenario.masses,
+      'name',
+      payload.primary
+    );
 
     dispatch({
       type: scenarioActionTypes.ADD_MASS,

@@ -1,5 +1,7 @@
 import jovianSystem from './jovianSystem';
 import voyagerNeptune from './voyagerNeptune';
+import saturnFull from './saturnFull';
+import saturn from './saturn';
 import threeBodyCoreography from './threeBodyCoreography';
 import earthMoonSystem from './earthMoonSystem';
 import oumuamua from './oumuamua';
@@ -14,7 +16,7 @@ import venusPentagram from './venusPentagram';
 import lunarFreeReturn from './lunarFreeReturn';
 import masses from '../masses';
 import { calculateOrbitalVertices } from '../../Physics/utils';
-import { getRandomColor } from '../../utils';
+import { getRandomColor, getObjFromArrByKeyValuePair } from '../../utils';
 
 const processScenario = scenario => ({
   ...scenario,
@@ -59,7 +61,7 @@ const processScenario = scenario => ({
       color:
         template === undefined
           ? mass.color === undefined ? getRandomColor() : mass.color
-          : template.color
+          : template.color === undefined ? getRandomColor() : template.color
     };
   })
 });
@@ -73,7 +75,9 @@ export const scenarios = [
   oumuamua,
   earthMoonSystem,
   tess,
+  saturn,
   martianSystem,
+  saturnFull,
   newHorizons,
   cruithne,
   planetNine,
@@ -82,9 +86,11 @@ export const scenarios = [
 ];
 
 export default function(scenario) {
-  const selectedScenario = scenarios.filter(
-    entry => entry.name.indexOf(scenario) > -1
+  const selectedScenario = getObjFromArrByKeyValuePair(
+    scenarios,
+    'name',
+    scenario
   );
 
-  return processScenario(JSON.parse(JSON.stringify(selectedScenario[0])));
+  return processScenario(JSON.parse(JSON.stringify(selectedScenario)));
 }

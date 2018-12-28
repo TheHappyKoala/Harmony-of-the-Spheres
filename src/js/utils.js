@@ -6,3 +6,7 @@ export function getRandomColor() {
 
   return color;
 }
+
+export function getObjFromArrByKeyValuePair(arr, key, val) {
+  return arr.filter(entry => entry[key].indexOf(val) > -1)[0];
+}
