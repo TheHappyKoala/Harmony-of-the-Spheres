@@ -463,8 +463,37 @@ h3 {
   position: relative;
 }
 .main-bar .scenario-dropdown-wrapper {
-  width: 260px;
+  width: 252px;
   margin-left: 7px;
+}
+.main-bar .scenario-dropdown-wrapper .scenario-menu {
+  position: absolute;
+  z-index: 2;
+  background-color: #191919;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid-template-columns: 220px;
+  padding: 10px;
+  height: 75vh;
+  overflow: auto;
+  border: 1px solid #545454;
+}
+.main-bar .scenario-dropdown-wrapper .scenario-menu .scenario-menu-option {
+  position: relative;
+}
+.main-bar .scenario-dropdown-wrapper .scenario-menu .scenario-menu-option a:hover > p {
+  font-weight: bold;
+}
+.main-bar .scenario-dropdown-wrapper .scenario-menu img {
+  width: 220px;
+}
+.main-bar .scenario-dropdown-wrapper .scenario-menu p {
+  position: absolute;
+  z-index: 10;
+  bottom: 12px;
+  width: 100%;
+  text-align: center;
 }
 .main-bar .play-state-wrapper {
   margin-left: 15px;
@@ -479,6 +508,11 @@ h3 {
 .main-bar .elapsed-time-wrapper .elapsed-time {
   margin-left: 5px;
   font-weight: bold;
+}
+@media screen and (min-width: 550px) {
+  .scenario-menu {
+    grid-template-columns: 220px 220px !important;
+  }
 }
 .absolute {
   position: absolute;
