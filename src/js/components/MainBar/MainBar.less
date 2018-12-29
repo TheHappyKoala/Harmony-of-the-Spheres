@@ -15,7 +15,36 @@
   }
   .scenario-dropdown-wrapper {
     width: 260px;
-    margin-left: 7px;
+    margin-left: 7px;    
+    .scenario-menu {
+      .absolute();
+      z-index: 2;
+      background-color: @input;   
+      display: grid;
+      grid-column-gap: 5px;        
+      grid-row-gap: 5px;
+      grid-template-columns: auto auto;
+      padding: 10px;   
+      height: 75vh;      
+      overflow: auto; 
+      border: @border;
+      .scenario-menu-option {
+        position: relative;   
+        a:hover > p {
+          font-weight: bold; 
+        }
+      }
+      img {
+        width: 250px;
+      }
+      p {
+        position: absolute;     
+        z-index: 10;
+        bottom: 12px;
+        width: 100%;
+        text-align: center;   
+      }
+    }
   }
   .play-state-wrapper {
     margin-left: 15px;

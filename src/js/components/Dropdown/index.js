@@ -67,7 +67,15 @@ export default class extends Component {
             <i className="fa fa-chevron-circle-down fa-lg" />
           </div>
           {this.state.displayAllOptions && (
-            <div className="options">{options}</div>
+            <div
+              className={
+                this.props.customCssOptions !== undefined
+                  ? this.props.customCssOptions
+                  : 'options'
+              }
+            >
+              {options}
+            </div>
           )}
         </div>
       </div>

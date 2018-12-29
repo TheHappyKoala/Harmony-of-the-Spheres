@@ -9,15 +9,17 @@ export default function(props) {
     <div className="main-bar">
       <label className="inline">Scenario</label>
       <div className="item scenario-dropdown-wrapper inline">
-        <Dropdown selectedOption={props.scenario.name}>
+        <Dropdown
+          selectedOption={props.scenario.name}
+          customCssOptions="scenario-menu"
+        >
           {scenarios.map(scenario => (
-            <NavLink
-              to={`/scenario/${scenario.name}`}
-              name={scenario.name}
-              key={scenario.name}
-            >
-              {scenario.name}
-            </NavLink>
+            <div className="scenario-menu-option" key={scenario.name}>
+              <NavLink to={`/scenario/${scenario.name}`} name={scenario.name}>
+                <img src={`./images/scenarios/${scenario.name}.png`} />
+                <p>{scenario.name}</p>
+              </NavLink>
+            </div>
           ))}
         </Dropdown>
       </div>
