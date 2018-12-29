@@ -485,9 +485,6 @@ h3 {
 .main-bar .scenario-dropdown-wrapper .scenario-menu .scenario-menu-option a:hover > p {
   font-weight: bold;
 }
-.main-bar .scenario-dropdown-wrapper .scenario-menu img {
-  width: 220px;
-}
 .main-bar .scenario-dropdown-wrapper .scenario-menu p {
   position: absolute;
   z-index: 10;
