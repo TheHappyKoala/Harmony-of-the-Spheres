@@ -14,17 +14,17 @@
     position: relative;
   }
   .scenario-dropdown-wrapper {
-    width: 260px;
+    width: 252px;
     margin-left: 7px;    
     .scenario-menu {
-      .absolute();
+      .absolute();   
       z-index: 2;
       background-color: @input;   
-      display: grid;
+      display: grid;  
       grid-column-gap: 5px;        
-      grid-row-gap: 5px;
-      grid-template-columns: auto auto;
-      padding: 10px;   
+      grid-row-gap: 5px;   
+      grid-template-columns: 220px;
+      padding: 10px;          
       height: 75vh;      
       overflow: auto; 
       border: @border;
@@ -33,9 +33,6 @@
         a:hover > p {
           font-weight: bold; 
         }
-      }
-      img {
-        width: 250px;
       }
       p {
         position: absolute;     
@@ -61,3 +58,9 @@
     }
   }
 }
+
+@media screen and (min-width: 550px) {
+  .scenario-menu {
+    grid-template-columns: 220px 220px !important;   
+  }
+} 

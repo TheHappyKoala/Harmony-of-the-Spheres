@@ -16,7 +16,7 @@ export default function(props) {
           {scenarios.map(scenario => (
             <div className="scenario-menu-option" key={scenario.name}>
               <NavLink to={`/scenario/${scenario.name}`} name={scenario.name}>
-                <img src={`./images/scenarios/${scenario.name}.png`} />
+                <img src={`./images/scenarios/${scenario.name}.png`} width={220} height={138} />
                 <p>{scenario.name}</p>
               </NavLink>
             </div>
