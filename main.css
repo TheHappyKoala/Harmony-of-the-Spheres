@@ -278,6 +278,24 @@ h3 {
   opacity: 0;
   transition: opacity 250ms ease-in;
 }
+@media screen and (max-width: 400px) {
+  .rotate-to-landscape-prompt {
+    position: absolute;
+    z-index: 999999999999999999999;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+  }
+  .rotate-to-landscape-prompt h1 {
+    margin-top: 45vh;
+  }
+  .rotate-to-landscape-prompt p {
+    margin-top: 10px;
+  }
+}
 .absolute {
   position: absolute;
 }
@@ -447,6 +465,24 @@ h3 {
 .fade-leave.fade-leave-active {
   opacity: 0;
   transition: opacity 250ms ease-in;
+}
+@media screen and (max-width: 400px) {
+  .rotate-to-landscape-prompt {
+    position: absolute;
+    z-index: 999999999999999999999;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+  }
+  .rotate-to-landscape-prompt h1 {
+    margin-top: 45vh;
+  }
+  .rotate-to-landscape-prompt p {
+    margin-top: 10px;
+  }
 }
 .main-bar {
   position: fixed;
@@ -681,6 +717,24 @@ h3 {
   opacity: 0;
   transition: opacity 250ms ease-in;
 }
+@media screen and (max-width: 400px) {
+  .rotate-to-landscape-prompt {
+    position: absolute;
+    z-index: 999999999999999999999;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+  }
+  .rotate-to-landscape-prompt h1 {
+    margin-top: 45vh;
+  }
+  .rotate-to-landscape-prompt p {
+    margin-top: 10px;
+  }
+}
 .dropdown {
   width: 100%;
 }
@@ -882,6 +936,24 @@ h3 {
 .fade-leave.fade-leave-active {
   opacity: 0;
   transition: opacity 250ms ease-in;
+}
+@media screen and (max-width: 400px) {
+  .rotate-to-landscape-prompt {
+    position: absolute;
+    z-index: 999999999999999999999;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+  }
+  .rotate-to-landscape-prompt h1 {
+    margin-top: 45vh;
+  }
+  .rotate-to-landscape-prompt p {
+    margin-top: 10px;
+  }
 }
 .slider-wrapper {
   overflow: hidden;
@@ -1108,6 +1180,24 @@ h3 {
   opacity: 0;
   transition: opacity 250ms ease-in;
 }
+@media screen and (max-width: 400px) {
+  .rotate-to-landscape-prompt {
+    position: absolute;
+    z-index: 999999999999999999999;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+  }
+  .rotate-to-landscape-prompt h1 {
+    margin-top: 45vh;
+  }
+  .rotate-to-landscape-prompt p {
+    margin-top: 10px;
+  }
+}
 .tip-wrapper {
   display: inline-block;
   float: right;
@@ -1295,6 +1385,24 @@ h3 {
 .fade-leave.fade-leave-active {
   opacity: 0;
   transition: opacity 250ms ease-in;
+}
+@media screen and (max-width: 400px) {
+  .rotate-to-landscape-prompt {
+    position: absolute;
+    z-index: 999999999999999999999;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+  }
+  .rotate-to-landscape-prompt h1 {
+    margin-top: 45vh;
+  }
+  .rotate-to-landscape-prompt p {
+    margin-top: 10px;
+  }
 }
 .toggle {
   display: block;
@@ -1497,6 +1605,24 @@ h3 {
 .fade-leave.fade-leave-active {
   opacity: 0;
   transition: opacity 250ms ease-in;
+}
+@media screen and (max-width: 400px) {
+  .rotate-to-landscape-prompt {
+    position: absolute;
+    z-index: 999999999999999999999;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+  }
+  .rotate-to-landscape-prompt h1 {
+    margin-top: 45vh;
+  }
+  .rotate-to-landscape-prompt p {
+    margin-top: 10px;
+  }
 }
 .button {
   width: 100%;
