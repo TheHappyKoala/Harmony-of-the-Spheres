@@ -169,7 +169,7 @@ export default class extends Component {
               primary: this.props.primary,
               secondary: {
                 name: `Custom Mass ${Date.now()}`,
-                trailVertices: 6000,
+                trailVertices: 2000,
                 m: this.state.m,
                 radius: this.state.radius,
                 texture: this.state.texture,
