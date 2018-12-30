@@ -8,10 +8,10 @@ import Tabs from '../Tabs';
 import Physics from '../Content/Physics';
 import Graphics from '../Content/Graphics';
 import Camera from '../Content/Camera';
-import Masses from '../Content/Masses';      
+import Masses from '../Content/Masses';
 import AddMass from '../Content/AddMass';
 import About from '../Content/About';
-import Contact from '../Content/Contact';   
+import Contact from '../Content/Contact';
 import Credits from '../Content/Credits';
 import ScenarioWiki from '../Content/ScenarioWiki';
 import './App.less';
@@ -22,7 +22,7 @@ export default class extends Component {
 
     this.state = {
       displayAbout: false,
-      displayContact: false,   
+      displayContact: false,
       displayCredits: false,
       displayScenarioWiki: false
     };
@@ -113,13 +113,13 @@ export default class extends Component {
             >
               <i className="fas fa-info-circle fa-2x" />
               <p>About</p>
-            </li>     
+            </li>
             <li
               key="contact"
               onClick={() => this.displayComponent('displayContact')}
             >
               <i className="fas fa-envelope-open fa-2x" />
-              <p>Contact</p> 
+              <p>Contact</p>
             </li>
             <li
               key="credits"
@@ -132,11 +132,11 @@ export default class extends Component {
         </div>
         <div className="bottom-bar">
           <h2>Harmony of the Spheres</h2>
-        </div>    
+        </div>
         <ReactCSSTransitionGroup
           transitionName="fade"
           transitionEnterTimeout={250}
-          transitionLeaveTimeout={250}    
+          transitionLeaveTimeout={250}
         >
           {this.state.displayScenarioWiki && (
             <Modal
@@ -149,9 +149,9 @@ export default class extends Component {
             <Modal callback={() => this.displayComponent('displayAbout')}>
               <About />
             </Modal>
-          )}          
+          )}
           {this.state.displayContact && (
-            <Modal callback={() => this.displayComponent('displayContact')}>   
+            <Modal callback={() => this.displayComponent('displayContact')}>
               <Contact />
             </Modal>
           )}
@@ -162,6 +162,10 @@ export default class extends Component {
           )}
         </ReactCSSTransitionGroup>
         {!scenario.isLoaded && <LoadingScreen scenarioName={scenario.name} />}
+        <div className="rotate-to-landscape-prompt">
+          <h1>Hey friend...</h1>
+          <p>Please rotate your device into landscape mode.</p>
+        </div>
       </div>
     );
   }

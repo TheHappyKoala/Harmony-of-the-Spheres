@@ -195,3 +195,22 @@ h3 {
   opacity: 0;
   transition: opacity 250ms ease-in;
 }
+
+@media screen and (max-width: 400px) {
+  .rotate-to-landscape-prompt {
+    .absolute();
+    z-index: 999999999999999999999;
+    top: 0;
+    height: 100%;
+    left: 0; 
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+    h1 {
+      margin-top: 45vh;
+    }
+    p {
+      margin-top: 10px;
+    }
+  }
+}   
