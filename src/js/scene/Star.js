@@ -24,18 +24,22 @@ export default class extends MassManifestation {
 
     corona.scale.set(scaledRadius, scaledRadius, scaledRadius);
 
-    const light = new THREE.PointLight(0xffffff, 2.7, 0);
-    light.position.set(0, 0, 0);
-    light.color.setHSL(0.55, 0.1, 0.5);
+    if (this.mass.light !== false) {
+      const light = new THREE.PointLight(0xffffff, 2.7, 0);
+      light.position.set(0, 0, 0);
+      light.color.setHSL(0.55, 0.1, 0.5);
 
-    const sphere = new THREE.SphereGeometry(this.mass.radius, 32, 32);
+      container.add(light);
+    }
 
-    const sphereMaterial = new THREE.MeshBasicMaterial({ color: 'white' });
+    const geometry = new THREE.SphereGeometry(this.mass.radius, 32, 32);
 
-    const sphereMesh = new THREE.Mesh(sphere, sphereMaterial);
-    sphereMesh.rotation.x = Math.PI / 2;
+    const material = new THREE.MeshBasicMaterial({ color: 'white' });
 
-    container.add(sphereMesh, corona, light);
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.rotation.x = Math.PI / 2;
+
+    container.add(mesh, corona);
 
     this.add(container);
   }
