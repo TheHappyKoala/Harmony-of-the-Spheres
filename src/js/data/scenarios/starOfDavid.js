@@ -1,5 +1,5 @@
 export default {
-  name: 'Coreography - Star of David',
+  name: 'Coreography - The Star of David',
   g: 100,
   dt: 0.01,
   elapsedTime: 0,
@@ -7,21 +7,22 @@ export default {
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
   freeOrigo: { x: 0, y: 0, z: 1200000000 },
-  massBeingModified: 'Golda Meir',
+  massBeingModified: 'Oppenheimer',
   distMax: 400,
   distMin: -400,
   distStep: 0.0000023797035266666667,
   velMax: 0.5,
   velMin: -0.5,
   velStep: 0.000005,
-  primary: 'Golda Meir',
+  primary: 'Oppenheimer',
   maximumDistance: { name: 'Sun to Neptune', value: 30.1 },
   distanceStep: { name: 'Sun to Earth / 10', value: 0.1 },
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Three-body_problem',
   masses: [
     {
-      name: 'Golda Meir',
+      name: 'Feynman',
       type: 'star',
+      light: false,
       trailVertices: 450,
       radius: 6e6,
       m: 1e4,
@@ -33,8 +34,9 @@ export default {
       vz: 0
     },
     {
-      name: 'Yitzhak Rabin',
+      name: 'Sagan',
       type: 'star',
+      light: false,
       trailVertices: 450,
       radius: 6e6,
       m: 1e4,
@@ -46,8 +48,9 @@ export default {
       vz: 0
     },
     {
-      name: 'David Ben-Gurion',
+      name: 'Einstein',
       type: 'star',
+      light: false,
       trailVertices: 450,
       radius: 6e6,
       m: 1e4,
@@ -59,8 +62,9 @@ export default {
       vz: 0
     },
     {
-      name: 'Shimon Peres',
+      name: 'Oppenheimer',
       type: 'star',
+      light: false,
       trailVertices: 450,
       radius: 6e6,
       m: 1e4,
