@@ -2,12 +2,8 @@ export default {
   name: 'The Sun and the Martian System',
   g: 39.5,
   dt: 9e-7,
-  distMax: 3.13640827776e-4,
-  distMin: -3.13640827776e-4,
-  distStep: 1.04546942592e-7,
-  velMax: 0.3,
-  velMin: -0.3,
-  velStep: 9.999999999999999e-5,
+  distMax: 50,
+  distMin: -50,
   rotatingReferenceFrame: 'Mars',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
@@ -19,7 +15,7 @@ export default {
   massBeingModified: 'Mars',
   primary: 'Mars',
   maximumDistance: { name: 'Phobos to Mars * 100', value: 0.00626747 },
-  distanceStep: { name: 'Phobos to Mars', value: 6.26747e-5 },
+  distanceStep: { name: 'Phobos to Mars / 10', value: 6.26747e-6 },
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Mars',
   masses: [
     {
@@ -34,7 +30,6 @@ export default {
     },
     {
       name: 'Mars',
-      color: 'red',
       x: 9.383482325412062e-13,
       y: -8.140364473231114e-14,
       z: -4.768852787982284e-13,
@@ -45,7 +40,6 @@ export default {
     },
     {
       name: 'Phobos',
-      color: 'yellow',
       x: -4.950224547596924e-5,
       y: 2.488266909607153e-5,
       z: 2.730097984848412e-5,

@@ -2,12 +2,8 @@ export default {
   name: 'Finding New Worlds - TESS',
   g: 39.5,
   dt: 85e-7,
-  distMax: 0.00713911058,
-  distMin: -0.00713911058,
-  distStep: 2.3797035266666667e-6,
-  velMax: 0.5,
-  velMin: -0.5,
-  velStep: 5e-6,
+  distMax: 50,
+  distMin: -50,
   rotatingReferenceFrame: 'Earth',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
@@ -19,7 +15,7 @@ export default {
   massBeingModified: 'Sun',
   primary: 'Earth',
   maximumDistance: { name: 'Moon to Earth * 10', value: 0.0256955529 },
-  distanceStep: { name: 'Moon to Earth / 100', value: 0.0005139110579999999 },
+  distanceStep: { name: 'Moon to Earth / 100', value: 0.000025695552899999998 },
   scenarioWikiUrl:
     'https://en.wikipedia.org/wiki/Transiting_Exoplanet_Survey_Satellite',
   masses: [

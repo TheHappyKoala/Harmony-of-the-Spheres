@@ -14,6 +14,8 @@ import rh120 from './rh120';
 import ulysses from './ulysses';
 import venusPentagram from './venusPentagram';
 import lunarFreeReturn from './lunarFreeReturn';
+import starOfDavid from './starOfDavid';
+import shenanigans from './shenanigans';
 import masses from '../masses';
 import { calculateOrbitalVertices } from '../../Physics/utils';
 import { getRandomColor, getObjFromArrByKeyValuePair } from '../../utils';
@@ -27,6 +29,9 @@ const processScenario = scenario => ({
   trails: true,
   labels: true,
   scale: 2100000,
+  velMax: 5,
+  velMin: -5,
+  velStep: 1.85765499287888e-7,
   masses: scenario.masses.map(mass => {
     const template = masses.filter(
       entry => entry.name.indexOf(mass.name) > -1
@@ -67,19 +72,21 @@ const processScenario = scenario => ({
 });
 
 export const scenarios = [
-  jovianSystem,
   voyagerNeptune,
-  threeBodyCoreography,
+  saturn,
+  jovianSystem,
   lunarFreeReturn,
+  shenanigans,
   venusPentagram,
   oumuamua,
   earthMoonSystem,
+  threeBodyCoreography,
   tess,
-  saturn,
   martianSystem,
   saturnFull,
   newHorizons,
   cruithne,
+  starOfDavid,
   planetNine,
   rh120,
   ulysses

@@ -11,15 +11,11 @@ export default {
     z: 2139.892485956284
   },
   massBeingModified: 'Jupiter',
-  distMax: 0.010068057744,
-  distMin: -0.010068057744,
-  distStep: 0.000007551043308,
-  velMax: 3,
-  velMin: -3,
-  velStep: 2.2222222222222222e-7,
+  distMax: 50,
+  distMin: -50,
   primary: 'Jupiter',
   maximumDistance: { name: 'Io to Jupiter * 150', value: 0.42285 },
-  distanceStep: { name: 'Io to Jupiter / 10', value: 0.005637999999999999 },
+  distanceStep: { name: 'Io to Jupiter / 10', value: 0.00028189999999999997 },
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Jupiter',
   masses: [
     {

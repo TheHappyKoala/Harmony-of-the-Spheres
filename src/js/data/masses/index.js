@@ -4,7 +4,6 @@ export default [
     radius: 36.101083032490976,
     tilt: -0.03,
     orbitalPeriod: 0.24,
-    color: 'grey',
     name: 'Mercury',
     bump: true
   },
@@ -14,7 +13,6 @@ export default [
     tilt: 2.63,
     orbitalPeriod: 0.62,
     atmosphere: { color: '#ffffe6', scaleFactor: 80 },
-    color: 'beige',
     name: 'Venus'
   },
   {
@@ -24,7 +22,6 @@ export default [
     orbitalPeriod: 1,
     atmosphere: { color: '#93cfef', scaleFactor: 110 },
     clouds: true,
-    color: 'limegreen',
     name: 'Earth',
     bump: true
   },
@@ -33,7 +30,6 @@ export default [
     radius: 22.93577981651376,
     tilt: -1.54,
     orbitalPeriod: 0.0739726,
-    color: 'grey',
     name: 'Moon',
     bump: true
   },
@@ -43,7 +39,6 @@ export default [
     tilt: -25.19,
     orbitalPeriod: 1.88,
     atmosphere: { color: '#ffccb3', scaleFactor: 40 },
-    color: 'red',
     name: 'Mars',
     bump: true
   },
@@ -53,7 +48,6 @@ export default [
     tilt: -3.13,
     orbitalPeriod: 11.86,
     atmosphere: { color: '#ffccb3', scaleFactor: 1100 },
-    color: 'orange',
     name: 'Jupiter'
   },
   {
@@ -61,7 +55,6 @@ export default [
     orbitalPeriod: 0.14657534,
     radius: 1.2,
     type: 'model',
-    color: 'limegreen',
     name: 'Juno'
   },
 
@@ -70,7 +63,6 @@ export default [
     orbitalPeriod: 0.00091324109589,
     radius: 0.1,
     type: 'model',
-    color: 'limegreen',
     name: 'Phobos'
   },
   {
@@ -78,16 +70,13 @@ export default [
     orbitalPeriod: 0.003424658,
     radius: 0.1,
     type: 'model',
-    color: 'orange',
     name: 'Deimos'
   },
-
   {
     m: 0,
     orbitalPeriod: 6.2,
     radius: 1.2,
     type: 'model',
-    color: 'red',
     name: 'Ulysses'
   },
   {
@@ -95,7 +84,6 @@ export default [
     orbitalPeriod: 0.03753425,
     radius: 1.2,
     type: 'model',
-    color: 'red',
     name: 'TESS'
   },
   { m: 0, radius: 1.2, color: 'limegreen', name: 'Apollo 11' },
@@ -103,28 +91,24 @@ export default [
     m: 4.490848296995278e-8,
     orbitalPeriod: 0.004794521,
     radius: 24.082568807339452,
-    color: 'yellow',
     name: 'Io'
   },
   {
     m: 2.413291634272764e-8,
     orbitalPeriod: 0.009703205479,
     radius: 22.477064220183486,
-    color: 'white',
     name: 'Europa'
   },
   {
     m: 7.450777301989e-8,
     orbitalPeriod: 0.01963471233,
     radius: 34.633027522935784,
-    color: 'lightblue',
     name: 'Ganymede'
   },
   {
     m: 5.40965639150398e-17,
     orbitalPeriod: 0.0465753,
     radius: 35.74007220216607,
-    color: 'brown',
     name: 'Callisto'
   },
   {
@@ -133,8 +117,54 @@ export default [
     tilt: -26.73,
     orbitalPeriod: 29.46,
     atmosphere: { color: '#ffffe6', scaleFactor: 900 },
-    color: 'beige',
     name: 'Saturn'
+  },
+  {
+    m: 6.75675e-8,
+    radius: 33.944954128440365,
+    tilt: 0,
+    orbitalPeriod: 0.0436849315,
+    atmosphere: { color: '#ffffe6', scaleFactor: 35 },
+    name: 'Titan'
+  },
+  {
+    m: 5.4311887827482005e-11,
+    radius: 3.327981651376147,
+    tilt: 0,
+    orbitalPeriod: 0.0037540219178,
+    name: 'Enceladus',
+    bump: true
+  },
+  {
+    m: 9.849839999999999e-10,
+    radius: 8.073394495412844,
+    tilt: 0,
+    orbitalPeriod: 0.0074983972603,
+    name: 'Dione',
+    bump: true
+  },
+  {
+    m: 1.1596836467392582e-9,
+    radius: 11,
+    tilt: 0,
+    orbitalPeriod: 0.012378663014,
+    name: 'Rhea',
+    bump: true
+  },
+  {
+    m: 1.89189e-11,
+    radius: 2.853211009174312,
+    tilt: 0,
+    orbitalPeriod: 0.0025808219,
+    name: 'Mimas'
+  },
+  {
+    m: 3.09309e-10,
+    radius: 7.614678899082569,
+    tilt: 0,
+    orbitalPeriod: 0.005172060274,
+    name: 'Tethys',
+    bump: true
   },
   {
     m: 0.00004365,
@@ -142,7 +172,6 @@ export default [
     tilt: -82.23,
     orbitalPeriod: 84.01,
     atmosphere: { color: '#93cfef', scaleFactor: 350 },
-    color: 'lightblue',
     name: 'Uranus'
   },
   {
@@ -151,7 +180,6 @@ export default [
     tilt: -28.32,
     orbitalPeriod: 164.8,
     atmosphere: { color: '#93cfef', scaleFactor: 350 },
-    color: 'lightblue',
     name: 'Neptune'
   },
   {
@@ -159,7 +187,6 @@ export default [
     radius: 19.467889908256883,
     tilt: 0,
     orbitalPeriod: 0.01609589,
-    color: 'lightblue',
     name: 'Triton',
     bump: true
   },
@@ -169,7 +196,6 @@ export default [
     tilt: 0,
     type: 'model',
     orbitalPeriod: 0.0030739726,
-    color: 'orange',
     name: 'Proteus'
   },
   {
@@ -178,7 +204,6 @@ export default [
     tilt: -57.47,
     orbitalPeriod: 248,
     atmosphere: { color: '#93cfef', scaleFactor: 20 },
-    color: 'red',
     name: 'Pluto',
     bump: true
   },
@@ -187,7 +212,6 @@ export default [
     radius: 16.05504587155963,
     tilt: -3,
     orbitalPeriod: 4.6,
-    color: 'green',
     name: 'Ceres',
     bump: true
   },
@@ -195,14 +219,12 @@ export default [
     m: 0,
     radius: 1.2,
     type: 'model',
-    color: 'limegreen',
     name: 'New Horizons'
   },
   {
     m: 0,
     radius: 1.2,
     type: 'model',
-    color: 'limegreen',
     name: 'Voyager 2'
   },
   {
@@ -210,7 +232,6 @@ export default [
     orbitalPeriod: 11400,
     radius: 8.027522935779816,
     tilt: -57.47,
-    color: 'red',
     name: 'Sedna'
   },
   {
@@ -219,8 +240,7 @@ export default [
     radius: 355.9633027522936,
     tilt: -57.47,
     atmosphere: { color: '#93cfef', scaleFactor: 250 },
-    color: 'blue',
     name: 'Planet 9'
   },
-  { m: 1, radius: 90000, type: 'star', color: 'yellow', name: 'Sun' }
+  { m: 1, radius: 90000, type: 'star', name: 'Sun' }
 ];

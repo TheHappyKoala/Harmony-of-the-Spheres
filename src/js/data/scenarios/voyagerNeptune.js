@@ -2,12 +2,8 @@ export default {
   name: 'The Sun and the Neptunian System',
   g: 39.5,
   dt: 9e-7,
-  distMax: 3.13640827776e-4,
-  distMin: -3.13640827776e-4,
-  distStep: 1.04546942592e-7,
-  velMax: 0.3,
-  velMin: -0.3,
-  velStep: 9.999999999999999e-5,
+  distMax: 50,
+  distMin: -50,
   rotatingReferenceFrame: 'Neptune',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
@@ -18,8 +14,11 @@ export default {
   },
   massBeingModified: 'Neptune',
   primary: 'Neptune',
-  maximumDistance: { name: 'Triton to Neptune * 5', value: 0.01185845755},    
-  distanceStep: { name: 'Triton to Neptune / 100', value: 0.000023716915100000003 },
+  maximumDistance: { name: 'Triton to Neptune * 5', value: 0.01185845755 },
+  distanceStep: {
+    name: 'Triton to Neptune / 100',
+    value: 0.000023716915100000003
+  },
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Neptune',
   masses: [
     {
