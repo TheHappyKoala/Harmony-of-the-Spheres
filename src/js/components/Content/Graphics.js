@@ -25,6 +25,26 @@ export default function(props) {
           })
         }
       />
+      <Toggle
+        label="Starfield Background"
+        checked={props.background}
+        callback={() =>
+          props.modifyScenarioProperty({
+            key: 'background',
+            value: !props.background
+          })
+        }
+      />
+      <Toggle
+        label="Particle Size Attenuation"
+        checked={props.sizeAttenuation}
+        callback={() =>
+          props.modifyScenarioProperty({
+            key: 'sizeAttenuation',
+            value: !props.sizeAttenuation
+          })
+        }
+      />
     </div>
   );
 }

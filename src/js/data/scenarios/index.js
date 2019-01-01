@@ -28,10 +28,12 @@ const processScenario = scenario => ({
   elapsedTime: 0,
   trails: true,
   labels: true,
+  background: true,
+  sizeAttenuation: true,
   scale: 2100000,
   velMax: 5,
   velMin: -5,
-  velStep: 1.85765499287888e-7,
+  velStep: 1.85765499287888e-6,
   masses: scenario.masses.map(mass => {
     const template = masses.filter(
       entry => entry.name.indexOf(mass.name) > -1

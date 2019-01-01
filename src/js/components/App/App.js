@@ -59,6 +59,8 @@ export default class extends Component {
             <Graphics
               trails={scenario.trails}
               labels={scenario.labels}
+              background={scenario.background}
+              sizeAttenuation={scenario.sizeAttenuation}
               modifyScenarioProperty={this.props.modifyScenarioProperty}
             />
           </div>
@@ -75,6 +77,7 @@ export default class extends Component {
             <Masses
               massBeingModified={scenario.massBeingModified}
               masses={scenario.masses}
+              distanceStep={scenario.distanceStep}
               distMax={scenario.distMax}
               distMin={scenario.distMin}
               distStep={scenario.distStep}
