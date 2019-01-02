@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import MassManifestation from './MassManifestation';
 
 const ColladaLoader = require('three-collada-loader');
@@ -8,9 +9,15 @@ export default class extends MassManifestation {
   }
 
   getMain() {
+    const container = new THREE.Object3D();
+
+    container.name = 'Main';
+
+    this.add(container); 
+
     const massNameLowerCase = this.mass.texture.toLowerCase();
 
-    const loader = new ColladaLoader(this.manager);
+    const loader = new ColladaLoader(this.manager); 
     loader.options.convertUpAxis = true;
     loader.load(
       `./models/${massNameLowerCase}/${massNameLowerCase}.dae`,
@@ -21,9 +28,15 @@ export default class extends MassManifestation {
           this.mass.radius
         );
 
-        collada.scene.name = 'Main';
+        if (this.mass.asteroidTexture) {
+        let texture = this.textureLoader.load('./textures/Deimos.jpg');
 
-        this.add(collada.scene);
+        collada.scene.traverse(node => {
+          if (node.isMesh) node.material.map = texture; 
+        });
+        }
+
+        container.add(collada.scene);     
       }
     );
   }

@@ -3,7 +3,7 @@ export default [
     m: 1.652e-7,
     radius: 36.101083032490976,
     tilt: -0.03,
-    orbitalPeriod: 0.24,
+    orbitalPeriod: 0.24, 
     name: 'Mercury',
     bump: true
   },
@@ -32,6 +32,14 @@ export default [
     orbitalPeriod: 0.0739726,
     name: 'Moon',
     bump: true
+  },
+  {
+    m: 3.9217263618e-20,   
+    orbitalPeriod: 1.2,    
+    radius: 1.2,     
+    type: 'model', 
+    asteroidTexture: true,
+    name: 'Bennu' 
   },
   {
     m: 3.213e-7,
@@ -63,6 +71,7 @@ export default [
     orbitalPeriod: 0.00091324109589,
     radius: 0.1,
     type: 'model',
+    asteroidTexture: true,
     name: 'Phobos'
   },
   {
@@ -70,6 +79,7 @@ export default [
     orbitalPeriod: 0.003424658,
     radius: 0.1,
     type: 'model',
+    asteroidTexture: true,
     name: 'Deimos'
   },
   {
@@ -86,7 +96,7 @@ export default [
     type: 'model',
     name: 'TESS'
   },
-  { m: 0, radius: 1.2, color: 'limegreen', name: 'Apollo 11' },
+  { m: 0, radius: 1.2, name: 'Apollo 11' },
   {
     m: 4.490848296995278e-8,
     orbitalPeriod: 0.004794521,
@@ -195,6 +205,7 @@ export default [
     radius: 6,
     tilt: 0,
     type: 'model',
+    asteroidTexture: true,
     orbitalPeriod: 0.0030739726,
     name: 'Proteus'
   },

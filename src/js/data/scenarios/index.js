@@ -12,7 +12,7 @@ import cruithne from './cruithne';
 import planetNine from './planetNine';
 import rh120 from './rh120';
 import ulysses from './ulysses';
-import venusPentagram from './venusPentagram';
+import venusPentagram from './venusPentagram'; 
 import lunarFreeReturn from './lunarFreeReturn';
 import starOfDavid from './starOfDavid';
 import shenanigans from './shenanigans';
@@ -65,6 +65,7 @@ const processScenario = scenario => ({
           : template.type,
       texture: template === undefined ? null : template.name,
       bump: template === undefined ? null : template.bump,
+      asteroidTexture: template === undefined ? null : template.asteroidTexture,   
       color:
         template === undefined
           ? mass.color === undefined ? getRandomColor() : mass.color
