@@ -33,7 +33,7 @@ export default class extends THREE.Object3D {
         this.mass.bump === true
           ? this.textureLoader.load(`./textures/${this.mass.texture}Bump.jpg`)
           : null,
-      bumpScale: 1
+      bumpScale: 0.5
     });
 
     const mesh = new THREE.Mesh(geometry, material);
@@ -103,7 +103,7 @@ export default class extends THREE.Object3D {
 
     const mesh = new THREE.Line(geometry, material);
 
-    mesh.name = 'Trail';    
+    mesh.name = 'Trail';
 
     mesh.frustumCulled = false;
 
@@ -152,7 +152,7 @@ export default class extends THREE.Object3D {
     main.rotation.y += 0.001;
 
     if (trail !== undefined) {
-      trail.geometry.vertices.unshift(new THREE.Vector3().copy(main.position));   
+      trail.geometry.vertices.unshift(new THREE.Vector3().copy(main.position));
       trail.geometry.vertices.length = this.mass.trailVertices;
       trail.geometry.verticesNeedUpdate = true;
     }

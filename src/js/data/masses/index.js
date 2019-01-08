@@ -3,7 +3,7 @@ export default [
     m: 1.652e-7,
     radius: 36.101083032490976,
     tilt: -0.03,
-    orbitalPeriod: 0.24, 
+    orbitalPeriod: 0.24,
     name: 'Mercury',
     bump: true
   },
@@ -34,12 +34,12 @@ export default [
     bump: true
   },
   {
-    m: 3.9217263618e-20,   
-    orbitalPeriod: 1.2,    
-    radius: 1.2,     
-    type: 'model', 
+    m: 3.9217263618e-20,
+    orbitalPeriod: 1.2,
+    radius: 0.05,
+    type: 'model',
     asteroidTexture: true,
-    name: 'Bennu' 
+    name: 'Bennu'
   },
   {
     m: 3.213e-7,
@@ -69,7 +69,7 @@ export default [
   {
     m: 5.359189909029e-15,
     orbitalPeriod: 0.00091324109589,
-    radius: 0.1,
+    radius: 0.05,
     type: 'model',
     asteroidTexture: true,
     name: 'Phobos'
@@ -77,10 +77,114 @@ export default [
   {
     m: 7.422118532422e-16,
     orbitalPeriod: 0.003424658,
-    radius: 0.1,
+    radius: 0.05,
     type: 'model',
     asteroidTexture: true,
     name: 'Deimos'
+  },
+  {
+    m: 4.504e-10,
+    radius: 5.5,
+    tilt: -3,
+    orbitalPeriod: 4.6,
+    name: 'Ceres',
+    bump: true
+  },
+  {
+    m: 1.301711480859e-10,
+    orbitalPeriod: 3.6,
+    radius: 1.7,
+    type: 'model',
+    asteroidTexture: true,
+    name: 'Vesta'
+  },
+  {
+    m: 4.35914968677e-11,
+    orbitalPeriod: 5.57,
+    radius: 27,
+    type: 'model',
+    asteroidTexture: true,
+    name: 'Hygiea'
+  },
+  {
+    m: 1.059871688548e-10,
+    orbitalPeriod: 4.61292,
+    radius: 1.6,
+    type: 'model',
+    asteroidTexture: true,
+    name: 'Pallas'
+  },
+  {
+    m: 1.3675763723200001e-11,
+    orbitalPeriod: 4.99,
+    radius: 1.5,
+    type: 'model',
+    asteroidTexture: true,
+    name: 'Psyche'
+  },
+  {
+    m: 3.362126177097e-15,
+    orbitalPeriod: 1.76,
+    radius: 0.5,
+    type: 'model',
+    asteroidTexture: true,
+    name: 'Eros'
+  },
+  {
+    m: 1.7597490085e-20,
+    orbitalPeriod: 1.52,
+    radius: 0.5,
+    type: 'model',
+    asteroidTexture: true,
+    name: 'Itokawa'
+  },
+  {
+    m: 7.038996034e-17,
+    orbitalPeriod: 1.4,
+    radius: 3,
+    type: 'model',
+    asteroidTexture: true,
+    name: 'Phaethon'
+  },
+  {
+    m: 2.33292439984e-12,
+    orbitalPeriod: 4.67,
+    radius: 10,
+    type: 'model',
+    asteroidTexture: true,
+    name: 'Kleopatra'
+  },
+  {
+    m: 1.508356293e-14,
+    orbitalPeriod: 3.29,
+    radius: 0.5,
+    type: 'model',
+    asteroidTexture: true,
+    name: 'Gaspra'
+  },
+  {
+    m: 5.018804172242e-18,
+    orbitalPeriod: 6.44,
+    radius: 2.5,
+    type: 'model',
+    asteroidTexture: true,
+    name: 'Churyumov–Gerasimenko'
+  },
+  {
+    m: 1.0055708620000001e-16,
+    orbitalPeriod: 5.58,
+    radius: 7.5,
+    type: 'model',
+    asteroidTexture: true,
+    name: 'Tempel 1'
+  },
+  {
+    m: 8.547352327000001e-13,
+    orbitalPeriod: 3.8,
+    radius: 0.8,
+    type: 'model',
+    asteroidTexture: true,
+    name: 'Lutetia'
   },
   {
     m: 0,
@@ -216,14 +320,6 @@ export default [
     orbitalPeriod: 248,
     atmosphere: { color: '#93cfef', scaleFactor: 20 },
     name: 'Pluto',
-    bump: true
-  },
-  {
-    m: 4.504e-10,
-    radius: 16.05504587155963,
-    tilt: -3,
-    orbitalPeriod: 4.6,
-    name: 'Ceres',
     bump: true
   },
   {

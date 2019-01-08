@@ -13,11 +13,11 @@ export default class extends MassManifestation {
 
     container.name = 'Main';
 
-    this.add(container); 
+    this.add(container);
 
     const massNameLowerCase = this.mass.texture.toLowerCase();
 
-    const loader = new ColladaLoader(this.manager); 
+    const loader = new ColladaLoader(this.manager);
     loader.options.convertUpAxis = true;
     loader.load(
       `./models/${massNameLowerCase}/${massNameLowerCase}.dae`,
@@ -29,14 +29,14 @@ export default class extends MassManifestation {
         );
 
         if (this.mass.asteroidTexture) {
-        let texture = this.textureLoader.load('./textures/Deimos.jpg');
+          let texture = this.textureLoader.load('./textures/Deimos.jpg');
 
-        collada.scene.traverse(node => {
-          if (node.isMesh) node.material.map = texture; 
-        });
+          collada.scene.traverse(node => {
+            if (node.isMesh) node.material.map = texture;
+          });
         }
 
-        container.add(collada.scene);     
+        container.add(collada.scene);
       }
     );
   }
