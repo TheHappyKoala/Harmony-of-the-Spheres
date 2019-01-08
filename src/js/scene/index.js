@@ -2,13 +2,20 @@ import * as THREE from 'three';
 import store from '../store';
 import { modifyScenarioProperty } from '../action-creators/scenario';
 import getIntegrator from '../Physics/Integrators';
-import { getDistanceParams } from '../Physics/utils';
+import { getObjFromArrByKeyValuePair } from '../utils';
+import {
+  getDistanceParams,
+  createParticleDisc,
+  tiltParticleSystem
+} from '../Physics/utils';
 import arena from './arena';
 import Camera from './Camera';
 import label from './label';
 import MassManifestation from './MassManifestation';
 import Star from './Star';
 import Model from './Model';
+import ParticlePhysics from '../Physics/particles';
+import ParticlesManifestation from './ParticlesManifestation';
 
 export default {
   init(webGlCanvas, labelsCanvas) {
@@ -58,6 +65,43 @@ export default {
       masses: this.scenario.masses,
       elapsedTime: this.scenario.elapsedTime
     });
+
+    if (this.scenario.particles) {
+      this.particlePhysics = new ParticlePhysics({
+        dt: this.scenario.dt,
+        callback: particles => {
+          const primary = getObjFromArrByKeyValuePair(
+            this.scenario.masses,
+            'name',
+            this.scenario.particles.primary
+          );
+
+          const generatedParticles = tiltParticleSystem(
+            createParticleDisc(
+              this.scenario.particles.number,
+              primary,
+              this.scenario.g,
+              this.scenario.particles.minD,
+              this.scenario.particles.maxD
+            ),
+            new THREE.Vector3(1, 0, 0),
+            primary.tilt,
+            primary
+          );
+
+          generatedParticles.forEach(generatedParticle =>
+            particles.push(generatedParticle)
+          );
+        }
+      });
+
+      this.particles = new ParticlesManifestation(
+        this.particlePhysics.particles,
+        this.scenario.scale
+      );
+
+      this.scene.add(this.particles);
+    }
 
     window.addEventListener('resize', () => this.onWindowResize(), false);
 
@@ -136,7 +180,9 @@ export default {
       cameraFocus,
       freeOrigo,
       dt,
-      integrator
+      integrator,
+      background,
+      sizeAttenuation
     } = this.scenario;
 
     if (integrator !== this.previousIntegrator) {
@@ -148,6 +194,29 @@ export default {
       });
 
       this.previousIntegrator = integrator;
+    }
+
+    const arena = this.scene.getObjectByName('Arena');
+
+    if (background && !arena.visible) arena.visible = true;
+
+    if (!background && arena.visible) arena.visible = false;
+
+    if (this.scenario.particles) {
+      const particleSystemMaterial = this.scene.getObjectByName('system')
+        .material;
+
+      if (!sizeAttenuation && particleSystemMaterial.sizeAttenuation) {
+        particleSystemMaterial.size = 3;
+        particleSystemMaterial.sizeAttenuation = false;
+        particleSystemMaterial.needsUpdate = true;
+      }
+
+      if (sizeAttenuation && !particleSystemMaterial.sizeAttenuation) {
+        particleSystemMaterial.size = 15;
+        particleSystemMaterial.sizeAttenuation = true;
+        particleSystemMaterial.needsUpdate = true;
+      }
     }
 
     let frameOfRef;
@@ -312,6 +381,12 @@ export default {
 
     if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame)
       this.previousRotatingReferenceFrame = rotatingReferenceFrame;
+
+    if (this.scenario.particles && playing)
+      this.particlePhysics.iterate(this.system.masses, this.scenario.g);
+
+    if (this.scenario.particles)
+      this.particles.draw(this.particlePhysics.particles, frameOfRef);
 
     this.requestAnimationFrameId = requestAnimationFrame(() => this.loop());
     this.renderer.render(this.scene, this.camera);
