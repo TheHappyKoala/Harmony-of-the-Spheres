@@ -290,8 +290,8 @@ export default {
       let zOffset;
 
       if (dt < 0.0002) zOffset = radius * 80;
-      if (dt > 0.0002) zOffset = radius !== 1.2 ? radius * 1500 : 60000;
-      if (dt > 0.5) zOffset = radius !== 1.2 ? radius * 500000 : 4000000;
+      if (dt > 0.0002) zOffset = (radius < 18) ? 60000 : radius * 1500;
+      if (dt > 0.5) zOffset = radius !== 1.2 ? radius * 500000 : 4000000;   
 
       if (trail) {
         if (trail.visible) {
