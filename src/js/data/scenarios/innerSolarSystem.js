@@ -10,11 +10,11 @@ export default {
   velStep: 5e-6,
   rotatingReferenceFrame: 'Sun',
   cameraPosition: 'Free',
-  cameraFocus: 'Churyumov\u2013Gerasimenko',
+  cameraFocus: 'Origo',
   freeOrigo: {
-    x: -2892969.187133333,
-    y: -916974.1837074053,
-    z: 209668.06864348648
+    x: -17784913.815497126,
+    y: 6297968.292925428,
+    z: 6483435.505698438
   },
   massBeingModified: 'Sun',
   primary: 'Sun',
