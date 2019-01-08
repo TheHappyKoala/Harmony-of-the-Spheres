@@ -12,20 +12,16 @@ export default class extends THREE.Object3D {
   }
 
   getParticles() {
-    const positions = new Float32Array(this.particles.length * 3);
+    const particlesLen = this.particles;
+
+    const positions = new Float32Array(particlesLen * 3);
 
     let j = 0;
 
-    const particlesLen = this.particles.length;
-
-    const scenarioScale = this.scenarioScale;
-
     for (let i = 0; i < particlesLen; i++) {
-      const particle = this.particles[i];
-
-      positions[j] = particle.x * scenarioScale;
-      positions[j + 1] = particle.y * scenarioScale;
-      positions[j + 2] = particle.z * scenarioScale;
+      positions[j] = 0;
+      positions[j + 1] = 0;
+      positions[j + 2] = 0;
 
       j += 3;
     }
@@ -50,11 +46,13 @@ export default class extends THREE.Object3D {
   draw(particles, frameOfRef) {
     const mesh = this.getObjectByName('system');
 
+    const particlesLen = particles.length;
+
+    mesh.geometry.setDrawRange(0, particlesLen - 1);
+
     const positions = mesh.geometry.attributes.position.array;
 
     let j = 0;
-
-    const particlesLen = this.particles.length;
 
     const scenarioScale = this.scenarioScale;
 
