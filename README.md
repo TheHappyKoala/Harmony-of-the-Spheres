@@ -16,7 +16,7 @@ Newtonian n-body gravity simulator
 
 * Clean up the scene module 
 * Develop an integrator with an adaptive time step
-* Create a particle system that will allow simulating planetary rings, galaxies and more - BIG COMMIT COMING SOON
+* Create a particle system that will allow simulating planetary rings, galaxies and more    
 * Add collisions (this point is subject to point 2 getting ticked off first)
 * Look into using web workers and or shaders to offload physics calculations from the main thread
 * Write a JPL Horizons client in Node to automate the fetching of orbital state vectors for Solar System scenarios
@@ -30,7 +30,7 @@ Got some time to spare and feel like contributing to this project? Awesome! If y
 
 ## License
 
-Copyright (c) 2018 Darrell Huffman - MIT License
+Copyright (c) 2019 Darrell Huffman - MIT License
 
     
 
