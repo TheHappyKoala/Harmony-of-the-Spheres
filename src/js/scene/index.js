@@ -35,7 +35,9 @@ export default {
 
     this.scene = new THREE.Scene();
 
-    this.manager = new THREE.LoadingManager();
+    this.manager = new THREE.LoadingManager(); 
+
+    this.textureLoader = new THREE.TextureLoader(this.manager);
 
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas,
@@ -55,7 +57,7 @@ export default {
     this.previousRotatingReferenceFrame = null;
     this.previousIntegrator = this.scenario.integrator;
 
-    this.scene.add(arena(this.manager));
+    this.scene.add(arena(this.textureLoader));      
 
     this.massManifestations = [];
 
@@ -118,13 +120,13 @@ export default {
   addManifestation(mass) {
     switch (mass.type) {
       case 'star':
-        return new Star(mass, this.manager);
+        return new Star(mass, this.textureLoader);
 
       case 'model':
-        return new Model(mass, this.manager);
+        return new Model(mass, this.textureLoader);
 
       default:
-        return new MassManifestation(mass, this.manager);
+        return new MassManifestation(mass, this.textureLoader);   
     }
   },
 
