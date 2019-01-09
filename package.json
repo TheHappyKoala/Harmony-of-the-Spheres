@@ -15,7 +15,7 @@
     "orbit"
   ],
   "author": "Darrell A. Huffman",
-  "license": "MIT",
+  "license": "GNU General Public License v3.0",
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-eslint": "^8.2.2",
