@@ -32,7 +32,7 @@ export default class extends MassManifestation {
       container.add(light);
     }
 
-    const geometry = new THREE.SphereGeometry(this.mass.radius, 32, 32);
+    const geometry = new THREE.SphereBufferGeometry(this.mass.radius, 32, 32);    
 
     const material = new THREE.MeshBasicMaterial({ color: 'white' });
 

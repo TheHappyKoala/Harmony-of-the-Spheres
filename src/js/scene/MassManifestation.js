@@ -17,7 +17,7 @@ export default class extends THREE.Object3D {
   }
 
   getMain() {
-    const geometry = new THREE.SphereGeometry(
+    const geometry = new THREE.SphereBufferGeometry(
       this.mass.radius,
       this.mass.type !== 'asteroid' ? this.segments : 6,
       this.mass.type !== 'asteroid' ? this.segments : 6
@@ -50,7 +50,7 @@ export default class extends THREE.Object3D {
   }
 
   getAtmosphere() {
-    const geometry = new THREE.SphereGeometry(
+    const geometry = new THREE.SphereBufferGeometry(
       this.mass.radius + this.mass.radius / 15,
       this.segments,
       this.segments
@@ -66,7 +66,7 @@ export default class extends THREE.Object3D {
   }
 
   getClouds() {
-    const geometry = new THREE.SphereGeometry(
+    const geometry = new THREE.SphereBufferGeometry(
       this.mass.radius + this.mass.radius / 80,
       this.segments,
       this.segments
