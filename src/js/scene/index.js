@@ -97,7 +97,7 @@ export default {
         }
       });
 
-      this.particles = new ParticlesManifestation(40000, this.scenario.scale);
+      this.particles = new ParticlesManifestation(40000, this.scenario.scale);    
 
       this.scene.add(this.particles);
     }

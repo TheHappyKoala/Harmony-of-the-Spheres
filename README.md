@@ -30,12 +30,12 @@ Got some time to spare and feel like contributing to this project? Awesome! If y
 
 ## License
 
-Copyright (c) 2019 Darrell Huffman - MIT License
+Copyright (C) 2019 Darrell Huffman - GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
 
     
 
 
-
+   
 
 
 
