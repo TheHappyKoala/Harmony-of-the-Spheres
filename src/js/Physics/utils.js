@@ -73,18 +73,23 @@ export function createParticleDisc(particlesNumber, primary, g, minD, maxD) {
   return particles;
 }
 
-export function tiltParticleSystem(vectors, axis, tilt, primary) {
+export function createParticleSystem(vectors, axis, tilt, primary) {
   const tiltedVectors = [];
 
-  vectors.forEach(vector => {
-    const p = new THREE.Vector3(vector.x, vector.y, vector.z).applyAxisAngle(
-      axis,
-      degreesToRadians(tilt)
-    );
-    const v = new THREE.Vector3(vector.vx, vector.vy, vector.vz).applyAxisAngle(
-      axis,
-      degreesToRadians(tilt)
-    );
+  const positionVector = new THREE.Vector3();
+  const velocityVector = new THREE.Vector3();
+
+  const vectorsLen = vectors.length;
+
+  for (let i = 0; i < vectorsLen; i++) {
+    const vector = vectors[i];
+
+    const p = positionVector
+      .set(vector.x, vector.y, vector.z)
+      .applyAxisAngle(axis, degreesToRadians(tilt));
+    const v = velocityVector
+      .set(vector.vx, vector.vy, vector.vz)
+      .applyAxisAngle(axis, degreesToRadians(tilt));
 
     tiltedVectors.push({
       x: primary.x + p.x,
@@ -94,7 +99,7 @@ export function tiltParticleSystem(vectors, axis, tilt, primary) {
       vy: primary.vy + v.y,
       vz: primary.vz + v.z
     });
-  });
+  }
 
   return tiltedVectors;
 }

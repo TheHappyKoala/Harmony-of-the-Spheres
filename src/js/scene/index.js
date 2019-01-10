@@ -6,7 +6,7 @@ import { getObjFromArrByKeyValuePair } from '../utils';
 import {
   getDistanceParams,
   createParticleDisc,
-  tiltParticleSystem
+  createParticleSystem
 } from '../Physics/utils';
 import arena from './arena';
 import Camera from './Camera';
@@ -80,7 +80,7 @@ export default {
             this.scenario.particles.primary
           );
 
-          const generatedParticles = tiltParticleSystem(
+          const generatedParticles = createParticleSystem(
             createParticleDisc(
               this.scenario.particles.number,
               primary,
