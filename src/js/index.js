@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import App from './components/App';
 
+// Loads the app with the default scenario, "The Sun and the Neptunian System".
 render(
   <Provider store={store}>
     <HashRouter>
