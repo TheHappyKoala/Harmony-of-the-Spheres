@@ -399,7 +399,6 @@ export default {
   updateSystem() {
     this.system.g = this.scenario.g;
     this.system.masses = this.scenario.masses;
-    this.system.dt = this.scenario.dt;
 
     return this;
   },

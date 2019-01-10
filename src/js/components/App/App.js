@@ -51,10 +51,9 @@ export default class extends Component {
               integrator={scenario.integrator}
               collisions={scenario.collisions}
               g={scenario.g}
-              dt={scenario.dt}
               modifyScenarioProperty={this.props.modifyScenarioProperty}
             />
-          </div>
+          </div>   
           <div label="Graphics" icon="fas fa-paint-brush fa-2x">
             <Graphics
               trails={scenario.trails}
