@@ -35,7 +35,9 @@ export default {
 
     this.scene = new THREE.Scene();
 
-    this.manager = new THREE.LoadingManager(); 
+    this.utilityVector = new THREE.Vector3();
+
+    this.manager = new THREE.LoadingManager();
 
     this.textureLoader = new THREE.TextureLoader(this.manager);
 
@@ -57,7 +59,7 @@ export default {
     this.previousRotatingReferenceFrame = null;
     this.previousIntegrator = this.scenario.integrator;
 
-    this.scene.add(arena(this.textureLoader));      
+    this.scene.add(arena(this.textureLoader));
 
     this.massManifestations = [];
 
@@ -86,7 +88,7 @@ export default {
               this.scenario.particles.minD,
               this.scenario.particles.maxD
             ),
-            new THREE.Vector3(1, 0, 0),
+            this.utilityVector.set(1, 0, 0),
             primary.tilt,
             primary
           );
@@ -97,7 +99,7 @@ export default {
         }
       });
 
-      this.particles = new ParticlesManifestation(40000, this.scenario.scale);    
+      this.particles = new ParticlesManifestation(40000, this.scenario.scale);
 
       this.scene.add(this.particles);
     }
@@ -126,7 +128,7 @@ export default {
         return new Model(mass, this.textureLoader);
 
       default:
-        return new MassManifestation(mass, this.textureLoader);   
+        return new MassManifestation(mass, this.textureLoader);
     }
   },
 
@@ -237,11 +239,10 @@ export default {
     else this.camera.controls.enabled = false;
 
     this.labels.clearRect(0, 0, this.w, this.h);
-    const origo = new THREE.Vector3(0, 0, 0);
 
     if (cameraFocus === 'Origo') {
-      if (cameraPosition !== 'Free') this.camera.lookAt(origo);
-      else this.camera.controls.target = origo;
+      if (cameraPosition !== 'Free') this.camera.lookAt(0, 0, 0);
+      else this.camera.controls.target.set(0, 0, 0);
     }
 
     if (this.previousCameraFocus !== cameraFocus && cameraFocus === 'Origo') {
@@ -250,7 +251,7 @@ export default {
       if (cameraPosition === 'Free') {
         this.camera.position.set(freeOrigo.x, freeOrigo.y, freeOrigo.z);
 
-        this.camera.lookAt(origo);
+        this.camera.lookAt(0, 0, 0);
       }
     }
 
@@ -321,9 +322,7 @@ export default {
       }
 
       if (cameraFocus === name) {
-        const cameraTarget = new THREE.Vector3(x, y, z);
-
-        if (cameraPosition !== 'Free') this.camera.lookAt(cameraTarget);
+        if (cameraPosition !== 'Free') this.camera.lookAt(x, y, z);
         else if (cameraPosition === 'Free' && cameraFocus !== 'Origo') {
           this.camera.trackMovingObjectWithControls(massManifestation);
         }
@@ -341,7 +340,7 @@ export default {
         if (cameraPosition === 'Free') {
           this.camera.position.set(x, y, z + zOffset);
 
-          this.camera.lookAt(new THREE.Vector3(x, y, z));
+          this.camera.lookAt(x, y, z);
         }
       }
 
@@ -349,7 +348,7 @@ export default {
         label(
           this.labels,
           this.camera,
-          new THREE.Vector3(x, y, z),
+          this.utilityVector.set(x, y, z),
           this.w,
           this.h,
           name,

@@ -3,7 +3,7 @@ import worldToScreenCoordinates from './worldToScreenCoordinates';
 export default function(
   ctx,
   camera,
-  massManifestationPosition,
+  positionVector,
   w,
   h,
   name,
@@ -11,9 +11,7 @@ export default function(
   isTarget
 ) {
   const position = worldToScreenCoordinates(
-    massManifestationPosition.x,
-    massManifestationPosition.y,
-    massManifestationPosition.z,
+    positionVector,
     camera,
     w,
     h,
@@ -24,21 +22,23 @@ export default function(
   if (position !== null) {
     ctx.font = '12px Arial';
 
+    const { x, y } = position;
+
     const textBoxWidth = ctx.measureText(name).width + 6;
 
     ctx.strokeStyle = 'white';
     ctx.beginPath();
-    ctx.arc(position.x, position.y, 8, 0, 2 * Math.PI);
+    ctx.arc(x, y, 8, 0, 2 * Math.PI);
     ctx.stroke();
 
     ctx.globalAlpha = 0.5;
     ctx.fillStyle = '#545454';
-    ctx.fillRect(position.x + 13, position.y - 10, textBoxWidth, 20);
+    ctx.fillRect(x + 13, y - 10, textBoxWidth, 20);
 
     ctx.globalAlpha = 1;
     ctx.fillStyle = 'white';
-    ctx.fillText(name, position.x + 16, position.y + 3);
+    ctx.fillText(name, x + 16, y + 3);
 
-    ctx.strokeRect(position.x + 13, position.y - 10, textBoxWidth, 20);
+    ctx.strokeRect(x + 13, y - 10, textBoxWidth, 20);
   }
 }

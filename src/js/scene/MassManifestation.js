@@ -9,9 +9,9 @@ export default class extends THREE.Object3D {
     this.mass = mass;
 
     this.name = this.mass.name;
-    this.textureLoader = textureLoader; 
+    this.textureLoader = textureLoader;
 
-    this.segments = 50;   
+    this.segments = 50;
 
     this.createManifestation();
   }
@@ -23,7 +23,7 @@ export default class extends THREE.Object3D {
       this.mass.type !== 'asteroid' ? this.segments : 6
     );
 
-    const material = new THREE.MeshLambertMaterial({   
+    const material = new THREE.MeshLambertMaterial({
       map: this.textureLoader.load(
         this.mass.type === 'asteroid'
           ? './textures/Deimos.jpg'
@@ -41,10 +41,7 @@ export default class extends THREE.Object3D {
 
     mesh.rotateX(degreesToRadians(90));
     this.mass.tilt &&
-      mesh.rotateOnAxis(
-        new THREE.Vector3(1, 0, 0),
-        degreesToRadians(this.mass.tilt)
-      );
+      mesh.rotateOnAxis({ x: 1, y: 0, z: 0 }, degreesToRadians(this.mass.tilt));
 
     this.add(mesh);
   }
@@ -92,10 +89,16 @@ export default class extends THREE.Object3D {
 
     const trailVertices = this.mass.trailVertices;
 
+    const mainPosition = this.getObjectByName('Main').position;
+
+    const initialPosition = {
+      x: mainPosition.x,
+      y: mainPosition.y,
+      z: mainPosition.z
+    };
+
     for (let i = 0; i < trailVertices; i++)
-      geometry.vertices.push(
-        new THREE.Vector3().copy(this.getObjectByName('Main').position)
-      );
+      geometry.vertices.push(initialPosition);
 
     const material = new THREE.LineBasicMaterial({
       color: this.mass.color
@@ -127,12 +130,10 @@ export default class extends THREE.Object3D {
     if (this.mass.atmosphere) {
       const atmosphere = this.getObjectByName('Atmosphere');
 
-      const viewVector = new THREE.Vector3().subVectors(
+      atmosphere.material.uniforms.viewVector.value = new THREE.Vector3().subVectors(
         cameraPositionVector,
-        main.getWorldPosition()
+        { x, y, z }
       );
-
-      atmosphere.material.uniforms.viewVector.value = viewVector;
 
       atmosphere.material.uniforms.p.value =
         distanceToCamera / this.mass.atmosphere.scaleFactor;
@@ -152,7 +153,7 @@ export default class extends THREE.Object3D {
     main.rotation.y += 0.001;
 
     if (trail !== undefined) {
-      trail.geometry.vertices.unshift(new THREE.Vector3().copy(main.position));
+      trail.geometry.vertices.unshift({ x, y, z });
       trail.geometry.vertices.length = this.mass.trailVertices;
       trail.geometry.verticesNeedUpdate = true;
     }
