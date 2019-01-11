@@ -21,11 +21,16 @@ import masses from '../masses';
 import { calculateOrbitalVertices } from '../../Physics/utils';
 import { getRandomColor, getObjFromArrByKeyValuePair } from '../../utils';
 
+/*
+ * Takes a scenario and populates it with defaults
+*/
+
 const processScenario = scenario => ({
   ...scenario,
   isLoaded: false,
   playing: false,
   integrator: 'RK4',
+  collisions: false, //Disable collisions for now
   elapsedTime: 0,
   trails: true,
   labels: true,
@@ -75,6 +80,10 @@ const processScenario = scenario => ({
   })
 });
 
+/*
+ * Array that contains all the scenarios included in Harmony of the Spheres
+*/
+
 export const scenarios = [
   voyagerNeptune,
   saturn,
@@ -96,6 +105,12 @@ export const scenarios = [
   rh120,
   ulysses
 ];
+
+/*
+ * Takes the name of a scenario
+ * Filters the scenarios array by name
+ * Returns a clone of the scenario populated with defaults
+*/
 
 export default function(scenario) {
   const selectedScenario = getObjFromArrByKeyValuePair(

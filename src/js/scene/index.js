@@ -1,8 +1,12 @@
 import * as THREE from 'three';
 import store from '../store';
-import { modifyScenarioProperty } from '../action-creators/scenario';
+import {
+  modifyScenarioProperty,
+  deleteMass
+} from '../action-creators/scenario';
 import getIntegrator from '../Physics/Integrators';
 import { getObjFromArrByKeyValuePair } from '../utils';
+import doCollisions from '../Physics/collisions';
 import {
   getDistanceParams,
   createParticleDisc,
@@ -180,6 +184,7 @@ export default {
       cameraPosition,
       cameraFocus,
       freeOrigo,
+      collisions,
       dt,
       integrator,
       background,
@@ -385,6 +390,11 @@ export default {
 
     if (this.scenario.particles)
       this.particles.draw(this.particlePhysics.particles, frameOfRef);
+
+    if (playing && collisions)
+      doCollisions(this.system.masses, scale, name =>
+        store.dispatch(deleteMass(name))
+      );
 
     this.requestAnimationFrameId = requestAnimationFrame(() => this.loop());
     this.renderer.render(this.scene, this.camera);
