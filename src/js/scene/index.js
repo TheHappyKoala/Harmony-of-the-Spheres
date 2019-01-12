@@ -210,16 +210,18 @@ export default {
       const particleSystemMaterial = this.scene.getObjectByName('system')
         .material;
 
-      if (!sizeAttenuation && particleSystemMaterial.sizeAttenuation) {
-        particleSystemMaterial.size = 3;
-        particleSystemMaterial.sizeAttenuation = false;
-        particleSystemMaterial.needsUpdate = true;
+      if (
+        !sizeAttenuation &&
+        particleSystemMaterial.uniforms.sizeAttenuation.value
+      ) {
+        particleSystemMaterial.uniforms.sizeAttenuation.value = false;
       }
 
-      if (sizeAttenuation && !particleSystemMaterial.sizeAttenuation) {
-        particleSystemMaterial.size = 15;
-        particleSystemMaterial.sizeAttenuation = true;
-        particleSystemMaterial.needsUpdate = true;
+      if (
+        sizeAttenuation &&
+        !particleSystemMaterial.uniforms.sizeAttenuation.value
+      ) {
+        particleSystemMaterial.uniforms.sizeAttenuation.value = true;
       }
     }
 

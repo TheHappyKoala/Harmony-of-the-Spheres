@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import particleMaterial from './particleMaterial';
 
 export default class extends THREE.Object3D {
   constructor(particles, scenarioScale) {
@@ -15,6 +16,10 @@ export default class extends THREE.Object3D {
     const particlesLen = this.particles;
 
     const positions = new Float32Array(particlesLen * 3);
+    const colors = new Float32Array(particlesLen * 3);
+    const sizes = new Float32Array(particlesLen);
+
+    const color = new THREE.Color(0xffffff);
 
     let j = 0;
 
@@ -23,16 +28,20 @@ export default class extends THREE.Object3D {
       positions[j + 1] = 0;
       positions[j + 2] = 0;
 
+      color.setHSL(0.5 + 0.1 * (i / particlesLen), 0.7, 0.5);
+
+      color.toArray(colors, i * 3);
+      sizes[i] = 100;
+
       j += 3;
     }
 
     const geometry = new THREE.BufferGeometry();
     geometry.addAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.addAttribute('customColor', new THREE.BufferAttribute(colors, 3));
+    geometry.addAttribute('size', new THREE.BufferAttribute(sizes, 1));
 
-    const material = new THREE.PointsMaterial({
-      size: 15,
-      color: '#FFEBCD'
-    });
+    const material = particleMaterial();
 
     const mesh = new THREE.Points(geometry, material);
 
@@ -42,6 +51,8 @@ export default class extends THREE.Object3D {
 
     this.add(mesh);
   }
+
+  updateParticles() {}
 
   draw(particles, frameOfRef) {
     const mesh = this.getObjectByName('system');
