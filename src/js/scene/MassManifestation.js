@@ -3,13 +3,13 @@ import atmosphereMaterial from './atmosphereMaterial';
 import { degreesToRadians } from '../Physics/utils';
 
 export default class extends THREE.Object3D {
-  constructor(mass, textureLoader) {
+  constructor(mass) {
     super();
 
     this.mass = mass;
 
     this.name = this.mass.name;
-    this.textureLoader = textureLoader;
+    this.textureLoader = new THREE.TextureLoader();
 
     this.segments = 50;
 

@@ -4,8 +4,8 @@ import MassManifestation from './MassManifestation';
 const ColladaLoader = require('three-collada-loader');
 
 export default class extends MassManifestation {
-  constructor(mass, manager) {
-    super(mass, manager);
+  constructor(mass) {
+    super(mass);
   }
 
   getMain() {
@@ -17,7 +17,7 @@ export default class extends MassManifestation {
 
     const massNameLowerCase = this.mass.texture.toLowerCase();
 
-    const loader = new ColladaLoader(this.manager);
+    const loader = new ColladaLoader();   
     loader.options.convertUpAxis = true;
     loader.load(
       `./models/${massNameLowerCase}/${massNameLowerCase}.dae`,
