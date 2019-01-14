@@ -349,5 +349,20 @@ export default [
     atmosphere: { color: '#93cfef', scaleFactor: 250 },
     name: 'Planet 9'
   },
-  { m: 1, radius: 90000, type: 'star', name: 'Sun' }
+  { m: 1, radius: 90000, type: 'star', name: 'Sun', color: '#fff3ea' },
+  {
+    m: 0.089,
+    radius: 10890,
+    type: 'star',
+    name: 'Trappist 1',
+    color: '#ffcc6f'
+  },
+  {
+    m: 1.92,
+    radius: 165780,
+    type: 'star',
+    name: 'Fomalhaut',
+    color: '#bfcfff'
+  } 
 ];
+ 
