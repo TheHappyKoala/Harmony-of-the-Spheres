@@ -35,6 +35,8 @@ export default {
     this.labelsCanvas.width = this.w;
     this.labelsCanvas.height = this.h;
 
+    this.start = Date.now();
+
     this.requestAnimationFrameId = null;
 
     this.scene = new THREE.Scene();
@@ -273,6 +275,15 @@ export default {
       const cameraDistanceToFocus = Math.sqrt(
         getDistanceParams(this.camera.position, { x, y, z }).dSquared
       );
+
+      if (mass.type === 'star') {
+        const starMeshUniforms = massManifestation.getObjectByName('StarMesh')
+          .material.uniforms;
+
+        starMeshUniforms.time.value = 0.00025 * (Date.now() - this.start);
+        starMeshUniforms.weight.value =
+          10 * (0.5 + 0.5 * Math.sin(0.00025 * (Date.now() - this.start)));
+      }
 
       massManifestation.draw(
         x,

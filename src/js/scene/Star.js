@@ -1,21 +1,35 @@
 import * as THREE from 'three';
 import MassManifestation from './MassManifestation';
+import starMaterial from './starMaterial';
 
 export default class extends MassManifestation {
   constructor(mass) {
     super(mass);
   }
 
+  getStarTexture() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    ctx.fillStyle = this.mass.color;
+    ctx.fillRect(0, 0, width, height);
+
+    return canvas;
+  }
+
   getMain() {
     const container = new THREE.Object3D();
     container.name = 'Main';
 
-    const texture = this.textureLoader.load('textures/corona.png');
-
     const corona = new THREE.Sprite(
       new THREE.SpriteMaterial({
-        map: texture,
-        color: this.mass.color
+        map: this.textureLoader.load('textures/corona.png'),
+        color: this.mass.color,
+        transparent: true,
+        opacity: 0.6
       })
     );
 
@@ -33,12 +47,15 @@ export default class extends MassManifestation {
 
     const geometry = new THREE.SphereBufferGeometry(this.mass.radius, 32, 32);
 
-    const material = new THREE.MeshBasicMaterial({
-      color: this.mass.color
-    });
+    const texture = new THREE.Texture(this.getStarTexture());
+    texture.needsUpdate = true;
+
+    const material = starMaterial(texture);
 
     const mesh = new THREE.Mesh(geometry, material);
     mesh.rotation.x = Math.PI / 2;
+
+    mesh.name = 'StarMesh';
 
     container.add(mesh, corona);
 
