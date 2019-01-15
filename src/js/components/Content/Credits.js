@@ -38,6 +38,14 @@ export default function() {
       </p>
       <p className="modal-item">
         <b>&#187; </b>
+        Trappist 1 planet textures by John Van Vlliet
+      </p>
+      <p className="modal-item">
+        <b>&#187; </b>
+        Perlin noise for the star shaders by Stefan Gustavsson and Ashima Arts
+      </p>
+      <p className="modal-item">
+        <b>&#187; </b>
         <a href="http://openuniverse.sourceforge.net/" target="blank">
           Phobos and Deimos 3D models
         </a>{' '}

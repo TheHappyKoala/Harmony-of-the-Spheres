@@ -9,6 +9,7 @@ import tess from './tess';
 import martianSystem from './martianSystem';
 import newHorizons from './newHorizons';
 import cruithne from './cruithne';
+import trappist1 from './trappist1';
 import planetNine from './planetNine';
 import rh120 from './rh120';
 import ulysses from './ulysses';
@@ -88,6 +89,7 @@ export const scenarios = [
   voyagerNeptune,
   saturn,
   jovianSystem,
+  trappist1,
   innerSolarSystem,
   lunarFreeReturn,
   shenanigans,
