@@ -8,9 +8,18 @@ export function getDistanceParams(p1, p2) {
   return { dx, dy, dz, dSquared: dx * dx + dy * dy + dz * dz };
 }
 
-export function getVMag(g, primary, d) {
-  return Math.sqrt(g * primary.m / d);
-}
+/*
+ * Get the magnitude of the velocity of a celestial object orbiting a significantly more massive primary
+ * Like, for example, Jupiter, or Earth, around the Sun
+ * g is the gravitational constant, primary is the more massive object around which the other orbits
+ * d is the distance between the primary and secondary and sm is the semimajor axis
+ * If the semimajor axis and the distance are the same, you have the special case of a perfectly circular orbit
+ * If an argument is not provided for the sm parameter, it is set to be equal to d, so you get the velocity for a circular orbit
+*/
+
+export function getVMag(g, primary, d, sm = d) {
+  return Math.sqrt(g * primary.m * (2 / d - 1 / sm));
+}   
 
 export function getIdealCircularOrbit(primary, secondary, g) {
   const dParams = getDistanceParams(primary, secondary);
