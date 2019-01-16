@@ -78,11 +78,14 @@ export default {
       this.particlePhysics = new ParticlePhysics({
         dt: this.scenario.dt,
         callback: particles => {
-          const primary = getObjFromArrByKeyValuePair(
-            this.scenario.masses,
-            'name',
-            this.scenario.particles.primary
-          );
+          const primary =
+            this.scenario.particles.primary !== 'custom'
+              ? getObjFromArrByKeyValuePair(
+                  this.scenario.masses,
+                  'name',
+                  this.scenario.particles.primary
+                )
+              : this.scenario.particles.customPrimaryData;
 
           const generatedParticles = createParticleSystem(
             createParticleDisc(
