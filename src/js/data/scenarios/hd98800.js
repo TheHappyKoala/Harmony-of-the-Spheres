@@ -1,0 +1,70 @@
+export default {
+  name: 'HD 98800 B',
+  g: 100,
+  dt: 0.0005,
+  elapsedTime: 0,
+  rotatingReferenceFrame: 'Origo',
+  cameraPosition: 'Free',
+  cameraFocus: 'Origo',
+  freeOrigo: {
+    x: -9127056.219952688,
+    y: -9369185.284621935,
+    z: 2533538.0322669293
+  },
+  massBeingModified: 'HD 98800 Ba',
+  distMax: 400,
+  distMin: -400,
+  primary: 'Arjuna',
+  maximumDistance: { name: 'Sun to Neptune', value: 30.1 },
+  distanceStep: { name: 'Sun to Earth / 10', value: 0.1 },
+  scenarioWikiUrl: 'https://en.wikipedia.org/wiki/HD_98800',
+  particles: {
+    primary: 'custom',
+    size: 210000,
+    customPrimaryData: {
+      m: 1.398,
+      tilt: 44,
+      x: 0,
+      y: 0,
+      z: 0,
+      vx: 0,
+      vy: 0,
+      vz: 0
+    },
+    number: 40000,
+    minD: 1.2,
+    maxD: 2.5
+  },
+  masses: [
+    {
+      name: 'HD 98800 Ba',
+      type: 'star',
+      light: false,
+      trailVertices: 500,
+      radius: 150000,
+      color: '#ffd7ae',
+      m: 0.699,
+      x: 0,
+      y: -0.3473291852294986,
+      z: 0.35966990016932565,
+      vx: 0,
+      vy: -2.1580194010159532,
+      vz: -2.0839751113769918 
+    },
+    {
+      name: 'HD 98800 Bb',
+      type: 'star',
+      light: false,
+      trailVertices: 500,
+      radius: 120000,
+      color: '#ffbe7f',
+      m: 0.699,
+      x: 0,
+      y: 0.3473291852294986,
+      z: -0.35966990016932565,
+      vx: 0,
+      vy: 2.1580194010159532,
+      vz: 2.0839751113769918
+    }
+  ]
+};

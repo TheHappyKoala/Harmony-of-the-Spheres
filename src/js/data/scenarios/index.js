@@ -13,6 +13,7 @@ import trappist1 from './trappist1';
 import planetNine from './planetNine';
 import rh120 from './rh120';
 import ulysses from './ulysses';
+import hd98800 from './hd98800';
 import venusPentagram from './venusPentagram';
 import lunarFreeReturn from './lunarFreeReturn';
 import starOfDavid from './starOfDavid';
@@ -88,6 +89,7 @@ const processScenario = scenario => ({
 export const scenarios = [
   voyagerNeptune,
   saturn,
+  hd98800,
   jovianSystem,
   trappist1,
   innerSolarSystem,
