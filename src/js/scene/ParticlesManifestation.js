@@ -2,12 +2,14 @@ import * as THREE from 'three';
 import particleMaterial from './particleMaterial';
 
 export default class extends THREE.Object3D {
-  constructor(particles, scenarioScale) {
+  constructor(particles, scenarioScale, size = 100) {
     super();
 
     this.particles = particles;
 
     this.scenarioScale = scenarioScale;
+
+    this.size = size;
 
     this.getParticles();
   }
@@ -31,7 +33,7 @@ export default class extends THREE.Object3D {
       color.setHSL(0.5 + 0.1 * (i / particlesLen), 0.7, 0.5);
 
       color.toArray(colors, i * 3);
-      sizes[i] = 100;
+      sizes[i] = this.size;
 
       j += 3;
     }
