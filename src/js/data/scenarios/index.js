@@ -32,7 +32,7 @@ const processScenario = scenario => ({
   isLoaded: false,
   playing: false,
   integrator: 'RK4',
-  collisions: false, //Disable collisions for now
+  collisions: scenario.collisions !== undefined ? scenario.collisions : false, //Collisions aren't a default yet, but they can enabled in the scenario config
   elapsedTime: 0,
   trails: true,
   labels: true,
