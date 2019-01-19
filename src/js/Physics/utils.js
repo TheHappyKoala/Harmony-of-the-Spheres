@@ -112,3 +112,7 @@ export function createParticleSystem(vectors, axis, tilt, primary) {
 
   return tiltedVectors;
 }
+
+export function getEscVMag(g, mass, scale) {
+  return Math.sqrt(2 * (g * mass.m) / (mass.radius / scale));
+}
