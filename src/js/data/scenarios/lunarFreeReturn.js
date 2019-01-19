@@ -7,6 +7,7 @@ export default {
   rotatingReferenceFrame: 'Earth',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
+  collisions: true,
   freeOrigo: { x: 0, y: 0, z: 16000 },
   massBeingModified: 'Sun',
   primary: 'Earth',
