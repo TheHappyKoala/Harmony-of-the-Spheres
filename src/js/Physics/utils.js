@@ -19,7 +19,7 @@ export function getDistanceParams(p1, p2) {
 
 export function getVMag(g, primary, d, sm = d) {
   return Math.sqrt(g * primary.m * (2 / d - 1 / sm));
-}   
+}
 
 export function getIdealCircularOrbit(primary, secondary, g) {
   const dParams = getDistanceParams(primary, secondary);

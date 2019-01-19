@@ -19,7 +19,7 @@ import lunarFreeReturn from './lunarFreeReturn';
 import starOfDavid from './starOfDavid';
 import shenanigans from './shenanigans';
 import innerSolarSystem from './innerSolarSystem';
-import masses from '../masses';
+import masses from '../masses'; 
 import { calculateOrbitalVertices } from '../../Physics/utils';
 import { getRandomColor, getObjFromArrByKeyValuePair } from '../../utils';
 

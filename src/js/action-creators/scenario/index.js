@@ -1,6 +1,6 @@
 import * as scenarioActionTypes from '../../action-types/scenario';
 import filterScenarios from '../../data/scenarios';
-import { getObjFromArrByKeyValuePair } from '../../utils';    
+import { getObjFromArrByKeyValuePair } from '../../utils';
 import { getIdealCircularOrbit } from '../../Physics/utils';
 
 export function getScenario(name) {

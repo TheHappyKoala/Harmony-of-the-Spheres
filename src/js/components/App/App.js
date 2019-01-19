@@ -53,7 +53,7 @@ export default class extends Component {
               g={scenario.g}
               modifyScenarioProperty={this.props.modifyScenarioProperty}
             />
-          </div>   
+          </div>
           <div label="Graphics" icon="fas fa-paint-brush fa-2x">
             <Graphics
               trails={scenario.trails}
