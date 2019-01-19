@@ -8,7 +8,7 @@ export default [
     bump: true
   },
   {
-    m: 0.000002447,
+    m: 2.447e-6,
     radius: 86.95652173913044,
     tilt: 2.63,
     orbitalPeriod: 0.62,
@@ -16,7 +16,7 @@ export default [
     name: 'Venus'
   },
   {
-    m: 0.000003003,
+    m: 3.003e-6,
     radius: 91.74311926605505,
     tilt: -23.44,
     orbitalPeriod: 1,
@@ -51,24 +51,17 @@ export default [
     bump: true
   },
   {
-    m: 0.0009543,
+    m: 9.543e-4,
     radius: 1027.5229357798166,
     tilt: -3.13,
     orbitalPeriod: 11.86,
     atmosphere: { color: '#ffccb3', scaleFactor: 1100 },
     name: 'Jupiter'
   },
-  {
-    m: 0,
-    orbitalPeriod: 0.14657534,
-    radius: 1.2,
-    type: 'model',
-    name: 'Juno'
-  },
-
+  { m: 0, orbitalPeriod: 0.14657534, radius: 1.2, type: 'model', name: 'Juno' },
   {
     m: 5.359189909029e-15,
-    orbitalPeriod: 0.00091324109589,
+    orbitalPeriod: 9.1324109589e-4,
     radius: 0.05,
     type: 'model',
     asteroidTexture: true,
@@ -168,7 +161,7 @@ export default [
     radius: 2.5,
     type: 'model',
     asteroidTexture: true,
-    name: 'Churyumov–Gerasimenko'
+    name: 'Churyumov\u2013Gerasimenko'
   },
   {
     m: 1.0055708620000001e-16,
@@ -186,20 +179,8 @@ export default [
     asteroidTexture: true,
     name: 'Lutetia'
   },
-  {
-    m: 0,
-    orbitalPeriod: 6.2,
-    radius: 1.2,
-    type: 'model',
-    name: 'Ulysses'
-  },
-  {
-    m: 0,
-    orbitalPeriod: 0.03753425,
-    radius: 1.2,
-    type: 'model',
-    name: 'TESS'
-  },
+  { m: 0, orbitalPeriod: 6.2, radius: 1.2, type: 'model', name: 'Ulysses' },
+  { m: 0, orbitalPeriod: 0.03753425, radius: 1.2, type: 'model', name: 'TESS' },
   { m: 0, radius: 1.2, name: 'Apollo 11' },
   {
     m: 4.490848296995278e-8,
@@ -226,7 +207,7 @@ export default [
     name: 'Callisto'
   },
   {
-    m: 0.0002857,
+    m: 2.857e-4,
     radius: 862.3853211009175,
     tilt: -26.73,
     orbitalPeriod: 29.46,
@@ -281,7 +262,7 @@ export default [
     bump: true
   },
   {
-    m: 0.00004365,
+    m: 4.365e-5,
     radius: 370.6422018348624,
     tilt: -82.23,
     orbitalPeriod: 84.01,
@@ -289,7 +270,7 @@ export default [
     name: 'Uranus'
   },
   {
-    m: 0.00005149,
+    m: 5.149e-5,
     radius: 355.9633027522936,
     tilt: -28.32,
     orbitalPeriod: 164.8,
@@ -322,37 +303,27 @@ export default [
     name: 'Pluto',
     bump: true
   },
+  { m: 0, radius: 1.2, type: 'model', name: 'New Horizons' },
+  { m: 0, radius: 1.2, type: 'model', name: 'Voyager 2' },
   {
-    m: 0,
-    radius: 1.2,
-    type: 'model',
-    name: 'New Horizons'
-  },
-  {
-    m: 0,
-    radius: 1.2,
-    type: 'model',
-    name: 'Voyager 2'
-  },
-  {
-    m: 0.00005149,
+    m: 5.149e-5,
     orbitalPeriod: 11400,
     radius: 8.027522935779816,
     tilt: -57.47,
     name: 'Sedna'
   },
   {
-    m: 0.00003003,
-    orbitalPeriod: 20000,
+    m: 3.003e-5,
+    orbitalPeriod: 2e4,
     radius: 355.9633027522936,
     tilt: -57.47,
     atmosphere: { color: '#93cfef', scaleFactor: 250 },
     name: 'Planet 9'
   },
-  { m: 1, radius: 90000, type: 'star', name: 'Sun', color: '#fff3ea' },
+  { m: 1, radius: 9e4, type: 'star', name: 'Sun', color: '#fff3ea' },
   {
     m: 0.089,
-    radius: 10890,
+    radius: 1490,
     type: 'star',
     name: 'Trappist 1',
     color: '#ffcc6f'
@@ -363,6 +334,47 @@ export default [
     type: 'star',
     name: 'Fomalhaut',
     color: '#bfcfff'
-  } 
+  },
+  {
+    name: 'Trappist 1 B',
+    m: 3.003e-6 * 1.017,
+    radius: 102.8440366972477,
+    orbitalPeriod: 0.004139387315068
+  },
+  {
+    name: 'Trappist 1 C',
+    m: 3.003e-6 * 1.156,
+    radius: 100.45871559633028,
+    orbitalPeriod: 0.006635088931507
+  },
+  {
+    name: 'Trappist 1 D',
+    m: 8.91891e-7,
+    radius: 71.92660550458716,
+    orbitalPeriod: 0.011095778082
+  },
+  {
+    name: 'Trappist 1 E',
+    m: 2.318316e-6,
+    radius: 83.4862385321101,
+    orbitalPeriod: 0.016709706849
+  },
+  {
+    name: 'Trappist 1 F',
+    m: 2.804802e-6,
+    radius: 95.96330275229359,
+    orbitalPeriod: 0.025220780822
+  },
+  {
+    name: 'Trappist 1 G',
+    m: 3.003e-6 * 1.148,
+    radius: 105.32110091743118,
+    orbitalPeriod: 0.0338478712329
+  },
+  {
+    name: 'Trappist 1 H',
+    m: 9.93993e-7,
+    radius: 70.91743119266056,
+    orbitalPeriod: 0.0514190493151
+  }
 ];
- 
