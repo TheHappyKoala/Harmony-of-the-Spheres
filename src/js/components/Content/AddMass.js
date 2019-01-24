@@ -46,7 +46,7 @@ export default class extends Component {
           />
         </label>
         <div className="tabs-dropdown-wrapper">
-          <Dropdown selectedProperty={this.props.primary}>
+          <Dropdown selectedOption={this.props.primary}>
             {this.props.masses.map(mass => (
               <div
                 name={mass.name}
