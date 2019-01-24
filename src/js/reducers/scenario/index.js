@@ -1,10 +1,6 @@
 import * as scenarioActionTypes from '../../action-types/scenario';
-// where is this filterScenarios function? I cannot find it
 import filterScenarios from '../../data/scenarios';
 
-/* PROBLEM: default state is the Neptunian System scenario, if the URL manages to pass the JSON parse
- it ends up here and the default state never gets overwritten, the Neptunian System scenario gets loaded
- instead of the 404 page */
 export default function(
   state = filterScenarios('The Sun and the Neptunian System'),
   action
