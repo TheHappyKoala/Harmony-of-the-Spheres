@@ -52,7 +52,13 @@ export function getRandomRadian() {
   return Math.PI * 2 * Math.random();
 }
 
-export function createParticleDisc(particlesNumber, primary, g, minD, maxD) {
+export function createParticleDisc(
+  particlesNumber = 0,
+  primary = { m: 0, x: 0, y: 0, z: 0, vx: 0, vz: 0 },
+  g = 39.5,
+  minD = 0,
+  maxD = 0
+) {
   const particles = [];
 
   for (let i = 0; i < particlesNumber; i++) {
@@ -82,7 +88,12 @@ export function createParticleDisc(particlesNumber, primary, g, minD, maxD) {
   return particles;
 }
 
-export function createParticleSystem(vectors, axis, tilt, primary) {
+export function createParticleSystem(
+  vectors = [],
+  axis = new THREE.Vector3(1, 0, 0),
+  tilt = 0,
+  primary = { x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0 }
+) {
   const tiltedVectors = [];
 
   const positionVector = new THREE.Vector3();
@@ -111,8 +122,4 @@ export function createParticleSystem(vectors, axis, tilt, primary) {
   }
 
   return tiltedVectors;
-}
-
-export function getEscVMag(g, mass, scale) {
-  return Math.sqrt(2 * (g * mass.m) / (mass.radius / scale));
 }
