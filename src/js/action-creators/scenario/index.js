@@ -1,7 +1,7 @@
 import * as scenarioActionTypes from '../../action-types/scenario';
 import filterScenarios from '../../data/scenarios';
 import { getObjFromArrByKeyValuePair } from '../../utils';
-import { getIdealCircularOrbit } from '../../Physics/utils';
+import { getOrbit } from '../../Physics/utils';
 
 export function getScenario(name) {
   return {
@@ -44,7 +44,7 @@ export function addMass(payload) {
 
     dispatch({
       type: scenarioActionTypes.ADD_MASS,
-      payload: getIdealCircularOrbit(
+      payload: getOrbit(
         primary,
         {
           ...payload.secondary,
@@ -52,7 +52,8 @@ export function addMass(payload) {
           y: primary.y,
           z: primary.z
         },
-        scenario.g
+        scenario.g,
+        payload.secondary.sm
       )
     });
   };

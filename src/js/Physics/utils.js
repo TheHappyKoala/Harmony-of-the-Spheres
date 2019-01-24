@@ -21,12 +21,12 @@ export function getVMag(g, primary, d, sm = d) {
   return Math.sqrt(g * primary.m * (2 / d - 1 / sm));
 }
 
-export function getIdealCircularOrbit(primary, secondary, g) {
+export function getOrbit(primary, secondary, g, sm) {
   const dParams = getDistanceParams(primary, secondary);
 
   const d = Math.sqrt(dParams.dSquared);
 
-  const vMag = getVMag(g, primary, d);
+  const vMag = getVMag(g, primary, d, sm);
 
   return {
     ...secondary,
