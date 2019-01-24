@@ -8,5 +8,6 @@ export function getRandomColor() {
 }
 
 export function getObjFromArrByKeyValuePair(arr, key, val) {
+    // when scenario is passed as a bad URL with numbers or spaces, this will return NULL (which during JSON.parse is just read as 'undefined')
   return arr.filter(entry => entry[key].indexOf(val) > -1)[0];
 }
