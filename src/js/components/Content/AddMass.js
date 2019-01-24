@@ -30,7 +30,6 @@ export default class extends Component {
       m: payload.m,
       radius: payload.radius,
       texture: payload.texture,
-      color: payload.color,
       type: payload.type
     });
 
