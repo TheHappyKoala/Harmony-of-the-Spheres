@@ -36,6 +36,14 @@ export function getOrbit(primary, secondary, g, sm) {
   };
 }
 
+export function getPeriapsis(sm, e) {
+  return sm * (1 - e);
+}
+
+export function getApoapsis(sm, e) {
+  return sm * (1 + e);
+}
+
 export function degreesToRadians(degrees) {
   return Math.PI / 180 * degrees;
 }
