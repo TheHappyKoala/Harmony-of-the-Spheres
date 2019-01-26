@@ -17,16 +17,16 @@ export function getDistanceParams(p1, p2) {
  * If an argument is not provided for the sm parameter, it is set to be equal to d, so you get the velocity for a circular orbit
 */
 
-export function getVMag(g, primary, d, sm = d) {
-  return Math.sqrt(g * primary.m * (2 / d - 1 / sm));
+export function getVMag(g, primary, d, a = d) {
+  return Math.sqrt(g * primary.m * (2 / d - 1 / a));
 }
 
-export function getOrbit(primary, secondary, g, sm) {
+export function getOrbit(primary, secondary, g, a) {
   const dParams = getDistanceParams(primary, secondary);
 
   const d = Math.sqrt(dParams.dSquared);
 
-  const vMag = getVMag(g, primary, d, sm);
+  const vMag = getVMag(g, primary, d, a);
 
   return {
     ...secondary,
@@ -36,20 +36,31 @@ export function getOrbit(primary, secondary, g, sm) {
   };
 }
 
-export function getPeriapsis(sm, e) {
-  return sm * (1 - e);
+export function getPeriapsis(a, e) {
+  return a * (1 - e);
 }
 
-export function getApoapsis(sm, e) {
-  return sm * (1 + e);
+export function getApoapsis(a, e) {
+  return a * (1 + e);
 }
 
-export function getSM(periapsis, apoapsis) {
-  return periapsis + apoapsis / 2;
+export function getA(apsisOne, apsisTwo) {
+  return (apsisOne + apsisTwo) / 2;
 }
 
 export function degreesToRadians(degrees) {
   return Math.PI / 180 * degrees;
+}
+
+export function rotateVector(
+  x,
+  y,
+  z,
+  degrees = 0,
+  axis = new THREE.Vector3(0, 0, 1),
+  vector = new THREE.Vector3()
+) {
+  return vector.set(x, y, z).applyAxisAngle(axis, degreesToRadians(degrees));
 }
 
 export function calculateOrbitalVertices(orbitalPeriod, dt) {
@@ -116,12 +127,23 @@ export function createParticleSystem(
   for (let i = 0; i < vectorsLen; i++) {
     const vector = vectors[i];
 
-    const p = positionVector
-      .set(vector.x, vector.y, vector.z)
-      .applyAxisAngle(axis, degreesToRadians(tilt));
-    const v = velocityVector
-      .set(vector.vx, vector.vy, vector.vz)
-      .applyAxisAngle(axis, degreesToRadians(tilt));
+    const p = rotateVector(
+      vector.x,
+      vector.y,
+      vector.z,
+      tilt,
+      axis,
+      positionVector
+    );
+
+    const v = rotateVector(
+      vector.vx,
+      vector.vy,
+      vector.vz,
+      tilt,
+      axis,
+      velocityVector
+    );
 
     tiltedVectors.push({
       x: primary.x + p.x,
