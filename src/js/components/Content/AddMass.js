@@ -17,12 +17,18 @@ export default class extends Component {
       radius: bodies[0].radius,
       texture: bodies[0].name,
       type: null,
-      distance: props.distanceStep.value
+      apsisOne: props.distanceStep.value,
+      apsisTwo: props.distanceStep.value,
+      argumentOfPeriapsis: 90
     };
   }
 
-  modifyProperty = payload =>
-    this.setState({ ...this.state, [payload.key]: payload.value });
+  modifyProperty = payload => {
+    this.setState(prevState => ({
+      ...prevState,
+      [payload.key]: payload.value
+    }));
+  };
 
   insertMassTemplate = payload =>
     this.setState({
@@ -113,18 +119,18 @@ export default class extends Component {
           </Dropdown>
         </div>
         <label className="top">
-          Distance{' '}
+          Apsis One{' '}
           <Tooltip
             position="left"
-            content="The distance between the primary and the mass you're adding."
+            content="Either of two points on the orbit of a planet or satellite that are nearest to or furthest from the body round which it moves. If apsis one is equal to apsis two you get the special case of a circular orbit."
           />
         </label>
         <Slider
-          payload={{ key: 'distance' }}
-          value={this.state.distance}
+          payload={{ key: 'apsisOne' }}
+          value={this.state.apsisOne}
           callback={this.modifyProperty}
           max={this.props.maximumDistance.value}
-          min={-this.props.maximumDistance.value}
+          min={this.props.distanceStep.value}
           shouldUpdateOnMaxMinChange={true}
           onMaxMinChange={{
             payload: {
@@ -134,6 +140,44 @@ export default class extends Component {
             callback: this.props.modifyScenarioProperty
           }}
           step={this.props.distanceStep.value}
+        />
+        <label className="top">
+          Apsis Two{' '}
+          <Tooltip
+            position="left"
+            content="Either of two points on the orbit of a planet or satellite that are nearest to or furthest from the body round which it moves. If apsis one is equal to apsis two you get the special case of a circular orbit."
+          />
+        </label>
+        <Slider
+          payload={{ key: 'apsisTwo' }}
+          value={this.state.apsisTwo}
+          callback={this.modifyProperty}
+          max={this.props.maximumDistance.value}
+          min={this.props.distanceStep.value}
+          shouldUpdateOnMaxMinChange={true}
+          onMaxMinChange={{
+            payload: {
+              key: 'distanceStep',
+              value: { name: 'Max distance / 100' }
+            },
+            callback: this.props.modifyScenarioProperty
+          }}
+          step={this.props.distanceStep.value}
+        />
+        <label className="top">
+          Argument of Periapsis{' '}
+          <Tooltip
+            position="left"
+            content="The argument of periapsis, w, is one of the orbital elements of an orbiting body. Parametrically, w is the angle from the mass's ascending node to its periapsis, the point in its orbit where the mass is the closest to the body it orbits, measured in the direction of motion."
+          />
+        </label>
+        <Slider
+          payload={{ key: 'argumentOfPeriapsis' }}
+          value={this.state.argumentOfPeriapsis}
+          callback={this.modifyProperty}
+          max={360}
+          min={0}
+          step={0.1}
         />
         <label className="top">
           Mass Template
@@ -168,13 +212,15 @@ export default class extends Component {
               primary: this.props.primary,
               secondary: {
                 name: `Custom Mass ${Date.now()}`,
-                trailVertices: 2000,
+                trailVertices: 9000,
                 m: this.state.m,
                 radius: this.state.radius,
                 texture: this.state.texture,
                 type: this.state.type,
                 color: getRandomColor(),
-                distance: this.state.distance
+                apsisOne: this.state.apsisOne,
+                apsisTwo: this.state.apsisTwo,
+                argumentOfPeriapsis: this.state.argumentOfPeriapsis
               }
             })
           }
