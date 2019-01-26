@@ -44,6 +44,10 @@ export function getApoapsis(sm, e) {
   return sm * (1 + e);
 }
 
+export function getSM(periapsis, apoapsis) {
+  return periapsis + apoapsis / 2;
+}
+
 export function degreesToRadians(degrees) {
   return Math.PI / 180 * degrees;
 }
