@@ -1,7 +1,7 @@
 import * as scenarioActionTypes from '../../action-types/scenario';
 import filterScenarios from '../../data/scenarios';
 import { getObjFromArrByKeyValuePair } from '../../utils';
-import { getOrbit } from '../../Physics/utils';
+import { getA, rotateVector, getOrbit } from '../../Physics/utils';
 
 export function getScenario(name) {
   return {
@@ -42,18 +42,31 @@ export function addMass(payload) {
       payload.primary
     );
 
+    const { apsisOne, apsisTwo, argumentOfPeriapsis } = payload.secondary;
+
+    const periapsis = apsisOne > apsisTwo ? apsisTwo : apsisOne;
+
+    let { x, y, z } = rotateVector(
+      primary.x + periapsis,
+      primary.y,
+      primary.z,
+      argumentOfPeriapsis
+    );
+
+    const a = getA(apsisOne, apsisTwo);
+
     dispatch({
       type: scenarioActionTypes.ADD_MASS,
       payload: getOrbit(
         primary,
         {
           ...payload.secondary,
-          x: primary.x + payload.secondary.distance,
-          y: primary.y,
-          z: primary.z
+          x,
+          y,
+          z
         },
         scenario.g,
-        payload.secondary.sm
+        a
       )
     });
   };
