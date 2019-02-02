@@ -13,7 +13,7 @@ import AddMass from '../Content/AddMass';
 import About from '../Content/About';
 import Contact from '../Content/Contact';
 import Credits from '../Content/Credits';
-import ScenarioWiki from '../Content/ScenarioWiki';
+import Iframe from '../Iframe';
 import './App.less';
 
 export default class extends Component {
@@ -144,7 +144,7 @@ export default class extends Component {
             <Modal
               callback={() => this.displayComponent('displayScenarioWiki')}
             >
-              <ScenarioWiki scenarioWikiUrl={scenario.scenarioWikiUrl} />
+              <Iframe url={scenario.scenarioWikiUrl} />
             </Modal>
           )}
           {this.state.displayAbout && (
