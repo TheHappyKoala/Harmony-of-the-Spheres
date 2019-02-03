@@ -19,21 +19,26 @@ export default {
   distanceStep: { name: 'Sun to Earth / 10', value: 0.1 },
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/HD_98800',
   particles: {
-    primary: 'custom',
+    max: 60000,
     size: 210000,
-    customPrimaryData: {
-      m: 1.398,
-      tilt: 44,
-      x: 0,
-      y: 0,
-      z: 0,
-      vx: 0,
-      vy: 0,
-      vz: 0
-    },
-    number: 40000,
-    minD: 1.2,
-    maxD: 2.5
+    rings: [
+      {
+        primary: 'custom',
+        customPrimaryData: {
+          m: 1.398,
+          tilt: 44,
+          x: 0,
+          y: 0,
+          z: 0,
+          vx: 0,
+          vy: 0,
+          vz: 0
+        },
+        number: 40000,
+        minD: 1.2,
+        maxD: 2.5
+      }
+    ]
   },
   masses: [
     {

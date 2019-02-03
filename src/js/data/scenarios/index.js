@@ -32,7 +32,15 @@ const processScenario = scenario => ({
   isLoaded: false,
   playing: false,
   integrator: 'RK4',
-  collisions: scenario.collisions !== undefined ? scenario.collisions : false, //Collisions aren't a default yet, but they can enabled in the scenario config
+  particles:
+    scenario.particles === undefined
+      ? {
+          max: 20000,
+          size: 300,
+          rings: []
+        }
+      : scenario.particles,
+  collisions: true,
   elapsedTime: 0,
   trails: true,
   labels: true,

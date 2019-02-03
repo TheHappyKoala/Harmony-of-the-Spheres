@@ -21,10 +21,16 @@ export default {
   },
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Saturn',
   particles: {
-    primary: 'Saturn',
-    number: 40000,
-    minD: 0.0006749650466666667,
-    maxD: 0.00111244757
+    max: 60000,
+    size: 100,
+    rings: [
+      {
+        primary: 'Saturn',
+        number: 40000,
+        minD: 0.0006749650466666667,
+        maxD: 0.00111244757
+      }
+    ]
   },
   masses: [
     {

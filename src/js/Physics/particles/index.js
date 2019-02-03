@@ -2,13 +2,13 @@ export default class {
   constructor(params) {
     this.dt = params.dt;
 
-    this.particles = [];
+    this.scale = params.scale;
 
-    params.callback(this.particles);
+    this.particles = [];
   }
 
   iterate(masses, g) {
-    const particlesLen = this.particles.length;
+    let particlesLen = this.particles.length;
     const massesLen = masses.length;
 
     for (let i = 0; i < particlesLen; i++) {
@@ -21,20 +21,28 @@ export default class {
       for (let j = 0; j < massesLen; j++) {
         const massJ = masses[j];
 
-        if (massJ.m > 0) {
-          let dx = massJ.x - massI.x;
-          let dy = massJ.y - massI.y;
-          let dz = massJ.z - massI.z;
+        let dx = massJ.x - massI.x;
+        let dy = massJ.y - massI.y;
+        let dz = massJ.z - massI.z;
 
-          let dSquared = dx * dx + dy * dy + dz * dz;
+        let dSquared = dx * dx + dy * dy + dz * dz;
 
-          let d = Math.sqrt(dSquared);
+        let d = Math.sqrt(dSquared);
 
-          let fact = g * massJ.m / (dSquared * d);
+        if (d * this.scale < massJ.radius) {
+          this.particles.splice(i, 1);
 
-          ax += dx * fact;
-          ay += dy * fact;
-          az += dz * fact;
+          particlesLen--;
+
+          i--;
+        } else {
+          if (massJ.m > 0) {
+            let fact = g * massJ.m / (dSquared * d);
+
+            ax += dx * fact;
+            ay += dy * fact;
+            az += dz * fact;
+          }
         }
       }
 

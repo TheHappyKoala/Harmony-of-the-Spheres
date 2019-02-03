@@ -74,46 +74,20 @@ export default {
       elapsedTime: this.scenario.elapsedTime
     });
 
-    if (this.scenario.particles) {
-      this.particlePhysics = new ParticlePhysics({
-        dt: this.scenario.dt,
-        callback: particles => {
-          const primary =
-            this.scenario.particles.primary !== 'custom'
-              ? getObjFromArrByKeyValuePair(
-                  this.scenario.masses,
-                  'name',
-                  this.scenario.particles.primary
-                )
-              : this.scenario.particles.customPrimaryData;
+    this.particlePhysics = new ParticlePhysics({
+      dt: this.scenario.dt,
+      scale: this.scenario.scale
+    });
 
-          const generatedParticles = createParticleSystem(
-            createParticleDisc(
-              this.scenario.particles.number,
-              primary,
-              this.scenario.g,
-              this.scenario.particles.minD,
-              this.scenario.particles.maxD
-            ),
-            this.utilityVector.set(1, 0, 0),
-            primary.tilt,
-            primary
-          );
+    this.scenario.particles.rings && this.addRing();
 
-          generatedParticles.forEach(generatedParticle =>
-            particles.push(generatedParticle)
-          );
-        }
-      });
+    this.particles = new ParticlesManifestation(
+      40000,
+      this.scenario.scale,
+      this.scenario.particles.size
+    );
 
-      this.particles = new ParticlesManifestation(
-        40000,
-        this.scenario.scale,
-        this.scenario.particles.size
-      );
-
-      this.scene.add(this.particles);
-    }
+    this.scene.add(this.particles);
 
     window.addEventListener('resize', () => this.onWindowResize(), false);
 
@@ -410,9 +384,30 @@ export default {
       this.particles.draw(this.particlePhysics.particles, frameOfRef);
 
     if (playing && collisions)
-      doCollisions(this.system.masses, scale, name =>
-        store.dispatch(deleteMass(name))
-      );
+      doCollisions(this.system.masses, scale, looser => {
+        store.dispatch(deleteMass(looser.name));
+
+        const numberOfFragments = 500;
+
+        const totalWithAddedFragments =
+          this.particlePhysics.particles + numberOfFragments;
+        const excessFragments =
+          this.scenario.particles.max - totalWithAddedFragments;
+
+        if (excessFragments < 0)
+          this.particlePhysics.particles.splice(0, -excessFragments);
+
+        for (let i = 0; i < numberOfFragments; i++) {
+          this.particlePhysics.particles.push({
+            x: looser.x - looser.vx * dt * 2,
+            y: looser.y - looser.vy * dt * 2,
+            z: looser.z - looser.vz * dt * 2,
+            vx: (Math.random() * (1.1 - 0.5) + 0.5) * -looser.vx,
+            vy: (Math.random() * (1.1 - 0.5) + 0.5) * -looser.vy,
+            vz: (Math.random() * (15 - 0.5) + 0.5) * -looser.vz
+          });
+        }
+      });
 
     this.requestAnimationFrameId = requestAnimationFrame(() => this.loop());
     this.renderer.render(this.scene, this.camera);
@@ -444,6 +439,36 @@ export default {
         }
       )
     );
+  },
+
+  addRing() {
+    for (let i = 0; i < this.scenario.particles.rings.length; i++) {
+      const ring = this.scenario.particles.rings[i];
+      const primary =
+        ring.primary !== 'custom'
+          ? getObjFromArrByKeyValuePair(
+              this.scenario.masses,
+              'name',
+              ring.primary
+            )
+          : ring.customPrimaryData;
+
+      const generatedParticles = createParticleSystem(
+        createParticleDisc(
+          ring.number,
+          primary,
+          this.scenario.g,
+          ring.minD,
+          ring.maxD
+        ),
+        this.utilityVector.set(1, 0, 0),
+        primary.tilt,
+        primary
+      );
+
+      for (let i = 0; i < ring.number; i++)
+        this.particlePhysics.particles.push(generatedParticles[i]);
+    }
   },
 
   onWindowResize() {

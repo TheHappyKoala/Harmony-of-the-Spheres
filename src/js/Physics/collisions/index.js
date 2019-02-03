@@ -16,7 +16,9 @@ export default function(masses, scale, callback) {
       if (i !== j) {
         const massJ = masses[j];
 
-        const d = Math.sqrt(getDistanceParams(massI, massJ).dSquared) * scale;
+        const dParams = getDistanceParams(massI, massJ);
+
+        const d = Math.sqrt(dParams.dSquared) * scale;
 
         if (d < massI.radius + massJ.radius) {
           let survivor;
@@ -41,7 +43,7 @@ export default function(masses, scale, callback) {
 
           masses.splice(looserIndex, 1);
 
-          callback(looser.name);
+          callback(looser);
 
           massesLen--;
 
