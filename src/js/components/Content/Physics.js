@@ -1,5 +1,7 @@
 import React from 'react';
 import Dropdown from '../Dropdown';
+import Toggle from '../Toggle';
+
 import Slider from '../Slider';
 import Tooltip from '../Tooltip';
 import { integrators } from '../../Physics/Integrators';
@@ -47,6 +49,16 @@ export default function(props) {
         max={200}
         min={-200}
         step={0.5}
+      />
+      <Toggle
+        label="Collisions"
+        checked={props.collisions}
+        callback={() =>
+          props.modifyScenarioProperty({
+            key: 'collisions',
+            value: !props.collisions
+          })
+        }
       />
     </div>
   );
