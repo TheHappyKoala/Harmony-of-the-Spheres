@@ -23,7 +23,7 @@ export default class extends THREE.Object3D {
       this.mass.type !== 'asteroid' ? this.segments : 6
     );
 
-    const material = new THREE.MeshLambertMaterial({
+    const material = new THREE.MeshPhongMaterial({
       map: this.textureLoader.load(
         this.mass.type === 'asteroid'
           ? './textures/Deimos.jpg'
@@ -33,7 +33,7 @@ export default class extends THREE.Object3D {
         this.mass.bump === true
           ? this.textureLoader.load(`./textures/${this.mass.texture}Bump.jpg`)
           : null,
-      bumpScale: 0.5
+      bumpScale: 0.7
     });
 
     const mesh = new THREE.Mesh(geometry, material);
