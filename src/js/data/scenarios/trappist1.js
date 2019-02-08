@@ -127,6 +127,11 @@ export default {
     y: -122818.40798330265,
     z: 83059.26769450361
   },
+  particles: {
+    max: 20000,
+    size: 4000,
+    rings: []
+  },
   massBeingModified: 'Trappist 1',
   primary: 'Trappist 1',
   maximumDistance: { name: 'Moon to Earth * 10', value: 0.0256955529 },

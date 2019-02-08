@@ -12,6 +12,11 @@ export default {
     y: -1992.556723911082,
     z: 2120.3231321690787
   },
+  particles: {
+    max: 20000,
+    size: 140,
+    rings: []
+  },
   massBeingModified: 'Neptune',
   primary: 'Neptune',
   maximumDistance: { name: 'Triton to Neptune * 5', value: 0.01185845755 },

@@ -10,6 +10,11 @@ export default {
     y: -8163.220347463112,
     z: 2139.892485956284
   },
+  particles: {
+    max: 20000,
+    size: 400,
+    rings: []
+  },
   massBeingModified: 'Jupiter',
   distMax: 50,
   distMin: -50,

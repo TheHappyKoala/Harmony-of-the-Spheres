@@ -15,6 +15,11 @@ export default {
     y: 48372.61945116485,
     z: 11305.982517894732
   },
+  particles: {
+    max: 20000,
+    size: 80,
+    rings: []
+  },
   massBeingModified: 'Sun',
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/2006_RH120',
   masses: [

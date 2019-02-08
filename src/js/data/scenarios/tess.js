@@ -12,6 +12,11 @@ export default {
     y: 551.9256768615364,
     z: 117.69438629186993
   },
+  particles: {
+    max: 20000,
+    size: 80,
+    rings: []
+  },
   massBeingModified: 'Sun',
   primary: 'Earth',
   maximumDistance: { name: 'Moon to Earth * 10', value: 0.0256955529 },

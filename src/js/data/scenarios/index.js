@@ -36,7 +36,7 @@ const processScenario = scenario => ({
     scenario.particles === undefined
       ? {
           max: 20000,
-          size: 300,
+          size: 100000,
           rings: []
         }
       : scenario.particles,

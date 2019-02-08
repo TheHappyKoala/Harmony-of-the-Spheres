@@ -9,6 +9,11 @@ export default {
   cameraFocus: 'Origo',
   collisions: true,
   freeOrigo: { x: 0, y: 0, z: 16000 },
+  particles: {
+    max: 20000,
+    size: 80,
+    rings: []
+  },
   massBeingModified: 'Sun',
   primary: 'Earth',
   maximumDistance: { name: 'Moon to Earth * 10', value: 0.0256955529 },

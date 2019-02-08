@@ -12,6 +12,11 @@ export default {
     y: -306.1964940362069,
     z: 102.79005884167552
   },
+  particles: {
+    max: 20000,
+    size: 10,
+    rings: []
+  },
   massBeingModified: 'Mars',
   primary: 'Mars',
   maximumDistance: { name: 'Phobos to Mars * 100', value: 0.00626747 },
