@@ -43,7 +43,7 @@ export default function(masses, scale, callback) {
 
           masses.splice(looserIndex, 1);
 
-          callback(looser);
+          callback(looser, survivor);
 
           massesLen--;
 

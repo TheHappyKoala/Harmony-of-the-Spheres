@@ -10,7 +10,10 @@ import doCollisions from '../Physics/collisions';
 import {
   getDistanceParams,
   createParticleDisc,
-  createParticleSystem
+  createParticleSystem,
+  getOrbit,
+  getRandomNumberInRange,
+  rotateVector
 } from '../Physics/utils';
 import arena from './arena';
 import Camera from './Camera';
@@ -384,27 +387,99 @@ export default {
       this.particles.draw(this.particlePhysics.particles, frameOfRef);
 
     if (playing && collisions)
-      doCollisions(this.system.masses, scale, looser => {
+      doCollisions(this.system.masses, scale, (looser, survivor) => {
         store.dispatch(deleteMass(looser.name));
 
-        const numberOfFragments = 500;
+        /*
+         * Particles collide and are removed if they are within the radius of a mass, 
+         * so we can't instantiate the particles at the point where the collision is registered
+         * which is always within the radius of the mass it collided with 
+         * as we use the radius check method for detecting collisions
+         * so we trace the colliding mass one iteration and initiate the collision debris at that point
+        */
+
+        const beforeCollisionPoint = {
+          x: looser.x - looser.vx * dt,
+          y: looser.y - looser.vy * dt,
+          z: looser.z - looser.vz * dt
+        };
+
+        const numberOfFragments = 3000;
 
         const totalWithAddedFragments =
           this.particlePhysics.particles + numberOfFragments;
         const excessFragments =
           this.scenario.particles.max - totalWithAddedFragments;
 
+        /*
+         * Every scenario has a maximum allowed number of particles
+         * Should that number be exceeded, we trim the particles array accordingly
+        */
+
         if (excessFragments < 0)
           this.particlePhysics.particles.splice(0, -excessFragments);
 
         for (let i = 0; i < numberOfFragments; i++) {
+          const x = beforeCollisionPoint.x;
+          const y = beforeCollisionPoint.y;
+          const z = beforeCollisionPoint.z;
+
+          let orbit = getOrbit(survivor, { x, y, z }, this.scenario.g);
+
+          /*
+           * Get the ideal circular orbit (apoapsis is equal to periapsis) for a given position vector around the primary
+          */
+
+          orbit = new THREE.Vector3(orbit.vx, orbit.vy, orbit.vz);
+
+          /*
+           * Every third particle that we create gets a completely random orbit... Could be polar
+           * equatorial...
+           * or something in-between!
+          */
+
+          if (i % 3 === 0) {
+            orbit = rotateVector(
+              orbit.x,
+              orbit.y,
+              orbit.z,
+              getRandomNumberInRange(1, 360),
+              new THREE.Vector3(1, 0, 0),
+              this.utilityVector
+            );
+
+            orbit = rotateVector(
+              orbit.x,
+              orbit.y,
+              orbit.z,
+              getRandomNumberInRange(1, 360),
+              new THREE.Vector3(0, 1, 0),
+              this.utilityVector
+            );
+
+            orbit = rotateVector(
+              orbit.x,
+              orbit.y,
+              orbit.z,
+              getRandomNumberInRange(1, 360),
+              new THREE.Vector3(0, 0, 1),
+              this.utilityVector
+            );
+          }
+
+          /*
+           * Push the state vectors
+           * We randomize the velocity vectors within a range, so that some of them have a velocity that is too low for a circular orbit
+           * While others have one that is too high
+          */
+
           this.particlePhysics.particles.push({
-            x: looser.x - looser.vx * dt * 2,
-            y: looser.y - looser.vy * dt * 2,
-            z: looser.z - looser.vz * dt * 2,
-            vx: (Math.random() * (1.1 - 0.5) + 0.5) * -looser.vx,
-            vy: (Math.random() * (1.1 - 0.5) + 0.5) * -looser.vy,
-            vz: (Math.random() * (15 - 0.5) + 0.5) * -looser.vz
+            x,
+            y,
+            z,
+            vx: getRandomNumberInRange(0.9 * orbit.x, 1.3 * orbit.x),
+            vy: getRandomNumberInRange(0.9 * orbit.y, 1.3 * orbit.y),
+            vz: getRandomNumberInRange(0.9 * orbit.z, 1.3 * orbit.z)
           });
         }
       });
