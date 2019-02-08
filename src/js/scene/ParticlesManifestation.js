@@ -30,7 +30,7 @@ export default class extends THREE.Object3D {
       positions[j + 1] = 0;
       positions[j + 2] = 0;
 
-      color.setHSL(0.5 + 0.1 * (i / particlesLen), 0.7, 0.5);
+      color.setHSL(0.0 + 0.1 * Math.random(), 0.9, 0.5);
 
       color.toArray(colors, i * 3);
       sizes[i] = this.size;
