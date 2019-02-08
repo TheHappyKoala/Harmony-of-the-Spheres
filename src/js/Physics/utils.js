@@ -75,6 +75,10 @@ export function getRandomRadian() {
   return Math.PI * 2 * Math.random();
 }
 
+export function getRandomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 export function createParticleDisc(
   particlesNumber = 0,
   primary = { m: 0, x: 0, y: 0, z: 0, vx: 0, vz: 0 },
