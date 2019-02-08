@@ -42,16 +42,11 @@ export function addMass(payload) {
       payload.primary
     );
 
-    const { apsisOne, apsisTwo, argumentOfPeriapsis } = payload.secondary;
+    let { apsisOne, apsisTwo, argumentOfPeriapsis } = payload.secondary;
 
     const periapsis = apsisOne > apsisTwo ? apsisTwo : apsisOne;
 
-    let { x, y, z } = rotateVector(
-      primary.x + periapsis,
-      primary.y,
-      primary.z,
-      argumentOfPeriapsis
-    );
+    let { x, y, z } = rotateVector(periapsis, 0, 0, argumentOfPeriapsis);
 
     const a = getA(apsisOne, apsisTwo);
 
@@ -61,9 +56,9 @@ export function addMass(payload) {
         primary,
         {
           ...payload.secondary,
-          x,
-          y,
-          z
+          x: primary.x + x,
+          y: primary.y + y,
+          z: primary.z + z
         },
         scenario.g,
         a
