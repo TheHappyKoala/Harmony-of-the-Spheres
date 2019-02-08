@@ -18,7 +18,7 @@ export function getDistanceParams(p1, p2) {
 */
 
 export function getVMag(g, primary, d, a = d) {
-  return Math.sqrt(g * primary.m * (2 / d - 1 / a));
+  return Math.sqrt(Math.abs(g * primary.m * (2 / d - 1 / a)));
 }
 
 export function getOrbit(primary, secondary, g, a) {
