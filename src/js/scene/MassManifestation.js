@@ -36,6 +36,79 @@ export default class extends THREE.Object3D {
       bumpScale: 0.7
     });
 
+    /*
+     * Extend the shader of our material with an impact shockwave animation
+    */
+
+    material.onBeforeCompile = shader => {
+      /*
+       * Uniforms for our shader
+      */
+
+      /*
+       * The point on the sphere where the impact takes place
+       * This point is the origin from which the shockwave radiates outwards
+      */
+
+      shader.uniforms.impactPoint = { value: new THREE.Vector3(0, 0, 0) };
+
+      /*
+       * The radius of the impact
+      */
+
+      shader.uniforms.impactRadius = { value: 0 };
+
+      /*
+       * How far the impact shockwave has propagated outwards
+      */
+
+      shader.uniforms.impactRatio = { value: 0 };
+
+      /*
+       * Vertex shader code
+      */
+
+      shader.vertexShader = `varying vec3 vPosition;
+        ${shader.vertexShader}`;
+
+      shader.vertexShader = shader.vertexShader.replace(
+        '#include <worldpos_vertex>',
+        `#include <worldpos_vertex> 
+
+        vPosition = transformed.xyz;`
+      );
+
+      /*
+       * Fragment shader code
+      */
+
+      shader.fragmentShader = `uniform vec3 impactPoint;
+        uniform float impactRadius;
+        uniform float impactRatio;
+
+        varying vec3 vPosition;
+
+        ${shader.fragmentShader}`;
+
+      shader.fragmentShader = shader.fragmentShader.replace(
+        '#include <dithering_fragment>',
+        `#include <dithering_fragment>
+
+        float dist = distance(vPosition, impactPoint);
+        float currentRadius = impactRadius * impactRatio;
+        float increment = smoothstep(0., currentRadius, dist) - smoothstep(currentRadius - 0.01, currentRadius, dist);
+        increment = 1. - increment * (1. - impactRatio); 
+        vec3 color = mix(vec3(1., 0.5, 0.0625), vec3(1., 0.25, 0.125), impactRatio);
+        gl_FragColor = vec4( mix( color, gl_FragColor.rgb, increment), diffuseColor.a );`
+      );
+
+      /*
+       * Expose our custom shader so that we can easily pass uniforms to it
+      */
+
+      this.materialShader = shader;
+    };
+
     const mesh = new THREE.Mesh(geometry, material);
     mesh.name = 'Main';
 
