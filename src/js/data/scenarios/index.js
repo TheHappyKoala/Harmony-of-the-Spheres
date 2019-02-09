@@ -19,6 +19,7 @@ import lunarFreeReturn from './lunarFreeReturn';
 import starOfDavid from './starOfDavid';
 import shenanigans from './shenanigans';
 import innerSolarSystem from './innerSolarSystem';
+import collisionsTest from './collisionsTest';
 import masses from '../masses';
 import { calculateOrbitalVertices } from '../../Physics/utils';
 import { getRandomColor, getObjFromArrByKeyValuePair } from '../../utils';
@@ -98,7 +99,7 @@ export const scenarios = [
   voyagerNeptune,
   saturn,
   hd98800,
-  jovianSystem,
+  collisionsTest,
   trappist1,
   innerSolarSystem,
   lunarFreeReturn,
@@ -106,7 +107,8 @@ export const scenarios = [
   venusPentagram,
   oumuamua,
   earthMoonSystem,
-  threeBodyCoreography,
+  jovianSystem,
+  threeBodyCoreography, 
   tess,
   martianSystem,
   saturnFull,
