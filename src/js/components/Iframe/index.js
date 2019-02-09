@@ -19,7 +19,13 @@ export default class extends Component {
           frameBorder="0"
           style={{ display: this.state.isLoading === true ? 'none' : 'block' }}
         />
-        {this.state.isLoading && <div className="spinner" />}
+        {this.state.isLoading && (
+          <div className="spinner">
+            <div className="bounce1" />
+            <div className="bounce2" />
+            <div className="bounce3" />
+          </div>
+        )}
       </div>
     );
   }
