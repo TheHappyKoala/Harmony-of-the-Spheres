@@ -17,7 +17,6 @@
   "author": "Darrell A. Huffman",
   "license": "GNU General Public License v3.0",
   "devDependencies": {
-    "@tweenjs/tween.js": "^17.3.0",
     "babel-core": "^6.23.1",
     "babel-eslint": "^8.2.2",
     "babel-loader": "^7.1.2",
@@ -43,6 +42,7 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "@tweenjs/tween.js": "^17.3.0",
     "babel-preset-env": "^1.6.1",
     "express": "^4.16.3",
     "fsevents": "^1.2.4",
@@ -53,7 +53,7 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "three": "^0.92.0",
+    "three": "^0.101.1",
     "three-collada-loader": "0.0.1"
   }
 }
