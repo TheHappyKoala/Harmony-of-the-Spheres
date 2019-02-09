@@ -12,6 +12,7 @@ import {
   createParticleDisc,
   createParticleSystem,
   getOrbit,
+  getClosestPointOnSphere,
   getRandomNumberInRange,
   rotateVector
 } from '../Physics/utils';
@@ -23,6 +24,8 @@ import Star from './Star';
 import Model from './Model';
 import ParticlePhysics from '../Physics/particles';
 import ParticlesManifestation from './ParticlesManifestation';
+
+const TWEEN = require('@tweenjs/tween.js');
 
 export default {
   init(webGlCanvas, labelsCanvas) {
@@ -404,6 +407,80 @@ export default {
           z: looser.z - looser.vz * dt
         };
 
+        /*
+         * Check if the survivor of a collision has a custom impact shockwave shader
+         * If that turns out to be the case... Let's get ready to ruuuummmbleee
+        */
+
+        const survivingManifestation = this.scene.getObjectByName(
+          survivor.name
+        );
+
+        if (survivingManifestation.materialShader) {
+          /*
+           * Get a reference to the sphere of the mass manifestation
+          */
+
+          const survivingManifestationRotation = survivingManifestation.getObjectByName(
+            'Main'
+          ).rotation;
+
+          /*
+           * Calculate where on the sphere the impact took place so that we know where to initiate the shockwave animation
+           * We need to pass vectors, for the survivor and looser of the collision, 
+           * where the rotating reference frame is set to the survivor of the collision
+          */
+
+          const hitPoint = getClosestPointOnSphere(
+            new THREE.Vector3(
+              looser.x - survivor.x - looser.vx * dt,
+              looser.y - survivor.y - looser.vy * dt,
+              looser.z - survivor.z - looser.vz * dt
+            ),
+            new THREE.Vector3(
+              survivor.x - survivor.x,
+              survivor.y - survivor.y,
+              survivor.z - survivor.z
+            ),
+            survivor.radius,
+            {
+              x: survivingManifestationRotation.x,
+              y: survivingManifestationRotation.y,
+              z: survivingManifestationRotation.z
+            }
+          );
+
+          /*
+           * Let's pass some uniforms to kick this shader into action!!!
+          */
+
+          const uniforms = survivingManifestation.materialShader.uniforms;
+
+          uniforms.impactPoint.value.set(-hitPoint.x, -hitPoint.y, -hitPoint.z);
+
+          uniforms.impactRadius = {
+            value: Math.min(
+              Math.max(looser.radius * 50, 300),
+              survivor.radius * 2
+            )
+          };
+
+          /*
+           * We create a tween that updates the impactRatio uniform over a time span of two seconds
+           * At some point I'm probably going to look into syncing the duration of the shockwave with the rest of the simulation
+           * since right now it is independent of the time step at which the simulation is being run
+           * but that will have to wait!!!
+          */
+
+          const tween = new TWEEN.Tween({ value: 0 })
+            .to({ value: 1 }, 2000)
+            .onUpdate(val => {
+              uniforms.impactRatio.value = val.value;
+            });
+
+          tween.start();
+        }
+
         const numberOfFragments = 3000;
 
         const totalWithAddedFragments =
@@ -484,6 +561,13 @@ export default {
         }
       });
 
+    /*
+     * We have to update the tweens if we want them to run!!! 
+     * Forget to add this line of code all the time when I'm working with tween.js,
+     * so hope hopefully this comment will preclude that from happening!!!
+    */
+
+    TWEEN.update();
     this.requestAnimationFrameId = requestAnimationFrame(() => this.loop());
     this.renderer.render(this.scene, this.camera);
   },
