@@ -52,6 +52,22 @@ export function degreesToRadians(degrees) {
   return Math.PI / 180 * degrees;
 }
 
+/*
+ * This method takes a point in 3D space and calculates the point on a given sphere that is closest to it
+ * It takes the rotation of the sphere into account 
+*/
+
+export function getClosestPointOnSphere(point, spherePos, radius, rotation) {
+  return point
+    .sub(spherePos)
+    .normalize()
+    .multiplyScalar(radius)
+    .add(spherePos)
+    .applyAxisAngle(new THREE.Vector3(1, 0, 0), -rotation.x)
+    .applyAxisAngle(new THREE.Vector3(0, 1, 0), -rotation.y)
+    .applyAxisAngle(new THREE.Vector3(0, 0, 1), -rotation.z);
+}
+
 export function rotateVector(
   x,
   y,
