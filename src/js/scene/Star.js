@@ -1,23 +1,11 @@
 import * as THREE from 'three';
 import MassManifestation from './MassManifestation';
 import starMaterial from './starMaterial';
+import { getTextureFromCanvas } from '../utils';
 
 export default class extends MassManifestation {
   constructor(mass) {
     super(mass);
-  }
-
-  getStarTexture() {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
-    ctx.fillStyle = this.mass.color;
-    ctx.fillRect(0, 0, width, height);
-
-    return canvas;
   }
 
   getMain() {
@@ -47,7 +35,12 @@ export default class extends MassManifestation {
 
     const geometry = new THREE.SphereBufferGeometry(this.mass.radius, 32, 32);
 
-    const texture = new THREE.Texture(this.getStarTexture());
+    const texture = new THREE.Texture(
+      getTextureFromCanvas((ctx, width, height) => {
+        ctx.fillStyle = this.mass.color;
+        ctx.fillRect(0, 0, width, height);
+      })
+    );
     texture.needsUpdate = true;
 
     const material = starMaterial(texture);
