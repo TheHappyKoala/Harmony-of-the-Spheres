@@ -31,14 +31,21 @@ export default function() {
       </p>
       <p className="modal-item">
         <b>&#187; </b>
-        <a href="https://discourse.threejs.org/t/impact-shock-wave/5988" target="blank">
+        <a
+          href="https://discourse.threejs.org/t/impact-shock-wave/5988"
+          target="blank"
+        >
           Impact shockwave shader
         </a>{' '}
         developed by the ever spectacular and gloriously helpful prisoner849.
-      </p>  
-      <p className="modal-item">   
+      </p>
+      <p className="modal-item">
         <b>&#187; </b>
-        Planet and moon textures courtesy of the dazzling{' '}
+        Planet and moon textures courtesy of the talented{' '}
+        <a href="https://github.com/JohnVV" target="blank">
+          John Van Vlliet
+        </a>{' '}
+        and the dazzling{' '}
         <a href="https://www.deviantart.com/magentameteorite" target="blank">
           MagentaMeteorite (Brie Limburger)
         </a>.
@@ -53,17 +60,6 @@ export default function() {
           Phobos and Deimos 3D models
         </a>{' '}
         courtesy of Raul Alvarez.
-      </p>
-      <p className="modal-item">
-        <b>&#187; </b>
-        <a href="http://planetpixelemporium.com/mars.html" target="blank">
-          Phobos and Deimos textures
-        </a>{' '}
-        courtesy of James Hastings-Trew.
-      </p>
-      <p className="modal-item">
-        <b>&#187; </b>
-        Trappist 1 planet textures by John Van Vlliet
       </p>
       <p className="modal-item">
         <b>&#187; </b>
