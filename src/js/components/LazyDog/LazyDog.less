@@ -1,0 +1,27 @@
+.lazy-dog-wrapper {
+  text-align: center;   
+  figcaption {
+    position: absolute;     
+    z-index: 10;
+    bottom: 12px;
+    width: 100%;
+  }
+  i {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 45%;
+  } 
+  img {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  .loaded-image {
+    opacity: 1;
+  }
+}
+
+.lazy-dog-wrapper:hover > figcaption{
+  font-weight: bold;
+}
