@@ -2,6 +2,7 @@ import React from 'react';
 import './MainBar.less';
 import { NavLink } from 'react-router-dom';
 import Dropdown from '../Dropdown';
+import LazyDog from '../LazyDog';
 import { scenarios } from '../../data/scenarios';
 
 export default function(props) {
@@ -16,12 +17,14 @@ export default function(props) {
           {scenarios.map(scenario => (
             <div className="scenario-menu-option" key={scenario.name}>
               <NavLink to={`/scenario/${scenario.name}`} name={scenario.name}>
-                <img
+                <LazyDog
                   src={`./images/scenarios/${scenario.name}.png`}
+                  alt={scenario.name}
+                  caption={scenario.name}
                   width={220}
                   height={138}
+                  placeHolderIcon="fa fa-venus-mars fa-2x"
                 />
-                <p>{scenario.name}</p>
               </NavLink>
             </div>
           ))}

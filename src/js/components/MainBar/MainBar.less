@@ -23,23 +23,13 @@
       display: grid;  
       grid-column-gap: 5px;        
       grid-row-gap: 5px;   
-      grid-template-columns: 220px;
+      grid-template-columns: 220px 220px;   
       padding: 10px;          
       height: 75vh;      
       overflow: auto; 
       border: @border;
       .scenario-menu-option {
         position: relative;   
-        a:hover > p {
-          font-weight: bold; 
-        }
-      }
-      p {
-        position: absolute;     
-        z-index: 10;
-        bottom: 12px;
-        width: 100%;
-        text-align: center;   
       }
     }
   }
@@ -58,9 +48,3 @@
     }
   }
 }
-
-@media screen and (min-width: 550px) {
-  .scenario-menu {
-    grid-template-columns: 220px 220px !important;   
-  }
-} 
