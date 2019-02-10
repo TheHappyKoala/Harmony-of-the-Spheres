@@ -261,7 +261,7 @@ h3 {
   display: grid;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
-  grid-template-columns: 220px;
+  grid-template-columns: 220px 220px;
   padding: 10px;
   height: 75vh;
   overflow: auto;
@@ -269,16 +269,6 @@ h3 {
 }
 .main-bar .scenario-dropdown-wrapper .scenario-menu .scenario-menu-option {
   position: relative;
-}
-.main-bar .scenario-dropdown-wrapper .scenario-menu .scenario-menu-option a:hover > p {
-  font-weight: bold;
-}
-.main-bar .scenario-dropdown-wrapper .scenario-menu p {
-  position: absolute;
-  z-index: 10;
-  bottom: 12px;
-  width: 100%;
-  text-align: center;
 }
 .main-bar .play-state-wrapper {
   margin-left: 15px;
@@ -293,11 +283,6 @@ h3 {
 .main-bar .elapsed-time-wrapper .elapsed-time {
   margin-left: 5px;
   font-weight: bold;
-}
-@media screen and (min-width: 550px) {
-  .scenario-menu {
-    grid-template-columns: 220px 220px !important;
-  }
 }
 .loading-screen-wrapper {
   position: fixed;
@@ -334,6 +319,32 @@ h3 {
   position: absolute;
   top: 0;
   left: 0;
+}
+.lazy-dog-wrapper {
+  text-align: center;
+}
+.lazy-dog-wrapper figcaption {
+  position: absolute;
+  z-index: 10;
+  bottom: 12px;
+  width: 100%;
+}
+.lazy-dog-wrapper i {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 45%;
+}
+.lazy-dog-wrapper img {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.lazy-dog-wrapper .loaded-image {
+  opacity: 1;
+}
+.lazy-dog-wrapper:hover > figcaption {
+  font-weight: bold;
 }
 .iframe-scroll-wrapper {
   height: 99%;
