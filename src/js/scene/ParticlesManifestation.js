@@ -61,9 +61,11 @@ export default class extends THREE.Object3D {
 
     const particlesLen = particles.length;
 
-    mesh.geometry.setDrawRange(0, particlesLen - 1);
+    const geometry = mesh.geometry;
 
-    const positions = mesh.geometry.attributes.position.array;
+    geometry.setDrawRange(0, particlesLen - 1);
+
+    const positions = geometry.attributes.position.array;
 
     let j = 0;
 
@@ -83,6 +85,6 @@ export default class extends THREE.Object3D {
       j += 3;
     }
 
-    mesh.geometry.attributes.position.needsUpdate = true;
+    geometry.attributes.position.needsUpdate = true;
   }
 }
