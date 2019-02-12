@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function() {
   return (
-    <div>
+    <React.Fragment>
       <h1>Credits</h1>
       <p className="modal-item">
         <b>&#187; </b>Programming by{' '}
@@ -101,6 +101,6 @@ export default function() {
         Last, but not least, I would like to credit the Universe for being
         awesomely weird and thought provoking!
       </p>
-    </div>
+    </React.Fragment>
   );
 }

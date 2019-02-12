@@ -1,9 +1,5 @@
 @import '../App/App.less';    
 
-.slider-wrapper {
-  overflow: hidden;
-}
-
 .range-wrapper {
   width: 90%;
   height: 50px;
@@ -43,23 +39,17 @@ input.slider[type="range"]:focus {
   background-color: @input;
 }
 
-.spinner-wrapper {
-  height: 50px;
-  width: 10%;
-  float: left;
-}
-
-.spinner-wrapper button {
+.slider-button {
   background-color: #000;
   height: 25px;
   display: block;
-  width: 100%;
+  width: 10%;
   cursor: pointer;
   border: @border;
   border-left: none;
   color: #fff;
 }
 
-.spinner-wrapper button:first-child {
+.slider-increment-button {
   border-bottom: none;
-}
+}    

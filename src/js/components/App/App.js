@@ -35,7 +35,7 @@ export default class extends Component {
     const scenario = this.props.scenario;
 
     return (
-      <div>
+      <React.Fragment>
         <Renderer scenarioName={scenario.name} />
         <MainBar
           scenario={scenario}
@@ -168,7 +168,7 @@ export default class extends Component {
           <h1>Hey friend...</h1>
           <p>Please rotate your device into landscape mode.</p>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

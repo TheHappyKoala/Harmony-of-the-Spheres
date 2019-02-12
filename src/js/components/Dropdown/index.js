@@ -56,29 +56,27 @@ export default class extends Component {
     );
 
     return (
-      <div className="dropdown">
-        <div>
-          <div onClick={this.handleClick} className="selected-option">
-            {this.props.selectedOption !== undefined
-              ? this.props.selectedOption.name !== undefined
-                ? this.props.selectedOption.name
-                : this.props.selectedOption
-              : this.state.selectedOption}
-            <i className="fa fa-chevron-circle-down fa-lg" />
-          </div>
-          {this.state.displayAllOptions && (
-            <div
-              className={
-                this.props.customCssOptions !== undefined
-                  ? this.props.customCssOptions
-                  : 'options'
-              }
-            >
-              {options}
-            </div>
-          )}
+      <React.Fragment>
+        <div onClick={this.handleClick} className="selected-option">
+          {this.props.selectedOption !== undefined
+            ? this.props.selectedOption.name !== undefined
+              ? this.props.selectedOption.name
+              : this.props.selectedOption
+            : this.state.selectedOption}
+          <i className="fa fa-chevron-circle-down fa-lg" />
         </div>
-      </div>
+        {this.state.displayAllOptions && (
+          <div
+            className={
+              this.props.customCssOptions !== undefined
+                ? this.props.customCssOptions
+                : 'options'
+            }
+          >
+            {options}
+          </div>
+        )}
+      </React.Fragment>
     );
   }
 }

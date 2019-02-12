@@ -8,7 +8,7 @@ import { integrators } from '../../Physics/Integrators';
 
 export default function(props) {
   return (
-    <div>
+    <React.Fragment>
       <h2>Physics</h2>
       <label className="top">
         Integrator
@@ -60,6 +60,6 @@ export default function(props) {
           })
         }
       />
-    </div>
+    </React.Fragment>
   );
 }

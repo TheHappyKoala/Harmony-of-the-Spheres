@@ -84,7 +84,7 @@ export default class extends Component {
 
   render() {
     return (
-      <div className="slider-wrapper">
+      <React.Fragment>
         <div className="range-wrapper">
           <div className="slider-value">{this.props.value}</div>
           <input
@@ -102,21 +102,21 @@ export default class extends Component {
             value={this.props.value}
           />
         </div>
-        <div className="spinner-wrapper">
-          <button
-            onMouseDown={() => this.handleMouseDown('increment')}
-            onMouseUp={this.handleMouseUp}
-          >
-            +
-          </button>
-          <button
-            onMouseDown={() => this.handleMouseDown('decrement')}
-            onMouseUp={this.handleMouseUp}
-          >
-            -
-          </button>
-        </div>
-      </div>
+        <button
+          onMouseDown={() => this.handleMouseDown('increment')}
+          onMouseUp={this.handleMouseUp}
+          className="slider-button slider-increment-button"
+        >
+          +
+        </button>
+        <button
+          onMouseDown={() => this.handleMouseDown('decrement')}
+          onMouseUp={this.handleMouseUp}
+          className="slider-button"
+        >
+          -
+        </button>
+      </React.Fragment>
     );
   }
 }

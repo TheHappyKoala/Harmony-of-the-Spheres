@@ -3,7 +3,7 @@ import Toggle from '../Toggle';
 
 export default function(props) {
   return (
-    <div>
+    <React.Fragment>
       <h2>Graphics</h2>
       <Toggle
         label="Trails"
@@ -45,6 +45,6 @@ export default function(props) {
           })
         }
       />
-    </div>
+    </React.Fragment>
   );
 }

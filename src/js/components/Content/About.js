@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function() {
   return (
-    <div>
+    <React.Fragment>
       <h1>About</h1>
       <p className="modal-item">
         Harmony of the Spheres is a Newtonian n-body gravity simulator that lets
@@ -61,6 +61,6 @@ export default function() {
         Harmony of the Spheres by clicking the Scenario Wiki option in the left
         sidebar: happy reading!
       </p>
-    </div>
+    </React.Fragment>
   );
 }

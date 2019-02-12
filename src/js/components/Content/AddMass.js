@@ -41,7 +41,7 @@ export default class extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <h2>Add Mass</h2>
         <label className="top">
           Primary
@@ -227,7 +227,7 @@ export default class extends Component {
         >
           Add Mass
         </Button>
-      </div>
+      </React.Fragment>
     );
   }
 }

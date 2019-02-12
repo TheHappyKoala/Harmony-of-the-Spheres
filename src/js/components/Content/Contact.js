@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function() {
   return (
-    <div>
+    <React.Fragment>
       <h1>Contact</h1>
       <p className="modal-item">
         Want to say hi? Is there a scenario that you could not find but would
@@ -15,6 +15,6 @@ export default function() {
       <p className="modal-item">darrell.arjuna.huffman@gmail.com</p>
       <h3 className="modal-item">Twitter</h3>
       <p className="modal-item">@DarrellAHuffma1</p>
-    </div>
+    </React.Fragment>
   );
 }

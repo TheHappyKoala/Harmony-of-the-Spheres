@@ -70,7 +70,7 @@ export default class extends Component {
     };
 
     return (
-      <div className="tip-wrapper">
+      <React.Fragment>
         <div
           className="tip-trigger"
           onMouseOver={this.handleMouseIn}
@@ -89,7 +89,7 @@ export default class extends Component {
             </div>
           )}
         </ReactCSSTransitionGroup>
-      </div>
+      </React.Fragment>
     );
   }
 }

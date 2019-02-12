@@ -4,7 +4,7 @@ import Tooltip from '../Tooltip';
 
 export default function(props) {
   return (
-    <div>
+    <React.Fragment>
       <h2>Camera</h2>
       <label className="top">
         Rotating Reference Frame{' '}
@@ -117,6 +117,6 @@ export default function(props) {
           ))}
         </Dropdown>
       </div>
-    </div>
+    </React.Fragment>
   );
 }

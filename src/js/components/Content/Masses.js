@@ -8,7 +8,7 @@ import bodies from '../../data/masses';
 
 export default function(props) {
   return (
-    <div>
+    <React.Fragment>
       <h2>Modify Masses</h2>
       <label className="top">
         Mass Being Modified
@@ -172,6 +172,6 @@ export default function(props) {
             </div>
           )
       )}
-    </div>
+    </React.Fragment>
   );
 }
