@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { degreesToRadians } from '../Physics/utils';
 
 export default function(manager) {
   const geometry = new THREE.SphereBufferGeometry(
@@ -9,15 +10,24 @@ export default function(manager) {
 
   const textureLoader = new THREE.TextureLoader(manager);
 
-  const material = new THREE.MeshBasicMaterial();
-  material.map = textureLoader.load('./textures/starfield.png');
-  material.side = THREE.BackSide;
+  const material = new THREE.MeshBasicMaterial({
+    map: textureLoader.load('./textures/milkyway.jpg'),
+    side: THREE.BackSide
+  });
 
   const mesh = new THREE.Mesh(geometry, material);
 
-  mesh.rotation.x = Math.PI / 2;
+  /*
+   * Mkay... So apparently the solar system is tilted 60.2 degrees along the y axis relative to the plane of the Milky Way...
+   * To compensate for the fact that y is up in WebGL and not z (who the hell thought that made any sense?!) we need to 
+   * include a 90 degree offset... Mkay... 90 degrees...
+  */
+
+  const solarSystemTilt = 60.2;
+
+  mesh.rotateX(degreesToRadians(90 + solarSystemTilt));
 
   mesh.name = 'Arena';
 
-  return mesh;
+  return mesh;    
 }
