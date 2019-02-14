@@ -256,16 +256,47 @@ h3 {
 }
 .main-bar .scenario-dropdown-wrapper .scenario-menu {
   position: absolute;
+  box-sizing: content-box;
   z-index: 2;
   background-color: #191919;
-  display: grid;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-  grid-template-columns: 220px 220px;
-  padding: 10px;
-  height: 75vh;
+  padding: 7px;
+  padding-top: 0;
+  max-height: 80vh;
   overflow: auto;
   border: 1px solid #545454;
+}
+.main-bar .scenario-dropdown-wrapper .scenario-menu .dropdown-content {
+  margin-top: 43px;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 220px 220px 220px 220px;
+}
+@media screen and (max-width: 1200px) {
+  .main-bar .scenario-dropdown-wrapper .scenario-menu .dropdown-content {
+    grid-template-columns: 220px 220px;
+  }
+}
+.main-bar .scenario-dropdown-wrapper .scenario-menu .dropdown-tabs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #000;
+  list-style: none;
+  border-bottom: 1px solid #545454;
+}
+.main-bar .scenario-dropdown-wrapper .scenario-menu .dropdown-tabs li {
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.main-bar .scenario-dropdown-wrapper .scenario-menu .dropdown-tabs li:hover {
+  text-shadow: 2px 2px 8px #eee;
+}
+.main-bar .scenario-dropdown-wrapper .scenario-menu .dropdown-tabs .dropdown-tabs-active {
+  text-shadow: 2px 2px 8px #eee;
 }
 .main-bar .scenario-dropdown-wrapper .scenario-menu .scenario-menu-option {
   position: relative;
@@ -847,9 +878,6 @@ h3 {
     margin-top: 10px;
   }
 }
-.dropdown {
-  width: 100%;
-}
 .selected-option {
   width: inherit;
   background-color: #191919;
@@ -1367,9 +1395,6 @@ h3 {
     margin-top: 10px;
   }
 }
-.slider-wrapper {
-  overflow: hidden;
-}
 .range-wrapper {
   width: 90%;
   height: 50px;
@@ -1404,22 +1429,17 @@ input.slider[type="range"]:focus {
   overflow: hidden;
   background-color: #191919;
 }
-.spinner-wrapper {
-  height: 50px;
-  width: 10%;
-  float: left;
-}
-.spinner-wrapper button {
+.slider-button {
   background-color: #000;
   height: 25px;
   display: block;
-  width: 100%;
+  width: 10%;
   cursor: pointer;
   border: 1px solid #545454;
   border-left: none;
   color: #fff;
 }
-.spinner-wrapper button:first-child {
+.slider-increment-button {
   border-bottom: none;
 }
 .absolute {
@@ -1650,14 +1670,10 @@ h3 {
     margin-top: 10px;
   }
 }
-.tip-wrapper {
-  display: inline-block;
-  float: right;
-}
 .tip-trigger {
   color: #d8d8d8;
   font-weight: bold;
-  display: inline-block;
+  float: right;
 }
 .tip {
   position: absolute;
