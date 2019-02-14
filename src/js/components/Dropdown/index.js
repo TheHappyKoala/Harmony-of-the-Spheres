@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './Dropdown.less';
 
 export default class extends Component {
@@ -6,18 +6,50 @@ export default class extends Component {
     super(props);
     this.state = {
       selectedOption: props.children[0].props.name,
-      displayAllOptions: false
+      displayAllOptions: false,
+      tabs: null,
+      selectedTab: null
     };
   }
 
-  handleClick = () => {
-    if (!this.state.displayAllOptions)
-      document.addEventListener('click', this.handleOutsideClick, false);
-    else document.removeEventListener('click', this.handleOutsideClick, false);
-    this.displayAllOptions(!this.state.displayAllOptions);
+  componentDidMount() {
+    const tabs = [];
+
+    if (this.props.tabs)
+      this.props.children.forEach(
+        entry =>
+          tabs.indexOf(entry.props.category) === -1 &&
+          tabs.push(entry.props.category)
+      );
+
+    this.setState({ ...this.state, tabs: tabs, selectedTab: tabs[0] });
+  }
+
+  openOptions = () => {
+    this.setState({ displayAllOptions: true });
+    document.addEventListener('click', this.handleOutsideClick);
   };
 
-  handleOutsideClick = () => this.handleClick();
+  closeOptions = e => {
+    if (this._optionsWrapper.contains(e.target)) {
+      this.setState({ displayAllOptions: false });
+    }
+    document.removeEventListener('click', this.handleOutsideClick);
+  };
+
+  handleOutsideClick = e => {
+    if (
+      !this._optionsWrapper.contains(e.target) &&
+      !(this.props.tabs !== undefined ? this._m.contains(e.target) : false)
+    ) {
+      this.setState({ displayAllOptions: false });
+      document.removeEventListener('click', this.handleOutsideClick);
+    }
+  };
+
+  setSelectedTab(selectedTab) {
+    this.setState({ ...this.state, selectedTab });
+  }
 
   setSelectedOption = selectedOption =>
     this.setState({ ...this.state, selectedOption });
@@ -27,6 +59,8 @@ export default class extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
+    if (this.state.selectedTab !== nextState.selectedTab) return true;
+
     if (nextProps.selectedOption !== undefined) {
       if (nextProps.selectedOption.name !== undefined) {
         if (nextProps.selectedOption.name !== this.props.selectedOption.name)
@@ -47,17 +81,18 @@ export default class extends Component {
   render() {
     const options = React.Children.map(this.props.children, child =>
       React.cloneElement(child, {
-        onClick: () => {
+        onClick: e => {
           child.props.callback && child.props.callback();
           this.props.selectedOption === undefined &&
             this.setSelectedOption(child.props.name);
+          this.closeOptions(e);
         }
       })
     );
 
     return (
-      <React.Fragment>
-        <div onClick={this.handleClick} className="selected-option">
+      <Fragment>
+        <div onClick={this.openOptions} className="selected-option">
           {this.props.selectedOption !== undefined
             ? this.props.selectedOption.name !== undefined
               ? this.props.selectedOption.name
@@ -66,17 +101,45 @@ export default class extends Component {
           <i className="fa fa-chevron-circle-down fa-lg" />
         </div>
         {this.state.displayAllOptions && (
-          <div
-            className={
-              this.props.customCssOptions !== undefined
-                ? this.props.customCssOptions
-                : 'options'
-            }
-          >
-            {options}
-          </div>
+          <Fragment>
+            <div
+              className={
+                this.props.customCssOptions !== undefined
+                  ? this.props.customCssOptions
+                  : 'options'
+              }
+              ref={el => (this._optionsWrapper = el)}
+            >
+              {this.props.tabs && (
+                <ul
+                  ref={el => (this._m = el)}
+                  className={
+                    this.props.tabs.cssClass !== undefined &&
+                    this.props.tabs.cssClass
+                  }
+                >
+                  {this.state.tabs.map(tab => (
+                    <li key={tab} onClick={() => this.setSelectedTab(tab)}>
+                      {tab}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {this.props.tabs !== undefined ? (
+                <div className="dropdown-content">
+                  {' '}
+                  {options.map(option => {
+                    if (option.props.category === this.state.selectedTab)
+                      return option;
+                  })}
+                </div>
+              ) : (
+                options
+              )}
+            </div>
+          </Fragment>
         )}
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
