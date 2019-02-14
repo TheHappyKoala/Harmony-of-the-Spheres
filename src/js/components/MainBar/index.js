@@ -12,7 +12,10 @@ export default function(props) {
       <div className="item scenario-dropdown-wrapper inline">
         <Dropdown
           selectedOption={props.scenario.name}
-          tabs={{ cssClass: 'dropdown-tabs' }}
+          tabs={{
+            cssClass: 'dropdown-tabs',
+            activeCss: 'dropdown-tabs-active'
+          }}
           customCssOptions="scenario-menu"
         >
           {scenarios.map(scenario => (
