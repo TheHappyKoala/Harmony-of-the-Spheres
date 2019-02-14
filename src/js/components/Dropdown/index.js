@@ -119,7 +119,16 @@ export default class extends Component {
                   }
                 >
                   {this.state.tabs.map(tab => (
-                    <li key={tab} onClick={() => this.setSelectedTab(tab)}>
+                    <li
+                      key={tab}
+                      onClick={() => this.setSelectedTab(tab)}
+                      className={
+                        this.props.tabs.activeCss !== undefined &&
+                        tab === this.state.selectedTab
+                          ? this.props.tabs.activeCss
+                          : ''
+                      }
+                    >
                       {tab}
                     </li>
                   ))}
