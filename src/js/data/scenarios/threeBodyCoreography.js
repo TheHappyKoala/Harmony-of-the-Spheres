@@ -1,5 +1,6 @@
 export default {
-  name: 'Coreography - The Figure Eight',
+  name: 'The Figure Eight',
+  type: 'Choreography',
   g: 100,
   dt: 0.01,
   elapsedTime: 0,

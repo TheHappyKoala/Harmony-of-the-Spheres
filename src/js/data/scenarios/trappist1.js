@@ -115,6 +115,7 @@ console.log(getTrappistOneSystem());
 
 export default {
   name: 'Trappist 1 and its Seven Daughters',
+  type: 'Exosystem',
   g: 39.5,
   dt: 0.00001,
   distMax: 50,

@@ -1,5 +1,6 @@
 export default {
   name: 'Ulysses - Leaving the Ecliptic',
+  type: 'Spacecraft',
   g: 39.5,
   dt: 0.0004,
   distMax: 50,

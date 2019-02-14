@@ -1,5 +1,6 @@
 export default {
   name: 'Journey to Pluto - New Horizons',
+  type: 'Spacecraft',
   g: 39.5,
   dt: 0.0005,
   distMax: 50,

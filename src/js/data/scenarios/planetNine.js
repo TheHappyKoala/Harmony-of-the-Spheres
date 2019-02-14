@@ -1,5 +1,6 @@
 export default {
   name: 'Planet Nine and the Detached Objects',
+  type: 'Solar System',
   g: 39.5,
   dt: 1.35,
   distMax: 1500,

@@ -1,5 +1,6 @@
 export default {
   name: 'HD 98800 B',
+  type: 'Exosystem',
   g: 100,
   dt: 0.0005,
   elapsedTime: 0,

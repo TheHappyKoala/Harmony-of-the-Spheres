@@ -1,5 +1,6 @@
 export default {
   name: 'Pentagram of Venus',
+  type: 'Solar System',
   g: 39.5,
   dt: 0.001,
   distMax: 50,

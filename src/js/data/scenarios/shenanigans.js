@@ -1,5 +1,6 @@
 export default {
-  name: 'Coreopgraphy - Three Body Shenanigans',
+  name: 'Three Body Shenanigans',
+  type: 'Choreography',
   g: 100,
   dt: 0.05,
   elapsedTime: 0,

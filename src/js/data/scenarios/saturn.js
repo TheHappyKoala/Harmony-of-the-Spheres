@@ -1,5 +1,6 @@
 export default {
   name: 'Earth VS. the Rings of Saturn',
+  type: 'What-If',
   g: 39.5,
   dt: 0.000002,
   rotatingReferenceFrame: 'Saturn',

@@ -1,5 +1,6 @@
 export default {
   name: 'Apollo 11 - Free Return Trajectory',
+  type: 'Spacecraft',
   g: 39.5,
   dt: 40e-7,
   distMax: 50,

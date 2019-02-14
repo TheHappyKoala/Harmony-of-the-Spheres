@@ -1,5 +1,6 @@
 export default {
   name: 'Destroying the Galilean Moons',
+  type: 'What-If',
   g: 39.5,
   dt: 0.000001,
   rotatingReferenceFrame: 'Jupiter',

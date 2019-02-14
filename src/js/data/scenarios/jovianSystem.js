@@ -1,5 +1,6 @@
 export default {
   name: 'The Sun and the Jovian System',
+  type: 'Solar System',
   g: 39.5,
   dt: 0.000006,
   rotatingReferenceFrame: 'Jupiter',

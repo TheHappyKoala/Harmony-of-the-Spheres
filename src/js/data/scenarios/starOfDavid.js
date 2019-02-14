@@ -1,5 +1,6 @@
 export default {
-  name: 'Coreography - The Star of David',
+  name: 'The Star of David',
+  type: 'Choreography',
   g: 100,
   dt: 0.01,
   elapsedTime: 0,
