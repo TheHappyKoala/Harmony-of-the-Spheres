@@ -12,10 +12,15 @@ export default function(props) {
       <div className="item scenario-dropdown-wrapper inline">
         <Dropdown
           selectedOption={props.scenario.name}
+          tabs={{ cssClass: 'dropdown-tabs' }}
           customCssOptions="scenario-menu"
         >
           {scenarios.map(scenario => (
-            <div className="scenario-menu-option" key={scenario.name}>
+            <div
+              className="scenario-menu-option"
+              key={scenario.name}
+              category={scenario.type}
+            >
               <NavLink to={`/scenario/${scenario.name}`} name={scenario.name}>
                 <LazyDog
                   src={`./images/scenarios/${scenario.name}.png`}

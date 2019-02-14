@@ -21,13 +21,39 @@
       box-sizing: content-box;
       z-index: 2;
       background-color: @input;   
-      display: grid;  
-      grid-gap: 5px; 
-      grid-template-columns: 220px 220px;   
-      padding: 7px;          
-      height: 75vh;      
+      padding: 7px;   
+      padding-top: 0;       
+      max-height: 80vh;      
       overflow: auto;   
       border: @border;
+      .dropdown-content {
+        margin-top: 43px;
+        display: grid;  
+        grid-gap: 5px; 
+        grid-template-columns: 220px 220px 220px 220px;    
+        @media screen and (max-width: 1200px) {
+          grid-template-columns: 220px 220px;    
+        }  
+      }
+      .dropdown-tabs {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: #000;
+        list-style: none;
+        border-bottom: @border;
+        li {
+          display: inline-block;
+          padding: 10px;
+          cursor: pointer;
+          font-weight: bold;
+          &:hover {
+            color: #d8d8d8;
+          }
+        } 
+      }
       .scenario-menu-option {
         position: relative;   
       }
@@ -47,4 +73,4 @@
       font-weight: bold;
     }
   }
-}
+} 
