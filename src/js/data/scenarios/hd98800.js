@@ -25,9 +25,9 @@ export default {
     rings: [
       {
         primary: 'custom',
+        tilt: [44, 0, 0],
         customPrimaryData: {
           m: 1.398,
-          tilt: 44,
           x: 0,
           y: 0,
           z: 0,

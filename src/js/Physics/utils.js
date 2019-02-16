@@ -133,45 +133,81 @@ export function createParticleDisc(
 
 export function createParticleSystem(
   vectors = [],
-  axis = new THREE.Vector3(1, 0, 0),
-  tilt = 0,
+  tilt = [0, 0, 0],
   primary = { x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0 }
 ) {
   const tiltedVectors = [];
 
   const positionVector = new THREE.Vector3();
   const velocityVector = new THREE.Vector3();
+  const axisVector = new THREE.Vector3();
 
   const vectorsLen = vectors.length;
 
   for (let i = 0; i < vectorsLen; i++) {
     const vector = vectors[i];
 
-    const p = rotateVector(
+    const pTX = rotateVector(
       vector.x,
       vector.y,
       vector.z,
-      tilt,
-      axis,
+      tilt[0],
+      axisVector.set(1, 0, 0),
       positionVector
     );
 
-    const v = rotateVector(
+    const pTY = rotateVector(
+      pTX.x,
+      pTX.y,
+      pTX.z,
+      tilt[1],
+      axisVector.set(0, 1, 0),
+      positionVector
+    );
+
+    const pTZ = rotateVector(
+      pTY.x,
+      pTY.y,
+      pTY.z,
+      tilt[2],
+      axisVector.set(0, 0, 1),
+      positionVector
+    );
+
+    const vTX = rotateVector(
       vector.vx,
       vector.vy,
       vector.vz,
-      tilt,
-      axis,
+      tilt[0],
+      axisVector.set(1, 0, 0),
+      velocityVector
+    );
+
+    const vTY = rotateVector(
+      vTX.x,
+      vTX.y,
+      vTX.z,
+      tilt[1],
+      axisVector.set(0, 1, 0),
+      velocityVector
+    );
+
+    const vTZ = rotateVector(
+      vTY.x,
+      vTY.y,
+      vTY.z,
+      tilt[2],
+      axisVector.set(0, 0, 1),
       velocityVector
     );
 
     tiltedVectors.push({
-      x: primary.x + p.x,
-      y: primary.y + p.y,
-      z: primary.z + p.z,
-      vx: primary.vx + v.x,
-      vy: primary.vy + v.y,
-      vz: primary.vz + v.z
+      x: primary.x + pTZ.x,
+      y: primary.y + pTZ.y,
+      z: primary.z + pTZ.z,
+      vx: primary.vx + vTZ.x,
+      vy: primary.vy + vTZ.y,
+      vz: primary.vz + vTZ.z
     });
   }
 

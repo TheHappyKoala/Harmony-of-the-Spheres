@@ -620,8 +620,7 @@ export default {
           ring.minD,
           ring.maxD
         ),
-        this.utilityVector.set(1, 0, 0),
-        primary.tilt,
+        ring.tilt,
         primary
       );
 

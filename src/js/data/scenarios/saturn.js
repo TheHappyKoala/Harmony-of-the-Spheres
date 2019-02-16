@@ -27,6 +27,7 @@ export default {
     rings: [
       {
         primary: 'Saturn',
+        tilt: [-26.73, 0, 0],
         number: 40000,
         minD: 0.0006749650466666667,
         maxD: 0.00111244757
