@@ -13,7 +13,7 @@ render(
           <Redirect
             exact
             from="/"
-            to="scenario/Destroying the Galilean Moons"
+            to="scenario/The Sun and the Neptunian System"
           />
           <Route path="/scenario/:name?" component={App} />
         </Switch>
