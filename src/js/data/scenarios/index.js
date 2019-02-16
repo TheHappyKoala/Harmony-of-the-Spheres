@@ -15,6 +15,7 @@ import rh120 from './rh120';
 import ulysses from './ulysses';
 import hd98800 from './hd98800';
 import venusPentagram from './venusPentagram';
+import uranianSystem from './Uranus';
 import lunarFreeReturn from './lunarFreeReturn';
 import starOfDavid from './starOfDavid';
 import shenanigans from './shenanigans';
@@ -98,6 +99,7 @@ const processScenario = scenario => ({
 export const scenarios = [
   voyagerNeptune,
   saturn,
+  uranianSystem,
   hd98800,
   collisionsTest,
   trappist1,
@@ -108,7 +110,7 @@ export const scenarios = [
   oumuamua,
   earthMoonSystem,
   jovianSystem,
-  threeBodyCoreography, 
+  threeBodyCoreography,
   tess,
   martianSystem,
   saturnFull,

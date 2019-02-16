@@ -270,6 +270,44 @@ export default [
     name: 'Uranus'
   },
   {
+    m: 3.31335599029e-11,
+    radius: 3.391743119266055,
+    tilt: 0,
+    orbitalPeriod: 0.0038725452055,
+    name: 'Miranda',
+    bump: true
+  },
+  {
+    m: 6.80268688143e-10,
+    radius: 8.330275229357799,
+    tilt: 0,
+    orbitalPeriod: 0.0069051479452,
+    name: 'Ariel'
+  },
+  {
+    m: 5.89264525132e-10,
+    radius: 8.440366972477063,
+    tilt: 0,
+    orbitalPeriod: 0.011353909589,
+    name: 'Umbriel'
+  },
+  {
+    m: 1.7733242151370002e-9,
+    radius: 11.330275229357799,
+    tilt: 0,
+    orbitalPeriod: 0.02385170411,
+    name: 'Titania',
+    bump: true
+  },
+  {
+    m: 1.5153952890340001e-9,
+    radius: 10.954128440366974,
+    tilt: 0,
+    orbitalPeriod: 0.0368855863014,
+    name: 'Oberon',
+    bump: true
+  },
+  {
     m: 5.149e-5,
     radius: 355.9633027522936,
     tilt: -28.32,
