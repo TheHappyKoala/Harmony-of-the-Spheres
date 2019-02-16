@@ -42,27 +42,32 @@ export default class extends THREE.Object3D {
 
     material.onBeforeCompile = shader => {
       /*
-       * Uniforms for our shader
+       * The number of impacts taking place during a given iteration
       */
+
+      this.ongoingImpacts = 0;
+
+      const impacts = [];
 
       /*
-       * The point on the sphere where the impact takes place
-       * This point is the origin from which the shockwave radiates outwards
+       * The max number of impacts, duh
       */
 
-      shader.uniforms.impactPoint = { value: new THREE.Vector3(0, 0, 0) };
+      const maxImpactAmount = 10;
 
       /*
-       * The radius of the impact
+       * Create some impact uniforms
       */
 
-      shader.uniforms.impactRadius = { value: 0 };
+      for (let i = 0; i < maxImpactAmount; i++)
+        impacts.push({
+          impactPoint: new THREE.Vector3(0, 0, 0), //The point on the sphere where the impact takes place.
+          //This point is the origin from which the shockwave radiates outwards
+          impactRadius: 0, //The radius of the impact
+          impactRatio: 0.25 //How far the impact shockwave has propagated outwards
+        });
 
-      /*
-       * How far the impact shockwave has propagated outwards
-      */
-
-      shader.uniforms.impactRatio = { value: 0 };
+      shader.uniforms.impacts = { value: impacts };
 
       /*
        * Vertex shader code
@@ -73,8 +78,7 @@ export default class extends THREE.Object3D {
 
       shader.vertexShader = shader.vertexShader.replace(
         '#include <worldpos_vertex>',
-        `#include <worldpos_vertex> 
-
+        `#include <worldpos_vertex>
         vPosition = transformed.xyz;`
       );
 
@@ -82,24 +86,34 @@ export default class extends THREE.Object3D {
        * Fragment shader code
       */
 
-      shader.fragmentShader = `uniform vec3 impactPoint;
-        uniform float impactRadius;
-        uniform float impactRatio;
+      shader.fragmentShader = `struct impact {
+            vec3 impactPoint;
+            float impactRadius;
+            float impactRatio;
+          };
 
-        varying vec3 vPosition;
+         uniform impact impacts[${maxImpactAmount}];
 
+         varying vec3 vPosition;
         ${shader.fragmentShader}`;
 
       shader.fragmentShader = shader.fragmentShader.replace(
         '#include <dithering_fragment>',
         `#include <dithering_fragment>
-
-        float dist = distance(vPosition, impactPoint);
-        float currentRadius = impactRadius * impactRatio;
-        float increment = smoothstep(0., currentRadius, dist) - smoothstep(currentRadius - 0.01, currentRadius, dist);
-        increment = 1. - increment * (1. - impactRatio); 
-        vec3 color = mix(vec3(1., 0.5, 0.0625), vec3(1., 0.25, 0.125), impactRatio);
-        gl_FragColor = vec4( mix( color, gl_FragColor.rgb, increment), diffuseColor.a );`
+          float finalStep = 0.0;
+          for (int i = 0; i < ${maxImpactAmount};i++){
+            
+            float dist = distance(vPosition, impacts[i].impactPoint);
+            float currentRadius = impacts[i].impactRadius * impacts[i].impactRatio;
+            float increment = smoothstep(0., currentRadius, dist) - smoothstep(currentRadius - ( 0.25 * impacts[i].impactRatio ), currentRadius, dist);
+            increment *= 1. - impacts[i].impactRatio;
+            finalStep += increment;   
+    
+          }
+          finalStep = 1. - clamp(finalStep, 0., 1.);      
+    
+          vec3 color = mix(vec3(1., 0.5, 0.0625), vec3(1.,0.125, 0.0625), finalStep);
+          gl_FragColor = vec4( mix( color, gl_FragColor.rgb, finalStep), diffuseColor.a );`
       );
 
       /*

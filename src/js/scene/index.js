@@ -454,16 +454,22 @@ export default {
            * Let's pass some uniforms to kick this shader into action!!!
           */
 
+          const impactIndex = survivingManifestation.ongoingImpacts + 1; //Get the index of the impact uniform that we are going to update
+
+          survivingManifestation.ongoingImpacts++; //Increment the number of ongoing impacts
+
           const uniforms = survivingManifestation.materialShader.uniforms;
 
-          uniforms.impactPoint.value.set(-hitPoint.x, -hitPoint.y, -hitPoint.z);
+          uniforms.impacts.value[impactIndex].impactPoint.set(
+            -hitPoint.x,
+            -hitPoint.y,
+            -hitPoint.z
+          );
 
-          uniforms.impactRadius = {
-            value: Math.min(
-              Math.max(looser.radius * 50, 300),
-              survivor.radius * 2
-            )
-          };
+          uniforms.impacts.value[impactIndex].impactRadius = Math.min(
+            Math.max(looser.radius * 50, 300),
+            survivor.radius * 2
+          );
 
           /*
            * We create a tween that updates the impactRatio uniform over a time span of two seconds
@@ -475,7 +481,10 @@ export default {
           const tween = new TWEEN.Tween({ value: 0 })
             .to({ value: 1 }, 2000)
             .onUpdate(val => {
-              uniforms.impactRatio.value = val.value;
+              uniforms.impacts.value[impactIndex].impactRatio = val.value;
+            })
+            .onComplete(() => {
+              survivingManifestation.ongoingImpacts--; //Once the impact event is over, decrement the number of ongoing impacts
             });
 
           tween.start();
