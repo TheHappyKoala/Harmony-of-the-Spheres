@@ -11,6 +11,7 @@ import newHorizons from './newHorizons';
 import cruithne from './cruithne';
 import trappist1 from './trappist1';
 import planetNine from './planetNine';
+import shoemakerLevy9 from './shoemakerLevy9';
 import rh120 from './rh120';
 import ulysses from './ulysses';
 import hd98800 from './hd98800';
@@ -44,8 +45,8 @@ const processScenario = scenario => ({
       : scenario.particles,
   collisions: true,
   elapsedTime: 0,
-  trails: true,
-  labels: true,
+  trails: scenario.trails !== undefined ? scenario.trails : true,
+  labels: scenario.labels !== undefined ? scenario.labels : true,
   background: true,
   sizeAttenuation: true,
   scale: 2100000,
@@ -98,6 +99,7 @@ const processScenario = scenario => ({
 
 export const scenarios = [
   voyagerNeptune,
+  shoemakerLevy9,
   saturn,
   uranianSystem,
   hd98800,
