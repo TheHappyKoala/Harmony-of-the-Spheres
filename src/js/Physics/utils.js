@@ -44,6 +44,46 @@ export function getApoapsis(a, e) {
   return a * (1 + e);
 }
 
+export function elementsToVectors(primary, masses, g) {
+  const primaryWithVectors = {
+    ...primary,
+    x: 0,
+    y: 0,
+    z: 0,
+    vx: 0,
+    vy: 0,
+    vz: 0
+  };
+
+  const output = [primaryWithVectors];
+
+  for (let i = 0; i < masses.length; i++) {
+    const mass = masses[i];
+
+    const { x, y, z, vx, vy, vz } = getOrbit(
+      primaryWithVectors,
+      { x: getApoapsis(mass.a, mass.e), y: 0, z: 0 },
+      g,
+      mass.a
+    );
+
+    const pWithW = rotateVector(x, y, z, mass.w);
+    const vWithW = rotateVector(vx, vy, vz, mass.w);
+
+    output.push({
+      ...mass,
+      x: pWithW.x,
+      y: pWithW.y,
+      z: pWithW.z,
+      vx: vWithW.x,
+      vy: vWithW.y,
+      vz: vWithW.z
+    });
+  }
+
+  return output;
+}
+
 export function getA(apsisOne, apsisTwo) {
   return (apsisOne + apsisTwo) / 2;
 }
