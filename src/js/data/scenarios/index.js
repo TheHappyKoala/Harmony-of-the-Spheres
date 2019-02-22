@@ -22,9 +22,62 @@ import starOfDavid from './starOfDavid';
 import shenanigans from './shenanigans';
 import innerSolarSystem from './innerSolarSystem';
 import collisionsTest from './collisionsTest';
+import kepler11 from './kepler11';
 import masses from '../masses';
-import { calculateOrbitalVertices } from '../../Physics/utils';
+import {
+  calculateOrbitalVertices,
+  elementsToVectors
+} from '../../Physics/utils';
 import { getRandomColor, getObjFromArrByKeyValuePair } from '../../utils';
+
+/*
+ * Takes an array of masses and populates them with values and when there are none defaults
+*/ 
+
+const processMasses = (scenarioMasses, massTemplates, dt) =>
+  scenarioMasses.map(mass => {
+    const template = getObjFromArrByKeyValuePair(
+      massTemplates,
+      'name',
+      mass.name
+    );
+
+    return {
+      ...mass,
+      m:
+        template === undefined
+          ? mass.m === undefined ? 0 : mass.m
+          : template.m,
+      radius:
+        template === undefined
+          ? mass.radius === undefined ? 1.2 : mass.radius
+          : template.radius,
+      trailVertices:
+        mass.trailVertices !== undefined
+          ? mass.trailVertices
+          : template === undefined
+            ? calculateOrbitalVertices(mass.orbitalPeriod, dt)
+            : calculateOrbitalVertices(template.orbitalPeriod, dt),
+      tilt: template === undefined ? false : template.tilt,
+      atmosphere: template === undefined ? false : template.atmosphere,
+      clouds: template === undefined ? false : template.clouds,
+      type:
+        (template === undefined && mass.type === 'asteroid') ||
+        (template === undefined && mass.type === 'star')
+          ? mass.type
+          : template.type,
+      texture:
+        template === undefined
+          ? null
+          : template.noTexture === true ? 'no texture' : template.name,
+      bump: template === undefined ? null : template.bump,
+      asteroidTexture: template === undefined ? null : template.asteroidTexture,
+      color:
+        template === undefined
+          ? mass.color === undefined ? getRandomColor() : mass.color
+          : template.color === undefined ? getRandomColor() : template.color
+    };
+  });
 
 /*
  * Takes a scenario and populates it with defaults
@@ -53,44 +106,18 @@ const processScenario = scenario => ({
   velMax: 5,
   velMin: -5,
   velStep: 1.85765499287888e-6,
-  masses: scenario.masses.map(mass => {
-    const template = masses.filter(
-      entry => entry.name.indexOf(mass.name) > -1
-    )[0];
-
-    return {
-      ...mass,
-      m:
-        template === undefined
-          ? mass.m === undefined ? 0 : mass.m
-          : template.m,
-      radius:
-        template === undefined
-          ? mass.radius === undefined ? 1.2 : mass.radius
-          : template.radius,
-      trailVertices:
-        mass.trailVertices !== undefined
-          ? mass.trailVertices
-          : template === undefined
-            ? calculateOrbitalVertices(mass.orbitalPeriod, scenario.dt)
-            : calculateOrbitalVertices(template.orbitalPeriod, scenario.dt),
-      tilt: template === undefined ? false : template.tilt,
-      atmosphere: template === undefined ? false : template.atmosphere,
-      clouds: template === undefined ? false : template.clouds,
-      type:
-        (template === undefined && mass.type === 'asteroid') ||
-        (template === undefined && mass.type === 'star')
-          ? mass.type
-          : template.type,
-      texture: template === undefined ? null : template.name,
-      bump: template === undefined ? null : template.bump,
-      asteroidTexture: template === undefined ? null : template.asteroidTexture,
-      color:
-        template === undefined
-          ? mass.color === undefined ? getRandomColor() : mass.color
-          : template.color === undefined ? getRandomColor() : template.color
-    };
-  })
+  masses:
+    scenario.elementsToVectors === true
+      ? processMasses(
+          elementsToVectors(
+            getObjFromArrByKeyValuePair(masses, 'name', scenario.primary),
+            scenario.masses,
+            scenario.g
+          ),
+          masses,
+          scenario.dt
+        )
+      : processMasses(scenario.masses, masses, scenario.dt)
 });
 
 /*
@@ -107,6 +134,7 @@ export const scenarios = [
   trappist1,
   innerSolarSystem,
   lunarFreeReturn,
+  kepler11,
   shenanigans,
   venusPentagram,
   oumuamua,
