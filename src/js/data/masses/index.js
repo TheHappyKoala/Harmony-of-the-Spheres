@@ -414,5 +414,55 @@ export default [
     m: 9.93993e-7,
     radius: 70.91743119266056,
     orbitalPeriod: 0.0514190493151
+  },
+  {
+    name: 'Kepler-11',
+    orbitalPeriod: 0,
+    m: 1.042,
+    radius: 10520.383999999998,
+    type: 'star',
+    color: '#fff3ea'
+  },
+  {
+    name: 'Kepler-11 b',
+    orbitalPeriod: 0.02822986301,
+    m: 0.0000057056999999999994,
+    noTexture: true,
+    radius: 165.1376146788991
+  },
+  {
+    name: 'Kepler-11 c',
+    orbitalPeriod: 0.03568246575,
+    m: 0.0000087087,
+    noTexture: true,
+    radius: 263.302752293578
+  },
+  {
+    name: 'Kepler-11 d',
+    orbitalPeriod: 0.06214931507,
+    m: 0.000021921899999999998,
+    noTexture: true,
+    radius: 286.23853211009174
+  },
+  {
+    name: 'Kepler-11 e',
+    orbitalPeriod: 0.08767013699,
+    m: 0.000024024,
+    noTexture: true,
+    radius: 384.4036697247707
+  },
+  {
+    name: 'Kepler-11 f',
+    orbitalPeriod: 0.1279145205,
+    m: 0.000006006,
+    noTexture: true,
+    radius: 228.44036697247708
+  },
+  {
+    name: 'Kepler-11 g',
+    orbitalPeriod: 0.32433068493,
+    m: 0.000045045,
+    noTexture: true,
+    radius: 305.5045871559633
   }
 ];
