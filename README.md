@@ -15,6 +15,8 @@ Got some time to spare and feel like contributing to this project? Awesome! If y
 
 ## Contributors
 
+Below is an overview of the cool koalas that have made contributions to Harmony of the Spheres. Contributors are listed in the order that they started working on the project. 
+
 | Contributors :rocket:   |      Work Done :hammer:      |  Profile :koala: |
 |----------|:-------------:|------:|
 | Darrell A. Huffman |  Developer and Maintainer | [More](https://thehappykoala.github.io)|
