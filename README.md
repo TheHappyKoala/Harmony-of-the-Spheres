@@ -13,6 +13,15 @@ Newtonian n-body gravity simulator
 
 Got some time to spare and feel like contributing to this project? Awesome! If you find a bug or want to submit a new feature, hit me up with a pull request and we will take it from there. 
 
+## Contributors
+
+| Contributors :rocket:   |      Work Done :hammer:      |  Profile :koala: |
+|----------|:-------------:|------:|
+| Darrell A. Huffman |  Developer and Maintainer | [More](https://thehappykoala.github.io)|
+| Ryan Gowen |    Developer   |   [More](https://github.com/crGowen) |
+| John Van Vlliet | Textures and 3D Models |    [More](https://github.com/JohnVV) |
+| Hugo Granström | Developer |    [More](https://hugogranstrom.com/) |
+
 ### Introductory Tutorial at CSS-Tricks
 
 If you want to contribute to this project but do not know a thing about physics and scientific programming, I have written a [Tutorial](https://css-tricks.com/creating-your-own-gravity-and-space-simulator/) over at [CSS-Tricks](https://css-tricks.com/) that walks you through how to create your own gravity and space simulator witth JavaScript and the Canvas API. There are many ways in which you can contribute to this project, but even if your intention is not to work with the physics related code, it would probably be nice for you to have a basic understanding of what it is that makes everything go around in Harmony of the Spheres, and it is always awesome to learn something new, right?!
