@@ -1,13 +1,13 @@
 {
   "name": "harmony-of-the-spheres",
-  "version": "0.1.19",    
+  "version": "0.1.20",    
   "description": "Newtonian n-body gravity simulator.",
   "scripts": {
     "start": "node server.js",
     "dev": "webpack-dev-server --config ./webpack.dev.js --mode development",
     "build": "webpack --config ./webpack.prod.js --mode production",
     "test": "echo \"No test specified\" && exit 0",
-    "prettier": "prettier --single-quote --print-width 80 \"src/**/*.js\" --write"
+    "prettier": "prettier --single-quote --print-width 80 \"src/**/*.js\" --write" 
   },
   "keywords": [
     "space",
