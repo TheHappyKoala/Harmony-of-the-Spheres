@@ -44,6 +44,18 @@ export function getApoapsis(a, e) {
   return a * (1 + e);
 }
 
+/*
+ * Converts an array of masses whose orbits are defined by orbital elements 
+ * into an array of masses whose orbits are defined by state vectors
+ * 
+ * Used mostly for simulating exoplanetary systems for which data is usually only available
+ * in the form of orbital elements.
+ *
+ * Accepts a primary, {}, i.e the mass around which the other masses orbit
+ * An array of masses whose orbits are defined by orbital elements
+ * The value of the gravitational constant
+*/
+
 export function elementsToVectors(primary, masses, g) {
   const primaryWithVectors = {
     ...primary,
@@ -56,6 +68,8 @@ export function elementsToVectors(primary, masses, g) {
   };
 
   const output = [primaryWithVectors];
+
+  const referencePlane = masses[0].i;
 
   for (let i = 0; i < masses.length; i++) {
     const mass = masses[i];
@@ -70,14 +84,31 @@ export function elementsToVectors(primary, masses, g) {
     const pWithW = rotateVector(x, y, z, mass.w);
     const vWithW = rotateVector(vx, vy, vz, mass.w);
 
+    const iRelativeToReferencePlane = referencePlane - mass.i;
+
+    const pWithI = rotateVector(
+      pWithW.x,
+      pWithW.y,
+      pWithW.z,
+      iRelativeToReferencePlane,
+      new THREE.Vector3(0, 1, 0)
+    );
+    const vWithI = rotateVector(
+      vWithW.x,
+      vWithW.y,
+      vWithW.z,
+      iRelativeToReferencePlane,
+      new THREE.Vector3(0, 1, 0)
+    );
+
     output.push({
       ...mass,
-      x: pWithW.x,
-      y: pWithW.y,
-      z: pWithW.z,
-      vx: vWithW.x,
-      vy: vWithW.y,
-      vz: vWithW.z
+      x: pWithI.x,
+      y: pWithI.y,
+      z: pWithI.z,
+      vx: vWithI.x,
+      vy: vWithI.y,
+      vz: vWithI.z
     });
   }
 
