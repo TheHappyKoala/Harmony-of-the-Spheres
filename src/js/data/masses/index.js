@@ -464,5 +464,27 @@ export default [
     m: 0.000045045,
     noTexture: true,
     radius: 305.5045871559633
+  },
+  {
+    name: '24 Sextantis',
+    orbitalPeriod: 0,
+    m: 1.54,
+    radius: 441000.00000000006,
+    type: 'star',
+    color: '#ffca8a'
+  },
+  {
+    name: '24 Sextantis b',
+    orbitalPeriod: 1.2405479,
+    m: 0.001899057,
+    noTexture: true,
+    radius: 1027.5229357798166
+  },
+  {
+    name: '24 Sextantis c',
+    orbitalPeriod: 2.41918,
+    m: 0.000820698,
+    noTexture: true,
+    radius: 1027.5229357798166
   }
 ];

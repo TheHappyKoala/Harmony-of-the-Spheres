@@ -23,6 +23,7 @@ import shenanigans from './shenanigans';
 import innerSolarSystem from './innerSolarSystem';
 import collisionsTest from './collisionsTest';
 import kepler11 from './kepler11';
+import the24sextantisSystem from './the24sextantisSystem';
 import masses from '../masses';
 import {
   calculateOrbitalVertices,
@@ -32,7 +33,7 @@ import { getRandomColor, getObjFromArrByKeyValuePair } from '../../utils';
 
 /*
  * Takes an array of masses and populates them with values and when there are none defaults
-*/ 
+*/
 
 const processMasses = (scenarioMasses, massTemplates, dt) =>
   scenarioMasses.map(mass => {
@@ -135,6 +136,7 @@ export const scenarios = [
   innerSolarSystem,
   lunarFreeReturn,
   kepler11,
+  the24sextantisSystem,
   shenanigans,
   venusPentagram,
   oumuamua,
