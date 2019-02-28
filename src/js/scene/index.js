@@ -76,14 +76,14 @@ export default {
     this.system = getIntegrator(this.scenario.integrator, {
       g: this.scenario.g,
       dt: this.scenario.dt,
-      tol: this.scenario.tol, 
+      tol: this.scenario.tol,
       minDt: this.scenario.minDt,
       maxDt: this.scenario.maxDt,
       masses: this.scenario.masses,
       elapsedTime: this.scenario.elapsedTime
     });
 
-    this.particlePhysics = new ParticlePhysics(this.scenario.scale); 
+    this.particlePhysics = new ParticlePhysics(this.scenario.scale);
 
     this.scenario.particles.rings && this.addRing();
 
@@ -237,7 +237,7 @@ export default {
       this.system.iterate();
     }
 
-    dt = this.system.dt;   
+    dt = this.system.dt;
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
@@ -294,7 +294,7 @@ export default {
         cameraDistanceToFocus
       );
 
-      const trail = massManifestation.getObjectByName('Trail'); 
+      const trail = massManifestation.getObjectByName('Trail');
 
       if (
         trails &&
@@ -398,7 +398,7 @@ export default {
       this.previousRotatingReferenceFrame = rotatingReferenceFrame;
 
     if (this.scenario.particles && playing)
-      this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);      
+      this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);
 
     if (this.scenario.particles)
       this.particles.draw(this.particlePhysics.particles, frameOfRef);
