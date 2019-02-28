@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Dropdown from '../Dropdown';
 import Toggle from '../Toggle';
-
 import Slider from '../Slider';
 import Tooltip from '../Tooltip';
 import { integrators } from '../../Physics/Integrators';
 
 export default function(props) {
   return (
-    <React.Fragment>
+    <Fragment>
       <h2>Physics</h2>
       <label className="top">
         Integrator
@@ -35,6 +34,25 @@ export default function(props) {
           ))}
         </Dropdown>
       </div>
+      {props.integrator === 'RKF' && (
+        <Fragment>
+          <label className="top">
+            Error Tolerance
+            <Tooltip
+              position="left"
+              content="The tolerated error according to which delta time is adapted when the RKF integrator is used."
+            />
+          </label>
+          <Slider
+            payload={{ key: 'tol' }}
+            value={props.tol}
+            callback={props.modifyScenarioProperty}
+            max={props.maxDt}
+            min={props.minDt}
+            step={props.dt / 100}
+          />
+        </Fragment>
+      )}
       <label className="top">
         Gravitational Constant
         <Tooltip
@@ -60,6 +78,6 @@ export default function(props) {
           })
         }
       />
-    </React.Fragment>
+    </Fragment>
   );
 }

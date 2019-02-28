@@ -49,6 +49,10 @@ export default class extends Component {
           <div label="Physics" icon="fas fa-cube fa-2x">
             <Physics
               integrator={scenario.integrator}
+              dt={scenario.dt}
+              tol={scenario.tol}
+              minDt={scenario.minDt}
+              maxDt={scenario.maxDt}
               collisions={scenario.collisions}
               g={scenario.g}
               modifyScenarioProperty={this.props.modifyScenarioProperty}
