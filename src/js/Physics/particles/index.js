@@ -1,13 +1,11 @@
 export default class {
-  constructor(params) {
-    this.dt = params.dt;
+  constructor(scale) {
+    this.scale = scale;
 
-    this.scale = params.scale;
-
-    this.particles = [];
+    this.particles = []; 
   }
 
-  iterate(masses, g) {
+  iterate(masses, g, dt) {
     let particlesLen = this.particles.length;
     const massesLen = masses.length;
 
@@ -46,13 +44,13 @@ export default class {
         }
       }
 
-      massI.vx += ax * this.dt;
-      massI.vy += ay * this.dt;
-      massI.vz += az * this.dt;
+      massI.vx += ax * dt;
+      massI.vy += ay * dt;
+      massI.vz += az * dt;
 
-      massI.x += massI.vx * this.dt;
-      massI.y += massI.vy * this.dt;
-      massI.z += massI.vz * this.dt;
+      massI.x += massI.vx * dt;
+      massI.y += massI.vy * dt;
+      massI.z += massI.vz * dt;
     }
   }
 }

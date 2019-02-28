@@ -1,6 +1,7 @@
 export default {
   name: '1994 Shoemaker-Levy 9 Collision with Jupiter',
   type: 'Solar System',
+  integrator: 'RK4',
   g: 39.5,
   dt: 0.000006,
   rotatingReferenceFrame: 'Jupiter',
@@ -23,7 +24,8 @@ export default {
   primary: 'Jupiter',
   maximumDistance: { name: 'Io to Jupiter * 150', value: 0.42285 },
   distanceStep: { name: 'Io to Jupiter / 10', value: 0.00028189999999999997 },
-  scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Comet_Shoemaker%E2%80%93Levy_9',
+  scenarioWikiUrl:
+    'https://en.wikipedia.org/wiki/Comet_Shoemaker%E2%80%93Levy_9',
   masses: [
     {
       name: 'Jupiter',

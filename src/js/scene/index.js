@@ -76,14 +76,14 @@ export default {
     this.system = getIntegrator(this.scenario.integrator, {
       g: this.scenario.g,
       dt: this.scenario.dt,
+      tol: this.scenario.tol, 
+      minDt: this.scenario.minDt,
+      maxDt: this.scenario.maxDt,
       masses: this.scenario.masses,
       elapsedTime: this.scenario.elapsedTime
     });
 
-    this.particlePhysics = new ParticlePhysics({
-      dt: this.scenario.dt,
-      scale: this.scenario.scale
-    });
+    this.particlePhysics = new ParticlePhysics(this.scenario.scale); 
 
     this.scenario.particles.rings && this.addRing();
 
@@ -172,16 +172,23 @@ export default {
       cameraFocus,
       freeOrigo,
       collisions,
-      dt,
+      tol,
+      minDt,
+      maxDt,
       integrator,
       background,
       sizeAttenuation
     } = this.scenario;
 
+    let dt = this.scenario.dt;
+
     if (integrator !== this.previousIntegrator) {
       this.system = getIntegrator(integrator, {
         g: this.scenario.g,
         dt,
+        tol,
+        minDt,
+        maxDt,
         masses: this.scenario.masses,
         elapsedTime: this.scenario.elapsedTime
       });
@@ -223,7 +230,14 @@ export default {
           frameOfRef = this.system.masses[i];
     }
 
-    if (playing) this.system.iterate();
+    if (playing) {
+      this.system.tol = tol;
+      this.system.minDt = minDt;
+      this.system.maxDt = maxDt;
+      this.system.iterate();
+    }
+
+    dt = this.system.dt;   
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
@@ -280,7 +294,7 @@ export default {
         cameraDistanceToFocus
       );
 
-      const trail = massManifestation.getObjectByName('Trail');
+      const trail = massManifestation.getObjectByName('Trail'); 
 
       if (
         trails &&
@@ -384,7 +398,7 @@ export default {
       this.previousRotatingReferenceFrame = rotatingReferenceFrame;
 
     if (this.scenario.particles && playing)
-      this.particlePhysics.iterate(this.system.masses, this.scenario.g);
+      this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);      
 
     if (this.scenario.particles)
       this.particles.draw(this.particlePhysics.particles, frameOfRef);
@@ -466,10 +480,13 @@ export default {
             -hitPoint.z
           );
 
-          uniforms.impacts.value[impactIndex].impactRadius = Math.min(
-            Math.max(looser.radius * 50, 300),
-            survivor.radius * 2
-          );
+          uniforms.impacts.value[impactIndex].impactRadius =
+            looser.m === 0
+              ? survivor.radius * 2
+              : Math.min(
+                  Math.max(looser.radius * 50, 300),
+                  survivor.radius * 2
+                );
 
           /*
            * We create a tween that updates the impactRatio uniform over a time span of two seconds
@@ -479,7 +496,7 @@ export default {
           */
 
           const tween = new TWEEN.Tween({ value: 0 })
-            .to({ value: 1 }, 2000)
+            .to({ value: 1 }, 4000)
             .onUpdate(val => {
               uniforms.impacts.value[impactIndex].impactRatio = val.value;
             })

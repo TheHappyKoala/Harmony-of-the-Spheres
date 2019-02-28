@@ -1,6 +1,7 @@
 export default {
   name: 'The Sun and the Uranian System',
   type: 'Solar System',
+  integrator: 'RK4',
   g: 39.5,
   dt: 4e-6,
   distMax: 50,

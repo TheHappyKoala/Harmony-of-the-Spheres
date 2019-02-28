@@ -2,16 +2,14 @@ import Euler from './Euler';
 
 export default class extends Euler {
   constructor(params) {
-    super(params);
-    //this.tol = params.tol;
-    //this.max_dt = params.max_dt;
-    //this.min_dt = params.min_dt;
-    this.tol = 0.001;
-    this.max_dt = 0.1;
-    this.min_dt = 1e-5;
+    super(params);   
+
+    this.tol = params.tol;
+    this.maxDt = params.maxDt;
+    this.minDt = params.minDt; 
   }
 
-  calculate_error(p1, p2) {
+  calculateError(p1, p2) {
     let error = 0;
     const pLen = p1.length;
 
@@ -28,13 +26,13 @@ export default class extends Euler {
   k2(s, k1v, k1r) {
     let k2v = [];
     let k2r = [];
-    let temp_pos = [];
+    let tempPos = [];
     const kLen = k1r.length;
 
     const a1 = 1 / 4;
 
     for (let i = 0; i < kLen; i++) {
-      temp_pos[i] = {
+      tempPos[i] = {
         x: s[i].x + a1 * this.dt * k1r[i].vx,
         y: s[i].y + a1 * this.dt * k1r[i].vy,
         z: s[i].z + a1 * this.dt * k1r[i].vz
@@ -46,21 +44,21 @@ export default class extends Euler {
         vz: s[i].vz + k1v[i].az * this.dt * a1
       };
     }
-    k2v = this.generateAccelerationVectors(temp_pos);
+    k2v = this.generateAccelerationVectors(tempPos);
     return [k2v, k2r];
   }
 
   k3(s, k1v, k2v, k1r, k2r) {
     let k3v = [];
     let k3r = [];
-    let temp_pos = [];
+    let tempPos = [];
     const kLen = k1r.length;
 
     const a1 = 3 / 32;
     const a2 = 9 / 32;
 
     for (let i = 0; i < kLen; i++) {
-      temp_pos[i] = {
+      tempPos[i] = {
         x: s[i].x + this.dt * (a1 * k1r[i].vx + a2 * k2r[i].vx),
         y: s[i].y + this.dt * (a1 * k1r[i].vy + a2 * k2r[i].vy),
         z: s[i].z + this.dt * (a1 * k1r[i].vz + a2 * k2r[i].vz)
@@ -72,14 +70,14 @@ export default class extends Euler {
         vz: s[i].vz + this.dt * (a1 * k1v[i].az + a2 * k2v[i].az)
       };
     }
-    k3v = this.generateAccelerationVectors(temp_pos);
+    k3v = this.generateAccelerationVectors(tempPos);
     return [k3v, k3r];
   }
 
   k4(s, k1v, k2v, k3v, k1r, k2r, k3r) {
     let k4v = [];
     let k4r = [];
-    let temp_pos = [];
+    let tempPos = [];
     const kLen = k1r.length;
 
     const a1 = 1932 / 2197;
@@ -87,7 +85,7 @@ export default class extends Euler {
     const a3 = 7296 / 2197;
 
     for (let i = 0; i < kLen; i++) {
-      temp_pos[i] = {
+      tempPos[i] = {
         x:
           s[i].x + this.dt * (a1 * k1r[i].vx + a2 * k2r[i].vx + a3 * k3r[i].vx),
         y:
@@ -106,14 +104,14 @@ export default class extends Euler {
           s[i].vz + this.dt * (a1 * k1v[i].az + a2 * k2v[i].az + a3 * k3v[i].az)
       };
     }
-    k4v = this.generateAccelerationVectors(temp_pos);
+    k4v = this.generateAccelerationVectors(tempPos);
     return [k4v, k4r];
   }
 
   k5(s, k1v, k2v, k3v, k4v, k1r, k2r, k3r, k4r) {
     let k5v = [];
     let k5r = [];
-    let temp_pos = [];
+    let tempPos = [];
     const kLen = k1r.length;
 
     const a1 = 439 / 216;
@@ -122,7 +120,7 @@ export default class extends Euler {
     const a4 = -845 / 4104;
 
     for (let i = 0; i < kLen; i++) {
-      temp_pos[i] = {
+      tempPos[i] = {
         x:
           s[i].x +
           this.dt *
@@ -152,7 +150,7 @@ export default class extends Euler {
             (a1 * k1v[i].az + a2 * k2v[i].az + a3 * k3v[i].az + a4 * k4v[i].az)
       };
     }
-    k5v = this.generateAccelerationVectors(temp_pos);
+    k5v = this.generateAccelerationVectors(tempPos);
     return [k5v, k5r];
   }
 
@@ -194,10 +192,12 @@ export default class extends Euler {
               a5 * k5v[i].az)
       };
     }
-    return k6r;
+    return k6r; 
   }
 
   iterate() {
+    console.log(this.dt);
+
     const s = this.getStateVectors(this.masses);
 
     const k1v = this.generateAccelerationVectors(s);
@@ -293,17 +293,18 @@ export default class extends Euler {
                 1 / 5 * k5v[i].az)
         };
       }
-      error = this.calculate_error(p, p2);
+      error = this.calculateError(p, p2);
       if (error != 0) {
         this.dt = this.dt * Math.pow(this.tol / (2 * error), 1 / 4);
       }
-      if (this.dt < this.min_dt) {
-        this.dt = this.min_dt;
-      } else if (this.dt > this.max_dt) {
-        this.dt = this.max_dt;
+      if (this.dt < this.minDt) {
+        this.dt = this.minDt;
+      } else if (this.dt > this.maxDt) {
+        this.dt = this.maxDt;
       }
     }
     this.updateStateVectors(p, v);
     this.incrementElapsedTime();
   }
 }
+  
