@@ -2,11 +2,11 @@ import Euler from './Euler';
 
 export default class extends Euler {
   constructor(params) {
-    super(params);   
+    super(params);
 
     this.tol = params.tol;
     this.maxDt = params.maxDt;
-    this.minDt = params.minDt; 
+    this.minDt = params.minDt;
   }
 
   calculateError(p1, p2) {
@@ -192,12 +192,10 @@ export default class extends Euler {
               a5 * k5v[i].az)
       };
     }
-    return k6r; 
+    return k6r;
   }
 
   iterate() {
-    console.log(this.dt);
-
     const s = this.getStateVectors(this.masses);
 
     const k1v = this.generateAccelerationVectors(s);
@@ -307,4 +305,3 @@ export default class extends Euler {
     this.incrementElapsedTime();
   }
 }
-  
