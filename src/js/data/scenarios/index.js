@@ -89,13 +89,20 @@ const processScenario = scenario => ({
   isLoaded: false,
   playing: false,
   integrator: scenario.integrator !== undefined ? scenario.integrator : 'RKF',
-  tol: scenario.tol !== undefined ? scenario.tol : scenario.dt - (scenario.dt * 0.7),
-  maxDt: scenario.maxDt !== undefined ? scenario.maxDt : scenario.dt + (scenario.dt * 2),    
-  minDt: scenario.minDt !== undefined ? scenario.minDt : scenario.dt - (scenario.dt * 0.999),
+  tol:
+    scenario.tol !== undefined ? scenario.tol : scenario.dt - scenario.dt * 0.4,
+  maxDt:
+    scenario.maxDt !== undefined
+      ? scenario.maxDt
+      : scenario.dt + scenario.dt * 2,
+  minDt:
+    scenario.minDt !== undefined
+      ? scenario.minDt
+      : scenario.dt - scenario.dt * 0.999,  
   particles:
     scenario.particles === undefined
       ? {
-          max: 20000, 
+          max: 20000,
           size: 100000,
           rings: []
         }

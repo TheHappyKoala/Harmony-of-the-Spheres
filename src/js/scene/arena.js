@@ -29,5 +29,5 @@ export default function(manager) {
 
   mesh.name = 'Arena';
 
-  return mesh;    
+  return mesh;
 }

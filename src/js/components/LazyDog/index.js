@@ -28,6 +28,6 @@ export default class extends Component {
           <i className={this.props.placeHolderIcon} />
         )}
       </figure>
-    ); 
+    );
   }
 }

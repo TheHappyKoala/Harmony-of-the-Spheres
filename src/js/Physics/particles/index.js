@@ -2,7 +2,7 @@ export default class {
   constructor(scale) {
     this.scale = scale;
 
-    this.particles = []; 
+    this.particles = [];
   }
 
   iterate(masses, g, dt) {

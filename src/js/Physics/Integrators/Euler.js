@@ -83,7 +83,7 @@ export default class {
 
       for (let j = 0; j < pLen; j++) {
         if (i !== j && this.masses[j].m > 0) {
-          let pJ = p[j];       
+          let pJ = p[j];
 
           let dParams = this.getDistanceParams(pI, pJ);
           let d = Math.sqrt(dParams.dSquared);
@@ -91,7 +91,7 @@ export default class {
           let fact = this.g * this.masses[j].m / (dParams.dSquared * d);
 
           ax += dParams.dx * fact;
-          ay += dParams.dy * fact;    
+          ay += dParams.dy * fact;
           az += dParams.dz * fact;
         }
       }
@@ -99,7 +99,7 @@ export default class {
       a[i] = { ax, ay, az };
     }
 
-    return a;       
+    return a;
   }
 
   generateVelocityVectors(a, dt) {

@@ -2,7 +2,7 @@ import * as scenarioActionTypes from '../../action-types/scenario';
 import filterScenarios from '../../data/scenarios';
 
 export default function(
-  state = filterScenarios('The Sun and the Neptunian System'),   
+  state = filterScenarios('The Sun and the Neptunian System'),
   action
 ) {
   switch (action.type) {
