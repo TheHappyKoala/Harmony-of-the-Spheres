@@ -51,12 +51,12 @@ export default function() {
         </a>.
       </p>
       <p className="modal-item">
-        <b>&#187; </b>Verlet integrator developed by{' '}
+        <b>&#187; </b>Verlet and RKF integrators developed by{' '}
         <a href="https://hugogranstrom.com/" target="blank">
           Hugo Granström
         </a>{' '}
         .
-      </p>
+      </p> 
       <p className="modal-item">
         <b>&#187; </b>
         Perlin noise for the star shaders by Stefan Gustavsson and Ashima Arts
