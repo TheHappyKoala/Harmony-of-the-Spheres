@@ -21,18 +21,53 @@ export function getVMag(g, primary, d, a = d) {
   return Math.sqrt(Math.abs(g * primary.m * (2 / d - 1 / a)));
 }
 
-export function getOrbit(primary, secondary, g, a) {
+export function getOrbit(primary, secondary, g) {
+  secondary = {
+    ...secondary,
+    x: getApoapsis(secondary.a, secondary.e),
+    y: 0,
+    z: 0
+  };
+
   const dParams = getDistanceParams(primary, secondary);
 
   const d = Math.sqrt(dParams.dSquared);
 
-  const vMag = getVMag(g, primary, d, a);
+  const vMag = getVMag(g, primary, d, secondary.a);
 
-  return {
+  const orbit = {
     ...secondary,
     vx: primary.vx + -dParams.dy * vMag / d,
     vy: primary.vy + dParams.dx * vMag / d,
     vz: primary.vz + dParams.dz * vMag / d
+  };
+
+  const pWithW = rotateVector(orbit.x, orbit.y, orbit.z, secondary.w);
+  const vWithW = rotateVector(orbit.vx, orbit.vy, orbit.vz, secondary.w);
+
+  const pWithI = rotateVector(
+    pWithW.x,
+    pWithW.y,
+    pWithW.z,
+    secondary.i,
+    new THREE.Vector3(0, 1, 0)
+  );
+  const vWithI = rotateVector(
+    vWithW.x,
+    vWithW.y,
+    vWithW.z,
+    secondary.i,
+    new THREE.Vector3(0, 1, 0)
+  );
+
+  return {
+    ...secondary,
+    x: pWithI.x,
+    y: pWithI.y,
+    z: pWithI.z,
+    vx: vWithI.x,
+    vy: vWithI.y,
+    vz: vWithI.z
   };
 }
 
@@ -74,42 +109,9 @@ export function elementsToVectors(primary, masses, g) {
   for (let i = 0; i < masses.length; i++) {
     const mass = masses[i];
 
-    const { x, y, z, vx, vy, vz } = getOrbit(
-      primaryWithVectors,
-      { x: getApoapsis(mass.a, mass.e), y: 0, z: 0 },
-      g,
-      mass.a
-    );
+    mass.i = referencePlane - mass.i;
 
-    const pWithW = rotateVector(x, y, z, mass.w);
-    const vWithW = rotateVector(vx, vy, vz, mass.w);
-
-    const iRelativeToReferencePlane = referencePlane - mass.i;
-
-    const pWithI = rotateVector(
-      pWithW.x,
-      pWithW.y,
-      pWithW.z,
-      iRelativeToReferencePlane,
-      new THREE.Vector3(0, 1, 0)
-    );
-    const vWithI = rotateVector(
-      vWithW.x,
-      vWithW.y,
-      vWithW.z,
-      iRelativeToReferencePlane,
-      new THREE.Vector3(0, 1, 0)
-    );
-
-    output.push({
-      ...mass,
-      x: pWithI.x,
-      y: pWithI.y,
-      z: pWithI.z,
-      vx: vWithI.x,
-      vy: vWithI.y,
-      vz: vWithI.z
-    });
+    output.push(getOrbit(primaryWithVectors, mass, g));
   }
 
   return output;
