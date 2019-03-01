@@ -351,8 +351,8 @@ export default [
     name: 'Sedna'
   },
   {
-    m: 3.003e-5,
-    orbitalPeriod: 2e4,
+    m: 0.000015015,
+    orbitalPeriod: 11200,
     radius: 355.9633027522936,
     tilt: -57.47,
     atmosphere: { color: '#93cfef', scaleFactor: 250 },
