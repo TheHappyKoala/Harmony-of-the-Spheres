@@ -17,9 +17,10 @@ export default class extends Component {
       radius: bodies[0].radius,
       texture: bodies[0].name,
       type: null,
-      apsisOne: props.distanceStep.value,
-      apsisTwo: props.distanceStep.value,
-      argumentOfPeriapsis: 90
+      a: props.distanceStep.value,
+      e: 0,
+      w: 90,
+      i: 0
     };
   }
 
@@ -118,16 +119,17 @@ export default class extends Component {
             ))}
           </Dropdown>
         </div>
+
         <label className="top">
-          Apsis One{' '}
+          Semi-major Axis{' '}
           <Tooltip
             position="left"
             content="Either of two points on the orbit of a planet or satellite that are nearest to or furthest from the body round which it moves. If apsis one is equal to apsis two you get the special case of a circular orbit."
           />
         </label>
         <Slider
-          payload={{ key: 'apsisOne' }}
-          value={this.state.apsisOne}
+          payload={{ key: 'a' }}
+          value={this.state.a}
           callback={this.modifyProperty}
           max={this.props.maximumDistance.value}
           min={this.props.distanceStep.value}
@@ -142,27 +144,19 @@ export default class extends Component {
           step={this.props.distanceStep.value}
         />
         <label className="top">
-          Apsis Two{' '}
+          Eccentricity{' '}
           <Tooltip
             position="left"
-            content="Either of two points on the orbit of a planet or satellite that are nearest to or furthest from the body round which it moves. If apsis one is equal to apsis two you get the special case of a circular orbit."
+            content="The argument of periapsis, w, is one of the orbital elements of an orbiting body. Parametrically, w is the angle from the mass's ascending node to its periapsis, the point in its orbit where the mass is the closest to the body it orbits, measured in the direction of motion."
           />
         </label>
         <Slider
-          payload={{ key: 'apsisTwo' }}
-          value={this.state.apsisTwo}
+          payload={{ key: 'e' }}
+          value={this.state.e}
           callback={this.modifyProperty}
-          max={this.props.maximumDistance.value}
-          min={this.props.distanceStep.value}
-          shouldUpdateOnMaxMinChange={true}
-          onMaxMinChange={{
-            payload: {
-              key: 'distanceStep',
-              value: { name: 'Max distance / 100' }
-            },
-            callback: this.props.modifyScenarioProperty
-          }}
-          step={this.props.distanceStep.value}
+          max={1}
+          min={0}
+          step={0.001}
         />
         <label className="top">
           Argument of Periapsis{' '}
@@ -172,8 +166,23 @@ export default class extends Component {
           />
         </label>
         <Slider
-          payload={{ key: 'argumentOfPeriapsis' }}
-          value={this.state.argumentOfPeriapsis}
+          payload={{ key: 'w' }}
+          value={this.state.w}
+          callback={this.modifyProperty}
+          max={360}
+          min={0}
+          step={0.1}
+        />
+        <label className="top">
+          Inclination{' '}
+          <Tooltip
+            position="left"
+            content="Orbital inclination, i, measures the tilt of an object's orbit around a celestial body. It is expressed as the angle between a reference plane and the orbital plane or axis of direction of the orbiting object."
+          />
+        </label>
+        <Slider
+          payload={{ key: 'i' }}
+          value={this.state.i}
           callback={this.modifyProperty}
           max={360}
           min={0}
@@ -218,9 +227,10 @@ export default class extends Component {
                 texture: this.state.texture,
                 type: this.state.type,
                 color: getRandomColor(),
-                apsisOne: this.state.apsisOne,
-                apsisTwo: this.state.apsisTwo,
-                argumentOfPeriapsis: this.state.argumentOfPeriapsis
+                a: this.state.a,
+                e: this.state.e,
+                w: this.state.w,
+                i: this.state.i
               }
             })
           }

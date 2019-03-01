@@ -21,18 +21,53 @@ export function getVMag(g, primary, d, a = d) {
   return Math.sqrt(Math.abs(g * primary.m * (2 / d - 1 / a)));
 }
 
-export function getOrbit(primary, secondary, g, a) {
+export function getOrbit(primary, secondary, g) {
+  secondary = {
+    ...secondary,
+    x: getApoapsis(secondary.a, secondary.e),
+    y: 0,
+    z: 0
+  };
+
   const dParams = getDistanceParams(primary, secondary);
 
   const d = Math.sqrt(dParams.dSquared);
 
-  const vMag = getVMag(g, primary, d, a);
+  const vMag = getVMag(g, primary, d, secondary.a);
 
-  return {
+  const orbit = {
     ...secondary,
     vx: primary.vx + -dParams.dy * vMag / d,
     vy: primary.vy + dParams.dx * vMag / d,
     vz: primary.vz + dParams.dz * vMag / d
+  };
+
+  const pWithW = rotateVector(orbit.x, orbit.y, orbit.z, secondary.w);
+  const vWithW = rotateVector(orbit.vx, orbit.vy, orbit.vz, secondary.w);
+
+  const pWithI = rotateVector(
+    pWithW.x,
+    pWithW.y,
+    pWithW.z,
+    secondary.i,
+    new THREE.Vector3(0, 1, 0)
+  );
+  const vWithI = rotateVector(
+    vWithW.x,
+    vWithW.y,
+    vWithW.z,
+    secondary.i,
+    new THREE.Vector3(0, 1, 0)
+  );
+
+  return {
+    ...secondary,
+    x: pWithI.x,
+    y: pWithI.y,
+    z: pWithI.z,
+    vx: vWithI.x,
+    vy: vWithI.y,
+    vz: vWithI.z
   };
 }
 
@@ -43,6 +78,18 @@ export function getPeriapsis(a, e) {
 export function getApoapsis(a, e) {
   return a * (1 + e);
 }
+
+/*
+ * Converts an array of masses whose orbits are defined by orbital elements 
+ * into an array of masses whose orbits are defined by state vectors
+ * 
+ * Used mostly for simulating exoplanetary systems for which data is usually only available
+ * in the form of orbital elements.
+ *
+ * Accepts a primary, {}, i.e the mass around which the other masses orbit
+ * An array of masses whose orbits are defined by orbital elements
+ * The value of the gravitational constant
+*/
 
 export function elementsToVectors(primary, masses, g) {
   const primaryWithVectors = {
@@ -57,28 +104,14 @@ export function elementsToVectors(primary, masses, g) {
 
   const output = [primaryWithVectors];
 
+  const referencePlane = masses[0].i;
+
   for (let i = 0; i < masses.length; i++) {
     const mass = masses[i];
 
-    const { x, y, z, vx, vy, vz } = getOrbit(
-      primaryWithVectors,
-      { x: getApoapsis(mass.a, mass.e), y: 0, z: 0 },
-      g,
-      mass.a
-    );
+    mass.i = referencePlane - mass.i;
 
-    const pWithW = rotateVector(x, y, z, mass.w);
-    const vWithW = rotateVector(vx, vy, vz, mass.w);
-
-    output.push({
-      ...mass,
-      x: pWithW.x,
-      y: pWithW.y,
-      z: pWithW.z,
-      vx: vWithW.x,
-      vy: vWithW.y,
-      vz: vWithW.z
-    });
+    output.push(getOrbit(primaryWithVectors, mass, g));
   }
 
   return output;
