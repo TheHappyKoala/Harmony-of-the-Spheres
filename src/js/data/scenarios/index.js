@@ -1,4 +1,5 @@
 import jovianSystem from './jovianSystem';
+import centaurs from './centaurs';
 import voyagerNeptune from './voyagerNeptune';
 import saturnFull from './saturnFull';
 import saturn from './saturn';
@@ -98,7 +99,7 @@ const processScenario = scenario => ({
   minDt:
     scenario.minDt !== undefined
       ? scenario.minDt
-      : scenario.dt - scenario.dt * 0.999,  
+      : scenario.dt - scenario.dt * 0.999,
   particles:
     scenario.particles === undefined
       ? {
@@ -155,6 +156,7 @@ export const scenarios = [
   threeBodyCoreography,
   tess,
   martianSystem,
+  centaurs,
   saturnFull,
   newHorizons,
   cruithne,
