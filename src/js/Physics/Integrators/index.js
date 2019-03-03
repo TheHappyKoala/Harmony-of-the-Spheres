@@ -5,8 +5,10 @@ import RKF from './RKF';
 import PEFRL from './PEFRL';
 import Nystrom3 from './Nystrom3';
 import Nystrom4 from './Nystrom4';
+import Nystrom5 from './Nystrom5';
+import Nystrom6 from './Nystrom6';
 
-export const integrators = ['RK4', 'Euler', 'Verlet', 'RKF', 'PEFRL', 'Nystrom3', 'Nystrom4'];
+export const integrators = ['RK4', 'Euler', 'Verlet', 'RKF', 'PEFRL', 'Nystrom3', 'Nystrom4', 'Nystrom5', 'Nystrom6'];
 
 export default function(integrator, config) {
   switch (integrator) {
@@ -24,6 +26,10 @@ export default function(integrator, config) {
       return new Nystrom3(config);
     case 'Nystrom4':
       return new Nystrom4(config);
+    case 'Nystrom5':
+      return new Nystrom5(config);
+    case 'Nystrom6':
+      return new Nystrom6(config);
     default:
       return new RK4(config);
   }
