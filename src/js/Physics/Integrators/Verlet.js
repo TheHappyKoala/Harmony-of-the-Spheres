@@ -1,6 +1,12 @@
 import Euler from './Euler';
 
 export default class extends Euler {
+  constructor(params) {
+    super(params);
+
+    this.lastAcc = this.generateAccelerationVectors(this.getStateVectors(this.masses));
+  }
+
   generatePositionVectors(s, a, dt) {
     const p = [];
     const aLen = a.length;
@@ -41,10 +47,12 @@ export default class extends Euler {
   iterate() {
     const s = this.getStateVectors(this.masses);
 
-    const a1 = this.generateAccelerationVectors(s);
+    const a1 = this.lastAcc;
     const p = this.generatePositionVectors(s, a1, this.dt);
     const a2 = this.generateAccelerationVectors(p);
     const v = this.generateVelocityVectors(a1, a2, this.dt);
+
+    this.lastAcc = a2;
     this.updateStateVectors(p, v);
 
     this.incrementElapsedTime();
