@@ -170,7 +170,7 @@ export default class extends Euler {
           s[i].vx +
           this.dt *
             (a1 * k1v[i].ax +
-              a2 * this.dt * k2v[i].ax +
+              a2 * k2v[i].ax +
               a3 * k3v[i].ax +
               a4 * k4v[i].ax +
               a5 * k5v[i].ax),
@@ -178,7 +178,7 @@ export default class extends Euler {
           s[i].vy +
           this.dt *
             (a1 * k1v[i].ay +
-              a2 * this.dt * k2v[i].ay +
+              a2 * k2v[i].ay +
               a3 * k3v[i].ay +
               a4 * k4v[i].ay +
               a5 * k5v[i].ay),
@@ -186,7 +186,7 @@ export default class extends Euler {
           s[i].vz +
           this.dt *
             (a1 * k1v[i].az +
-              a2 * this.dt * k2v[i].az +
+              a2 * k2v[i].az +
               a3 * k3v[i].az +
               a4 * k4v[i].az +
               a5 * k5v[i].az)
