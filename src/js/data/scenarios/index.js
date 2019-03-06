@@ -16,6 +16,7 @@ import shoemakerLevy9 from './shoemakerLevy9';
 import rh120 from './rh120';
 import ulysses from './ulysses';
 import hd98800 from './hd98800';
+import kepler1658 from './kepler1658';
 import venusPentagram from './venusPentagram';
 import uranianSystem from './Uranus';
 import lunarFreeReturn from './lunarFreeReturn';
@@ -90,16 +91,15 @@ const processScenario = scenario => ({
   isLoaded: false,
   playing: false,
   integrator: scenario.integrator !== undefined ? scenario.integrator : 'RKF',
-  tol:
-    scenario.tol !== undefined ? scenario.tol : scenario.dt - scenario.dt * 0.4,
+  tol: scenario.tol !== undefined ? scenario.tol : scenario.dt * 0.00000001,
   maxDt:
     scenario.maxDt !== undefined
       ? scenario.maxDt
-      : scenario.dt + scenario.dt * 2,
+      : scenario.dt + scenario.dt * 10,
   minDt:
     scenario.minDt !== undefined
       ? scenario.minDt
-      : scenario.dt - scenario.dt * 0.999,
+      : scenario.dt + scenario.dt * 0.000000000001 - scenario.dt,
   particles:
     scenario.particles === undefined
       ? {
@@ -151,6 +151,7 @@ export const scenarios = [
   shenanigans,
   venusPentagram,
   oumuamua,
+  kepler1658,
   earthMoonSystem,
   jovianSystem,
   threeBodyCoreography,
