@@ -486,5 +486,21 @@ export default [
     m: 0.000820698,
     noTexture: true,
     radius: 1027.5229357798166
+  },
+  {
+    name: 'Kepler 1658',
+    orbitalPeriod: 0,
+    m: 1.447,
+    radius: 30414.430143999994,
+    type: 'star',
+    color: '#ffca8a'
+  },
+  {
+    name: 'Kepler 1658 b',
+    orbitalPeriod: 0.0105463014,
+    m: 0.005611284,
+    radius: 1099.449541284404,
+    noTexture: true,
+    color: 'limegreen'
   }
 ];
