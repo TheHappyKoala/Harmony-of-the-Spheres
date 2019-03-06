@@ -397,9 +397,6 @@ export default {
     if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame)
       this.previousRotatingReferenceFrame = rotatingReferenceFrame;
 
-    if (this.scenario.particles && playing)
-      this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);
-
     if (this.scenario.particles)
       this.particles.draw(this.particlePhysics.particles, frameOfRef);
 
@@ -527,7 +524,7 @@ export default {
           const y = beforeCollisionPoint.y;
           const z = beforeCollisionPoint.z;
 
-          let orbit = getOrbit(survivor, { x, y, z }, this.scenario.g);
+          let orbit = getOrbit(survivor, { x, y, z }, this.scenario.g, false);
 
           /*
            * Get the ideal circular orbit (apoapsis is equal to periapsis) for a given position vector around the primary
@@ -586,6 +583,9 @@ export default {
           });
         }
       });
+
+    if (this.scenario.particles && playing)
+      this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);
 
     /*
      * We have to update the tweens if we want them to run!!! 
