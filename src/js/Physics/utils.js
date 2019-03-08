@@ -22,6 +22,11 @@ export function getVMag(g, primary, d, a = d) {
 }
 
 export function getOrbit(primary, secondary, g, fromElements = true) {
+  const x = primary.x !== undefined ? primary.x : 0;
+  const y = primary.y !== undefined ? primary.y : 0;
+  const z = primary.z !== undefined ? primary.z : 0;
+  const { vx, vy, vz } = primary;
+
   secondary = {
     ...secondary,
     x:
@@ -40,9 +45,9 @@ export function getOrbit(primary, secondary, g, fromElements = true) {
 
   const orbit = {
     ...secondary,
-    vx: primary.vx + -dParams.dy * vMag / d,
-    vy: primary.vy + dParams.dx * vMag / d,
-    vz: primary.vz + dParams.dz * vMag / d
+    vx: -dParams.dy * vMag / d,
+    vy: dParams.dx * vMag / d,
+    vz: dParams.dz * vMag / d
   };
 
   if (fromElements) {
@@ -66,14 +71,23 @@ export function getOrbit(primary, secondary, g, fromElements = true) {
 
     return {
       ...secondary,
-      x: pWithI.x,
-      y: pWithI.y,
-      z: pWithI.z,
-      vx: vWithI.x,
-      vy: vWithI.y,
-      vz: vWithI.z
+      x: x + pWithI.x,
+      y: y + pWithI.y,
+      z: z + pWithI.z,
+      vx: vx + vWithI.x,
+      vy: vy + vWithI.y,
+      vz: vz + vWithI.z
     };
-  } else return orbit;
+  } else
+    return {
+      ...orbit,
+      x: x + orbit.x,
+      y: y + orbit.y,
+      z: z + orbit.z,
+      vx: vx + orbit.vx,
+      vy: vy + orbit.vy,
+      vz: vz + orbit.vz
+    };
 }
 
 export function getPeriapsis(a, e) {
