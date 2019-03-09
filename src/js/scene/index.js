@@ -88,9 +88,10 @@ export default {
     this.scenario.particles.rings && this.addRing();
 
     this.particles = new ParticlesManifestation(
-      40000,
+      80000,
       this.scenario.scale,
-      this.scenario.particles.size
+      this.scenario.particles.size,
+      this.scenario.type
     );
 
     this.scene.add(this.particles);
