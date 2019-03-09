@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import particleMaterial from './particleMaterial';
 
 export default class extends THREE.Object3D {
-  constructor(particles, scenarioScale, size = 100) {
+  constructor(particles, scenarioScale, size, type) {
     super();
 
     this.particles = particles;
@@ -10,6 +10,8 @@ export default class extends THREE.Object3D {
     this.scenarioScale = scenarioScale;
 
     this.size = size;
+
+    this.type = type;
 
     this.getParticles();
   }
@@ -30,7 +32,9 @@ export default class extends THREE.Object3D {
       positions[j + 1] = 0;
       positions[j + 2] = 0;
 
-      color.setHSL(0.0 + 0.1 * Math.random(), 0.9, 0.5);
+      this.type === 'Galaxy'
+        ? color.setHSL(0.5 + 0.1 * Math.random(), 0.7, 0.5)
+        : color.setHSL(0.0 + 0.1 * Math.random(), 0.9, 0.5);
 
       color.toArray(colors, i * 3);
       sizes[i] = this.size;
@@ -43,7 +47,7 @@ export default class extends THREE.Object3D {
     geometry.addAttribute('customColor', new THREE.BufferAttribute(colors, 3));
     geometry.addAttribute('size', new THREE.BufferAttribute(sizes, 1));
 
-    const material = particleMaterial();
+    const material = particleMaterial(this.type === 'Galaxy' ? false : true);
 
     const mesh = new THREE.Points(geometry, material);
 
@@ -53,8 +57,6 @@ export default class extends THREE.Object3D {
 
     this.add(mesh);
   }
-
-  updateParticles() {}
 
   draw(particles, frameOfRef) {
     const mesh = this.getObjectByName('system');
