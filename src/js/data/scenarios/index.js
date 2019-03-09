@@ -11,6 +11,7 @@ import martianSystem from './martianSystem';
 import newHorizons from './newHorizons';
 import cruithne from './cruithne';
 import trappist1 from './trappist1';
+import galaxy from './galaxy';
 import planetNine from './planetNine';
 import shoemakerLevy9 from './shoemakerLevy9';
 import rh120 from './rh120';
@@ -113,7 +114,7 @@ const processScenario = scenario => ({
   trails: scenario.trails !== undefined ? scenario.trails : true,
   labels: scenario.labels !== undefined ? scenario.labels : true,
   background: true,
-  sizeAttenuation: true,
+  sizeAttenuation: scenario.type === 'Galaxy' ? false : true,
   scale: 2100000,
   velMax: 5,
   velMin: -5,
@@ -154,6 +155,7 @@ export const scenarios = [
   kepler1658,
   earthMoonSystem,
   jovianSystem,
+  galaxy,
   threeBodyCoreography,
   tess,
   martianSystem,
