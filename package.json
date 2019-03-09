@@ -1,6 +1,6 @@
 {
   "name": "harmony-of-the-spheres",
-  "version": "0.1.26",    
+  "version": "0.1.27",    
   "description": "Newtonian n-body gravity simulator.",
   "scripts": {
     "start": "node server.js",
@@ -11,7 +11,7 @@
   },
   "keywords": [
     "space",
-    "gravity",    
+    "gravity",       
     "orbit"
   ],
   "author": "Darrell A. Huffman",
