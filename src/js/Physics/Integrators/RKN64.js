@@ -184,8 +184,7 @@ export default class extends Euler {
         };
       }
       error = this.calculateError(p, p_hat);
-      console.log(error);
-      console.log("dt", this.dt);
+      
       const temp = Math.pow(2*error / this.tol, 1/6);
       if (temp > 0.2){
         this.dt = this.dt / temp;
