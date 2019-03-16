@@ -34,7 +34,7 @@ export default function(props) {
           ))}
         </Dropdown>
       </div>
-      {props.integrator === 'RKF' && (
+      {(props.integrator === 'RKF' || props.integrator == 'RKN64') && (
         <Fragment>
           <label className="top">
             Error Tolerance

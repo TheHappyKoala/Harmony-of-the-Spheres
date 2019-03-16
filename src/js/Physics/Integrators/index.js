@@ -7,8 +7,9 @@ import Nystrom3 from './Nystrom3';
 import Nystrom4 from './Nystrom4';
 import Nystrom5 from './Nystrom5';
 import Nystrom6 from './Nystrom6';
+import RKN64 from './RKN64';
 
-export const integrators = ['RK4', 'Euler', 'Verlet', 'RKF', 'PEFRL', 'Nystrom3', 'Nystrom4', 'Nystrom5', 'Nystrom6'];
+export const integrators = ['RK4', 'Euler', 'Verlet', 'RKF', 'PEFRL', 'Nystrom3', 'Nystrom4', 'Nystrom5', 'Nystrom6', 'RKN64'];
 
 export default function(integrator, config) {
   switch (integrator) {
@@ -30,6 +31,8 @@ export default function(integrator, config) {
       return new Nystrom5(config);
     case 'Nystrom6':
       return new Nystrom6(config);
+    case 'RKN64':
+      return new RKN64(config);
     default:
       return new RK4(config);
   }
