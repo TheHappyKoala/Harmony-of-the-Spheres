@@ -91,7 +91,7 @@ const processScenario = scenario => ({
   ...scenario,
   isLoaded: false,
   playing: false,
-  integrator: scenario.integrator !== undefined ? scenario.integrator : 'RKF',
+  integrator: scenario.integrator !== undefined ? scenario.integrator : 'RKN64',
   tol: scenario.tol !== undefined ? scenario.tol : scenario.dt * 0.00000001,
   maxDt:
     scenario.maxDt !== undefined
@@ -114,7 +114,7 @@ const processScenario = scenario => ({
   trails: scenario.trails !== undefined ? scenario.trails : true,
   labels: scenario.labels !== undefined ? scenario.labels : true,
   background: true,
-  sizeAttenuation: scenario.type === 'Galaxy' ? false : true,
+  sizeAttenuation: true,
   scale: 2100000,
   velMax: 5,
   velMin: -5,
