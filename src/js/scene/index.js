@@ -88,9 +88,10 @@ export default {
     this.scenario.particles.rings && this.addRing();
 
     this.particles = new ParticlesManifestation(
-      80000,
+      this.particlePhysics.particles,
       this.scenario.scale,
       this.scenario.particles.size,
+      this.scenario.particles.max,
       this.scenario.type
     );
 
@@ -639,16 +640,29 @@ export default {
             )
           : ring.customPrimaryData;
 
+      let callback =
+        ring.spiral === true
+          ? vectors => {
+              const integrator = new ParticlePhysics();
+              integrator.particles = vectors;
+
+              for (let i = 0; i < 1000; i++)
+                integrator.iterate([primary], 39.5, 0.0008);
+            }
+          : false;
+
       const generatedParticles = createParticleSystem(
         createParticleDisc(
           ring.number,
           primary,
           this.scenario.g,
           ring.minD,
-          ring.maxD
+          ring.maxD,
+          ring.spiral
         ),
         ring.tilt,
-        primary
+        primary,
+        callback
       );
 
       for (let i = 0; i < ring.number; i++)

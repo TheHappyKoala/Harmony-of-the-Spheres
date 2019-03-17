@@ -187,26 +187,78 @@ export function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+export function addSpiralArms(config, maxD) {
+  const spiralConfig = {
+    type: 'spiral',
+    width: 0.2,
+    thickness: getRandomNumberInRange(-maxD / 10, maxD / 10),
+    eccentricityFactor: 1.05
+  };
+
+  const armWidth = Math.PI * 2 / 12;
+
+  switch (getRandomInteger(1, config.densityFactor)) {
+    case 1:
+      return {
+        ...spiralConfig,
+        radianStart: 0,
+        radianEnd: armWidth
+      };
+
+    case 2:
+      return {
+        ...spiralConfig,
+        radianStart: 5,
+        radianEnd: 5 + armWidth
+      };
+
+    default:
+      return {
+        ...config,
+        thickness: getRandomNumberInRange(-maxD / 30, maxD / 30)
+      };
+  }
+}
+
 export function createParticleDisc(
   particlesNumber = 0,
   primary = { m: 0, x: 0, y: 0, z: 0, vx: 0, vz: 0 },
   g = 39.5,
   minD = 0,
-  maxD = 0
+  maxD = 0,
+  spiral = false
 ) {
   const particles = [];
 
   for (let i = 0; i < particlesNumber; i++) {
-    const radian = getRandomRadian();
+    let config = {
+      type: 'regular',
+      densityFactor: 5,
+      width: 2,
+      radianStart: 0,
+      radianEnd: 1,
+      thickness: 0,
+      eccentricityFactor: 1
+    };
+
+    if (spiral) config = addSpiralArms(config, maxD);
+
+    const radian =
+      Math.PI *
+      config.width *
+      getRandomNumberInRange(config.radianStart, config.radianEnd);
     const dist = getRandomNumberInRange(minD, maxD);
 
     const x = Math.cos(radian) * dist;
     const y = Math.sin(radian) * dist;
-    const z = 0;
+    const z = config.thickness;
 
     const dParams = getDistanceParams({ x: 0, y: 0, z: 0 }, { x, y, z });
 
     const d = Math.sqrt(dParams.dSquared);
+
+    if (spiral && d < maxD / 2 && config.type !== 'spiral')
+      config.type = 'bulge';
 
     const vMag = getVMag(g, primary, d);
 
@@ -215,8 +267,9 @@ export function createParticleDisc(
       y: y,
       z: z,
       vx: -dParams.dy * vMag / d,
-      vy: dParams.dx * vMag / d,
-      vz: 0
+      vy: dParams.dx * vMag / d * config.eccentricityFactor,
+      vz: 0,
+      type: config.type
     });
   }
 
@@ -226,7 +279,8 @@ export function createParticleDisc(
 export function createParticleSystem(
   vectors = [],
   tilt = [0, 0, 0],
-  primary = { x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0 }
+  primary = { x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0 },
+  callback = false
 ) {
   const tiltedVectors = [];
 
@@ -299,9 +353,12 @@ export function createParticleSystem(
       z: primary.z + pTZ.z,
       vx: primary.vx + vTZ.x,
       vy: primary.vy + vTZ.y,
-      vz: primary.vz + vTZ.z
+      vz: primary.vz + vTZ.z,
+      type: vector.type
     });
   }
+
+  typeof callback === 'function' && callback(tiltedVectors);
 
   return tiltedVectors;
 }
