@@ -232,18 +232,16 @@ export default {
           frameOfRef = this.system.masses[i];
     }
 
-    if (playing) {
-      this.system.tol = tol;
-      this.system.minDt = minDt;
-      this.system.maxDt = maxDt;
-      this.system.iterate();
-    }
+    this.system.tol = tol;
+    this.system.dt = dt;
+    this.system.minDt = minDt;
+    this.system.maxDt = maxDt;
+
+    if (playing) this.system.iterate();
 
     dt = this.system.dt;
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
-
-    this.updateScenario();
 
     if (cameraPosition === 'Free') this.camera.controls.enabled = true;
     else this.camera.controls.enabled = false;
@@ -589,6 +587,8 @@ export default {
     if (this.scenario.particles && playing)
       this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);
 
+    this.updateScenario();
+
     /*
      * We have to update the tweens if we want them to run!!! 
      * Forget to add this line of code all the time when I'm working with tween.js,
@@ -623,6 +623,10 @@ export default {
         {
           key: 'elapsedTime',
           value: this.system.elapsedTime
+        },
+        {
+          key: 'dt',
+          value: this.system.dt
         }
       )
     );

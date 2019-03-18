@@ -34,6 +34,21 @@ export default function(props) {
           ))}
         </Dropdown>
       </div>
+      <label className="top">
+        Delta Time
+        <Tooltip
+          position="left"
+          content="The time that elapses per iteration of the simulation. The lower the time step, the more accurate the simulation will be, and vice versa."
+        />
+      </label>
+      <Slider
+        payload={{ key: 'dt' }}
+        value={props.dt}
+        callback={props.modifyScenarioProperty}
+        max={props.maxDt}
+        min={props.minDt}
+        step={props.dt / 1000}
+      />
       {(props.integrator === 'RKF' || props.integrator == 'RKN64') && (
         <Fragment>
           <label className="top">
