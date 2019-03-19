@@ -4,6 +4,8 @@ export default class extends adaptiveRknBase {
   constructor(params) {
     super(params);
 
+    this.errorOrder = 6;
+
     this.coefficients = [
       [1/200],
       [-1/2200, 1/22],
