@@ -7,16 +7,30 @@ export default class extends adaptiveRknBase {
     this.errorOrder = 6;
 
     this.coefficients = [
-      [1/200],
-      [-1/2200, 1/22],
-      [637/6600, -7/110, 7/33],
-      [225437/1968750, -30073/281250, 65569/281250, -9367/984375],
-      [151/2142, 5/116, 385/1368, 55/168, -6250/28101]
+      [1 / 200],
+      [-1 / 2200, 1 / 22],
+      [637 / 6600, -7 / 110, 7 / 33],
+      [225437 / 1968750, -30073 / 281250, 65569 / 281250, -9367 / 984375],
+      [151 / 2142, 5 / 116, 385 / 1368, 55 / 168, -6250 / 28101]
     ];
-    this.delta = [1/10, 3/10, 7/10, 17/25, 1];
-    this.alpha = [151/2142, 5/116, 385/1368, 55/168, -6250/28101, 0];
-    this.alphaHat = [1349/157500, 7873/50000, 192199/900000, 521683/2100000, -16/125, 0];
-    this.beta = [151/2142, 25/522, 275/684, 275/252, -78125/112404, 1/12];
+    this.delta = [1 / 10, 3 / 10, 7 / 10, 17 / 25, 1];
+    this.alpha = [151 / 2142, 5 / 116, 385 / 1368, 55 / 168, -6250 / 28101, 0];
+    this.alphaHat = [
+      1349 / 157500,
+      7873 / 50000,
+      192199 / 900000,
+      521683 / 2100000,
+      -16 / 125,
+      0
+    ];
+    this.beta = [
+      151 / 2142,
+      25 / 522,
+      275 / 684,
+      275 / 252,
+      -78125 / 112404,
+      1 / 12
+    ];
   }
 }
 
@@ -29,7 +43,7 @@ export default class extends adaptiveRknBase {
 //     this.tol = params.tol;
 //     this.maxDt = params.maxDt;
 //     this.minDt = params.minDt;
-    
+
 //     this.coefficients = [
 //       [1/200],
 //       [-1/2200, 1/22],
@@ -176,7 +190,7 @@ export default class extends adaptiveRknBase {
 //       const tempPos = [];
 //       let cLen = this.coefficients[i].length;
 //       for (let n = 0; n < nMasses; n++){ // loop through all masses
-        
+
 //         let tempSum = {
 //           x: 0,
 //           y: 0,
@@ -249,7 +263,7 @@ export default class extends adaptiveRknBase {
 //         };
 //       }
 //       error = this.calculateError(p, p_hat);
-      
+
 //       const temp = Math.pow(2*error / this.tol, 1/6);
 //       if (temp > 0.2){
 //         this.dt = this.dt / temp;

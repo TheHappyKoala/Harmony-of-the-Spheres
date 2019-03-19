@@ -50,9 +50,9 @@ export default class extends THREE.Object3D {
         else sizes[i] = this.size;
       } else color.setHSL(0.1 * Math.random(), 0.9, 0.5);
 
-      color.toArray(colors, i * 3); 
+      color.toArray(colors, i * 3);
 
-      j += 3; 
+      j += 3;
     }
 
     const geometry = new THREE.BufferGeometry();

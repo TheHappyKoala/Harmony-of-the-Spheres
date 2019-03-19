@@ -4,7 +4,9 @@ export default class extends Euler {
   constructor(params) {
     super(params);
 
-    this.lastAcc = this.generateAccelerationVectors(this.getStateVectors(this.masses));
+    this.lastAcc = this.generateAccelerationVectors(
+      this.getStateVectors(this.masses)
+    );
   }
 
   generatePositionVectors(s, a, dt) {

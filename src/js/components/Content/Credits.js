@@ -56,7 +56,7 @@ export default function() {
           Hugo Granström
         </a>{' '}
         .
-      </p> 
+      </p>
       <p className="modal-item">
         <b>&#187; </b>
         Perlin noise for the star shaders by Stefan Gustavsson and Ashima Arts
