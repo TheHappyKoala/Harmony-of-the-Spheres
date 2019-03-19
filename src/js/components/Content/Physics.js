@@ -49,7 +49,7 @@ export default function(props) {
         min={props.minDt}
         step={props.dt / 1000}
       />
-      {(props.integrator === 'RKF' || props.integrator == 'RKN64') && (
+      {(props.integrator === 'RKF' || props.integrator == 'RKN64' || props.integrator == 'RKN12') && (
         <Fragment>
           <label className="top">
             Error Tolerance
