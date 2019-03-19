@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Dropdown from '../Dropdown';
 import Toggle from '../Toggle';
 import Slider from '../Slider';
@@ -6,6 +6,11 @@ import Tooltip from '../Tooltip';
 import { integrators } from '../../Physics/Integrators';
 
 export default function(props) {
+  const [
+    displayAdvancedDeltaTimeControls,
+    setAdvancedDeltaTimeControls
+  ] = useState(false);
+
   return (
     <Fragment>
       <h2>Physics</h2>
@@ -49,7 +54,7 @@ export default function(props) {
         min={props.minDt}
         step={props.dt / 1000}
       />
-      {(props.integrator === 'RKF' || props.integrator == 'RKN64' || props.integrator == 'RKN12') && (
+      {(props.integrator === 'RKF' || props.integrator == 'RKN64') && (
         <Fragment>
           <label className="top">
             Error Tolerance
@@ -66,6 +71,47 @@ export default function(props) {
             min={props.minDt}
             step={props.dt / 100}
           />
+          <Toggle
+            label="Advanced Delta Time Controls"
+            checked={displayAdvancedDeltaTimeControls}
+            callback={() =>
+              setAdvancedDeltaTimeControls(!displayAdvancedDeltaTimeControls)
+            }
+          />
+          {displayAdvancedDeltaTimeControls && (
+            <Fragment>
+              <label className="top">
+                Min Delta Time
+                <Tooltip
+                  position="left"
+                  content="The minimum allowed value for delta time."
+                />
+              </label>
+              <Slider
+                payload={{ key: 'minDt' }}
+                value={props.minDt}
+                callback={props.modifyScenarioProperty}
+                max={10}
+                min={0.0000000000000000000001}
+                step={props.dt / 1000}
+              />
+              <label className="top">
+                Max Delta Time
+                <Tooltip
+                  position="left"
+                  content="The maximum allowed value for delta time."
+                />
+              </label>
+              <Slider
+                payload={{ key: 'maxDt' }}
+                value={props.maxDt}
+                callback={props.modifyScenarioProperty}
+                max={4}
+                min={0.0000000000000000000001}
+                step={props.dt / 1000}
+              />
+            </Fragment>
+          )}
         </Fragment>
       )}
       <label className="top">
