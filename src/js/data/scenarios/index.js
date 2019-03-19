@@ -91,9 +91,9 @@ const processScenario = scenario => ({
   ...scenario,
   isLoaded: false,
   playing: false,
-  integrator: scenario.integrator !== undefined ? scenario.integrator : 'RKN64',
+  integrator: scenario.integrator !== undefined ? scenario.integrator : 'RKN12',
   tol: scenario.tol !== undefined ? scenario.tol : scenario.dt * 0.00000001,
-  maxDt:
+  maxDt: 
     scenario.maxDt !== undefined
       ? scenario.maxDt
       : scenario.dt + scenario.dt * 10,
