@@ -98,8 +98,7 @@ export default class extends rknBase {
       var [p, v, pHat] = this.generateVectors(s, k);
 
       error = this.calculateError(p, pHat);
-      
-      const temp = Math.pow(2*error / this.tol, 1/6);
+      const temp = Math.pow(2*error / this.tol, 1/(this.errorOrder));
       if (temp > 0.2){
         this.dt = this.dt / temp;
       } else{
