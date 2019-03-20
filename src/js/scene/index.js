@@ -298,10 +298,10 @@ export default {
 
       if (
         trails &&
-        playing &&
         rotatingReferenceFrame === this.previousRotatingReferenceFrame
       ) {
         if (!trail) massManifestation.getTrail(trailVertices);
+        if (!playing && trail) trail.geometry.verticesNeedUpdate = false;
       } else massManifestation.removeTrail();
 
       let zOffset;
