@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 export default function() {
   return (
-    <React.Fragment>
+    <Fragment>
       <h1>Credits</h1>
       <p className="modal-item">
         <b>&#187; </b>Programming by{' '}
         <a href="https://github.com/TheHappyKoala/" target="blank">
-          Darrell A. Huffman (The Happy Koala)
+          Darrell A. Huffman
         </a>{' '}
-        .
+        , maintainer.
+      </p>
+      <p className="modal-item">
+        &#187; Development of the Verlet, RKF, PEFRL, and RKN family of
+        integrators by{' '}
+        <a href="https://hugogranstrom.com/" target="blank">
+          Hugo Granström
+        </a>, collaborator.
       </p>
       <p className="modal-item">
         <b>&#187; </b>
@@ -49,13 +56,6 @@ export default function() {
         <a href="https://www.deviantart.com/magentameteorite" target="blank">
           MagentaMeteorite (Brie Limburger)
         </a>.
-      </p>
-      <p className="modal-item">
-        <b>&#187; </b>Verlet and RKF integrators developed by{' '}
-        <a href="https://hugogranstrom.com/" target="blank">
-          Hugo Granström
-        </a>{' '}
-        .
       </p>
       <p className="modal-item">
         <b>&#187; </b>
@@ -108,6 +108,6 @@ export default function() {
         Last, but not least, I would like to credit the Universe for being
         awesomely weird and thought provoking!
       </p>
-    </React.Fragment>
+    </Fragment>
   );
 }
