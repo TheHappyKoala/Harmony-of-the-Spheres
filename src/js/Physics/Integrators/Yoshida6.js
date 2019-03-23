@@ -1,14 +1,6 @@
 import Euler from './Euler';
 
 export default class extends Euler {
-  constructor(params) {
-    super(params);
-
-    this.epsilon = 0.1786178958448091;
-    this.lambda = -0.2123418310626054;
-    this.chi = -0.6626458266981849e-1;
-  }
-
   generatePositionVectors(p, v, dt) {
     const pFinal = [];
     const vLen = v.length;
@@ -47,25 +39,19 @@ export default class extends Euler {
   }
 
   iterate() {
-    const a1 = this.epsilon * this.dt;
-    const a2 = (1 - 2 * this.lambda) * this.dt / 2;
-    const a3 = this.chi * this.dt;
-    const a4 = this.lambda * this.dt;
-    const a5 = (1 - 2 * (this.chi + this.epsilon)) * this.dt;
-
     const s = this.getStateVectors(this.masses);
 
-    const pCoeffs = [a1, a3, a5, a3, a1];
-    const vCoeffs = [a2, a4, a4, a2];
+    const pCoeffs = [0.74409614601461,-0.425227929490565,0.2762016693478,-0.0029155067911599275,-1.4465510537023341,1.4478689195210459,1.4451324786403945,-1.5386047235397915,-1.5386047235397915,1.4451324786403945,1.4478689195210459,-1.4465510537023341,-0.0029155067911599275,0.2762016693478,-0.425227929490565,0.74409614601461];
+    const vCoeffs = [1.48819229202922,-2.33864815101035,2.89105148970595,-2.89688250328827,0.00378039588360192,2.89195744315849,-0.00169248587770116,-3.075516961201882,-0.00169248587770116,2.89195744315849,0.00378039588360192,-2.89688250328827,2.89105148970595,-2.33864815101035,1.48819229202922];
 
     let p = s;
     let v = s;
     const coeffsLen = vCoeffs.length;
     for (let i = 0; i < coeffsLen; i++){
-      p = this.generatePositionVectors(p, v, pCoeffs[i]);
-      v = this.generateVelocityVectors(p, v, vCoeffs[i]);
+      p = this.generatePositionVectors(p, v, this.dt*pCoeffs[i]);
+      v = this.generateVelocityVectors(p, v, this.dt*vCoeffs[i]);
     }
-    p = this.generatePositionVectors(p, v, pCoeffs[coeffsLen]);
+    p = this.generatePositionVectors(p, v, this.dt*pCoeffs[coeffsLen]);
     this.updateStateVectors(p, v);
 
     this.incrementElapsedTime();
