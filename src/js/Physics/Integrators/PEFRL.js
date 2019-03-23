@@ -55,17 +55,18 @@ export default class extends Euler {
 
     const s = this.getStateVectors(this.masses);
 
-    const p1 = this.generatePositionVectors(s, s, a1);
-    const v1 = this.generateVelocityVectors(p1, s, a2);
-    const p2 = this.generatePositionVectors(p1, v1, a3);
-    const v2 = this.generateVelocityVectors(p2, v1, a4);
-    const p3 = this.generatePositionVectors(p2, v2, a5);
-    const v3 = this.generateVelocityVectors(p3, v2, a4);
-    const p4 = this.generatePositionVectors(p3, v3, a3);
-    const v4 = this.generateVelocityVectors(p4, v3, a2);
-    const p5 = this.generatePositionVectors(p4, v4, a1);
+    const pCoeffs = [a1, a3, a5, a3, a1];
+    const vCoeffs = [a2, a4, a4, a2];
 
-    this.updateStateVectors(p5, v4);
+    let p = s;
+    let v = s;
+    const coeffsLen = vCoeffs.length;
+    for (let i = 0; i < coeffsLen; i++){
+      p = this.generatePositionVectors(p, v, pCoeffs[i]);
+      v = this.generateVelocityVectors(p, v, vCoeffs[i]);
+    }
+    p = this.generatePositionVectors(p, v, pCoeffs[coeffsLen]);
+    this.updateStateVectors(p, v);
 
     this.incrementElapsedTime();
   }
