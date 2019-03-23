@@ -9,6 +9,7 @@ import Nystrom5 from './Nystrom5';
 import Nystrom6 from './Nystrom6';
 import RKN64 from './RKN64';
 import RKN12 from './RKN12';
+import Yoshida6 from './Yoshida6';
 
 export const integrators = [
   'RK4',
@@ -21,7 +22,8 @@ export const integrators = [
   'Nystrom5',
   'Nystrom6',
   'RKN64',
-  'RKN12'
+  'RKN12',
+  'Yoshida6'
 ];
 
 export default function(integrator, config) {
@@ -48,6 +50,8 @@ export default function(integrator, config) {
       return new RKN64(config);
     case 'RKN12':
       return new RKN12(config);
+    case 'Yoshida6':
+      return new Yoshida6(config); 
     default:
       return new RK4(config);
   }
