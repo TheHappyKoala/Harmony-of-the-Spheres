@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import LoadingScreen from '../LoadingScreen';
 import Modal from '../Modal';
@@ -35,7 +35,7 @@ export default class extends Component {
     const scenario = this.props.scenario;
 
     return (
-      <React.Fragment>
+      <Fragment>
         <Renderer scenarioName={scenario.name} />
         <MainBar
           scenario={scenario}
@@ -60,6 +60,7 @@ export default class extends Component {
           </div>
           <div label="Graphics" icon="fas fa-paint-brush fa-2x">
             <Graphics
+              barycenter={scenario.barycenter}
               trails={scenario.trails}
               labels={scenario.labels}
               background={scenario.background}
@@ -172,7 +173,7 @@ export default class extends Component {
           <h1>Hey friend...</h1>
           <p>Please rotate your device into landscape mode.</p>
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

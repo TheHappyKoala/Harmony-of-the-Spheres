@@ -366,3 +366,32 @@ export function createParticleSystem(
 export function calculateSystemMass(masses) {
   return masses.reduce((totalMass, mass) => totalMass + mass.m, 0);
 }
+
+export function getBarycenter(
+  masses,
+  frameOfRef = { x: 0, y: 0, z: 0 },
+  positionScaleFactor = 1
+) {
+  const massesLen = masses.length;
+  let position = { x: 0, y: 0, z: 0 };
+  let systemMass = 0;
+
+  for (let i = 0; i < massesLen; i++) {
+    const mass = masses[i];
+    const m = mass.m;
+
+    position = {
+      x: position.x + mass.x * m,
+      y: position.y + mass.y * m,
+      z: position.z + mass.z * m
+    };
+
+    systemMass += m;
+  }
+
+  return {
+    x: (frameOfRef.x - position.x / systemMass) * positionScaleFactor,
+    y: (frameOfRef.y - position.y / systemMass) * positionScaleFactor,
+    z: (frameOfRef.z - position.z / systemMass) * positionScaleFactor
+  };
+}
