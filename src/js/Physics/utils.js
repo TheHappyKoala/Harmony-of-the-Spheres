@@ -363,10 +363,6 @@ export function createParticleSystem(
   return tiltedVectors;
 }
 
-export function calculateSystemMass(masses) {
-  return masses.reduce((totalMass, mass) => totalMass + mass.m, 0);
-}
-
 export function getBarycenter(
   masses,
   frameOfRef = { x: 0, y: 0, z: 0 },
