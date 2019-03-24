@@ -93,7 +93,7 @@ const processScenario = scenario => ({
   playing: false,
   integrator: scenario.integrator !== undefined ? scenario.integrator : 'RKN12',
   tol: scenario.tol !== undefined ? scenario.tol : scenario.dt * 0.00000001,
-  maxDt: 
+  maxDt:
     scenario.maxDt !== undefined
       ? scenario.maxDt
       : scenario.dt + scenario.dt * 10,
@@ -110,6 +110,7 @@ const processScenario = scenario => ({
         }
       : scenario.particles,
   collisions: true,
+  barycenter: true,
   elapsedTime: 0,
   trails: scenario.trails !== undefined ? scenario.trails : true,
   labels: scenario.labels !== undefined ? scenario.labels : true,

@@ -1,6 +1,6 @@
 import worldToScreenCoordinates from './worldToScreenCoordinates';
 
-export default function(
+export default (
   ctx,
   camera,
   positionVector,
@@ -8,8 +8,11 @@ export default function(
   h,
   name,
   isOrbital,
-  isTarget
-) {
+  isTarget,
+  color,
+  drawSymbolCallback,
+  placement = 'right'
+) => {
   const position = worldToScreenCoordinates(
     positionVector,
     camera,
@@ -26,19 +29,20 @@ export default function(
 
     const textBoxWidth = ctx.measureText(name).width + 6;
 
-    ctx.strokeStyle = 'white';
-    ctx.beginPath();
-    ctx.arc(x, y, 8, 0, 2 * Math.PI);
-    ctx.stroke();
+    const direction = placement === 'right' ? 0 : textBoxWidth + 20;
+
+    drawSymbolCallback(ctx, { x: position.x, y: position.y }, color);
+
+    ctx.lineWidth = 1;
 
     ctx.globalAlpha = 0.5;
     ctx.fillStyle = '#545454';
-    ctx.fillRect(x + 13, y - 10, textBoxWidth, 20);
+    ctx.fillRect(x + 13 - direction, y - 10, textBoxWidth, 20);
 
     ctx.globalAlpha = 1;
-    ctx.fillStyle = 'white';
-    ctx.fillText(name, x + 16, y + 3);
+    ctx.fillStyle = color;
+    ctx.fillText(name, x + 16 - direction, y + 3);
 
-    ctx.strokeRect(x + 13, y - 10, textBoxWidth, 20);
+    ctx.strokeRect(x + 13 - direction, y - 10, textBoxWidth, 20);
   }
-}
+};

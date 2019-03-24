@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Dropdown from '../Dropdown';
 import Tooltip from '../Tooltip';
 
 export default function(props) {
   return (
-    <React.Fragment>
+    <Fragment>
       <h2>Camera</h2>
       <label className="top">
         Rotating Reference Frame{' '}
@@ -26,6 +26,18 @@ export default function(props) {
             }
           >
             Origo
+          </div>
+          <div
+            name="Barycenter"
+            key="Barycenter"
+            callback={() =>
+              props.modifyScenarioProperty({
+                key: 'rotatingReferenceFrame',
+                value: 'Barycenter'
+              })
+            }
+          >
+            Barycenter
           </div>
           {props.masses.map(mass => (
             <div
@@ -101,6 +113,18 @@ export default function(props) {
           >
             Origo
           </div>
+          <div
+            name="Barycenter"
+            key="Barycenter"
+            callback={() =>
+              props.modifyScenarioProperty({
+                key: 'cameraFocus',
+                value: 'Barycenter'
+              })
+            }
+          >
+            Barycenter
+          </div>
           {props.masses.map(mass => (
             <div
               name={mass.name}
@@ -117,6 +141,6 @@ export default function(props) {
           ))}
         </Dropdown>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 }

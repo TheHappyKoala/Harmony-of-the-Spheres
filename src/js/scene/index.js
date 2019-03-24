@@ -14,7 +14,8 @@ import {
   getOrbit,
   getClosestPointOnSphere,
   getRandomNumberInRange,
-  rotateVector
+  rotateVector,
+  getBarycenter
 } from '../Physics/utils';
 import arena from './arena';
 import Camera from './Camera';
@@ -179,7 +180,8 @@ export default {
       maxDt,
       integrator,
       background,
-      sizeAttenuation
+      sizeAttenuation,
+      barycenter
     } = this.scenario;
 
     let dt = this.scenario.dt;
@@ -239,6 +241,12 @@ export default {
 
     if (playing) this.system.iterate();
 
+    let barycenterPosition = getBarycenter(
+      this.scenario.masses,
+      frameOfRef,
+      scale
+    );
+
     dt = this.system.dt;
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
@@ -248,18 +256,83 @@ export default {
 
     this.labels.clearRect(0, 0, this.w, this.h);
 
+    if (barycenter)
+      label(
+        this.labels,
+        this.camera,
+        this.utilityVector.set(
+          barycenterPosition.x,
+          barycenterPosition.y,
+          barycenterPosition.z
+        ),
+        this.w,
+        this.h,
+        'Barycenter',
+        cameraPosition === 'Free' ? true : false,
+        cameraFocus === 'Barycenter' ? true : false,
+        'limegreen',
+        (ctx, position, color) => {
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+
+          ctx.moveTo(position.x, position.y - 30);
+          ctx.lineTo(position.x, position.y + 30);
+          ctx.stroke();
+
+          ctx.moveTo(position.x, position.y);
+          ctx.lineTo(position.x + 30, position.y);
+          ctx.stroke();
+        },
+        'left'
+      );
+
     if (cameraFocus === 'Origo') {
       if (cameraPosition !== 'Free') this.camera.lookAt(0, 0, 0);
       else this.camera.controls.target.set(0, 0, 0);
     }
 
-    if (this.previousCameraFocus !== cameraFocus && cameraFocus === 'Origo') {
+    if (cameraFocus === 'Barycenter') {
+      if (cameraPosition !== 'Free')
+        this.camera.lookAt(
+          barycenterPosition.x,
+          barycenterPosition.y,
+          barycenterPosition.z
+        );
+      else
+        this.camera.controls.target.set(
+          barycenterPosition.x,
+          barycenterPosition.y,
+          barycenterPosition.z
+        );
+    }
+
+    if (
+      this.previousCameraFocus !== cameraFocus &&
+      (cameraFocus === 'Origo' || cameraFocus === 'Barycenter')
+    ) {
       this.previousCameraFocus = cameraFocus;
 
       if (cameraPosition === 'Free') {
-        this.camera.position.set(freeOrigo.x, freeOrigo.y, freeOrigo.z);
+        if (cameraFocus === 'Origo') {
+          this.camera.position.set(freeOrigo.x, freeOrigo.y, freeOrigo.z);
 
-        this.camera.lookAt(0, 0, 0);
+          this.camera.lookAt(0, 0, 0);
+        }
+
+        if (cameraFocus === 'Barycenter') {
+          this.camera.position.set(
+            barycenterPosition.x,
+            barycenterPosition.y,
+            barycenterPosition.z + 100000000
+          );
+
+          this.camera.lookAt(
+            barycenterPosition.x,
+            barycenterPosition.y,
+            barycenterPosition.z
+          );
+        }
       }
     }
 
@@ -370,7 +443,14 @@ export default {
           this.h,
           name,
           cameraPosition === 'Free' ? true : false,
-          cameraFocus === name ? true : false
+          cameraFocus === name ? true : false,
+          'white',
+          (ctx, position, color) => {
+            ctx.strokeStyle = color;
+            ctx.beginPath();
+            ctx.arc(position.x, position.y, 8, 0, 2 * Math.PI);
+            ctx.stroke();
+          }
         );
 
       const main = massManifestation.getObjectByName('Main');

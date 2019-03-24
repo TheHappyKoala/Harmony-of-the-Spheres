@@ -6,6 +6,16 @@ export default function(props) {
     <React.Fragment>
       <h2>Graphics</h2>
       <Toggle
+        label="Display Barycenter"
+        checked={props.barycenter}
+        callback={() =>
+          props.modifyScenarioProperty({
+            key: 'barycenter',
+            value: !props.barycenter
+          })
+        }
+      />
+      <Toggle
         label="Trails"
         checked={props.trails}
         callback={() =>
