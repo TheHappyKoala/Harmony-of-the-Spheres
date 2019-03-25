@@ -3,6 +3,7 @@ import Dropdown from '../Dropdown';
 import Toggle from '../Toggle';
 import Slider from '../Slider';
 import Tooltip from '../Tooltip';
+import bodies from '../../data/masses';
 import { integrators } from '../../Physics/Integrators';
 
 export default function(props) {
@@ -114,6 +115,71 @@ export default function(props) {
               />
             </Fragment>
           )}
+        </Fragment>
+      )}
+
+      <Toggle
+        label="System Barycenter"
+        checked={props.systemBarycenter}
+        callback={() =>
+          props.modifyScenarioProperty({
+            key: 'systemBarycenter',
+            value: !props.systemBarycenter
+          })
+        }
+      />
+      {!props.systemBarycenter && (
+        <Fragment>
+          <label className="top">
+            Barycenter Mass One
+            <Tooltip
+              position="left"
+              content="One of the masses in a two body system."
+            />
+          </label>
+          <div className="tabs-dropdown-wrapper">
+            <Dropdown selectedOption={props.barycenterMassOne}>
+              {bodies.map(body => (
+                <div
+                  name={body.name}
+                  key={body.name}
+                  callback={() =>
+                    props.modifyScenarioProperty({
+                      key: 'barycenterMassOne',
+                      value: body.name
+                    })
+                  }
+                >
+                  {body.name}
+                </div>
+              ))}
+            </Dropdown>
+          </div>
+          <label className="top">
+            Barycenter Mass Two
+            <Tooltip
+              position="left"
+              content="One of the masses in a two body system."
+            />
+          </label>
+          <div className="tabs-dropdown-wrapper">
+            <Dropdown selectedOption={props.barycenterMassTwo}>
+              {bodies.map(body => (
+                <div
+                  name={body.name}
+                  key={body.name}
+                  callback={() =>
+                    props.modifyScenarioProperty({
+                      key: 'barycenterMassTwo',
+                      value: body.name
+                    })
+                  }
+                >
+                  {body.name}
+                </div>
+              ))}
+            </Dropdown>
+          </div>
         </Fragment>
       )}
       <label className="top">

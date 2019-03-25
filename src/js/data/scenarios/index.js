@@ -111,6 +111,16 @@ const processScenario = scenario => ({
       : scenario.particles,
   collisions: true,
   barycenter: true,
+  systemBarycenter:
+    scenario.systemBarycenter !== undefined ? scenario.systemBarycenter : true,
+  barycenterMassOne:
+    scenario.barycenterMassOne !== undefined
+      ? scenario.barycenterMassOne
+      : scenario.masses[0].name,
+  barycenterMassTwo:
+    scenario.barycenterMassTwo !== undefined
+      ? scenario.barycenterMassTwo
+      : scenario.masses[1].name,
   elapsedTime: 0,
   trails: scenario.trails !== undefined ? scenario.trails : true,
   labels: scenario.labels !== undefined ? scenario.labels : true,
