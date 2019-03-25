@@ -3,7 +3,6 @@ import Dropdown from '../Dropdown';
 import Toggle from '../Toggle';
 import Slider from '../Slider';
 import Tooltip from '../Tooltip';
-import bodies from '../../data/masses';
 import { integrators } from '../../Physics/Integrators';
 
 export default function(props) {
@@ -139,18 +138,18 @@ export default function(props) {
           </label>
           <div className="tabs-dropdown-wrapper">
             <Dropdown selectedOption={props.barycenterMassOne}>
-              {bodies.map(body => (
+              {props.masses.map(mass => (
                 <div
-                  name={body.name}
-                  key={body.name}
+                  name={mass.name}
+                  key={mass.name}
                   callback={() =>
                     props.modifyScenarioProperty({
                       key: 'barycenterMassOne',
-                      value: body.name
+                      value: mass.name
                     })
                   }
                 >
-                  {body.name}
+                  {mass.name}
                 </div>
               ))}
             </Dropdown>
@@ -164,18 +163,18 @@ export default function(props) {
           </label>
           <div className="tabs-dropdown-wrapper">
             <Dropdown selectedOption={props.barycenterMassTwo}>
-              {bodies.map(body => (
+              {props.masses.map(mass => (
                 <div
-                  name={body.name}
-                  key={body.name}
+                  name={mass.name}
+                  key={mass.name}
                   callback={() =>
                     props.modifyScenarioProperty({
                       key: 'barycenterMassTwo',
-                      value: body.name
+                      value: mass.name
                     })
                   }
                 >
-                  {body.name}
+                  {mass.name}
                 </div>
               ))}
             </Dropdown>
