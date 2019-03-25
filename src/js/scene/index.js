@@ -181,7 +181,10 @@ export default {
       integrator,
       background,
       sizeAttenuation,
-      barycenter
+      barycenter,
+      systemBarycenter,
+      barycenterMassOne,
+      barycenterMassTwo
     } = this.scenario;
 
     let dt = this.scenario.dt;
@@ -242,7 +245,17 @@ export default {
     if (playing) this.system.iterate();
 
     let barycenterPosition = getBarycenter(
-      this.scenario.masses,
+      systemBarycenter
+        ? this.system.masses
+        : this.system.masses
+            .map(mass => {
+              if (
+                mass.name === barycenterMassOne ||
+                mass.name === barycenterMassTwo
+              )
+                return mass;
+            })
+            .filter(mass => mass !== undefined),
       frameOfRef,
       scale
     );
