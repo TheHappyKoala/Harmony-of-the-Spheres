@@ -53,6 +53,10 @@ export default class extends Component {
               tol={scenario.tol}
               minDt={scenario.minDt}
               maxDt={scenario.maxDt}
+              systemBarycenter={scenario.systemBarycenter}
+              barycenterMassOne={scenario.barycenterMassOne}
+              barycenterMassTwo={scenario.barycenterMassTwo}
+              masses={scenario.masses}
               collisions={scenario.collisions}
               g={scenario.g}
               modifyScenarioProperty={this.props.modifyScenarioProperty}

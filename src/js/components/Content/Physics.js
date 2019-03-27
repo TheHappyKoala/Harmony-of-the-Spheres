@@ -116,6 +116,71 @@ export default function(props) {
           )}
         </Fragment>
       )}
+
+      <Toggle
+        label="System Barycenter"
+        checked={props.systemBarycenter}
+        callback={() =>
+          props.modifyScenarioProperty({
+            key: 'systemBarycenter',
+            value: !props.systemBarycenter
+          })
+        }
+      />
+      {!props.systemBarycenter && (
+        <Fragment>
+          <label className="top">
+            Barycenter Mass One
+            <Tooltip
+              position="left"
+              content="One of the masses in a two body system."
+            />
+          </label>
+          <div className="tabs-dropdown-wrapper">
+            <Dropdown selectedOption={props.barycenterMassOne}>
+              {props.masses.map(mass => (
+                <div
+                  name={mass.name}
+                  key={mass.name}
+                  callback={() =>
+                    props.modifyScenarioProperty({
+                      key: 'barycenterMassOne',
+                      value: mass.name
+                    })
+                  }
+                >
+                  {mass.name}
+                </div>
+              ))}
+            </Dropdown>
+          </div>
+          <label className="top">
+            Barycenter Mass Two
+            <Tooltip
+              position="left"
+              content="One of the masses in a two body system."
+            />
+          </label>
+          <div className="tabs-dropdown-wrapper">
+            <Dropdown selectedOption={props.barycenterMassTwo}>
+              {props.masses.map(mass => (
+                <div
+                  name={mass.name}
+                  key={mass.name}
+                  callback={() =>
+                    props.modifyScenarioProperty({
+                      key: 'barycenterMassTwo',
+                      value: mass.name
+                    })
+                  }
+                >
+                  {mass.name}
+                </div>
+              ))}
+            </Dropdown>
+          </div>
+        </Fragment>
+      )}
       <label className="top">
         Gravitational Constant
         <Tooltip

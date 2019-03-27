@@ -332,15 +332,25 @@ export default [
     orbitalPeriod: 0.0030739726,
     name: 'Proteus'
   },
+
   {
     m: 6.58086572e-9,
     radius: 19.467889908256883,
     tilt: -57.47,
-    orbitalPeriod: 248,
+    orbitalPeriod: 0.0175342,
     atmosphere: { color: '#93cfef', scaleFactor: 20 },
     name: 'Pluto',
     bump: true
   },
+  {
+    m: 7.97417693566e-10,
+    radius: 0.507996632996633 * 19.467889908256883,
+    tilt: -57.47,
+    orbitalPeriod: 0.0175342,
+    name: 'Charon',
+    bump: true
+  },
+
   { m: 0, radius: 1.2, type: 'model', name: 'New Horizons' },
   { m: 0, radius: 1.2, type: 'model', name: 'Voyager 2' },
   {

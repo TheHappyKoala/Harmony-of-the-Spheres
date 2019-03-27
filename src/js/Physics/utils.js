@@ -363,11 +363,7 @@ export function createParticleSystem(
   return tiltedVectors;
 }
 
-export function getBarycenter(
-  masses,
-  frameOfRef = { x: 0, y: 0, z: 0 },
-  positionScaleFactor = 1
-) {
+export function getBarycenter(masses) {
   const massesLen = masses.length;
   let position = { x: 0, y: 0, z: 0 };
   let systemMass = 0;
@@ -386,8 +382,8 @@ export function getBarycenter(
   }
 
   return {
-    x: (frameOfRef.x - position.x / systemMass) * positionScaleFactor,
-    y: (frameOfRef.y - position.y / systemMass) * positionScaleFactor,
-    z: (frameOfRef.z - position.z / systemMass) * positionScaleFactor
+    x: position.x / systemMass,
+    y: position.y / systemMass,
+    z: position.z / systemMass
   };
 }

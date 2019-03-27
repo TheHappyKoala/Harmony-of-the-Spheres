@@ -1,10 +1,11 @@
 export default {
   name: 'HD 98800 B',
+  integrator: 'RK4',
   type: 'Exosystem',
   g: 100,
   dt: 0.0005,
   elapsedTime: 0,
-  rotatingReferenceFrame: 'Origo',
+  rotatingReferenceFrame: 'Barycenter',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
   freeOrigo: {

@@ -10,6 +10,7 @@ import tess from './tess';
 import martianSystem from './martianSystem';
 import newHorizons from './newHorizons';
 import cruithne from './cruithne';
+import plutoSystem from './thePlutonianSystem';
 import trappist1 from './trappist1';
 import galaxy from './galaxy';
 import planetNine from './planetNine';
@@ -111,6 +112,16 @@ const processScenario = scenario => ({
       : scenario.particles,
   collisions: true,
   barycenter: true,
+  systemBarycenter:
+    scenario.systemBarycenter !== undefined ? scenario.systemBarycenter : true,
+  barycenterMassOne:
+    scenario.barycenterMassOne !== undefined
+      ? scenario.barycenterMassOne
+      : scenario.masses[0].name,
+  barycenterMassTwo:
+    scenario.barycenterMassTwo !== undefined
+      ? scenario.barycenterMassTwo
+      : scenario.masses[1].name,
   elapsedTime: 0,
   trails: scenario.trails !== undefined ? scenario.trails : true,
   labels: scenario.labels !== undefined ? scenario.labels : true,
@@ -159,6 +170,7 @@ export const scenarios = [
   galaxy,
   threeBodyCoreography,
   tess,
+  plutoSystem,
   martianSystem,
   centaurs,
   saturnFull,
