@@ -6,13 +6,13 @@ export default {
   dt: 0.0007,
   distMax: 50,
   distMin: -50,
-  rotatingReferenceFrame: 'Hadropedia',
+  rotatingReferenceFrame: 'Barycenter',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
   freeOrigo: {
     x: 1689679.6339086762,
     y: 3218983.847409513,
-    z: 1191675.6451379415
+    z: 1191675.6451379415 
   },
   particles: {
     max: 90000,
