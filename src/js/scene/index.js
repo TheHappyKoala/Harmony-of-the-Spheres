@@ -84,6 +84,8 @@ export default {
       elapsedTime: this.scenario.elapsedTime
     });
 
+    this.barycenterPosition = { x: 0, y: 0, z: 0 };
+
     this.particlePhysics = new ParticlePhysics(this.scenario.scale);
 
     this.scenario.particles.rings && this.addRing();
@@ -228,15 +230,6 @@ export default {
       }
     }
 
-    let frameOfRef;
-
-    if (rotatingReferenceFrame === 'Origo') frameOfRef = { x: 0, y: 0, z: 0 };
-    else {
-      for (let i = 0; i < this.system.masses.length; i++)
-        if (this.system.masses[i].name === rotatingReferenceFrame)
-          frameOfRef = this.system.masses[i];
-    }
-
     this.system.tol = tol;
     this.system.dt = dt;
     this.system.minDt = minDt;
@@ -244,7 +237,9 @@ export default {
 
     if (playing) this.system.iterate();
 
-    let barycenterPosition = getBarycenter(
+    dt = this.system.dt;
+
+    this.barycenterPosition = getBarycenter(
       systemBarycenter
         ? this.system.masses
         : this.system.masses
@@ -255,12 +250,34 @@ export default {
               )
                 return mass;
             })
-            .filter(mass => mass !== undefined),
-      frameOfRef,
-      scale
+            .filter(mass => mass !== undefined)
     );
 
-    dt = this.system.dt;
+    let frameOfRef;
+
+    if (rotatingReferenceFrame === 'Origo') frameOfRef = { x: 0, y: 0, z: 0 };
+    else if (rotatingReferenceFrame === 'Barycenter')
+      frameOfRef = this.barycenterPosition;
+    else {
+      for (let i = 0; i < this.system.masses.length; i++)
+        if (this.system.masses[i].name === rotatingReferenceFrame)
+          frameOfRef = this.system.masses[i];
+    }
+
+    const barycenterPositionScaleFactor =
+      rotatingReferenceFrame !== 'Barycenter' ? scale : 1;
+
+    this.barycenterPosition = {
+      x:
+        (frameOfRef.x - this.barycenterPosition.x) *
+        barycenterPositionScaleFactor,
+      y:
+        (frameOfRef.y - this.barycenterPosition.y) *
+        barycenterPositionScaleFactor,
+      z:
+        (frameOfRef.z - this.barycenterPosition.z) *
+        barycenterPositionScaleFactor
+    };
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
@@ -274,9 +291,9 @@ export default {
         this.labels,
         this.camera,
         this.utilityVector.set(
-          barycenterPosition.x,
-          barycenterPosition.y,
-          barycenterPosition.z
+          this.barycenterPosition.x,
+          this.barycenterPosition.y,
+          this.barycenterPosition.z
         ),
         this.w,
         this.h,
@@ -308,15 +325,15 @@ export default {
     if (cameraFocus === 'Barycenter') {
       if (cameraPosition !== 'Free')
         this.camera.lookAt(
-          barycenterPosition.x,
-          barycenterPosition.y,
-          barycenterPosition.z
+          this.barycenterPosition.x,
+          this.barycenterPosition.y,
+          this.barycenterPosition.z
         );
       else
         this.camera.controls.target.set(
-          barycenterPosition.x,
-          barycenterPosition.y,
-          barycenterPosition.z
+          this.barycenterPosition.x,
+          this.barycenterPosition.y,
+          this.barycenterPosition.z
         );
     }
 
@@ -335,15 +352,15 @@ export default {
 
         if (cameraFocus === 'Barycenter') {
           this.camera.position.set(
-            barycenterPosition.x,
-            barycenterPosition.y,
-            barycenterPosition.z + 100000000
+            this.barycenterPosition.x,
+            this.barycenterPosition.y,
+            this.barycenterPosition.z + 100000000
           );
 
           this.camera.lookAt(
-            barycenterPosition.x,
-            barycenterPosition.y,
-            barycenterPosition.z
+            this.barycenterPosition.x,
+            this.barycenterPosition.y,
+            this.barycenterPosition.z
           );
         }
       }
