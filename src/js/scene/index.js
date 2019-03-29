@@ -19,7 +19,7 @@ import {
 } from '../Physics/utils';
 import arena from './arena';
 import Camera from './Camera';
-import label from './label';
+import Graphics2D from './Graphics2D';
 import MassManifestation from './MassManifestation';
 import Star from './Star';
 import Model from './Model';
@@ -29,18 +29,18 @@ import ParticlesManifestation from './ParticlesManifestation';
 const TWEEN = require('@tweenjs/tween.js');
 
 export default {
-  init(webGlCanvas, labelsCanvas) {
+  init(webGlCanvas, graphics2DCanvas) {
     this.scenario = store.getState().scenario;
 
     this.w = window.innerWidth;
     this.h = window.innerHeight;
 
     this.webGlCanvas = webGlCanvas;
-    this.labelsCanvas = labelsCanvas;
 
-    this.labels = labelsCanvas.getContext('2d');
-    this.labelsCanvas.width = this.w;
-    this.labelsCanvas.height = this.h;
+    this.graphics2D = new Graphics2D(graphics2DCanvas).setDimensions(
+      this.w,
+      this.h
+    );
 
     this.start = Date.now();
 
@@ -286,37 +286,34 @@ export default {
     if (cameraPosition === 'Free') this.camera.controls.enabled = true;
     else this.camera.controls.enabled = false;
 
-    this.labels.clearRect(0, 0, this.w, this.h);
+    this.graphics2D.clear();
 
     if (barycenter)
-      label(
-        this.labels,
-        this.camera,
+      this.graphics2D.drawLabel(
+        'Barycenter',
         this.utilityVector.set(
           this.barycenterPosition.x,
           this.barycenterPosition.y,
           this.barycenterPosition.z
         ),
-        this.w,
-        this.h,
-        'Barycenter',
+        this.camera,
         cameraPosition === 'Free' ? true : false,
         cameraFocus === 'Barycenter' ? true : false,
+        'left',
         'limegreen',
-        (ctx, position, color) => {
+        (ctx, x, y, color) => {
           ctx.strokeStyle = color;
           ctx.lineWidth = 2;
           ctx.beginPath();
 
-          ctx.moveTo(position.x, position.y - 30);
-          ctx.lineTo(position.x, position.y + 30);
+          ctx.moveTo(x, y - 30);
+          ctx.lineTo(x, y + 30);
           ctx.stroke();
 
-          ctx.moveTo(position.x, position.y);
-          ctx.lineTo(position.x + 30, position.y);
+          ctx.moveTo(x, y);
+          ctx.lineTo(x + 30, y);
           ctx.stroke();
-        },
-        'left'
+        }
       );
 
     if (cameraFocus === 'Origo') {
@@ -467,20 +464,18 @@ export default {
       }
 
       if (labels && cameraPosition !== name)
-        label(
-          this.labels,
-          this.camera,
-          this.utilityVector.set(x, y, z),
-          this.w,
-          this.h,
+        this.graphics2D.drawLabel(
           name,
+          this.utilityVector.set(x, y, z),
+          this.camera,
           cameraPosition === 'Free' ? true : false,
           cameraFocus === name ? true : false,
+          'right',
           'white',
-          (ctx, position, color) => {
+          (ctx, x, y, color) => {
             ctx.strokeStyle = color;
             ctx.beginPath();
-            ctx.arc(position.x, position.y, 8, 0, 2 * Math.PI);
+            ctx.arc(x, y, 8, 0, 2 * Math.PI);
             ctx.stroke();
           }
         );
@@ -691,7 +686,7 @@ export default {
             z,
             vx: getRandomNumberInRange(0.9 * orbit.x, 1.3 * orbit.x),
             vy: getRandomNumberInRange(0.9 * orbit.y, 1.3 * orbit.y),
-            vz: getRandomNumberInRange(0.9 * orbit.z, 1.3 * orbit.z) 
+            vz: getRandomNumberInRange(0.9 * orbit.z, 1.3 * orbit.z)
           });
         }
       });
@@ -708,7 +703,7 @@ export default {
     */
 
     TWEEN.update();
-    this.requestAnimationFrameId = requestAnimationFrame(this.loop); 
+    this.requestAnimationFrameId = requestAnimationFrame(this.loop);
     this.renderer.render(this.scene, this.camera);
   },
 
@@ -794,8 +789,7 @@ export default {
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(this.w, this.h);
 
-    this.labelsCanvas.width = this.w;
-    this.labelsCanvas.height = this.h;
+    this.graphics2D.setDimensions(this.w, this.h);
   },
 
   reset() {
