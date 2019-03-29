@@ -104,6 +104,8 @@ export default {
 
     this.addManifestations();
 
+    this.loop = this.loop.bind(this);
+
     this.manager.onLoad = () => {
       window.setTimeout(() => {
         store.dispatch(
@@ -689,7 +691,7 @@ export default {
             z,
             vx: getRandomNumberInRange(0.9 * orbit.x, 1.3 * orbit.x),
             vy: getRandomNumberInRange(0.9 * orbit.y, 1.3 * orbit.y),
-            vz: getRandomNumberInRange(0.9 * orbit.z, 1.3 * orbit.z)
+            vz: getRandomNumberInRange(0.9 * orbit.z, 1.3 * orbit.z) 
           });
         }
       });
@@ -706,7 +708,7 @@ export default {
     */
 
     TWEEN.update();
-    this.requestAnimationFrameId = requestAnimationFrame(() => this.loop());
+    this.requestAnimationFrameId = requestAnimationFrame(this.loop); 
     this.renderer.render(this.scene, this.camera);
   },
 
