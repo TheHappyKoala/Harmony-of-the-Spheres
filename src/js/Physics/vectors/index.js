@@ -13,10 +13,18 @@ export default class {
     return this;
   }
 
-  distanceTo(v) {
-    const dx = p2.x - p1.x;
-    const dy = p2.y - p1.y;
-    const dz = p2.z - p1.z;
+  getLength() {
+    return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+  }
+
+  normalise() {
+    return this.divideByScalar(this.getLength());
+  }
+
+  getDistanceParameters(v) {
+    const dx = this.x - v.x;
+    const dy = this.y - v.y;
+    const dz = this.z - v.z;
 
     const dSquared = dx * dx + dy * dy + dz * dz;
 
@@ -35,6 +43,22 @@ export default class {
     this.x -= v.x;
     this.y -= v.y;
     this.z -= v.z;
+
+    return this;
+  }
+
+  multiply(v) {
+    this.x *= v.x;
+    this.y *= v.y;
+    this.z *= v.z;
+
+    return this;
+  }
+
+  divide(v) {
+    this.x /= v.x;
+    this.y /= v.y;
+    this.z /= v.z;
 
     return this;
   }
@@ -59,11 +83,15 @@ export default class {
     this.x += scalar * v.x;
     this.y += scalar * v.y;
     this.z += scalar * v.z;
+
+    return this;
   }
 
   subtractScaledVector(scalar, v) {
     this.x -= scalar * v.x;
     this.y -= scalar * v.y;
     this.z -= scalar * v.z;
+
+    return this;
   }
 }
