@@ -39,9 +39,9 @@ export default class extends Euler {
       };
 
       k2r[i] = {
-        vx: s[i].vx + k1v[i].ax * this.dt * a1,
-        vy: s[i].vy + k1v[i].ay * this.dt * a1,
-        vz: s[i].vz + k1v[i].az * this.dt * a1
+        vx: s[i].vx + k1v[i].x * this.dt * a1,
+        vy: s[i].vy + k1v[i].y * this.dt * a1,
+        vz: s[i].vz + k1v[i].z * this.dt * a1
       };
     }
     k2v = this.generateAccelerationVectors(tempPos);
@@ -65,9 +65,9 @@ export default class extends Euler {
       };
 
       k3r[i] = {
-        vx: s[i].vx + this.dt * (a1 * k1v[i].ax + a2 * k2v[i].ax),
-        vy: s[i].vy + this.dt * (a1 * k1v[i].ay + a2 * k2v[i].ay),
-        vz: s[i].vz + this.dt * (a1 * k1v[i].az + a2 * k2v[i].az)
+        vx: s[i].vx + this.dt * (a1 * k1v[i].x + a2 * k2v[i].x),
+        vy: s[i].vy + this.dt * (a1 * k1v[i].y + a2 * k2v[i].y),
+        vz: s[i].vz + this.dt * (a1 * k1v[i].z + a2 * k2v[i].z)
       };
     }
     k3v = this.generateAccelerationVectors(tempPos);
@@ -94,14 +94,9 @@ export default class extends Euler {
       };
 
       k4r[i] = {
-        vx:
-          s[i].vx +
-          this.dt * (a1 * k1v[i].ax + a2 * k2v[i].ax + a3 * k3v[i].ax),
-        vy:
-          s[i].vy +
-          this.dt * (a1 * k1v[i].ay + a2 * k2v[i].ay + a3 * k3v[i].ay),
-        vz:
-          s[i].vz + this.dt * (a1 * k1v[i].az + a2 * k2v[i].az + a3 * k3v[i].az)
+        vx: s[i].vx + this.dt * (a1 * k1v[i].x + a2 * k2v[i].x + a3 * k3v[i].x),
+        vy: s[i].vy + this.dt * (a1 * k1v[i].y + a2 * k2v[i].y + a3 * k3v[i].y),
+        vz: s[i].vz + this.dt * (a1 * k1v[i].z + a2 * k2v[i].z + a3 * k3v[i].z)
       };
     }
     k4v = this.generateAccelerationVectors(tempPos);
@@ -139,15 +134,15 @@ export default class extends Euler {
         vx:
           s[i].vx +
           this.dt *
-            (a1 * k1v[i].ax + a2 * k2v[i].ax + a3 * k3v[i].ax + a4 * k4v[i].ax),
+            (a1 * k1v[i].x + a2 * k2v[i].x + a3 * k3v[i].x + a4 * k4v[i].x),
         vy:
           s[i].vy +
           this.dt *
-            (a1 * k1v[i].ay + a2 * k2v[i].ay + a3 * k3v[i].ay + a4 * k4v[i].ay),
+            (a1 * k1v[i].y + a2 * k2v[i].y + a3 * k3v[i].y + a4 * k4v[i].y),
         vz:
           s[i].vz +
           this.dt *
-            (a1 * k1v[i].az + a2 * k2v[i].az + a3 * k3v[i].az + a4 * k4v[i].az)
+            (a1 * k1v[i].z + a2 * k2v[i].z + a3 * k3v[i].z + a4 * k4v[i].z)
       };
     }
     k5v = this.generateAccelerationVectors(tempPos);
@@ -169,27 +164,27 @@ export default class extends Euler {
         vx:
           s[i].vx +
           this.dt *
-            (a1 * k1v[i].ax +
-              a2 * k2v[i].ax +
-              a3 * k3v[i].ax +
-              a4 * k4v[i].ax +
-              a5 * k5v[i].ax),
+            (a1 * k1v[i].x +
+              a2 * k2v[i].x +
+              a3 * k3v[i].x +
+              a4 * k4v[i].x +
+              a5 * k5v[i].x),
         vy:
           s[i].vy +
           this.dt *
-            (a1 * k1v[i].ay +
-              a2 * k2v[i].ay +
-              a3 * k3v[i].ay +
-              a4 * k4v[i].ay +
-              a5 * k5v[i].ay),
+            (a1 * k1v[i].y +
+              a2 * k2v[i].y +
+              a3 * k3v[i].y +
+              a4 * k4v[i].y +
+              a5 * k5v[i].y),
         vz:
           s[i].vz +
           this.dt *
-            (a1 * k1v[i].az +
-              a2 * k2v[i].az +
-              a3 * k3v[i].az +
-              a4 * k4v[i].az +
-              a5 * k5v[i].az)
+            (a1 * k1v[i].z +
+              a2 * k2v[i].z +
+              a3 * k3v[i].z +
+              a4 * k4v[i].z +
+              a5 * k5v[i].z)
       };
     }
     return k6r;
@@ -271,24 +266,24 @@ export default class extends Euler {
           vx:
             s[i].vx +
             this.dt *
-              (25 / 216 * k1v[i].ax +
-                1408 / 2565 * k3v[i].ax +
-                2197 / 4104 * k4v[i].ax -
-                1 / 5 * k5v[i].ax),
+              (25 / 216 * k1v[i].x +
+                1408 / 2565 * k3v[i].x +
+                2197 / 4104 * k4v[i].x -
+                1 / 5 * k5v[i].x),
           vy:
             s[i].vy +
             this.dt *
-              (25 / 216 * k1v[i].ay +
-                1408 / 2565 * k3v[i].ay +
-                2197 / 4104 * k4v[i].ay -
-                1 / 5 * k5v[i].ay),
+              (25 / 216 * k1v[i].y +
+                1408 / 2565 * k3v[i].y +
+                2197 / 4104 * k4v[i].y -
+                1 / 5 * k5v[i].y),
           vz:
             s[i].vz +
             this.dt *
-              (25 / 216 * k1v[i].az +
-                1408 / 2565 * k3v[i].az +
-                2197 / 4104 * k4v[i].az -
-                1 / 5 * k5v[i].az)
+              (25 / 216 * k1v[i].z +
+                1408 / 2565 * k3v[i].z +
+                2197 / 4104 * k4v[i].z -
+                1 / 5 * k5v[i].z)
         };
       }
       error = this.calculateError(p, p2);

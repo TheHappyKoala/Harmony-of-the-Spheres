@@ -37,9 +37,9 @@ export default class extends Euler {
       let aI = a[i];
 
       vFinal[i] = {
-        vx: vI.vx + dt * aI.ax,
-        vy: vI.vy + dt * aI.ay,
-        vz: vI.vz + dt * aI.az
+        vx: vI.vx + dt * aI.x,
+        vy: vI.vy + dt * aI.y,
+        vz: vI.vz + dt * aI.z
       };
     }
 
@@ -61,7 +61,7 @@ export default class extends Euler {
     let p = s;
     let v = s;
     const coeffsLen = vCoeffs.length;
-    for (let i = 0; i < coeffsLen; i++){
+    for (let i = 0; i < coeffsLen; i++) {
       p = this.generatePositionVectors(p, v, pCoeffs[i]);
       v = this.generateVelocityVectors(p, v, vCoeffs[i]);
     }

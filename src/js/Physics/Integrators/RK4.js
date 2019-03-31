@@ -24,9 +24,9 @@ export default class extends Euler {
 
     for (let i = 0; i < mLen; i++) {
       a[i] = {
-        ax: a1[i].ax / 6 + a2[i].ax / 3 + a3[i].ax / 3 + a4[i].ax / 6,
-        ay: a1[i].ay / 6 + a2[i].ay / 3 + a3[i].ay / 3 + a4[i].ay / 6,
-        az: a1[i].az / 6 + a2[i].az / 3 + a3[i].az / 3 + a4[i].az / 6
+        x: a1[i].x / 6 + a2[i].x / 3 + a3[i].x / 3 + a4[i].x / 6,
+        y: a1[i].y / 6 + a2[i].y / 3 + a3[i].y / 3 + a4[i].y / 6,
+        z: a1[i].z / 6 + a2[i].z / 3 + a3[i].z / 3 + a4[i].z / 6
       };
 
       v[i] = {

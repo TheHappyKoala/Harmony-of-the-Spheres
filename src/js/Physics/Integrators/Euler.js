@@ -1,3 +1,5 @@
+import H3 from '../vectors';
+
 export default class {
   constructor(params) {
     this.g = params.g;
@@ -5,6 +7,8 @@ export default class {
     this.masses = params.masses;
 
     this.elapsedTime = params.elapsedTime;
+
+    this.a = new H3();
   }
 
   getDistanceParams(p1, p2) {
@@ -75,9 +79,7 @@ export default class {
     const pLen = p.length;
 
     for (let i = 0; i < pLen; i++) {
-      let ax = 0;
-      let ay = 0;
-      let az = 0;
+      this.a.set({ x: 0, y: 0, z: 0 });
 
       let pI = p[i];
 
@@ -90,13 +92,15 @@ export default class {
 
           let fact = this.g * this.masses[j].m / (dParams.dSquared * d);
 
-          ax += dParams.dx * fact;
-          ay += dParams.dy * fact;
-          az += dParams.dz * fact;
+          this.a.addScaledVector(fact, {
+            x: dParams.dx,
+            y: dParams.dy,
+            z: dParams.dz
+          });
         }
       }
 
-      a[i] = { ax, ay, az };
+      a[i] = { x: this.a.x, y: this.a.y, z: this.a.z };
     }
 
     return a;
@@ -111,9 +115,9 @@ export default class {
       let m = this.masses[i];
 
       v[i] = {
-        vx: m.vx + aI.ax * dt,
-        vy: m.vy + aI.ay * dt,
-        vz: m.vz + aI.az * dt
+        vx: m.vx + aI.x * dt,
+        vy: m.vy + aI.y * dt,
+        vz: m.vz + aI.z * dt
       };
     }
 

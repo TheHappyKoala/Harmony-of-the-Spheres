@@ -21,9 +21,9 @@ export default class extends Euler {
         };
         for (let j = 0; j < cLen; j++) {
           tempSum = {
-            x: tempSum.x + this.coefficients[i][j] * k[j][n].ax,
-            y: tempSum.y + this.coefficients[i][j] * k[j][n].ay,
-            z: tempSum.z + this.coefficients[i][j] * k[j][n].az
+            x: tempSum.x + this.coefficients[i][j] * k[j][n].x,
+            y: tempSum.y + this.coefficients[i][j] * k[j][n].y,
+            z: tempSum.z + this.coefficients[i][j] * k[j][n].z
           };
         }
 
@@ -68,14 +68,14 @@ export default class extends Euler {
       };
       for (let j = 0; j < cLen; j++) {
         tempSumA = {
-          x: tempSumA.x + this.alpha[j] * k[j][n].ax,
-          y: tempSumA.y + this.alpha[j] * k[j][n].ay,
-          z: tempSumA.z + this.alpha[j] * k[j][n].az
+          x: tempSumA.x + this.alpha[j] * k[j][n].x,
+          y: tempSumA.y + this.alpha[j] * k[j][n].y,
+          z: tempSumA.z + this.alpha[j] * k[j][n].z
         };
         tempSumB = {
-          x: tempSumB.x + this.beta[j] * k[j][n].ax,
-          y: tempSumB.y + this.beta[j] * k[j][n].ay,
-          z: tempSumB.z + this.beta[j] * k[j][n].az
+          x: tempSumB.x + this.beta[j] * k[j][n].x,
+          y: tempSumB.y + this.beta[j] * k[j][n].y,
+          z: tempSumB.z + this.beta[j] * k[j][n].z
         };
       }
 

@@ -49,19 +49,19 @@ export default class extends rknBase {
       };
       for (let j = 0; j < cLen; j++) {
         tempSumA = {
-          x: tempSumA.x + this.alpha[j] * k[j][n].ax,
-          y: tempSumA.y + this.alpha[j] * k[j][n].ay,
-          z: tempSumA.z + this.alpha[j] * k[j][n].az
+          x: tempSumA.x + this.alpha[j] * k[j][n].x,
+          y: tempSumA.y + this.alpha[j] * k[j][n].y,
+          z: tempSumA.z + this.alpha[j] * k[j][n].z
         };
         tempSumHat = {
-          x: tempSumHat.x + this.alphaHat[j] * k[j][n].ax,
-          y: tempSumHat.y + this.alphaHat[j] * k[j][n].ay,
-          z: tempSumHat.z + this.alphaHat[j] * k[j][n].az
+          x: tempSumHat.x + this.alphaHat[j] * k[j][n].x,
+          y: tempSumHat.y + this.alphaHat[j] * k[j][n].y,
+          z: tempSumHat.z + this.alphaHat[j] * k[j][n].z
         };
         tempSumB = {
-          x: tempSumB.x + this.beta[j] * k[j][n].ax,
-          y: tempSumB.y + this.beta[j] * k[j][n].ay,
-          z: tempSumB.z + this.beta[j] * k[j][n].az
+          x: tempSumB.x + this.beta[j] * k[j][n].x,
+          y: tempSumB.y + this.beta[j] * k[j][n].y,
+          z: tempSumB.z + this.beta[j] * k[j][n].z
         };
       }
 

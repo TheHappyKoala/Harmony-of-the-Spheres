@@ -18,9 +18,9 @@ export default class extends Euler {
       let sI = s[i];
       let m = this.masses[i];
       p[i] = {
-        x: m.x + sI.vx * dt + 0.5 * aI.ax * Math.pow(dt, 2),
-        y: m.y + sI.vy * dt + 0.5 * aI.ay * Math.pow(dt, 2),
-        z: m.z + sI.vz * dt + 0.5 * aI.az * Math.pow(dt, 2)
+        x: m.x + sI.vx * dt + 0.5 * aI.x * Math.pow(dt, 2),
+        y: m.y + sI.vy * dt + 0.5 * aI.y * Math.pow(dt, 2),
+        z: m.z + sI.vz * dt + 0.5 * aI.z * Math.pow(dt, 2)
       };
     }
 
@@ -37,9 +37,9 @@ export default class extends Euler {
       let m = this.masses[i];
 
       v[i] = {
-        vx: m.vx + 0.5 * (aI1.ax + aI2.ax) * dt,
-        vy: m.vy + 0.5 * (aI1.ay + aI2.ay) * dt,
-        vz: m.vz + 0.5 * (aI1.az + aI2.az) * dt
+        vx: m.vx + 0.5 * (aI1.x + aI2.x) * dt,
+        vy: m.vy + 0.5 * (aI1.y + aI2.y) * dt,
+        vz: m.vz + 0.5 * (aI1.z + aI2.z) * dt
       };
     }
 
