@@ -17,6 +17,10 @@ export default class {
     return [this.x, this.y, this.z];
   }
 
+  toObject() {
+    return { x: this.x, y: this.y, z: this.z };
+  }
+
   getLength() {
     return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
   }
