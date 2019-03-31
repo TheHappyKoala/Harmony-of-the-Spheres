@@ -20,7 +20,7 @@ import {
 } from '../Physics/utils';
 import arena from './arena';
 import Camera from './Camera';
-import Graphics2D from './Graphics2D';
+import Graphics2D, { drawBaryCenterLabel, drawMassLabel } from './Graphics2D';
 import MassManifestation from './MassManifestation';
 import Star from './Star';
 import Model from './Model';
@@ -229,7 +229,7 @@ export default {
       }
     }
 
-    if (this.scenario.playing) this.system.iterate(); 
+    if (this.scenario.playing) this.system.iterate();
 
     dt = this.system.dt;
 
@@ -293,19 +293,7 @@ export default {
         cameraFocus === 'Barycenter' ? true : false,
         'left',
         'limegreen',
-        (ctx, x, y, color) => {
-          ctx.strokeStyle = color;
-          ctx.lineWidth = 2;
-          ctx.beginPath();
-
-          ctx.moveTo(x, y - 30);
-          ctx.lineTo(x, y + 30);
-          ctx.stroke();
-
-          ctx.moveTo(x, y);
-          ctx.lineTo(x + 30, y);
-          ctx.stroke();
-        }
+        drawBaryCenterLabel
       );
 
     if (cameraFocus === 'Origo') {
@@ -464,12 +452,7 @@ export default {
           cameraFocus === name ? true : false,
           'right',
           'white',
-          (ctx, x, y, color) => {
-            ctx.strokeStyle = color;
-            ctx.beginPath();
-            ctx.arc(x, y, 8, 0, 2 * Math.PI);
-            ctx.stroke();
-          }
+          drawMassLabel
         );
 
       const main = massManifestation.getObjectByName('Main');
@@ -782,4 +765,3 @@ export default {
     return this;
   }
 };
- 
