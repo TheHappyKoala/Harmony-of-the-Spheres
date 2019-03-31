@@ -64,7 +64,7 @@ export default {
       this.w / this.h,
       1,
       1500000000000,
-      this.labelsCanvas
+      this.graphics2D.canvas
     );
 
     this.previousCameraFocus = null;
