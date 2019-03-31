@@ -104,6 +104,8 @@ export default {
     this.scene.add(this.particles);
 
     window.addEventListener('resize', () => this.onWindowResize(), false);
+    window.addEventListener('orientationchange', () => this.onWindowResize(), false); 
+
 
     this.addManifestations();
 
