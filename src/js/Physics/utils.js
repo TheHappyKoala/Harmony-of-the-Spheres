@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import H3 from './vectors';
 
 export function getDistanceParams(p1, p2) {
   const dx = p2.x - p1.x;
@@ -363,27 +364,24 @@ export function createParticleSystem(
   return tiltedVectors;
 }
 
-export function getBarycenter(masses) {
+export function setBarycenter(masses, p) {
   const massesLen = masses.length;
-  let position = { x: 0, y: 0, z: 0 };
   let systemMass = 0;
+
+  p.set({ x: 0, y: 0, z: 0 });
+  const massPosition = new H3();
 
   for (let i = 0; i < massesLen; i++) {
     const mass = masses[i];
-    const m = mass.m;
 
-    position = {
-      x: position.x + mass.x * m,
-      y: position.y + mass.y * m,
-      z: position.z + mass.z * m
-    };
+    p.add(
+      massPosition
+        .set({ x: mass.x, y: mass.y, z: mass.z })
+        .multiplyByScalar(mass.m)
+    );
 
-    systemMass += m;
+    systemMass += mass.m;
   }
 
-  return {
-    x: position.x / systemMass,
-    y: position.y / systemMass,
-    z: position.z / systemMass
-  };
+  p.divideByScalar(systemMass);   
 }

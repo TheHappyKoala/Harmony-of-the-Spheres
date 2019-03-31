@@ -16,7 +16,7 @@ import {
   getClosestPointOnSphere,
   getRandomNumberInRange,
   rotateVector,
-  getBarycenter
+  setBarycenter
 } from '../Physics/utils';
 import arena from './arena';
 import Camera from './Camera';
@@ -103,14 +103,13 @@ export default {
 
     this.scene.add(this.particles);
 
-    window.addEventListener('resize', this.onWindowResize, false);
-    window.addEventListener('orientationchange', this.onWindowResize, false); 
-
-
     this.addManifestations();
 
     this.loop = this.loop.bind(this);
-    this.onWindowResize = this.onWindowResize.bind(this);
+    this.onWindowResize = this.onWindowResize.bind(this);   
+
+    window.addEventListener('resize', this.onWindowResize, false); 
+    window.addEventListener('orientationchange', this.onWindowResize, false);
 
     this.manager.onLoad = () => {
       window.setTimeout(() => {
@@ -236,20 +235,19 @@ export default {
 
     dt = this.system.dt;
 
-    this.barycenterPosition.set(
-      getBarycenter(
-        this.scenario.systemBarycenter
-          ? this.system.masses
-          : this.system.masses
-              .map(mass => {
-                if (
-                  mass.name === barycenterMassOne ||
-                  mass.name === barycenterMassTwo
-                )
-                  return mass;
-              })
-              .filter(mass => mass !== undefined)
-      )
+    setBarycenter(
+      this.scenario.systemBarycenter
+        ? this.system.masses
+        : this.system.masses
+            .map(mass => {
+              if (
+                mass.name === barycenterMassOne ||
+                mass.name === barycenterMassTwo
+              )
+                return mass;
+            })
+            .filter(mass => mass !== undefined),
+      this.barycenterPosition
     );
 
     if (rotatingReferenceFrame === 'Origo')
