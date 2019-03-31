@@ -5,12 +5,16 @@ export default class {
     this.z = 0;
   }
 
-  set(x, y, z) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
+  set(v) {
+    this.x = v.x;
+    this.y = v.y;
+    this.z = v.z;
 
     return this;
+  }
+
+  toArray() {
+    return [this.x, this.y, this.z];
   }
 
   getLength() {
@@ -43,6 +47,14 @@ export default class {
     this.x -= v.x;
     this.y -= v.y;
     this.z -= v.z;
+
+    return this;
+  }
+
+  subtractFrom(v) {
+    this.x = v.x - this.x;
+    this.y = v.y - this.y;
+    this.z = v.z - this.z;
 
     return this;
   }
