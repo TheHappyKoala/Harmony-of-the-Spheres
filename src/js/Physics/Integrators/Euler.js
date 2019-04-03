@@ -1,3 +1,5 @@
+import H3 from '../vectors';
+
 export default class {
   constructor(params) {
     this.g = params.g;
@@ -5,6 +7,10 @@ export default class {
     this.masses = params.masses;
 
     this.elapsedTime = params.elapsedTime;
+
+    this.a = new H3();
+    this.v = new H3();
+    this.p = new H3();
   }
 
   getDistanceParams(p1, p2) {
@@ -16,23 +22,27 @@ export default class {
   }
 
   getStateVectors(m) {
-    const s = [];
+    const p = [];
+    const v = [];
     const mLen = m.length;
 
     for (let i = 0; i < mLen; i++) {
       let mI = m[i];
 
-      s[i] = {
+      p[i] = {
         x: mI.x,
         y: mI.y,
-        z: mI.z,
-        vx: mI.vx,
-        vy: mI.vy,
-        vz: mI.vz
+        z: mI.z
+      };
+
+      v[i] = {
+        x: mI.vx,
+        y: mI.vy,
+        z: mI.vz
       };
     }
 
-    return s;
+    return { p, v };
   }
 
   updateStateVectors(p, v) {
@@ -46,9 +56,9 @@ export default class {
       m.x = pI.x;
       m.y = pI.y;
       m.z = pI.z;
-      m.vx = vI.vx;
-      m.vy = vI.vy;
-      m.vz = vI.vz;
+      m.vx = vI.x;
+      m.vy = vI.y;
+      m.vz = vI.z;
     }
   }
 
@@ -60,11 +70,10 @@ export default class {
       let vI = v[i];
       let m = this.masses[i];
 
-      p[i] = {
-        x: m.x + vI.vx * dt,
-        y: m.y + vI.vy * dt,
-        z: m.z + vI.vz * dt
-      };
+      p[i] = this.p
+        .set({ x: m.x, y: m.y, z: m.z })
+        .addScaledVector(dt, { x: vI.x, y: vI.y, z: vI.z })
+        .toObject();
     }
 
     return p;
@@ -75,9 +84,7 @@ export default class {
     const pLen = p.length;
 
     for (let i = 0; i < pLen; i++) {
-      let ax = 0;
-      let ay = 0;
-      let az = 0;
+      this.a.set({ x: 0, y: 0, z: 0 });
 
       let pI = p[i];
 
@@ -90,13 +97,15 @@ export default class {
 
           let fact = this.g * this.masses[j].m / (dParams.dSquared * d);
 
-          ax += dParams.dx * fact;
-          ay += dParams.dy * fact;
-          az += dParams.dz * fact;
+          this.a.addScaledVector(fact, {
+            x: dParams.dx,
+            y: dParams.dy,
+            z: dParams.dz
+          });
         }
       }
 
-      a[i] = { ax, ay, az };
+      a[i] = { x: this.a.x, y: this.a.y, z: this.a.z };
     }
 
     return a;
@@ -110,11 +119,10 @@ export default class {
       let aI = a[i];
       let m = this.masses[i];
 
-      v[i] = {
-        vx: m.vx + aI.ax * dt,
-        vy: m.vy + aI.ay * dt,
-        vz: m.vz + aI.az * dt
-      };
+      v[i] = this.v
+        .set({ x: m.vx, y: m.vy, z: m.vz })
+        .addScaledVector(dt, { x: aI.x, y: aI.y, z: aI.z })
+        .toObject();
     }
 
     return v;
@@ -123,9 +131,9 @@ export default class {
   iterate() {
     const s = this.getStateVectors(this.masses);
 
-    const a = this.generateAccelerationVectors(s);
+    const a = this.generateAccelerationVectors(s.p);
     const v = this.generateVelocityVectors(a, this.dt);
-    const p = this.generatePositionVectors(v, this.dt);
+    const p = this.generatePositionVectors(s.v, this.dt);
 
     this.updateStateVectors(p, v);
 

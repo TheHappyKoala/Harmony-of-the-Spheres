@@ -3,10 +3,10 @@ import Euler from './Euler';
 export default class extends Euler {
   iterate() {
     const s = this.getStateVectors(this.masses);
-    const a1 = this.generateAccelerationVectors(s);
+    const a1 = this.generateAccelerationVectors(s.p);
 
     const v2 = this.generateVelocityVectors(a1, this.dt / 2);
-    const p2 = this.generatePositionVectors(s, this.dt / 2);
+    const p2 = this.generatePositionVectors(s.v, this.dt / 2);
     const a2 = this.generateAccelerationVectors(p2);
 
     const v3 = this.generateVelocityVectors(a2, this.dt / 2);
@@ -24,15 +24,15 @@ export default class extends Euler {
 
     for (let i = 0; i < mLen; i++) {
       a[i] = {
-        ax: a1[i].ax / 6 + a2[i].ax / 3 + a3[i].ax / 3 + a4[i].ax / 6,
-        ay: a1[i].ay / 6 + a2[i].ay / 3 + a3[i].ay / 3 + a4[i].ay / 6,
-        az: a1[i].az / 6 + a2[i].az / 3 + a3[i].az / 3 + a4[i].az / 6
+        x: a1[i].x / 6 + a2[i].x / 3 + a3[i].x / 3 + a4[i].x / 6,
+        y: a1[i].y / 6 + a2[i].y / 3 + a3[i].y / 3 + a4[i].y / 6,
+        z: a1[i].z / 6 + a2[i].z / 3 + a3[i].z / 3 + a4[i].z / 6
       };
 
       v[i] = {
-        vx: s[i].vx / 6 + v2[i].vx / 3 + v3[i].vx / 3 + v4[i].vx / 6,
-        vy: s[i].vy / 6 + v2[i].vy / 3 + v3[i].vy / 3 + v4[i].vy / 6,
-        vz: s[i].vz / 6 + v2[i].vz / 3 + v3[i].vz / 3 + v4[i].vz / 6
+        x: s.v[i].x / 6 + v2[i].x / 3 + v3[i].x / 3 + v4[i].x / 6,
+        y: s.v[i].y / 6 + v2[i].y / 3 + v3[i].y / 3 + v4[i].y / 6,
+        z: s.v[i].z / 6 + v2[i].z / 3 + v3[i].z / 3 + v4[i].z / 6
       };
     }
 

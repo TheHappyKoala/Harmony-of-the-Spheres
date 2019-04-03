@@ -4,7 +4,7 @@ import './Renderer.less';
 
 export default class extends Component {
   componentDidMount() {
-    scene.init(this._webGlCanvas, this._labelsCanvas);
+    scene.init(this._webGlCanvas, this._graphics2DCanvas);
   }
 
   shouldComponentUpdate(nextProps) {
@@ -16,7 +16,7 @@ export default class extends Component {
   }
 
   componentDidUpdate() {
-    scene.reset().init(this._webGlCanvas, this._labelsCanvas);
+    scene.reset().init(this._webGlCanvas, this._graphics2DCanvas);
   }
 
   render() {
@@ -24,8 +24,8 @@ export default class extends Component {
       <div>
         <canvas ref={el => (this._webGlCanvas = el)} />
         <canvas
-          ref={el => (this._labelsCanvas = el)}
-          className="labels-canvas"
+          ref={el => (this._graphics2DCanvas = el)}
+          className="graphics-2d-canvas"
         />
       </div>
     );

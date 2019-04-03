@@ -4,6 +4,7 @@ import {
   modifyScenarioProperty,
   deleteMass
 } from '../action-creators/scenario';
+import H3 from '../Physics/vectors';
 import getIntegrator from '../Physics/Integrators';
 import { getObjFromArrByKeyValuePair } from '../utils';
 import doCollisions from '../Physics/collisions';
@@ -15,11 +16,11 @@ import {
   getClosestPointOnSphere,
   getRandomNumberInRange,
   rotateVector,
-  getBarycenter
+  setBarycenter
 } from '../Physics/utils';
 import arena from './arena';
 import Camera from './Camera';
-import label from './label';
+import Graphics2D, { drawBaryCenterLabel, drawMassLabel } from './Graphics2D';
 import MassManifestation from './MassManifestation';
 import Star from './Star';
 import Model from './Model';
@@ -29,18 +30,18 @@ import ParticlesManifestation from './ParticlesManifestation';
 const TWEEN = require('@tweenjs/tween.js');
 
 export default {
-  init(webGlCanvas, labelsCanvas) {
+  init(webGlCanvas, graphics2DCanvas) {
     this.scenario = store.getState().scenario;
 
     this.w = window.innerWidth;
     this.h = window.innerHeight;
 
     this.webGlCanvas = webGlCanvas;
-    this.labelsCanvas = labelsCanvas;
 
-    this.labels = labelsCanvas.getContext('2d');
-    this.labelsCanvas.width = this.w;
-    this.labelsCanvas.height = this.h;
+    this.graphics2D = new Graphics2D(graphics2DCanvas).setDimensions(
+      this.w,
+      this.h
+    );
 
     this.start = Date.now();
 
@@ -63,7 +64,7 @@ export default {
       this.w / this.h,
       1,
       1500000000000,
-      this.labelsCanvas
+      this.graphics2D.canvas
     );
 
     this.previousCameraFocus = null;
@@ -84,7 +85,9 @@ export default {
       elapsedTime: this.scenario.elapsedTime
     });
 
-    this.barycenterPosition = { x: 0, y: 0, z: 0 };
+    this.barycenterPosition = new H3();
+    this.rotatingReferenceFrame = new H3();
+    this.manifestationPosition = new H3();
 
     this.particlePhysics = new ParticlePhysics(this.scenario.scale);
 
@@ -100,9 +103,13 @@ export default {
 
     this.scene.add(this.particles);
 
-    window.addEventListener('resize', () => this.onWindowResize(), false);
-
     this.addManifestations();
+
+    this.loop = this.loop.bind(this);
+    this.onWindowResize = this.onWindowResize.bind(this);   
+
+    window.addEventListener('resize', this.onWindowResize, false); 
+    window.addEventListener('orientationchange', this.onWindowResize, false);
 
     this.manager.onLoad = () => {
       window.setTimeout(() => {
@@ -165,82 +172,71 @@ export default {
   },
 
   loop() {
-    this.getScenario().updateSystem();
+    this.scenario = store.getState().scenario;
+
+    this.system.g = this.scenario.g;
+    this.system.masses = this.scenario.masses;
+    this.system.tol = this.scenario.tol;
+    this.system.dt = this.scenario.dt;
+    this.system.minDt = this.scenario.minDt;
+    this.system.maxDt = this.scenario.maxDt;
 
     const {
-      playing,
-      scale,
-      trails,
-      labels,
       rotatingReferenceFrame,
       cameraPosition,
       cameraFocus,
       freeOrigo,
-      collisions,
-      tol,
-      minDt,
-      maxDt,
-      integrator,
-      background,
-      sizeAttenuation,
-      barycenter,
-      systemBarycenter,
       barycenterMassOne,
       barycenterMassTwo
     } = this.scenario;
 
     let dt = this.scenario.dt;
 
-    if (integrator !== this.previousIntegrator) {
-      this.system = getIntegrator(integrator, {
+    if (this.scenario.integrator !== this.previousIntegrator) {
+      this.system = getIntegrator(this.scenario.integrator, {
         g: this.scenario.g,
-        dt,
-        tol,
-        minDt,
-        maxDt,
+        dt: this.scenario.dt,
+        tol: this.scenario.tol,
+        minDt: this.scenario.minDt,
+        maxDt: this.scenario.maxDt,
         masses: this.scenario.masses,
         elapsedTime: this.scenario.elapsedTime
       });
 
-      this.previousIntegrator = integrator;
+      this.previousIntegrator = this.scenario.integrator;
     }
 
     const arena = this.scene.getObjectByName('Arena');
 
-    if (background && !arena.visible) arena.visible = true;
+    if (this.scenario.background && !arena.visible) arena.visible = true;
 
-    if (!background && arena.visible) arena.visible = false;
+    if (!this.scenario.background && arena.visible) arena.visible = false;
 
     if (this.scenario.particles) {
       const particleSystemMaterial = this.scene.getObjectByName('system')
         .material;
 
       if (
-        !sizeAttenuation &&
+        !this.scenariosizeAttenuation &&
         particleSystemMaterial.uniforms.sizeAttenuation.value
       ) {
         particleSystemMaterial.uniforms.sizeAttenuation.value = false;
       }
 
       if (
-        sizeAttenuation &&
+        this.scenario.sizeAttenuation &&
         !particleSystemMaterial.uniforms.sizeAttenuation.value
       ) {
         particleSystemMaterial.uniforms.sizeAttenuation.value = true;
       }
     }
 
-    this.system.tol = tol;
-    this.system.dt = dt;
-    this.system.minDt = minDt;
-    this.system.maxDt = maxDt;
-
-    if (playing) this.system.iterate();
+    if (this.scenario.playing) this.system.iterate();
 
     dt = this.system.dt;
 
-    this.barycenterPosition = getBarycenter(
-      systemBarycenter
+    setBarycenter(
+      this.scenario.systemBarycenter
         ? this.system.masses
         : this.system.masses
             .map(mass => {
@@ -250,71 +246,55 @@ export default {
               )
                 return mass;
             })
-            .filter(mass => mass !== undefined)
+            .filter(mass => mass !== undefined),
+      this.barycenterPosition
     );
 
-    let frameOfRef;
-
-    if (rotatingReferenceFrame === 'Origo') frameOfRef = { x: 0, y: 0, z: 0 };
+    if (rotatingReferenceFrame === 'Origo')
+      this.rotatingReferenceFrame.set({ x: 0, y: 0, z: 0 });
     else if (rotatingReferenceFrame === 'Barycenter')
-      frameOfRef = this.barycenterPosition;
+      this.rotatingReferenceFrame.set(this.barycenterPosition);
     else {
-      for (let i = 0; i < this.system.masses.length; i++)
-        if (this.system.masses[i].name === rotatingReferenceFrame)
-          frameOfRef = this.system.masses[i];
+      for (let i = 0; i < this.system.masses.length; i++) {
+        const mass = this.system.masses[i];
+
+        if (mass.name === rotatingReferenceFrame)
+          this.rotatingReferenceFrame.set({
+            x: mass.x,
+            y: mass.y,
+            z: mass.z
+          });
+      }
     }
 
     const barycenterPositionScaleFactor =
-      rotatingReferenceFrame !== 'Barycenter' ? scale : 1;
+      rotatingReferenceFrame !== 'Barycenter' ? this.scenario.scale : 1;
 
-    this.barycenterPosition = {
-      x:
-        (frameOfRef.x - this.barycenterPosition.x) *
-        barycenterPositionScaleFactor,
-      y:
-        (frameOfRef.y - this.barycenterPosition.y) *
-        barycenterPositionScaleFactor,
-      z:
-        (frameOfRef.z - this.barycenterPosition.z) *
-        barycenterPositionScaleFactor
-    };
+    this.barycenterPosition
+      .subtractFrom(this.rotatingReferenceFrame)
+      .multiplyByScalar(barycenterPositionScaleFactor);
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
     if (cameraPosition === 'Free') this.camera.controls.enabled = true;
     else this.camera.controls.enabled = false;
 
-    this.labels.clearRect(0, 0, this.w, this.h);
+    this.graphics2D.clear();
 
-    if (barycenter)
-      label(
-        this.labels,
-        this.camera,
+    if (this.scenario.barycenter)
+      this.graphics2D.drawLabel(
+        'Barycenter',
         this.utilityVector.set(
           this.barycenterPosition.x,
           this.barycenterPosition.y,
           this.barycenterPosition.z
         ),
-        this.w,
-        this.h,
-        'Barycenter',
+        this.camera,
         cameraPosition === 'Free' ? true : false,
         cameraFocus === 'Barycenter' ? true : false,
+        'left',
         'limegreen',
-        (ctx, position, color) => {
-          ctx.strokeStyle = color;
-          ctx.lineWidth = 2;
-          ctx.beginPath();
-
-          ctx.moveTo(position.x, position.y - 30);
-          ctx.lineTo(position.x, position.y + 30);
-          ctx.stroke();
-
-          ctx.moveTo(position.x, position.y);
-          ctx.lineTo(position.x + 30, position.y);
-          ctx.stroke();
-        },
-        'left'
+        drawBaryCenterLabel
       );
 
     if (cameraFocus === 'Origo') {
@@ -322,19 +302,14 @@ export default {
       else this.camera.controls.target.set(0, 0, 0);
     }
 
+    let barycenterPositionArray;
+
     if (cameraFocus === 'Barycenter') {
+      barycenterPositionArray = this.barycenterPosition.toArray();
+
       if (cameraPosition !== 'Free')
-        this.camera.lookAt(
-          this.barycenterPosition.x,
-          this.barycenterPosition.y,
-          this.barycenterPosition.z
-        );
-      else
-        this.camera.controls.target.set(
-          this.barycenterPosition.x,
-          this.barycenterPosition.y,
-          this.barycenterPosition.z
-        );
+        this.camera.lookAt(...barycenterPositionArray);
+      else this.camera.controls.target.set(...barycenterPositionArray);
     }
 
     if (
@@ -357,11 +332,7 @@ export default {
             this.barycenterPosition.z + 100000000
           );
 
-          this.camera.lookAt(
-            this.barycenterPosition.x,
-            this.barycenterPosition.y,
-            this.barycenterPosition.z
-          );
+          this.camera.lookAt(...barycenterPositionArray);
         }
       }
     }
@@ -372,12 +343,16 @@ export default {
 
       let { name, trailVertices, radius } = this.system.masses[i];
 
-      let x = (frameOfRef.x - mass.x) * scale;
-      let y = (frameOfRef.y - mass.y) * scale;
-      let z = (frameOfRef.z - mass.z) * scale;
+      this.manifestationPosition
+        .set({ x: mass.x, y: mass.y, z: mass.z })
+        .subtractFrom(this.rotatingReferenceFrame)
+        .multiplyByScalar(this.scenario.scale);
+
+      const manifestationPositionArray = this.manifestationPosition.toArray();
 
       const cameraDistanceToFocus = Math.sqrt(
-        getDistanceParams(this.camera.position, { x, y, z }).dSquared
+        getDistanceParams(this.camera.position, this.manifestationPosition)
+          .dSquared
       );
 
       if (mass.type === 'star') {
@@ -390,9 +365,7 @@ export default {
       }
 
       massManifestation.draw(
-        x,
-        y,
-        z,
+        this.manifestationPosition,
         this.camera.position,
         cameraDistanceToFocus
       );
@@ -400,11 +373,12 @@ export default {
       const trail = massManifestation.getObjectByName('Trail');
 
       if (
-        trails &&
+        this.scenario.trails &&
         rotatingReferenceFrame === this.previousRotatingReferenceFrame
       ) {
         if (!trail) massManifestation.getTrail(trailVertices);
-        if (!playing && trail) trail.geometry.verticesNeedUpdate = false;
+        if (!this.scenario.playing && trail)
+          trail.geometry.verticesNeedUpdate = false;
       } else massManifestation.removeTrail();
 
       let zOffset;
@@ -442,45 +416,44 @@ export default {
       }
 
       if (cameraFocus === name) {
-        if (cameraPosition !== 'Free') this.camera.lookAt(x, y, z);
+        if (cameraPosition !== 'Free')
+          this.camera.lookAt(...manifestationPositionArray);
         else if (cameraPosition === 'Free' && cameraFocus !== 'Origo') {
           this.camera.trackMovingObjectWithControls(massManifestation);
         }
       }
 
       if (cameraPosition === name) {
-        if (cameraPosition === cameraFocus) y += radius * 7;
+        if (cameraPosition === cameraFocus)
+          this.manifestationPosition.y += radius * 7;
 
-        this.camera.position.set(x, y, z);
+        this.camera.position.set(...manifestationPositionArray);
       }
 
       if (this.previousCameraFocus !== cameraFocus && cameraFocus === name) {
         this.previousCameraFocus = cameraFocus;
 
         if (cameraPosition === 'Free') {
-          this.camera.position.set(x, y, z + zOffset);
+          this.camera.position.set(
+            this.manifestationPosition.x,
+            this.manifestationPosition.y,
+            this.manifestationPosition.z + zOffset
+          );
 
-          this.camera.lookAt(x, y, z);
+          this.camera.lookAt(...manifestationPositionArray);
         }
       }
 
-      if (labels && cameraPosition !== name)
-        label(
-          this.labels,
-          this.camera,
-          this.utilityVector.set(x, y, z),
-          this.w,
-          this.h,
+      if (this.scenario.labels && cameraPosition !== name)
+        this.graphics2D.drawLabel(
           name,
+          this.utilityVector.set(...manifestationPositionArray),
+          this.camera,
           cameraPosition === 'Free' ? true : false,
           cameraFocus === name ? true : false,
+          'right',
           'white',
-          (ctx, position, color) => {
-            ctx.strokeStyle = color;
-            ctx.beginPath();
-            ctx.arc(position.x, position.y, 8, 0, 2 * Math.PI);
-            ctx.stroke();
-          }
+          drawMassLabel
         );
 
       const main = massManifestation.getObjectByName('Main');
@@ -508,13 +481,19 @@ export default {
       this.previousRotatingReferenceFrame = rotatingReferenceFrame;
 
     if (this.scenario.particles)
-      this.particles.draw(this.particlePhysics.particles, frameOfRef);
+      this.particles.draw(
+        this.particlePhysics.particles,
+        this.rotatingReferenceFrame
+      );
 
-    if (playing && collisions)
-      doCollisions(this.system.masses, scale, (looser, survivor) => {
-        store.dispatch(deleteMass(looser.name));
+    if (this.scenario.playing && this.scenario.collisions)
+      doCollisions(
+        this.system.masses,
+        this.scenario.scale,
+        (looser, survivor) => {
+          store.dispatch(deleteMass(looser.name));
 
-        /*
+          /*
          * Particles collide and are removed if they are within the radius of a mass, 
          * so we can't instantiate the particles at the point where the collision is registered
          * which is always within the radius of the mass it collided with 
@@ -522,208 +501,182 @@ export default {
          * so we trace the colliding mass one iteration and initiate the collision debris at that point
         */
 
-        const beforeCollisionPoint = {
-          x: looser.x - looser.vx * dt,
-          y: looser.y - looser.vy * dt,
-          z: looser.z - looser.vz * dt
-        };
+          const beforeCollisionPoint = {
+            x: looser.x - looser.vx * dt,
+            y: looser.y - looser.vy * dt,
+            z: looser.z - looser.vz * dt
+          };
 
-        /*
+          /*
          * Check if the survivor of a collision has a custom impact shockwave shader
          * If that turns out to be the case... Let's get ready to ruuuummmbleee
         */
 
-        const survivingManifestation = this.scene.getObjectByName(
-          survivor.name
-        );
+          const survivingManifestation = this.scene.getObjectByName(
+            survivor.name
+          );
 
-        if (survivingManifestation.materialShader) {
-          /*
+          if (survivingManifestation.materialShader) {
+            /*
            * Get a reference to the sphere of the mass manifestation
           */
 
-          const survivingManifestationRotation = survivingManifestation.getObjectByName(
-            'Main'
-          ).rotation;
+            const survivingManifestationRotation = survivingManifestation.getObjectByName(
+              'Main'
+            ).rotation;
 
-          /*
+            /*
            * Calculate where on the sphere the impact took place so that we know where to initiate the shockwave animation
            * We need to pass vectors, for the survivor and looser of the collision, 
            * where the rotating reference frame is set to the survivor of the collision
           */
 
-          const hitPoint = getClosestPointOnSphere(
-            new THREE.Vector3(
-              looser.x - survivor.x - looser.vx * dt,
-              looser.y - survivor.y - looser.vy * dt,
-              looser.z - survivor.z - looser.vz * dt
-            ),
-            new THREE.Vector3(
-              survivor.x - survivor.x,
-              survivor.y - survivor.y,
-              survivor.z - survivor.z
-            ),
-            survivor.radius,
-            {
-              x: survivingManifestationRotation.x,
-              y: survivingManifestationRotation.y,
-              z: survivingManifestationRotation.z
-            }
-          );
+            const hitPoint = getClosestPointOnSphere(
+              new THREE.Vector3(
+                looser.x - survivor.x - looser.vx * dt,
+                looser.y - survivor.y - looser.vy * dt,
+                looser.z - survivor.z - looser.vz * dt
+              ),
+              new THREE.Vector3(
+                survivor.x - survivor.x,
+                survivor.y - survivor.y,
+                survivor.z - survivor.z
+              ),
+              survivor.radius,
+              {
+                x: survivingManifestationRotation.x,
+                y: survivingManifestationRotation.y,
+                z: survivingManifestationRotation.z
+              }
+            );
 
-          /*
+            /*
            * Let's pass some uniforms to kick this shader into action!!!
           */
 
-          const impactIndex = survivingManifestation.ongoingImpacts + 1; //Get the index of the impact uniform that we are going to update
+            const impactIndex = survivingManifestation.ongoingImpacts + 1; //Get the index of the impact uniform that we are going to update
 
-          survivingManifestation.ongoingImpacts++; //Increment the number of ongoing impacts
+            survivingManifestation.ongoingImpacts++; //Increment the number of ongoing impacts
 
-          const uniforms = survivingManifestation.materialShader.uniforms;
+            const uniforms = survivingManifestation.materialShader.uniforms;
 
-          uniforms.impacts.value[impactIndex].impactPoint.set(
-            -hitPoint.x,
-            -hitPoint.y,
-            -hitPoint.z
-          );
+            uniforms.impacts.value[impactIndex].impactPoint.set(
+              -hitPoint.x,
+              -hitPoint.y,
+              -hitPoint.z
+            );
 
-          uniforms.impacts.value[impactIndex].impactRadius =
-            looser.m === 0
-              ? survivor.radius * 2
-              : Math.min(
-                  Math.max(looser.radius * 50, 300),
-                  survivor.radius * 2
-                );
+            uniforms.impacts.value[impactIndex].impactRadius =
+              looser.m === 0
+                ? survivor.radius * 2
+                : Math.min(
+                    Math.max(looser.radius * 50, 300),
+                    survivor.radius * 2
+                  );
 
-          /*
+            /*
            * We create a tween that updates the impactRatio uniform over a time span of two seconds
            * At some point I'm probably going to look into syncing the duration of the shockwave with the rest of the simulation
            * since right now it is independent of the time step at which the simulation is being run
            * but that will have to wait!!!
           */
 
-          const tween = new TWEEN.Tween({ value: 0 })
-            .to({ value: 1 }, 4000)
-            .onUpdate(val => {
-              uniforms.impacts.value[impactIndex].impactRatio = val.value;
-            })
-            .onComplete(() => {
-              survivingManifestation.ongoingImpacts--; //Once the impact event is over, decrement the number of ongoing impacts
-            });
+            const tween = new TWEEN.Tween({ value: 0 })
+              .to({ value: 1 }, 4000)
+              .onUpdate(val => {
+                uniforms.impacts.value[impactIndex].impactRatio = val.value;
+              })
+              .onComplete(() => {
+                survivingManifestation.ongoingImpacts--; //Once the impact event is over, decrement the number of ongoing impacts
+              });
 
-          tween.start();
-        }
+            tween.start();
+          }
 
-        const numberOfFragments = 3000;
+          const numberOfFragments = 3000;
 
-        const totalWithAddedFragments =
-          this.particlePhysics.particles + numberOfFragments;
-        const excessFragments =
-          this.scenario.particles.max - totalWithAddedFragments;
+          const totalWithAddedFragments =
+            this.particlePhysics.particles + numberOfFragments;
+          const excessFragments =
+            this.scenario.particles.max - totalWithAddedFragments;
 
-        /*
+          /*
          * Every scenario has a maximum allowed number of particles
          * Should that number be exceeded, we trim the particles array accordingly
         */
 
-        if (excessFragments < 0)
-          this.particlePhysics.particles.splice(0, -excessFragments);
+          if (excessFragments < 0)
+            this.particlePhysics.particles.splice(0, -excessFragments);
 
-        for (let i = 0; i < numberOfFragments; i++) {
-          const x = beforeCollisionPoint.x;
-          const y = beforeCollisionPoint.y;
-          const z = beforeCollisionPoint.z;
+          for (let i = 0; i < numberOfFragments; i++) {
+            const x = beforeCollisionPoint.x;
+            const y = beforeCollisionPoint.y;
+            const z = beforeCollisionPoint.z;
 
-          let orbit = getOrbit(survivor, { x, y, z }, this.scenario.g, false);
+            let orbit = getOrbit(survivor, { x, y, z }, this.scenario.g, false);
 
-          /*
+            /*
            * Get the ideal circular orbit (apoapsis is equal to periapsis) for a given position vector around the primary
           */
 
-          orbit = new THREE.Vector3(orbit.vx, orbit.vy, orbit.vz);
+            orbit = new THREE.Vector3(orbit.vx, orbit.vy, orbit.vz);
 
-          /*
+            /*
            * Every third particle that we create gets a completely random orbit... Could be polar
            * equatorial...
            * or something in-between!
           */
 
-          if (i % 3 === 0) {
-            orbit = rotateVector(
-              orbit.x,
-              orbit.y,
-              orbit.z,
-              getRandomNumberInRange(1, 360),
-              new THREE.Vector3(1, 0, 0),
-              this.utilityVector
-            );
+            if (i % 3 === 0) {
+              orbit = rotateVector(
+                orbit.x,
+                orbit.y,
+                orbit.z,
+                getRandomNumberInRange(1, 360),
+                new THREE.Vector3(1, 0, 0),
+                this.utilityVector
+              );
 
-            orbit = rotateVector(
-              orbit.x,
-              orbit.y,
-              orbit.z,
-              getRandomNumberInRange(1, 360),
-              new THREE.Vector3(0, 1, 0),
-              this.utilityVector
-            );
+              orbit = rotateVector(
+                orbit.x,
+                orbit.y,
+                orbit.z,
+                getRandomNumberInRange(1, 360),
+                new THREE.Vector3(0, 1, 0),
+                this.utilityVector
+              );
 
-            orbit = rotateVector(
-              orbit.x,
-              orbit.y,
-              orbit.z,
-              getRandomNumberInRange(1, 360),
-              new THREE.Vector3(0, 0, 1),
-              this.utilityVector
-            );
-          }
+              orbit = rotateVector(
+                orbit.x,
+                orbit.y,
+                orbit.z,
+                getRandomNumberInRange(1, 360),
+                new THREE.Vector3(0, 0, 1),
+                this.utilityVector
+              );
+            }
 
-          /*
+            /*
            * Push the state vectors
            * We randomize the velocity vectors within a range, so that some of them have a velocity that is too low for a circular orbit
            * While others have one that is too high
           */
 
-          this.particlePhysics.particles.push({
-            x,
-            y,
-            z,
-            vx: getRandomNumberInRange(0.9 * orbit.x, 1.3 * orbit.x),
-            vy: getRandomNumberInRange(0.9 * orbit.y, 1.3 * orbit.y),
-            vz: getRandomNumberInRange(0.9 * orbit.z, 1.3 * orbit.z)
-          });
+            this.particlePhysics.particles.push({
+              x,
+              y,
+              z,
+              vx: getRandomNumberInRange(0.9 * orbit.x, 1.3 * orbit.x),
+              vy: getRandomNumberInRange(0.9 * orbit.y, 1.3 * orbit.y),
+              vz: getRandomNumberInRange(0.9 * orbit.z, 1.3 * orbit.z)
+            });
+          }
         }
-      });
+      );
 
-    if (this.scenario.particles && playing)
+    if (this.scenario.particles && this.scenario.playing)
       this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);
 
-    this.updateScenario();
-
-    /*
-     * We have to update the tweens if we want them to run!!! 
-     * Forget to add this line of code all the time when I'm working with tween.js,
-     * so hope hopefully this comment will preclude that from happening!!!
-    */
-
-    TWEEN.update();
-    this.requestAnimationFrameId = requestAnimationFrame(() => this.loop());
-    this.renderer.render(this.scene, this.camera);
-  },
-
-  getScenario() {
-    this.scenario = store.getState().scenario;
-
-    return this;
-  },
-
-  updateSystem() {
-    this.system.g = this.scenario.g;
-    this.system.masses = this.scenario.masses;
-
-    return this;
-  },
-
-  updateScenario() {
     store.dispatch(
       modifyScenarioProperty(
         {
@@ -740,6 +693,16 @@ export default {
         }
       )
     );
+
+    /*
+     * We have to update the tweens if we want them to run!!! 
+     * Forget to add this line of code all the time when I'm working with tween.js,
+     * so hope hopefully this comment will preclude that from happening!!!
+    */
+
+    TWEEN.update();
+    this.requestAnimationFrameId = requestAnimationFrame(this.loop);
+    this.renderer.render(this.scene, this.camera);
   },
 
   addRing() {
@@ -792,8 +755,7 @@ export default {
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(this.w, this.h);
 
-    this.labelsCanvas.width = this.w;
-    this.labelsCanvas.height = this.h;
+    this.graphics2D.setDimensions(this.w, this.h);
   },
 
   reset() {

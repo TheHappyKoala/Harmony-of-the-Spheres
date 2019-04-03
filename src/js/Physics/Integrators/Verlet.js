@@ -1,11 +1,14 @@
 import Euler from './Euler';
+import H3 from '../vectors';
 
 export default class extends Euler {
   constructor(params) {
     super(params);
 
+    this.utilityVector = new H3();
+
     this.lastAcc = this.generateAccelerationVectors(
-      this.getStateVectors(this.masses)
+      this.getStateVectors(this.masses).p
     );
   }
 
@@ -15,13 +18,17 @@ export default class extends Euler {
 
     for (let i = 0; i < aLen; i++) {
       let aI = a[i];
-      let sI = s[i];
+      let sI = s.v[i];
       let m = this.masses[i];
-      p[i] = {
-        x: m.x + sI.vx * dt + 0.5 * aI.ax * Math.pow(dt, 2),
-        y: m.y + sI.vy * dt + 0.5 * aI.ay * Math.pow(dt, 2),
-        z: m.z + sI.vz * dt + 0.5 * aI.az * Math.pow(dt, 2)
-      };
+
+      p[i] = this.p
+        .set({ x: m.x, y: m.y, z: m.z })
+        .addScaledVector(dt, sI)
+        .addScaledVector(
+          0.5,
+          this.utilityVector.set(aI).multiplyByScalar(Math.pow(dt, 2))
+        )
+        .toObject();
     }
 
     return p;
@@ -36,11 +43,16 @@ export default class extends Euler {
       let aI2 = a2[i];
       let m = this.masses[i];
 
-      v[i] = {
-        vx: m.vx + 0.5 * (aI1.ax + aI2.ax) * dt,
-        vy: m.vy + 0.5 * (aI1.ay + aI2.ay) * dt,
-        vz: m.vz + 0.5 * (aI1.az + aI2.az) * dt
-      };
+      v[i] = this.v
+        .set({ x: m.vx, y: m.vy, z: m.vz })
+        .addScaledVector(
+          0.5,
+          this.utilityVector
+            .set(aI1)
+            .add(aI2)
+            .multiplyByScalar(dt)
+        )
+        .toObject();
     }
 
     return v;
