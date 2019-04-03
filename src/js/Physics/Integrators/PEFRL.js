@@ -16,11 +16,11 @@ export default class extends Euler {
     for (let i = 0; i < vLen; i++) {
       let vI = v[i];
       let pI = p[i];
-      pFinal[i] = {
-        x: pI.x + dt * vI.vx,
-        y: pI.y + dt * vI.vy,
-        z: pI.z + dt * vI.vz
-      };
+
+      pFinal[i] = this.p
+        .set({ x: pI.x, y: pI.y, z: pI.z })
+        .addScaledVector(dt, vI)
+        .toObject();
     }
 
     return pFinal;
@@ -36,11 +36,10 @@ export default class extends Euler {
       let vI = v[i];
       let aI = a[i];
 
-      vFinal[i] = {
-        vx: vI.vx + dt * aI.x,
-        vy: vI.vy + dt * aI.y,
-        vz: vI.vz + dt * aI.z
-      };
+      vFinal[i] = this.v
+        .set({ x: vI.x, y: vI.y, z: vI.z })
+        .addScaledVector(dt, aI)
+        .toObject();
     }
 
     return vFinal;
@@ -58,14 +57,18 @@ export default class extends Euler {
     const pCoeffs = [a1, a3, a5, a3, a1];
     const vCoeffs = [a2, a4, a4, a2];
 
-    let p = s;
-    let v = s;
+    let p = s.p;
+    let v = s.v;
+
     const coeffsLen = vCoeffs.length;
+
     for (let i = 0; i < coeffsLen; i++) {
       p = this.generatePositionVectors(p, v, pCoeffs[i]);
       v = this.generateVelocityVectors(p, v, vCoeffs[i]);
     }
+
     p = this.generatePositionVectors(p, v, pCoeffs[coeffsLen]);
+
     this.updateStateVectors(p, v);
 
     this.incrementElapsedTime();
