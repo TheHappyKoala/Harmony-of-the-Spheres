@@ -1,46 +1,39 @@
 import Euler from './Euler';
+import H3 from '../vectors';
 
 export default class extends Euler {
+  constructor(params) {
+    super(params);
+
+    this.tempSumA = new H3();
+    this.tempSumB = new H3();
+  }
+
   getK(s) {
+    const p = s.p;
+    const v = s.v;
+
     const k = [];
-    k[0] = this.generateAccelerationVectors(s);
+    k[0] = this.generateAccelerationVectors(p);
 
     const coeffsLen = this.coefficients.length;
     const mLen = this.masses.length;
+
     for (let i = 0; i < coeffsLen; i++) {
-      // loop through all rows in coefficients
       const tempPos = [];
       let cLen = this.coefficients[i].length;
+
       for (let n = 0; n < mLen; n++) {
-        // loop through all masses
+        this.tempSumA.set({ x: 0, y: 0, z: 0 });
 
-        let tempSum = {
-          x: 0,
-          y: 0,
-          z: 0
-        };
-        for (let j = 0; j < cLen; j++) {
-          tempSum = {
-            x: tempSum.x + this.coefficients[i][j] * k[j][n].x,
-            y: tempSum.y + this.coefficients[i][j] * k[j][n].y,
-            z: tempSum.z + this.coefficients[i][j] * k[j][n].z
-          };
-        }
+        for (let j = 0; j < cLen; j++)
+          this.tempSumA.addScaledVector(this.coefficients[i][j], k[j][n]);
 
-        tempPos[n] = {
-          x:
-            s[n].x +
-            this.delta[i] * this.dt * s[n].vx +
-            this.dt * this.dt * tempSum.x,
-          y:
-            s[n].y +
-            this.delta[i] * this.dt * s[n].vy +
-            this.dt * this.dt * tempSum.y,
-          z:
-            s[n].z +
-            this.delta[i] * this.dt * s[n].vz +
-            this.dt * this.dt * tempSum.z
-        };
+        tempPos[n] = this.p
+          .set({ x: p[n].x, y: p[n].y, z: p[n].z })
+          .addScaledVector(this.delta[i] * this.dt, v[n])
+          .addScaledVector(this.dt * this.dt, this.tempSumA)
+          .toObject();
       }
       k[cLen] = this.generateAccelerationVectors(tempPos);
     }
@@ -54,42 +47,24 @@ export default class extends Euler {
     const mLen = this.masses.length;
 
     for (let n = 0; n < mLen; n++) {
-      // loop through all masses
+      this.tempSumA.set({ x: 0, y: 0, z: 0 });
+      this.tempSumB.set({ x: 0, y: 0, z: 0 });
 
-      let tempSumA = {
-        x: 0,
-        y: 0,
-        z: 0
-      };
-      let tempSumB = {
-        x: 0,
-        y: 0,
-        z: 0
-      };
       for (let j = 0; j < cLen; j++) {
-        tempSumA = {
-          x: tempSumA.x + this.alpha[j] * k[j][n].x,
-          y: tempSumA.y + this.alpha[j] * k[j][n].y,
-          z: tempSumA.z + this.alpha[j] * k[j][n].z
-        };
-        tempSumB = {
-          x: tempSumB.x + this.beta[j] * k[j][n].x,
-          y: tempSumB.y + this.beta[j] * k[j][n].y,
-          z: tempSumB.z + this.beta[j] * k[j][n].z
-        };
+        this.tempSumA.addScaledVector(this.alpha[j], k[j][n]);
+        this.tempSumB.addScaledVector(this.beta[j], k[j][n]);
       }
 
-      p[n] = {
-        x: s[n].x + this.dt * s[n].vx + this.dt * this.dt * tempSumA.x,
-        y: s[n].y + this.dt * s[n].vy + this.dt * this.dt * tempSumA.y,
-        z: s[n].z + this.dt * s[n].vz + this.dt * this.dt * tempSumA.z
-      };
+      p[n] = this.p
+        .set({ x: s.p[n].x, y: s.p[n].y, z: s.p[n].z })
+        .addScaledVector(this.dt, s.v[n])
+        .addScaledVector(this.dt * this.dt, this.tempSumA)
+        .toObject();
 
-      v[n] = {
-        vx: s[n].vx + this.dt * tempSumB.x,
-        vy: s[n].vy + this.dt * tempSumB.y,
-        vz: s[n].vz + this.dt * tempSumB.z
-      };
+      v[n] = this.v
+        .set({ x: s.v[n].x, y: s.v[n].y, z: s.v[n].z })
+        .addScaledVector(this.dt, this.tempSumB)
+        .toObject();
     }
 
     return [p, v];
@@ -105,3 +80,4 @@ export default class extends Euler {
     this.incrementElapsedTime();
   }
 }
+ 
