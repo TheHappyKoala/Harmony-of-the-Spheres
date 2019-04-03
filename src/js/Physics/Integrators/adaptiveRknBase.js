@@ -1,4 +1,5 @@
 import rknBase from './rknBase';
+import H3 from '../vectors';
 
 export default class extends rknBase {
   constructor(params) {
@@ -7,6 +8,10 @@ export default class extends rknBase {
     this.tol = params.tol;
     this.maxDt = params.maxDt;
     this.minDt = params.minDt;
+
+    this.tempSumHat = new H3();
+
+    this.pHat = new H3();
   }
   calculateError(p1, p2) {
     let error = 0;
@@ -23,65 +28,39 @@ export default class extends rknBase {
   }
 
   generateVectors(s, k) {
-    const p = []; // higher order
-    const pHat = []; // lower order
+    const p = [];
+    const pHat = [];
     const v = [];
     const cLen = this.alpha.length;
     const mLen = this.masses.length;
 
     for (let n = 0; n < mLen; n++) {
-      // loop through all masses
+      this.tempSumA.set({ x: 0, y: 0, z: 0 });
+      this.tempSumB.set({ x: 0, y: 0, z: 0 });
+      this.tempSumHat.set({ x: 0, y: 0, z: 0 });
 
-      let tempSumA = {
-        x: 0,
-        y: 0,
-        z: 0
-      };
-      let tempSumB = {
-        x: 0,
-        y: 0,
-        z: 0
-      };
-      let tempSumHat = {
-        x: 0,
-        y: 0,
-        z: 0
-      };
       for (let j = 0; j < cLen; j++) {
-        tempSumA = {
-          x: tempSumA.x + this.alpha[j] * k[j][n].x,
-          y: tempSumA.y + this.alpha[j] * k[j][n].y,
-          z: tempSumA.z + this.alpha[j] * k[j][n].z
-        };
-        tempSumHat = {
-          x: tempSumHat.x + this.alphaHat[j] * k[j][n].x,
-          y: tempSumHat.y + this.alphaHat[j] * k[j][n].y,
-          z: tempSumHat.z + this.alphaHat[j] * k[j][n].z
-        };
-        tempSumB = {
-          x: tempSumB.x + this.beta[j] * k[j][n].x,
-          y: tempSumB.y + this.beta[j] * k[j][n].y,
-          z: tempSumB.z + this.beta[j] * k[j][n].z
-        };
+        this.tempSumA.addScaledVector(this.alpha[j], k[j][n]);
+        this.tempSumHat.addScaledVector(this.alphaHat[j], k[j][n]);
+        this.tempSumB.addScaledVector(this.beta[j], k[j][n]);
       }
 
-      p[n] = {
-        x: s[n].x + this.dt * s[n].vx + this.dt * this.dt * tempSumA.x,
-        y: s[n].y + this.dt * s[n].vy + this.dt * this.dt * tempSumA.y,
-        z: s[n].z + this.dt * s[n].vz + this.dt * this.dt * tempSumA.z
-      };
+      p[n] = this.p
+        .set({ x: s.p[n].x, y: s.p[n].y, z: s.p[n].z })
+        .addScaledVector(this.dt, s.v[n])
+        .addScaledVector(this.dt * this.dt, this.tempSumA)
+        .toObject();
 
-      pHat[n] = {
-        x: s[n].x + this.dt * s[n].vx + this.dt * this.dt * tempSumHat.x,
-        y: s[n].y + this.dt * s[n].vy + this.dt * this.dt * tempSumHat.y,
-        z: s[n].z + this.dt * s[n].vz + this.dt * this.dt * tempSumHat.z
-      };
+      pHat[n] = this.p
+        .set({ x: s.p[n].x, y: s.p[n].y, z: s.p[n].z })
+        .addScaledVector(this.dt, s.v[n])
+        .addScaledVector(this.dt * this.dt, this.tempSumHat)
+        .toObject();
 
-      v[n] = {
-        vx: s[n].vx + this.dt * tempSumB.x,
-        vy: s[n].vy + this.dt * tempSumB.y,
-        vz: s[n].vz + this.dt * tempSumB.z
-      };
+      v[n] = this.v
+        .set({ x: s.v[n].x, y: s.v[n].y, z: s.v[n].z })
+        .addScaledVector(this.dt, this.tempSumB)
+        .toObject();
     }
 
     return [p, v, pHat];
@@ -98,20 +77,14 @@ export default class extends rknBase {
       var [p, v, pHat] = this.generateVectors(s, k);
 
       error = this.calculateError(p, pHat);
+
       const temp = Math.pow(2 * error / this.tol, 1 / this.errorOrder);
-      if (temp > 0.2) {
-        this.dt = this.dt / temp;
-      } else {
-        this.dt = 5 * this.dt;
-      }
-      //if (error != 0) {
-      //  this.dt = this.dt * Math.pow(this.tol / (2 * error), 1 / 6);
-      //}
-      if (this.dt < this.minDt) {
-        this.dt = this.minDt;
-      } else if (this.dt > this.maxDt) {
-        this.dt = this.maxDt;
-      }
+
+      if (temp > 0.2) this.dt = this.dt / temp;
+      else this.dt = 5 * this.dt;
+
+      if (this.dt < this.minDt) this.dt = this.minDt;
+      else if (this.dt > this.maxDt) this.dt = this.maxDt;
     }
 
     this.updateStateVectors(p, v);
