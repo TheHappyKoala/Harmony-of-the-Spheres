@@ -106,9 +106,9 @@ export default {
     this.addManifestations();
 
     this.loop = this.loop.bind(this);
-    this.onWindowResize = this.onWindowResize.bind(this);   
+    this.onWindowResize = this.onWindowResize.bind(this);
 
-    window.addEventListener('resize', this.onWindowResize, false); 
+    window.addEventListener('resize', this.onWindowResize, false);
     window.addEventListener('orientationchange', this.onWindowResize, false);
 
     this.manager.onLoad = () => {
@@ -676,6 +676,45 @@ export default {
 
     if (this.scenario.particles && this.scenario.playing)
       this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);
+
+    if (this.scenario.tcmsData.length) {
+      const [tcm] = this.scenario.tcmsData;
+
+      if (tcm.t <= this.scenario.elapsedTime) {
+        let spacecraft = this.system.masses[0];
+        let targetMass = this.system.masses[1];
+
+        let events = [];
+
+        if (tcm.insertion) {
+          let orbit = getOrbit(targetMass, spacecraft, this.scenario.g, false);
+
+          spacecraft.vx = orbit.vx;
+          spacecraft.vy = orbit.vy;
+          spacecraft.vz = orbit.vz;
+        } else {
+          spacecraft.vx = tcm.v.x;
+          spacecraft.vy = tcm.v.y;
+          spacecraft.vz = tcm.v.z;
+        }
+
+        for (const key in tcm)
+          if (this.scenario.hasOwnProperty(key))
+            events = [...events, { key, value: tcm[key] }];
+
+        this.scenario.tcmsData.shift();
+
+        store.dispatch(
+          modifyScenarioProperty(
+            {
+              key: 'tcmsData',
+              value: this.scenario.tcmsData
+            },
+            ...events
+          )
+        );
+      }
+    }
 
     store.dispatch(
       modifyScenarioProperty(
