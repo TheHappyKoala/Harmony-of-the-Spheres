@@ -22,3 +22,11 @@ export function getTextureFromCanvas(callback) {
 
   return canvas;
 }
+
+export function subtractDateFromAnotherDate(date1, date2) {
+  return Math.abs(date2 - date1);
+}
+
+export function convertMillisecondsToYears(milliseconds) {
+  return milliseconds / 31536000000;
+}

@@ -2,6 +2,7 @@ import jovianSystem from './jovianSystem';
 import centaurs from './centaurs';
 import voyagerNeptune from './voyagerNeptune';
 import saturnFull from './saturnFull';
+import hohmanTransfer from './hohmanTransfer';
 import saturn from './saturn';
 import threeBodyCoreography from './threeBodyCoreography';
 import earthMoonSystem from './earthMoonSystem';
@@ -33,7 +34,12 @@ import {
   calculateOrbitalVertices,
   elementsToVectors
 } from '../../Physics/utils';
-import { getRandomColor, getObjFromArrByKeyValuePair } from '../../utils';
+import {
+  getRandomColor,
+  getObjFromArrByKeyValuePair,
+  subtractDateFromAnotherDate,
+  convertMillisecondsToYears
+} from '../../utils';
 
 /*
  * Takes an array of masses and populates them with values and when there are none defaults
@@ -92,6 +98,18 @@ const processScenario = scenario => ({
   ...scenario,
   isLoaded: false,
   playing: false,
+  tcmsData:
+    scenario.tcmsData !== undefined
+      ? scenario.tcmsData.map(tcmData => ({
+          ...tcmData,
+          t: convertMillisecondsToYears(
+            subtractDateFromAnotherDate(
+              new Date(tcmData.t),
+              new Date(scenario.missionStart)
+            )
+          )
+        }))
+      : false,
   integrator: scenario.integrator !== undefined ? scenario.integrator : 'RKN12',
   tol: scenario.tol !== undefined ? scenario.tol : scenario.dt * 0.00000001,
   maxDt:
@@ -162,6 +180,7 @@ export const scenarios = [
   kepler11,
   the24sextantisSystem,
   shenanigans,
+  hohmanTransfer,
   venusPentagram,
   oumuamua,
   kepler1658,
