@@ -1,3 +1,5 @@
+import { degreesToRadians } from '../utils';
+
 export default class {
   constructor() {
     this.x = 0;
@@ -107,6 +109,33 @@ export default class {
     this.x -= scalar * v.x;
     this.y -= scalar * v.y;
     this.z -= scalar * v.z;
+
+    return this;
+  }
+
+  rotateX(angle) {
+    const angleRad = degreesToRadians(angle);
+
+    this.y = this.y * Math.cos(angleRad) + this.z * Math.sin(angleRad);
+    this.z = this.z * Math.cos(angleRad) - this.y * Math.sin(angleRad);
+
+    return this;
+  }
+
+  rotateY(angle) {
+    const angleRad = degreesToRadians(angle);
+
+    this.x = this.x * Math.cos(angleRad) - this.z * Math.sin(angleRad);
+    this.z = this.x * Math.sin(angleRad) + this.z * Math.cos(angleRad);
+
+    return this;
+  }
+
+  rotateZ(angle) {
+    const angleRad = degreesToRadians(angle);
+
+    this.x = this.x * Math.cos(angleRad) + this.y * Math.sin(angleRad);
+    this.y = this.y * Math.cos(angleRad) - this.x * Math.sin(angleRad);
 
     return this;
   }
