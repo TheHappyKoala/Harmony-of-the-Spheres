@@ -689,9 +689,13 @@ export default {
         if (tcm.insertion) {
           let orbit = getOrbit(targetMass, spacecraft, this.scenario.g, false);
 
-          spacecraft.vx = orbit.vx;
-          spacecraft.vy = orbit.vy;
-          spacecraft.vz = orbit.vz;
+          const vFactorX = tcm.vFactorX ? tcm.vFactorX : 1;
+          const vFactorY = tcm.vFactorY ? tcm.vFactorY : 1;
+          const vFactorZ = tcm.vFactorZ ? tcm.vFactorZ : 1;
+
+          spacecraft.vx = orbit.vx * vFactorX;
+          spacecraft.vy = orbit.vy * vFactorY;
+          spacecraft.vz = orbit.vz * vFactorZ;
         } else {
           spacecraft.vx = tcm.v.x;
           spacecraft.vy = tcm.v.y;
@@ -699,8 +703,11 @@ export default {
         }
 
         for (const key in tcm)
-          if (this.scenario.hasOwnProperty(key))
+          if (this.scenario.hasOwnProperty(key)) {
             events = [...events, { key, value: tcm[key] }];
+
+            if (key === 'dt') this.system.dt = tcm[key];
+          }
 
         this.scenario.tcmsData.shift();
 
