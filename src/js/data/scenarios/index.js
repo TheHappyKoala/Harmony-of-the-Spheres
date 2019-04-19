@@ -10,6 +10,7 @@ import oumuamua from './oumuamua';
 import tess from './tess';
 import martianSystem from './martianSystem';
 import newHorizons from './newHorizons';
+import europaClipper from './europaClipper';
 import cruithne from './cruithne';
 import plutoSystem from './thePlutonianSystem';
 import trappist1 from './trappist1';
@@ -102,12 +103,15 @@ const processScenario = scenario => ({
     scenario.tcmsData !== undefined
       ? scenario.tcmsData.map(tcmData => ({
           ...tcmData,
-          t: convertMillisecondsToYears(
-            subtractDateFromAnotherDate(
-              new Date(tcmData.t),
-              new Date(scenario.missionStart)
-            )
-          )
+          t:
+            tcmData.t instanceof Date
+              ? convertMillisecondsToYears(
+                  subtractDateFromAnotherDate(
+                    new Date(tcmData.t),
+                    new Date(scenario.missionStart)
+                  )
+                )
+              : tcmData.t
         }))
       : false,
   integrator: scenario.integrator !== undefined ? scenario.integrator : 'RKN12',
@@ -187,6 +191,7 @@ export const scenarios = [
   earthMoonSystem,
   jovianSystem,
   galaxy,
+  europaClipper,
   threeBodyCoreography,
   tess,
   plutoSystem,
