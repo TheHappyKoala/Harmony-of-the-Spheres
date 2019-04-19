@@ -60,6 +60,13 @@ export default [
   },
   { m: 0, orbitalPeriod: 0.14657534, radius: 1.2, type: 'model', name: 'Juno' },
   {
+    m: 0,
+    orbitalPeriod: 0,
+    radius: 1.2,
+    type: 'model',
+    name: 'Europa Clipper'
+  },
+  {
     m: 5.359189909029e-15,
     orbitalPeriod: 9.1324109589e-4,
     radius: 0.05,
