@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-export default function() {
+export default () => {
   return (
-    <React.Fragment>
+    <Fragment>
       <h1>About</h1>
       <p className="modal-item">
         Harmony of the Spheres is a Newtonian n-body gravity simulator that lets
@@ -61,6 +61,6 @@ export default function() {
         Harmony of the Spheres by clicking the Scenario Wiki option in the left
         sidebar: happy reading!
       </p>
-    </React.Fragment>
+    </Fragment>
   );
-}
+};
