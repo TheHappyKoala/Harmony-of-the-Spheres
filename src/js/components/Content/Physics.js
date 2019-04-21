@@ -5,7 +5,7 @@ import Slider from '../Slider';
 import Tooltip from '../Tooltip';
 import { integrators } from '../../Physics/Integrators';
 
-export default function(props) {
+export default props => {
   const [
     displayAdvancedDeltaTimeControls,
     setAdvancedDeltaTimeControls
@@ -208,4 +208,4 @@ export default function(props) {
       />
     </Fragment>
   );
-}
+};
