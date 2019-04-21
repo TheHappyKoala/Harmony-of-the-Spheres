@@ -9,7 +9,7 @@ export default props => {
         src={props.url}
         onLoad={() => setLoading(false)}
         frameBorder="0"
-        style={{ display: loading === true ? 'none' : 'block' }}
+        style={{ display: loading ? 'none' : 'block' }}
       />
       {loading && (
         <div className="spinner">
@@ -21,4 +21,3 @@ export default props => {
     </div>
   );
 };
-  
