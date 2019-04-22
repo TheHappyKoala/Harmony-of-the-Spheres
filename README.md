@@ -23,6 +23,7 @@ Below is an overview of the cool koalas that have made contributions to Harmony 
 | Ryan Gowen |    Developer   |   [More](https://github.com/crGowen) |
 | John Van Vlliet | Textures and 3D Models |    [More](https://github.com/JohnVV) |
 | Hugo Granström | Developer |    [More](https://hugogranstrom.com/) |
+| Camille Constant | Developer |    [More](https://github.com/epsxy) |
 
 ### Introductory Tutorial at CSS-Tricks
 
