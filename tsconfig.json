@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
       "sourceMap": true,
       "noImplicitAny": true,
-      "module": "commonjs",
+      "moduleResolution": "node",
       "target": "es6",
-      "jsx": "react"
+      "jsx": "react"   
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*" 
   ]
-}
+}   
