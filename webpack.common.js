@@ -14,14 +14,14 @@ module.exports = {
     rules: [{
         test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader']
+      },   
+      { test: /\.tsx?$/, 
+        loader: "awesome-typescript-loader" 
       },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
-      },
-      { test: /\.tsx?$/, 
-        loader: "awesome-typescript-loader" 
       }
     ]
   },
@@ -32,4 +32,4 @@ module.exports = {
     path: `${__dirname}/dist`,
     filename: 'bundle.[hash].js'
   }
-};       
+};           
