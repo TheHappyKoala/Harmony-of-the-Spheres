@@ -365,7 +365,9 @@ export default {
       }
 
       massManifestation.draw(
-        this.manifestationPosition,
+        this.manifestationPosition.x,
+        this.manifestationPosition.y,
+        this.manifestationPosition.z,
         this.camera.position,
         cameraDistanceToFocus
       );
