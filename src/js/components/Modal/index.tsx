@@ -2,8 +2,8 @@ import React, { ReactElement, ReactChildren } from 'react';
 import './Modal.less';
 
 interface ModalProps {
-  children: ReactChildren
-  callback: Function
+  children: ReactChildren;
+  callback: Function;
 }
 
 export default ({ children, callback }: ModalProps): ReactElement => (

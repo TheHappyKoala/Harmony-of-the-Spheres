@@ -41,10 +41,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #545454; 
+  background: #545454;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   text-decoration: inherit;
   color: @font-color;
 }
@@ -58,9 +59,12 @@ body {
     font-family: FontAwesome;
     font-style: normal;
   }
-}    
+}
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Orbitron', sans-serif;
 }
 
@@ -70,28 +74,28 @@ h3 {
 
 .modal-item {
   font-size: 1.3em;
-  margin-left: 10px;   
+  margin-left: 10px;
   margin-top: 16px;
 }
 
 .modal-item a {
   font-size: 1.35em;
   color: lightblue;
-}     
+}
 
 .sidebar-wrapper {
   .absolute();
   bottom: 0;
   top: calc(0% + 2 * @fat-padding + 7px);
-  bottom: calc(0% + 2 * 12px + 16px);   
+  bottom: calc(0% + 2 * 12px + 16px);
   right: 0;
   background: @primary;
   ul {
     list-style: none;
-    text-align: center;    
+    text-align: center;
     width: 65px;
     display: block;
-    float: right;   
+    float: right;
     height: 100%;
     border-left: @border;
   }
@@ -100,7 +104,7 @@ h3 {
     margin-top: 10px;
     cursor: pointer;
   }
-  li:hover   {
+  li:hover {
     text-shadow: 2px 2px 8px #eee;
   }
   .sidebar-content {
@@ -115,7 +119,7 @@ h3 {
       width: inherit;
     }
   }
-  .tabs-close-button{
+  .tabs-close-button {
     .absolute();
     top: 10px;
     right: 85px;
@@ -127,28 +131,28 @@ h3 {
 }
 
 .sidebar-wrapper-left {
-  left: 0;    
+  left: 0;
   right: calc(100% - 65px);
   ul {
     float: left;
     border-left: none;
     border-right: @border;
   }
-}   
+}
 
 .bottom-bar {
   .absolute();
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 12px;          
+  padding: 12px;
   background: @primary;
   border-top: @border;
-  text-align: center;    
+  text-align: center;
   h2 {
     font-size: 16px;
-  } 
-}     
+  }
+}
 
 .vector-tabs {
   margin-top: 4px;
@@ -218,19 +222,28 @@ h3 {
 }
 
 @-webkit-keyframes sk-bouncedelay {
-  0%, 80%, 100% { -webkit-transform: scale(0) }
-  40% { -webkit-transform: scale(1.0) }
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
 }
 
 @keyframes sk-bouncedelay {
-  0%, 80%, 100% { 
+  0%,
+  80%,
+  100% {
     -webkit-transform: scale(0);
     transform: scale(0);
-  } 40% { 
-    -webkit-transform: scale(1.0);
-    transform: scale(1.0);
   }
-} 
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
 
 @media screen and (max-width: 400px) {
   .rotate-to-landscape-prompt {
@@ -238,7 +251,7 @@ h3 {
     z-index: 999999999999999999999;
     top: 0;
     height: 100%;
-    left: 0; 
+    left: 0;
     width: 100%;
     background-color: #000;
     text-align: center;
@@ -249,4 +262,4 @@ h3 {
       margin-top: 10px;
     }
   }
-}   
+}

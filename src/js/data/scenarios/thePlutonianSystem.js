@@ -1,7 +1,7 @@
 export default {
   name: 'The Sun and the Plutonian System',
   type: 'Solar System',
-  g: 39.5, 
+  g: 39.5,
   dt: 9e-7,
   distMax: 50,
   distMin: -50,

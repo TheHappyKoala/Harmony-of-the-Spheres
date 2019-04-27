@@ -80,4 +80,3 @@ export default class extends Euler {
     this.incrementElapsedTime();
   }
 }
- 

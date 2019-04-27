@@ -383,5 +383,5 @@ export function setBarycenter(masses, p) {
     systemMass += mass.m;
   }
 
-  p.divideByScalar(systemMass);   
+  p.divideByScalar(systemMass);
 }

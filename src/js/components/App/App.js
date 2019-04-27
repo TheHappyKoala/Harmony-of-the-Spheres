@@ -15,7 +15,7 @@ import Contact from '../Content/Contact';
 import Credits from '../Content/Credits';
 import Iframe from '../Iframe';
 import './App.less';
- 
+
 export default props => {
   const [display, setDisplay] = useState({
     about: false,

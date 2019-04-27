@@ -1,4 +1,4 @@
-@import '../App/App.less';    
+@import '../App/App.less';
 
 .main-bar {
   position: fixed;
@@ -15,25 +15,25 @@
   }
   .scenario-dropdown-wrapper {
     width: 252px;
-    margin-left: 7px;    
+    margin-left: 7px;
     .scenario-menu {
-      .absolute();   
+      .absolute();
       box-sizing: content-box;
       z-index: 2;
-      background-color: @input;   
-      padding: 7px;   
-      padding-top: 0;       
-      max-height: 80vh;      
-      overflow: auto;   
+      background-color: @input;
+      padding: 7px;
+      padding-top: 0;
+      max-height: 80vh;
+      overflow: auto;
       border: @border;
       .dropdown-content {
         margin-top: 43px;
-        display: grid;  
-        grid-gap: 5px; 
-        grid-template-columns: 220px 220px 220px 220px;    
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: 220px 220px 220px 220px;
         @media screen and (max-width: 1200px) {
-          grid-template-columns: 220px 220px;    
-        }  
+          grid-template-columns: 220px 220px;
+        }
       }
       .dropdown-tabs {
         position: absolute;
@@ -52,13 +52,13 @@
           &:hover {
             text-shadow: 2px 2px 8px #eee;
           }
-        } 
+        }
         .dropdown-tabs-active {
-          text-shadow: 2px 2px 8px #eee;   
-        }   
+          text-shadow: 2px 2px 8px #eee;
+        }
       }
       .scenario-menu-option {
-        position: relative;       
+        position: relative;
       }
     }
   }
@@ -76,5 +76,4 @@
       font-weight: bold;
     }
   }
-} 
- 
+}
