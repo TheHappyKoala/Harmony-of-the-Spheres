@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "webpack-dev-server --config ./webpack.dev.js --mode development",
-    "build": "webpack --config ./webpack.prod.js --mode production", 
+    "build": "webpack --config ./webpack.prod.js --mode production",
     "test": "echo \"No test specified\" && exit 0",
     "prettier": "prettier --single-quote --print-width 80 \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.js\" --write"
   },
@@ -13,7 +13,7 @@
     "space",
     "gravity",
     "orbit"
-  ],  
+  ],
   "author": "Darrell A. Huffman",
   "license": "GNU General Public License v3.0",
   "devDependencies": {
@@ -22,14 +22,13 @@
     "@babel/plugin-proposal-decorators": "^7.0.0",
     "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
     "@babel/plugin-proposal-function-sent": "^7.0.0",
-    "@babel/plugin-proposal-json-strings": "^7.0.0",    
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
     "@babel/plugin-proposal-numeric-separator": "^7.0.0",
     "@babel/plugin-proposal-throw-expressions": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
-    "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
     "clean-webpack-plugin": "^0.1.19",

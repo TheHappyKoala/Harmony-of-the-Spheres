@@ -1,19 +1,36 @@
+import { VectorType, MassType } from '../types';
 import H3 from '../vectors';
 
-export default class {
-  constructor(params) {
-    this.g = params.g;
-    this.dt = params.dt;
-    this.masses = params.masses;
+interface EulerProps {
+  g: number;
+  dt: number;
+  masses: MassType[];
+  elapsedTime: number;
+}
 
-    this.elapsedTime = params.elapsedTime;
+export default class {
+  g: number;
+  dt: number;
+  masses: any[];
+  elapsedTime: number;
+
+  private a: H3;
+  private v: H3;
+  private p: H3;
+
+  constructor({ g, dt, masses, elapsedTime }: EulerProps) {
+    this.g = g;
+    this.dt = dt;
+    this.masses = masses;
+
+    this.elapsedTime = elapsedTime;
 
     this.a = new H3();
     this.v = new H3();
     this.p = new H3();
   }
 
-  getDistanceParams(p1, p2) {
+  private getDistanceParams(p1: VectorType, p2: VectorType) {
     const dx = p2.x - p1.x;
     const dy = p2.y - p1.y;
     const dz = p2.z - p1.z;
@@ -21,7 +38,7 @@ export default class {
     return { dx, dy, dz, dSquared: dx * dx + dy * dy + dz * dz };
   }
 
-  getStateVectors(m) {
+  private getStateVectors(m: MassType[]) {
     const p = [];
     const v = [];
     const mLen = m.length;
@@ -45,7 +62,7 @@ export default class {
     return { p, v };
   }
 
-  updateStateVectors(p, v) {
+  private updateStateVectors(p: VectorType[], v: VectorType[]) {
     const mLen = p.length;
 
     for (let i = 0; i < mLen; i++) {
@@ -62,7 +79,7 @@ export default class {
     }
   }
 
-  generatePositionVectors(v, dt) {
+  private generatePositionVectors(v: VectorType[], dt: number) {
     const p = [];
     const vLen = v.length;
 
@@ -79,7 +96,7 @@ export default class {
     return p;
   }
 
-  generateAccelerationVectors(p) {
+  private generateAccelerationVectors(p: VectorType[]) {
     const a = [];
     const pLen = p.length;
 
@@ -111,7 +128,7 @@ export default class {
     return a;
   }
 
-  generateVelocityVectors(a, dt) {
+  private generateVelocityVectors(a: VectorType[], dt: number) {
     const v = [];
     const aLen = a.length;
 
@@ -140,7 +157,7 @@ export default class {
     this.incrementElapsedTime();
   }
 
-  incrementElapsedTime() {
+  private incrementElapsedTime() {
     this.elapsedTime += this.dt;
   }
 }

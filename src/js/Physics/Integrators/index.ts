@@ -10,6 +10,7 @@ import Nystrom6 from './Nystrom6';
 import RKN64 from './RKN64';
 import RKN12 from './RKN12';
 import Yoshida6 from './Yoshida6';
+import { MassType } from '../types';
 
 export const integrators = [
   'RK4',
@@ -26,7 +27,18 @@ export const integrators = [
   'Yoshida6'
 ];
 
-export default function(integrator, config) {
+export default function(
+  integrator: string,
+  config: {
+    g: number;
+    dt: number;
+    tol: number;
+    minDt: number;
+    maxDt: number;
+    elapsedTime: number;
+    masses: MassType[];
+  }
+) {
   switch (integrator) {
     case 'RK4':
       return new RK4(config);
@@ -51,7 +63,7 @@ export default function(integrator, config) {
     case 'RKN12':
       return new RKN12(config);
     case 'Yoshida6':
-      return new Yoshida6(config); 
+      return new Yoshida6(config);
     default:
       return new RK4(config);
   }

@@ -15,16 +15,13 @@ module.exports = {
         test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader']
       },   
-      { test: /\.tsx?$/, 
-        loader: "awesome-typescript-loader" 
-      },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
       }
     ]
-  },
+  }, 
   resolve: {
     extensions: ['*', '.js', '.jsx', '.ts', '.tsx']
   },
@@ -32,4 +29,4 @@ module.exports = {
     path: `${__dirname}/dist`,
     filename: 'bundle.[hash].js'
   }
-};           
+};              
