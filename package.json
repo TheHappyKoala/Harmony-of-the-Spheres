@@ -75,7 +75,6 @@
     "@types/react-dom": "^16.8.4",
     "@types/react-router-dom": "^4.3.2",
     "express": "^4.16.3",
-    "fsevents": "^1.2.4",
     "react": "^16.8.4",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.8.4",
@@ -85,5 +84,8 @@
     "redux-thunk": "^2.2.0",
     "three": "^0.101.1",
     "three-collada-loader": "0.0.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "^1.2.4"
   }
 }
