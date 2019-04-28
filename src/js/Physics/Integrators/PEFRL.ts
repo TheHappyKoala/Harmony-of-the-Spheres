@@ -1,15 +1,26 @@
 import Euler from './Euler';
+import { FixedTimeStepIntegratorType, VectorType } from '../types';
 
 export default class extends Euler {
-  constructor(params) {
-    super(params);
+  private epsilon: number;
+  private lambda: number;
+  private chi: number;
+
+  constructor({ g, dt, masses, elapsedTime }: FixedTimeStepIntegratorType) {
+    super({ g, dt, masses, elapsedTime });
 
     this.epsilon = 0.1786178958448091;
     this.lambda = -0.2123418310626054;
     this.chi = -0.6626458266981849e-1;
   }
 
-  generatePositionVectors(p, v, dt) {
+  generatePositionVectors(
+    v: VectorType[],
+    dt: number,
+    p?: VectorType[]
+  ): VectorType[] {
+    super.generatePositionVectors(v, dt);
+
     const pFinal = [];
     const vLen = v.length;
 
@@ -26,11 +37,15 @@ export default class extends Euler {
     return pFinal;
   }
 
-  generateVelocityVectors(p, v, dt) {
+  generateVelocityVectors(
+    a: VectorType[],
+    dt: number,
+    v?: VectorType[]
+  ): VectorType[] {
+    super.generateVelocityVectors(a, dt);
+
     const vFinal = [];
     const vLen = v.length;
-
-    const a = this.generateAccelerationVectors(p);
 
     for (let i = 0; i < vLen; i++) {
       let vI = v[i];
@@ -45,7 +60,7 @@ export default class extends Euler {
     return vFinal;
   }
 
-  iterate() {
+  iterate(): void {
     const a1 = this.epsilon * this.dt;
     const a2 = (1 - 2 * this.lambda) * this.dt / 2;
     const a3 = this.chi * this.dt;
@@ -63,11 +78,15 @@ export default class extends Euler {
     const coeffsLen = vCoeffs.length;
 
     for (let i = 0; i < coeffsLen; i++) {
-      p = this.generatePositionVectors(p, v, pCoeffs[i]);
-      v = this.generateVelocityVectors(p, v, vCoeffs[i]);
+      p = this.generatePositionVectors(v, pCoeffs[i], p);
+      v = this.generateVelocityVectors(
+        this.generateAccelerationVectors(p),
+        vCoeffs[i],
+        v
+      );
     }
 
-    p = this.generatePositionVectors(p, v, pCoeffs[coeffsLen]);
+    p = this.generatePositionVectors(v, pCoeffs[coeffsLen], p);
 
     this.updateStateVectors(p, v);
 

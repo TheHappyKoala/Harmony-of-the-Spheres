@@ -1,8 +1,9 @@
 import rknBase from './rknBase';
+import { FixedTimeStepIntegratorType } from '../types';
 
 export default class extends rknBase {
-  constructor(params) {
-    super(params);
+  constructor({ g, dt, masses, elapsedTime }: FixedTimeStepIntegratorType) {
+    super({ g, dt, masses, elapsedTime });
 
     this.coefficients = [
       [0.5675576359e-2],

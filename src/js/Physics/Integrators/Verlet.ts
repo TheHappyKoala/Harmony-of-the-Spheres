@@ -1,9 +1,13 @@
 import Euler from './Euler';
 import H3 from '../vectors';
+import { FixedTimeStepIntegratorType, VectorType } from '../types';
 
 export default class extends Euler {
-  constructor(params) {
-    super(params);
+  utilityVector: H3;
+  lastAcc: VectorType[];
+
+  constructor({ g, dt, masses, elapsedTime }: FixedTimeStepIntegratorType) {
+    super({ g, dt, masses, elapsedTime });
 
     this.utilityVector = new H3();
 
@@ -12,7 +16,11 @@ export default class extends Euler {
     );
   }
 
-  generatePositionVectors(s, a, dt) {
+  generateVerletPositionVectors(
+    s: { p: VectorType[]; v: VectorType[] },
+    a: VectorType[],
+    dt: number
+  ): VectorType[] {
     const p = [];
     const aLen = a.length;
 
@@ -34,7 +42,11 @@ export default class extends Euler {
     return p;
   }
 
-  generateVelocityVectors(a1, a2, dt) {
+  generateVerletVelocityVectors(
+    a1: VectorType[],
+    a2: VectorType[],
+    dt: number
+  ): VectorType[] {
     const v = [];
     const aLen = a1.length;
 
@@ -58,13 +70,13 @@ export default class extends Euler {
     return v;
   }
 
-  iterate() {
+  iterate(): void {
     const s = this.getStateVectors(this.masses);
 
     const a1 = this.lastAcc;
-    const p = this.generatePositionVectors(s, a1, this.dt);
+    const p = this.generateVerletPositionVectors(s, a1, this.dt);
     const a2 = this.generateAccelerationVectors(p);
-    const v = this.generateVelocityVectors(a1, a2, this.dt);
+    const v = this.generateVerletVelocityVectors(a1, a2, this.dt);
 
     this.lastAcc = a2;
     this.updateStateVectors(p, v);
