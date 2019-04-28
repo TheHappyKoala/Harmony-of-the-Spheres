@@ -1,15 +1,29 @@
 import Euler from './Euler';
 import H3 from '../vectors';
+import { FixedTimeStepIntegratorType, VectorType } from '../types';
 
 export default class extends Euler {
-  constructor(params) {
-    super(params);
+  coefficients: any[];
+  delta: any[];
+  alpha: any[];
+  beta: any[];
+
+  tempSumA: H3;
+  tempSumB: H3;
+
+  constructor({ g, dt, masses, elapsedTime }: FixedTimeStepIntegratorType) {
+    super({ g, dt, masses, elapsedTime });
+
+    this.coefficients = [];
+    this.delta = [];
+    this.alpha = [];
+    this.beta = [];
 
     this.tempSumA = new H3();
     this.tempSumB = new H3();
   }
 
-  getK(s) {
+  getK(s: { p: VectorType[]; v: VectorType[] }): any[] {
     const p = s.p;
     const v = s.v;
 
@@ -40,7 +54,11 @@ export default class extends Euler {
 
     return k;
   }
-  generateVectors(s, k) {
+
+  generateVectors(
+    s: { p: VectorType[]; v: VectorType[] },
+    k: any[]
+  ): [VectorType[], VectorType[]] {
     const p = [];
     const v = [];
     const cLen = this.alpha.length;
@@ -69,7 +87,8 @@ export default class extends Euler {
 
     return [p, v];
   }
-  iterate() {
+
+  iterate(): void {
     const s = this.getStateVectors(this.masses);
 
     const k = this.getK(s);

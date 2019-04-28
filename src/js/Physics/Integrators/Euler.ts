@@ -1,12 +1,5 @@
-import { VectorType, MassType } from '../types';
+import { FixedTimeStepIntegratorType, VectorType, MassType } from '../types';
 import H3 from '../vectors';
-
-interface EulerProps {
-  g: number;
-  dt: number;
-  masses: MassType[];
-  elapsedTime: number;
-}
 
 export default class {
   g: number;
@@ -14,11 +7,11 @@ export default class {
   masses: any[];
   elapsedTime: number;
 
-  private a: H3;
-  private v: H3;
-  private p: H3;
+  a: H3;
+  v: H3;
+  p: H3;
 
-  constructor({ g, dt, masses, elapsedTime }: EulerProps) {
+  constructor({ g, dt, masses, elapsedTime }: FixedTimeStepIntegratorType) {
     this.g = g;
     this.dt = dt;
     this.masses = masses;
@@ -30,7 +23,7 @@ export default class {
     this.p = new H3();
   }
 
-  private getDistanceParams(p1: VectorType, p2: VectorType) {
+  getDistanceParams(p1: VectorType, p2: VectorType) {
     const dx = p2.x - p1.x;
     const dy = p2.y - p1.y;
     const dz = p2.z - p1.z;
@@ -38,7 +31,7 @@ export default class {
     return { dx, dy, dz, dSquared: dx * dx + dy * dy + dz * dz };
   }
 
-  private getStateVectors(m: MassType[]) {
+  getStateVectors(m: MassType[]): { p: VectorType[]; v: VectorType[] } {
     const p = [];
     const v = [];
     const mLen = m.length;
@@ -62,7 +55,7 @@ export default class {
     return { p, v };
   }
 
-  private updateStateVectors(p: VectorType[], v: VectorType[]) {
+  updateStateVectors(p: VectorType[], v: VectorType[]): void {
     const mLen = p.length;
 
     for (let i = 0; i < mLen; i++) {
@@ -79,7 +72,7 @@ export default class {
     }
   }
 
-  private generatePositionVectors(v: VectorType[], dt: number) {
+  generatePositionVectors(v: VectorType[], dt: number): VectorType[] {
     const p = [];
     const vLen = v.length;
 
@@ -96,7 +89,7 @@ export default class {
     return p;
   }
 
-  private generateAccelerationVectors(p: VectorType[]) {
+  generateAccelerationVectors(p: VectorType[]): VectorType[] {
     const a = [];
     const pLen = p.length;
 
@@ -128,7 +121,7 @@ export default class {
     return a;
   }
 
-  private generateVelocityVectors(a: VectorType[], dt: number) {
+  generateVelocityVectors(a: VectorType[], dt: number): VectorType[] {
     const v = [];
     const aLen = a.length;
 
@@ -145,7 +138,7 @@ export default class {
     return v;
   }
 
-  iterate() {
+  iterate(): void {
     const s = this.getStateVectors(this.masses);
 
     const a = this.generateAccelerationVectors(s.p);
@@ -157,7 +150,7 @@ export default class {
     this.incrementElapsedTime();
   }
 
-  private incrementElapsedTime() {
+  incrementElapsedTime() {
     this.elapsedTime += this.dt;
   }
 }

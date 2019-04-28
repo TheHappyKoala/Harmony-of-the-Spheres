@@ -1,7 +1,12 @@
 import Euler from './Euler';
+import { VectorType } from '../types';
 
 export default class extends Euler {
-  generatePositionVectors(p, v, dt) {
+  generatePositionVectors(
+    v: VectorType[],
+    dt: number,
+    p?: VectorType[]
+  ): VectorType[] {
     const pFinal = [];
     const vLen = v.length;
 
@@ -18,11 +23,13 @@ export default class extends Euler {
     return pFinal;
   }
 
-  generateVelocityVectors(p, v, dt) {
+  generateVelocityVectors(
+    a: VectorType[],
+    dt: number,
+    v?: VectorType[]
+  ): VectorType[] {
     const vFinal = [];
     const vLen = v.length;
-
-    const a = this.generateAccelerationVectors(p);
 
     for (let i = 0; i < vLen; i++) {
       let vI = v[i];
@@ -37,7 +44,7 @@ export default class extends Euler {
     return vFinal;
   }
 
-  iterate() {
+  iterate(): void {
     const s = this.getStateVectors(this.masses);
 
     const pCoeffs = [
@@ -82,11 +89,15 @@ export default class extends Euler {
     const coeffsLen = vCoeffs.length;
 
     for (let i = 0; i < coeffsLen; i++) {
-      p = this.generatePositionVectors(p, v, this.dt * pCoeffs[i]);
-      v = this.generateVelocityVectors(p, v, this.dt * vCoeffs[i]);
+      p = this.generatePositionVectors(v, this.dt * pCoeffs[i], p);
+      v = this.generateVelocityVectors(
+        this.generateAccelerationVectors(p),
+        this.dt * vCoeffs[i],
+        v
+      );
     }
 
-    p = this.generatePositionVectors(p, v, this.dt * pCoeffs[coeffsLen]);
+    p = this.generatePositionVectors(v, this.dt * pCoeffs[coeffsLen], p);
 
     this.updateStateVectors(p, v);
 

@@ -13,3 +13,10 @@ export interface MassType {
   vy: number;
   vz: number;
 }
+
+export interface FixedTimeStepIntegratorType {
+  g: number;
+  dt: number;
+  masses: MassType[];
+  elapsedTime: number;
+}

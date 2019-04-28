@@ -1,7 +1,7 @@
 import Euler from './Euler';
 
 export default class extends Euler {
-  iterate() {
+  iterate(): void {
     const s = this.getStateVectors(this.masses);
     const a1 = this.generateAccelerationVectors(s.p);
 
