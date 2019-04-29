@@ -39,9 +39,6 @@ To be decided. If you have a suggestion, please submit a pull request!
 ## Create a Production Build
 ```npm run build```
 
-## Prettify
-```npm run prettier```
-
 ## License
 
 Copyright (C) 2019 Darrell Huffman - GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
