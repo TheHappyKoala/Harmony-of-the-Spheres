@@ -1,13 +1,18 @@
+import { VectorType } from '../types';
 import { degreesToRadians } from '../utils';
 
 export default class {
+  x: number;
+  y: number;
+  z: number;
+
   constructor() {
     this.x = 0;
     this.y = 0;
     this.z = 0;
   }
 
-  set(v) {
+  set(v: VectorType): this {
     this.x = v.x;
     this.y = v.y;
     this.z = v.z;
@@ -15,23 +20,25 @@ export default class {
     return this;
   }
 
-  toArray() {
+  toArray(): [number, number, number] {
     return [this.x, this.y, this.z];
   }
 
-  toObject() {
+  toObject(): VectorType {
     return { x: this.x, y: this.y, z: this.z };
   }
 
-  getLength() {
+  getLength(): number {
     return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
   }
 
-  normalise() {
+  normalise(): VectorType {
     return this.divideByScalar(this.getLength());
   }
 
-  getDistanceParameters(v) {
+  getDistanceParameters(
+    v: VectorType
+  ): { dx: number; dy: number; dz: number; dSquared: number; d: number } {
     const dx = this.x - v.x;
     const dy = this.y - v.y;
     const dz = this.z - v.z;
@@ -41,7 +48,7 @@ export default class {
     return { dx, dy, dz, dSquared, d: Math.sqrt(dSquared) };
   }
 
-  add(v) {
+  add(v: VectorType): this {
     this.x += v.x;
     this.y += v.y;
     this.z += v.z;
@@ -49,7 +56,7 @@ export default class {
     return this;
   }
 
-  subtract(v) {
+  subtract(v: VectorType): this {
     this.x -= v.x;
     this.y -= v.y;
     this.z -= v.z;
@@ -57,7 +64,7 @@ export default class {
     return this;
   }
 
-  subtractFrom(v) {
+  subtractFrom(v: VectorType): this {
     this.x = v.x - this.x;
     this.y = v.y - this.y;
     this.z = v.z - this.z;
@@ -65,7 +72,7 @@ export default class {
     return this;
   }
 
-  multiply(v) {
+  multiply(v: VectorType): this {
     this.x *= v.x;
     this.y *= v.y;
     this.z *= v.z;
@@ -73,7 +80,7 @@ export default class {
     return this;
   }
 
-  divide(v) {
+  divide(v: VectorType): this {
     this.x /= v.x;
     this.y /= v.y;
     this.z /= v.z;
@@ -81,7 +88,7 @@ export default class {
     return this;
   }
 
-  multiplyByScalar(scalar) {
+  multiplyByScalar(scalar: number): this {
     this.x *= scalar;
     this.y *= scalar;
     this.z *= scalar;
@@ -89,7 +96,7 @@ export default class {
     return this;
   }
 
-  divideByScalar(scalar) {
+  divideByScalar(scalar: number): this {
     this.x /= scalar;
     this.y /= scalar;
     this.z /= scalar;
@@ -97,7 +104,7 @@ export default class {
     return this;
   }
 
-  addScaledVector(scalar, v) {
+  addScaledVector(scalar: number, v: VectorType): this {
     this.x += scalar * v.x;
     this.y += scalar * v.y;
     this.z += scalar * v.z;
@@ -105,7 +112,7 @@ export default class {
     return this;
   }
 
-  subtractScaledVector(scalar, v) {
+  subtractScaledVector(scalar: number, v: VectorType): this {
     this.x -= scalar * v.x;
     this.y -= scalar * v.y;
     this.z -= scalar * v.z;
@@ -113,7 +120,7 @@ export default class {
     return this;
   }
 
-  rotateX(angle) {
+  rotateX(angle: number): this {
     const angleRad = degreesToRadians(angle);
 
     this.y = this.y * Math.cos(angleRad) + this.z * Math.sin(angleRad);
@@ -122,7 +129,7 @@ export default class {
     return this;
   }
 
-  rotateY(angle) {
+  rotateY(angle: number): this {
     const angleRad = degreesToRadians(angle);
 
     this.x = this.x * Math.cos(angleRad) - this.z * Math.sin(angleRad);
@@ -131,7 +138,7 @@ export default class {
     return this;
   }
 
-  rotateZ(angle) {
+  rotateZ(angle: number): this {
     const angleRad = degreesToRadians(angle);
 
     this.x = this.x * Math.cos(angleRad) + this.y * Math.sin(angleRad);
