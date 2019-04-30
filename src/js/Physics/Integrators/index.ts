@@ -10,6 +10,7 @@ import Nystrom6 from './Nystrom6';
 import RKN64 from './RKN64';
 import RKN12 from './RKN12';
 import Yoshida6 from './Yoshida6';
+import KahanLi8 from './KahanLi8';
 import { MassType } from '../types';
 
 export const integrators = [
@@ -24,7 +25,8 @@ export const integrators = [
   'Nystrom6',
   'RKN64',
   'RKN12',
-  'Yoshida6'
+  'Yoshida6',
+  'KahanLi8'
 ];
 
 export default function(
@@ -64,6 +66,8 @@ export default function(
       return new RKN12(config);
     case 'Yoshida6':
       return new Yoshida6(config);
+    case 'KahanLi8':
+      return new KahanLi8(config);
     default:
       return new RK4(config);
   }
