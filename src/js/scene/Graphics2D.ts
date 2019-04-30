@@ -13,11 +13,9 @@ export default class {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
 
-  setDimensions(w: number, h: number): this {
+  setDimensions(w: number, h: number): void {
     this.canvas.width = w;
     this.canvas.height = h;
-
-    return this;
   }
 
   threeToTwo(
