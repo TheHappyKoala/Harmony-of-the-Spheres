@@ -6,15 +6,25 @@ export default class {
   dt: number;
   masses: any[];
   elapsedTime: number;
+  softening: number;
+  softeningSquared: number;
 
   a: H3;
   v: H3;
   p: H3;
 
-  constructor({ g, dt, masses, elapsedTime }: FixedTimeStepIntegratorType) {
+  constructor({
+    g,
+    dt,
+    masses,
+    elapsedTime,
+    softening
+  }: FixedTimeStepIntegratorType) {
     this.g = g;
     this.dt = dt;
     this.masses = masses;
+    this.softening = softening;
+    this.softeningSquared = this.softening * this.softening;
 
     this.elapsedTime = elapsedTime;
 
@@ -105,7 +115,10 @@ export default class {
           let dParams = this.getDistanceParams(pI, pJ);
           let d = Math.sqrt(dParams.dSquared);
 
-          let fact = this.g * this.masses[j].m / (dParams.dSquared * d);
+          let fact =
+            this.g *
+            this.masses[j].m /
+            Math.pow(dParams.dSquared + this.softeningSquared, 1.5);
 
           this.a.addScaledVector(fact, {
             x: dParams.dx,

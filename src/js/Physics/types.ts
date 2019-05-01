@@ -19,4 +19,5 @@ export interface FixedTimeStepIntegratorType {
   dt: number;
   masses: MassType[];
   elapsedTime: number;
+  softening: number;
 }
