@@ -1,15 +1,21 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { "*": ["types/*"] },
     "outDir": "./dist/",
       "allowJs": true,
       "allowSyntheticDefaultImports": true,
       "sourceMap": true,
       "noImplicitAny": true,
       "moduleResolution": "node",
-      "target": "es6",
+      "target": "es5",
       "jsx": "react"   
-  },
+  },    
   "include": [
-    "./src/**/*" 
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
   ]
-}      
+}                     
