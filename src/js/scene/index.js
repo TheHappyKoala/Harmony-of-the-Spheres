@@ -231,6 +231,8 @@ export default {
       }
     }
 
+    this.system.useBarnesHut = this.scenario.useBarnesHut;
+
     if (this.scenario.playing) this.system.iterate();
 
     dt = this.system.dt;
