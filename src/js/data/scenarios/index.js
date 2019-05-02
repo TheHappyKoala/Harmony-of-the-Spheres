@@ -9,7 +9,6 @@ import earthMoonSystem from './earthMoonSystem';
 import oumuamua from './oumuamua';
 import tess from './tess';
 import martianSystem from './martianSystem';
-import structureFormation from './structureFormation';
 import newHorizons from './newHorizons';
 import europaClipper from './europaClipper';
 import cruithne from './cruithne';
@@ -190,7 +189,6 @@ export const scenarios = [
   lunarFreeReturn,
   kepler11,
   the24sextantisSystem,
-  structureFormation,
   shenanigans,
   hohmanTransfer,
   venusPentagram,
