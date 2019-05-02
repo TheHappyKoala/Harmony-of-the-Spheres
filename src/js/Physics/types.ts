@@ -19,4 +19,14 @@ export interface FixedTimeStepIntegratorType {
   dt: number;
   masses: MassType[];
   elapsedTime: number;
+  useBarnesHut: boolean;
+  theta: number;
+}
+
+export interface TreeNodeType {
+  size: number;
+  position: VectorType;
+  CoM: VectorType;
+  mass: number;
+  children: TreeNodeType[] | MassType[];
 }
