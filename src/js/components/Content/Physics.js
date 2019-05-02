@@ -39,6 +39,16 @@ export default props => {
           ))}
         </Dropdown>
       </div>
+      <Toggle
+        label="Use Barnes-Hut"
+        checked={props.useBarnesHut}
+        callback={() =>
+          props.modifyScenarioProperty({
+            key: 'useBarnesHut',
+            value: !props.useBarnesHut
+          })
+        }
+      />
       <label className="top">
         Delta Time
         <Tooltip
