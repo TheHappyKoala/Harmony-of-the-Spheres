@@ -232,6 +232,7 @@ export default {
     }
 
     this.system.useBarnesHut = this.scenario.useBarnesHut;
+    this.system.theta = this.scenario.theta;
 
     if (this.scenario.playing) this.system.iterate();
 

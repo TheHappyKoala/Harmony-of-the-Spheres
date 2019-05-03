@@ -121,6 +121,7 @@ const processScenario = scenario => ({
   integrator: scenario.integrator !== undefined ? scenario.integrator : 'RKN12',
   useBarnesHut:
     scenario.useBarnesHut !== undefined ? scenario.useBarnesHut : false,
+  theta: scenario.theta !== undefined ? scenario.theta : 0.5,
   tol: scenario.tol !== undefined ? scenario.tol : scenario.dt * 0.00000001,
   maxDt:
     scenario.maxDt !== undefined

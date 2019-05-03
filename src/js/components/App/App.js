@@ -42,6 +42,7 @@ export default props => {
           <Physics
             integrator={scenario.integrator}
             useBarnesHut={scenario.useBarnesHut}
+            theta={scenario.theta}
             dt={scenario.dt}
             tol={scenario.tol}
             minDt={scenario.minDt}
