@@ -19,6 +19,7 @@ export interface FixedTimeStepIntegratorType {
   dt: number;
   masses: MassType[];
   elapsedTime: number;
+  softening: number;
   useBarnesHut: boolean;
   theta: number;
 }

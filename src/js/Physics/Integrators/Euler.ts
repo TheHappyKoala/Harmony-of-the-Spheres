@@ -11,6 +11,8 @@ export default class {
   dt: number;
   masses: any[];
   elapsedTime: number;
+  softening: number;
+  softeningSquared: number;
   useBarnesHut: boolean;
   theta: number;
   maximumDistance: number;
@@ -23,6 +25,8 @@ export default class {
     this.g = g;
     this.dt = dt;
     this.masses = masses;
+    this.softening = 1e-10;
+    this.softeningSquared = this.softening * this.softening;
 
     this.useBarnesHut = true;
     this.theta = 0.5;
@@ -122,7 +126,10 @@ export default class {
             let dParams = this.getDistanceParams(pI, pJ);
             let d = Math.sqrt(dParams.dSquared);
 
-            let fact = this.g * this.masses[j].m / (dParams.dSquared * d);
+            let fact =
+              this.g *
+              this.masses[j].m /
+              Math.pow(dParams.dSquared + this.softeningSquared, 1.5);
 
             this.a.addScaledVector(fact, {
               x: dParams.dx,
@@ -367,7 +374,9 @@ export default class {
         return { x: 0, y: 0, z: 0 };
       }
       const acc = rVector
-        .multiplyByScalar(other.m * this.g / (r * r * r))
+        .multiplyByScalar(
+          other.m * this.g / Math.pow(r * r + this.softeningSquared, 1.5)
+        )
         .toObject();
       return acc;
     } else if (nChildren == 8) {
@@ -378,7 +387,9 @@ export default class {
       }
       if (tree.size / r < this.theta) {
         const acc = rVector
-          .multiplyByScalar(this.g * tree.mass / (r * r * r))
+          .multiplyByScalar(
+            this.g * tree.mass / Math.pow(r * r + this.softeningSquared, 1.5)
+          )
           .toObject();
         return acc;
       } else {
