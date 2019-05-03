@@ -41,6 +41,8 @@ export default props => {
         <div label="Physics" icon="fas fa-cube fa-2x">
           <Physics
             integrator={scenario.integrator}
+            useBarnesHut={scenario.useBarnesHut}
+            theta={scenario.theta}
             dt={scenario.dt}
             tol={scenario.tol}
             minDt={scenario.minDt}

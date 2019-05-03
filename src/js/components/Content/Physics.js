@@ -39,6 +39,35 @@ export default props => {
           ))}
         </Dropdown>
       </div>
+      <Toggle
+        label="Use Barnes-Hut"
+        checked={props.useBarnesHut}
+        callback={() =>
+          props.modifyScenarioProperty({
+            key: 'useBarnesHut',
+            value: !props.useBarnesHut
+          })
+        }
+      />
+      {props.useBarnesHut && (
+        <Fragment>
+          <label className="top">
+            Barnes-Hut Theta Parameter
+            <Tooltip
+              position="left"
+              content="A value of zero for Theta corresponds to naïve comparison with all masses in the simulation, which is equivalent to a brute force approach. Higher values starts treating masses that are very far away as a single mass to reduce the number of calculations necessary to calculate the acceleration on a mass, which is a reasonable approximation provided these masses are sufficiently far away."
+            />
+          </label>
+          <Slider
+            payload={{ key: 'theta' }}
+            value={props.theta}
+            callback={props.modifyScenarioProperty}
+            max={5}
+            min={0}
+            step={0.1}
+          />
+        </Fragment>
+      )}
       <label className="top">
         Delta Time
         <Tooltip

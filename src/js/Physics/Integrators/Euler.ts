@@ -1,4 +1,9 @@
-import { FixedTimeStepIntegratorType, VectorType, MassType } from '../types';
+import {
+  FixedTimeStepIntegratorType,
+  VectorType,
+  MassType,
+  TreeNodeType
+} from '../types';
 import H3 from '../vectors';
 
 export default class {
@@ -8,23 +13,24 @@ export default class {
   elapsedTime: number;
   softening: number;
   softeningSquared: number;
+  useBarnesHut: boolean;
+  theta: number;
+  maximumDistance: number;
 
   a: H3;
   v: H3;
   p: H3;
 
-  constructor({
-    g,
-    dt,
-    masses,
-    elapsedTime,
-    softening
-  }: FixedTimeStepIntegratorType) {
+  constructor({ g, dt, masses, elapsedTime }: FixedTimeStepIntegratorType) {
     this.g = g;
     this.dt = dt;
     this.masses = masses;
-    this.softening = softening;
+    this.softening = 1e-10;
     this.softeningSquared = this.softening * this.softening;
+
+    this.useBarnesHut = true;
+    this.theta = 0.5;
+    this.maximumDistance = 1000;
 
     this.elapsedTime = elapsedTime;
 
@@ -100,38 +106,44 @@ export default class {
   }
 
   generateAccelerationVectors(p: VectorType[]): VectorType[] {
-    const a = [];
-    const pLen = p.length;
+    if (this.useBarnesHut) {
+      const tree = this.constructBHTree(p);
+      const a = this.BHGenerateAccelerationVectors(p, tree);
+      return a;
+    } else {
+      const a = [];
+      const pLen = p.length;
 
-    for (let i = 0; i < pLen; i++) {
-      this.a.set({ x: 0, y: 0, z: 0 });
+      for (let i = 0; i < pLen; i++) {
+        this.a.set({ x: 0, y: 0, z: 0 });
 
-      let pI = p[i];
+        let pI = p[i];
 
-      for (let j = 0; j < pLen; j++) {
-        if (i !== j && this.masses[j].m > 0) {
-          let pJ = p[j];
+        for (let j = 0; j < pLen; j++) {
+          if (i !== j && this.masses[j].m > 0) {
+            let pJ = p[j];
 
-          let dParams = this.getDistanceParams(pI, pJ);
-          let d = Math.sqrt(dParams.dSquared);
+            let dParams = this.getDistanceParams(pI, pJ);
+            let d = Math.sqrt(dParams.dSquared);
 
-          let fact =
-            this.g *
-            this.masses[j].m /
-            Math.pow(dParams.dSquared + this.softeningSquared, 1.5);
+            let fact =
+              this.g *
+              this.masses[j].m /
+              Math.pow(dParams.dSquared + this.softeningSquared, 1.5);
 
-          this.a.addScaledVector(fact, {
-            x: dParams.dx,
-            y: dParams.dy,
-            z: dParams.dz
-          });
+            this.a.addScaledVector(fact, {
+              x: dParams.dx,
+              y: dParams.dy,
+              z: dParams.dz
+            });
+          }
         }
+
+        a[i] = { x: this.a.x, y: this.a.y, z: this.a.z };
       }
 
-      a[i] = { x: this.a.x, y: this.a.y, z: this.a.z };
+      return a;
     }
-
-    return a;
   }
 
   generateVelocityVectors(a: VectorType[], dt: number): VectorType[] {
@@ -165,5 +177,240 @@ export default class {
 
   incrementElapsedTime() {
     this.elapsedTime += this.dt;
+  }
+
+  // Below slumbers the mighty Barnes Hut
+  isInTree(p: VectorType, tree: TreeNodeType): boolean {
+    const a = tree.size;
+    if (
+      tree.position.x <= p.x &&
+      p.x < tree.position.x + a &&
+      (tree.position.y <= p.y && p.y < tree.position.y + a) &&
+      (tree.position.z <= p.z && p.z < tree.position.z + a)
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  generateChildren(tree: TreeNodeType): TreeNodeType[] {
+    const a = tree.size / 2;
+    let v = new H3();
+    const tree1 = {
+      size: a,
+      position: tree.position,
+      CoM: { x: 0, y: 0, z: 0 },
+      nMasses: 0,
+      mass: 0,
+      children: []
+    };
+
+    const tree2 = {
+      size: a,
+      position: v
+        .set(tree.position)
+        .add({ x: 0, y: a, z: 0 })
+        .toObject(),
+      CoM: { x: 0, y: 0, z: 0 },
+      nMasses: 0,
+      mass: 0,
+      children: []
+    };
+
+    const tree3 = {
+      size: a,
+      position: v
+        .set(tree.position)
+        .add({ x: a, y: 0, z: 0 })
+        .toObject(),
+      CoM: { x: 0, y: 0, z: 0 },
+      nMasses: 0,
+      mass: 0,
+      children: []
+    };
+
+    const tree4 = {
+      size: a,
+      position: v
+        .set(tree.position)
+        .add({ x: a, y: a, z: 0 })
+        .toObject(),
+      CoM: { x: 0, y: 0, z: 0 },
+      nMasses: 0,
+      mass: 0,
+      children: []
+    };
+
+    const tree5 = {
+      size: a,
+      position: v
+        .set(tree.position)
+        .add({ x: 0, y: 0, z: a })
+        .toObject(),
+      CoM: { x: 0, y: 0, z: 0 },
+      nMasses: 0,
+      mass: 0,
+      children: []
+    };
+
+    const tree6 = {
+      size: a,
+      position: v
+        .set(tree.position)
+        .add({ x: 0, y: a, z: a })
+        .toObject(),
+      CoM: { x: 0, y: 0, z: 0 },
+      nMasses: 0,
+      mass: 0,
+      children: []
+    };
+
+    const tree7 = {
+      size: a,
+      position: v
+        .set(tree.position)
+        .add({ x: a, y: 0, z: a })
+        .toObject(),
+      CoM: { x: 0, y: 0, z: 0 },
+      nMasses: 0,
+      mass: 0,
+      children: []
+    };
+
+    const tree8 = {
+      size: a,
+      position: v
+        .set(tree.position)
+        .add({ x: a, y: a, z: a })
+        .toObject(),
+      CoM: { x: 0, y: 0, z: 0 },
+      nMasses: 0,
+      mass: 0,
+      children: []
+    };
+
+    return [tree1, tree2, tree3, tree4, tree5, tree6, tree7, tree8];
+  }
+
+  insertMassInTree(mass: MassType, tree: TreeNodeType): void {
+    const nChildren = tree.children.length;
+    // if empty
+    if (nChildren == 0) {
+      tree.children = [mass];
+      return;
+    } else if (nChildren == 1) {
+      const otherMass = tree.children[0];
+      tree.children = this.generateChildren(tree);
+      this.insertMassInTree(mass, tree);
+      this.insertMassInTree(otherMass, tree);
+      return;
+    } else if (nChildren == 8) {
+      for (let i = 0; i < 8; i++) {
+        if (
+          this.isInTree({ x: mass.x, y: mass.y, z: mass.z }, tree.children[i])
+        ) {
+          const v = new H3();
+          tree.CoM = v
+            .set(tree.CoM)
+            .addScaledVector(mass.m, { x: mass.x, y: mass.y, z: mass.z })
+            .toObject();
+          tree.mass += mass.m;
+          this.insertMassInTree(mass, tree.children[i]);
+        }
+      }
+    }
+  }
+
+  fixCoM(tree: TreeNodeType): void {
+    const nChildren = tree.children.length;
+    const v = new H3();
+    if (nChildren == 8) {
+      tree.CoM = v
+        .set(tree.CoM)
+        .multiplyByScalar(1 / tree.mass)
+        .toObject();
+      for (let i = 0; i < 8; i++) {
+        this.fixCoM(tree.children[i]);
+      }
+    }
+    return;
+  }
+
+  constructBHTree(p: VectorType[]): TreeNodeType {
+    const a = this.maximumDistance;
+    const tree = {
+      size: a,
+      position: { x: -a / 2, y: -a / 2, z: -a / 2 },
+      CoM: { x: -a / 2, y: -a / 2, z: -a / 2 },
+      mass: 0,
+      children: []
+    };
+
+    const pLen = this.masses.length;
+    for (let i = 0; i < pLen; i++) {
+      p[i].m = this.masses[i].m;
+      this.insertMassInTree(p[i], tree);
+    }
+    this.fixCoM(tree);
+
+    return tree;
+  }
+
+  BHAccelerate(p: VectorType, tree: TreeNodeType): VectorType {
+    const v = new H3();
+    const nChildren = tree.children.length;
+    if (nChildren == 0) {
+      return { x: 0, y: 0, z: 0 };
+    } else if (nChildren == 1) {
+      const other = tree.children[0];
+      const otherP = v.set({ x: other.x, y: other.y, z: other.z });
+      const rVector = v.subtract(p);
+      const r = rVector.getLength();
+      //
+      // add softening here
+      //
+      if (r == 0.0) {
+        return { x: 0, y: 0, z: 0 };
+      }
+      const acc = rVector
+        .multiplyByScalar(
+          other.m * this.g / Math.pow(r * r + this.softeningSquared, 1.5)
+        )
+        .toObject();
+      return acc;
+    } else if (nChildren == 8) {
+      const rVector = v.set(tree.CoM).subtract(p);
+      const r = rVector.getLength();
+      if (r == 0) {
+        return { x: 0, y: 0, z: 0 };
+      }
+      if (tree.size / r < this.theta) {
+        const acc = rVector
+          .multiplyByScalar(
+            this.g * tree.mass / Math.pow(r * r + this.softeningSquared, 1.5)
+          )
+          .toObject();
+        return acc;
+      } else {
+        let totalAcc = v.set({ x: 0, y: 0, z: 0 });
+        for (let i = 0; i < 8; i++) {
+          totalAcc = totalAcc.add(this.BHAccelerate(p, tree.children[i]));
+        }
+        return totalAcc.toObject();
+      }
+    }
+  }
+
+  BHGenerateAccelerationVectors(
+    p: VectorType[],
+    tree: TreeNodeType
+  ): VectorType[] {
+    const nP = p.length;
+    const acc = [];
+    for (let i = 0; i < nP; i++) {
+      acc[i] = this.BHAccelerate(p[i], tree);
+    }
+    return acc;
   }
 }

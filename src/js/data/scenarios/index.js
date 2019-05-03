@@ -99,6 +99,10 @@ const processScenario = scenario => ({
   ...scenario,
   isLoaded: false,
   playing: false,
+  particlesWithMass:
+    scenario.particlesWithMass !== undefined
+      ? scenario.particlesWithMass
+      : false,
   tcmsData:
     scenario.tcmsData !== undefined
       ? scenario.tcmsData.map(tcmData => ({
@@ -115,6 +119,9 @@ const processScenario = scenario => ({
         }))
       : false,
   integrator: scenario.integrator !== undefined ? scenario.integrator : 'RKN12',
+  useBarnesHut:
+    scenario.useBarnesHut !== undefined ? scenario.useBarnesHut : false,
+  theta: scenario.theta !== undefined ? scenario.theta : 0.5,
   tol: scenario.tol !== undefined ? scenario.tol : scenario.dt * 0.00000001,
   maxDt:
     scenario.maxDt !== undefined
@@ -139,11 +146,11 @@ const processScenario = scenario => ({
   barycenterMassOne:
     scenario.barycenterMassOne !== undefined
       ? scenario.barycenterMassOne
-      : scenario.masses[0].name,
+      : scenario.masses[0] !== undefined ? scenario.masses[0].name : '',
   barycenterMassTwo:
     scenario.barycenterMassTwo !== undefined
       ? scenario.barycenterMassTwo
-      : scenario.masses[1].name,
+      : scenario.masses[1] !== undefined ? scenario.masses[1].name : '',
   elapsedTime: 0,
   trails: scenario.trails !== undefined ? scenario.trails : true,
   labels: scenario.labels !== undefined ? scenario.labels : true,
