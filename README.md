@@ -7,7 +7,7 @@ Newtonian n-body gravity simulator
 
 * To provide people with a dazzling, fun and scientifically accurate introduction to physics and space that is accessible to anybody that has a modern browser installed on their device.
 * Create simulations that can supplement and bring educational material on space and physics to life on websites such as [WikiPedia](https://www.wikipedia.org/).
-* To assist researchers with reaching out to the public by creating simulations of their research findings, especially around the time of publishing as that is the time when it is most likely that media outlets publish news relating to their research and the public hears about it. I am a strong believer in that interactive and beautifully animated simulations can go a long way towards getting getting laymen more interested in science.
+* To assist researchers with reaching out to the public by creating simulations of their research findings, especially around the time of publishing as that is the time when it is most likely that media outlets publish news relating to their research and the public hears about it. I am a strong believer in that interactive and beautifully animated simulations can go a long way towards getting laymen more interested in science.
 
 ## Contribute
 
