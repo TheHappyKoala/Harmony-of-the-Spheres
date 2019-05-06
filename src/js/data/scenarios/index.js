@@ -99,10 +99,6 @@ const processScenario = scenario => ({
   ...scenario,
   isLoaded: false,
   playing: false,
-  particlesWithMass:
-    scenario.particlesWithMass !== undefined
-      ? scenario.particlesWithMass
-      : false,
   tcmsData:
     scenario.tcmsData !== undefined
       ? scenario.tcmsData.map(tcmData => ({
@@ -139,6 +135,8 @@ const processScenario = scenario => ({
           rings: []
         }
       : scenario.particles,
+  softeningConstant:
+    scenario.softeningConstant !== undefined ? scenario.softeningConstant : 0,
   collisions: true,
   barycenter: true,
   systemBarycenter:

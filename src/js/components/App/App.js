@@ -53,6 +53,7 @@ export default props => {
             masses={scenario.masses}
             collisions={scenario.collisions}
             g={scenario.g}
+            softeningConstant={scenario.softeningConstant}
             modifyScenarioProperty={props.modifyScenarioProperty}
           />
         </div>
