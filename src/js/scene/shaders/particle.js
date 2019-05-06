@@ -9,7 +9,7 @@ export default {
     vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );   
 
       if(sizeAttenuation == true) {   
-        gl_PointSize = size * ( 400.0 / -mvPosition.z );
+        gl_PointSize = size * ( 300.0 / -mvPosition.z );
       } else {
         gl_PointSize = 3.0;        
       }   

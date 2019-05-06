@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import particleMaterial from './particleMaterial';
+import { getRandomNumberInRange } from '../Physics/utils';
 
 export default class extends THREE.Object3D {
   constructor(particles, scenarioScale, size, max, type) {
@@ -36,19 +37,20 @@ export default class extends THREE.Object3D {
 
       sizes[i] = this.size;
 
-      if (this.type === 'Galaxy') {
-        const particleType =
-          this.particles[i] !== undefined ? this.particles[i].type : 'regular';
+      const particle = this.particles[i];
 
-        const gasCloud = i % 60 == 0;
+      const randNumerator = getRandomNumberInRange(0, particlesLen);
+      const randDenominator = getRandomNumberInRange(0, particlesLen);
 
-        color.setHSL(0.5 + 0.1 * Math.random(), 0.3, gasCloud ? 0.2 : 0.5);
+      const randFraction = randNumerator / randDenominator;
 
-        if (particleType === 'bulge') color.setHSL(0.07, 0.87, 0.15, 0.1);
-
-        if (gasCloud) sizes[i] = this.size * 20;
-        else sizes[i] = this.size;
-      } else color.setHSL(0.1 * Math.random(), 0.9, 0.5);
+      if (particle && particle.color) {
+        color.setHSL(
+          particle.color[0] + particle.color[1] * randFraction,
+          particle.color[2],
+          particle.color[3]
+        );
+      } else color.setHSL(0.5 + 0.1 * randFraction, 0.7, 0.5);
 
       color.toArray(colors, i * 3);
 
@@ -84,10 +86,13 @@ export default class extends THREE.Object3D {
     geometry.setDrawRange(0, particlesLen - 1);
 
     const positions = geometry.attributes.position.array;
+    const sizes = geometry.attributes.size.array;
 
     let j = 0;
 
     const scenarioScale = this.scenarioScale;
+
+    const time = Date.now() * 0.005;
 
     for (let i = 0; i < particlesLen; i++) {
       const particle = particles[i];
@@ -101,8 +106,13 @@ export default class extends THREE.Object3D {
       positions[j + 2] = z;
 
       j += 3;
+
+      const size = this.size;
+
+      sizes[i] = size * 1.4 + size * 1.3 * Math.sin(0.1 * i + time);
     }
 
+    geometry.attributes.size.needsUpdate = true;
     geometry.attributes.position.needsUpdate = true;
   }
 }
