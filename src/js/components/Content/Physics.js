@@ -240,7 +240,7 @@ export default props => {
         Softening Constant
         <Tooltip
           position="left"
-          content="The gravitational constant is equal to the absolute value of the gravitational force, acting on a point body with unit mass from another similar body, which is located at the unit distance. Higher values yield a more attractive gravitational force, but what happens if you set a negative value for the gravitational constant?"
+          content="In n-body simulations of collisionless systems, a softening constant is introduced to modify gravitational interactions on small scales to remove singularities and simplify the task of numerically integrating the equations of motion."
         />
       </label>
       <Slider
