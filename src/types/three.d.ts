@@ -7,7 +7,8 @@ declare module 'three' {
     x: number;
     y: number;
     z: number;
-    constructor(x: number, y: number, z: number);
+    constructor(x?: number, y?: number, z?: number);
+    set(x: number, y: number, z: number): this;
     project(camera: PerspectiveCamera): this;
   }
 }
