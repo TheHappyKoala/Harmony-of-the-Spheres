@@ -5,7 +5,7 @@ export interface VectorType {
 }
 
 export interface MassType {
-  m: number;
+  m?: number;
   x: number;
   y: number;
   z: number;
