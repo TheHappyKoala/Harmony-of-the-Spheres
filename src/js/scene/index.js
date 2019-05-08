@@ -10,14 +10,13 @@ import { getObjFromArrByKeyValuePair } from '../utils';
 import doCollisions from '../Physics/collisions';
 import {
   getDistanceParams,
-  createParticleDisc,
-  createParticleSystem,
   getOrbit,
   getClosestPointOnSphere,
   getRandomNumberInRange,
   rotateVector,
   setBarycenter
 } from '../Physics/utils';
+import ParticleService from '../Physics/particles/ParticleService';
 import arena from './arena';
 import Camera from './Camera';
 import Graphics2D, { drawBaryCenterLabel, drawMassLabel } from './Graphics2D';
@@ -786,29 +785,18 @@ export default {
             )
           : ring.customPrimaryData;
 
-      let callback =
-        ring.spiral === true
-          ? vectors => {
-              const integrator = new ParticlePhysics();
-              integrator.particles = vectors;
-
-              for (let i = 0; i < 1000; i++)
-                integrator.iterate([primary], 39.5, 0.0008);
-            }
-          : false;
-
-      const generatedParticles = createParticleSystem(
-        createParticleDisc(
+      const generatedParticles = ParticleService.getParticleSystem(
+        ParticleService.getShapeOfParticles(
           ring.number,
-          primary,
-          this.scenario.g,
           ring.minD,
           ring.maxD,
-          ring.spiral
+          ParticleService.getDiscParticle
         ),
         ring.tilt,
         primary,
-        callback
+        [0, 0],
+        this.scenario.g,
+        true
       );
 
       for (let i = 0; i < ring.number; i++)
