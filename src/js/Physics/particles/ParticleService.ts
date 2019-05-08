@@ -3,7 +3,8 @@ import { Vector3 } from 'three';
 import {
   getRandomNumberInRange,
   getRandomRadian,
-  getOrbit,
+  getDistanceParams,
+  getVMag,
   rotateVector
 } from '../utils';
 
@@ -68,6 +69,24 @@ export default class {
     const a = new Vector3();
 
     return vectors.map(item => {
+      if (withOrbit) {
+        const dParams = getDistanceParams(
+          { x: 0, y: 0, z: 0 },
+          { x: item.x, y: item.y, z: item.z }
+        );
+
+        const d = Math.sqrt(dParams.dSquared);
+
+        const vMag = getVMag(g, primary, d);
+
+        item = {
+          ...item,
+          vx: -dParams.dy * vMag / d,
+          vy: dParams.dx * vMag / d,
+          vz: 0
+        };
+      }
+
       const pTX = rotateVector(
         item.x,
         item.y,
@@ -81,14 +100,10 @@ export default class {
 
       const pTZ = rotateVector(pTY.x, pTY.y, pTY.z, tilt[2], a.set(0, 0, 1), p);
 
-      const orbit = withOrbit
-        ? getOrbit(primary, item, g, false, true)
-        : { vx: 0, vy: 0, vz: 0 };
-
       const vTX = rotateVector(
-        orbit.vx,
-        orbit.vy,
-        orbit.vz,
+        item.vx,
+        item.vy,
+        item.vz,
         tilt[0],
         a.set(1, 0, 0),
         v
