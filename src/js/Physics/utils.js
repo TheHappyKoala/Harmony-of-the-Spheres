@@ -188,42 +188,6 @@ export function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export function createParticleDisc(
-  particlesNumber = 0,
-  primary = { m: 0, x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0 },
-  g = 39.5,
-  minD = 0,
-  maxD = 0
-) {
-  const particles = [];
-
-  for (let i = 0; i < particlesNumber; i++) {
-    const radian = getRandomRadian();
-    const dist = getRandomNumberInRange(minD, maxD);
-
-    const x = Math.cos(radian) * dist;
-    const y = Math.sin(radian) * dist;
-    const z = 0;
-
-    const dParams = getDistanceParams({ x: 0, y: 0, z: 0 }, { x, y, z });
-
-    const d = Math.sqrt(dParams.dSquared);
-
-    const vMag = getVMag(g, primary, d);
-
-    particles.push({
-      x: x,
-      y: y,
-      z: z,
-      vx: -dParams.dy * vMag / d,
-      vy: dParams.dx * vMag / d,
-      vz: 0
-    });
-  }
-
-  return particles;
-}
-
 export function setBarycenter(masses, p = new H3()) {
   const massesLen = masses.length;
   let systemMass = 0;
