@@ -22,18 +22,18 @@ export default class {
     return particles;
   }
 
-  static getDiscParticle(particles: MassType[], minD: number, maxD: number) {
+  static getDiscParticle(
+    particles: MassType[],
+    minD: number,
+    maxD: number
+  ): void {
     const radian = getRandomRadian();
     const dist = getRandomNumberInRange(minD, maxD);
 
-    const x = Math.cos(radian) * dist;
-    const y = Math.sin(radian) * dist;
-    const z = 0;
-
     particles.push({
-      x: x,
-      y: y,
-      z: z,
+      x: Math.cos(radian) * dist,
+      y: Math.sin(radian) * dist,
+      z: 0,
       vx: 0,
       vy: 0,
       vz: 0
@@ -45,7 +45,7 @@ export default class {
     minD: number,
     maxD: number,
     cube: boolean
-  ) {
+  ): void {
     particles.push({
       x: getRandomNumberInRange(minD, maxD),
       y: getRandomNumberInRange(minD, maxD),
@@ -67,6 +67,8 @@ export default class {
     const p = new Vector3();
     const v = new Vector3();
     const a = new Vector3();
+
+    const [xTilt, yTilt, zTilt] = tilt;
 
     return vectors.map(item => {
       if (withOrbit) {
@@ -91,27 +93,27 @@ export default class {
         item.x,
         item.y,
         item.z,
-        tilt[0],
+        xTilt,
         a.set(1, 0, 0),
         p
       );
 
-      const pTY = rotateVector(pTX.x, pTX.y, pTX.z, tilt[1], a.set(0, 1, 0), p);
+      const pTY = rotateVector(pTX.x, pTX.y, pTX.z, yTilt, a.set(0, 1, 0), p);
 
-      const pTZ = rotateVector(pTY.x, pTY.y, pTY.z, tilt[2], a.set(0, 0, 1), p);
+      const pTZ = rotateVector(pTY.x, pTY.y, pTY.z, zTilt, a.set(0, 0, 1), p);
 
       const vTX = rotateVector(
         item.vx,
         item.vy,
         item.vz,
-        tilt[0],
+        xTilt,
         a.set(1, 0, 0),
         v
       );
 
-      const vTY = rotateVector(vTX.x, vTX.y, vTX.z, tilt[1], a.set(0, 1, 0), v);
+      const vTY = rotateVector(vTX.x, vTX.y, vTX.z, yTilt, a.set(0, 1, 0), v);
 
-      const vTZ = rotateVector(vTY.x, vTY.y, vTY.z, tilt[2], a.set(0, 0, 1), v);
+      const vTZ = rotateVector(vTY.x, vTY.y, vTY.z, zTilt, a.set(0, 0, 1), v);
 
       const [mMin, mMax] = mRange;
 
