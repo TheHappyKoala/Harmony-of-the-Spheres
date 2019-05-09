@@ -1,9 +1,28 @@
-import * as THREE from 'three';
+import { MassType } from '../Physics/types';
+import {
+  Object3D,
+  Color,
+  BufferGeometry,
+  BufferAttribute,
+  Points
+} from 'three';
 import particleMaterial from './particleMaterial';
 import { getRandomNumberInRange } from '../Physics/utils';
 
-export default class extends THREE.Object3D {
-  constructor(particles, scenarioScale, size, max, type) {
+export default class extends Object3D {
+  particles: MassType[];
+  scenarioScale: number;
+  size: number;
+  type: string;
+  max: number;
+
+  constructor(
+    particles: MassType[],
+    scenarioScale: number,
+    size: number,
+    max: number,
+    type: string
+  ) {
     super();
 
     this.particles = particles;
@@ -19,14 +38,14 @@ export default class extends THREE.Object3D {
     this.getParticles();
   }
 
-  getParticles() {
+  getParticles(): void {
     const particlesLen = this.max;
 
     const positions = new Float32Array(particlesLen * 3);
     const colors = new Float32Array(particlesLen * 3);
     const sizes = new Float32Array(particlesLen);
 
-    const color = new THREE.Color(0xffffff);
+    const color = new Color(0xffffff);
 
     let j = 0;
 
@@ -57,17 +76,17 @@ export default class extends THREE.Object3D {
       j += 3;
     }
 
-    const geometry = new THREE.BufferGeometry();
-    geometry.addAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geometry.addAttribute('customColor', new THREE.BufferAttribute(colors, 3));
-    geometry.addAttribute('size', new THREE.BufferAttribute(sizes, 1));
+    const geometry = new BufferGeometry();
+    geometry.addAttribute('position', new BufferAttribute(positions, 3));
+    geometry.addAttribute('customColor', new BufferAttribute(colors, 3));
+    geometry.addAttribute('size', new BufferAttribute(sizes, 1));
 
     const material = particleMaterial(
       this.type === 'Galaxy' ? false : true,
       'cloud'
     );
 
-    const mesh = new THREE.Points(geometry, material);
+    const mesh = new Points(geometry, material);
 
     mesh.name = 'system';
 
@@ -76,7 +95,10 @@ export default class extends THREE.Object3D {
     this.add(mesh);
   }
 
-  draw(particles, frameOfRef) {
+  draw(
+    particles: MassType[],
+    frameOfRef: { x: number; y: number; z: number }
+  ): void {
     const mesh = this.getObjectByName('system');
 
     const particlesLen = particles.length;
