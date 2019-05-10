@@ -11,7 +11,7 @@ export default {
       if(sizeAttenuation == true) {   
         gl_PointSize = size * ( 300.0 / -mvPosition.z );
       } else {
-        gl_PointSize = 3.0;        
+        gl_PointSize = 6.0;        
       }   
 
     gl_Position = projectionMatrix * mvPosition;       
