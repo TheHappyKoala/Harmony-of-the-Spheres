@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { ReactElement, Fragment } from 'react';
 
-export default () => (
+export default (): ReactElement => (
   <Fragment>
     <h1>About</h1>
     <p className="modal-item">

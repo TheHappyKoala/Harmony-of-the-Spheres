@@ -1,11 +1,44 @@
-import React, { Fragment, useState } from 'react';
+import React, { ReactElement, Fragment, useState } from 'react';
+import { MassType } from '../../Physics/types';
 import Dropdown from '../Dropdown';
 import Toggle from '../Toggle';
 import Slider from '../Slider';
 import Tooltip from '../Tooltip';
 import { integrators } from '../../Physics/Integrators';
 
-export default props => {
+interface PhysicsProps {
+  modifyScenarioProperty: Function;
+  masses: MassType[];
+  integrator: string;
+  useBarnesHut: Boolean;
+  systemBarycenter: Boolean;
+  collisions: Boolean;
+  dt: number;
+  tol: number;
+  minDt: number;
+  maxDt: number;
+  g: number;
+  barycenterMassOne: string;
+  barycenterMassTwo: string;
+  theta: number;
+}
+
+export default ({
+  modifyScenarioProperty,
+  masses,
+  integrator,
+  useBarnesHut,
+  collisions,
+  dt,
+  tol,
+  minDt,
+  maxDt,
+  g,
+  systemBarycenter,
+  barycenterMassOne,
+  barycenterMassTwo,
+  theta
+}: PhysicsProps): ReactElement => {
   const [
     displayAdvancedDeltaTimeControls,
     setAdvancedDeltaTimeControls
@@ -22,13 +55,13 @@ export default props => {
         />
       </label>
       <div className="tabs-dropdown-wrapper">
-        <Dropdown selectedOption={props.integrator}>
+        <Dropdown selectedOption={integrator}>
           {integrators.map(integrator => (
             <div
-              name={integrator}
-              key={integrator}
-              callback={() =>
-                props.modifyScenarioProperty({
+              data-name={integrator}
+              data-key={integrator}
+              data-callback={() =>
+                modifyScenarioProperty({
                   key: 'integrator',
                   value: integrator
                 })
@@ -41,15 +74,15 @@ export default props => {
       </div>
       <Toggle
         label="Use Barnes-Hut"
-        checked={props.useBarnesHut}
+        checked={useBarnesHut}
         callback={() =>
-          props.modifyScenarioProperty({
+          modifyScenarioProperty({
             key: 'useBarnesHut',
-            value: !props.useBarnesHut
+            value: !useBarnesHut
           })
         }
       />
-      {props.useBarnesHut && (
+      {useBarnesHut && (
         <Fragment>
           <label className="top">
             Barnes-Hut Theta Parameter
@@ -60,8 +93,8 @@ export default props => {
           </label>
           <Slider
             payload={{ key: 'theta' }}
-            value={props.theta}
-            callback={props.modifyScenarioProperty}
+            value={theta}
+            callback={modifyScenarioProperty}
             max={5}
             min={0}
             step={0.1}
@@ -77,15 +110,15 @@ export default props => {
       </label>
       <Slider
         payload={{ key: 'dt' }}
-        value={props.dt}
-        callback={props.modifyScenarioProperty}
-        max={props.maxDt}
-        min={props.minDt}
-        step={props.dt / 1000}
+        value={dt}
+        callback={modifyScenarioProperty}
+        max={maxDt}
+        min={minDt}
+        step={dt / 1000}
       />
-      {(props.integrator === 'RKF' ||
-        props.integrator === 'RKN64' ||
-        props.integrator === 'RKN12') && (
+      {(integrator === 'RKF' ||
+        integrator === 'RKN64' ||
+        integrator === 'RKN12') && (
         <Fragment>
           <label className="top">
             Error Tolerance
@@ -96,11 +129,11 @@ export default props => {
           </label>
           <Slider
             payload={{ key: 'tol' }}
-            value={props.tol}
-            callback={props.modifyScenarioProperty}
-            max={props.maxDt}
-            min={props.minDt}
-            step={props.dt / 100}
+            value={tol}
+            callback={modifyScenarioProperty}
+            max={maxDt}
+            min={minDt}
+            step={dt / 100}
           />
           <Toggle
             label="Advanced Delta Time Controls"
@@ -120,11 +153,11 @@ export default props => {
               </label>
               <Slider
                 payload={{ key: 'minDt' }}
-                value={props.minDt}
-                callback={props.modifyScenarioProperty}
+                value={minDt}
+                callback={modifyScenarioProperty}
                 max={10}
                 min={0.0000000000000000000001}
-                step={props.dt / 1000}
+                step={dt / 1000}
               />
               <label className="top">
                 Max Delta Time
@@ -135,11 +168,11 @@ export default props => {
               </label>
               <Slider
                 payload={{ key: 'maxDt' }}
-                value={props.maxDt}
-                callback={props.modifyScenarioProperty}
+                value={maxDt}
+                callback={modifyScenarioProperty}
                 max={4}
                 min={0.0000000000000000000001}
-                step={props.dt / 1000}
+                step={dt / 1000}
               />
             </Fragment>
           )}
@@ -148,15 +181,15 @@ export default props => {
 
       <Toggle
         label="System Barycenter"
-        checked={props.systemBarycenter}
+        checked={systemBarycenter}
         callback={() =>
-          props.modifyScenarioProperty({
+          modifyScenarioProperty({
             key: 'systemBarycenter',
-            value: !props.systemBarycenter
+            value: !systemBarycenter
           })
         }
       />
-      {!props.systemBarycenter && (
+      {!systemBarycenter && (
         <Fragment>
           <label className="top">
             Barycenter Mass One
@@ -166,13 +199,13 @@ export default props => {
             />
           </label>
           <div className="tabs-dropdown-wrapper">
-            <Dropdown selectedOption={props.barycenterMassOne}>
-              {props.masses.map(mass => (
+            <Dropdown selectedOption={barycenterMassOne}>
+              {masses.map(mass => (
                 <div
-                  name={mass.name}
-                  key={mass.name}
-                  callback={() =>
-                    props.modifyScenarioProperty({
+                  data-name={mass.name}
+                  data-key={mass.name}
+                  data-callback={() =>
+                    modifyScenarioProperty({
                       key: 'barycenterMassOne',
                       value: mass.name
                     })
@@ -191,13 +224,13 @@ export default props => {
             />
           </label>
           <div className="tabs-dropdown-wrapper">
-            <Dropdown selectedOption={props.barycenterMassTwo}>
-              {props.masses.map(mass => (
+            <Dropdown selectedOption={barycenterMassTwo}>
+              {masses.map(mass => (
                 <div
-                  name={mass.name}
-                  key={mass.name}
-                  callback={() =>
-                    props.modifyScenarioProperty({
+                  data-name={mass.name}
+                  data-key={mass.name}
+                  data-callback={() =>
+                    modifyScenarioProperty({
                       key: 'barycenterMassTwo',
                       value: mass.name
                     })
@@ -219,37 +252,21 @@ export default props => {
       </label>
       <Slider
         payload={{ key: 'g' }}
-        value={props.g}
-        callback={props.modifyScenarioProperty}
+        value={g}
+        callback={modifyScenarioProperty}
         max={200}
         min={-200}
         step={0.5}
       />
       <Toggle
         label="Collisions"
-        checked={props.collisions}
+        checked={collisions}
         callback={() =>
-          props.modifyScenarioProperty({
+          modifyScenarioProperty({
             key: 'collisions',
-            value: !props.collisions
+            value: !collisions
           })
         }
-      />
-
-      <label className="top">
-        Softening Constant
-        <Tooltip
-          position="left"
-          content="In n-body simulations of collisionless systems, a softening constant is introduced to modify gravitational interactions on small scales to remove singularities and simplify the task of numerically integrating the equations of motion."
-        />
-      </label>
-      <Slider
-        payload={{ key: 'softeningConstant' }}
-        value={props.softeningConstant}
-        callback={props.modifyScenarioProperty}
-        max={50}
-        min={0}
-        step={0.1}
       />
     </Fragment>
   );
