@@ -235,6 +235,22 @@ export default props => {
           })
         }
       />
+
+      <label className="top">
+        Softening Constant
+        <Tooltip
+          position="left"
+          content="In n-body simulations of collisionless systems, a softening constant is introduced to modify gravitational interactions on small scales to remove singularities and simplify the task of numerically integrating the equations of motion."
+        />
+      </label>
+      <Slider
+        payload={{ key: 'softeningConstant' }}
+        value={props.softeningConstant}
+        callback={props.modifyScenarioProperty}
+        max={50}
+        min={0}
+        step={0.1}
+      />
     </Fragment>
   );
 };

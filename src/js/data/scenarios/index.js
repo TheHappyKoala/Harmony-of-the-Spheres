@@ -15,6 +15,7 @@ import cruithne from './cruithne';
 import plutoSystem from './thePlutonianSystem';
 import trappist1 from './trappist1';
 import galaxy from './galaxy';
+import structureFormation from './structureFormation';
 import planetNine from './planetNine';
 import shoemakerLevy9 from './shoemakerLevy9';
 import rh120 from './rh120';
@@ -99,10 +100,6 @@ const processScenario = scenario => ({
   ...scenario,
   isLoaded: false,
   playing: false,
-  particlesWithMass:
-    scenario.particlesWithMass !== undefined
-      ? scenario.particlesWithMass
-      : false,
   tcmsData:
     scenario.tcmsData !== undefined
       ? scenario.tcmsData.map(tcmData => ({
@@ -127,6 +124,16 @@ const processScenario = scenario => ({
     scenario.maxDt !== undefined
       ? scenario.maxDt
       : scenario.dt + scenario.dt * 10,
+  ui:
+    scenario.ui !== undefined
+      ? scenario.ui
+      : {
+          physics: true,
+          graphics: true,
+          camera: true,
+          masses: true,
+          addMass: true
+        },
   minDt:
     scenario.minDt !== undefined
       ? scenario.minDt
@@ -139,8 +146,10 @@ const processScenario = scenario => ({
           rings: []
         }
       : scenario.particles,
+  softeningConstant:
+    scenario.softeningConstant !== undefined ? scenario.softeningConstant : 0,
   collisions: true,
-  barycenter: true,
+  barycenter: scenario.barycenter !== undefined ? scenario.barycenter : true,
   systemBarycenter:
     scenario.systemBarycenter !== undefined ? scenario.systemBarycenter : true,
   barycenterMassOne:
@@ -154,24 +163,27 @@ const processScenario = scenario => ({
   elapsedTime: 0,
   trails: scenario.trails !== undefined ? scenario.trails : true,
   labels: scenario.labels !== undefined ? scenario.labels : true,
-  background: true,
-  sizeAttenuation: true,
-  scale: 2100000,
+  background: scenario.background !== undefined ? scenario.background : true,
+  sizeAttenuation:
+    scenario.sizeAttenuation !== undefined ? scenario.sizeAttenuation : true,
+  scale: scenario.scale !== undefined ? scenario.scale : 2100000,
   velMax: 5,
   velMin: -5,
   velStep: 1.85765499287888e-6,
   masses:
-    scenario.elementsToVectors === true
-      ? processMasses(
-          elementsToVectors(
-            getObjFromArrByKeyValuePair(masses, 'name', scenario.primary),
-            scenario.masses,
-            scenario.g
-          ),
-          masses,
-          scenario.dt
-        )
-      : processMasses(scenario.masses, masses, scenario.dt)
+    scenario.particles && scenario.particlesWithMass
+      ? scenario.masses
+      : scenario.elementsToVectors === true
+        ? processMasses(
+            elementsToVectors(
+              getObjFromArrByKeyValuePair(masses, 'name', scenario.primary),
+              scenario.masses,
+              scenario.g
+            ),
+            masses,
+            scenario.dt
+          )
+        : processMasses(scenario.masses, masses, scenario.dt)
 });
 
 /*
@@ -188,6 +200,7 @@ export const scenarios = [
   trappist1,
   innerSolarSystem,
   lunarFreeReturn,
+  structureFormation,
   kepler11,
   the24sextantisSystem,
   shenanigans,

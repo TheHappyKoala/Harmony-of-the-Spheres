@@ -25,7 +25,7 @@ export default class {
     this.g = g;
     this.dt = dt;
     this.masses = masses;
-    this.softening = 1e-10;
+    this.softening = 0;
     this.softeningSquared = this.softening * this.softening;
 
     this.useBarnesHut = true;

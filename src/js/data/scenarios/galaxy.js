@@ -14,6 +14,13 @@ export default {
     y: 3218983.847409513,
     z: 1191675.6451379415
   },
+  ui: {
+    physics: true,
+    graphics: true,
+    camera: false,
+    masses: false,
+    addMass: false
+  },
   particles: {
     max: 90000,
     size: 48000,

@@ -1,0 +1,140 @@
+import { MassType } from '../Physics/types';
+import {
+  Object3D,
+  Color,
+  BufferGeometry,
+  BufferAttribute,
+  Points
+} from 'three';
+import particleMaterial from './particleMaterial';
+import { getRandomNumberInRange } from '../Physics/utils';
+
+export default class extends Object3D {
+  particles: MassType[];
+  scenarioScale: number;
+  size: number;
+  type: string;
+  max: number;
+
+  constructor(
+    particles: MassType[],
+    scenarioScale: number,
+    size: number,
+    max: number,
+    type: string
+  ) {
+    super();
+
+    this.particles = particles;
+
+    this.scenarioScale = scenarioScale;
+
+    this.size = size;
+
+    this.type = type;
+
+    this.max = max;
+
+    this.getParticles();
+  }
+
+  getParticles(): void {
+    const particlesLen = this.max;
+
+    const positions = new Float32Array(particlesLen * 3);
+    const colors = new Float32Array(particlesLen * 3);
+    const sizes = new Float32Array(particlesLen);
+
+    const color = new Color(0xffffff);
+
+    let j = 0;
+
+    for (let i = 0; i < particlesLen; i++) {
+      positions[j] = 0;
+      positions[j + 1] = 0;
+      positions[j + 2] = 0;
+
+      sizes[i] = this.size;
+
+      const particle = this.particles[i];
+
+      const randNumerator = getRandomNumberInRange(0, particlesLen);
+      const randDenominator = getRandomNumberInRange(0, particlesLen);
+
+      const randFraction = randNumerator / randDenominator;
+
+      if (particle && particle.color) {
+        color.setHSL(
+          particle.color[0] + particle.color[1] * randFraction,
+          particle.color[2],
+          particle.color[3]
+        );
+      } else color.setHSL(0.5 + 0.1 * randFraction, 0.7, 0.5);
+
+      color.toArray(colors, i * 3);
+
+      j += 3;
+    }
+
+    const geometry = new BufferGeometry();
+    geometry.addAttribute('position', new BufferAttribute(positions, 3));
+    geometry.addAttribute('customColor', new BufferAttribute(colors, 3));
+    geometry.addAttribute('size', new BufferAttribute(sizes, 1));
+
+    const material = particleMaterial(
+      this.type === 'Galaxy' ? false : true,
+      'cloud'
+    );
+
+    const mesh = new Points(geometry, material);
+
+    mesh.name = 'system';
+
+    mesh.frustumCulled = false;
+
+    this.add(mesh);
+  }
+
+  draw(
+    particles: MassType[],
+    frameOfRef: { x: number; y: number; z: number }
+  ): void {
+    const mesh = this.getObjectByName('system');
+
+    const particlesLen = particles.length;
+
+    const geometry = mesh.geometry;
+
+    geometry.setDrawRange(0, particlesLen - 1);
+
+    const positions = geometry.attributes.position.array;
+    const sizes = geometry.attributes.size.array;
+
+    let j = 0;
+
+    const scenarioScale = this.scenarioScale;
+
+    const time = Date.now() * 0.005;
+
+    for (let i = 0; i < particlesLen; i++) {
+      const particle = particles[i];
+
+      let x = (frameOfRef.x - particle.x) * scenarioScale;
+      let y = (frameOfRef.y - particle.y) * scenarioScale;
+      let z = (frameOfRef.z - particle.z) * scenarioScale;
+
+      positions[j] = x;
+      positions[j + 1] = y;
+      positions[j + 2] = z;
+
+      j += 3;
+
+      const size = this.size;
+
+      sizes[i] = size * 1.4 + size * 1.3 * Math.sin(0.1 * i + time);
+    }
+
+    geometry.attributes.size.needsUpdate = true;
+    geometry.attributes.position.needsUpdate = true;
+  }
+}
