@@ -124,6 +124,16 @@ const processScenario = scenario => ({
     scenario.maxDt !== undefined
       ? scenario.maxDt
       : scenario.dt + scenario.dt * 10,
+  ui:
+    scenario.ui !== undefined
+      ? scenario.ui
+      : {
+          physics: true,
+          graphics: true,
+          camera: true,
+          masses: true,
+          addMass: true
+        },
   minDt:
     scenario.minDt !== undefined
       ? scenario.minDt

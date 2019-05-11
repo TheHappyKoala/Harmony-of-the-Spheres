@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Children } from 'react';
 
 export default props => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(
@@ -8,7 +8,7 @@ export default props => {
   return (
     <div className={props.tabsWrapperClassName}>
       <ul>
-        {props.children.map((child, i) => (
+        {Children.toArray(props.children).map((child, i) => (
           <li
             key={i}
             onClick={() => setSelectedTabIndex(i)}

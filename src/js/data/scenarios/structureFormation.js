@@ -16,6 +16,13 @@ export default {
   rotatingReferenceFrame: 'Origo',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
+  ui: {
+    physics: true,
+    graphics: true,
+    camera: false,
+    masses: false,
+    addMass: false
+  },
   freeOrigo: {
     x: -171.31378280758125,
     y: -116.88218943611541,
