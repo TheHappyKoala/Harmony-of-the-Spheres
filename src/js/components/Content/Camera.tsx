@@ -1,8 +1,23 @@
-import React, { Fragment } from 'react';
+import React, { ReactElement, Fragment } from 'react';
+import { MassType } from '../../Physics/types';
 import Dropdown from '../Dropdown';
 import Tooltip from '../Tooltip';
 
-export default props => (
+interface CameraProps {
+  modifyScenarioProperty: Function;
+  masses: MassType[];
+  rotatingReferenceFrame: Boolean;
+  cameraPosition: string;
+  cameraFocus: string;
+}
+
+export default ({
+  modifyScenarioProperty,
+  masses,
+  rotatingReferenceFrame,
+  cameraPosition,
+  cameraFocus
+}: CameraProps): ReactElement => (
   <Fragment>
     <h2>Camera</h2>
     <label className="top">
@@ -13,12 +28,12 @@ export default props => (
       />
     </label>
     <div className="tabs-dropdown-wrapper">
-      <Dropdown selectedOption={props.rotatingReferenceFrame}>
+      <Dropdown selectedOption={rotatingReferenceFrame}>
         <div
-          name="Origo"
-          key="Origo"
-          callback={() =>
-            props.modifyScenarioProperty({
+          data-name="Origo"
+          data-key="Origo"
+          data-callback={() =>
+            modifyScenarioProperty({
               key: 'rotatingReferenceFrame',
               value: 'Origo'
             })
@@ -27,10 +42,10 @@ export default props => (
           Origo
         </div>
         <div
-          name="Barycenter"
-          key="Barycenter"
-          callback={() =>
-            props.modifyScenarioProperty({
+          data-name="Barycenter"
+          data-key="Barycenter"
+          data-callback={() =>
+            modifyScenarioProperty({
               key: 'rotatingReferenceFrame',
               value: 'Barycenter'
             })
@@ -38,12 +53,12 @@ export default props => (
         >
           Barycenter
         </div>
-        {props.masses.map(mass => (
+        {masses.map(mass => (
           <div
-            name={mass.name}
-            key={mass.name}
-            callback={() =>
-              props.modifyScenarioProperty({
+            data-name={mass.name}
+            data-key={mass.name}
+            data-callback={() =>
+              modifyScenarioProperty({
                 key: 'rotatingReferenceFrame',
                 value: mass.name
               })
@@ -62,12 +77,12 @@ export default props => (
       />
     </label>
     <div className="tabs-dropdown-wrapper">
-      <Dropdown selectedOption={props.cameraPosition}>
+      <Dropdown selectedOption={cameraPosition}>
         <div
-          name="Free"
-          key="Free"
-          callback={() =>
-            props.modifyScenarioProperty({
+          data-name="Free"
+          data-key="Free"
+          data-callback={() =>
+            modifyScenarioProperty({
               key: 'cameraPosition',
               value: 'Free'
             })
@@ -75,12 +90,12 @@ export default props => (
         >
           Free
         </div>
-        {props.masses.map(mass => (
+        {masses.map(mass => (
           <div
-            name={mass.name}
-            key={mass.name}
-            callback={() =>
-              props.modifyScenarioProperty({
+            data-name={mass.name}
+            data-key={mass.name}
+            data-callback={() =>
+              modifyScenarioProperty({
                 key: 'cameraPosition',
                 value: mass.name
               })
@@ -99,12 +114,12 @@ export default props => (
       />
     </label>
     <div className="tabs-dropdown-wrapper">
-      <Dropdown selectedOption={props.cameraFocus}>
+      <Dropdown selectedOption={cameraFocus}>
         <div
-          name="Origo"
-          key="Origo"
-          callback={() =>
-            props.modifyScenarioProperty({
+          data-name="Origo"
+          data-key="Origo"
+          data-callback={() =>
+            modifyScenarioProperty({
               key: 'cameraFocus',
               value: 'Origo'
             })
@@ -113,10 +128,10 @@ export default props => (
           Origo
         </div>
         <div
-          name="Barycenter"
-          key="Barycenter"
-          callback={() =>
-            props.modifyScenarioProperty({
+          data-name="Barycenter"
+          data-key="Barycenter"
+          data-callback={() =>
+            modifyScenarioProperty({
               key: 'cameraFocus',
               value: 'Barycenter'
             })
@@ -124,12 +139,12 @@ export default props => (
         >
           Barycenter
         </div>
-        {props.masses.map(mass => (
+        {masses.map(mass => (
           <div
-            name={mass.name}
-            key={mass.name}
-            callback={() =>
-              props.modifyScenarioProperty({
+            data-name={mass.name}
+            data-key={mass.name}
+            data-callback={() =>
+              modifyScenarioProperty({
                 key: 'cameraFocus',
                 value: mass.name
               })
