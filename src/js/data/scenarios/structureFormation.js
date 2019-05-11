@@ -13,7 +13,7 @@ export default {
   dt: 0.0009,
   distMax: 50,
   distMin: -50,
-  rotatingReferenceFrame: 'Origo',
+  rotatingReferenceFrame: 'Barycenter',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
   ui: {
