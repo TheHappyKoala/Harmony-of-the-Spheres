@@ -91,11 +91,11 @@ export default {
     this.particlePhysics = new ParticlePhysics(this.scenario.scale);
 
     this.scenario.particles.rings &&
-      !this.scenario.particles.withMass &&
+      !this.scenario.particlesWithMass &&
       this.addRing();
 
     this.particles = new ParticlesManifestation(
-      !this.scenario.particles.withMass
+      !this.scenario.particlesWithMass
         ? this.particlePhysics.particles
         : this.system.masses,
       this.scenario.scale,
@@ -106,7 +106,7 @@ export default {
 
     this.scene.add(this.particles);
 
-    !this.scenario.particles.withMass && this.addManifestations();
+    !this.scenario.particlesWithMass && this.addManifestations();
 
     this.loop = this.loop.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
@@ -282,7 +282,7 @@ export default {
       .subtractFrom(this.rotatingReferenceFrame)
       .multiplyByScalar(barycenterPositionScaleFactor);
 
-    !this.scenario.particles.withMass &&
+    !this.scenario.particlesWithMass &&
       this.diffMasses(this.massManifestations, this.scenario.masses);
 
     if (cameraPosition === 'Free') this.camera.controls.enabled = true;
@@ -346,7 +346,7 @@ export default {
       }
     }
 
-    if (!this.scenario.particles.withMass)
+    if (!this.scenario.particlesWithMass)
       for (let i = 0; i < this.massManifestations.length; i++) {
         const massManifestation = this.massManifestations[i];
         const mass = this.system.masses[i];
@@ -494,7 +494,7 @@ export default {
 
     if (this.scenario.particles)
       this.particles.draw(
-        !this.scenario.particles.withMass
+        !this.scenario.particlesWithMass
           ? this.particlePhysics.particles
           : this.system.masses,
         this.rotatingReferenceFrame
@@ -503,7 +503,7 @@ export default {
     if (
       this.scenario.playing &&
       this.scenario.collisions &&
-      !this.scenario.particles.withMass
+      !this.scenario.particlesWithMass
     )
       doCollisions(
         this.system.masses,
@@ -695,7 +695,7 @@ export default {
     if (
       this.scenario.particles &&
       this.scenario.playing &&
-      !this.scenario.particles.withMass
+      !this.scenario.particlesWithMass
     )
       this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);
 

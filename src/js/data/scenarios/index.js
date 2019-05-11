@@ -171,7 +171,7 @@ const processScenario = scenario => ({
   velMin: -5,
   velStep: 1.85765499287888e-6,
   masses:
-    scenario.particles && scenario.particles.withMass
+    scenario.particles && scenario.particlesWithMass
       ? scenario.masses
       : scenario.elementsToVectors === true
         ? processMasses(

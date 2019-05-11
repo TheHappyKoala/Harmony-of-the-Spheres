@@ -9,6 +9,7 @@ export default {
   sizeAttenuation: false,
   barycenter: false,
   softeningConstant: 1,
+  particlesWithMass: true,
   g: 39.5,
   dt: 0.0009,
   distMax: 50,
@@ -29,7 +30,6 @@ export default {
     z: -84.60188258932955
   },
   particles: {
-    withMass: true,
     max: 90000,
     size: 980000
   },
