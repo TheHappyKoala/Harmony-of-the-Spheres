@@ -90,14 +90,10 @@ export default {
 
     this.particlePhysics = new ParticlePhysics(this.scenario.scale);
 
-    this.scenario.particles.rings &&
-      !this.scenario.particlesWithMass &&
-      this.addRing();
+    this.scenario.particles.rings && this.addRing();
 
     this.particles = new ParticlesManifestation(
-      !this.scenario.particlesWithMass
-        ? this.particlePhysics.particles
-        : this.system.masses,
+      this.particlePhysics.particles,
       this.scenario.scale,
       this.scenario.particles.size,
       this.scenario.particles.max,
@@ -106,7 +102,7 @@ export default {
 
     this.scene.add(this.particles);
 
-    !this.scenario.particlesWithMass && this.addManifestations();
+    this.addManifestations();
 
     this.loop = this.loop.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
@@ -282,8 +278,7 @@ export default {
       .subtractFrom(this.rotatingReferenceFrame)
       .multiplyByScalar(barycenterPositionScaleFactor);
 
-    !this.scenario.particlesWithMass &&
-      this.diffMasses(this.massManifestations, this.scenario.masses);
+    this.diffMasses(this.massManifestations, this.scenario.masses);
 
     if (cameraPosition === 'Free') this.camera.controls.enabled = true;
     else this.camera.controls.enabled = false;
@@ -346,165 +341,158 @@ export default {
       }
     }
 
-    if (!this.scenario.particlesWithMass)
-      for (let i = 0; i < this.massManifestations.length; i++) {
-        const massManifestation = this.massManifestations[i];
-        const mass = this.system.masses[i];
+    for (let i = 0; i < this.massManifestations.length; i++) {
+      const massManifestation = this.massManifestations[i];
+      const mass = this.system.masses[i];
 
-        let { name, trailVertices, radius } = this.system.masses[i];
+      let { name, trailVertices, radius } = this.system.masses[i];
 
-        this.manifestationPosition
-          .set({ x: mass.x, y: mass.y, z: mass.z })
-          .subtractFrom(this.rotatingReferenceFrame)
-          .multiplyByScalar(this.scenario.scale);
+      this.manifestationPosition
+        .set({ x: mass.x, y: mass.y, z: mass.z })
+        .subtractFrom(this.rotatingReferenceFrame)
+        .multiplyByScalar(this.scenario.scale);
 
-        const manifestationPositionArray = this.manifestationPosition.toArray();
+      const manifestationPositionArray = this.manifestationPosition.toArray();
 
-        const cameraDistanceToFocus = Math.sqrt(
-          getDistanceParams(this.camera.position, this.manifestationPosition)
-            .dSquared
-        );
+      const cameraDistanceToFocus = Math.sqrt(
+        getDistanceParams(this.camera.position, this.manifestationPosition)
+          .dSquared
+      );
 
-        if (mass.type === 'star') {
-          const starMeshUniforms = massManifestation.getObjectByName('StarMesh')
-            .material.uniforms;
+      if (mass.type === 'star') {
+        const starMeshUniforms = massManifestation.getObjectByName('StarMesh')
+          .material.uniforms;
 
-          starMeshUniforms.time.value = 0.00025 * (Date.now() - this.start);
-          starMeshUniforms.weight.value =
-            10 * (0.5 + 0.5 * Math.sin(0.00025 * (Date.now() - this.start)));
-        }
+        starMeshUniforms.time.value = 0.00025 * (Date.now() - this.start);
+        starMeshUniforms.weight.value =
+          10 * (0.5 + 0.5 * Math.sin(0.00025 * (Date.now() - this.start)));
+      }
 
-        massManifestation.draw(
-          this.manifestationPosition.x,
-          this.manifestationPosition.y,
-          this.manifestationPosition.z,
-          this.camera.position,
-          cameraDistanceToFocus
-        );
+      massManifestation.draw(
+        this.manifestationPosition.x,
+        this.manifestationPosition.y,
+        this.manifestationPosition.z,
+        this.camera.position,
+        cameraDistanceToFocus
+      );
 
-        const trail = massManifestation.getObjectByName('Trail');
+      const trail = massManifestation.getObjectByName('Trail');
 
-        if (
-          this.scenario.trails &&
-          rotatingReferenceFrame === this.previousRotatingReferenceFrame
-        ) {
-          if (!trail) massManifestation.getTrail(trailVertices);
-          if (!this.scenario.playing && trail)
-            trail.geometry.verticesNeedUpdate = false;
-        } else massManifestation.removeTrail();
+      if (
+        this.scenario.trails &&
+        rotatingReferenceFrame === this.previousRotatingReferenceFrame
+      ) {
+        if (!trail) massManifestation.getTrail(trailVertices);
+        if (!this.scenario.playing && trail)
+          trail.geometry.verticesNeedUpdate = false;
+      } else massManifestation.removeTrail();
 
-        let zOffset;
+      let zOffset;
 
-        if (dt < 0.0002) zOffset = radius * 80;
-        if (dt > 0.0002) zOffset = radius < 18 ? 60000 : radius * 1500;
-        if (dt > 0.5) zOffset = radius !== 1.2 ? radius * 500000 : 4000000;
+      if (dt < 0.0002) zOffset = radius * 80;
+      if (dt > 0.0002) zOffset = radius < 18 ? 60000 : radius * 1500;
+      if (dt > 0.5) zOffset = radius !== 1.2 ? radius * 500000 : 4000000;
 
-        if (trail) {
-          if (trail.visible) {
-            if (
-              cameraPosition === name ||
-              (cameraPosition === 'Free' &&
-                cameraFocus === name &&
-                cameraDistanceToFocus < zOffset * 0.5)
-            ) {
-              trail.visible = false;
-            }
-          }
-
-          if (!trail.visible || !massManifestation.visible) {
-            if (
-              (cameraPosition === 'Free' && cameraFocus !== name) ||
-              (cameraPosition === 'Free' &&
-                cameraFocus === name &&
-                cameraDistanceToFocus > zOffset * 0.5)
-            ) {
-              trail.visible = true;
-            }
-
-            if (cameraPosition !== 'Free' && cameraPosition !== name) {
-              trail.visible = true;
-            }
+      if (trail) {
+        if (trail.visible) {
+          if (
+            cameraPosition === name ||
+            (cameraPosition === 'Free' &&
+              cameraFocus === name &&
+              cameraDistanceToFocus < zOffset * 0.5)
+          ) {
+            trail.visible = false;
           }
         }
 
-        if (cameraFocus === name) {
-          if (cameraPosition !== 'Free')
-            this.camera.lookAt(...manifestationPositionArray);
-          else if (cameraPosition === 'Free' && cameraFocus !== 'Origo') {
-            this.camera.trackMovingObjectWithControls(massManifestation);
+        if (!trail.visible || !massManifestation.visible) {
+          if (
+            (cameraPosition === 'Free' && cameraFocus !== name) ||
+            (cameraPosition === 'Free' &&
+              cameraFocus === name &&
+              cameraDistanceToFocus > zOffset * 0.5)
+          ) {
+            trail.visible = true;
           }
-        }
 
-        if (cameraPosition === name) {
-          if (cameraPosition === cameraFocus)
-            this.manifestationPosition.y += radius * 7;
-
-          this.camera.position.set(...manifestationPositionArray);
-        }
-
-        if (this.previousCameraFocus !== cameraFocus && cameraFocus === name) {
-          this.previousCameraFocus = cameraFocus;
-
-          if (cameraPosition === 'Free') {
-            this.camera.position.set(
-              this.manifestationPosition.x,
-              this.manifestationPosition.y,
-              this.manifestationPosition.z + zOffset
-            );
-
-            this.camera.lookAt(...manifestationPositionArray);
+          if (cameraPosition !== 'Free' && cameraPosition !== name) {
+            trail.visible = true;
           }
-        }
-
-        if (this.scenario.labels && cameraPosition !== name)
-          this.graphics2D.drawLabel(
-            name,
-            this.utilityVector.set(...manifestationPositionArray),
-            this.camera,
-            cameraPosition === 'Free' ? true : false,
-            cameraFocus === name ? true : false,
-            'right',
-            'white',
-            drawMassLabel
-          );
-
-        const main = massManifestation.getObjectByName('Main');
-
-        if (cameraPosition === name) main.visible = false;
-        else main.visible = true;
-
-        const atmosphere = massManifestation.getObjectByName('Atmosphere');
-
-        if (atmosphere) {
-          if (radius * 28 > cameraDistanceToFocus && cameraPosition !== name)
-            atmosphere.visible = true;
-          else atmosphere.visible = false;
-        }
-
-        const clouds = massManifestation.getObjectByName('Clouds');
-
-        if (clouds) {
-          if (cameraPosition === name) clouds.visible = false;
-          else clouds.visible = true;
         }
       }
+
+      if (cameraFocus === name) {
+        if (cameraPosition !== 'Free')
+          this.camera.lookAt(...manifestationPositionArray);
+        else if (cameraPosition === 'Free' && cameraFocus !== 'Origo') {
+          this.camera.trackMovingObjectWithControls(massManifestation);
+        }
+      }
+
+      if (cameraPosition === name) {
+        if (cameraPosition === cameraFocus)
+          this.manifestationPosition.y += radius * 7;
+
+        this.camera.position.set(...manifestationPositionArray);
+      }
+
+      if (this.previousCameraFocus !== cameraFocus && cameraFocus === name) {
+        this.previousCameraFocus = cameraFocus;
+
+        if (cameraPosition === 'Free') {
+          this.camera.position.set(
+            this.manifestationPosition.x,
+            this.manifestationPosition.y,
+            this.manifestationPosition.z + zOffset
+          );
+
+          this.camera.lookAt(...manifestationPositionArray);
+        }
+      }
+
+      if (this.scenario.labels && cameraPosition !== name)
+        this.graphics2D.drawLabel(
+          name,
+          this.utilityVector.set(...manifestationPositionArray),
+          this.camera,
+          cameraPosition === 'Free' ? true : false,
+          cameraFocus === name ? true : false,
+          'right',
+          'white',
+          drawMassLabel
+        );
+
+      const main = massManifestation.getObjectByName('Main');
+
+      if (cameraPosition === name) main.visible = false;
+      else main.visible = true;
+
+      const atmosphere = massManifestation.getObjectByName('Atmosphere');
+
+      if (atmosphere) {
+        if (radius * 28 > cameraDistanceToFocus && cameraPosition !== name)
+          atmosphere.visible = true;
+        else atmosphere.visible = false;
+      }
+
+      const clouds = massManifestation.getObjectByName('Clouds');
+
+      if (clouds) {
+        if (cameraPosition === name) clouds.visible = false;
+        else clouds.visible = true;
+      }
+    }
 
     if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame)
       this.previousRotatingReferenceFrame = rotatingReferenceFrame;
 
     if (this.scenario.particles)
       this.particles.draw(
-        !this.scenario.particlesWithMass
-          ? this.particlePhysics.particles
-          : this.system.masses,
+        this.particlePhysics.particles,
         this.rotatingReferenceFrame
       );
 
-    if (
-      this.scenario.playing &&
-      this.scenario.collisions &&
-      !this.scenario.particlesWithMass
-    )
+    if (this.scenario.playing && this.scenario.collisions)
       doCollisions(
         this.system.masses,
         this.scenario.scale,
@@ -692,11 +680,7 @@ export default {
         }
       );
 
-    if (
-      this.scenario.particles &&
-      this.scenario.playing &&
-      !this.scenario.particlesWithMass
-    )
+    if (this.scenario.particles && this.scenario.playing)
       this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);
 
     if (this.scenario.tcmsData.length) {

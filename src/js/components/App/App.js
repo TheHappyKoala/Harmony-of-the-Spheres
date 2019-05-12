@@ -38,81 +38,71 @@ export default props => {
         tabsWrapperClassName="sidebar-wrapper"
         tabsContentClassName="sidebar-content"
       >
-        {scenario.ui.physics && (
-          <div label="Physics" icon="fas fa-cube fa-2x">
-            <Physics
-              integrator={scenario.integrator}
-              useBarnesHut={scenario.useBarnesHut}
-              theta={scenario.theta}
-              dt={scenario.dt}
-              tol={scenario.tol}
-              minDt={scenario.minDt}
-              maxDt={scenario.maxDt}
-              systemBarycenter={scenario.systemBarycenter}
-              barycenterMassOne={scenario.barycenterMassOne}
-              barycenterMassTwo={scenario.barycenterMassTwo}
-              masses={scenario.masses}
-              collisions={scenario.collisions}
-              g={scenario.g}
-              softeningConstant={scenario.softeningConstant}
-              modifyScenarioProperty={props.modifyScenarioProperty}
-            />
-          </div>
-        )}
-        {scenario.ui.graphics && (
-          <div label="Graphics" icon="fas fa-paint-brush fa-2x">
-            <Graphics
-              barycenter={scenario.barycenter}
-              trails={scenario.trails}
-              labels={scenario.labels}
-              background={scenario.background}
-              sizeAttenuation={scenario.sizeAttenuation}
-              modifyScenarioProperty={props.modifyScenarioProperty}
-            />
-          </div>
-        )}
-        {scenario.ui.camera && (
-          <div label="Camera" icon="fas fa-camera-retro fa-2x">
-            <Camera
-              rotatingReferenceFrame={scenario.rotatingReferenceFrame}
-              cameraPosition={scenario.cameraPosition}
-              cameraFocus={scenario.cameraFocus}
-              masses={scenario.masses}
-              modifyScenarioProperty={props.modifyScenarioProperty}
-            />
-          </div>
-        )}
-        {scenario.ui.masses && (
-          <div label="Modify Masses" icon="fas fa-globe fa-2x">
-            <Masses
-              massBeingModified={scenario.massBeingModified}
-              masses={scenario.masses}
-              distanceStep={scenario.distanceStep}
-              distMax={scenario.distMax}
-              distMin={scenario.distMin}
-              distStep={scenario.distStep}
-              velMax={scenario.velMax}
-              velMin={scenario.velMin}
-              velStep={scenario.velStep}
-              modifyScenarioProperty={props.modifyScenarioProperty}
-              modifyMassProperty={props.modifyMassProperty}
-              deleteMass={props.deleteMass}
-            />
-          </div>
-        )}
-        {scenario.ui.addMass && (
-          <div label="Add Mass" icon="fas fa-plus-circle fa-2x">
-            <AddMass
-              primary={scenario.primary}
-              maximumDistance={scenario.maximumDistance}
-              distanceStep={scenario.distanceStep}
-              massesAdded={scenario.massesAdded}
-              masses={scenario.masses}
-              addMass={props.addMass}
-              modifyScenarioProperty={props.modifyScenarioProperty}
-            />
-          </div>
-        )}
+        <div label="Physics" icon="fas fa-cube fa-2x">
+          <Physics
+            integrator={scenario.integrator}
+            useBarnesHut={scenario.useBarnesHut}
+            theta={scenario.theta}
+            dt={scenario.dt}
+            tol={scenario.tol}
+            minDt={scenario.minDt}
+            maxDt={scenario.maxDt}
+            systemBarycenter={scenario.systemBarycenter}
+            barycenterMassOne={scenario.barycenterMassOne}
+            barycenterMassTwo={scenario.barycenterMassTwo}
+            masses={scenario.masses}
+            collisions={scenario.collisions}
+            g={scenario.g}
+            softeningConstant={scenario.softeningConstant}
+            modifyScenarioProperty={props.modifyScenarioProperty}
+          />
+        </div>
+        <div label="Graphics" icon="fas fa-paint-brush fa-2x">
+          <Graphics
+            barycenter={scenario.barycenter}
+            trails={scenario.trails}
+            labels={scenario.labels}
+            background={scenario.background}
+            sizeAttenuation={scenario.sizeAttenuation}
+            modifyScenarioProperty={props.modifyScenarioProperty}
+          />
+        </div>
+        <div label="Camera" icon="fas fa-camera-retro fa-2x">
+          <Camera
+            rotatingReferenceFrame={scenario.rotatingReferenceFrame}
+            cameraPosition={scenario.cameraPosition}
+            cameraFocus={scenario.cameraFocus}
+            masses={scenario.masses}
+            modifyScenarioProperty={props.modifyScenarioProperty}
+          />
+        </div>
+        <div label="Modify Masses" icon="fas fa-globe fa-2x">
+          <Masses
+            massBeingModified={scenario.massBeingModified}
+            masses={scenario.masses}
+            distanceStep={scenario.distanceStep}
+            distMax={scenario.distMax}
+            distMin={scenario.distMin}
+            distStep={scenario.distStep}
+            velMax={scenario.velMax}
+            velMin={scenario.velMin}
+            velStep={scenario.velStep}
+            modifyScenarioProperty={props.modifyScenarioProperty}
+            modifyMassProperty={props.modifyMassProperty}
+            deleteMass={props.deleteMass}
+          />
+        </div>
+        <div label="Add Mass" icon="fas fa-plus-circle fa-2x">
+          <AddMass
+            primary={scenario.primary}
+            maximumDistance={scenario.maximumDistance}
+            distanceStep={scenario.distanceStep}
+            massesAdded={scenario.massesAdded}
+            masses={scenario.masses}
+            addMass={props.addMass}
+            modifyScenarioProperty={props.modifyScenarioProperty}
+          />
+        </div>
       </Tabs>
       <div className="sidebar-wrapper sidebar-wrapper-left">
         <ul>

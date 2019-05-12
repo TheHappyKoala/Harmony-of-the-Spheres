@@ -14,8 +14,6 @@ import europaClipper from './europaClipper';
 import cruithne from './cruithne';
 import plutoSystem from './thePlutonianSystem';
 import trappist1 from './trappist1';
-import galaxy from './galaxy';
-import structureFormation from './structureFormation';
 import planetNine from './planetNine';
 import shoemakerLevy9 from './shoemakerLevy9';
 import rh120 from './rh120';
@@ -171,19 +169,17 @@ const processScenario = scenario => ({
   velMin: -5,
   velStep: 1.85765499287888e-6,
   masses:
-    scenario.particles && scenario.particlesWithMass
-      ? scenario.masses
-      : scenario.elementsToVectors === true
-        ? processMasses(
-            elementsToVectors(
-              getObjFromArrByKeyValuePair(masses, 'name', scenario.primary),
-              scenario.masses,
-              scenario.g
-            ),
-            masses,
-            scenario.dt
-          )
-        : processMasses(scenario.masses, masses, scenario.dt)
+    scenario.elementsToVectors === true
+      ? processMasses(
+          elementsToVectors(
+            getObjFromArrByKeyValuePair(masses, 'name', scenario.primary),
+            scenario.masses,
+            scenario.g
+          ),
+          masses,
+          scenario.dt
+        )
+      : processMasses(scenario.masses, masses, scenario.dt)
 });
 
 /*
@@ -200,7 +196,6 @@ export const scenarios = [
   trappist1,
   innerSolarSystem,
   lunarFreeReturn,
-  structureFormation,
   kepler11,
   the24sextantisSystem,
   shenanigans,
@@ -210,7 +205,6 @@ export const scenarios = [
   kepler1658,
   earthMoonSystem,
   jovianSystem,
-  galaxy,
   europaClipper,
   threeBodyCoreography,
   tess,

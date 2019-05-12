@@ -40,6 +40,26 @@ export default class {
     });
   }
 
+  static getSphereParticle(
+    particles: MassType[],
+    minD: number,
+    maxD: number
+  ): void {
+    const dist = getRandomNumberInRange(minD, maxD);
+
+    const theta = getRandomNumberInRange(-360, 360);
+    const phi = getRandomNumberInRange(-360, 360);
+
+    particles.push({
+      x: dist * Math.sin(theta) * Math.cos(phi),
+      y: dist * Math.sin(theta) * Math.sin(phi),
+      z: dist * Math.cos(theta),
+      vx: 0,
+      vy: 0,
+      vz: 0
+    });
+  }
+
   static getCubeParticle(
     particles: MassType[],
     minD: number,
