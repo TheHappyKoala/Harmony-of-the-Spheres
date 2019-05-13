@@ -9,20 +9,31 @@ import {
 import particleMaterial from './particleMaterial';
 import { getRandomNumberInRange } from '../Physics/utils';
 
+interface ParticlesManifestationType {
+  particles: MassType[];
+  scenarioScale: number;
+  size: number;
+  max: number;
+  type: string;
+  twinklingParticles: Boolean;
+}
+
 export default class extends Object3D {
   particles: MassType[];
   scenarioScale: number;
   size: number;
   type: string;
   max: number;
+  twinklingParticles: Boolean;
 
-  constructor(
-    particles: MassType[],
-    scenarioScale: number,
-    size: number,
-    max: number,
-    type: string
-  ) {
+  constructor({
+    particles,
+    scenarioScale,
+    size,
+    max,
+    type,
+    twinklingParticles
+  }: ParticlesManifestationType) {
     super();
 
     this.particles = particles;
@@ -34,6 +45,8 @@ export default class extends Object3D {
     this.type = type;
 
     this.max = max;
+
+    this.twinklingParticles = twinklingParticles;
 
     this.getParticles();
   }
@@ -63,12 +76,10 @@ export default class extends Object3D {
 
       const randFraction = randNumerator / randDenominator;
 
-      if (particle && particle.color) {
-        color.setHSL(
-          particle.color[0] + particle.color[1] * randFraction,
-          particle.color[2],
-          particle.color[3]
-        );
+      if (particle && particle.hsl) {
+        const [h, s, l, fudge] = particle.hsl;
+
+        color.setHSL(h + fudge * randFraction, s, l);
       } else color.setHSL(0.5 + 0.1 * randFraction, 0.7, 0.5);
 
       color.toArray(colors, i * 3);
@@ -114,7 +125,9 @@ export default class extends Object3D {
 
     const scenarioScale = this.scenarioScale;
 
-    const time = Date.now() * 0.005;
+    let time;
+
+    if (this.twinklingParticles) time = Date.now() * 0.005;
 
     for (let i = 0; i < particlesLen; i++) {
       const particle = particles[i];
@@ -131,10 +144,11 @@ export default class extends Object3D {
 
       const size = this.size;
 
-      sizes[i] = size * 1.4 + size * 1.3 * Math.sin(0.1 * i + time);
+      if (this.twinklingParticles)
+        sizes[i] = size * 1.4 + size * 1.3 * Math.sin(0.1 * i + time);
     }
 
-    geometry.attributes.size.needsUpdate = true;
+    if (this.twinklingParticles) geometry.attributes.size.needsUpdate = true;
     geometry.attributes.position.needsUpdate = true;
   }
 }

@@ -122,16 +122,6 @@ const processScenario = scenario => ({
     scenario.maxDt !== undefined
       ? scenario.maxDt
       : scenario.dt + scenario.dt * 10,
-  ui:
-    scenario.ui !== undefined
-      ? scenario.ui
-      : {
-          physics: true,
-          graphics: true,
-          camera: true,
-          masses: true,
-          addMass: true
-        },
   minDt:
     scenario.minDt !== undefined
       ? scenario.minDt
@@ -141,9 +131,15 @@ const processScenario = scenario => ({
       ? {
           max: 20000,
           size: 100000,
-          rings: []
+          rings: [],
+          twinkling: false
         }
-      : scenario.particles,
+      : {
+          ...scenario.particles,
+          twinkling: scenario.particles.twinkling
+            ? scenario.particles.twinkling
+            : false
+        },
   softeningConstant:
     scenario.softeningConstant !== undefined ? scenario.softeningConstant : 0,
   collisions: true,

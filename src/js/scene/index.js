@@ -92,13 +92,14 @@ export default {
 
     this.scenario.particles.rings && this.addRing();
 
-    this.particles = new ParticlesManifestation(
-      this.particlePhysics.particles,
-      this.scenario.scale,
-      this.scenario.particles.size,
-      this.scenario.particles.max,
-      this.scenario.type
-    );
+    this.particles = new ParticlesManifestation({
+      particles: this.particlePhysics.particles,
+      scenarioScale: this.scenario.scale,
+      size: this.scenario.particles.size,
+      max: this.scenario.particles.max,
+      type: this.scenario.type,
+      twinklingParticles: this.scenario.particles.twinkling
+    });
 
     this.scene.add(this.particles);
 
