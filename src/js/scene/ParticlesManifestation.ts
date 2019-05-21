@@ -15,6 +15,7 @@ interface ParticlesManifestationType {
   size: number;
   max: number;
   type: string;
+  hsl: [number, number, number];
   twinklingParticles: Boolean;
 }
 
@@ -24,6 +25,7 @@ export default class extends Object3D {
   size: number;
   type: string;
   max: number;
+  hsl: [number, number, number];
   twinklingParticles: Boolean;
 
   constructor({
@@ -32,6 +34,7 @@ export default class extends Object3D {
     size,
     max,
     type,
+    hsl,
     twinklingParticles
   }: ParticlesManifestationType) {
     super();
@@ -45,6 +48,8 @@ export default class extends Object3D {
     this.type = type;
 
     this.max = max;
+
+    this.hsl = hsl;
 
     this.twinklingParticles = twinklingParticles;
 
@@ -60,6 +65,8 @@ export default class extends Object3D {
 
     const color = new Color(0xffffff);
 
+    const [h, s, l] = this.hsl;
+
     let j = 0;
 
     for (let i = 0; i < particlesLen; i++) {
@@ -69,18 +76,9 @@ export default class extends Object3D {
 
       sizes[i] = this.size;
 
-      const particle = this.particles[i];
+      const randomIndex = getRandomNumberInRange(0, particlesLen - 1);
 
-      const randNumerator = getRandomNumberInRange(0, particlesLen);
-      const randDenominator = getRandomNumberInRange(0, particlesLen);
-
-      const randFraction = randNumerator / randDenominator;
-
-      if (particle && particle.hsl) {
-        const [h, s, l, fudge] = particle.hsl;
-
-        color.setHSL(h + fudge * randFraction, s, l);
-      } else color.setHSL(0.5 + 0.1 * randFraction, 0.7, 0.5);
+      color.setHSL(h + 0.1 * (randomIndex / particlesLen), s, l);
 
       color.toArray(colors, i * 3);
 

@@ -130,12 +130,17 @@ const processScenario = scenario => ({
     scenario.particles === undefined
       ? {
           max: 20000,
-          size: 100000,
+          size: 70,
           rings: [],
+          hsl: [0.5, 0.7, 0.5],
           twinkling: false
         }
       : {
           ...scenario.particles,
+          size: scenario.particles.size ? scenario.particles.size : 70,
+          hsl: scenario.particles.hsl
+            ? scenario.particles.hsl
+            : [0.5, 0.7, 0.5],
           twinkling: scenario.particles.twinkling
             ? scenario.particles.twinkling
             : false

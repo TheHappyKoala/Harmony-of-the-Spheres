@@ -16,7 +16,6 @@ export default {
   },
   particles: {
     max: 60000,
-    size: 100,
     rings: [
       {
         primary: 'Uranus',

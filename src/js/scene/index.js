@@ -98,6 +98,7 @@ export default {
       size: this.scenario.particles.size,
       max: this.scenario.particles.max,
       type: this.scenario.type,
+      hsl: this.scenario.particles.hsl,
       twinklingParticles: this.scenario.particles.twinkling
     });
 

@@ -22,7 +22,7 @@ export default {
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/HD_98800',
   particles: {
     max: 60000,
-    size: 210000,
+    size: 140000,
     rings: [
       {
         primary: 'custom',

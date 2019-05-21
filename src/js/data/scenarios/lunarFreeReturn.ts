@@ -12,7 +12,7 @@ export default {
   freeOrigo: { x: 0, y: 0, z: 16000 },
   particles: {
     max: 20000,
-    size: 80,
+    size: 20,
     rings: []
   },
   massBeingModified: 'Sun',

@@ -13,7 +13,8 @@ export default {
   },
   particles: {
     max: 20000,
-    size: 400,
+    size: 200,
+    hsl: [0, 0.9, 0.5],
     rings: []
   },
   massBeingModified: 'Jupiter',

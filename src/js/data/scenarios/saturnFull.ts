@@ -23,7 +23,6 @@ export default {
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Saturn',
   particles: {
     max: 20000,
-    size: 100,
     rings: [
       {
         primary: 'Saturn',
