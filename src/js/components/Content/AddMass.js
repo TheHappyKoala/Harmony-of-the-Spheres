@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Dropdown from '../Dropdown';
 import Button from '../Button';
 import Slider from '../Slider';
@@ -42,7 +42,7 @@ export default class extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <h2>Add Mass</h2>
         <label className="top">
           Primary
@@ -55,9 +55,9 @@ export default class extends Component {
           <Dropdown selectedOption={this.props.primary}>
             {this.props.masses.map(mass => (
               <div
-                name={mass.name}
+                data-name={mass.name}
                 key={mass.name}
-                callback={() =>
+                data-callback={() =>
                   this.props.modifyScenarioProperty({
                     key: 'primary',
                     value: mass.name
@@ -80,9 +80,9 @@ export default class extends Component {
           <Dropdown selectedOption={this.props.maximumDistance}>
             {maximumDistances.map(distance => (
               <div
-                name={distance.name}
+                data-name={distance.name}
                 key={distance.name}
-                callback={() =>
+                data-callback={() =>
                   this.props.modifyScenarioProperty({
                     key: 'maximumDistance',
                     value: { name: distance.name, value: distance.value }
@@ -105,9 +105,9 @@ export default class extends Component {
           <Dropdown selectedOption={this.props.distanceStep}>
             {distanceSteps.map(distance => (
               <div
-                name={distance.name}
+                data-name={distance.name}
                 key={distance.name}
-                callback={() =>
+                data-callback={() =>
                   this.props.modifyScenarioProperty({
                     key: 'distanceStep',
                     value: { name: distance.name, value: distance.value }
@@ -199,9 +199,9 @@ export default class extends Component {
           <Dropdown>
             {bodies.map(body => (
               <div
-                name={body.name}
+                data-name={body.name}
                 key={body.name}
-                callback={() =>
+                data-callback={() =>
                   this.insertMassTemplate({
                     m: body.m,
                     radius: body.radius,
@@ -237,7 +237,7 @@ export default class extends Component {
         >
           Add Mass
         </Button>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

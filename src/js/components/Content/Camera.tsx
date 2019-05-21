@@ -31,7 +31,7 @@ export default ({
       <Dropdown selectedOption={rotatingReferenceFrame}>
         <div
           data-name="Origo"
-          data-key="Origo"
+          key="Origo"
           data-callback={() =>
             modifyScenarioProperty({
               key: 'rotatingReferenceFrame',
@@ -43,7 +43,7 @@ export default ({
         </div>
         <div
           data-name="Barycenter"
-          data-key="Barycenter"
+          key="Barycenter"
           data-callback={() =>
             modifyScenarioProperty({
               key: 'rotatingReferenceFrame',
@@ -56,7 +56,7 @@ export default ({
         {masses.map(mass => (
           <div
             data-name={mass.name}
-            data-key={mass.name}
+            key={mass.name}
             data-callback={() =>
               modifyScenarioProperty({
                 key: 'rotatingReferenceFrame',
@@ -80,7 +80,7 @@ export default ({
       <Dropdown selectedOption={cameraPosition}>
         <div
           data-name="Free"
-          data-key="Free"
+          key="Free"
           data-callback={() =>
             modifyScenarioProperty({
               key: 'cameraPosition',
@@ -93,7 +93,7 @@ export default ({
         {masses.map(mass => (
           <div
             data-name={mass.name}
-            data-key={mass.name}
+            key={mass.name}
             data-callback={() =>
               modifyScenarioProperty({
                 key: 'cameraPosition',
@@ -117,7 +117,7 @@ export default ({
       <Dropdown selectedOption={cameraFocus}>
         <div
           data-name="Origo"
-          data-key="Origo"
+          key="Origo"
           data-callback={() =>
             modifyScenarioProperty({
               key: 'cameraFocus',
@@ -129,7 +129,7 @@ export default ({
         </div>
         <div
           data-name="Barycenter"
-          data-key="Barycenter"
+          key="Barycenter"
           data-callback={() =>
             modifyScenarioProperty({
               key: 'cameraFocus',
@@ -142,7 +142,7 @@ export default ({
         {masses.map(mass => (
           <div
             data-name={mass.name}
-            data-key={mass.name}
+            key={mass.name}
             data-callback={() =>
               modifyScenarioProperty({
                 key: 'cameraFocus',

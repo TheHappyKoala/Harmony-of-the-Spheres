@@ -5,7 +5,7 @@ export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedOption: props.children[0].props.name,
+      selectedOption: props.children[0].props['data-name'],
       displayAllOptions: false,
       tabs: null,
       selectedTab: null
@@ -82,9 +82,9 @@ export default class extends Component {
     const options = React.Children.map(this.props.children, child =>
       React.cloneElement(child, {
         onClick: e => {
-          child.props.callback && child.props.callback();
+          child.props['data-callback'] && child.props['data-callback']();
           this.props.selectedOption === undefined &&
-            this.setSelectedOption(child.props.name);
+            this.setSelectedOption(child.props['data-name']);
           this.closeOptions(e);
         }
       })

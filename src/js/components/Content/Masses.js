@@ -20,9 +20,9 @@ export default props => (
       <Dropdown selectedOption={props.massBeingModified}>
         {props.masses.map(mass => (
           <div
-            name={mass.name}
+            data-name={mass.name}
             key={mass.name}
-            callback={() =>
+            data-callback={() =>
               props.modifyScenarioProperty({
                 key: 'massBeingModified',
                 value: mass.name
@@ -49,9 +49,9 @@ export default props => (
               <Dropdown>
                 {bodies.map(body => (
                   <div
-                    name={body.name}
+                    data-name={body.name}
                     key={body.name}
-                    callback={() =>
+                    data-callback={() =>
                       props.modifyMassProperty({
                         name: mass.name,
                         key: 'm',

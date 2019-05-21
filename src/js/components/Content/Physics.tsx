@@ -61,7 +61,7 @@ export default ({
           {integrators.map(integrator => (
             <div
               data-name={integrator}
-              data-key={integrator}
+              key={integrator}
               data-callback={() =>
                 modifyScenarioProperty({
                   key: 'integrator',
@@ -205,7 +205,7 @@ export default ({
               {masses.map(mass => (
                 <div
                   data-name={mass.name}
-                  data-key={mass.name}
+                  key={mass.name}
                   data-callback={() =>
                     modifyScenarioProperty({
                       key: 'barycenterMassOne',
@@ -230,7 +230,7 @@ export default ({
               {masses.map(mass => (
                 <div
                   data-name={mass.name}
-                  data-key={mass.name}
+                  key={mass.name}
                   data-callback={() =>
                     modifyScenarioProperty({
                       key: 'barycenterMassTwo',
