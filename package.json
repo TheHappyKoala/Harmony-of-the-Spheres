@@ -1,6 +1,6 @@
 {
   "name": "harmony-of-the-spheres",
-  "version": "0.1.36",
+  "version": "0.1.37",
   "description": "Newtonian n-body gravity simulator.",
   "scripts": {
     "start": "node server.js",
