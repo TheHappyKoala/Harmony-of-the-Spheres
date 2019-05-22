@@ -14,6 +14,7 @@ import About from '../Content/About';
 import Contact from '../Content/Contact';
 import Credits from '../Content/Credits';
 import Iframe from '../Iframe';
+import Tweet from '../Tweet';
 import './App.less';
 
 export default props => {
@@ -143,9 +144,6 @@ export default props => {
           </li>
         </ul>
       </div>
-      <div className="bottom-bar">
-        <h2>Harmony of the Spheres</h2>
-      </div>
       <ReactCSSTransitionGroup
         transitionName="fade"
         transitionEnterTimeout={250}
@@ -186,6 +184,15 @@ export default props => {
           </Modal>
         )}
       </ReactCSSTransitionGroup>
+      <Tweet
+        shareText={`Hey friends! Check out this 3D gravity simulation of ${
+          scenario.name
+        }. It will run in your browser :)!`}
+        shareUrl={document.location}
+        callToAction="  Tweet Scenario"
+        cssClassName="fa fa-twitter fa-2x twitter-box"
+        hashtags="Space, HarmonyOfTheSpheres, Science"
+      />
       {!scenario.isLoaded && <LoadingScreen scenarioName={scenario.name} />}
       <div className="rotate-to-landscape-prompt">
         <h1>Hey friend...</h1>
