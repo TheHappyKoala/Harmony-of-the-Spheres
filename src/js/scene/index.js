@@ -488,11 +488,14 @@ export default {
     if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame)
       this.previousRotatingReferenceFrame = rotatingReferenceFrame;
 
-    if (this.scenario.particles)
+    if (this.scenario.particles) {
       this.particles.draw(
         this.particlePhysics.particles,
         this.rotatingReferenceFrame
       );
+
+      this.particles.twinklingParticles = this.scenario.twinklingParticles;
+    }
 
     if (this.scenario.playing && this.scenario.collisions)
       doCollisions(

@@ -143,10 +143,11 @@ export default class extends Object3D {
       const size = this.size;
 
       if (this.twinklingParticles)
-        sizes[i] = size * 1.4 + size * 1.3 * Math.sin(0.1 * i + time);
+        sizes[i] = size * 0.7 + size * 0.6 * Math.sin(0.001 * i + time);
+      else sizes[i] = size;
     }
 
-    if (this.twinklingParticles) geometry.attributes.size.needsUpdate = true;
+    geometry.attributes.size.needsUpdate = true;
     geometry.attributes.position.needsUpdate = true;
   }
 }

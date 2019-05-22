@@ -132,18 +132,12 @@ const processScenario = scenario => ({
           max: 20000,
           size: 70,
           rings: [],
-          hsl: [0.5, 0.7, 0.5],
-          twinkling: false
+          hsl: [0.5, 0.7, 0.5]
         }
       : {
           ...scenario.particles,
           size: scenario.particles.size ? scenario.particles.size : 70,
-          hsl: scenario.particles.hsl
-            ? scenario.particles.hsl
-            : [0.5, 0.7, 0.5],
-          twinkling: scenario.particles.twinkling
-            ? scenario.particles.twinkling
-            : false
+          hsl: scenario.particles.hsl ? scenario.particles.hsl : [0.5, 0.7, 0.5]
         },
   softeningConstant:
     scenario.softeningConstant !== undefined ? scenario.softeningConstant : 0,
@@ -165,6 +159,10 @@ const processScenario = scenario => ({
   background: scenario.background !== undefined ? scenario.background : true,
   sizeAttenuation:
     scenario.sizeAttenuation !== undefined ? scenario.sizeAttenuation : true,
+  twinklingParticles:
+    scenario.twinklingParticles !== undefined
+      ? scenario.twinklingParticles
+      : false,
   scale: scenario.scale !== undefined ? scenario.scale : 2100000,
   velMax: 5,
   velMin: -5,

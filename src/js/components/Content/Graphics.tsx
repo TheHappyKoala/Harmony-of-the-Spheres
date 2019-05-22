@@ -8,6 +8,7 @@ interface GraphicsProps {
   labels: Boolean;
   background: Boolean;
   sizeAttenuation: Boolean;
+  twinklingParticles: Boolean;
 }
 
 export default ({
@@ -16,7 +17,8 @@ export default ({
   trails,
   labels,
   background,
-  sizeAttenuation
+  sizeAttenuation,
+  twinklingParticles
 }: GraphicsProps): ReactElement => (
   <Fragment>
     <h2>Graphics</h2>
@@ -67,6 +69,16 @@ export default ({
         modifyScenarioProperty({
           key: 'sizeAttenuation',
           value: !sizeAttenuation
+        })
+      }
+    />
+    <Toggle
+      label="Twinkling Particles"
+      checked={twinklingParticles}
+      callback={() =>
+        modifyScenarioProperty({
+          key: 'twinklingParticles',
+          value: !twinklingParticles
         })
       }
     />

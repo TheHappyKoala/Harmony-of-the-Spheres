@@ -64,6 +64,7 @@ export default props => {
             labels={scenario.labels}
             background={scenario.background}
             sizeAttenuation={scenario.sizeAttenuation}
+            twinklingParticles={scenario.twinklingParticles}
             modifyScenarioProperty={props.modifyScenarioProperty}
           />
         </div>
