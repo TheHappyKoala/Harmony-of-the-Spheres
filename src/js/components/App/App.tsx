@@ -238,7 +238,7 @@ export default ({
         shareUrl={document.location.toString()}
         callToAction="  Tweet Scenario"
         cssClassName="fa fa-twitter fa-2x twitter-box"
-        hashtags="Space, HarmonyOfTheSpheres, Science"
+        hashtags="Space,HarmonyOfTheSpheres,Science"
       />
       {!scenario.isLoaded && <LoadingScreen scenarioName={scenario.name} />}
       <div className="rotate-to-landscape-prompt">
