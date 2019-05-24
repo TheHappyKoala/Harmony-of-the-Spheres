@@ -8,15 +8,12 @@ interface ToggleProps {
 }
 
 export default memo(
-  ({ checked, label, callback }: ToggleProps): ReactElement => {
-    console.log('FART');
-    return (
-      <label className="toggle top">
-        {label}
-        <input type="checkbox" checked={checked} onChange={() => callback()} />
-        <span />
-      </label>
-    );
-  },
+  ({ checked, label, callback }: ToggleProps): ReactElement => (
+    <label className="toggle top">
+      {label}
+      <input type="checkbox" checked={checked} onChange={() => callback()} />
+      <span />
+    </label>
+  ),
   (prevProps, nextProps) => prevProps.checked === nextProps.checked
 );
