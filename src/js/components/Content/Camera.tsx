@@ -6,7 +6,7 @@ import Tooltip from '../Tooltip';
 interface CameraProps {
   modifyScenarioProperty: Function;
   masses: MassType[];
-  rotatingReferenceFrame: Boolean;
+  rotatingReferenceFrame: string;
   cameraPosition: string;
   cameraFocus: string;
 }

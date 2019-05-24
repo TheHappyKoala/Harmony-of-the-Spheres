@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { ReactElement, Fragment, useState } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import LoadingScreen from '../LoadingScreen';
 import Modal from '../Modal';
@@ -17,7 +17,57 @@ import Iframe from '../Iframe';
 import Tweet from '../Tweet';
 import './App.less';
 
-export default props => {
+interface AppProps {
+  scenario: {
+    name: string;
+    isLoaded: Boolean;
+    integrator: string;
+    useBarnesHut: Boolean;
+    theta: number;
+    dt: number;
+    tol: number;
+    minDt: number;
+    maxDt: number;
+    barycenter: Boolean;
+    systemBarycenter: Boolean;
+    barycenterMassOne: string;
+    barycenterMassTwo: string;
+    collisions: Boolean;
+    g: number;
+    softeningConstant: number;
+    distanceStep: { name: string; value: number };
+    distMin: number;
+    distMax: number;
+    maximumDistance: { name: string; value: number };
+    velMin: number;
+    velMax: number;
+    velStep: number;
+    primary: string;
+    masses: any[];
+    massBeingModified: string;
+    trails: Boolean;
+    labels: Boolean;
+    background: Boolean;
+    sizeAttenuation: Boolean;
+    twinklingParticles: Boolean;
+    rotatingReferenceFrame: string;
+    cameraPosition: string;
+    cameraFocus: string;
+    scenarioWikiUrl: string;
+  };
+  modifyScenarioProperty: Function;
+  modifyMassProperty: Function;
+  deleteMass: Function;
+  addMass: Function;
+}
+
+export default ({
+  scenario,
+  modifyScenarioProperty,
+  modifyMassProperty,
+  deleteMass,
+  addMass
+}: AppProps): ReactElement => {
   const [display, setDisplay] = useState({
     about: false,
     contact: false,
@@ -25,21 +75,19 @@ export default props => {
     scenarioWiki: false
   });
 
-  const scenario = props.scenario;
-
   return (
     <Fragment>
       <Renderer scenarioName={scenario.name} />
       <MainBar
         scenario={scenario}
         displayComponent={setDisplay}
-        modifyScenarioProperty={props.modifyScenarioProperty}
+        modifyScenarioProperty={modifyScenarioProperty}
       />
       <Tabs
         tabsWrapperClassName="sidebar-wrapper"
         tabsContentClassName="sidebar-content"
       >
-        <div label="Physics" icon="fas fa-cube fa-2x">
+        <div data-label="Physics" data-icon="fas fa-cube fa-2x">
           <Physics
             integrator={scenario.integrator}
             useBarnesHut={scenario.useBarnesHut}
@@ -55,10 +103,10 @@ export default props => {
             collisions={scenario.collisions}
             g={scenario.g}
             softeningConstant={scenario.softeningConstant}
-            modifyScenarioProperty={props.modifyScenarioProperty}
+            modifyScenarioProperty={modifyScenarioProperty}
           />
         </div>
-        <div label="Graphics" icon="fas fa-paint-brush fa-2x">
+        <div data-label="Graphics" data-icon="fas fa-paint-brush fa-2x">
           <Graphics
             barycenter={scenario.barycenter}
             trails={scenario.trails}
@@ -66,43 +114,42 @@ export default props => {
             background={scenario.background}
             sizeAttenuation={scenario.sizeAttenuation}
             twinklingParticles={scenario.twinklingParticles}
-            modifyScenarioProperty={props.modifyScenarioProperty}
+            modifyScenarioProperty={modifyScenarioProperty}
           />
         </div>
-        <div label="Camera" icon="fas fa-camera-retro fa-2x">
+        <div data-label="Camera" data-icon="fas fa-camera-retro fa-2x">
           <Camera
             rotatingReferenceFrame={scenario.rotatingReferenceFrame}
             cameraPosition={scenario.cameraPosition}
             cameraFocus={scenario.cameraFocus}
             masses={scenario.masses}
-            modifyScenarioProperty={props.modifyScenarioProperty}
+            modifyScenarioProperty={modifyScenarioProperty}
           />
         </div>
-        <div label="Modify Masses" icon="fas fa-globe fa-2x">
+        <div data-label="Modify Masses" data-icon="fas fa-globe fa-2x">
           <Masses
             massBeingModified={scenario.massBeingModified}
             masses={scenario.masses}
             distanceStep={scenario.distanceStep}
             distMax={scenario.distMax}
             distMin={scenario.distMin}
-            distStep={scenario.distStep}
+            distStep={scenario.distanceStep}
             velMax={scenario.velMax}
             velMin={scenario.velMin}
             velStep={scenario.velStep}
-            modifyScenarioProperty={props.modifyScenarioProperty}
-            modifyMassProperty={props.modifyMassProperty}
-            deleteMass={props.deleteMass}
+            modifyScenarioProperty={modifyScenarioProperty}
+            modifyMassProperty={modifyMassProperty}
+            deleteMass={deleteMass}
           />
         </div>
-        <div label="Add Mass" icon="fas fa-plus-circle fa-2x">
+        <div data-label="Add Mass" data-icon="fas fa-plus-circle fa-2x">
           <AddMass
             primary={scenario.primary}
             maximumDistance={scenario.maximumDistance}
             distanceStep={scenario.distanceStep}
-            massesAdded={scenario.massesAdded}
             masses={scenario.masses}
-            addMass={props.addMass}
-            modifyScenarioProperty={props.modifyScenarioProperty}
+            addMass={addMass}
+            modifyScenarioProperty={modifyScenarioProperty}
           />
         </div>
       </Tabs>
@@ -188,7 +235,7 @@ export default props => {
         shareText={`Hey friends! Check out this 3D gravity simulation of ${
           scenario.name
         }. It will run in your browser :)!`}
-        shareUrl={document.location}
+        shareUrl={document.location.toString()}
         callToAction="  Tweet Scenario"
         cssClassName="fa fa-twitter fa-2x twitter-box"
         hashtags="Space, HarmonyOfTheSpheres, Science"

@@ -69,7 +69,7 @@ export default props => (
               tabsContentClassName="vector-content"
               initTab={0}
             >
-              <div label="Position">
+              <div data-label="Position">
                 <label className="top">
                   X Position Vector{' '}
                   <Tooltip
@@ -117,7 +117,7 @@ export default props => (
                   step={props.distStep}
                 />
               </div>
-              <div label="Velocity">
+              <div data-label="Velocity">
                 <label className="top">
                   X Velocity Vector
                   <Tooltip

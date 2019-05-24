@@ -132,7 +132,7 @@ export default class extends Component {
           value={this.state.a}
           callback={this.modifyProperty}
           max={this.props.maximumDistance.value}
-          min={this.props.distanceStep.value}
+          min={this.state.radius * 1.05 / 2100000}
           shouldUpdateOnMaxMinChange={true}
           onMaxMinChange={{
             payload: {
