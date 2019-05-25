@@ -234,6 +234,7 @@ export default class extends Component {
               }
             })
           }
+          cssClassName="button top"
         >
           Add Mass
         </Button>

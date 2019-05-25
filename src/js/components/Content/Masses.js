@@ -165,7 +165,10 @@ export default props => (
                 />
               </div>
             </Tabs>
-            <Button callback={() => props.deleteMass(mass.name)}>
+            <Button
+              callback={() => props.deleteMass(mass.name)}
+              cssClassName="button top"
+            >
               Delete Mass
             </Button>
           </div>
