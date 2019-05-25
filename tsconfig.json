@@ -8,7 +8,7 @@
       "sourceMap": true,
       "noImplicitAny": true,
       "moduleResolution": "node",
-      "target": "es5",
+      "target": "ES2015",
       "jsx": "react"   
   },    
   "include": [
@@ -18,4 +18,4 @@
     "node_modules",
     "**/*.spec.ts"
   ]
-}                     
+}                        
