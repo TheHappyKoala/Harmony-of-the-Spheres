@@ -1,14 +1,15 @@
 import React, { ReactElement, Fragment } from 'react';
+import { modifyScenarioProperty } from '../../action-creators/scenario';
 import Toggle from '../Toggle';
 
 interface GraphicsProps {
-  modifyScenarioProperty: Function;
-  barycenter: Boolean;
-  trails: Boolean;
-  labels: Boolean;
-  background: Boolean;
-  sizeAttenuation: Boolean;
-  twinklingParticles: Boolean;
+  modifyScenarioProperty: typeof modifyScenarioProperty;
+  barycenter: boolean;
+  trails: boolean;
+  labels: boolean;
+  background: boolean;
+  sizeAttenuation: boolean;
+  twinklingParticles: boolean;
 }
 
 export default ({

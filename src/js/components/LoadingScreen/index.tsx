@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import './LoadingScreen.less';
 
-export default props => (
+interface LoadingScreenProps {
+  scenarioName: string;
+}
+
+export default ({ scenarioName }: LoadingScreenProps): ReactElement => (
   <div className="loading-screen-wrapper">
     <h1>Harmony of the Spheres</h1>
-    <p className="sub-title">{props.scenarioName}</p>
+    <p className="sub-title">{scenarioName}</p>
     <div className="spinner">
       <div className="bounce1" />
       <div className="bounce2" />

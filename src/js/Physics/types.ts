@@ -15,6 +15,7 @@ export interface MassType {
   vx: number;
   vy: number;
   vz: number;
+  [x: string]: any;
 }
 
 export interface FixedTimeStepIntegratorType {

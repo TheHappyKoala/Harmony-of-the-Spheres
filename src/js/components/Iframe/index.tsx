@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import './Iframe.less';
 
-export default props => {
+interface IframeProps {
+  url: string;
+  iframeCustomCssClass?: string;
+}
+
+export default ({ url, iframeCustomCssClass }: IframeProps): ReactElement => {
   const [loading, setLoading] = useState(true);
+
   return (
-    <div className={`iframe-scroll-wrapper ${props.iframeCustomCssClass}`}>
+    <div className={`iframe-scroll-wrapper ${iframeCustomCssClass}`}>
       <iframe
-        src={props.url}
+        src={url}
         onLoad={() => setLoading(false)}
         frameBorder="0"
         style={{ display: loading ? 'none' : 'block' }}

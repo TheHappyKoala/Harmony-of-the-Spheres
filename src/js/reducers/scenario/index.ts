@@ -1,21 +1,30 @@
-import * as scenarioActionTypes from '../../action-types/scenario';
+import {
+  ScenarioProps,
+  ScenarioActionTypes,
+  GET_SCENARIO,
+  MODIFY_SCENARIO_PROPERTY,
+  MODIFY_MASS_PROPERTY,
+  ADD_MASS,
+  DELETE_MASS
+} from '../../action-types/scenario';
+import { MassType } from '../../Physics/types';
 import filterScenarios from '../../data/scenarios';
 
 export default function(
   state = filterScenarios('The Sun and the Neptunian System'),
-  action
-) {
+  action: ScenarioActionTypes
+): ScenarioProps {
   switch (action.type) {
-    case scenarioActionTypes.GET_SCENARIO:
-      return action.scenario;
+    case GET_SCENARIO:
+      return { ...state, ...action.scenario };
 
-    case scenarioActionTypes.MODIFY_SCENARIO_PROPERTY:
+    case MODIFY_SCENARIO_PROPERTY:
       return { ...state, [action.payload.key]: action.payload.value };
 
-    case scenarioActionTypes.MODIFY_MASS_PROPERTY:
+    case MODIFY_MASS_PROPERTY:
       return {
         ...state,
-        masses: state.masses.map(mass => {
+        masses: state.masses.map((mass: MassType) => {
           if (mass.name === action.payload.name) {
             return { ...mass, [action.payload.key]: action.payload.value };
           }
@@ -23,13 +32,17 @@ export default function(
         })
       };
 
-    case scenarioActionTypes.ADD_MASS:
+    case ADD_MASS:
       return { ...state, masses: [...state.masses, action.payload] };
 
-    case scenarioActionTypes.DELETE_MASS: {
-      const index = state.masses.map(mass => mass.name).indexOf(action.name);
+    case DELETE_MASS: {
+      const index = state.masses
+        .map((mass: MassType) => mass.name)
+        .indexOf(action.name);
 
-      const newMasses = state.masses.filter((mass, i) => index !== i);
+      const newMasses = state.masses.filter(
+        (mass: MassType, i: number) => index !== i
+      );
 
       let newState;
 

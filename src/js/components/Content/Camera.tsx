@@ -1,10 +1,11 @@
 import React, { ReactElement, Fragment } from 'react';
+import { modifyScenarioProperty } from '../../action-creators/scenario';
 import { MassType } from '../../Physics/types';
 import Dropdown from '../Dropdown';
 import Tooltip from '../Tooltip';
 
 interface CameraProps {
-  modifyScenarioProperty: Function;
+  modifyScenarioProperty: typeof modifyScenarioProperty;
   masses: MassType[];
   rotatingReferenceFrame: string;
   cameraPosition: string;

@@ -1,4 +1,5 @@
 import React, { ReactElement, Fragment, useState } from 'react';
+import { modifyScenarioProperty } from '../../action-creators/scenario';
 import { MassType } from '../../Physics/types';
 import Dropdown from '../Dropdown';
 import Toggle from '../Toggle';
@@ -7,12 +8,12 @@ import Tooltip from '../Tooltip';
 import { integrators } from '../../Physics/Integrators';
 
 interface PhysicsProps {
-  modifyScenarioProperty: Function;
+  modifyScenarioProperty: typeof modifyScenarioProperty;
   masses: MassType[];
   integrator: string;
-  useBarnesHut: Boolean;
-  systemBarycenter: Boolean;
-  collisions: Boolean;
+  useBarnesHut: boolean;
+  systemBarycenter: boolean;
+  collisions: boolean;
   dt: number;
   tol: number;
   minDt: number;

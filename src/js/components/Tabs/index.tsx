@@ -2,8 +2,8 @@ import React, {
   ReactElement,
   Fragment,
   useState,
+  ReactNode,
   Children,
-  ReactChildren,
   isValidElement
 } from 'react';
 
@@ -11,7 +11,7 @@ interface TabsProps {
   initTab?: number;
   tabsWrapperClassName?: string;
   tabsContentClassName?: string;
-  children: ReactChildren;
+  children: ReactNode;
 }
 
 export default ({
@@ -21,7 +21,7 @@ export default ({
   children
 }: TabsProps): ReactElement => {
   const [selectedTabIndex, setSelectedTabIndex] = useState<number>(
-    initTab !== undefined ? initTab : -1
+    initTab === undefined ? -1 : initTab
   );
 
   const panes = Children.toArray(children);
