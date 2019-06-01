@@ -805,7 +805,7 @@ export default {
   },
 
   reset() {
-    this.camera.controls.dispose();
+    this.camera && this.camera.controls.dispose();
 
     cancelAnimationFrame(this.requestAnimationFrameId);
 
