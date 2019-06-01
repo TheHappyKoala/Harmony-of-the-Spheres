@@ -28,48 +28,51 @@ export default ({
         content="Specifying a rotating reference frames allows us to observe the universe unfold relative to a fixed point, for instance Earth. While Earth orbits the Sun regardless of the reference frame being considered, in a rotating reference frame, the sun, for example, will appear to orbit the Earth, which is fixed at the center of the coordinate system."
       />
     </label>
-    <div className="tabs-dropdown-wrapper">
-      <Dropdown selectedOption={rotatingReferenceFrame}>
+    <Dropdown
+      selectedOption={rotatingReferenceFrame}
+      dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+      selectedOptionCssClassName="selected-option"
+      optionsWrapperCssClass="options"
+    >
+      <div
+        data-name="Origo"
+        key="Origo"
+        onClick={() =>
+          modifyScenarioProperty({
+            key: 'rotatingReferenceFrame',
+            value: 'Origo'
+          })
+        }
+      >
+        Origo
+      </div>
+      <div
+        data-name="Barycenter"
+        key="Barycenter"
+        onClick={() =>
+          modifyScenarioProperty({
+            key: 'rotatingReferenceFrame',
+            value: 'Barycenter'
+          })
+        }
+      >
+        Barycenter
+      </div>
+      {masses.map(mass => (
         <div
-          data-name="Origo"
-          key="Origo"
-          data-callback={() =>
+          data-name={mass.name}
+          key={mass.name}
+          onClick={() =>
             modifyScenarioProperty({
               key: 'rotatingReferenceFrame',
-              value: 'Origo'
+              value: mass.name
             })
           }
         >
-          Origo
+          {mass.name}
         </div>
-        <div
-          data-name="Barycenter"
-          key="Barycenter"
-          data-callback={() =>
-            modifyScenarioProperty({
-              key: 'rotatingReferenceFrame',
-              value: 'Barycenter'
-            })
-          }
-        >
-          Barycenter
-        </div>
-        {masses.map(mass => (
-          <div
-            data-name={mass.name}
-            key={mass.name}
-            data-callback={() =>
-              modifyScenarioProperty({
-                key: 'rotatingReferenceFrame',
-                value: mass.name
-              })
-            }
-          >
-            {mass.name}
-          </div>
-        ))}
-      </Dropdown>
-    </div>
+      ))}
+    </Dropdown>
     <label className="top">
       Camera Position{' '}
       <Tooltip
@@ -77,36 +80,39 @@ export default ({
         content="Select the position of the camera. If the position is set to free, you can zoom in on and orbit around the focus of the camera with your mouse or touch screen."
       />
     </label>
-    <div className="tabs-dropdown-wrapper">
-      <Dropdown selectedOption={cameraPosition}>
+    <Dropdown
+      selectedOption={cameraPosition}
+      dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+      selectedOptionCssClassName="selected-option"
+      optionsWrapperCssClass="options"
+    >
+      <div
+        data-name="Free"
+        key="Free"
+        onClick={() =>
+          modifyScenarioProperty({
+            key: 'cameraPosition',
+            value: 'Free'
+          })
+        }
+      >
+        Free
+      </div>
+      {masses.map(mass => (
         <div
-          data-name="Free"
-          key="Free"
-          data-callback={() =>
+          data-name={mass.name}
+          key={mass.name}
+          onClick={() =>
             modifyScenarioProperty({
               key: 'cameraPosition',
-              value: 'Free'
+              value: mass.name
             })
           }
         >
-          Free
+          {mass.name}
         </div>
-        {masses.map(mass => (
-          <div
-            data-name={mass.name}
-            key={mass.name}
-            data-callback={() =>
-              modifyScenarioProperty({
-                key: 'cameraPosition',
-                value: mass.name
-              })
-            }
-          >
-            {mass.name}
-          </div>
-        ))}
-      </Dropdown>
-    </div>
+      ))}
+    </Dropdown>
     <label className="top">
       Camera Focus{' '}
       <Tooltip
@@ -114,47 +120,50 @@ export default ({
         content="Select the focus of the camera, or in other words, what the camera should be looking at."
       />
     </label>
-    <div className="tabs-dropdown-wrapper">
-      <Dropdown selectedOption={cameraFocus}>
+    <Dropdown
+      selectedOption={cameraFocus}
+      dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+      selectedOptionCssClassName="selected-option"
+      optionsWrapperCssClass="options"
+    >
+      <div
+        data-name="Origo"
+        key="Origo"
+        onClick={() =>
+          modifyScenarioProperty({
+            key: 'cameraFocus',
+            value: 'Origo'
+          })
+        }
+      >
+        Origo
+      </div>
+      <div
+        data-name="Barycenter"
+        key="Barycenter"
+        onClick={() =>
+          modifyScenarioProperty({
+            key: 'cameraFocus',
+            value: 'Barycenter'
+          })
+        }
+      >
+        Barycenter
+      </div>
+      {masses.map(mass => (
         <div
-          data-name="Origo"
-          key="Origo"
-          data-callback={() =>
+          data-name={mass.name}
+          key={mass.name}
+          onClick={() =>
             modifyScenarioProperty({
               key: 'cameraFocus',
-              value: 'Origo'
+              value: mass.name
             })
           }
         >
-          Origo
+          {mass.name}
         </div>
-        <div
-          data-name="Barycenter"
-          key="Barycenter"
-          data-callback={() =>
-            modifyScenarioProperty({
-              key: 'cameraFocus',
-              value: 'Barycenter'
-            })
-          }
-        >
-          Barycenter
-        </div>
-        {masses.map(mass => (
-          <div
-            data-name={mass.name}
-            key={mass.name}
-            data-callback={() =>
-              modifyScenarioProperty({
-                key: 'cameraFocus',
-                value: mass.name
-              })
-            }
-          >
-            {mass.name}
-          </div>
-        ))}
-      </Dropdown>
-    </div>
+      ))}
+    </Dropdown>
   </Fragment>
 );

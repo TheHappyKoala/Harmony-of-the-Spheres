@@ -8,35 +8,37 @@ import { scenarios } from '../../data/scenarios';
 export default props => (
   <div className="main-bar">
     <label className="inline">Scenario</label>
-    <div className="item scenario-dropdown-wrapper inline">
-      <Dropdown
-        selectedOption={props.scenario.name}
-        tabs={{
-          cssClass: 'dropdown-tabs',
-          activeCss: 'dropdown-tabs-active'
-        }}
-        customCssOptions="scenario-menu"
-      >
-        {scenarios.map(scenario => (
-          <div
-            className="scenario-menu-option"
-            key={scenario.name}
-            category={scenario.type}
-          >
-            <NavLink to={`/scenario/${scenario.name}`} name={scenario.name}>
-              <LazyDog
-                src={`./images/scenarios/${scenario.name}.png`}
-                alt={scenario.name}
-                caption={scenario.name}
-                width={220}
-                height={138}
-                placeHolderIcon="fa fa-venus-mars fa-2x"
-              />
-            </NavLink>
-          </div>
-        ))}
-      </Dropdown>
-    </div>
+    <Dropdown
+      selectedOption={props.scenario.name}
+      tabs={{
+        cssClass: 'dropdown-tabs',
+        activeCssClass: 'dropdown-tabs-active',
+        optionsCssClass: 'dropdown-content',
+        identifier: 'category'
+      }}
+      dropdownWrapperCssClassName="item scenario-dropdown-wrapper inline"
+      selectedOptionCssClassName="selected-option"
+      optionsWrapperCssClass="scenario-menu"
+    >
+      {scenarios.map(scenario => (
+        <div
+          className="scenario-menu-option"
+          key={scenario.name}
+          identifier={scenario.type}
+        >
+          <NavLink to={`/scenario/${scenario.name}`} name={scenario.name}>
+            <LazyDog
+              src={`./images/scenarios/${scenario.name}.png`}
+              alt={scenario.name}
+              caption={scenario.name}
+              width={220}
+              height={138}
+              placeHolderIcon="fa fa-venus-mars fa-2x"
+            />
+          </NavLink>
+        </div>
+      ))}
+    </Dropdown>
     <div className="play-state-wrapper inline">
       {!props.scenario.playing && (
         <i

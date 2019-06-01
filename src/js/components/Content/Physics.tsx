@@ -57,24 +57,27 @@ export default ({
           content="The integration scheme used to calculate position, acceleration and velocity vectors. RK4 is more accurate, but consumes more computing power, so if you are running Gravity Playground on a slow device, Euler might be a better choice of integrator. Note that changing integrators in the middle of a running scenario results in a severe loss of accuracy."
         />
       </label>
-      <div className="tabs-dropdown-wrapper">
-        <Dropdown selectedOption={integrator}>
-          {integrators.map(integrator => (
-            <div
-              data-name={integrator}
-              key={integrator}
-              data-callback={() =>
-                modifyScenarioProperty({
-                  key: 'integrator',
-                  value: integrator
-                })
-              }
-            >
-              {integrator}
-            </div>
-          ))}
-        </Dropdown>
-      </div>
+      <Dropdown
+        selectedOption={integrator}
+        selectedOptionCssClassName="selected-option"
+        dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+        optionsWrapperCssClass="options"
+      >
+        {integrators.map(integrator => (
+          <div
+            data-name={integrator}
+            key={integrator}
+            onClick={() =>
+              modifyScenarioProperty({
+                key: 'integrator',
+                value: integrator
+              })
+            }
+          >
+            {integrator}
+          </div>
+        ))}
+      </Dropdown>
       <Toggle
         label="Use Barnes-Hut"
         checked={useBarnesHut}
@@ -201,24 +204,27 @@ export default ({
               content="One of the masses in a two body system."
             />
           </label>
-          <div className="tabs-dropdown-wrapper">
-            <Dropdown selectedOption={barycenterMassOne}>
-              {masses.map(mass => (
-                <div
-                  data-name={mass.name}
-                  key={mass.name}
-                  data-callback={() =>
-                    modifyScenarioProperty({
-                      key: 'barycenterMassOne',
-                      value: mass.name
-                    })
-                  }
-                >
-                  {mass.name}
-                </div>
-              ))}
-            </Dropdown>
-          </div>
+          <Dropdown
+            selectedOption={barycenterMassOne}
+            dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+            selectedOptionCssClassName="selected-option"
+            optionsWrapperCssClass="options"
+          >
+            {masses.map(mass => (
+              <div
+                data-name={mass.name}
+                key={mass.name}
+                onClick={() =>
+                  modifyScenarioProperty({
+                    key: 'barycenterMassOne',
+                    value: mass.name
+                  })
+                }
+              >
+                {mass.name}
+              </div>
+            ))}
+          </Dropdown>
           <label className="top">
             Barycenter Mass Two
             <Tooltip
@@ -226,24 +232,27 @@ export default ({
               content="One of the masses in a two body system."
             />
           </label>
-          <div className="tabs-dropdown-wrapper">
-            <Dropdown selectedOption={barycenterMassTwo}>
-              {masses.map(mass => (
-                <div
-                  data-name={mass.name}
-                  key={mass.name}
-                  data-callback={() =>
-                    modifyScenarioProperty({
-                      key: 'barycenterMassTwo',
-                      value: mass.name
-                    })
-                  }
-                >
-                  {mass.name}
-                </div>
-              ))}
-            </Dropdown>
-          </div>
+          <Dropdown
+            selectedOption={barycenterMassTwo}
+            dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+            selectedOptionCssClassName="selected-option"
+            optionsWrapperCssClass="options"
+          >
+            {masses.map(mass => (
+              <div
+                data-name={mass.name}
+                key={mass.name}
+                onClick={() =>
+                  modifyScenarioProperty({
+                    key: 'barycenterMassTwo',
+                    value: mass.name
+                  })
+                }
+              >
+                {mass.name}
+              </div>
+            ))}
+          </Dropdown>
         </Fragment>
       )}
       <label className="top">

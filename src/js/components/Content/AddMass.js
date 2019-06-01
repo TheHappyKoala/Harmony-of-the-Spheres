@@ -51,24 +51,27 @@ export default class extends Component {
             content="The celestial object you want your mass to orbit."
           />
         </label>
-        <div className="tabs-dropdown-wrapper">
-          <Dropdown selectedOption={this.props.primary}>
-            {this.props.masses.map(mass => (
-              <div
-                data-name={mass.name}
-                key={mass.name}
-                data-callback={() =>
-                  this.props.modifyScenarioProperty({
-                    key: 'primary',
-                    value: mass.name
-                  })
-                }
-              >
-                {mass.name}
-              </div>
-            ))}
-          </Dropdown>
-        </div>
+        <Dropdown
+          selectedOption={this.props.primary}
+          dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+          selectedOptionCssClassName="selected-option"
+          optionsWrapperCssClass="options"
+        >
+          {this.props.masses.map(mass => (
+            <div
+              data-name={mass.name}
+              key={mass.name}
+              onClick={() =>
+                this.props.modifyScenarioProperty({
+                  key: 'primary',
+                  value: mass.name
+                })
+              }
+            >
+              {mass.name}
+            </div>
+          ))}
+        </Dropdown>
         <label className="top">
           Maximum Distance
           <Tooltip
@@ -76,24 +79,27 @@ export default class extends Component {
             content="The maximum allowed distance between the primary and the mass that you are adding."
           />
         </label>
-        <div className="tabs-dropdown-wrapper">
-          <Dropdown selectedOption={this.props.maximumDistance}>
-            {maximumDistances.map(distance => (
-              <div
-                data-name={distance.name}
-                key={distance.name}
-                data-callback={() =>
-                  this.props.modifyScenarioProperty({
-                    key: 'maximumDistance',
-                    value: { name: distance.name, value: distance.value }
-                  })
-                }
-              >
-                {distance.name}
-              </div>
-            ))}
-          </Dropdown>
-        </div>
+        <Dropdown
+          selectedOption={this.props.maximumDistance.name}
+          dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+          selectedOptionCssClassName="selected-option"
+          optionsWrapperCssClass="options"
+        >
+          {maximumDistances.map(distance => (
+            <div
+              data-name={distance.name}
+              key={distance.name}
+              onClick={() =>
+                this.props.modifyScenarioProperty({
+                  key: 'maximumDistance',
+                  value: { name: distance.name, value: distance.value }
+                })
+              }
+            >
+              {distance.name}
+            </div>
+          ))}
+        </Dropdown>
         <label className="top">
           Distance Step
           <Tooltip
@@ -101,24 +107,27 @@ export default class extends Component {
             content="The distance that is added when you increment the distance by one step."
           />
         </label>
-        <div className="tabs-dropdown-wrapper">
-          <Dropdown selectedOption={this.props.distanceStep}>
-            {distanceSteps.map(distance => (
-              <div
-                data-name={distance.name}
-                key={distance.name}
-                data-callback={() =>
-                  this.props.modifyScenarioProperty({
-                    key: 'distanceStep',
-                    value: { name: distance.name, value: distance.value }
-                  })
-                }
-              >
-                {distance.name}
-              </div>
-            ))}
-          </Dropdown>
-        </div>
+        <Dropdown
+          selectedOption={this.props.distanceStep.name}
+          dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+          selectedOptionCssClassName="selected-option"
+          optionsWrapperCssClass="options"
+        >
+          {distanceSteps.map(distance => (
+            <div
+              data-name={distance.name}
+              key={distance.name}
+              onClick={() =>
+                this.props.modifyScenarioProperty({
+                  key: 'distanceStep',
+                  value: { name: distance.name, value: distance.value }
+                })
+              }
+            >
+              {distance.name}
+            </div>
+          ))}
+        </Dropdown>
 
         <label className="top">
           Semi-major Axis{' '}
@@ -132,7 +141,7 @@ export default class extends Component {
           value={this.state.a}
           callback={this.modifyProperty}
           max={this.props.maximumDistance.value}
-          min={this.state.radius * 1.05 / 2100000}
+          min={this.props.distanceStep.value}
           shouldUpdateOnMaxMinChange={true}
           onMaxMinChange={{
             payload: {
@@ -195,26 +204,29 @@ export default class extends Component {
             content="The mass, radius, texture, type and color of the mass you're adding."
           />
         </label>
-        <div className="tabs-dropdown-wrapper">
-          <Dropdown>
-            {bodies.map(body => (
-              <div
-                data-name={body.name}
-                key={body.name}
-                data-callback={() =>
-                  this.insertMassTemplate({
-                    m: body.m,
-                    radius: body.radius,
-                    texture: body.name,
-                    type: body.type
-                  })
-                }
-              >
-                {body.name}
-              </div>
-            ))}
-          </Dropdown>
-        </div>
+        <Dropdown
+          selectedOption={this.state.texture}
+          dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+          selectedOptionCssClassName="selected-option"
+          optionsWrapperCssClass="options"
+        >
+          {bodies.map(body => (
+            <div
+              data-name={body.name}
+              key={body.name}
+              onClick={() =>
+                this.insertMassTemplate({
+                  m: body.m,
+                  radius: body.radius,
+                  texture: body.name,
+                  type: body.type
+                })
+              }
+            >
+              {body.name}
+            </div>
+          ))}
+        </Dropdown>
         <Button
           callback={() =>
             this.props.addMass({
