@@ -32,7 +32,7 @@ export default class {
     return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
   }
 
-  normalise(): VectorType {
+  normalise(): this {
     return this.divideByScalar(this.getLength());
   }
 
@@ -120,29 +120,27 @@ export default class {
     return this;
   }
 
-  rotateX(angle: number): this {
-    const angleRad = degreesToRadians(angle);
+  rotate(axis: VectorType, angle: number): this {
+    const radians = degreesToRadians(angle);
 
-    this.y = this.y * Math.cos(angleRad) + this.z * Math.sin(angleRad);
-    this.z = this.z * Math.cos(angleRad) - this.y * Math.sin(angleRad);
+    const halfAngle = radians / 2;
+    const s = Math.sin(halfAngle);
 
-    return this;
-  }
+    const q = {
+      x: axis.x * s,
+      y: axis.y * s,
+      z: axis.z * s,
+      w: Math.cos(halfAngle)
+    };
 
-  rotateY(angle: number): this {
-    const angleRad = degreesToRadians(angle);
+    const ix = q.w * this.x + q.y * this.z - q.z * this.y;
+    const iy = q.w * this.y + q.z * this.x - q.x * this.z;
+    const iz = q.w * this.z + q.x * this.y - q.y * this.x;
+    const iw = -q.x * this.x - q.y * this.y - q.z * this.z;
 
-    this.x = this.x * Math.cos(angleRad) - this.z * Math.sin(angleRad);
-    this.z = this.x * Math.sin(angleRad) + this.z * Math.cos(angleRad);
-
-    return this;
-  }
-
-  rotateZ(angle: number): this {
-    const angleRad = degreesToRadians(angle);
-
-    this.x = this.x * Math.cos(angleRad) + this.y * Math.sin(angleRad);
-    this.y = this.y * Math.cos(angleRad) - this.x * Math.sin(angleRad);
+    this.x = ix * q.w + iw * -q.x + iy * -q.z - iz * -q.y;
+    this.y = iy * q.w + iw * -q.y + iz * -q.x - ix * -q.z;
+    this.z = iz * q.w + iw * -q.z + ix * -q.y - iy * -q.x;
 
     return this;
   }
