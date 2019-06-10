@@ -61,15 +61,17 @@ export default class {
   }
 
   static convertKineticEnergyToVelocityComponent(
-    m: MassType,
+    mass: MassType,
     fragmentMass: number,
     c: number,
     component: string
   ) {
     return (
+      Math.sign(mass[component]) *
       Math.sqrt(
-        2 * this.getComponentKineticEnergy(m, component) / fragmentMass
-      ) * c
+        2 * this.getComponentKineticEnergy(mass, component) / fragmentMass
+      ) *
+      c
     );
   }
 
