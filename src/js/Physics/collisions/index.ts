@@ -60,6 +60,10 @@ export default class {
       .rotate({ x: 0, y: 0, z: 1 }, -rotation.z);
   }
 
+  static getComponentKineticEnergy(mass: MassType, component: string): number {
+    return 0.5 * mass.m * (mass[component] * mass[component]);
+  }
+
   static getDeflectedVelocity(
     survivor: MassType,
     looser: MassType
