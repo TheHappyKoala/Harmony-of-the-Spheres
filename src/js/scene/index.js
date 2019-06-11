@@ -7,14 +7,12 @@ import {
 import H3 from '../Physics/vectors';
 import getIntegrator from '../Physics/Integrators';
 import { getObjFromArrByKeyValuePair } from '../utils';
-import doCollisions from '../Physics/collisions';
 import {
   getDistanceParams,
   getOrbit,
-  getClosestPointOnSphere,
   getRandomNumberInRange,
-  rotateVector,
-  setBarycenter
+  setBarycenter,
+  clampAbs
 } from '../Physics/utils';
 import ParticleService from '../Physics/particles/ParticleService';
 import arena from './arena';
@@ -25,6 +23,7 @@ import Star from './Star';
 import Model from './Model';
 import ParticlePhysics from '../Physics/particles';
 import ParticlesManifestation from './ParticlesManifestation';
+import CollisionsService from '../Physics/collisions/';
 
 const TWEEN = require('@tweenjs/tween.js');
 
@@ -42,8 +41,6 @@ export default {
       this.h
     );
 
-    this.start = Date.now();
-
     this.requestAnimationFrameId = null;
 
     this.scene = new THREE.Scene();
@@ -54,7 +51,8 @@ export default {
 
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas,
-      antialias: true
+      antialias: true,
+      powerPreference: 'high-performance'
     });
     this.renderer.setSize(this.w, this.h);
 
@@ -361,15 +359,6 @@ export default {
           .dSquared
       );
 
-      if (mass.type === 'star') {
-        const starMeshUniforms = massManifestation.getObjectByName('StarMesh')
-          .material.uniforms;
-
-        starMeshUniforms.time.value = 0.00025 * (Date.now() - this.start);
-        starMeshUniforms.weight.value =
-          10 * (0.5 + 0.5 * Math.sin(0.00025 * (Date.now() - this.start)));
-      }
-
       massManifestation.draw(
         this.manifestationPosition.x,
         this.manifestationPosition.y,
@@ -498,76 +487,41 @@ export default {
     }
 
     if (this.scenario.playing && this.scenario.collisions)
-      doCollisions(
+      CollisionsService.doCollisions(
         this.system.masses,
         this.scenario.scale,
         (looser, survivor) => {
           store.dispatch(deleteMass(looser.name));
 
-          /*
-         * Particles collide and are removed if they are within the radius of a mass, 
-         * so we can't instantiate the particles at the point where the collision is registered
-         * which is always within the radius of the mass it collided with 
-         * as we use the radius check method for detecting collisions
-         * so we trace the colliding mass one iteration and initiate the collision debris at that point
-        */
-
-          const beforeCollisionPoint = {
-            x: looser.x - looser.vx * dt,
-            y: looser.y - looser.vy * dt,
-            z: looser.z - looser.vz * dt
-          };
-
-          /*
-         * Check if the survivor of a collision has a custom impact shockwave shader
-         * If that turns out to be the case... Let's get ready to ruuuummmbleee
-        */
-
           const survivingManifestation = this.scene.getObjectByName(
             survivor.name
           );
 
-          if (survivingManifestation.materialShader) {
-            /*
-           * Get a reference to the sphere of the mass manifestation
-          */
+          let hitPoint;
+          let survivingManifestationRotation;
 
-            const survivingManifestationRotation = survivingManifestation.getObjectByName(
+          if (survivingManifestation.materialShader) {
+            survivingManifestationRotation = survivingManifestation.getObjectByName(
               'Main'
             ).rotation;
 
-            /*
-           * Calculate where on the sphere the impact took place so that we know where to initiate the shockwave animation
-           * We need to pass vectors, for the survivor and looser of the collision, 
-           * where the rotating reference frame is set to the survivor of the collision
-          */
-
-            const hitPoint = getClosestPointOnSphere(
-              new THREE.Vector3(
-                looser.x - survivor.x - looser.vx * dt,
-                looser.y - survivor.y - looser.vy * dt,
-                looser.z - survivor.z - looser.vz * dt
-              ),
-              new THREE.Vector3(
-                survivor.x - survivor.x,
-                survivor.y - survivor.y,
-                survivor.z - survivor.z
-              ),
+            hitPoint = CollisionsService.getClosestPointOnSphere(
+              new H3().set({
+                x: looser.x - survivor.x - looser.vx * dt,
+                y: looser.y - survivor.y - looser.vy * dt,
+                z: looser.z - survivor.z - looser.vz * dt
+              }),
               survivor.radius,
               {
-                x: survivingManifestationRotation.x,
-                y: survivingManifestationRotation.y,
-                z: survivingManifestationRotation.z
+                x: survivingManifestationRotation.x * 57.295779513,
+                y: survivingManifestationRotation.y * 57.295779513,
+                z: survivingManifestationRotation.z * 57.295779513
               }
             );
 
-            /*
-           * Let's pass some uniforms to kick this shader into action!!!
-          */
+            const impactIndex = survivingManifestation.ongoingImpacts + 1;
 
-            const impactIndex = survivingManifestation.ongoingImpacts + 1; //Get the index of the impact uniform that we are going to update
-
-            survivingManifestation.ongoingImpacts++; //Increment the number of ongoing impacts
+            survivingManifestation.ongoingImpacts++;
 
             const uniforms = survivingManifestation.materialShader.uniforms;
 
@@ -585,101 +539,93 @@ export default {
                     survivor.radius * 2
                   );
 
-            /*
-           * We create a tween that updates the impactRatio uniform over a time span of two seconds
-           * At some point I'm probably going to look into syncing the duration of the shockwave with the rest of the simulation
-           * since right now it is independent of the time step at which the simulation is being run
-           * but that will have to wait!!!
-          */
-
             const tween = new TWEEN.Tween({ value: 0 })
               .to({ value: 1 }, 4000)
               .onUpdate(val => {
                 uniforms.impacts.value[impactIndex].impactRatio = val.value;
               })
               .onComplete(() => {
-                survivingManifestation.ongoingImpacts--; //Once the impact event is over, decrement the number of ongoing impacts
+                survivingManifestation.ongoingImpacts--;
               });
 
             tween.start();
           }
 
-          const numberOfFragments = 3000;
+          const numberOfFragments = 300;
 
           const totalWithAddedFragments =
             this.particlePhysics.particles + numberOfFragments;
           const excessFragments =
             this.scenario.particles.max - totalWithAddedFragments;
 
-          /*
-         * Every scenario has a maximum allowed number of particles
-         * Should that number be exceeded, we trim the particles array accordingly
-        */
-
           if (excessFragments < 0)
             this.particlePhysics.particles.splice(0, -excessFragments);
 
+          const maxAngle = 30;
+          const fragmentMass = 1.005570862e-29;
+
+          const kineticVelocity = {
+            x: CollisionsService.convertKineticEnergyToVelocityComponent(
+              looser,
+              fragmentMass,
+              0.00000000001,
+              'vx'
+            ),
+            y: CollisionsService.convertKineticEnergyToVelocityComponent(
+              looser,
+              fragmentMass,
+              0.00000000001,
+              'vy'
+            ),
+            z: CollisionsService.convertKineticEnergyToVelocityComponent(
+              looser,
+              fragmentMass,
+              0.00000000001,
+              'vz'
+            )
+          };
+
+          const hitPointWorldPosition = survivingManifestation
+            .getObjectByName('Main')
+            .localToWorld(
+              new THREE.Vector3(hitPoint.x, hitPoint.y, hitPoint.z)
+            );
+
           for (let i = 0; i < numberOfFragments; i++) {
-            const x = beforeCollisionPoint.x;
-            const y = beforeCollisionPoint.y;
-            const z = beforeCollisionPoint.z;
+            const angleX = getRandomNumberInRange(-maxAngle, maxAngle);
+            const angleY = getRandomNumberInRange(-maxAngle, maxAngle);
+            const angleZ = getRandomNumberInRange(-maxAngle, maxAngle);
 
-            let orbit = getOrbit(survivor, { x, y, z }, this.scenario.g, false);
-
-            /*
-           * Get the ideal circular orbit (apoapsis is equal to periapsis) for a given position vector around the primary
-          */
-
-            orbit = new THREE.Vector3(orbit.vx, orbit.vy, orbit.vz);
-
-            /*
-           * Every third particle that we create gets a completely random orbit... Could be polar
-           * equatorial...
-           * or something in-between!
-          */
-
-            if (i % 3 === 0) {
-              orbit = rotateVector(
-                orbit.x,
-                orbit.y,
-                orbit.z,
-                getRandomNumberInRange(1, 360),
-                new THREE.Vector3(1, 0, 0),
-                this.utilityVector
-              );
-
-              orbit = rotateVector(
-                orbit.x,
-                orbit.y,
-                orbit.z,
-                getRandomNumberInRange(1, 360),
-                new THREE.Vector3(0, 1, 0),
-                this.utilityVector
-              );
-
-              orbit = rotateVector(
-                orbit.x,
-                orbit.y,
-                orbit.z,
-                getRandomNumberInRange(1, 360),
-                new THREE.Vector3(0, 0, 1),
-                this.utilityVector
-              );
-            }
-
-            /*
-           * Push the state vectors
-           * We randomize the velocity vectors within a range, so that some of them have a velocity that is too low for a circular orbit
-           * While others have one that is too high
-          */
+            const particleVelocity = new H3()
+              .set(
+                CollisionsService.getDeflectedVelocity(survivor, {
+                  ...looser,
+                  vx: kineticVelocity.x,
+                  vy: kineticVelocity.y,
+                  vz: kineticVelocity.z
+                })
+              )
+              .rotate({ x: 1, y: 0, z: 0 }, angleX)
+              .rotate({ x: 0, y: 1, z: 0 }, angleY)
+              .rotate({ x: 0, y: 0, z: 1 }, angleZ)
+              .add({ x: survivor.vx, y: survivor.vy, z: survivor.vz });
 
             this.particlePhysics.particles.push({
-              x,
-              y,
-              z,
-              vx: getRandomNumberInRange(0.9 * orbit.x, 1.3 * orbit.x),
-              vy: getRandomNumberInRange(0.9 * orbit.y, 1.3 * orbit.y),
-              vz: getRandomNumberInRange(0.9 * orbit.z, 1.3 * orbit.z)
+              ...new H3()
+                .set({
+                  x: hitPointWorldPosition.x / this.scenario.scale,
+                  y: hitPointWorldPosition.y / this.scenario.scale,
+                  z: hitPointWorldPosition.z / this.scenario.scale
+                })
+                .add({
+                  x: survivor.x - looser.vx * dt,
+                  y: survivor.y - looser.vy * dt,
+                  z: survivor.z - looser.vz * dt
+                })
+                .toObject(),
+              vx: particleVelocity.x / clampAbs(1, maxAngle, angleX / 10),
+              vy: particleVelocity.y / clampAbs(1, maxAngle, angleY / 10),
+              vz: particleVelocity.z / clampAbs(1, maxAngle, angleZ / 10)
             });
           }
         }
@@ -750,12 +696,6 @@ export default {
         }
       )
     );
-
-    /*
-     * We have to update the tweens if we want them to run!!! 
-     * Forget to add this line of code all the time when I'm working with tween.js,
-     * so hope hopefully this comment will preclude that from happening!!!
-    */
 
     TWEEN.update();
     this.requestAnimationFrameId = requestAnimationFrame(this.loop);
