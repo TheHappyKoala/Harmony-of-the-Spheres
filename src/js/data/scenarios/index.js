@@ -2,7 +2,6 @@ import jovianSystem from './jovianSystem';
 import centaurs from './centaurs';
 import voyagerNeptune from './voyagerNeptune';
 import saturnFull from './saturnFull';
-import hohmanTransfer from './hohmanTransfer';
 import saturn from './saturn';
 import threeBodyCoreography from './threeBodyCoreography';
 import earthMoonSystem from './earthMoonSystem';
@@ -10,7 +9,6 @@ import oumuamua from './oumuamua';
 import tess from './tess';
 import martianSystem from './martianSystem';
 import newHorizons from './newHorizons';
-import europaClipper from './europaClipper';
 import cruithne from './cruithne';
 import plutoSystem from './thePlutonianSystem';
 import trappist1 from './trappist1';
@@ -57,7 +55,7 @@ const processMasses = (scenarioMasses, massTemplates, dt) =>
       ...mass,
       m:
         template === undefined
-          ? mass.m === undefined ? 0 : mass.m
+          ? mass.m === undefined ? 3.362126177097e-15 : mass.m
           : template.m,
       radius:
         template === undefined
@@ -198,13 +196,11 @@ export const scenarios = [
   kepler11,
   the24sextantisSystem,
   shenanigans,
-  hohmanTransfer,
   venusPentagram,
   oumuamua,
   kepler1658,
   earthMoonSystem,
   jovianSystem,
-  europaClipper,
   threeBodyCoreography,
   tess,
   plutoSystem,

@@ -60,7 +60,7 @@ export default [
   },
   { m: 0, orbitalPeriod: 0.14657534, radius: 1.2, type: 'model', name: 'Juno' },
   {
-    m: 0,
+    m: 2.413291634272764e-8,
     orbitalPeriod: 0,
     radius: 1.2,
     type: 'model',
@@ -186,9 +186,21 @@ export default [
     asteroidTexture: true,
     name: 'Lutetia'
   },
-  { m: 0, orbitalPeriod: 6.2, radius: 1.2, type: 'model', name: 'Ulysses' },
-  { m: 0, orbitalPeriod: 0.03753425, radius: 1.2, type: 'model', name: 'TESS' },
-  { m: 0, radius: 1.2, name: 'Apollo 11' },
+  {
+    m: 1.005570862e-29,
+    orbitalPeriod: 6.2,
+    radius: 1.2,
+    type: 'model',
+    name: 'Ulysses'
+  },
+  {
+    m: 1.005570862e-29,
+    orbitalPeriod: 0.03753425,
+    radius: 1.2,
+    type: 'model',
+    name: 'TESS'
+  },
+  { m: 1.005570862e-29, radius: 1.2, name: 'Apollo 11' },
   {
     m: 4.490848296995278e-8,
     orbitalPeriod: 0.004794521,
@@ -208,7 +220,7 @@ export default [
     name: 'Ganymede'
   },
   {
-    m: 5.40965639150398e-17,
+    m: 5.4300826548000004e-8,
     orbitalPeriod: 0.0465753,
     radius: 35.74007220216607,
     name: 'Callisto'
@@ -358,8 +370,8 @@ export default [
     bump: true
   },
 
-  { m: 0, radius: 1.2, type: 'model', name: 'New Horizons' },
-  { m: 0, radius: 1.2, type: 'model', name: 'Voyager 2' },
+  { m: 1.005570862e-29, radius: 1.2, type: 'model', name: 'New Horizons' },
+  { m: 1.005570862e-29, radius: 1.2, type: 'model', name: 'Voyager 2' },
   {
     m: 5.149e-5,
     orbitalPeriod: 11400,
@@ -375,7 +387,7 @@ export default [
     atmosphere: { color: '#93cfef', scaleFactor: 250 },
     name: 'Planet 9'
   },
-  { m: 1, radius: 9e4, type: 'star', name: 'Sun', color: '#fff3ea' },
+  { m: 1, radius: 9e4, type: 'star', name: 'Sun', color: '#ffffff' },
   {
     m: 0.089,
     radius: 1490,
