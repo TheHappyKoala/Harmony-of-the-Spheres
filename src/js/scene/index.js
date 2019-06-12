@@ -748,6 +748,9 @@ export default {
 
     cancelAnimationFrame(this.requestAnimationFrameId);
 
+    window.removeEventListener('resize', this.onWindowResize);
+    window.removeEventListener('orientationchange', this.onWindowResize);
+
     return this;
   }
 };
