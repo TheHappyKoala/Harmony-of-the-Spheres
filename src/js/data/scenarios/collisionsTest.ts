@@ -1,8 +1,9 @@
 export default {
-  name: 'Destroying the Galilean Moons',
+  name: 'Collisions Test - Take that Jupiter!',
   type: 'What-If',
   g: 39.5,
-  dt: 0.000001,
+  dt: 0.000000035,
+  trails: false,
   rotatingReferenceFrame: 'Jupiter',
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
@@ -13,7 +14,7 @@ export default {
   },
   particles: {
     max: 20000,
-    size: 200,
+    size: 400,
     hsl: [0, 0.9, 0.5],
     rings: []
   },
@@ -46,7 +47,7 @@ export default {
       trailVertices: 5000
     },
     {
-      name: 'Io',
+      name: 'Moon',
       x: 4.123396684098477e-4,
       y: -0.00277546561117049,
       z: -9.213389019387901e-5,
@@ -55,29 +56,38 @@ export default {
       vz: 0
     },
     {
-      name: 'Europa',
+      name: 'Mars',
       x: 2.31315012572641e-4,
       y: -0.004516461518956031,
       z: -1.948699591675548e-4,
-      vx: 0,
+      vx: 1,
       vy: 0,
       vz: 0
     },
     {
-      name: 'Ganymede',
+      name: 'Ceres',
       x: -0.007162482360743344,
       y: -1.26082702584475e-5,
       z: -9.466593207081436e-5,
-      vx: 0,
+      vx: 150,
       vy: 0,
       vz: 0
     },
     {
-      name: 'Callisto',
-      x: -0.01163958701040644,
-      y: -0.005000778655901151,
+      name: 'Pluto',
+      x: -0.003163958701040644,
+      y: -0.003000778655901151,
       z: -3.148071350588741e-4,
-      vx: 0,
+      vx: 2,
+      vy: 2.5,
+      vz: 0
+    },
+    {
+      name: 'Mercury',
+      x: -0.002063958701040644,
+      y: -0.002000778655901151,
+      z: -3.148071350588741e-4,
+      vx: 2.5,
       vy: 0,
       vz: 0
     }
