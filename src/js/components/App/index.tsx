@@ -126,7 +126,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               distanceStep={scenario.distanceStep}
               distMax={scenario.distMax}
               distMin={scenario.distMin}
-              distStep={scenario.distanceStep}
               velMax={scenario.velMax}
               velMin={scenario.velMin}
               velStep={scenario.velStep}

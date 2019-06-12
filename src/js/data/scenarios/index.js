@@ -166,6 +166,8 @@ const processScenario = scenario => ({
       ? scenario.twinklingParticles
       : false,
   scale: scenario.scale !== undefined ? scenario.scale : 2100000,
+  distMax: 50,
+  distMin: -50,
   velMax: 5,
   velMin: -5,
   velStep: 1.85765499287888e-6,
