@@ -52,15 +52,16 @@ export default {
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas,
       antialias: true,
-      powerPreference: 'high-performance'
+      powerPreference: 'high-performance',
+      logarithmicDepthBuffer: true
     });
     this.renderer.setSize(this.w, this.h);
 
     this.camera = new Camera(
       45,
       this.w / this.h,
-      1,
-      1500000000000,
+      1e-6,
+      1e27,
       this.graphics2D.canvas
     );
 
