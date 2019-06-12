@@ -4,8 +4,8 @@ import { degreesToRadians } from '../Physics/utils';
 export default function(manager) {
   const geometry = new THREE.SphereBufferGeometry(
     1500 * 1000000000000000000000000000,
-    32,
-    32
+    20,
+    20
   );
 
   const textureLoader = new THREE.TextureLoader(manager);

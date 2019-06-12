@@ -9,6 +9,11 @@ declare module 'three' {
     z: number;
     constructor(x?: number, y?: number, z?: number);
     set(x: number, y: number, z: number): this;
+    sub(v: Vector3): this;
+    add(v: Vector3): this;
+    normalize(): this;
+    multiplyScalar(s: number): this;
+    applyAxisAngle(v: Vector3, rad: number): this;
     project(camera: PerspectiveCamera): this;
   }
   export class Color {

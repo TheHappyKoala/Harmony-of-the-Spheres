@@ -22,6 +22,14 @@ export function getVMag(g, primary, d, a = d) {
   return Math.sqrt(Math.abs(g * primary.m * (2 / d - 1 / a)));
 }
 
+export function getEscapeVMag(g, m, d) {
+  return Math.sqrt(2 * g * m / d);
+}
+
+export function clampAbs(min, max, value) {
+  return Math.min(Math.max(Math.abs(value), min), max);
+}
+
 export function getOrbit(primary, secondary, g, fromElements = true) {
   const x = primary.x !== undefined ? primary.x : 0;
   const y = primary.y !== undefined ? primary.y : 0;
@@ -143,22 +151,6 @@ export function getA(apsisOne, apsisTwo) {
 
 export function degreesToRadians(degrees) {
   return Math.PI / 180 * degrees;
-}
-
-/*
- * This method takes a point in 3D space and calculates the point on a given sphere that is closest to it
- * It takes the rotation of the sphere into account 
-*/
-
-export function getClosestPointOnSphere(point, spherePos, radius, rotation) {
-  return point
-    .sub(spherePos)
-    .normalize()
-    .multiplyScalar(radius)
-    .add(spherePos)
-    .applyAxisAngle(new THREE.Vector3(1, 0, 0), -rotation.x)
-    .applyAxisAngle(new THREE.Vector3(0, 1, 0), -rotation.y)
-    .applyAxisAngle(new THREE.Vector3(0, 0, 1), -rotation.z);
 }
 
 export function rotateVector(
