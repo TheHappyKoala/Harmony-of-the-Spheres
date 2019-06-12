@@ -107,6 +107,7 @@ export default {
 
     this.loop = this.loop.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
+    this.collisionCallback = this.collisionCallback.bind(this);
 
     window.addEventListener('resize', this.onWindowResize, false);
     window.addEventListener('orientationchange', this.onWindowResize, false);
@@ -168,6 +169,141 @@ export default {
 
       this.massManifestations.push(manifestation);
       this.scene.add(manifestation);
+    }
+  },
+
+  collisionCallback(looser, survivor) {
+    store.dispatch(deleteMass(looser.name));
+
+    const dt = this.system.dt;
+
+    const survivingManifestation = this.scene.getObjectByName(survivor.name);
+
+    let hitPoint;
+    let survivingManifestationRotation;
+
+    if (survivingManifestation.materialShader) {
+      survivingManifestationRotation = survivingManifestation.getObjectByName(
+        'Main'
+      ).rotation;
+
+      hitPoint = CollisionsService.getClosestPointOnSphere(
+        new H3().set({
+          x: looser.x - survivor.x - looser.vx * dt,
+          y: looser.y - survivor.y - looser.vy * dt,
+          z: looser.z - survivor.z - looser.vz * dt
+        }),
+        survivor.radius,
+        {
+          x: survivingManifestationRotation.x * 57.295779513,
+          y: survivingManifestationRotation.y * 57.295779513,
+          z: survivingManifestationRotation.z * 57.295779513
+        }
+      );
+
+      const impactIndex = survivingManifestation.ongoingImpacts + 1;
+
+      survivingManifestation.ongoingImpacts++;
+
+      const uniforms = survivingManifestation.materialShader.uniforms;
+
+      uniforms.impacts.value[impactIndex].impactPoint.set(
+        -hitPoint.x,
+        -hitPoint.y,
+        -hitPoint.z
+      );
+
+      uniforms.impacts.value[impactIndex].impactRadius =
+        looser.m === 0
+          ? survivor.radius * 2
+          : Math.min(Math.max(looser.radius * 50, 300), survivor.radius * 2);
+
+      const tween = new TWEEN.Tween({ value: 0 })
+        .to({ value: 1 }, 4000)
+        .onUpdate(val => {
+          uniforms.impacts.value[impactIndex].impactRatio = val.value;
+        })
+        .onComplete(() => {
+          survivingManifestation.ongoingImpacts--;
+        });
+
+      tween.start();
+    }
+
+    const numberOfFragments = 300;
+
+    const totalWithAddedFragments =
+      this.particlePhysics.particles + numberOfFragments;
+    const excessFragments =
+      this.scenario.particles.max - totalWithAddedFragments;
+
+    if (excessFragments < 0)
+      this.particlePhysics.particles.splice(0, -excessFragments);
+
+    const maxAngle = 30;
+    const fragmentMass = 1.005570862e-29;
+
+    const kineticVelocity = {
+      x: CollisionsService.convertKineticEnergyToVelocityComponent(
+        looser,
+        fragmentMass,
+        0.00000000001,
+        'vx'
+      ),
+      y: CollisionsService.convertKineticEnergyToVelocityComponent(
+        looser,
+        fragmentMass,
+        0.00000000001,
+        'vy'
+      ),
+      z: CollisionsService.convertKineticEnergyToVelocityComponent(
+        looser,
+        fragmentMass,
+        0.00000000001,
+        'vz'
+      )
+    };
+
+    const hitPointWorldPosition = survivingManifestation
+      .getObjectByName('Main')
+      .localToWorld(new THREE.Vector3(hitPoint.x, hitPoint.y, hitPoint.z));
+
+    for (let i = 0; i < numberOfFragments; i++) {
+      const angleX = getRandomNumberInRange(-maxAngle, maxAngle);
+      const angleY = getRandomNumberInRange(-maxAngle, maxAngle);
+      const angleZ = getRandomNumberInRange(-maxAngle, maxAngle);
+
+      const particleVelocity = new H3()
+        .set(
+          CollisionsService.getDeflectedVelocity(survivor, {
+            ...looser,
+            vx: kineticVelocity.x,
+            vy: kineticVelocity.y,
+            vz: kineticVelocity.z
+          })
+        )
+        .rotate({ x: 1, y: 0, z: 0 }, angleX)
+        .rotate({ x: 0, y: 1, z: 0 }, angleY)
+        .rotate({ x: 0, y: 0, z: 1 }, angleZ)
+        .add({ x: survivor.vx, y: survivor.vy, z: survivor.vz });
+
+      this.particlePhysics.particles.push({
+        ...new H3()
+          .set({
+            x: hitPointWorldPosition.x / this.scenario.scale,
+            y: hitPointWorldPosition.y / this.scenario.scale,
+            z: hitPointWorldPosition.z / this.scenario.scale
+          })
+          .add({
+            x: survivor.x - looser.vx * dt,
+            y: survivor.y - looser.vy * dt,
+            z: survivor.z - looser.vz * dt
+          })
+          .toObject(),
+        vx: particleVelocity.x / clampAbs(1, maxAngle, angleX / 10),
+        vy: particleVelocity.y / clampAbs(1, maxAngle, angleY / 10),
+        vz: particleVelocity.z / clampAbs(1, maxAngle, angleZ / 10)
+      });
     }
   },
 
@@ -491,145 +627,7 @@ export default {
       CollisionsService.doCollisions(
         this.system.masses,
         this.scenario.scale,
-        (looser, survivor) => {
-          store.dispatch(deleteMass(looser.name));
-
-          const survivingManifestation = this.scene.getObjectByName(
-            survivor.name
-          );
-
-          let hitPoint;
-          let survivingManifestationRotation;
-
-          if (survivingManifestation.materialShader) {
-            survivingManifestationRotation = survivingManifestation.getObjectByName(
-              'Main'
-            ).rotation;
-
-            hitPoint = CollisionsService.getClosestPointOnSphere(
-              new H3().set({
-                x: looser.x - survivor.x - looser.vx * dt,
-                y: looser.y - survivor.y - looser.vy * dt,
-                z: looser.z - survivor.z - looser.vz * dt
-              }),
-              survivor.radius,
-              {
-                x: survivingManifestationRotation.x * 57.295779513,
-                y: survivingManifestationRotation.y * 57.295779513,
-                z: survivingManifestationRotation.z * 57.295779513
-              }
-            );
-
-            const impactIndex = survivingManifestation.ongoingImpacts + 1;
-
-            survivingManifestation.ongoingImpacts++;
-
-            const uniforms = survivingManifestation.materialShader.uniforms;
-
-            uniforms.impacts.value[impactIndex].impactPoint.set(
-              -hitPoint.x,
-              -hitPoint.y,
-              -hitPoint.z
-            );
-
-            uniforms.impacts.value[impactIndex].impactRadius =
-              looser.m === 0
-                ? survivor.radius * 2
-                : Math.min(
-                    Math.max(looser.radius * 50, 300),
-                    survivor.radius * 2
-                  );
-
-            const tween = new TWEEN.Tween({ value: 0 })
-              .to({ value: 1 }, 4000)
-              .onUpdate(val => {
-                uniforms.impacts.value[impactIndex].impactRatio = val.value;
-              })
-              .onComplete(() => {
-                survivingManifestation.ongoingImpacts--;
-              });
-
-            tween.start();
-          }
-
-          const numberOfFragments = 300;
-
-          const totalWithAddedFragments =
-            this.particlePhysics.particles + numberOfFragments;
-          const excessFragments =
-            this.scenario.particles.max - totalWithAddedFragments;
-
-          if (excessFragments < 0)
-            this.particlePhysics.particles.splice(0, -excessFragments);
-
-          const maxAngle = 30;
-          const fragmentMass = 1.005570862e-29;
-
-          const kineticVelocity = {
-            x: CollisionsService.convertKineticEnergyToVelocityComponent(
-              looser,
-              fragmentMass,
-              0.00000000001,
-              'vx'
-            ),
-            y: CollisionsService.convertKineticEnergyToVelocityComponent(
-              looser,
-              fragmentMass,
-              0.00000000001,
-              'vy'
-            ),
-            z: CollisionsService.convertKineticEnergyToVelocityComponent(
-              looser,
-              fragmentMass,
-              0.00000000001,
-              'vz'
-            )
-          };
-
-          const hitPointWorldPosition = survivingManifestation
-            .getObjectByName('Main')
-            .localToWorld(
-              new THREE.Vector3(hitPoint.x, hitPoint.y, hitPoint.z)
-            );
-
-          for (let i = 0; i < numberOfFragments; i++) {
-            const angleX = getRandomNumberInRange(-maxAngle, maxAngle);
-            const angleY = getRandomNumberInRange(-maxAngle, maxAngle);
-            const angleZ = getRandomNumberInRange(-maxAngle, maxAngle);
-
-            const particleVelocity = new H3()
-              .set(
-                CollisionsService.getDeflectedVelocity(survivor, {
-                  ...looser,
-                  vx: kineticVelocity.x,
-                  vy: kineticVelocity.y,
-                  vz: kineticVelocity.z
-                })
-              )
-              .rotate({ x: 1, y: 0, z: 0 }, angleX)
-              .rotate({ x: 0, y: 1, z: 0 }, angleY)
-              .rotate({ x: 0, y: 0, z: 1 }, angleZ)
-              .add({ x: survivor.vx, y: survivor.vy, z: survivor.vz });
-
-            this.particlePhysics.particles.push({
-              ...new H3()
-                .set({
-                  x: hitPointWorldPosition.x / this.scenario.scale,
-                  y: hitPointWorldPosition.y / this.scenario.scale,
-                  z: hitPointWorldPosition.z / this.scenario.scale
-                })
-                .add({
-                  x: survivor.x - looser.vx * dt,
-                  y: survivor.y - looser.vy * dt,
-                  z: survivor.z - looser.vz * dt
-                })
-                .toObject(),
-              vx: particleVelocity.x / clampAbs(1, maxAngle, angleX / 10),
-              vy: particleVelocity.y / clampAbs(1, maxAngle, angleY / 10),
-              vz: particleVelocity.z / clampAbs(1, maxAngle, angleZ / 10)
-            });
-          }
-        }
+        this.collisionCallback
       );
 
     if (this.scenario.particles && this.scenario.playing)
