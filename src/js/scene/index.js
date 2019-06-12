@@ -219,12 +219,13 @@ export default {
           : Math.min(Math.max(looser.radius * 50, 300), survivor.radius * 2);
 
       const tween = new TWEEN.Tween({ value: 0 })
-        .to({ value: 1 }, 4000)
+        .to({ value: 1 }, 2000)
         .onUpdate(val => {
           uniforms.impacts.value[impactIndex].impactRatio = val.value;
         })
         .onComplete(() => {
-          survivingManifestation.ongoingImpacts--;
+          survivingManifestation.ongoingImpacts > 0 &&
+            survivingManifestation.ongoingImpacts--;
         });
 
       tween.start();
