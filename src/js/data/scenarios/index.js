@@ -112,6 +112,10 @@ const processScenario = scenario => ({
         }))
       : false,
   integrator: scenario.integrator !== undefined ? scenario.integrator : 'RKN12',
+  logarithmicDepthBuffer:
+    scenario.logarithmicDepthBuffer !== undefined
+      ? scenario.logarithmicDepthBuffer
+      : false,
   useBarnesHut:
     scenario.useBarnesHut !== undefined ? scenario.useBarnesHut : false,
   theta: scenario.theta !== undefined ? scenario.theta : 0.5,

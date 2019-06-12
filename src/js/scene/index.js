@@ -53,15 +53,15 @@ export default {
       canvas: this.webGlCanvas,
       antialias: true,
       powerPreference: 'high-performance',
-      logarithmicDepthBuffer: true
+      logarithmicDepthBuffer: this.scenario.logarithmicDepthBuffer
     });
     this.renderer.setSize(this.w, this.h);
 
     this.camera = new Camera(
       45,
       this.w / this.h,
-      1e-6,
-      1e27,
+      this.scenario.logarithmicDepthBuffer ? 1e-6 : 1,
+      this.scenario.logarithmicDepthBuffer ? 1e27 : 1500000000000,
       this.graphics2D.canvas
     );
 
