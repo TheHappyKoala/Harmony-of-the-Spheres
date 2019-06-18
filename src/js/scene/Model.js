@@ -1,7 +1,6 @@
 import * as THREE from 'three';
+import ColladaLoader from 'colladaloader2asmodule';
 import MassManifestation from './MassManifestation';
-
-const ColladaLoader = require('three-collada-loader');
 
 export default class extends MassManifestation {
   constructor(mass) {
