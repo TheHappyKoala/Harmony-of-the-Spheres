@@ -17,7 +17,6 @@ export default class extends MassManifestation {
     const massNameLowerCase = this.mass.texture.toLowerCase();
 
     const loader = new ColladaLoader();
-    loader.options.convertUpAxis = true;
     loader.load(
       `./models/${massNameLowerCase}/${massNameLowerCase}.dae`,
       collada => {
