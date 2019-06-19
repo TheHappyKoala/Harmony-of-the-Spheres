@@ -201,7 +201,7 @@ export default [
     type: 'model',
     name: 'TESS'
   },
-  { m: 1.005570862e-29, radius: 1.2, name: 'Apollo 11' },
+  { m: 1.005570862e-29, radius: 0.0001, type: 'model', name: 'Apollo 11' },
   {
     m: 4.490848296995278e-8,
     orbitalPeriod: 0.004794521,

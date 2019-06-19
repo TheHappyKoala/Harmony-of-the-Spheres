@@ -1,8 +1,9 @@
 export default {
   name: 'Apollo 11 - Free Return Trajectory',
+  logarithmicDepthBuffer: true,
   type: 'Spacecraft',
   g: 39.5,
-  dt: 40e-7,
+  dt: 20e-8,
   distMax: 50,
   distMin: -50,
   rotatingReferenceFrame: 'Earth',
@@ -28,7 +29,8 @@ export default {
       z: -1.232690294681233e-4,
       vx: 5.622675894714279,
       vy: 2.5745894556521574,
-      vz: 3.8057228235271535e-4
+      vz: 3.8057228235271535e-4,
+      trailVertices: 0
     },
     {
       name: 'Sun',
@@ -47,7 +49,8 @@ export default {
       z: 1.632323615688905e-5,
       vx: 5.486589374929882,
       vy: 2.420601498441581,
-      vz: -0.014677846271227611
+      vz: -0.014677846271227611,
+      trailVertices: 5000
     },
     {
       name: 'Apollo 11',
@@ -57,7 +60,7 @@ export default {
       vx: 4.395253850175561,
       vy: 3.8323649107803948,
       vz: 0.15792573886687206,
-      trailVertices: 15e4
+      trailVertices: 10e4
     }
   ]
 };
