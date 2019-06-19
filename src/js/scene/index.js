@@ -60,7 +60,7 @@ export default {
     this.camera = new Camera(
       45,
       this.w / this.h,
-      this.scenario.logarithmicDepthBuffer ? 1e-6 : 1,
+      this.scenario.logarithmicDepthBuffer ? 1e-9 : 1,
       this.scenario.logarithmicDepthBuffer ? 1e27 : 1500000000000,
       this.graphics2D.canvas
     );

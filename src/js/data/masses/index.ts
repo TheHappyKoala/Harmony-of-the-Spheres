@@ -60,11 +60,11 @@ export default [
   },
   { m: 0, orbitalPeriod: 0.14657534, radius: 1.2, type: 'model', name: 'Juno' },
   {
-    m: 2.413291634272764e-8,
+    m: 1.005570862e-28,
     orbitalPeriod: 0,
-    radius: 1.2,
+    radius: 0.0002791869408256161 / 10000,
     type: 'model',
-    name: 'Europa Clipper'
+    name: 'Rosetta'
   },
   {
     m: 5.359189909029e-15,
@@ -165,7 +165,8 @@ export default [
   {
     m: 5.018804172242e-18,
     orbitalPeriod: 6.44,
-    radius: 2.5,
+    radius: 0.013959347041280806,
+    tilt: -45,
     type: 'model',
     asteroidTexture: true,
     name: 'Churyumov\u2013Gerasimenko'

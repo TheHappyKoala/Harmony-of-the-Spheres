@@ -6,6 +6,7 @@ import saturn from './saturn';
 import threeBodyCoreography from './threeBodyCoreography';
 import earthMoonSystem from './earthMoonSystem';
 import oumuamua from './oumuamua';
+import rosetta from './rosetta';
 import tess from './tess';
 import martianSystem from './martianSystem';
 import newHorizons from './newHorizons';
@@ -196,6 +197,7 @@ export const scenarios = [
   uranianSystem,
   hd98800,
   collisionsTest,
+  rosetta,
   trappist1,
   innerSolarSystem,
   lunarFreeReturn,
