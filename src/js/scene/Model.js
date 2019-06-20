@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import ColladaLoader from 'colladaloader2asmodule';
 import MassManifestation from './MassManifestation';
+import { degreesToRadians } from '../Physics/utils';
 
 export default class extends MassManifestation {
   constructor(mass) {
@@ -11,6 +12,8 @@ export default class extends MassManifestation {
     const container = new THREE.Object3D();
 
     container.name = 'Main';
+
+    if (this.mass.spacecraft) container.rotateX(degreesToRadians(90));
 
     this.add(container);
 

@@ -85,6 +85,7 @@ export default {
 
     this.barycenterPosition = new H3();
     this.rotatingReferenceFrame = new H3();
+    this.rotatingVelocity = new H3();
     this.manifestationPosition = new H3();
 
     this.particlePhysics = new ParticlePhysics(this.scenario.scale);
@@ -400,12 +401,18 @@ export default {
       for (let i = 0; i < this.system.masses.length; i++) {
         const mass = this.system.masses[i];
 
-        if (mass.name === rotatingReferenceFrame)
+        if (mass.name === rotatingReferenceFrame) {
           this.rotatingReferenceFrame.set({
             x: mass.x,
             y: mass.y,
             z: mass.z
           });
+          this.rotatingVelocity.set({
+            x: mass.vx,
+            y: mass.vy,
+            z: mass.vz
+          });
+        }
       }
     }
 
@@ -492,6 +499,12 @@ export default {
 
       const manifestationPositionArray = this.manifestationPosition.toArray();
 
+      this.lastPosition = {
+        x: manifestationPositionArray[0],
+        y: manifestationPositionArray[1],
+        z: manifestationPositionArray[2]
+      };
+
       const cameraDistanceToFocus = Math.sqrt(
         getDistanceParams(this.camera.position, this.manifestationPosition)
           .dSquared
@@ -525,6 +538,7 @@ export default {
       if (trail) {
         if (trail.visible) {
           if (
+            (cameraPosition === 'Chase' && cameraFocus === name) ||
             cameraPosition === name ||
             (cameraPosition === 'Free' &&
               cameraFocus === name &&
@@ -544,7 +558,11 @@ export default {
             trail.visible = true;
           }
 
-          if (cameraPosition !== 'Free' && cameraPosition !== name) {
+          if (
+            cameraPosition !== 'Free' &&
+            cameraPosition !== 'Chase' &&
+            cameraPosition !== name
+          ) {
             trail.visible = true;
           }
         }
@@ -593,7 +611,32 @@ export default {
 
       const main = massManifestation.getObjectByName('Main');
 
-      if (mass.spacecraft) {
+      if (cameraPosition === 'Chase' && cameraFocus === name) {
+        const rotatingVelocity = new H3()
+          .set({ x: mass.vx, y: mass.vy, z: mass.vz })
+          .subtractFrom(this.rotatingVelocity);
+
+        const rotatingVelocityLen = rotatingVelocity.getLength();
+
+        const factor = mass.radius * (mass.type === 'model' ? 25 : 5);
+
+        this.camera.position.set(
+          ...new H3()
+            .set({
+              x: this.manifestationPosition.x,
+              y: this.manifestationPosition.y,
+              z: this.manifestationPosition.z
+            })
+            .subtract({
+              x: rotatingVelocity.x / rotatingVelocityLen * factor,
+              y: rotatingVelocity.y / rotatingVelocityLen * factor,
+              z: rotatingVelocity.z / rotatingVelocityLen * factor
+            })
+            .toArray()
+        );
+      }
+
+      if (mass.spacecraft && this.scenario.playing) {
         const directionOfVelocity = new THREE.Vector3(
           (mass.x + mass.vx * dt) * this.scenario.scale,
           (mass.y + mass.vy * dt) * this.scenario.scale,
@@ -664,7 +707,7 @@ export default {
           spacecraft.vx = orbit.vx * vFactorX;
           spacecraft.vy = orbit.vy * vFactorY;
           spacecraft.vz = orbit.vz * vFactorZ;
-        } else {
+        } else if (tcm.v) {
           spacecraft.vx = tcm.v.x;
           spacecraft.vy = tcm.v.y;
           spacecraft.vz = tcm.v.z;

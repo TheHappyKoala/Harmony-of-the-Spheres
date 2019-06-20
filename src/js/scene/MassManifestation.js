@@ -237,7 +237,7 @@ export default class extends THREE.Object3D {
 
     main.position.set(x, y, z);
 
-    main.rotation.y += 0.001;
+    if (!this.mass.spacecraft) main.rotation.y += 0.001;
 
     if (trail !== undefined) {
       trail.geometry.vertices.unshift({ x, y, z });

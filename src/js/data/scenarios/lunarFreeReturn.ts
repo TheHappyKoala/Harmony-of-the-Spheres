@@ -1,5 +1,15 @@
 export default {
   name: 'Apollo 11 - Free Return Trajectory',
+  tcmsData: [
+    {
+      t: 0,
+      playing: true
+    },
+    {
+      t: 0.00000000000000001,
+      playing: false
+    }
+  ],
   logarithmicDepthBuffer: true,
   type: 'Spacecraft',
   g: 39.5,
@@ -7,8 +17,8 @@ export default {
   distMax: 50,
   distMin: -50,
   rotatingReferenceFrame: 'Earth',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
+  cameraPosition: 'Chase',
+  cameraFocus: 'Apollo 11',
   collisions: true,
   freeOrigo: { x: 0, y: 0, z: 16000 },
   particles: {

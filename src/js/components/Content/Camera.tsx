@@ -98,6 +98,18 @@ export default ({
       >
         Free
       </div>
+      <div
+        data-name="Chase"
+        key="Chase"
+        onClick={() =>
+          modifyScenarioProperty({
+            key: 'cameraPosition',
+            value: 'Chase'
+          })
+        }
+      >
+        Chase
+      </div>
       {masses.map(mass => (
         <div
           data-name={mass.name}
