@@ -30,8 +30,8 @@ export default [
     radius: 22.93577981651376,
     tilt: -1.54,
     orbitalPeriod: 0.0739726,
-    name: 'Moon',
-    bump: true
+    bump: true,
+    name: 'Moon'
   },
   {
     m: 3.9217263618e-20,
@@ -201,7 +201,13 @@ export default [
     type: 'model',
     name: 'TESS'
   },
-  { m: 1.005570862e-29, radius: 0.0001, type: 'model', name: 'Apollo 11' },
+  {
+    m: 1.005570862e-29,
+    radius: 0.0001,
+    type: 'model',
+    spacecraft: true,
+    name: 'Apollo 11'
+  },
   {
     m: 4.490848296995278e-8,
     orbitalPeriod: 0.004794521,

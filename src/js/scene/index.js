@@ -593,6 +593,17 @@ export default {
 
       const main = massManifestation.getObjectByName('Main');
 
+      if (mass.spacecraft) {
+        const directionOfVelocity = new THREE.Vector3(
+          (mass.x + mass.vx * dt) * this.scenario.scale,
+          (mass.y + mass.vy * dt) * this.scenario.scale,
+          (mass.z + mass.vz * dt) * this.scenario.scale
+        );
+        directionOfVelocity.setFromMatrixPosition(main.matrixWorld);
+
+        main.lookAt(directionOfVelocity);
+      }
+
       if (cameraPosition === name) main.visible = false;
       else main.visible = true;
 

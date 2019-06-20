@@ -58,6 +58,10 @@ const processMasses = (scenarioMasses, massTemplates, dt) =>
         template === undefined
           ? mass.m === undefined ? 3.362126177097e-15 : mass.m
           : template.m,
+      spacecraft:
+        template === undefined
+          ? mass.spacecraft === undefined ? false : mass.spacecraft
+          : template.spacecraft,
       radius:
         template === undefined
           ? mass.radius === undefined ? 1.2 : mass.radius
