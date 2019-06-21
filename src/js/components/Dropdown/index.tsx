@@ -76,7 +76,9 @@ export default memo(
       <div className={dropdownWrapperCssClassName}>
         <div onClick={handleOpenOptions} className={selectedOptionCssClassName}>
           {selectedOption}
-          <i className="fa fa-chevron-circle-down fa-lg" />
+          <i
+            className={`fa fa-chevron-circle-${options ? 'up' : 'down'} fa-lg`}
+          />
         </div>
         {options && (
           <div ref={optionsWrapper} className={optionsWrapperCssClass}>
