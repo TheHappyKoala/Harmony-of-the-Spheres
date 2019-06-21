@@ -24,10 +24,7 @@ export default class extends THREE.PerspectiveCamera {
     this.controls.update();
   }
 
-  getVisibleSceneWidth(z) {
-    var t = Math.tan(degreesToRadians(this.fov) / 2);
-    var h = t * 2 * z;
-    var w = h * this.aspect;
-    return w;
+  getVisibleSceneHeight(z) {
+    return Math.tan(degreesToRadians(this.fov) / 2) * 2 * z;
   }
 }
