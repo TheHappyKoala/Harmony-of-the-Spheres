@@ -5,8 +5,6 @@ import Slider from '../Slider';
 import Tooltip from '../Tooltip';
 import { getRandomColor } from '../../utils';
 import bodies from '../../data/masses';
-import maximumDistances from '../../data/distances/maximumDistances';
-import distanceSteps from '../../data/distances/distanceSteps';
 
 export default class extends Component {
   constructor(props) {
@@ -17,7 +15,7 @@ export default class extends Component {
       radius: bodies[0].radius,
       texture: bodies[0].name,
       type: null,
-      a: props.distanceStep.value,
+      a: 0,
       e: 0,
       w: 90,
       i: 0
@@ -73,63 +71,6 @@ export default class extends Component {
           ))}
         </Dropdown>
         <label className="top">
-          Maximum Distance
-          <Tooltip
-            position="left"
-            content="The maximum allowed distance between the primary and the mass that you are adding."
-          />
-        </label>
-        <Dropdown
-          selectedOption={this.props.maximumDistance.name}
-          dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-          selectedOptionCssClassName="selected-option"
-          optionsWrapperCssClass="options"
-        >
-          {maximumDistances.map(distance => (
-            <div
-              data-name={distance.name}
-              key={distance.name}
-              onClick={() =>
-                this.props.modifyScenarioProperty({
-                  key: 'maximumDistance',
-                  value: { name: distance.name, value: distance.value }
-                })
-              }
-            >
-              {distance.name}
-            </div>
-          ))}
-        </Dropdown>
-        <label className="top">
-          Distance Step
-          <Tooltip
-            position="left"
-            content="The distance that is added when you increment the distance by one step."
-          />
-        </label>
-        <Dropdown
-          selectedOption={this.props.distanceStep.name}
-          dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-          selectedOptionCssClassName="selected-option"
-          optionsWrapperCssClass="options"
-        >
-          {distanceSteps.map(distance => (
-            <div
-              data-name={distance.name}
-              key={distance.name}
-              onClick={() =>
-                this.props.modifyScenarioProperty({
-                  key: 'distanceStep',
-                  value: { name: distance.name, value: distance.value }
-                })
-              }
-            >
-              {distance.name}
-            </div>
-          ))}
-        </Dropdown>
-
-        <label className="top">
           Semi-major Axis{' '}
           <Tooltip
             position="left"
@@ -140,17 +81,10 @@ export default class extends Component {
           payload={{ key: 'a' }}
           value={this.state.a}
           callback={this.modifyProperty}
-          max={this.props.maximumDistance.value}
-          min={this.props.distanceStep.value}
+          max={this.props.maximumDistance}
+          min={0}
           shouldUpdateOnMaxMinChange={true}
-          onMaxMinChange={{
-            payload: {
-              key: 'distanceStep',
-              value: { name: 'Max distance / 100' }
-            },
-            callback: this.props.modifyScenarioProperty
-          }}
-          step={this.props.distanceStep.value}
+          step={this.props.maximumDistance / 200}
         />
         <label className="top">
           Eccentricity{' '}

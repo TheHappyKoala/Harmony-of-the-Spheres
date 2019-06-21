@@ -747,6 +747,13 @@ export default {
         {
           key: 'dt',
           value: this.system.dt
+        },
+        {
+          key: 'maximumDistance',
+          value:
+            this.camera.getVisibleSceneHeight(this.camera.position.z) /
+            2 /
+            this.scenario.scale
         }
       )
     );

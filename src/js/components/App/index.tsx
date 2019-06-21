@@ -123,7 +123,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
             <Masses
               massBeingModified={scenario.massBeingModified}
               masses={scenario.masses}
-              distanceStep={scenario.distanceStep}
+              maximumDistance={scenario.maximumDistance}
               distMax={scenario.distMax}
               distMin={scenario.distMin}
               velMax={scenario.velMax}
@@ -138,7 +138,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
             <AddMass
               primary={scenario.primary}
               maximumDistance={scenario.maximumDistance}
-              distanceStep={scenario.distanceStep}
               masses={scenario.masses}
               addMass={addMass}
               modifyScenarioProperty={modifyScenarioProperty}

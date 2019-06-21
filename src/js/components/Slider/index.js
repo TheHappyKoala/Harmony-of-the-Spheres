@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import './Slider.less';
 
 export default class extends Component {
@@ -48,43 +48,14 @@ export default class extends Component {
   shouldComponentUpdate(nextProps) {
     if (nextProps.value !== this.props.value) return true;
 
-    if (this.props.shouldUpdateOnMaxMinChange) {
-      if (nextProps.max !== this.props.max || nextProps.min !== this.props.min)
-        return true;
-    }
-
     if (nextProps.step !== this.props.step) return true;
 
     return false;
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.shouldUpdateOnMaxMinChange) {
-      if (
-        prevProps.max !== this.props.max ||
-        prevProps.min !== this.props.min
-      ) {
-        if (this.props.onMaxMinChange) {
-          this.props.onMaxMinChange.callback({
-            ...this.props.onMaxMinChange.payload,
-            value: {
-              ...this.props.onMaxMinChange.payload.value,
-              value: this.props.max / 100
-            }
-          });
-        }
-
-        this.props.callback({
-          ...this.props.payload,
-          value: this.props.max / 100 * 10
-        });
-      }
-    }
-  }
-
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <div className="range-wrapper">
           <div className="slider-value">{this.props.value}</div>
           <input
@@ -116,7 +87,7 @@ export default class extends Component {
         >
           -
         </button>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

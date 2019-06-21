@@ -94,7 +94,7 @@ export default props => {
                     callback={props.modifyMassProperty}
                     max={props.distMax}
                     min={props.distMin}
-                    step={props.distanceStep.value}
+                    step={props.maximumDistance / 20}
                   />
                   <label className="top">
                     Y Position Vector
@@ -109,7 +109,7 @@ export default props => {
                     callback={props.modifyMassProperty}
                     max={props.distMax}
                     min={props.distMin}
-                    step={props.distanceStep.value}
+                    step={props.maximumDistance / 20}
                   />
                   <label className="top">
                     Z Position Vector
@@ -125,7 +125,7 @@ export default props => {
                     callback={props.modifyMassProperty}
                     max={props.distMax}
                     min={props.distMin}
-                    step={props.distanceStep.value}
+                    step={props.maximumDistance / 20}
                   />
                 </div>
                 <div data-label="Velocity">
