@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import CustomizedOrbitControls from './CustomizedOrbitControls';
+import { degreesToRadians } from '../Physics/utils';
 
 export default class extends THREE.PerspectiveCamera {
   constructor(fov, aspect, near, far, target) {
@@ -21,5 +22,12 @@ export default class extends THREE.PerspectiveCamera {
     );
 
     this.controls.update();
+  }
+
+  getVisibleSceneWidth(z) {
+    var t = Math.tan(degreesToRadians(this.fov) / 2);
+    var h = t * 2 * z;
+    var w = h * this.aspect;
+    return w;
   }
 }
