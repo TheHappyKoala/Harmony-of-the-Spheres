@@ -33,9 +33,32 @@ declare module 'three' {
   }
   export class BufferGeometry {
     addAttribute(name: string, attribute: BufferAttribute): BufferGeometry;
+    setFromPoints(
+      points: { x: number; y: number; z: number }[]
+    ): BufferGeometry;
   }
   export class BufferAttribute {
     constructor(array: Float32Array, size: number, normalized?: boolean);
+  }
+  export class Float32BufferAttribute {
+    constructor(array: Float32Array, size: number, normalized?: boolean);
+  }
+  export class LineBasicMaterial {
+    constructor(parameters: {
+      color?: string;
+      isLineBasicMaterial?: boolean;
+      lights?: boolean;
+      lineWidth?: number;
+      linecap?: string;
+      linejoin?: string;
+    });
+    onBeforeCompile(shader: any): void;
+  }
+  export class Line extends Object3D {
+    constructor(
+      geometry: BufferGeometry | Geometry,
+      material: LineBasicMaterial
+    );
   }
   export class ShaderMaterial {
     constructor(parameters: {
