@@ -25,6 +25,7 @@ declare module 'three' {
     name: string;
     frustumCulled: boolean;
     geometry: any;
+    rotation: { x: number; y: number; z: number };
     add(obj: Object3D): this;
     getObjectByName(name: string): Object3D;
   }

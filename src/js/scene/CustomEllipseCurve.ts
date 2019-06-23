@@ -5,6 +5,7 @@ import {
   LineBasicMaterial,
   Line
 } from 'three';
+import { degreesToRadians } from '../Physics/utils';
 import { VectorType } from '../Physics/types';
 
 export default class extends Object3D {
@@ -145,6 +146,12 @@ export default class extends Object3D {
     this.add(new Line(ellipseGeometry, ellipseMaterial));
   }
 
+  rotateAroundFocus(axisRotations: VectorType): void {
+    this.rotation.x = degreesToRadians(axisRotations.x);
+    this.rotation.y = degreesToRadians(axisRotations.y);
+    this.rotation.z = degreesToRadians(axisRotations.z);
+  }
+
   update(
     aX: number,
     aY: number,
@@ -153,7 +160,8 @@ export default class extends Object3D {
     aStartAngle: number,
     aEndAngle: number,
     aClockwise: boolean,
-    argumentOfPeriapsis: number
+    argumentOfPeriapsis: number,
+    axisRotations: VectorType
   ): void {
     this.uniforms.aX.value = aX;
     this.uniforms.aY.value = aY;
@@ -163,5 +171,7 @@ export default class extends Object3D {
     this.uniforms.aEndAngle.value = aEndAngle;
     this.uniforms.aClockwise.value = aClockwise;
     this.uniforms.aRotation.value = argumentOfPeriapsis;
+
+    this.rotateAroundFocus(axisRotations);
   }
 }
