@@ -136,6 +136,10 @@ export default connect(mapStateToProps, mapDispatchToProps)(
           </div>
           <div data-label="Add Mass" data-icon="fas fa-plus-circle fa-2x">
             <AddMass
+              a={scenario.a}
+              e={scenario.e}
+              w={scenario.w}
+              i={scenario.i}
               primary={scenario.primary}
               maximumDistance={scenario.maximumDistance}
               masses={scenario.masses}

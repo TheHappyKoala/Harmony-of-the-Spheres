@@ -99,6 +99,11 @@ const processMasses = (scenarioMasses, massTemplates, dt) =>
 
 const processScenario = scenario => ({
   ...scenario,
+  isMassBeingAdded: false,
+  a: 0,
+  e: 0,
+  w: 0,
+  i: 0,
   isLoaded: false,
   playing: false,
   tcmsData:

@@ -14,12 +14,19 @@ export default class extends Component {
       m: bodies[0].m,
       radius: bodies[0].radius,
       texture: bodies[0].name,
-      type: null,
-      a: 0,
-      e: 0,
-      w: 90,
-      i: 0
+      type: null
     };
+  }
+
+  componentDidMount() {
+    this.props.modifyScenarioProperty({ key: 'isMassBeingAdded', value: true });
+  }
+
+  componentWillUnmount() {
+    this.props.modifyScenarioProperty({
+      key: 'isMassBeingAdded',
+      value: false
+    });
   }
 
   modifyProperty = payload => {
@@ -60,10 +67,16 @@ export default class extends Component {
               data-name={mass.name}
               key={mass.name}
               onClick={() =>
-                this.props.modifyScenarioProperty({
-                  key: 'primary',
-                  value: mass.name
-                })
+                this.props.modifyScenarioProperty(
+                  {
+                    key: 'freeOrigo',
+                    value: { x: 0, y: 0, z: mass.radius * 40 }
+                  },
+                  { key: 'primary', value: mass.name },
+                  { key: 'rotatingReferenceFrame', value: mass.name },
+                  { key: 'cameraPosition', value: 'Free' },
+                  { key: 'cameraFocus', value: 'Origo' }
+                )
               }
             >
               {mass.name}
@@ -79,8 +92,8 @@ export default class extends Component {
         </label>
         <Slider
           payload={{ key: 'a' }}
-          value={this.state.a}
-          callback={this.modifyProperty}
+          value={this.props.a}
+          callback={this.props.modifyScenarioProperty}
           max={this.props.maximumDistance}
           min={0}
           shouldUpdateOnMaxMinChange={true}
@@ -95,8 +108,8 @@ export default class extends Component {
         </label>
         <Slider
           payload={{ key: 'e' }}
-          value={this.state.e}
-          callback={this.modifyProperty}
+          value={this.props.e}
+          callback={this.props.modifyScenarioProperty}
           max={1}
           min={0}
           step={0.001}
@@ -110,8 +123,8 @@ export default class extends Component {
         </label>
         <Slider
           payload={{ key: 'w' }}
-          value={this.state.w}
-          callback={this.modifyProperty}
+          value={this.props.w}
+          callback={this.props.modifyScenarioProperty}
           max={360}
           min={0}
           step={0.1}
@@ -125,8 +138,8 @@ export default class extends Component {
         </label>
         <Slider
           payload={{ key: 'i' }}
-          value={this.state.i}
-          callback={this.modifyProperty}
+          value={this.props.i}
+          callback={this.props.modifyScenarioProperty}
           max={360}
           min={0}
           step={0.1}
@@ -173,10 +186,10 @@ export default class extends Component {
                 texture: this.state.texture,
                 type: this.state.type,
                 color: getRandomColor(),
-                a: this.state.a,
-                e: this.state.e,
-                w: this.state.w,
-                i: this.state.i
+                a: this.props.a,
+                e: this.props.e,
+                w: this.props.w,
+                i: this.props.i
               }
             })
           }

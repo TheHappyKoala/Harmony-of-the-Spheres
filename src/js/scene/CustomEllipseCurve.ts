@@ -32,7 +32,7 @@ export default class extends Object3D {
     aStartAngle: number,
     aEndAngle: number,
     aClockwise: boolean,
-    argumentOfPeriapsis: number,
+    aRotation: number,
     verticesNumber: number,
     color: string
   ) {
@@ -52,7 +52,7 @@ export default class extends Object3D {
       aStartAngle: { value: aStartAngle },
       aEndAngle: { value: aEndAngle },
       aClockwise: { value: aClockwise },
-      aRotation: { value: argumentOfPeriapsis }
+      aRotation: { value: aRotation }
     };
 
     this.getEllipseCurve();
@@ -160,7 +160,7 @@ export default class extends Object3D {
     aStartAngle: number,
     aEndAngle: number,
     aClockwise: boolean,
-    argumentOfPeriapsis: number,
+    aRotation: number,
     axisRotations: VectorType
   ): void {
     this.uniforms.aX.value = aX;
@@ -170,7 +170,7 @@ export default class extends Object3D {
     this.uniforms.aStartAngle.value = aStartAngle;
     this.uniforms.aEndAngle.value = aEndAngle;
     this.uniforms.aClockwise.value = aClockwise;
-    this.uniforms.aRotation.value = argumentOfPeriapsis;
+    this.uniforms.aRotation.value = aRotation;
 
     this.rotateAroundFocus(axisRotations);
   }

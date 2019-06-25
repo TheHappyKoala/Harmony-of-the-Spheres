@@ -12,7 +12,8 @@ import {
   getOrbit,
   getRandomNumberInRange,
   setBarycenter,
-  clampAbs
+  clampAbs,
+  getEllipse
 } from '../Physics/utils';
 import ParticleService from '../Physics/particles/ParticleService';
 import arena from './arena';
@@ -24,6 +25,7 @@ import Model from './Model';
 import ParticlePhysics from '../Physics/particles';
 import ParticlesManifestation from './ParticlesManifestation';
 import CollisionsService from '../Physics/collisions/';
+import CustomEllipseCurve from './CustomEllipseCurve';
 
 const TWEEN = require('@tweenjs/tween.js');
 
@@ -70,6 +72,21 @@ export default {
     this.previousIntegrator = this.scenario.integrator;
 
     this.scene.add(arena(this.manager));
+
+    this.ellipseCurve = new CustomEllipseCurve(
+      0,
+      0,
+      200,
+      200,
+      0,
+      2 * Math.PI,
+      false,
+      0,
+      500,
+      'limegreen'
+    );
+
+    this.scene.add(this.ellipseCurve);
 
     this.massManifestations = [];
 
@@ -171,6 +188,44 @@ export default {
       this.massManifestations.push(manifestation);
       this.scene.add(manifestation);
     }
+  },
+
+  updateEllipseCurve() {
+    const scenario = this.scenario;
+
+    if (scenario.isMassBeingAdded) {
+      this.ellipseCurve.visible = true;
+
+      const primary = getObjFromArrByKeyValuePair(
+        scenario.masses,
+        'name',
+        scenario.primary
+      );
+
+      const a = scenario.a;
+      const e = scenario.e;
+      const w = scenario.w;
+      const i = scenario.i;
+
+      const ellipse = getEllipse(a, e);
+
+      const scale = scenario.scale;
+
+      this.ellipseCurve.position.z =
+        (this.rotatingReferenceFrame.z - primary.z) * scale;
+
+      this.ellipseCurve.update(
+        (this.rotatingReferenceFrame.x - primary.x - ellipse.focus) * scale,
+        (this.rotatingReferenceFrame.y - primary.y) * scale,
+        ellipse.xRadius * scale,
+        ellipse.yRadius * scale,
+        0,
+        2 * Math.PI,
+        false,
+        0,
+        { x: 0, y: i, z: w }
+      );
+    } else this.ellipseCurve.visible = false;
   },
 
   collisionCallback(looser, survivor) {
@@ -415,6 +470,8 @@ export default {
         }
       }
     }
+
+    this.updateEllipseCurve();
 
     const barycenterPositionScaleFactor =
       rotatingReferenceFrame !== 'Barycenter' ? this.scenario.scale : 1;
@@ -666,8 +723,14 @@ export default {
       }
     }
 
-    if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame)
+    if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame) {
       this.previousRotatingReferenceFrame = rotatingReferenceFrame;
+
+      if (cameraPosition === 'Free' && cameraFocus === 'Origo') {
+        this.camera.position.set(freeOrigo.x, freeOrigo.y, freeOrigo.z);
+        this.camera.lookAt(0, 0, 0);
+      }
+    }
 
     if (this.scenario.particles) {
       this.particles.draw(
