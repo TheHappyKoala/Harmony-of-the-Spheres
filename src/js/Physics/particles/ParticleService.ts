@@ -1,12 +1,7 @@
 import { MassType } from '../types';
-import { Vector3 } from 'three';
-import {
-  getRandomNumberInRange,
-  getRandomRadian,
-  getDistanceParams,
-  getVMag,
-  rotateVector
-} from '../utils';
+import H3 from '../vectors';
+
+import { getRandomNumberInRange, getRandomRadian, getVMag } from '../utils';
 
 export default class {
   static getShapeOfParticles(
@@ -28,11 +23,11 @@ export default class {
     maxD: number
   ): void {
     const radian = getRandomRadian();
-    const dist = getRandomNumberInRange(minD, maxD);
+    const d = getRandomNumberInRange(minD, maxD);
 
     particles.push({
-      x: Math.cos(radian) * dist,
-      y: Math.sin(radian) * dist,
+      x: Math.cos(radian) * d,
+      y: Math.sin(radian) * d,
       z: 0,
       vx: 0,
       vy: 0,
@@ -84,67 +79,47 @@ export default class {
     g: number,
     withOrbit: boolean
   ): MassType[] {
-    const p = new Vector3();
-    const v = new Vector3();
-    const a = new Vector3();
+    const p = new H3();
+    const v = new H3();
 
     const [xTilt, yTilt, zTilt] = tilt;
 
     return vectors.map(item => {
+      p.set({ x: item.x, y: item.y, z: item.z });
+      v.set({ x: item.vx, y: item.vy, z: item.vz });
+
       if (withOrbit) {
-        const dParams = getDistanceParams(
-          { x: 0, y: 0, z: 0 },
-          { x: item.x, y: item.y, z: item.z }
-        );
+        const dParams = p.getDistanceParameters({ x: 0, y: 0, z: 0 });
 
-        const d = Math.sqrt(dParams.dSquared);
+        const vMag = getVMag(g, primary, dParams.d);
 
-        const vMag = getVMag(g, primary, d);
-
-        item = {
-          ...item,
-          vx: -dParams.dy * vMag / d,
-          vy: dParams.dx * vMag / d,
-          vz: 0
-        };
+        v.set({
+          x: -dParams.dy * vMag / dParams.d,
+          y: dParams.dx * vMag / dParams.d,
+          z: 0
+        });
       }
 
-      const pTX = rotateVector(
-        item.x,
-        item.y,
-        item.z,
-        xTilt,
-        a.set(1, 0, 0),
-        p
-      );
+      p
+        .rotate({ x: 1, y: 0, z: 0 }, xTilt)
+        .rotate({ x: 0, y: 1, z: 0 }, yTilt)
+        .rotate({ x: 0, y: 0, z: 1 }, zTilt);
 
-      const pTY = rotateVector(pTX.x, pTX.y, pTX.z, yTilt, a.set(0, 1, 0), p);
-
-      const pTZ = rotateVector(pTY.x, pTY.y, pTY.z, zTilt, a.set(0, 0, 1), p);
-
-      const vTX = rotateVector(
-        item.vx,
-        item.vy,
-        item.vz,
-        xTilt,
-        a.set(1, 0, 0),
-        v
-      );
-
-      const vTY = rotateVector(vTX.x, vTX.y, vTX.z, yTilt, a.set(0, 1, 0), v);
-
-      const vTZ = rotateVector(vTY.x, vTY.y, vTY.z, zTilt, a.set(0, 0, 1), v);
+      v
+        .rotate({ x: 1, y: 0, z: 0 }, xTilt)
+        .rotate({ x: 0, y: 1, z: 0 }, yTilt)
+        .rotate({ x: 0, y: 0, z: 1 }, zTilt);
 
       const [mMin, mMax] = mRange;
 
       return {
         m: getRandomNumberInRange(mMin, mMax),
-        x: primary.x + pTZ.x,
-        y: primary.y + pTZ.y,
-        z: primary.z + pTZ.z,
-        vx: primary.vx + vTZ.x,
-        vy: primary.vy + vTZ.y,
-        vz: primary.vz + vTZ.z
+        x: primary.x + p.x,
+        y: primary.y + p.y,
+        z: primary.z + p.z,
+        vx: primary.vx + v.x,
+        vy: primary.vy + v.y,
+        vz: primary.vz + v.z
       };
     });
   }

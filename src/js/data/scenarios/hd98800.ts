@@ -16,7 +16,7 @@ export default {
   massBeingModified: 'HD 98800 Ba',
   distMax: 400,
   distMin: -400,
-  primary: 'Arjuna',
+  primary: 'HD 98800 Ba',
   maximumDistance: { name: 'Sun to Neptune', value: 30.1 },
   distanceStep: { name: 'Sun to Earth / 10', value: 0.1 },
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/HD_98800',

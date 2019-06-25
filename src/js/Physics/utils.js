@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import H3 from './vectors';
 
 export function getDistanceParams(p1, p2) {
@@ -27,20 +26,22 @@ export function getOrbit(primary, secondary, g) {
   const z = primary.z !== undefined ? primary.z : 0;
   const { vx, vy, vz } = primary;
 
-  const secondaryP = new H3()
-    .set({ x: getApoapsis(secondary.a, secondary.e), y: 0, z: 0 })
-    .rotate({ x: 0, y: 0, z: 1 }, secondary.w)
-    .rotate({ x: 0, y: 1, z: 0 }, secondary.i);
+  const apoapsis = getApoapsis(secondary.a, secondary.e);
 
   const dParams = getDistanceParams(primary, {
-    x: primary.x + secondaryP.x,
-    y: primary.y,
-    z: primary.z
+    x: x + apoapsis,
+    y: y,
+    z: z
   });
 
   const d = Math.sqrt(dParams.dSquared);
 
   const vMag = getVMag(g, primary, d, secondary.a);
+
+  const secondaryP = new H3()
+    .set({ x: apoapsis, y: 0, z: 0 })
+    .rotate({ x: 0, y: 0, z: 1 }, secondary.w)
+    .rotate({ x: 0, y: 1, z: 0 }, secondary.i);
 
   const secondaryV = new H3()
     .set({
@@ -120,17 +121,6 @@ export function getA(apsisOne, apsisTwo) {
 
 export function degreesToRadians(degrees) {
   return Math.PI / 180 * degrees;
-}
-
-export function rotateVector(
-  x,
-  y,
-  z,
-  degrees = 0,
-  axis = new THREE.Vector3(0, 0, 1),
-  vector = new THREE.Vector3()
-) {
-  return vector.set(x, y, z).applyAxisAngle(axis, degreesToRadians(degrees));
 }
 
 export function calculateOrbitalVertices(orbitalPeriod, dt) {
