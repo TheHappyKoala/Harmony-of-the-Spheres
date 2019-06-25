@@ -23,7 +23,7 @@
 
 import * as THREE from 'three';
 
-THREE.OrbitControls = function(object, domElement) {
+const OrbitControls = function(object, domElement) {
   this.object = object;
   this.domElement = domElement !== undefined ? domElement : document;
 
@@ -613,6 +613,6 @@ THREE.OrbitControls = function(object, domElement) {
   this.update();
 };
 
-THREE.OrbitControls.prototype = Object.create(THREE.EventDispatcher.prototype);
+OrbitControls.prototype = Object.create(THREE.EventDispatcher.prototype);
 
-export default THREE.OrbitControls;
+export default OrbitControls;
