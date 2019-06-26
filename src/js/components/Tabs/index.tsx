@@ -12,13 +12,15 @@ interface TabsProps {
   tabsWrapperClassName?: string;
   tabsContentClassName?: string;
   children: ReactNode;
+  noCloseButton?: boolean;
 }
 
 export default ({
   initTab,
   tabsWrapperClassName,
   tabsContentClassName,
-  children
+  children,
+  noCloseButton
 }: TabsProps): ReactElement => {
   const [selectedTabIndex, setSelectedTabIndex] = useState<number>(
     initTab === undefined ? -1 : initTab
@@ -52,10 +54,12 @@ export default ({
       {selectedTabIndex !== -1 && (
         <div className={tabsContentClassName}>
           {panes[selectedTabIndex]}
-          <i
-            className="fa fa-window-close fa-2x tabs-close-button"
-            onClick={() => setSelectedTabIndex(-1)}
-          />
+          {!noCloseButton && (
+            <i
+              className="fa fa-window-close fa-2x tabs-close-button"
+              onClick={() => setSelectedTabIndex(-1)}
+            />
+          )}
         </div>
       )}
     </div>
