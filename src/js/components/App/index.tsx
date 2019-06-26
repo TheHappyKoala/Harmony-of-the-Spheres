@@ -63,7 +63,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
 
     const [display, setDisplay] = useState({
       about: false,
-      contact: false,
       credits: false,
       scenarioWiki: false
     });
@@ -79,6 +78,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
         <Tabs
           tabsWrapperClassName="sidebar-wrapper"
           tabsContentClassName="sidebar-content"
+          initTab={scenario.openTabOnInit}
         >
           <div data-label="Physics" data-icon="fas fa-cube fa-2x">
             <Physics
@@ -167,15 +167,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               <p>About</p>
             </li>
             <li
-              key="contact"
-              onClick={() =>
-                setDisplay({ ...display, contact: !display.contact })
-              }
-            >
-              <i className="fas fa-envelope-open fa-2x" />
-              <p>Contact</p>
-            </li>
-            <li
               key="credits"
               onClick={() =>
                 setDisplay({ ...display, credits: !display.credits })
@@ -205,15 +196,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               callback={() => setDisplay({ ...display, about: !display.about })}
             >
               <About />
-            </Modal>
-          )}
-          {display.contact && (
-            <Modal
-              callback={() =>
-                setDisplay({ ...display, contact: !display.contact })
-              }
-            >
-              <Contact />
             </Modal>
           )}
           {display.credits && (
