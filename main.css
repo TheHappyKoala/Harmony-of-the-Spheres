@@ -383,7 +383,7 @@ h3 {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #000;
+  background: linear-gradient(to right, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
   background-image: url(eda68c5c1042307a5505b0ba07a18144.jpg);
   background-repeat: no-repeat;
   background-position: center center;
