@@ -119,15 +119,6 @@ export default {
 
     this.scene.add(this.particles);
 
-    this.addManifestations();
-
-    this.loop = this.loop.bind(this);
-    this.onWindowResize = this.onWindowResize.bind(this);
-    this.collisionCallback = this.collisionCallback.bind(this);
-
-    window.addEventListener('resize', this.onWindowResize, false);
-    window.addEventListener('orientationchange', this.onWindowResize, false);
-
     this.manager = new THREE.LoadingManager();
 
     this.manager.onProgress = url =>
@@ -143,6 +134,15 @@ export default {
 
       this.loop();
     };
+
+    this.addManifestations();
+
+    this.loop = this.loop.bind(this);
+    this.onWindowResize = this.onWindowResize.bind(this);
+    this.collisionCallback = this.collisionCallback.bind(this);
+
+    window.addEventListener('resize', this.onWindowResize, false);
+    window.addEventListener('orientationchange', this.onWindowResize, false);
   },
 
   addManifestation(mass) {
