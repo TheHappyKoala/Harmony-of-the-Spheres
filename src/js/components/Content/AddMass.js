@@ -4,6 +4,8 @@ import Button from '../Button';
 import Slider from '../Slider';
 import Tooltip from '../Tooltip';
 import { getRandomColor } from '../../utils';
+import Tabs from '../Tabs';
+import LazyDog from '../LazyDog';
 import bodies from '../../data/masses';
 
 export default class extends Component {
@@ -11,14 +13,42 @@ export default class extends Component {
     super(props);
 
     this.state = {
-      m: bodies[0].m,
-      radius: bodies[0].radius,
-      texture: bodies[0].name,
-      type: null
+      m: null,
+      radius: null,
+      texture: null,
+      type: null,
+      bodiesWithType: [],
+      bodyTypes: []
     };
   }
 
   componentDidMount() {
+    this.setState(
+      {
+        ...this.state,
+        bodiesWithType: bodies.filter(entry => entry.bodyType)
+      },
+      () => {
+        let bodyTypes = [];
+
+        this.state.bodiesWithType.forEach(entry => {
+          if (bodyTypes.indexOf(entry.bodyType) === -1)
+            bodyTypes = [...bodyTypes, entry.bodyType];
+        });
+
+        const [selectedMass] = this.state.bodiesWithType;
+
+        this.setState({
+          ...this.state,
+          m: selectedMass.m,
+          radius: selectedMass.radius,
+          texture: selectedMass.name,
+          type: selectedMass.type,
+          bodyTypes
+        });
+      }
+    );
+
     this.props.modifyScenarioProperty({ key: 'isMassBeingAdded', value: true });
   }
 
@@ -151,36 +181,56 @@ export default class extends Component {
             content="The mass, radius, texture, type and color of the mass you're adding."
           />
         </label>
-        <Dropdown
-          selectedOption={this.state.texture}
-          dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-          selectedOptionCssClassName="selected-option"
-          optionsWrapperCssClass="options"
+
+        <Tabs
+          tabsWrapperClassName="mass-tabs"
+          tabsContentClassName="mass-content"
+          initTab={0}
+          noCloseButton={true}
         >
-          {bodies.map(body => (
-            <div
-              data-name={body.name}
-              key={body.name}
-              onClick={() =>
-                this.insertMassTemplate({
-                  m: body.m,
-                  radius: body.radius,
-                  texture: body.name,
-                  type: body.type
-                })
-              }
-            >
-              {body.name}
+          {this.state.bodyTypes.map(entry => (
+            <div data-label={entry} key={entry}>
+              {this.state.bodiesWithType.map(body => {
+                if (body.bodyType === entry)
+                  return (
+                    <div
+                      onClick={() =>
+                        this.insertMassTemplate({
+                          m: body.m,
+                          radius: body.radius,
+                          texture: body.name,
+                          type: body.type
+                        })
+                      }
+                      className="add-mass-entry-wrapper"
+                      style={{
+                        border:
+                          this.state.texture === body.name
+                            ? '1px solid red'
+                            : 'none'
+                      }}
+                    >
+                      <LazyDog
+                        src={`./images/masses/${body.name}.png`}
+                        alt={body.name}
+                        caption={body.name}
+                        width={75}
+                        height={50}
+                        placeHolderIcon="fa fa-venus-mars fa-2x"
+                      />
+                    </div>
+                  );
+              })}
             </div>
           ))}
-        </Dropdown>
+        </Tabs>
         <Button
           callback={() =>
             this.props.addMass({
               primary: this.props.primary,
               secondary: {
                 name: `Custom Mass ${Date.now()}`,
-                trailVertices: 9000,
+                trailVertices: 3000,
                 m: this.state.m,
                 radius: this.state.radius,
                 texture: this.state.texture,
@@ -195,7 +245,7 @@ export default class extends Component {
           }
           cssClassName="button top"
         >
-          Add Mass
+          Add {this.state.texture}
         </Button>
       </Fragment>
     );

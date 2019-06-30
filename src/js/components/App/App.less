@@ -31,17 +31,16 @@
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background-color: #191919;
-  border-left: 1px solid #545454;
-  padding: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #545454;
+  border-radius: 3px;
 }
 
 a:link,
@@ -90,15 +89,6 @@ h3 {
   bottom: 0;
   right: 0;
   background: @primary;
-  ul {
-    list-style: none;
-    text-align: center;
-    width: 65px;
-    display: block;
-    float: right;
-    height: 100%;
-    border-left: @border;
-  }
   li {
     display: block;
     margin-top: 10px;
@@ -109,7 +99,7 @@ h3 {
   }
   .sidebar-content {
     float: right;
-    width: 230px;
+    width: 280px;
     height: 100%;
     padding: @fat-padding;
     border-left: @border;
@@ -128,6 +118,16 @@ h3 {
   .active-sidebar-tab {
     text-shadow: 2px 2px 8px #eee;
   }
+}
+
+.sidebar-wrapper > ul {
+  list-style: none;
+  text-align: center;
+  width: 65px;
+  display: block;
+  float: right;
+  height: 100%;
+  border-left: @border;
 }
 
 .sidebar-wrapper-left {
@@ -174,6 +174,60 @@ h3 {
   .vector-content {
     clear: both;
     padding-top: 1px;
+  }
+}
+
+.mass-tabs {
+  ul {
+    display: block;
+    list-style: none;
+    width: 100%;
+    border-left: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      width: 33.333333%;
+      background-color: @input;
+      border: @border;
+      padding: @skinny-padding;
+      margin-top: 0;
+    }
+  }
+  .mass-content {
+    clear: both;
+    padding-top: 1px;
+    padding: 10px;
+    height: 150px;
+    overflow: auto;
+    border: @border;
+    .lazy-dog-wrapper {
+      position: relative;
+      text-align: center;
+      display: inline-block;
+      width: 100%;
+      cursor: pointer;
+      figcaption {
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+      }
+      i {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+      }
+      img {
+        display: block;
+      }
+    }
+    .lazy-dog-wrapper:hover > figcaption {
+      font-weight: normal;
+    }
   }
 }
 

@@ -99,7 +99,8 @@ const processMasses = (scenarioMasses, massTemplates, dt) =>
 
 const processScenario = scenario => ({
   ...scenario,
-  isMassBeingAdded: false,
+  isMassBeingAdded: true,
+  openTabOnInit: 4,
   a: 0,
   e: 0,
   w: 0,
