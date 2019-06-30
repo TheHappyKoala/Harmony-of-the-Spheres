@@ -15,7 +15,6 @@ import Camera from '../Content/Camera';
 import Masses from '../Content/Masses';
 import AddMass from '../Content/AddMass';
 import About from '../Content/About';
-import Contact from '../Content/Contact';
 import Credits from '../Content/Credits';
 import Iframe from '../Iframe';
 import Tweet from '../Tweet';
@@ -217,7 +216,12 @@ export default connect(mapStateToProps, mapDispatchToProps)(
           cssClassName="fa fa-twitter fa-2x twitter-box"
           hashtags="Space,HarmonyOfTheSpheres,Science"
         />
-        {!scenario.isLoaded && <LoadingScreen scenarioName={scenario.name} />}
+        {!scenario.isLoaded && (
+          <LoadingScreen
+            scenarioName={scenario.name}
+            assetBeingLoaded={scenario.assetBeingLoaded}
+          />
+        )}
         <div className="rotate-to-landscape-prompt">
           <h1>Hey friend...</h1>
           <p>Please rotate your device into landscape mode.</p>

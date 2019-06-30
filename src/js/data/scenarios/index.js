@@ -105,6 +105,7 @@ const processScenario = scenario => ({
   e: 0,
   w: 0,
   i: 0,
+  assetBeingLoaded: '',
   isLoaded: false,
   playing: false,
   tcmsData:

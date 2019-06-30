@@ -49,8 +49,6 @@ export default {
 
     this.utilityVector = new THREE.Vector3();
 
-    this.manager = new THREE.LoadingManager();
-
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas,
       antialias: true,
@@ -130,27 +128,33 @@ export default {
     window.addEventListener('resize', this.onWindowResize, false);
     window.addEventListener('orientationchange', this.onWindowResize, false);
 
-    this.manager.onLoad = () => {
-      window.setTimeout(() => {
-        store.dispatch(
-          modifyScenarioProperty({ key: 'isLoaded', value: true })
-        );
+    this.manager = new THREE.LoadingManager();
 
-        this.loop();
-      }, 1000);
+    this.manager.onProgress = url =>
+      store.dispatch(
+        modifyScenarioProperty({
+          key: 'assetBeingLoaded',
+          value: `Loading ${url}`
+        })
+      );
+
+    this.manager.onLoad = () => {
+      store.dispatch(modifyScenarioProperty({ key: 'isLoaded', value: true }));
+
+      this.loop();
     };
   },
 
   addManifestation(mass) {
     switch (mass.type) {
       case 'star':
-        return new Star(mass);
+        return new Star(mass, this.manager);
 
       case 'model':
-        return new Model(mass);
+        return new Model(mass, this.manager);
 
       default:
-        return new MassManifestation(mass);
+        return new MassManifestation(mass, this.manager);
     }
   },
 
