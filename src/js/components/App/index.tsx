@@ -17,7 +17,6 @@ import AddMass from '../Content/AddMass';
 import About from '../Content/About';
 import Credits from '../Content/Credits';
 import Iframe from '../Iframe';
-import Tweet from '../Tweet';
 import './App.less';
 
 const mapStateToProps = (state: AppState, ownProps: any) => ({
@@ -207,15 +206,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
             </Modal>
           )}
         </ReactCSSTransitionGroup>
-        <Tweet
-          shareText={`Hey friends! Check out this 3D gravity simulation of ${
-            scenario.name
-          }. It will run in your browser :)!`}
-          shareUrl={document.location.toString()}
-          callToAction="  Tweet Scenario"
-          cssClassName="fa fa-twitter fa-2x twitter-box"
-          hashtags="Space,HarmonyOfTheSpheres,Science"
-        />
         {!scenario.isLoaded && (
           <LoadingScreen
             scenarioName={scenario.name}

@@ -3,6 +3,7 @@ import './MainBar.less';
 import { NavLink } from 'react-router-dom';
 import Dropdown from '../Dropdown';
 import LazyDog from '../LazyDog';
+import Tweet from '../Tweet';
 import { scenarios } from '../../data/scenarios';
 
 export default props => (
@@ -65,5 +66,14 @@ export default props => (
         )}`}</p>
       </div>
     </div>
+    <Tweet
+      shareText={`Hey friends! Check out this 3D gravity simulation of ${
+        props.scenario.name
+      }. It will run in your browser :)!`}
+      shareUrl={document.location.toString()}
+      callToAction=""
+      cssClassName="fa fa-twitter fa-2x twitter-box"
+      hashtags="Space,HarmonyOfTheSpheres,Science"
+    />
   </div>
 );
