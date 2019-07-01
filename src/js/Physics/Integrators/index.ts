@@ -11,7 +11,7 @@ import RKN64 from './RKN64';
 import RKN12 from './RKN12';
 import Yoshida6 from './Yoshida6';
 import KahanLi8 from './KahanLi8';
-import { MassType } from '../types';
+import { IntegratorType } from '../types';
 
 export const integrators = [
   'RK4',
@@ -29,18 +29,7 @@ export const integrators = [
   'KahanLi8'
 ];
 
-export default function(
-  integrator: string,
-  config: {
-    g: number;
-    dt: number;
-    tol: number;
-    minDt: number;
-    maxDt: number;
-    elapsedTime: number;
-    masses: MassType[];
-  }
-) {
+export default function(integrator: string, config: IntegratorType) {
   switch (integrator) {
     case 'RK4':
       return new RK4(config);

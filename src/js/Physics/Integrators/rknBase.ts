@@ -1,6 +1,6 @@
 import Euler from './Euler';
 import H3 from '../vectors';
-import { FixedTimeStepIntegratorType, VectorType } from '../types';
+import { IntegratorType, VectorType } from '../types';
 
 export default class extends Euler {
   coefficients: any[];
@@ -11,7 +11,7 @@ export default class extends Euler {
   tempSumA: H3;
   tempSumB: H3;
 
-  constructor({ g, dt, masses, elapsedTime }: FixedTimeStepIntegratorType) {
+  constructor({ g, dt, masses, elapsedTime }: IntegratorType) {
     super({ g, dt, masses, elapsedTime });
 
     this.coefficients = [];

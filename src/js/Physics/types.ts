@@ -2,6 +2,9 @@ export interface VectorType {
   x: number;
   y: number;
   z: number;
+  vx?: number;
+  vy?: number;
+  vz?: number;
 }
 
 export interface MassType {
@@ -12,20 +15,23 @@ export interface MassType {
   x: number;
   y: number;
   z: number;
-  vx: number;
-  vy: number;
-  vz: number;
+  vx?: number;
+  vy?: number;
+  vz?: number;
   [x: string]: any;
 }
 
-export interface FixedTimeStepIntegratorType {
+export interface IntegratorType {
   g: number;
   dt: number;
+  tol?: number;
+  minDt?: number;
+  maxDt?: number;
   masses: MassType[];
   elapsedTime: number;
-  softening: number;
-  useBarnesHut: boolean;
-  theta: number;
+  softening?: number;
+  useBarnesHut?: boolean;
+  theta?: number;
 }
 
 export interface TreeNodeType {

@@ -1,12 +1,12 @@
 import Euler from './Euler';
-import { FixedTimeStepIntegratorType, VectorType } from '../types';
+import { IntegratorType, VectorType } from '../types';
 
 export default class extends Euler {
   private epsilon: number;
   private lambda: number;
   private chi: number;
 
-  constructor({ g, dt, masses, elapsedTime }: FixedTimeStepIntegratorType) {
+  constructor({ g, dt, masses, elapsedTime }: IntegratorType) {
     super({ g, dt, masses, elapsedTime });
 
     this.epsilon = 0.1786178958448091;

@@ -1,12 +1,12 @@
 import Euler from './Euler';
 import H3 from '../vectors';
-import { FixedTimeStepIntegratorType, VectorType } from '../types';
+import { IntegratorType, VectorType } from '../types';
 
 export default class extends Euler {
   utilityVector: H3;
   lastAcc: VectorType[];
 
-  constructor({ g, dt, masses, elapsedTime }: FixedTimeStepIntegratorType) {
+  constructor({ g, dt, masses, elapsedTime }: IntegratorType) {
     super({ g, dt, masses, elapsedTime });
 
     this.utilityVector = new H3();

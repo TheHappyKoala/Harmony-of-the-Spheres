@@ -1,9 +1,4 @@
-import {
-  FixedTimeStepIntegratorType,
-  VectorType,
-  MassType,
-  TreeNodeType
-} from '../types';
+import { IntegratorType, VectorType, MassType, TreeNodeType } from '../types';
 import H3 from '../vectors';
 
 export default class {
@@ -21,7 +16,7 @@ export default class {
   v: H3;
   p: H3;
 
-  constructor({ g, dt, masses, elapsedTime }: FixedTimeStepIntegratorType) {
+  constructor({ g, dt, masses, elapsedTime }: IntegratorType) {
     this.g = g;
     this.dt = dt;
     this.masses = masses;
@@ -203,7 +198,7 @@ export default class {
       CoM: { x: 0, y: 0, z: 0 },
       nMasses: 0,
       mass: 0,
-      children: []
+      children: <TreeNodeType[] | MassType[]>[]
     };
 
     const tree2 = {
@@ -215,7 +210,7 @@ export default class {
       CoM: { x: 0, y: 0, z: 0 },
       nMasses: 0,
       mass: 0,
-      children: []
+      children: <TreeNodeType[] | MassType[]>[]
     };
 
     const tree3 = {
@@ -227,7 +222,7 @@ export default class {
       CoM: { x: 0, y: 0, z: 0 },
       nMasses: 0,
       mass: 0,
-      children: []
+      children: <TreeNodeType[] | MassType[]>[]
     };
 
     const tree4 = {
@@ -239,7 +234,7 @@ export default class {
       CoM: { x: 0, y: 0, z: 0 },
       nMasses: 0,
       mass: 0,
-      children: []
+      children: <TreeNodeType[] | MassType[]>[]
     };
 
     const tree5 = {
@@ -251,7 +246,7 @@ export default class {
       CoM: { x: 0, y: 0, z: 0 },
       nMasses: 0,
       mass: 0,
-      children: []
+      children: <TreeNodeType[] | MassType[]>[]
     };
 
     const tree6 = {
@@ -263,7 +258,7 @@ export default class {
       CoM: { x: 0, y: 0, z: 0 },
       nMasses: 0,
       mass: 0,
-      children: []
+      children: <TreeNodeType[] | MassType[]>[]
     };
 
     const tree7 = {
@@ -275,7 +270,7 @@ export default class {
       CoM: { x: 0, y: 0, z: 0 },
       nMasses: 0,
       mass: 0,
-      children: []
+      children: <TreeNodeType[] | MassType[]>[]
     };
 
     const tree8 = {
@@ -287,7 +282,7 @@ export default class {
       CoM: { x: 0, y: 0, z: 0 },
       nMasses: 0,
       mass: 0,
-      children: []
+      children: <TreeNodeType[] | MassType[]>[]
     };
 
     return [tree1, tree2, tree3, tree4, tree5, tree6, tree7, tree8];
@@ -303,12 +298,13 @@ export default class {
       const otherMass = tree.children[0];
       tree.children = this.generateChildren(tree);
       this.insertMassInTree(mass, tree);
-      this.insertMassInTree(otherMass, tree);
+      this.insertMassInTree(<MassType>otherMass, tree);
       return;
     } else if (nChildren == 8) {
       for (let i = 0; i < 8; i++) {
         if (
-          this.isInTree({ x: mass.x, y: mass.y, z: mass.z }, tree.children[i])
+          this.isInTree({ x: mass.x, y: mass.y, z: mass.z }, <TreeNodeType>tree
+            .children[i])
         ) {
           const v = new H3();
           tree.CoM = v
@@ -316,7 +312,7 @@ export default class {
             .addScaledVector(mass.m, { x: mass.x, y: mass.y, z: mass.z })
             .toObject();
           tree.mass += mass.m;
-          this.insertMassInTree(mass, tree.children[i]);
+          this.insertMassInTree(mass, <TreeNodeType>tree.children[i]);
         }
       }
     }
@@ -331,20 +327,20 @@ export default class {
         .multiplyByScalar(1 / tree.mass)
         .toObject();
       for (let i = 0; i < 8; i++) {
-        this.fixCoM(tree.children[i]);
+        this.fixCoM(<TreeNodeType>tree.children[i]);
       }
     }
     return;
   }
 
-  constructBHTree(p: VectorType[]): TreeNodeType {
+  constructBHTree(p: MassType[]): TreeNodeType {
     const a = this.maximumDistance;
     const tree = {
       size: a,
       position: { x: -a / 2, y: -a / 2, z: -a / 2 },
       CoM: { x: -a / 2, y: -a / 2, z: -a / 2 },
       mass: 0,
-      children: []
+      children: <TreeNodeType[] | MassType[]>[]
     };
 
     const pLen = this.masses.length;
@@ -363,7 +359,7 @@ export default class {
     if (nChildren == 0) {
       return { x: 0, y: 0, z: 0 };
     } else if (nChildren == 1) {
-      const other = tree.children[0];
+      const other = <MassType>tree.children[0];
       const otherP = v.set({ x: other.x, y: other.y, z: other.z });
       const rVector = v.subtract(p);
       const r = rVector.getLength();
@@ -395,7 +391,9 @@ export default class {
       } else {
         let totalAcc = v.set({ x: 0, y: 0, z: 0 });
         for (let i = 0; i < 8; i++) {
-          totalAcc = totalAcc.add(this.BHAccelerate(p, tree.children[i]));
+          totalAcc = totalAcc.add(
+            this.BHAccelerate(p, <TreeNodeType>tree.children[i])
+          );
         }
         return totalAcc.toObject();
       }
