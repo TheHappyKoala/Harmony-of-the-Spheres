@@ -121,6 +121,12 @@ export default {
 
     this.manager = new THREE.LoadingManager();
 
+    this.addManifestations();
+
+    this.loop = this.loop.bind(this);
+    this.onWindowResize = this.onWindowResize.bind(this);
+    this.collisionCallback = this.collisionCallback.bind(this);
+
     this.manager.onProgress = url =>
       store.dispatch(
         modifyScenarioProperty({
@@ -134,12 +140,6 @@ export default {
 
       this.loop();
     };
-
-    this.addManifestations();
-
-    this.loop = this.loop.bind(this);
-    this.onWindowResize = this.onWindowResize.bind(this);
-    this.collisionCallback = this.collisionCallback.bind(this);
 
     window.addEventListener('resize', this.onWindowResize, false);
     window.addEventListener('orientationchange', this.onWindowResize, false);
@@ -236,6 +236,31 @@ export default {
     store.dispatch(deleteMass(looser.name));
 
     const dt = this.system.dt;
+
+    if (
+      this.scenario.cameraFocus === looser.name ||
+      this.scenario.cameraPosition === looser.name
+    ) {
+      const scale = this.scenario.scale;
+      const radius = survivor.radius;
+
+      store.dispatch(
+        modifyScenarioProperty(
+          {
+            key: 'freeOrigo',
+            value: {
+              x: looser.vx * dt * scale * (radius / 3),
+              y: looser.vy * dt * scale * (radius / 3),
+              z: looser.vz * dt * scale * (radius / 3)
+            }
+          },
+          { key: 'primary', value: survivor.name },
+          { key: 'rotatingReferenceFrame', value: survivor.name },
+          { key: 'cameraPosition', value: 'Free' },
+          { key: 'cameraFocus', value: 'Origo' }
+        )
+      );
+    }
 
     const survivingManifestation = this.scene.getObjectByName(survivor.name);
 
