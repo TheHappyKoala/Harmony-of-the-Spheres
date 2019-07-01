@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/js/components/Modal/index.tsx"],"names":[],"mappings":"AAAA,OAAO,KAKN,MAAM,OAAO,CAAC;AACf,OAAO,cAAc,CAAC;AAOtB,eAAe,CAAC,EAAE,QAAQ,EAAE,QAAQ,EAAc,EAAgB,EAAE,CAAC,CACnE,6BAAK,SAAS,EAAC,eAAe;IAC5B,iCAAS,SAAS,EAAC,OAAO;QACvB,QAAQ;QACT,gCAAQ,OAAO,EAAE,QAAQ,EAAE,SAAS,EAAC,oBAAoB,QAEhD,CACD,CACN,CACP,CAAC"}
