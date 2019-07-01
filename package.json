@@ -1,6 +1,6 @@
 {
   "name": "harmony-of-the-spheres",
-  "version": "0.1.43",
+  "version": "0.1.44",
   "description": "Newtonian n-body gravity simulator.",
   "scripts": {
     "start": "node server.js",
@@ -18,6 +18,8 @@
     "linters": {
       "src/**/*.{js,ts,tsx,less}": [
         "prettier --single-quote --print-width 80 \"src/**/*.{js,ts,tsx,less}\" --write",
+        "eslint --fix",
+        "tsc --noEmit",
         "git add"
       ]
     }
