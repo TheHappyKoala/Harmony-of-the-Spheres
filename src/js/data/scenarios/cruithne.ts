@@ -1,5 +1,5 @@
 export default {
-  name: 'Cruithne - Quasi Moon of Earth',
+  name: 'Quasi Moon of Earth',
   type: 'Solar System',
   g: 39.5,
   dt: 0.000201,

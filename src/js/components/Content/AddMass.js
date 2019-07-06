@@ -185,8 +185,9 @@ export default class extends Component {
         <Tabs
           tabsWrapperClassName="mass-tabs"
           tabsContentClassName="mass-content"
-          initTab={0}
+          transition={{ enterTimeout: false, leaveTimeout: false }}
           noCloseButton={true}
+          initTab={0}
         >
           {this.state.bodyTypes.map(entry => (
             <div data-label={entry} key={entry}>

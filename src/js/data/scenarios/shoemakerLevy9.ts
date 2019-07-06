@@ -1,5 +1,5 @@
 export default {
-  name: '1994 Shoemaker-Levy 9 Collision with Jupiter',
+  name: 'Shoemaker-Levy 9',
   type: 'Solar System',
   integrator: 'RK4',
   g: 39.5,

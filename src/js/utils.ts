@@ -8,7 +8,9 @@ export function getRandomColor() {
 }
 
 export function getObjFromArrByKeyValuePair(arr: any[], key: string, val: any) {
-  return arr.filter(entry => entry[key].indexOf(val) > -1)[0];
+  const obj = arr.filter(entry => entry[key].indexOf(val) > -1)[0];
+
+  return typeof obj !== 'undefined' ? obj : {};
 }
 
 export function getTextureFromCanvas(callback: Function) {

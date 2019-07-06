@@ -1,5 +1,5 @@
 export default {
-  name: 'Ulysses - Leaving the Ecliptic',
+  name: 'Ulysses',
   type: 'Spacecraft',
   g: 39.5,
   dt: 0.0004,

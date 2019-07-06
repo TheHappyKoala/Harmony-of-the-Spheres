@@ -25,6 +25,6 @@ export default class extends THREE.PerspectiveCamera {
   }
 
   getVisibleSceneHeight(z) {
-    return Math.tan(degreesToRadians(this.fov) / 2) * 2 * z;
+    return Math.tan(degreesToRadians(this.fov) / 2) * 3 * z;
   }
 }

@@ -1,5 +1,5 @@
 export default {
-  name: 'The Sun and the Neptunian System',
+  name: 'The Neptunian System',
   type: 'Solar System',
   g: 39.5,
   dt: 9e-7,
@@ -20,7 +20,6 @@ export default {
   },
   massBeingModified: 'Neptune',
   primary: 'Neptune',
-  maximumDistance: { name: 'Triton to Neptune * 5', value: 0.01185845755 },
   distanceStep: {
     name: 'Triton to Neptune / 100',
     value: 0.000023716915100000003

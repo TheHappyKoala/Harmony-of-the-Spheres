@@ -11,10 +11,6 @@
   position: absolute;
 }
 
-.inline {
-  display: inline-block;
-}
-
 .right {
   float: right;
 }
@@ -71,6 +67,53 @@ h3 {
   font-size: 0.8em;
 }
 
+.set-simulation-state-button {
+  .absolute();
+  top: 15px;
+  left: 220px;
+  cursor: pointer;
+  &:hover {
+    text-shadow: 2px 2px 8px #eee;
+  }
+}
+
+.save-scenario-button {
+  .absolute();
+  top: 40vh;
+  left: 5px;
+  cursor: pointer;
+  text-align: center;
+  i {
+    display: block;
+  }
+  &:hover {
+    text-shadow: 2px 2px 8px #eee;
+  }
+}
+
+.save-scenario-wrapper {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  * {
+    margin-top: 25px;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    padding: @fat-padding;
+    background-color: @input;
+    border: @border;
+    color: #fff;
+  }
+  .button {
+    font-weight: bold;
+    padding: 15px;
+  }
+}
+
 .modal-item {
   font-size: 1.3em;
   margin-left: 10px;
@@ -82,37 +125,90 @@ h3 {
   color: lightblue;
 }
 
+.scenario-dropdown-wrapper {
+  width: 200px;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  .scenario-menu {
+    .absolute();
+    box-sizing: content-box;
+    z-index: 2;
+    background-color: @input;
+    padding: 7px;
+    padding-top: 0;
+    max-height: 85vh;
+    overflow: auto;
+    border: @border;
+    .dropdown-content {
+      margin-top: 43px;
+      display: grid;
+      grid-gap: 5px;
+      grid-template-columns: 159.42028985507247px 159.42028985507247px 159.42028985507247px 159.42028985507247px;
+      @media screen and (max-width: 1200px) {
+        grid-template-columns: 159.42028985507247px 159.42028985507247px 159.42028985507247px 159.42028985507247px;
+      }
+      .lazy-dog-wrapper {
+        height: 100px;
+      }
+    }
+    .dropdown-tabs {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background-color: #000;
+      list-style: none;
+      border-bottom: @border;
+      li {
+        display: inline-block;
+        padding: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        &:hover {
+          text-shadow: 2px 2px 8px #eee;
+        }
+      }
+      .dropdown-tabs-active {
+        text-shadow: 2px 2px 8px #eee;
+      }
+    }
+    .scenario-menu-option {
+      position: relative;
+    }
+  }
+}
+
 .sidebar-wrapper {
   .absolute();
-  bottom: 0;
-  top: calc(0% + 2 * @fat-padding + 7px);
-  bottom: 0;
+  top: 5px;
   right: 0;
-  background: @primary;
   li {
-    display: block;
-    margin-top: 10px;
+    padding: 5px 9px;
     cursor: pointer;
+    float: right;
+    text-align: center;
   }
   li:hover {
     text-shadow: 2px 2px 8px #eee;
   }
   .sidebar-content {
-    float: right;
+    height: calc(100vh - 45px);
     width: 280px;
-    height: 100%;
     padding: @fat-padding;
     border-left: @border;
+    float: right;
     overflow-y: auto;
+    background-color: @primary;
     .tabs-dropdown-wrapper {
       position: relative;
       width: inherit;
     }
   }
   .tabs-close-button {
-    .absolute();
-    top: 10px;
-    right: 85px;
+    float: right;
+    margin-top: -5px;
     cursor: pointer;
   }
   .active-sidebar-tab {
@@ -122,36 +218,10 @@ h3 {
 
 .sidebar-wrapper > ul {
   list-style: none;
-  text-align: center;
-  width: 65px;
-  display: block;
-  float: right;
-  height: 100%;
+  width: 280px;
+  overflow: auto;
   border-left: @border;
-}
-
-.sidebar-wrapper-left {
-  left: 0;
-  right: calc(100% - 65px);
-  ul {
-    float: left;
-    border-left: none;
-    border-right: @border;
-  }
-}
-
-.bottom-bar {
-  .absolute();
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 12px;
-  background: @primary;
-  border-top: @border;
-  text-align: center;
-  h2 {
-    font-size: 16px;
-  }
+  border-bottom: @border;
 }
 
 .vector-tabs {
@@ -249,6 +319,23 @@ h3 {
   transition: opacity 250ms ease-in;
 }
 
+.slide-enter {
+  margin-right: -280px;
+}
+
+.slide-enter.slide-enter-active {
+  margin-right: 0;
+  transition: margin-right 150ms ease-in;
+}
+
+.slide-leave {
+  margin-right: 0;
+}
+
+.slide-leave.slide-leave-active {
+  margin-right: -280px;
+  transition: margin-right 150ms ease-in;
+}
 .spinner {
   margin: 100px auto 0;
   width: 70px;

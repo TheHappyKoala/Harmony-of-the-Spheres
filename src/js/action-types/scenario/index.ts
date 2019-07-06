@@ -6,7 +6,9 @@ export const DELETE_MASS = 'DELETE_MASS';
 
 export interface ScenarioProps {
   name: string;
+  playing: boolean;
   isLoaded: boolean;
+  elementsToVectors: boolean;
   integrator: string;
   useBarnesHut: boolean;
   theta: number;
@@ -14,17 +16,28 @@ export interface ScenarioProps {
   tol: number;
   minDt: number;
   maxDt: number;
+  g: number;
+  softeningConstant: number;
   barycenter: boolean;
   systemBarycenter: boolean;
   barycenterMassOne: string;
   barycenterMassTwo: string;
   collisions: boolean;
-  g: number;
-  softeningConstant: number;
-  distanceStep: { name: string; value: number };
-  distMin: number;
+  particles?: {
+    max: number;
+    size: number;
+    rings: {
+      primary: string;
+      tilt: [number, number, number];
+      number: number;
+      minD: number;
+      maxD: number;
+    }[];
+    hsl: [number, number, number];
+  };
+  maximumDistance: number;
   distMax: number;
-  maximumDistance: { name: string; value: number };
+  distMin: number;
   velMin: number;
   velMax: number;
   velStep: number;
@@ -37,10 +50,15 @@ export interface ScenarioProps {
   sizeAttenuation: boolean;
   twinklingParticles: boolean;
   rotatingReferenceFrame: string;
+  logarithmicDepthBuffer: boolean;
   cameraPosition: string;
   cameraFocus: string;
   scenarioWikiUrl: string;
-  [x: string]: any;
+  isMassBeingAdded: boolean;
+  a: number;
+  e: number;
+  w: number;
+  i: number;
 }
 
 export interface GetScenarioAction {
@@ -114,3 +132,10 @@ export type ScenarioActionTypes =
   | ModifyMassPropertyAction
   | AddMassAction
   | DeleteMassAction;
+
+export interface MassTemplate {
+  m: number;
+  name: string;
+  radius: number;
+  [x: string]: any;
+}

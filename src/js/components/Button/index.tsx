@@ -16,10 +16,8 @@ export default ({
   callback,
   children,
   cssClassName
-}: ButtonProps): ReactElement => {
-  return (
-    <div className={cssClassName} onClick={callback}>
-      {children}
-    </div>
-  );
-};
+}: ButtonProps): ReactElement => (
+  <div className={cssClassName} onClick={callback}>
+    {children}
+  </div>
+);

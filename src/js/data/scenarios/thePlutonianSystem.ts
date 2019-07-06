@@ -1,5 +1,5 @@
 export default {
-  name: 'The Sun and the Plutonian System',
+  name: 'The Plutonian System',
   type: 'Solar System',
   g: 39.5,
   dt: 9e-7,

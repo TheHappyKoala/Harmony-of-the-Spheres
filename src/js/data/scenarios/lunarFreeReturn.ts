@@ -1,5 +1,5 @@
 export default {
-  name: 'Apollo 11 - Free Return Trajectory',
+  name: 'Lunar Free Return Trajectory',
   tcmsData: [
     {
       t: 0,

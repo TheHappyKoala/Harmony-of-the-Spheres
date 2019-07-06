@@ -119,7 +119,6 @@ export default class {
             let pJ = p[j];
 
             let dParams = this.getDistanceParams(pI, pJ);
-            let d = Math.sqrt(dParams.dSquared);
 
             let fact =
               this.g *
@@ -353,14 +352,14 @@ export default class {
     return tree;
   }
 
-  BHAccelerate(p: VectorType, tree: TreeNodeType): VectorType {
+  BHAccelerate(p: VectorType, tree: TreeNodeType): VectorType | null {
     const v = new H3();
     const nChildren = tree.children.length;
     if (nChildren == 0) {
       return { x: 0, y: 0, z: 0 };
     } else if (nChildren == 1) {
       const other = <MassType>tree.children[0];
-      const otherP = v.set({ x: other.x, y: other.y, z: other.z });
+      v.set({ x: other.x, y: other.y, z: other.z });
       const rVector = v.subtract(p);
       const r = rVector.getLength();
       //
@@ -398,6 +397,8 @@ export default class {
         return totalAcc.toObject();
       }
     }
+
+    return null;
   }
 
   BHGenerateAccelerationVectors(

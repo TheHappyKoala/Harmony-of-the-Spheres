@@ -1,5 +1,5 @@
 export default {
-  name: 'The Sun, Earth and Moon System',
+  name: 'The Earth and Moon System',
   type: 'Solar System',
   g: 39.5,
   dt: 85e-7,

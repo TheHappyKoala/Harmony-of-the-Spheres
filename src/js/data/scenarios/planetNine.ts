@@ -1,5 +1,6 @@
 export default {
-  name: 'Planet Nine and the Detached Objects',
+  name: 'Planet Nine',
+  integrator: 'PEFRL',
   type: 'Solar System',
   g: 39.5,
   dt: 2.5,

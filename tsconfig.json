@@ -3,13 +3,21 @@
     "baseUrl": ".",
     "paths": { "*": ["types/*"] },
     "outDir": "./dist/",
-      "allowJs": true,
-      "allowSyntheticDefaultImports": true,
-      "sourceMap": true,
-      "noImplicitAny": true,
-      "moduleResolution": "node",
-      "target": "ES2015",
-      "jsx": "react"   
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "allowUnreachableCode": false,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    "strictBindCallApply": true,
+    "moduleResolution": "node",
+    "target": "ES2015",
+    "jsx": "react",
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true
   },    
   "include": [
     "src/**/*"
@@ -18,4 +26,4 @@
     "node_modules",
     "**/*.spec.ts"
   ]
-}                        
+}                            

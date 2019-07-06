@@ -78,7 +78,9 @@ export default props => {
               <Tabs
                 tabsWrapperClassName="vector-tabs"
                 tabsContentClassName="vector-content"
+                transition={{ enterTimeout: false, leaveTimeout: false }}
                 initTab={0}
+                noCloseButton={true}
               >
                 <div data-label="Position">
                   <label className="top">

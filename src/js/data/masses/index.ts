@@ -1,11 +1,21 @@
 export default [
   {
+    m: 3.69396868e-8,
+    radius: 22.93577981651376,
+    tilt: -1.54,
+    orbitalPeriod: 0.0739726,
+    bump: true,
+    name: 'Moon',
+    bodyType: 'Moon'
+  },
+  {
     m: 1.652e-7,
     radius: 36.101083032490976,
     tilt: -0.03,
     orbitalPeriod: 0.24,
     name: 'Mercury',
-    bump: true
+    bump: true,
+    bodyType: 'Planet'
   },
   {
     m: 2.447e-6,
@@ -13,7 +23,8 @@ export default [
     tilt: 2.63,
     orbitalPeriod: 0.62,
     atmosphere: { color: '#ffffe6', scaleFactor: 80 },
-    name: 'Venus'
+    name: 'Venus',
+    bodyType: 'Planet'
   },
   {
     m: 3.003e-6,
@@ -23,15 +34,8 @@ export default [
     atmosphere: { color: '#93cfef', scaleFactor: 110 },
     clouds: true,
     name: 'Earth',
-    bump: true
-  },
-  {
-    m: 3.69396868e-8,
-    radius: 22.93577981651376,
-    tilt: -1.54,
-    orbitalPeriod: 0.0739726,
     bump: true,
-    name: 'Moon'
+    bodyType: 'Planet'
   },
   {
     m: 3.9217263618e-20,
@@ -48,7 +52,8 @@ export default [
     orbitalPeriod: 1.88,
     atmosphere: { color: '#ffccb3', scaleFactor: 40 },
     name: 'Mars',
-    bump: true
+    bump: true,
+    bodyType: 'Planet'
   },
   {
     m: 9.543e-4,
@@ -56,7 +61,8 @@ export default [
     tilt: -3.13,
     orbitalPeriod: 11.86,
     atmosphere: { color: '#ffccb3', scaleFactor: 1100 },
-    name: 'Jupiter'
+    name: 'Jupiter',
+    bodyType: 'Planet'
   },
   { m: 0, orbitalPeriod: 0.14657534, radius: 1.2, type: 'model', name: 'Juno' },
   {
@@ -88,7 +94,8 @@ export default [
     tilt: -3,
     orbitalPeriod: 4.6,
     name: 'Ceres',
-    bump: true
+    bump: true,
+    bodyType: 'Dwarf Planet'
   },
   {
     m: 1.301711480859e-10,
@@ -212,25 +219,29 @@ export default [
     m: 4.490848296995278e-8,
     orbitalPeriod: 0.004794521,
     radius: 24.082568807339452,
-    name: 'Io'
+    name: 'Io',
+    bodyType: 'Moon'
   },
   {
     m: 2.413291634272764e-8,
     orbitalPeriod: 0.009703205479,
     radius: 22.477064220183486,
-    name: 'Europa'
+    name: 'Europa',
+    bodyType: 'Moon'
   },
   {
     m: 7.450777301989e-8,
     orbitalPeriod: 0.01963471233,
     radius: 34.633027522935784,
-    name: 'Ganymede'
+    name: 'Ganymede',
+    bodyType: 'Moon'
   },
   {
     m: 5.4300826548000004e-8,
     orbitalPeriod: 0.0465753,
     radius: 35.74007220216607,
-    name: 'Callisto'
+    name: 'Callisto',
+    bodyType: 'Moon'
   },
   {
     m: 2.857e-4,
@@ -238,7 +249,8 @@ export default [
     tilt: -26.73,
     orbitalPeriod: 29.46,
     atmosphere: { color: '#ffffe6', scaleFactor: 900 },
-    name: 'Saturn'
+    name: 'Saturn',
+    bodyType: 'Planet'
   },
   {
     m: 6.75675e-8,
@@ -246,7 +258,8 @@ export default [
     tilt: 0,
     orbitalPeriod: 0.0436849315,
     atmosphere: { color: '#ffffe6', scaleFactor: 35 },
-    name: 'Titan'
+    name: 'Titan',
+    bodyType: 'Moon'
   },
   {
     m: 5.4311887827482005e-11,
@@ -254,7 +267,8 @@ export default [
     tilt: 0,
     orbitalPeriod: 0.0037540219178,
     name: 'Enceladus',
-    bump: true
+    bump: true,
+    bodyType: 'Moon'
   },
   {
     m: 9.849839999999999e-10,
@@ -262,7 +276,8 @@ export default [
     tilt: 0,
     orbitalPeriod: 0.0074983972603,
     name: 'Dione',
-    bump: true
+    bump: true,
+    bodyType: 'Moon'
   },
   {
     m: 1.1596836467392582e-9,
@@ -270,14 +285,16 @@ export default [
     tilt: 0,
     orbitalPeriod: 0.012378663014,
     name: 'Rhea',
-    bump: true
+    bump: true,
+    bodyType: 'Moon'
   },
   {
     m: 1.89189e-11,
     radius: 2.853211009174312,
     tilt: 0,
     orbitalPeriod: 0.0025808219,
-    name: 'Mimas'
+    name: 'Mimas',
+    bodyType: 'Moon'
   },
   {
     m: 3.09309e-10,
@@ -293,7 +310,8 @@ export default [
     tilt: -82.23,
     orbitalPeriod: 84.01,
     atmosphere: { color: '#93cfef', scaleFactor: 350 },
-    name: 'Uranus'
+    name: 'Uranus',
+    bodyType: 'Planet'
   },
   {
     m: 3.31335599029e-11,
@@ -301,21 +319,24 @@ export default [
     tilt: 0,
     orbitalPeriod: 0.0038725452055,
     name: 'Miranda',
-    bump: true
+    bump: true,
+    bodyType: 'Moon'
   },
   {
     m: 6.80268688143e-10,
     radius: 8.330275229357799,
     tilt: 0,
     orbitalPeriod: 0.0069051479452,
-    name: 'Ariel'
+    name: 'Ariel',
+    bodyType: 'Moon'
   },
   {
     m: 5.89264525132e-10,
     radius: 8.440366972477063,
     tilt: 0,
     orbitalPeriod: 0.011353909589,
-    name: 'Umbriel'
+    name: 'Umbriel',
+    bodyType: 'Moon'
   },
   {
     m: 1.7733242151370002e-9,
@@ -323,7 +344,8 @@ export default [
     tilt: 0,
     orbitalPeriod: 0.02385170411,
     name: 'Titania',
-    bump: true
+    bump: true,
+    bodyType: 'Moon'
   },
   {
     m: 1.5153952890340001e-9,
@@ -331,7 +353,8 @@ export default [
     tilt: 0,
     orbitalPeriod: 0.0368855863014,
     name: 'Oberon',
-    bump: true
+    bump: true,
+    bodyType: 'Moon'
   },
   {
     m: 5.149e-5,
@@ -339,7 +362,8 @@ export default [
     tilt: -28.32,
     orbitalPeriod: 164.8,
     atmosphere: { color: '#93cfef', scaleFactor: 350 },
-    name: 'Neptune'
+    name: 'Neptune',
+    bodyType: 'Planet'
   },
   {
     m: 1.0780769999999999e-8,
@@ -366,7 +390,8 @@ export default [
     orbitalPeriod: 0.0175342,
     atmosphere: { color: '#93cfef', scaleFactor: 20 },
     name: 'Pluto',
-    bump: true
+    bump: true,
+    bodyType: 'Dwarf Planet'
   },
   {
     m: 7.97417693566e-10,
@@ -384,7 +409,8 @@ export default [
     orbitalPeriod: 11400,
     radius: 8.027522935779816,
     tilt: -57.47,
-    name: 'Sedna'
+    name: 'Sedna',
+    bodyType: 'Dwarf Planet'
   },
   {
     m: 0.000015015,
@@ -392,7 +418,8 @@ export default [
     radius: 355.9633027522936,
     tilt: -57.47,
     atmosphere: { color: '#93cfef', scaleFactor: 250 },
-    name: 'Planet 9'
+    name: 'Planet 9',
+    bodyType: 'Planet'
   },
   { m: 1, radius: 9e4, type: 'star', name: 'Sun', color: '#ffffff' },
   {

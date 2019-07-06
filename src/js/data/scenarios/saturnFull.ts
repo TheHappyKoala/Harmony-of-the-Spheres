@@ -1,5 +1,5 @@
 export default {
-  name: 'The Sun and the Cronian System',
+  name: 'The Cronian System',
   type: 'Solar System',
   g: 39.5,
   dt: 0.000005,

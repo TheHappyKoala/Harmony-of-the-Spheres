@@ -119,27 +119,16 @@ export default {
 
     this.scene.add(this.particles);
 
-    this.manager = new THREE.LoadingManager();
-
     this.addManifestations();
 
     this.loop = this.loop.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
     this.collisionCallback = this.collisionCallback.bind(this);
 
-    this.manager.onProgress = url =>
-      store.dispatch(
-        modifyScenarioProperty({
-          key: 'assetBeingLoaded',
-          value: `Loading ${url}`
-        })
-      );
-
-    this.manager.onLoad = () => {
+    setTimeout(() => {
       store.dispatch(modifyScenarioProperty({ key: 'isLoaded', value: true }));
-
       this.loop();
-    };
+    }, 3000);
 
     window.addEventListener('resize', this.onWindowResize, false);
     window.addEventListener('orientationchange', this.onWindowResize, false);
@@ -148,13 +137,13 @@ export default {
   addManifestation(mass) {
     switch (mass.type) {
       case 'star':
-        return new Star(mass, this.manager);
+        return new Star(mass);
 
       case 'model':
-        return new Model(mass, this.manager);
+        return new Model(mass);
 
       default:
-        return new MassManifestation(mass, this.manager);
+        return new MassManifestation(mass);
     }
   },
 

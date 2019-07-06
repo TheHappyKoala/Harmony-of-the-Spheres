@@ -1,5 +1,5 @@
 export default {
-  name: 'Dancing With Churyumov-Gerasimenko',
+  name: 'Rosetta & Churyumov-Gerasimenko',
   type: 'Spacecraft',
   logarithmicDepthBuffer: true,
   g: 39.5,

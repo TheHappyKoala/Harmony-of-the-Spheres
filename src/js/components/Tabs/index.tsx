@@ -6,12 +6,18 @@ import React, {
   Children,
   isValidElement
 } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 interface TabsProps {
   initTab?: number;
   tabsWrapperClassName?: string;
   tabsContentClassName?: string;
   children: ReactNode;
+  transition: {
+    name?: string;
+    enterTimeout: number | boolean;
+    leaveTimeout: number | boolean;
+  };
   noCloseButton?: boolean;
 }
 
@@ -20,6 +26,7 @@ export default ({
   tabsWrapperClassName,
   tabsContentClassName,
   children,
+  transition,
   noCloseButton
 }: TabsProps): ReactElement => {
   const [selectedTabIndex, setSelectedTabIndex] = useState<number>(
@@ -51,17 +58,23 @@ export default ({
           </li>
         ))}
       </ul>
-      {selectedTabIndex !== -1 && (
-        <div className={tabsContentClassName}>
-          {panes[selectedTabIndex]}
-          {!noCloseButton && (
-            <i
-              className="fa fa-window-close fa-2x tabs-close-button"
-              onClick={() => setSelectedTabIndex(-1)}
-            />
-          )}
-        </div>
-      )}
+      <ReactCSSTransitionGroup
+        transitionName={transition.name}
+        transitionEnterTimeout={transition.enterTimeout}
+        transitionLeaveTimeout={transition.leaveTimeout}
+      >
+        {selectedTabIndex !== -1 && (
+          <div className={tabsContentClassName}>
+            {!noCloseButton && (
+              <i
+                className="fa fa-window-close fa-2x tabs-close-button"
+                onClick={() => setSelectedTabIndex(-1)}
+              />
+            )}
+            {panes[selectedTabIndex]}
+          </div>
+        )}
+      </ReactCSSTransitionGroup>
     </div>
   );
 };

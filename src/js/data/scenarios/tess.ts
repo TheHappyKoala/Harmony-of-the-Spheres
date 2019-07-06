@@ -1,5 +1,5 @@
 export default {
-  name: 'Finding New Worlds - TESS',
+  name: 'TESS',
   type: 'Spacecraft',
   g: 39.5,
   dt: 85e-7,

@@ -1,5 +1,5 @@
 export default {
-  name: 'The Sun and the Uranian System',
+  name: 'The Uranian System',
   type: 'Solar System',
   integrator: 'RK4',
   g: 39.5,

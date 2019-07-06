@@ -1,5 +1,5 @@
 export default {
-  name: '2006 RH120 - Temporary Moon of Earth',
+  name: 'Temporary Moon of Earth',
   type: 'Solar System',
   g: 39.5,
   dt: 5e-5,

@@ -41,8 +41,8 @@ export default memo(
     if (tabs) {
       Children.toArray(children).forEach(
         (entry: ReactElement) =>
-          tabsLabels.indexOf(entry.props.identifier) === -1 &&
-          tabsLabels.push(entry.props.identifier)
+          tabsLabels.indexOf(entry.props['data-identifier']) === -1 &&
+          tabsLabels.push(entry.props['data-identifier'])
       );
 
       useEffect(() => setSelectedTab(tabsLabels[0]), []);
@@ -98,9 +98,14 @@ export default memo(
                   ))}
                 </ul>
                 <div className={tabs.optionsCssClass} ref={optionsWithTabs}>
-                  {Children.map(children, (option: ReactElement) => {
-                    if (option.props.identifier === selectedTab) return option;
-                  })}
+                  {Children.map(
+                    children,
+                    (option: ReactElement): ReactElement => {
+                      if (option.props['data-identifier'] === selectedTab)
+                        return option;
+                      else return null;
+                    }
+                  )}
                 </div>
               </Fragment>
             )}
@@ -111,5 +116,6 @@ export default memo(
     );
   },
   (prevProps, nextProps) =>
-    prevProps.selectedOption === nextProps.selectedOption
+    prevProps.selectedOption === nextProps.selectedOption &&
+    Children.count(prevProps.children) === Children.count(nextProps.children)
 );

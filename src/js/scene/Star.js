@@ -2,8 +2,8 @@ import * as THREE from 'three';
 import MassManifestation from './MassManifestation';
 
 export default class extends MassManifestation {
-  constructor(mass, manager) {
-    super(mass, manager);
+  constructor(mass) {
+    super(mass);
   }
 
   getMain() {

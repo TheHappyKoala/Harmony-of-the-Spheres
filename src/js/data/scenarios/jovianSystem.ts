@@ -1,5 +1,5 @@
 export default {
-  name: 'The Sun and the Jovian System',
+  name: 'The Jovian System',
   type: 'Solar System',
   g: 39.5,
   dt: 0.000006,
@@ -7,9 +7,9 @@ export default {
   cameraPosition: 'Free',
   cameraFocus: 'Origo',
   freeOrigo: {
-    x: -7480.213284753809,
-    y: -8163.220347463112,
-    z: 2139.892485956284
+    x: 0,
+    y: 0,
+    z: 50000
   },
   particles: {
     max: 20000,

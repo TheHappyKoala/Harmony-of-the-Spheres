@@ -1,14 +1,14 @@
 import * as THREE from 'three';
 import { degreesToRadians } from '../Physics/utils';
 
-export default function(manager) {
+export default function() {
   const geometry = new THREE.SphereBufferGeometry(
     1500 * 1000000000000000000000000000,
     20,
     20
   );
 
-  const textureLoader = new THREE.TextureLoader(manager);
+  const textureLoader = new THREE.TextureLoader();
 
   const material = new THREE.MeshBasicMaterial({
     map: textureLoader.load('./textures/milkyway.jpg'),

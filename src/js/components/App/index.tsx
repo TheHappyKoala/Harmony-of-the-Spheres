@@ -3,20 +3,22 @@ import { AppState } from '../../reducers';
 import { ScenarioProps } from '../../action-types/scenario';
 import { connect } from 'react-redux';
 import * as scenarioActionCreators from '../../action-creators/scenario';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import LoadingScreen from '../LoadingScreen';
-import Modal from '../Modal';
 import Renderer from '../Renderer';
-import MainBar from '../MainBar';
 import Tabs from '../Tabs';
+import Button from '../Button';
+import { NavLink } from 'react-router-dom';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Modal from '../Modal';
+import Dropdown from '../Dropdown';
+import LazyDog from '../LazyDog';
 import Physics from '../Content/Physics';
 import Graphics from '../Content/Graphics';
 import Camera from '../Content/Camera';
 import Masses from '../Content/Masses';
+import SaveScenario from '../Content/SaveScenario';
+import { scenarios } from '../../data/scenarios';
 import AddMass from '../Content/AddMass';
-import About from '../Content/About';
-import Credits from '../Content/Credits';
-import Iframe from '../Iframe';
 import './App.less';
 
 const mapStateToProps = (state: AppState, ownProps: any) => ({
@@ -60,23 +62,67 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     );
 
     const [display, setDisplay] = useState({
-      about: false,
-      credits: false,
-      scenarioWiki: false
+      saveScenario: false
     });
 
     return (
       <Fragment>
         <Renderer scenarioName={scenario.name} />
-        <MainBar
-          scenario={scenario}
-          displayComponent={setDisplay}
-          modifyScenarioProperty={modifyScenarioProperty}
-        />
+        <Dropdown
+          selectedOption={scenario.name}
+          tabs={{
+            cssClass: 'dropdown-tabs',
+            activeCssClass: 'dropdown-tabs-active',
+            optionsCssClass: 'dropdown-content',
+            identifier: 'category'
+          }}
+          dropdownWrapperCssClassName="scenario-dropdown-wrapper"
+          selectedOptionCssClassName="selected-option"
+          optionsWrapperCssClass="scenario-menu"
+        >
+          {scenarios.map(scenario => (
+            <div
+              className="scenario-menu-option"
+              key={scenario.name}
+              data-identifier={scenario.type}
+            >
+              <NavLink to={`/scenario/${scenario.name}`}>
+                <LazyDog
+                  src={`./images/scenarios/${scenario.name}.png`}
+                  alt={scenario.name}
+                  caption={scenario.name}
+                  width={159.42028985507247}
+                  height={100}
+                  placeHolderIcon="fa fa-venus-mars fa-2x"
+                />
+              </NavLink>
+            </div>
+          ))}
+        </Dropdown>
+        <Button
+          cssClassName="save-scenario-button"
+          callback={() =>
+            setDisplay({ ...display, saveScenario: !display.saveScenario })
+          }
+        >
+          <span>
+            <i className="fas fa-save fa-2x" />Save
+          </span>
+        </Button>
+        <Button
+          cssClassName="set-simulation-state-button"
+          callback={() =>
+            modifyScenarioProperty({ key: 'playing', value: !scenario.playing })
+          }
+        >
+          <i
+            className={`fas fa-${scenario.playing ? 'pause' : 'play'} fa-lg`}
+          />
+        </Button>
         <Tabs
           tabsWrapperClassName="sidebar-wrapper"
           tabsContentClassName="sidebar-content"
-          initTab={scenario.openTabOnInit}
+          transition={{ name: 'slide', enterTimeout: 250, leaveTimeout: 250 }}
         >
           <div data-label="Physics" data-icon="fas fa-cube fa-2x">
             <Physics
@@ -117,7 +163,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               modifyScenarioProperty={modifyScenarioProperty}
             />
           </div>
-          <div data-label="Modify Masses" data-icon="fas fa-globe fa-2x">
+          <div data-label="Masses" data-icon="fas fa-globe fa-2x">
             <Masses
               massBeingModified={scenario.massBeingModified}
               masses={scenario.masses}
@@ -132,7 +178,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               deleteMass={deleteMass}
             />
           </div>
-          <div data-label="Add Mass" data-icon="fas fa-plus-circle fa-2x">
+          <div data-label="Add" data-icon="fas fa-plus-circle fa-2x">
             <AddMass
               a={scenario.a}
               e={scenario.e}
@@ -146,72 +192,30 @@ export default connect(mapStateToProps, mapDispatchToProps)(
             />
           </div>
         </Tabs>
-        <div className="sidebar-wrapper sidebar-wrapper-left">
-          <ul>
-            <li
-              key="scenarioWiki"
-              onClick={() =>
-                setDisplay({ ...display, scenarioWiki: !display.scenarioWiki })
-              }
-            >
-              <i className="fas fa-wikipedia-w fa-2x" />
-              <p>Scenario Wiki</p>
-            </li>
-            <li
-              key="about"
-              onClick={() => setDisplay({ ...display, about: !display.about })}
-            >
-              <i className="fas fa-info-circle fa-2x" />
-              <p>About</p>
-            </li>
-            <li
-              key="credits"
-              onClick={() =>
-                setDisplay({ ...display, credits: !display.credits })
-              }
-            >
-              <i className="fas fa-glass fa-2x" />
-              <p>Credits</p>
-            </li>
-          </ul>
-        </div>
         <ReactCSSTransitionGroup
           transitionName="fade"
           transitionEnterTimeout={250}
           transitionLeaveTimeout={250}
         >
-          {display.scenarioWiki && (
+          {display.saveScenario && (
             <Modal
               callback={() =>
-                setDisplay({ ...display, scenarioWiki: !display.scenarioWiki })
+                setDisplay({ ...display, saveScenario: !display.saveScenario })
               }
             >
-              <Iframe url={scenario.scenarioWikiUrl} />
-            </Modal>
-          )}
-          {display.about && (
-            <Modal
-              callback={() => setDisplay({ ...display, about: !display.about })}
-            >
-              <About />
-            </Modal>
-          )}
-          {display.credits && (
-            <Modal
-              callback={() =>
-                setDisplay({ ...display, credits: !display.credits })
-              }
-            >
-              <Credits />
+              <SaveScenario
+                scenario={scenario}
+                closeWindowCallback={() =>
+                  setDisplay({
+                    ...display,
+                    saveScenario: !display.saveScenario
+                  })
+                }
+              />
             </Modal>
           )}
         </ReactCSSTransitionGroup>
-        {!scenario.isLoaded && (
-          <LoadingScreen
-            scenarioName={scenario.name}
-            assetBeingLoaded={scenario.assetBeingLoaded}
-          />
-        )}
+        {!scenario.isLoaded && <LoadingScreen scenarioName={scenario.name} />}
         <div className="rotate-to-landscape-prompt">
           <h1>Hey friend...</h1>
           <p>Please rotate your device into landscape mode.</p>

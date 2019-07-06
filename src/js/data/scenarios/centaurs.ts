@@ -1,5 +1,5 @@
 export default {
-  name: 'Centaurs',
+  name: 'The Centaurs',
   type: 'Solar System',
   g: 39.5,
   dt: 0.01,
