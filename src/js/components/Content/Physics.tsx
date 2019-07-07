@@ -62,6 +62,7 @@ export default ({
         selectedOptionCssClassName="selected-option"
         dropdownWrapperCssClassName="tabs-dropdown-wrapper"
         optionsWrapperCssClass="options"
+        dynamicChildrenLen={integrators.length}
       >
         {integrators.map(integrator => (
           <div
@@ -209,6 +210,7 @@ export default ({
             dropdownWrapperCssClassName="tabs-dropdown-wrapper"
             selectedOptionCssClassName="selected-option"
             optionsWrapperCssClass="options"
+            dynamicChildrenLen={masses.length}
           >
             {masses.map(mass => (
               <div
@@ -237,6 +239,7 @@ export default ({
             dropdownWrapperCssClassName="tabs-dropdown-wrapper"
             selectedOptionCssClassName="selected-option"
             optionsWrapperCssClass="options"
+            dynamicChildrenLen={masses.length}
           >
             {masses.map(mass => (
               <div

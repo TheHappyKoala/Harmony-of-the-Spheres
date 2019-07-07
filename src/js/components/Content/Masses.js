@@ -24,6 +24,7 @@ export default props => {
         dropdownWrapperCssClassName="tabs-dropdown-wrapper"
         selectedOptionCssClassName="selected-option"
         optionsWrapperCssClass="options"
+        dynamicChildrenLen={props.masses.length}
       >
         {props.masses.map(mass => (
           <div
@@ -56,6 +57,7 @@ export default props => {
                 dropdownWrapperCssClassName="tabs-dropdown-wrapper"
                 selectedOptionCssClassName="selected-option"
                 optionsWrapperCssClass="options"
+                dynamicChildrenLen={bodies.length}
               >
                 {bodies.map(body => (
                   <div

@@ -91,6 +91,7 @@ export default class extends Component {
           dropdownWrapperCssClassName="tabs-dropdown-wrapper"
           selectedOptionCssClassName="selected-option"
           optionsWrapperCssClass="options"
+          dynamicChildrenLen={this.props.masses.length}
         >
           {this.props.masses.map(mass => (
             <div

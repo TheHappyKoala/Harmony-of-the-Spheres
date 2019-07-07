@@ -33,6 +33,7 @@ export default ({
       dropdownWrapperCssClassName="tabs-dropdown-wrapper"
       selectedOptionCssClassName="selected-option"
       optionsWrapperCssClass="options"
+      dynamicChildrenLen={masses.length}
     >
       <div
         data-name="Origo"
@@ -85,6 +86,7 @@ export default ({
       dropdownWrapperCssClassName="tabs-dropdown-wrapper"
       selectedOptionCssClassName="selected-option"
       optionsWrapperCssClass="options"
+      dynamicChildrenLen={masses.length}
     >
       <div
         data-name="Free"
@@ -137,6 +139,7 @@ export default ({
       dropdownWrapperCssClassName="tabs-dropdown-wrapper"
       selectedOptionCssClassName="selected-option"
       optionsWrapperCssClass="options"
+      dynamicChildrenLen={masses.length}
     >
       <div
         data-name="Origo"

@@ -79,6 +79,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
           dropdownWrapperCssClassName="scenario-dropdown-wrapper"
           selectedOptionCssClassName="selected-option"
           optionsWrapperCssClass="scenario-menu"
+          dynamicChildrenLen={scenarios.length}
         >
           {scenarios.map(scenario => (
             <div

@@ -22,6 +22,7 @@ interface DropdownProps {
   dropdownWrapperCssClassName: string;
   selectedOptionCssClassName: string;
   optionsWrapperCssClass: string;
+  dynamicChildrenLen: number;
 }
 
 export default memo(
@@ -31,7 +32,8 @@ export default memo(
     tabs,
     dropdownWrapperCssClassName,
     optionsWrapperCssClass,
-    selectedOptionCssClassName
+    selectedOptionCssClassName,
+    dynamicChildrenLen
   }: DropdownProps): ReactElement => {
     const [options, setOptions] = useState<boolean>(false);
     const [selectedTab, setSelectedTab] = useState<string>('');
@@ -117,5 +119,5 @@ export default memo(
   },
   (prevProps, nextProps) =>
     prevProps.selectedOption === nextProps.selectedOption &&
-    Children.count(prevProps.children) === Children.count(nextProps.children)
+    prevProps.dynamicChildrenLen === nextProps.dynamicChildrenLen
 );
