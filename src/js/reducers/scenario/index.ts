@@ -11,7 +11,7 @@ import { MassType } from '../../Physics/types';
 import filterScenarios from '../../data/scenarios';
 
 export default function(
-  state = filterScenarios('The Jovian System'),
+  state = filterScenarios('Earth VS. the Rings of Saturn'),
   action: ScenarioActionTypes
 ): ScenarioProps {
   switch (action.type) {

@@ -10,7 +10,11 @@ render(
     <HashRouter>
       <div>
         <Switch>
-          <Redirect exact from="/" to="/scenario/The Jovian System" />
+          <Redirect
+            exact
+            from="/"
+            to="/scenario/Earth VS. the Rings of Saturn"
+          />
           <Route path="/scenario/:name?" component={App} />
         </Switch>
       </div>
