@@ -151,7 +151,7 @@
 }
 .top {
   display: block;
-  margin-top: 12px;
+  margin-top: 28px;
 }
 * {
   box-sizing: border-box;
@@ -183,18 +183,24 @@ body i {
   font-family: FontAwesome;
   font-style: normal;
 }
+label {
+  font-size: 14px;
+}
 h1,
 h2,
 h3,
 h4 {
   font-family: 'Orbitron', sans-serif;
 }
+h2 {
+  font-size: 22px;
+}
 h3 {
   font-size: 0.8em;
 }
 .set-simulation-state-button {
   position: absolute;
-  top: 15px;
+  top: 20px;
   left: 220px;
   cursor: pointer;
 }
@@ -319,6 +325,7 @@ h3 {
   height: calc(100vh - 45px);
   width: 280px;
   padding: 15px;
+  padding-bottom: 45px;
   border-left: 1px solid #545454;
   float: right;
   overflow-y: auto;
@@ -429,6 +436,34 @@ h3 {
 .fade-leave.fade-leave-active {
   opacity: 0;
   transition: opacity 250ms ease-in;
+}
+.fall-enter {
+  max-height: 0;
+}
+.fall-enter.fall-enter-active {
+  max-height: 150px;
+  transition: max-height 150ms ease-in;
+}
+.fall-leave {
+  max-height: 150px;
+}
+.fall-leave.fall-leave-active {
+  max-height: 0;
+  transition: max-height 150ms ease-in;
+}
+.left-enter {
+  left: -200px;
+}
+.left-enter.left-enter-active {
+  left: 5px;
+  transition: left 150ms ease-in;
+}
+.left-leave {
+  left: 5px;
+}
+.left-leave.left-leave-active {
+  left: -200px;
+  transition: left 150ms ease-in;
 }
 .slide-enter {
   margin-right: -280px;
@@ -529,7 +564,7 @@ h3 {
 }
 .top {
   display: block;
-  margin-top: 12px;
+  margin-top: 28px;
 }
 * {
   box-sizing: border-box;
@@ -561,18 +596,24 @@ body i {
   font-family: FontAwesome;
   font-style: normal;
 }
+label {
+  font-size: 14px;
+}
 h1,
 h2,
 h3,
 h4 {
   font-family: 'Orbitron', sans-serif;
 }
+h2 {
+  font-size: 22px;
+}
 h3 {
   font-size: 0.8em;
 }
 .set-simulation-state-button {
   position: absolute;
-  top: 15px;
+  top: 20px;
   left: 220px;
   cursor: pointer;
 }
@@ -697,6 +738,7 @@ h3 {
   height: calc(100vh - 45px);
   width: 280px;
   padding: 15px;
+  padding-bottom: 45px;
   border-left: 1px solid #545454;
   float: right;
   overflow-y: auto;
@@ -807,6 +849,34 @@ h3 {
 .fade-leave.fade-leave-active {
   opacity: 0;
   transition: opacity 250ms ease-in;
+}
+.fall-enter {
+  max-height: 0;
+}
+.fall-enter.fall-enter-active {
+  max-height: 150px;
+  transition: max-height 150ms ease-in;
+}
+.fall-leave {
+  max-height: 150px;
+}
+.fall-leave.fall-leave-active {
+  max-height: 0;
+  transition: max-height 150ms ease-in;
+}
+.left-enter {
+  left: -200px;
+}
+.left-enter.left-enter-active {
+  left: 5px;
+  transition: left 150ms ease-in;
+}
+.left-leave {
+  left: 5px;
+}
+.left-leave.left-leave-active {
+  left: -200px;
+  transition: left 150ms ease-in;
 }
 .slide-enter {
   margin-right: -280px;
@@ -901,7 +971,7 @@ h3 {
 }
 .button {
   width: 100%;
-  padding: 5px;
+  padding: 15px;
   background-color: #191919;
   border: 1px solid #545454;
   text-align: center;
@@ -915,7 +985,7 @@ h3 {
 }
 .top {
   display: block;
-  margin-top: 12px;
+  margin-top: 28px;
 }
 * {
   box-sizing: border-box;
@@ -947,18 +1017,24 @@ body i {
   font-family: FontAwesome;
   font-style: normal;
 }
+label {
+  font-size: 14px;
+}
 h1,
 h2,
 h3,
 h4 {
   font-family: 'Orbitron', sans-serif;
 }
+h2 {
+  font-size: 22px;
+}
 h3 {
   font-size: 0.8em;
 }
 .set-simulation-state-button {
   position: absolute;
-  top: 15px;
+  top: 20px;
   left: 220px;
   cursor: pointer;
 }
@@ -1083,6 +1159,7 @@ h3 {
   height: calc(100vh - 45px);
   width: 280px;
   padding: 15px;
+  padding-bottom: 45px;
   border-left: 1px solid #545454;
   float: right;
   overflow-y: auto;
@@ -1193,6 +1270,34 @@ h3 {
 .fade-leave.fade-leave-active {
   opacity: 0;
   transition: opacity 250ms ease-in;
+}
+.fall-enter {
+  max-height: 0;
+}
+.fall-enter.fall-enter-active {
+  max-height: 150px;
+  transition: max-height 150ms ease-in;
+}
+.fall-leave {
+  max-height: 150px;
+}
+.fall-leave.fall-leave-active {
+  max-height: 0;
+  transition: max-height 150ms ease-in;
+}
+.left-enter {
+  left: -200px;
+}
+.left-enter.left-enter-active {
+  left: 5px;
+  transition: left 150ms ease-in;
+}
+.left-leave {
+  left: 5px;
+}
+.left-leave.left-leave-active {
+  left: -200px;
+  transition: left 150ms ease-in;
 }
 .slide-enter {
   margin-right: -280px;
@@ -1289,11 +1394,13 @@ h3 {
   width: inherit;
   background-color: #191919;
   border: 1px solid #545454;
-  padding: 5px;
+  padding: 15px;
+  line-height: 22px;
   cursor: pointer;
 }
 .selected-option i {
   float: right;
+  transition: transform 0.3s ease-in;
 }
 .options {
   position: absolute;
@@ -1303,12 +1410,13 @@ h3 {
   border: 1px solid #545454;
   border-top: none;
   max-height: 150px;
+  white-space: nowrap;
   overflow: auto;
   cursor: pointer;
 }
 .options * {
   display: block;
-  padding: 5px;
+  padding: 15px;
   border-bottom: 1px solid #000;
 }
 .options *:hover {
@@ -1322,7 +1430,7 @@ h3 {
 }
 .top {
   display: block;
-  margin-top: 12px;
+  margin-top: 28px;
 }
 * {
   box-sizing: border-box;
@@ -1354,18 +1462,24 @@ body i {
   font-family: FontAwesome;
   font-style: normal;
 }
+label {
+  font-size: 14px;
+}
 h1,
 h2,
 h3,
 h4 {
   font-family: 'Orbitron', sans-serif;
 }
+h2 {
+  font-size: 22px;
+}
 h3 {
   font-size: 0.8em;
 }
 .set-simulation-state-button {
   position: absolute;
-  top: 15px;
+  top: 20px;
   left: 220px;
   cursor: pointer;
 }
@@ -1490,6 +1604,7 @@ h3 {
   height: calc(100vh - 45px);
   width: 280px;
   padding: 15px;
+  padding-bottom: 45px;
   border-left: 1px solid #545454;
   float: right;
   overflow-y: auto;
@@ -1600,6 +1715,34 @@ h3 {
 .fade-leave.fade-leave-active {
   opacity: 0;
   transition: opacity 250ms ease-in;
+}
+.fall-enter {
+  max-height: 0;
+}
+.fall-enter.fall-enter-active {
+  max-height: 150px;
+  transition: max-height 150ms ease-in;
+}
+.fall-leave {
+  max-height: 150px;
+}
+.fall-leave.fall-leave-active {
+  max-height: 0;
+  transition: max-height 150ms ease-in;
+}
+.left-enter {
+  left: -200px;
+}
+.left-enter.left-enter-active {
+  left: 5px;
+  transition: left 150ms ease-in;
+}
+.left-leave {
+  left: 5px;
+}
+.left-leave.left-leave-active {
+  left: -200px;
+  transition: left 150ms ease-in;
 }
 .slide-enter {
   margin-right: -280px;
@@ -1695,33 +1838,37 @@ h3 {
 .toggle {
   display: block;
   background-color: #000;
-  padding: 6px 40px 6px 5px;
+  padding: 18px 30px 18px 15px;
   width: 100%;
   position: relative;
   border: 1px solid #545454;
   cursor: pointer;
 }
 .toggle span {
-  width: 30px;
+  width: 60px;
   height: 100%;
   background-color: #191919;
   display: inline-block;
   position: absolute;
   right: 0;
   top: 0;
+  font-size: 18px;
   z-index: 1;
   text-align: center;
   font-family: sans-serif;
+  font-weight: bold;
 }
 .toggle span:before {
   content: 'N';
-  line-height: 30px;
+  color: red;
+  line-height: 50px;
 }
 .toggle input[type='checkbox'] {
   opacity: 0;
   position: absolute;
 }
 .toggle input[type='checkbox']:checked + span:before {
+  color: green;
   content: 'Y';
 }
 .absolute {
@@ -1732,7 +1879,7 @@ h3 {
 }
 .top {
   display: block;
-  margin-top: 12px;
+  margin-top: 28px;
 }
 * {
   box-sizing: border-box;
@@ -1764,18 +1911,24 @@ body i {
   font-family: FontAwesome;
   font-style: normal;
 }
+label {
+  font-size: 14px;
+}
 h1,
 h2,
 h3,
 h4 {
   font-family: 'Orbitron', sans-serif;
 }
+h2 {
+  font-size: 22px;
+}
 h3 {
   font-size: 0.8em;
 }
 .set-simulation-state-button {
   position: absolute;
-  top: 15px;
+  top: 20px;
   left: 220px;
   cursor: pointer;
 }
@@ -1900,6 +2053,7 @@ h3 {
   height: calc(100vh - 45px);
   width: 280px;
   padding: 15px;
+  padding-bottom: 45px;
   border-left: 1px solid #545454;
   float: right;
   overflow-y: auto;
@@ -2010,6 +2164,34 @@ h3 {
 .fade-leave.fade-leave-active {
   opacity: 0;
   transition: opacity 250ms ease-in;
+}
+.fall-enter {
+  max-height: 0;
+}
+.fall-enter.fall-enter-active {
+  max-height: 150px;
+  transition: max-height 150ms ease-in;
+}
+.fall-leave {
+  max-height: 150px;
+}
+.fall-leave.fall-leave-active {
+  max-height: 0;
+  transition: max-height 150ms ease-in;
+}
+.left-enter {
+  left: -200px;
+}
+.left-enter.left-enter-active {
+  left: 5px;
+  transition: left 150ms ease-in;
+}
+.left-leave {
+  left: 5px;
+}
+.left-leave.left-leave-active {
+  left: -200px;
+  transition: left 150ms ease-in;
 }
 .slide-enter {
   margin-right: -280px;
@@ -2103,8 +2285,8 @@ h3 {
   }
 }
 .range-wrapper {
-  width: 90%;
-  height: 50px;
+  width: 80%;
+  height: 65px;
   float: left;
 }
 input.slider[type='range'] {
@@ -2112,25 +2294,26 @@ input.slider[type='range'] {
   width: 100%;
   background: #191919;
   border: 1px solid #545454;
-  height: 25px;
+  height: 40px;
   padding: 5px;
 }
 input.slider[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   background-color: #191919;
   border: 1px solid #545454;
-  width: 10px;
-  height: 10px;
-  border-radius: 7px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
 }
 input.slider[type='range']:focus {
   outline: none;
 }
 .slider-value {
   padding: 5px;
-  height: 25px;
+  height: 40px;
   border: 1px solid #545454;
   border-bottom: none;
+  line-height: 30px;
   width: 100%;
   text-align: center;
   overflow: hidden;
@@ -2138,9 +2321,9 @@ input.slider[type='range']:focus {
 }
 .slider-button {
   background-color: #000;
-  height: 25px;
+  height: 40px;
   display: block;
-  width: 10%;
+  width: 20%;
   cursor: pointer;
   border: 1px solid #545454;
   border-left: none;
@@ -2157,7 +2340,7 @@ input.slider[type='range']:focus {
 }
 .top {
   display: block;
-  margin-top: 12px;
+  margin-top: 28px;
 }
 * {
   box-sizing: border-box;
@@ -2189,18 +2372,24 @@ body i {
   font-family: FontAwesome;
   font-style: normal;
 }
+label {
+  font-size: 14px;
+}
 h1,
 h2,
 h3,
 h4 {
   font-family: 'Orbitron', sans-serif;
 }
+h2 {
+  font-size: 22px;
+}
 h3 {
   font-size: 0.8em;
 }
 .set-simulation-state-button {
   position: absolute;
-  top: 15px;
+  top: 20px;
   left: 220px;
   cursor: pointer;
 }
@@ -2325,6 +2514,7 @@ h3 {
   height: calc(100vh - 45px);
   width: 280px;
   padding: 15px;
+  padding-bottom: 45px;
   border-left: 1px solid #545454;
   float: right;
   overflow-y: auto;
@@ -2435,6 +2625,34 @@ h3 {
 .fade-leave.fade-leave-active {
   opacity: 0;
   transition: opacity 250ms ease-in;
+}
+.fall-enter {
+  max-height: 0;
+}
+.fall-enter.fall-enter-active {
+  max-height: 150px;
+  transition: max-height 150ms ease-in;
+}
+.fall-leave {
+  max-height: 150px;
+}
+.fall-leave.fall-leave-active {
+  max-height: 0;
+  transition: max-height 150ms ease-in;
+}
+.left-enter {
+  left: -200px;
+}
+.left-enter.left-enter-active {
+  left: 5px;
+  transition: left 150ms ease-in;
+}
+.left-leave {
+  left: 5px;
+}
+.left-leave.left-leave-active {
+  left: -200px;
+  transition: left 150ms ease-in;
 }
 .slide-enter {
   margin-right: -280px;
