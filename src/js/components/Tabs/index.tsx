@@ -67,7 +67,7 @@ export default ({
           <div className={tabsContentClassName}>
             {!noCloseButton && (
               <i
-                className="fa fa-window-close fa-2x tabs-close-button"
+                className="fa fa-window-close fa-3x tabs-close-button"
                 onClick={() => setSelectedTabIndex(-1)}
               />
             )}

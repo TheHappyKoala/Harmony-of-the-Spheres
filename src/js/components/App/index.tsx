@@ -80,6 +80,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
           selectedOptionCssClassName="selected-option"
           optionsWrapperCssClass="scenario-menu"
           dynamicChildrenLen={scenarios.length}
+          transition={{ name: 'left', enterTimeout: 150, leaveTimeout: 150 }}
         >
           {scenarios.map(scenario => (
             <div
@@ -107,7 +108,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
           }
         >
           <span>
-            <i className="fas fa-save fa-2x" />Save
+            <i className="fas fa-save fa-3x" />Save
           </span>
         </Button>
         <Button
@@ -117,7 +118,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
           }
         >
           <i
-            className={`fas fa-${scenario.playing ? 'pause' : 'play'} fa-lg`}
+            className={`fas fa-${scenario.playing ? 'pause' : 'play'} fa-3x`}
           />
         </Button>
         <Tabs
@@ -125,7 +126,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
           tabsContentClassName="sidebar-content"
           transition={{ name: 'slide', enterTimeout: 250, leaveTimeout: 250 }}
         >
-          <div data-label="Physics" data-icon="fas fa-cube fa-2x">
+          <div data-label="Physics" data-icon="fas fa-cube fa-3x">
             <Physics
               integrator={scenario.integrator}
               useBarnesHut={scenario.useBarnesHut}
@@ -144,7 +145,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               modifyScenarioProperty={modifyScenarioProperty}
             />
           </div>
-          <div data-label="Graphics" data-icon="fas fa-paint-brush fa-2x">
+          <div data-label="Graphics" data-icon="fas fa-paint-brush fa-3x">
             <Graphics
               barycenter={scenario.barycenter}
               trails={scenario.trails}
@@ -155,7 +156,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               modifyScenarioProperty={modifyScenarioProperty}
             />
           </div>
-          <div data-label="Camera" data-icon="fas fa-camera-retro fa-2x">
+          <div data-label="Camera" data-icon="fas fa-camera-retro fa-3x">
             <Camera
               rotatingReferenceFrame={scenario.rotatingReferenceFrame}
               cameraPosition={scenario.cameraPosition}
@@ -164,7 +165,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               modifyScenarioProperty={modifyScenarioProperty}
             />
           </div>
-          <div data-label="Masses" data-icon="fas fa-globe fa-2x">
+          <div data-label="Masses" data-icon="fas fa-globe fa-3x">
             <Masses
               massBeingModified={scenario.massBeingModified}
               masses={scenario.masses}
@@ -179,7 +180,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               deleteMass={deleteMass}
             />
           </div>
-          <div data-label="Add" data-icon="fas fa-plus-circle fa-2x">
+          <div data-label="Add" data-icon="fas fa-plus-circle fa-3x">
             <AddMass
               a={scenario.a}
               e={scenario.e}

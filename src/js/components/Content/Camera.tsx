@@ -34,6 +34,7 @@ export default ({
       selectedOptionCssClassName="selected-option"
       optionsWrapperCssClass="options"
       dynamicChildrenLen={masses.length}
+      transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
     >
       <div
         data-name="Origo"
@@ -87,6 +88,7 @@ export default ({
       selectedOptionCssClassName="selected-option"
       optionsWrapperCssClass="options"
       dynamicChildrenLen={masses.length}
+      transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
     >
       <div
         data-name="Free"
@@ -140,6 +142,7 @@ export default ({
       selectedOptionCssClassName="selected-option"
       optionsWrapperCssClass="options"
       dynamicChildrenLen={masses.length}
+      transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
     >
       <div
         data-name="Origo"

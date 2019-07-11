@@ -8,6 +8,7 @@ import React, {
   Children,
   useEffect
 } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './Dropdown.less';
 
 interface DropdownProps {
@@ -18,6 +19,11 @@ interface DropdownProps {
     activeCssClass: string;
     optionsCssClass: string;
     identifier: string;
+  };
+  transition: {
+    name?: string;
+    enterTimeout: number | boolean;
+    leaveTimeout: number | boolean;
   };
   dropdownWrapperCssClassName: string;
   selectedOptionCssClassName: string;
@@ -33,6 +39,7 @@ export default memo(
     dropdownWrapperCssClassName,
     optionsWrapperCssClass,
     selectedOptionCssClassName,
+    transition,
     dynamicChildrenLen
   }: DropdownProps): ReactElement => {
     const [options, setOptions] = useState<boolean>(false);
@@ -79,41 +86,48 @@ export default memo(
         <div onClick={handleOpenOptions} className={selectedOptionCssClassName}>
           {selectedOption}
           <i
-            className={`fa fa-chevron-circle-${options ? 'up' : 'down'} fa-lg`}
+            className={'fa fa-chevron-circle-down fa-2x'}
+            style={{ transform: `rotate(${options ? '-180' : '0'}deg)` }}
           />
         </div>
-        {options && (
-          <div ref={optionsWrapper} className={optionsWrapperCssClass}>
-            {tabs && (
-              <Fragment>
-                <ul ref={dropdownTabs} className={tabs.cssClass}>
-                  {tabsLabels.map(tabLabel => (
-                    <li
-                      key={tabLabel}
-                      onClick={() => setSelectedTab(tabLabel)}
-                      className={
-                        selectedTab === tabLabel ? tabs.activeCssClass : ''
+        <ReactCSSTransitionGroup
+          transitionName={transition.name}
+          transitionEnterTimeout={transition.enterTimeout}
+          transitionLeaveTimeout={transition.leaveTimeout}
+        >
+          {options && (
+            <div ref={optionsWrapper} className={optionsWrapperCssClass}>
+              {tabs && (
+                <Fragment>
+                  <ul ref={dropdownTabs} className={tabs.cssClass}>
+                    {tabsLabels.map(tabLabel => (
+                      <li
+                        key={tabLabel}
+                        onClick={() => setSelectedTab(tabLabel)}
+                        className={
+                          selectedTab === tabLabel ? tabs.activeCssClass : ''
+                        }
+                      >
+                        {tabLabel}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className={tabs.optionsCssClass} ref={optionsWithTabs}>
+                    {Children.map(
+                      children,
+                      (option: ReactElement): ReactElement => {
+                        if (option.props['data-identifier'] === selectedTab)
+                          return option;
+                        else return null;
                       }
-                    >
-                      {tabLabel}
-                    </li>
-                  ))}
-                </ul>
-                <div className={tabs.optionsCssClass} ref={optionsWithTabs}>
-                  {Children.map(
-                    children,
-                    (option: ReactElement): ReactElement => {
-                      if (option.props['data-identifier'] === selectedTab)
-                        return option;
-                      else return null;
-                    }
-                  )}
-                </div>
-              </Fragment>
-            )}
-            {!tabs && children}
-          </div>
-        )}
+                    )}
+                  </div>
+                </Fragment>
+              )}
+              {!tabs && children}
+            </div>
+          )}
+        </ReactCSSTransitionGroup>
       </div>
     );
   },

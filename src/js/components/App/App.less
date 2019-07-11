@@ -17,7 +17,7 @@
 
 .top {
   display: block;
-  margin-top: 12px;
+  margin-top: 28px;
 }
 
 * {
@@ -56,11 +56,19 @@ body {
   }
 }
 
+label {
+  font-size: 14px;
+}
+
 h1,
 h2,
 h3,
 h4 {
   font-family: 'Orbitron', sans-serif;
+}
+
+h2 {
+  font-size: 22px;
 }
 
 h3 {
@@ -69,7 +77,7 @@ h3 {
 
 .set-simulation-state-button {
   .absolute();
-  top: 15px;
+  top: 20px;
   left: 220px;
   cursor: pointer;
   &:hover {
@@ -197,6 +205,7 @@ h3 {
     height: calc(100vh - 45px);
     width: 280px;
     padding: @fat-padding;
+    padding-bottom: 45px;
     border-left: @border;
     float: right;
     overflow-y: auto;
@@ -317,6 +326,42 @@ h3 {
 .fade-leave.fade-leave-active {
   opacity: 0;
   transition: opacity 250ms ease-in;
+}
+
+.fall-enter {
+  max-height: 0;
+}
+
+.fall-enter.fall-enter-active {
+  max-height: 150px;
+  transition: max-height 150ms ease-in;
+}
+
+.fall-leave {
+  max-height: 150px;
+}
+
+.fall-leave.fall-leave-active {
+  max-height: 0;
+  transition: max-height 150ms ease-in;
+}
+
+.left-enter {
+  left: -200px;
+}
+
+.left-enter.left-enter-active {
+  left: 5px;
+  transition: left 150ms ease-in;
+}
+
+.left-leave {
+  left: 5px;
+}
+
+.left-leave.left-leave-active {
+  left: -200px;
+  transition: left 150ms ease-in;
 }
 
 .slide-enter {

@@ -4,10 +4,12 @@
   width: inherit;
   background-color: @input;
   border: @border;
-  padding: @skinny-padding;
+  padding: @fat-padding;
+  line-height: 22px;
   cursor: pointer;
   i {
     float: right;
+    transition: transform 0.3s ease-in;
   }
 }
 
@@ -19,11 +21,12 @@
   border: @border;
   border-top: none;
   max-height: 150px;
+  white-space: nowrap;
   overflow: auto;
   cursor: pointer;
   * {
     display: block;
-    padding: @skinny-padding;
+    padding: @fat-padding;
     border-bottom: 1px solid #000;
     &:hover {
       font-weight: bold;

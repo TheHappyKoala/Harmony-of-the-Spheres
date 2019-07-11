@@ -63,6 +63,7 @@ export default ({
         dropdownWrapperCssClassName="tabs-dropdown-wrapper"
         optionsWrapperCssClass="options"
         dynamicChildrenLen={integrators.length}
+        transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
       >
         {integrators.map(integrator => (
           <div
@@ -143,7 +144,7 @@ export default ({
             step={dt / 100}
           />
           <Toggle
-            label="Advanced Delta Time Controls"
+            label="Advanced DT Controls"
             checked={displayAdvancedDeltaTimeControls}
             callback={() =>
               setAdvancedDeltaTimeControls(!displayAdvancedDeltaTimeControls)
@@ -211,6 +212,7 @@ export default ({
             selectedOptionCssClassName="selected-option"
             optionsWrapperCssClass="options"
             dynamicChildrenLen={masses.length}
+            transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
           >
             {masses.map(mass => (
               <div
@@ -240,6 +242,7 @@ export default ({
             selectedOptionCssClassName="selected-option"
             optionsWrapperCssClass="options"
             dynamicChildrenLen={masses.length}
+            transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
           >
             {masses.map(mass => (
               <div
