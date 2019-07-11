@@ -16,7 +16,6 @@ interface ParticlesManifestationType {
   max: number;
   type: string;
   hsl: [number, number, number];
-  twinklingParticles: Boolean;
 }
 
 export default class extends Object3D {
@@ -26,7 +25,6 @@ export default class extends Object3D {
   type: string;
   max: number;
   hsl: [number, number, number];
-  twinklingParticles: Boolean;
 
   constructor({
     particles,
@@ -34,8 +32,7 @@ export default class extends Object3D {
     size,
     max,
     type,
-    hsl,
-    twinklingParticles
+    hsl
   }: ParticlesManifestationType) {
     super();
 
@@ -50,8 +47,6 @@ export default class extends Object3D {
     this.max = max;
 
     this.hsl = hsl;
-
-    this.twinklingParticles = twinklingParticles;
 
     this.getParticles();
   }
@@ -123,10 +118,6 @@ export default class extends Object3D {
 
     const scenarioScale = this.scenarioScale;
 
-    let time;
-
-    if (this.twinklingParticles) time = Date.now() * 0.005;
-
     for (let i = 0; i < particlesLen; i++) {
       const particle = particles[i];
 
@@ -140,11 +131,7 @@ export default class extends Object3D {
 
       j += 3;
 
-      const size = this.size;
-
-      if (this.twinklingParticles)
-        sizes[i] = size * 0.7 + size * 0.6 * Math.sin(0.001 * i + time);
-      else sizes[i] = size;
+      sizes[i] = this.size;
     }
 
     geometry.attributes.size.needsUpdate = true;

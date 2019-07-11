@@ -7,9 +7,7 @@ interface GraphicsProps {
   barycenter: boolean;
   trails: boolean;
   labels: boolean;
-  background: boolean;
   sizeAttenuation: boolean;
-  twinklingParticles: boolean;
 }
 
 export default ({
@@ -17,9 +15,7 @@ export default ({
   barycenter,
   trails,
   labels,
-  background,
-  sizeAttenuation,
-  twinklingParticles
+  sizeAttenuation
 }: GraphicsProps): ReactElement => (
   <Fragment>
     <h2>Graphics</h2>
@@ -54,32 +50,12 @@ export default ({
       }
     />
     <Toggle
-      label="Starfield Background"
-      checked={background}
-      callback={() =>
-        modifyScenarioProperty({
-          key: 'background',
-          value: !background
-        })
-      }
-    />
-    <Toggle
       label="Particle Size Attenuation"
       checked={sizeAttenuation}
       callback={() =>
         modifyScenarioProperty({
           key: 'sizeAttenuation',
           value: !sizeAttenuation
-        })
-      }
-    />
-    <Toggle
-      label="Twinkling Particles"
-      checked={twinklingParticles}
-      callback={() =>
-        modifyScenarioProperty({
-          key: 'twinklingParticles',
-          value: !twinklingParticles
         })
       }
     />

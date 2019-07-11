@@ -150,9 +150,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               barycenter={scenario.barycenter}
               trails={scenario.trails}
               labels={scenario.labels}
-              background={scenario.background}
               sizeAttenuation={scenario.sizeAttenuation}
-              twinklingParticles={scenario.twinklingParticles}
               modifyScenarioProperty={modifyScenarioProperty}
             />
           </div>

@@ -69,7 +69,7 @@ export default {
     this.previousRotatingReferenceFrame = null;
     this.previousIntegrator = this.scenario.integrator;
 
-    this.scene.add(arena(this.manager));
+    this.scene.add(arena());
 
     this.ellipseCurve = new CustomEllipseCurve(
       0,
@@ -417,12 +417,6 @@ export default {
       this.previousIntegrator = this.scenario.integrator;
     }
 
-    const arena = this.scene.getObjectByName('Arena');
-
-    if (this.scenario.background && !arena.visible) arena.visible = true;
-
-    if (!this.scenario.background && arena.visible) arena.visible = false;
-
     if (this.scenario.particles) {
       const particleSystemMaterial = this.scene.getObjectByName('system')
         .material;
@@ -722,23 +716,8 @@ export default {
         main.lookAt(directionOfVelocity);
       }
 
-      if (cameraPosition === name) main.visible = false;
-      else main.visible = true;
-
-      const atmosphere = massManifestation.getObjectByName('Atmosphere');
-
-      if (atmosphere) {
-        if (radius * 28 > cameraDistanceToFocus && cameraPosition !== name)
-          atmosphere.visible = true;
-        else atmosphere.visible = false;
-      }
-
-      const clouds = massManifestation.getObjectByName('Clouds');
-
-      if (clouds) {
-        if (cameraPosition === name) clouds.visible = false;
-        else clouds.visible = true;
-      }
+      if (cameraPosition === name) massManifestation.visible = false;
+      else massManifestation.visible = true;
     }
 
     if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame) {
@@ -750,14 +729,11 @@ export default {
       }
     }
 
-    if (this.scenario.particles) {
+    if (this.scenario.particles)
       this.particles.draw(
         this.particlePhysics.particles,
         this.rotatingReferenceFrame
       );
-
-      this.particles.twinklingParticles = this.scenario.twinklingParticles;
-    }
 
     if (this.scenario.playing && this.scenario.collisions)
       CollisionsService.doCollisions(

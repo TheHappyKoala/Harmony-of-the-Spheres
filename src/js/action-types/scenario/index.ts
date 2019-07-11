@@ -46,9 +46,7 @@ export interface ScenarioProps {
   massBeingModified: string;
   trails: boolean;
   labels: boolean;
-  background: boolean;
   sizeAttenuation: boolean;
-  twinklingParticles: boolean;
   rotatingReferenceFrame: string;
   logarithmicDepthBuffer: boolean;
   cameraPosition: string;

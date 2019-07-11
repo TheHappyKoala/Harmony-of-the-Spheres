@@ -14,7 +14,6 @@ export const scenarioDefaults = {
   barycenter: true,
   trails: true,
   labels: true,
-  background: true,
   particles: {
     max: 20000,
     size: 70,
@@ -28,7 +27,6 @@ export const scenarioDefaults = {
     hsl: [0.5, 0.7, 0.5]
   },
   sizeAttenuation: true,
-  twinklingParticles: false,
   maximumDistance: 0,
   distMax: 50,
   distMin: -50,
