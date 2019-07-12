@@ -290,7 +290,7 @@ export default class {
   insertMassInTree(mass: MassType, tree: TreeNodeType): void {
     const nChildren = tree.children.length;
     // if empty
-    if (nChildren == 0) {
+    if (nChildren === 0) {
       tree.children = [mass];
       return;
     } else if (nChildren == 1) {
@@ -299,7 +299,7 @@ export default class {
       this.insertMassInTree(mass, tree);
       this.insertMassInTree(<MassType>otherMass, tree);
       return;
-    } else if (nChildren == 8) {
+    } else if (nChildren === 8) {
       for (let i = 0; i < 8; i++) {
         if (
           this.isInTree({ x: mass.x, y: mass.y, z: mass.z }, <TreeNodeType>tree
@@ -320,7 +320,7 @@ export default class {
   fixCoM(tree: TreeNodeType): void {
     const nChildren = tree.children.length;
     const v = new H3();
-    if (nChildren == 8) {
+    if (nChildren === 8) {
       tree.CoM = v
         .set(tree.CoM)
         .multiplyByScalar(1 / tree.mass)
@@ -355,9 +355,9 @@ export default class {
   BHAccelerate(p: VectorType, tree: TreeNodeType): VectorType | null {
     const v = new H3();
     const nChildren = tree.children.length;
-    if (nChildren == 0) {
+    if (nChildren === 0) {
       return { x: 0, y: 0, z: 0 };
-    } else if (nChildren == 1) {
+    } else if (nChildren === 1) {
       const other = <MassType>tree.children[0];
       v.set({ x: other.x, y: other.y, z: other.z });
       const rVector = v.subtract(p);
@@ -374,7 +374,7 @@ export default class {
         )
         .toObject();
       return acc;
-    } else if (nChildren == 8) {
+    } else if (nChildren === 8) {
       const rVector = v.set(tree.CoM).subtract(p);
       const r = rVector.getLength();
       if (r == 0) {
