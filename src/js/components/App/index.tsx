@@ -23,6 +23,7 @@ import './App.less';
 
 const mapStateToProps = (state: AppState, ownProps: any) => ({
   scenarioName: ownProps.match.params.name,
+  scenarioCategory: ownProps.match.params.category,
   scenario: state.scenario
 });
 
@@ -41,6 +42,7 @@ interface AppProps {
   deleteMass: typeof scenarioActionCreators.deleteMass;
   addMass: typeof scenarioActionCreators.addMass;
   getScenario: typeof scenarioActionCreators.getScenario;
+  scenarioCategory: string;
   scenarioName: string;
 }
 
@@ -52,6 +54,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     deleteMass,
     addMass,
     getScenario,
+    scenarioCategory,
     scenarioName
   }: AppProps): ReactElement => {
     useEffect(
@@ -88,7 +91,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               key={scenario.name}
               data-identifier={scenario.type}
             >
-              <NavLink to={`/scenario/${scenario.name}`}>
+              <NavLink
+                to={`/category/${scenario.type}/scenario/${scenario.name}`}
+              >
                 <LazyDog
                   src={`./images/scenarios/${scenario.name}.png`}
                   alt={scenario.name}

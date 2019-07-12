@@ -13,9 +13,9 @@ render(
           <Redirect
             exact
             from="/"
-            to="/scenario/Earth VS. the Rings of Saturn"
+            to="/category/What-If/scenario/Earth VS. the Rings of Saturn"
           />
-          <Route path="/scenario/:name?" component={App} />
+          <Route path="/category/:category?/scenario/:name?" component={App} />
         </Switch>
       </div>
     </HashRouter>
