@@ -77,7 +77,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(
             cssClass: 'dropdown-tabs',
             activeCssClass: 'dropdown-tabs-active',
             optionsCssClass: 'dropdown-content',
-            identifier: 'category'
+            identifier: 'category',
+            selectedCategory: scenarioCategory
           }}
           dropdownWrapperCssClassName="scenario-dropdown-wrapper"
           selectedOptionCssClassName="selected-option"

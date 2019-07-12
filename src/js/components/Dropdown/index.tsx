@@ -19,6 +19,7 @@ interface DropdownProps {
     activeCssClass: string;
     optionsCssClass: string;
     identifier: string;
+    selectedCategory: string;
   };
   transition: {
     name?: string;
@@ -54,7 +55,11 @@ export default memo(
           tabsLabels.push(entry.props['data-identifier'])
       );
 
-      useEffect(() => setSelectedTab(tabsLabels[0]), []);
+      useEffect(
+        () =>
+          setSelectedTab(tabsLabels[tabsLabels.indexOf(tabs.selectedCategory)]),
+        []
+      );
     }
 
     const optionsWrapper = useRef(null);
