@@ -421,7 +421,14 @@ export default [
     name: 'Planet 9',
     bodyType: 'Planet'
   },
-  { m: 1, radius: 9e4, type: 'star', name: 'Sun', color: '#ffffff' },
+  {
+    m: 1,
+    radius: 11000,
+    type: 'star',
+    name: 'Sun',
+    color: '#ffffff',
+    temperature: 5000
+  },
   {
     m: 0.089,
     radius: 1490,

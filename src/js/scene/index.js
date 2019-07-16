@@ -579,13 +579,21 @@ export default {
           .dSquared
       );
 
-      massManifestation.draw(
-        this.manifestationPosition.x,
-        this.manifestationPosition.y,
-        this.manifestationPosition.z,
-        this.camera.position,
-        cameraDistanceToFocus
-      );
+      if (mass.type !== 'star')
+        massManifestation.draw(
+          this.manifestationPosition.x,
+          this.manifestationPosition.y,
+          this.manifestationPosition.z,
+          this.camera.position,
+          cameraDistanceToFocus
+        );
+      else
+        massManifestation.draw(
+          this.manifestationPosition.x,
+          this.manifestationPosition.y,
+          this.manifestationPosition.z,
+          this.camera
+        );
 
       const trail = massManifestation.getObjectByName('Trail');
 
