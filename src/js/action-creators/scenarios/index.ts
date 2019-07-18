@@ -9,6 +9,7 @@ import { Action, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import cachedFetch from '../../cachedFetch';
 import { scenarioDefaults } from '../../data/scenarios/defaults';
+import { removeDuplicatesByKey } from '../../utils';
 
 export const addScenario = (payload: {
   [x: string]: any;
@@ -65,14 +66,12 @@ export const fetchExoplanetArchiveScenarios = (
       }'&format=json`
     );
 
-    data.forEach((scenario: any) =>
+    removeDuplicatesByKey(data, 'pl_hostname').forEach((scenario: any) =>
       dispatch(
         addScenario({
           ...scenarioDefaults,
           name: scenario.pl_hostname,
           type: entry.alias,
-          elementsToVectors: true,
-          dt: 0.00001,
           exoPlanetArchive: true
         })
       )
