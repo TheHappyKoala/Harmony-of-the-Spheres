@@ -27,8 +27,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
   ({ app, fetchExoplanetArchiveScenarioss }: RouterProps): ReactElement => {
     useEffect(() => {
       fetchExoplanetArchiveScenarioss([
-        { name: 'Transiting Exoplanet Survey Satellite (TESS)', alias: 'TESS' },
-        { name: 'CoRoT', alias: 'CoRoT' }
+        { name: 'Transiting Exoplanet Survey Satellite (TESS)', alias: 'TESS' }
       ]);
     }, []);
 
