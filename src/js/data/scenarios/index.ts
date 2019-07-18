@@ -12,13 +12,11 @@ import martianSystem from './martianSystem';
 import newHorizons from './newHorizons';
 import cruithne from './cruithne';
 import plutoSystem from './thePlutonianSystem';
-import trappist1 from './trappist1';
 import planetNine from './planetNine';
 import shoemakerLevy9 from './shoemakerLevy9';
 import rh120 from './rh120';
 import ulysses from './ulysses';
 import hd98800 from './hd98800';
-import kepler1658 from './kepler1658';
 import venusPentagram from './venusPentagram';
 import uranianSystem from './Uranus';
 import lunarFreeReturn from './lunarFreeReturn';
@@ -26,8 +24,6 @@ import starOfDavid from './starOfDavid';
 import shenanigans from './shenanigans';
 import innerSolarSystem from './innerSolarSystem';
 import collisionsTest from './collisionsTest';
-import kepler11 from './kepler11';
-import the24sextantisSystem from './the24sextantisSystem';
 import masses from '../masses';
 import { MassTemplate } from '../../action-types/scenario';
 import { scenarioDefaults } from './defaults';
@@ -126,15 +122,11 @@ export const scenarios = [
   hd98800,
   collisionsTest,
   rosetta,
-  trappist1,
   innerSolarSystem,
   lunarFreeReturn,
-  kepler11,
-  the24sextantisSystem,
   shenanigans,
   venusPentagram,
   oumuamua,
-  kepler1658,
   earthMoonSystem,
   jovianSystem,
   threeBodyCoreography,

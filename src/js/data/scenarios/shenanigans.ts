@@ -1,6 +1,6 @@
 export default {
   name: 'Three Body Shenanigans',
-  type: 'Choreography',
+  type: 'Stars',
   g: 100,
   dt: 0.05,
   elapsedTime: 0,

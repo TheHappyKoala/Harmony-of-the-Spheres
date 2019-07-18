@@ -1,6 +1,6 @@
 export default {
   name: 'The Figure Eight',
-  type: 'Choreography',
+  type: 'Stars',
   g: 100,
   dt: 0.01,
   elapsedTime: 0,

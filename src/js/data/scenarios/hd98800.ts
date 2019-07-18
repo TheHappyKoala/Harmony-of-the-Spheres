@@ -1,7 +1,7 @@
 export default {
   name: 'HD 98800 B',
   integrator: 'RK4',
-  type: 'Exosystem',
+  type: 'Stars',
   g: 100,
   dt: 0.0005,
   elapsedTime: 0,

@@ -17,14 +17,13 @@ export function removeDuplicatesByKey(
   arr: { [x: string]: any }[],
   key: string
 ) {
-  var trimmedArray = [];
-  var values = [];
-  var value;
+  const trimmedArray = [];
+  const values = [];
 
   const arrLen = arr.length;
 
-  for (var i = 0; i < arrLen; i++) {
-    value = arr[i][key];
+  for (let i = 0; i < arrLen; i++) {
+    let value = arr[i][key];
 
     if (values.indexOf(value) === -1) {
       trimmedArray.push(arr[i]);
