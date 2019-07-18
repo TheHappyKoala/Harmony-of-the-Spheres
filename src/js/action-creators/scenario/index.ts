@@ -1,6 +1,6 @@
 import { AppState } from '../../reducers';
 import filterScenarios from '../../data/scenarios';
-import { getObjFromArrByKeyValuePair } from '../../utils';
+import { getRandomColor, getObjFromArrByKeyValuePair } from '../../utils';
 import {
   getOrbit,
   elementsToVectors,
@@ -95,6 +95,7 @@ export const getScenario = (
             e: isNaN(entry.pl_orbeccen) ? 0 : entry.pl_orbeccen,
             w: isNaN(entry.pl_orblper) ? 0 : entry.pl_orblper,
             i: isNaN(entry.pl_orbinc) ? 0 : entry.pl_orbinc,
+            color: getRandomColor(),
             trailVertices: calculateOrbitalVertices(
               entry.pl_orbper * yearOverDays,
               dt
