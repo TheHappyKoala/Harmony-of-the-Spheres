@@ -423,7 +423,7 @@ export default [
   },
   {
     m: 1,
-    radius: 11000,
+    radius: 48837.20930232558,
     type: 'star',
     name: 'Sun',
     color: '#ffffff',

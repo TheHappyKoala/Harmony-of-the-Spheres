@@ -1,15 +1,17 @@
 import React, { ReactElement, Fragment, useState, useEffect } from 'react';
 import Button from '../Button';
-import { scenarios, saveScenario } from '../../data/scenarios';
 import { ScenarioProps } from '../../action-types/scenario';
+import { saveScenario } from '../../action-creators/scenarios';
 
 interface SaveScenarioProps {
-  scenario: ScenarioProps;
+  scenarios: any;
   closeWindowCallback: Function;
+  callback: typeof saveScenario;
 }
 
 export default ({
-  scenario,
+  scenarios,
+  callback,
   closeWindowCallback
 }: SaveScenarioProps): ReactElement => {
   const [scenarioName, setScenarioName] = useState();
@@ -39,10 +41,10 @@ export default ({
             callback={() => {
               if (
                 scenarios
-                  .map(scenario => scenario.name)
+                  .map((scenario: ScenarioProps) => scenario.name)
                   .indexOf(scenarioName) === -1
               ) {
-                saveScenario(scenario, scenarioName);
+                callback(scenarioName);
                 setValidation({
                   status: true,
                   feedback: `Simulation saved as ${scenarioName}`

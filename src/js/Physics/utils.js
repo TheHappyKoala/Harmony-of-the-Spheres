@@ -102,12 +102,12 @@ export function elementsToVectors(primary, masses, g) {
 
   const output = [primaryWithVectors];
 
-  const referencePlane = masses[0].i;
+  const referencePlane = !isNaN(masses[0].i) ? masses[0].i : 0;
 
   for (let i = 0; i < masses.length; i++) {
     const mass = masses[i];
 
-    mass.i = referencePlane - mass.i;
+    mass.i = referencePlane - (!isNaN(masses[0].i) ? masses[0].i : 0);
 
     output.push(getOrbit(primaryWithVectors, mass, g));
   }
@@ -124,7 +124,10 @@ export function degreesToRadians(degrees) {
 }
 
 export function calculateOrbitalVertices(orbitalPeriod, dt) {
-  return (orbitalPeriod / dt * 1.1).toFixed(0);
+  const maxVertices = 10000;
+  const orbitalVertices = parseFloat((orbitalPeriod / dt * 1.1).toFixed(0));
+
+  return orbitalVertices >= maxVertices ? maxVertices : orbitalVertices;
 }
 
 export function getRandomNumberInRange(min, max) {

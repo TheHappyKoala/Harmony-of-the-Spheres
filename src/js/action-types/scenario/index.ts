@@ -8,10 +8,12 @@ export interface ScenarioProps {
   name: string;
   playing: boolean;
   isLoaded: boolean;
-  elementsToVectors: boolean;
+  elementsToVectors?: boolean;
+  exoPlanetArchive?: boolean;
   integrator: string;
-  useBarnesHut: boolean;
+  useBarnesHut?: boolean;
   theta: number;
+  type: string;
   dt: number;
   tol: number;
   minDt: number;
@@ -51,7 +53,7 @@ export interface ScenarioProps {
   logarithmicDepthBuffer: boolean;
   cameraPosition: string;
   cameraFocus: string;
-  scenarioWikiUrl: string;
+  scenarioWikiUrl?: string;
   isMassBeingAdded: boolean;
   a: number;
   e: number;
@@ -61,7 +63,7 @@ export interface ScenarioProps {
 
 export interface GetScenarioAction {
   type: typeof GET_SCENARIO;
-  scenario: ScenarioProps;
+  scenario: { [x: string]: any };
 }
 
 export interface ScenarioProperty {

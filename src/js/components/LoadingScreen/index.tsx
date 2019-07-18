@@ -2,14 +2,14 @@ import React, { ReactElement } from 'react';
 import './LoadingScreen.less';
 
 interface LoadingScreenProps {
-  scenarioName: string;
+  whatIsLoding: string;
 }
 
-export default ({ scenarioName }: LoadingScreenProps): ReactElement => (
+export default ({ whatIsLoding }: LoadingScreenProps): ReactElement => (
   <div className="loading-screen-wrapper">
     <h1>Harmony of the Spheres</h1>
-    <p className="sub-title">{scenarioName}</p>
-    <p className="author-title">By Darrell A. Huffman</p>
+    <p className="sub-title">{whatIsLoding}</p>
+    <p className="author-title">Open Source Gravity Simulator</p>
     <p className="splash-screen-image-credit">
       North American solar eclipse of 21 August 2017 - Credit: ESO /{' '}
       <a

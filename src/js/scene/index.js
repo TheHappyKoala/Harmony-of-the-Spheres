@@ -126,7 +126,13 @@ export default {
     this.collisionCallback = this.collisionCallback.bind(this);
 
     setTimeout(() => {
-      store.dispatch(modifyScenarioProperty({ key: 'isLoaded', value: true }));
+      store.dispatch({
+        type: 'SET_LOADING',
+        payload: {
+          loading: false,
+          whatIsLoading: ''
+        }
+      });
       this.loop();
     }, 3000);
 

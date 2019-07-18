@@ -3,7 +3,7 @@ import { AppState } from '../../reducers';
 import { ScenarioProps } from '../../action-types/scenario';
 import { connect } from 'react-redux';
 import * as scenarioActionCreators from '../../action-creators/scenario';
-import LoadingScreen from '../LoadingScreen';
+import * as scenariosActionCreators from '../../action-creators/scenarios';
 import Renderer from '../Renderer';
 import Tabs from '../Tabs';
 import Button from '../Button';
@@ -17,14 +17,15 @@ import Graphics from '../Content/Graphics';
 import Camera from '../Content/Camera';
 import Masses from '../Content/Masses';
 import SaveScenario from '../Content/SaveScenario';
-import { scenarios } from '../../data/scenarios';
 import AddMass from '../Content/AddMass';
 import './App.less';
 
 const mapStateToProps = (state: AppState, ownProps: any) => ({
+  app: state.app,
   scenarioName: ownProps.match.params.name,
   scenarioCategory: ownProps.match.params.category,
-  scenario: state.scenario
+  scenario: state.scenario,
+  scenarios: state.scenarios
 });
 
 const mapDispatchToProps = {
@@ -32,7 +33,8 @@ const mapDispatchToProps = {
   modifyScenarioProperty: scenarioActionCreators.modifyScenarioProperty,
   modifyMassProperty: scenarioActionCreators.modifyMassProperty,
   addMass: scenarioActionCreators.addMass,
-  deleteMass: scenarioActionCreators.deleteMass
+  deleteMass: scenarioActionCreators.deleteMass,
+  saveScenario: scenariosActionCreators.saveScenario
 };
 
 interface AppProps {
@@ -42,20 +44,30 @@ interface AppProps {
   deleteMass: typeof scenarioActionCreators.deleteMass;
   addMass: typeof scenarioActionCreators.addMass;
   getScenario: typeof scenarioActionCreators.getScenario;
+  saveScenario: typeof scenariosActionCreators.saveScenario;
   scenarioCategory: string;
   scenarioName: string;
+  scenarios: ScenarioProps[];
+  app: {
+    booted: boolean;
+    loading: boolean;
+    whatIsLoading: string;
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   ({
+    app,
     scenario,
     modifyScenarioProperty,
     modifyMassProperty,
     deleteMass,
     addMass,
     getScenario,
+    saveScenario,
     scenarioCategory,
-    scenarioName
+    scenarioName,
+    scenarios
   }: AppProps): ReactElement => {
     useEffect(
       () => {
@@ -70,162 +82,181 @@ export default connect(mapStateToProps, mapDispatchToProps)(
 
     return (
       <Fragment>
-        <Renderer scenarioName={scenario.name} />
-        <Dropdown
-          selectedOption={scenario.name}
-          tabs={{
-            cssClass: 'dropdown-tabs',
-            activeCssClass: 'dropdown-tabs-active',
-            optionsCssClass: 'dropdown-content',
-            identifier: 'category',
-            selectedCategory: scenarioCategory
-          }}
-          dropdownWrapperCssClassName="scenario-dropdown-wrapper"
-          selectedOptionCssClassName="selected-option"
-          optionsWrapperCssClass="scenario-menu"
-          dynamicChildrenLen={scenarios.length}
-          transition={{ name: 'left', enterTimeout: 150, leaveTimeout: 150 }}
-        >
-          {scenarios.map(scenario => (
-            <div
-              className="scenario-menu-option"
-              key={scenario.name}
-              data-identifier={scenario.type}
+        {app.booted && (
+          <Fragment>
+            <Renderer scenarioName={scenario.name} />
+            <Dropdown
+              selectedOption={scenario.name}
+              tabs={{
+                cssClass: 'dropdown-tabs',
+                activeCssClass: 'dropdown-tabs-active',
+                optionsCssClass: 'dropdown-content',
+                identifier: 'category',
+                selectedCategory: scenarioCategory
+              }}
+              dropdownWrapperCssClassName="scenario-dropdown-wrapper"
+              selectedOptionCssClassName="selected-option"
+              optionsWrapperCssClass="scenario-menu"
+              dynamicChildrenLen={scenarios.length}
+              transition={{
+                name: 'left',
+                enterTimeout: 150,
+                leaveTimeout: 150
+              }}
             >
-              <NavLink
-                to={`/category/${scenario.type}/scenario/${scenario.name}`}
-              >
-                <LazyDog
-                  src={`./images/scenarios/${scenario.name}.png`}
-                  alt={scenario.name}
-                  caption={scenario.name}
-                  width={159.42028985507247}
-                  height={100}
-                  placeHolderIcon="fa fa-venus-mars fa-2x"
-                />
-              </NavLink>
-            </div>
-          ))}
-        </Dropdown>
-        <Button
-          cssClassName="save-scenario-button"
-          callback={() =>
-            setDisplay({ ...display, saveScenario: !display.saveScenario })
-          }
-        >
-          <span>
-            <i className="fas fa-save fa-3x" />Save
-          </span>
-        </Button>
-        <Button
-          cssClassName="set-simulation-state-button"
-          callback={() =>
-            modifyScenarioProperty({ key: 'playing', value: !scenario.playing })
-          }
-        >
-          <i
-            className={`fas fa-${scenario.playing ? 'pause' : 'play'} fa-3x`}
-          />
-        </Button>
-        <Tabs
-          tabsWrapperClassName="sidebar-wrapper"
-          tabsContentClassName="sidebar-content"
-          transition={{ name: 'slide', enterTimeout: 250, leaveTimeout: 250 }}
-        >
-          <div data-label="Physics" data-icon="fas fa-cube fa-3x">
-            <Physics
-              integrator={scenario.integrator}
-              useBarnesHut={scenario.useBarnesHut}
-              theta={scenario.theta}
-              dt={scenario.dt}
-              tol={scenario.tol}
-              minDt={scenario.minDt}
-              maxDt={scenario.maxDt}
-              systemBarycenter={scenario.systemBarycenter}
-              barycenterMassOne={scenario.barycenterMassOne}
-              barycenterMassTwo={scenario.barycenterMassTwo}
-              masses={scenario.masses}
-              collisions={scenario.collisions}
-              g={scenario.g}
-              softeningConstant={scenario.softeningConstant}
-              modifyScenarioProperty={modifyScenarioProperty}
-            />
-          </div>
-          <div data-label="Graphics" data-icon="fas fa-paint-brush fa-3x">
-            <Graphics
-              barycenter={scenario.barycenter}
-              trails={scenario.trails}
-              labels={scenario.labels}
-              sizeAttenuation={scenario.sizeAttenuation}
-              modifyScenarioProperty={modifyScenarioProperty}
-            />
-          </div>
-          <div data-label="Camera" data-icon="fas fa-camera-retro fa-3x">
-            <Camera
-              rotatingReferenceFrame={scenario.rotatingReferenceFrame}
-              cameraPosition={scenario.cameraPosition}
-              cameraFocus={scenario.cameraFocus}
-              masses={scenario.masses}
-              modifyScenarioProperty={modifyScenarioProperty}
-            />
-          </div>
-          <div data-label="Masses" data-icon="fas fa-globe fa-3x">
-            <Masses
-              massBeingModified={scenario.massBeingModified}
-              masses={scenario.masses}
-              maximumDistance={scenario.maximumDistance}
-              distMax={scenario.distMax}
-              distMin={scenario.distMin}
-              velMax={scenario.velMax}
-              velMin={scenario.velMin}
-              velStep={scenario.velStep}
-              modifyScenarioProperty={modifyScenarioProperty}
-              modifyMassProperty={modifyMassProperty}
-              deleteMass={deleteMass}
-            />
-          </div>
-          <div data-label="Add" data-icon="fas fa-plus-circle fa-3x">
-            <AddMass
-              a={scenario.a}
-              e={scenario.e}
-              w={scenario.w}
-              i={scenario.i}
-              primary={scenario.primary}
-              maximumDistance={scenario.maximumDistance}
-              masses={scenario.masses}
-              addMass={addMass}
-              modifyScenarioProperty={modifyScenarioProperty}
-            />
-          </div>
-        </Tabs>
-        <ReactCSSTransitionGroup
-          transitionName="fade"
-          transitionEnterTimeout={250}
-          transitionLeaveTimeout={250}
-        >
-          {display.saveScenario && (
-            <Modal
+              {scenarios.map(scenario => (
+                <div
+                  className="scenario-menu-option"
+                  data-identifier={scenario.type}
+                >
+                  <NavLink
+                    to={`/category/${scenario.type}/scenario/${scenario.name}`}
+                  >
+                    <LazyDog
+                      src={`./images/scenarios/${scenario.name}.png`}
+                      alt={scenario.name}
+                      caption={scenario.name}
+                      width={159.42028985507247}
+                      height={100}
+                      placeHolderIcon="fa fa-venus-mars fa-2x"
+                    />
+                  </NavLink>
+                </div>
+              ))}
+            </Dropdown>
+            <Button
+              cssClassName="save-scenario-button"
               callback={() =>
                 setDisplay({ ...display, saveScenario: !display.saveScenario })
               }
             >
-              <SaveScenario
-                scenario={scenario}
-                closeWindowCallback={() =>
-                  setDisplay({
-                    ...display,
-                    saveScenario: !display.saveScenario
-                  })
-                }
+              <span>
+                <i className="fas fa-save fa-3x" />Save
+              </span>
+            </Button>
+            <Button
+              cssClassName="set-simulation-state-button"
+              callback={() =>
+                modifyScenarioProperty({
+                  key: 'playing',
+                  value: !scenario.playing
+                })
+              }
+            >
+              <i
+                className={`fas fa-${
+                  scenario.playing ? 'pause' : 'play'
+                } fa-3x`}
               />
-            </Modal>
-          )}
-        </ReactCSSTransitionGroup>
-        {!scenario.isLoaded && <LoadingScreen scenarioName={scenario.name} />}
-        <div className="rotate-to-landscape-prompt">
-          <h1>Hey friend...</h1>
-          <p>Please rotate your device into landscape mode.</p>
-        </div>
+            </Button>
+            <Tabs
+              tabsWrapperClassName="sidebar-wrapper"
+              tabsContentClassName="sidebar-content"
+              transition={{
+                name: 'slide',
+                enterTimeout: 250,
+                leaveTimeout: 250
+              }}
+            >
+              <div data-label="Physics" data-icon="fas fa-cube fa-3x">
+                <Physics
+                  integrator={scenario.integrator}
+                  useBarnesHut={scenario.useBarnesHut}
+                  theta={scenario.theta}
+                  dt={scenario.dt}
+                  tol={scenario.tol}
+                  minDt={scenario.minDt}
+                  maxDt={scenario.maxDt}
+                  systemBarycenter={scenario.systemBarycenter}
+                  barycenterMassOne={scenario.barycenterMassOne}
+                  barycenterMassTwo={scenario.barycenterMassTwo}
+                  masses={scenario.masses}
+                  collisions={scenario.collisions}
+                  g={scenario.g}
+                  softeningConstant={scenario.softeningConstant}
+                  modifyScenarioProperty={modifyScenarioProperty}
+                />
+              </div>
+              <div data-label="Graphics" data-icon="fas fa-paint-brush fa-3x">
+                <Graphics
+                  barycenter={scenario.barycenter}
+                  trails={scenario.trails}
+                  labels={scenario.labels}
+                  sizeAttenuation={scenario.sizeAttenuation}
+                  modifyScenarioProperty={modifyScenarioProperty}
+                />
+              </div>
+              <div data-label="Camera" data-icon="fas fa-camera-retro fa-3x">
+                <Camera
+                  rotatingReferenceFrame={scenario.rotatingReferenceFrame}
+                  cameraPosition={scenario.cameraPosition}
+                  cameraFocus={scenario.cameraFocus}
+                  masses={scenario.masses}
+                  modifyScenarioProperty={modifyScenarioProperty}
+                />
+              </div>
+              <div data-label="Masses" data-icon="fas fa-globe fa-3x">
+                <Masses
+                  massBeingModified={scenario.massBeingModified}
+                  masses={scenario.masses}
+                  maximumDistance={scenario.maximumDistance}
+                  distMax={scenario.distMax}
+                  distMin={scenario.distMin}
+                  velMax={scenario.velMax}
+                  velMin={scenario.velMin}
+                  velStep={scenario.velStep}
+                  modifyScenarioProperty={modifyScenarioProperty}
+                  modifyMassProperty={modifyMassProperty}
+                  deleteMass={deleteMass}
+                />
+              </div>
+              <div data-label="Add" data-icon="fas fa-plus-circle fa-3x">
+                <AddMass
+                  a={scenario.a}
+                  e={scenario.e}
+                  w={scenario.w}
+                  i={scenario.i}
+                  primary={scenario.primary}
+                  maximumDistance={scenario.maximumDistance}
+                  masses={scenario.masses}
+                  addMass={addMass}
+                  modifyScenarioProperty={modifyScenarioProperty}
+                />
+              </div>
+            </Tabs>
+            <ReactCSSTransitionGroup
+              transitionName="fade"
+              transitionEnterTimeout={250}
+              transitionLeaveTimeout={250}
+            >
+              {display.saveScenario && (
+                <Modal
+                  callback={() =>
+                    setDisplay({
+                      ...display,
+                      saveScenario: !display.saveScenario
+                    })
+                  }
+                >
+                  <SaveScenario
+                    scenarios={scenarios}
+                    callback={saveScenario}
+                    closeWindowCallback={() =>
+                      setDisplay({
+                        ...display,
+                        saveScenario: !display.saveScenario
+                      })
+                    }
+                  />
+                </Modal>
+              )}
+            </ReactCSSTransitionGroup>
+            <div className="rotate-to-landscape-prompt">
+              <h1>Hey friend...</h1>
+              <p>Please rotate your device into landscape mode.</p>
+            </div>
+          </Fragment>
+        )}
       </Fragment>
     );
   }

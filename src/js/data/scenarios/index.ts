@@ -29,9 +29,10 @@ import collisionsTest from './collisionsTest';
 import kepler11 from './kepler11';
 import the24sextantisSystem from './the24sextantisSystem';
 import masses from '../masses';
-import { ScenarioProps, MassTemplate } from '../../action-types/scenario';
+import { MassTemplate } from '../../action-types/scenario';
 import { scenarioDefaults } from './defaults';
 import { MassType } from '../../Physics/types';
+import { ScenarioProps } from '../../action-types/scenario';
 import {
   calculateOrbitalVertices,
   elementsToVectors
@@ -53,6 +54,7 @@ const computeDerivedMassesData = (
     return {
       ...mass,
       m: 'm' in template ? template.m : 'm' in mass ? mass.m : 1e-9999,
+      temperature: 'temperature' in template ? template.temperature : 0,
       spacecraft: 'spacecraft' in template ? template.spacecraft : false,
       radius:
         'radius' in template
@@ -79,7 +81,7 @@ const computeDerivedMassesData = (
   });
 
 const computeDerivedScenarioData = (
-  scenario: ScenarioProps,
+  scenario: { [x: string]: any },
   scenarioDefaults: any
 ) => ({
   ...scenarioDefaults,
@@ -149,48 +151,17 @@ export const scenarios = [
   ulysses
 ];
 
-(() => {
-  let savedScenarios = JSON.parse(localStorage.getItem('scenarios'));
-  savedScenarios = Array.isArray(savedScenarios) ? savedScenarios : [];
-
-  for (let i = 0; i < savedScenarios.length; i++)
-    scenarios.push(savedScenarios[i]);
-})();
-
-export default (scenario: string): ScenarioProps => {
+export default (scenario: string, scenarios: any[]): ScenarioProps | any => {
   const selectedScenario: ScenarioProps = getObjFromArrByKeyValuePair(
     scenarios,
     'name',
     scenario
   );
 
+  if (selectedScenario.exoPlanetArchive === true) return selectedScenario;
+
   return computeDerivedScenarioData(
     JSON.parse(JSON.stringify(selectedScenario)),
     scenarioDefaults
   );
 };
-
-export function saveScenario(
-  scenario: ScenarioProps,
-  saveScenarioAs: string
-): void {
-  const scenarioToSave: any = {
-    ...scenario,
-    name: saveScenarioAs,
-    type: 'Saved Simulations',
-    playing: false,
-    isLoaded: false
-  };
-
-  scenarios.push(scenarioToSave);
-
-  const savedScenarios = JSON.parse(localStorage.getItem('scenarios'));
-
-  localStorage.setItem(
-    'scenarios',
-    JSON.stringify([
-      ...(Array.isArray(savedScenarios) ? savedScenarios : []),
-      scenarioToSave
-    ])
-  );
-}

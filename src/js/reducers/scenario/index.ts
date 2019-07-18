@@ -8,10 +8,10 @@ import {
   DELETE_MASS
 } from '../../action-types/scenario';
 import { MassType } from '../../Physics/types';
-import filterScenarios from '../../data/scenarios';
+import filterScenarios, { scenarios } from '../../data/scenarios';
 
 export default function(
-  state = filterScenarios('Earth VS. the Rings of Saturn'),
+  state = filterScenarios('Earth VS. the Rings of Saturn', scenarios),
   action: ScenarioActionTypes
 ): ScenarioProps {
   switch (action.type) {

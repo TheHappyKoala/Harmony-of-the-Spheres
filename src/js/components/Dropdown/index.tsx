@@ -5,8 +5,7 @@ import React, {
   Fragment,
   useState,
   useRef,
-  Children,
-  useEffect
+  Children
 } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './Dropdown.less';
@@ -44,7 +43,9 @@ export default memo(
     dynamicChildrenLen
   }: DropdownProps): ReactElement => {
     const [options, setOptions] = useState<boolean>(false);
-    const [selectedTab, setSelectedTab] = useState<string>('');
+    const [selectedTab, setSelectedTab] = useState<string>(
+      tabs && tabs.selectedCategory
+    );
 
     const tabsLabels: string[] = [];
 
@@ -53,12 +54,6 @@ export default memo(
         (entry: ReactElement) =>
           tabsLabels.indexOf(entry.props['data-identifier']) === -1 &&
           tabsLabels.push(entry.props['data-identifier'])
-      );
-
-      useEffect(
-        () =>
-          setSelectedTab(tabsLabels[tabsLabels.indexOf(tabs.selectedCategory)]),
-        []
       );
     }
 
