@@ -6,16 +6,13 @@ import saturn from './saturn';
 import threeBodyCoreography from './threeBodyCoreography';
 import earthMoonSystem from './earthMoonSystem';
 import oumuamua from './oumuamua';
-import rosetta from './rosetta';
 import tess from './tess';
 import martianSystem from './martianSystem';
-import newHorizons from './newHorizons';
 import cruithne from './cruithne';
 import plutoSystem from './thePlutonianSystem';
 import planetNine from './planetNine';
 import shoemakerLevy9 from './shoemakerLevy9';
 import rh120 from './rh120';
-import ulysses from './ulysses';
 import hd98800 from './hd98800';
 import venusPentagram from './venusPentagram';
 import uranianSystem from './Uranus';
@@ -121,7 +118,6 @@ export const scenarios = [
   uranianSystem,
   hd98800,
   collisionsTest,
-  rosetta,
   innerSolarSystem,
   lunarFreeReturn,
   shenanigans,
@@ -135,12 +131,10 @@ export const scenarios = [
   martianSystem,
   centaurs,
   saturnFull,
-  newHorizons,
   cruithne,
   starOfDavid,
   planetNine,
-  rh120,
-  ulysses
+  rh120
 ];
 
 export default (scenario: string, scenarios: any[]): ScenarioProps | any => {

@@ -3,15 +3,15 @@ export default {
   type: 'Solar System',
   integrator: 'RK4',
   g: 39.5,
-  dt: 0.000006,
+  dt: 0.00001,
   rotatingReferenceFrame: 'Jupiter',
-  labels: false,
-  cameraPosition: 'D/1993 F2-W',
+  labels: true,
+  cameraPosition: 'Free',
   cameraFocus: 'Origo',
   freeOrigo: {
-    x: -7480.213284753809,
-    y: -8163.220347463112,
-    z: 2139.892485956284
+    x: -10188.201041522296,
+    y: 7677.3601581006415,
+    z: 8520.764467240198
   },
   particles: {
     max: 40000,
