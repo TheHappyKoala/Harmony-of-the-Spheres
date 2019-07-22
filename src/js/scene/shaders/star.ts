@@ -8,14 +8,10 @@ export default {
   }
   `,
   fragment: `	
-  #include <common>
-
-
   uniform vec3 resolution;
   uniform vec3 starColor;
   uniform float time;
   uniform sampler2D texture;
-
 
   float snoise(vec3 uv, float res)	// by trisomie21
   {
