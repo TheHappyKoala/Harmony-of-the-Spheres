@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -8,6 +9,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       hash: true
+    }),
+    new webpack.DefinePlugin({
+      DEFAULT_SCENARIO: JSON.stringify('Earth VS. the Rings of Saturn'),
+      EXOPLANET_ARCHIVE_DATA: JSON.stringify([{ name: 'Transiting Exoplanet Survey Satellite (TESS)', alias: 'TESS' }])
     })
   ],
   module: {
