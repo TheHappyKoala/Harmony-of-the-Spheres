@@ -120,6 +120,18 @@ export default class {
     return this;
   }
 
+  dot(v: VectorType): number {
+    return this.x * v.x + this.y * v.y + this.z * v.z;
+  }
+
+  cross(v: VectorType): this {
+    this.x = this.y * v.z - this.z * v.y;
+    this.y = this.z * v.x - this.x * v.z;
+    this.z = this.x * v.y - this.y * v.x;
+
+    return this;
+  }
+
   rotate(axis: VectorType, angle: number): this {
     const radians = degreesToRadians(angle);
 
