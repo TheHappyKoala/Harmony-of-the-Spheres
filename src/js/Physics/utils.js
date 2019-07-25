@@ -102,7 +102,7 @@ export function elementsToVectors(primary, masses, g) {
 
   const output = [primaryWithVectors];
 
-  const referencePlane = !isNaN(masses[0].i) ? masses[0].i : 0;
+  const referencePlane = masses[0].i;
 
   for (let i = 0; i < masses.length; i++) {
     const mass = masses[i];

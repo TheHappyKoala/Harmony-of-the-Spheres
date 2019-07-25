@@ -423,8 +423,9 @@ export default [
   },
   {
     m: 1,
-    radius: 48837.20930232558,
+    radius: 9767.441860465116,
     type: 'star',
+    luminosity: 1,
     name: 'Sun',
     color: '#ffffff',
     temperature: 5000

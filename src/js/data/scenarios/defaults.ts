@@ -8,6 +8,8 @@ export const scenarioDefaults = {
   useBarnesHut: false,
   theta: 0.5,
   collisions: true,
+  habitableZone: false,
+  referenceOrbits: false,
   softeningConstant: 0,
   systemBarycenter: true,
   logarithmicDepthBuffer: false,

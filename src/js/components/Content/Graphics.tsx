@@ -8,6 +8,8 @@ interface GraphicsProps {
   trails: boolean;
   labels: boolean;
   sizeAttenuation: boolean;
+  habitableZone: boolean;
+  referenceOrbits: boolean;
 }
 
 export default ({
@@ -15,7 +17,9 @@ export default ({
   barycenter,
   trails,
   labels,
-  sizeAttenuation
+  sizeAttenuation,
+  habitableZone,
+  referenceOrbits
 }: GraphicsProps): ReactElement => (
   <Fragment>
     <h2>Graphics</h2>
@@ -56,6 +60,26 @@ export default ({
         modifyScenarioProperty({
           key: 'sizeAttenuation',
           value: !sizeAttenuation
+        })
+      }
+    />
+    <Toggle
+      label="Habitable Zone"
+      checked={habitableZone}
+      callback={() =>
+        modifyScenarioProperty({
+          key: 'habitableZone',
+          value: !habitableZone
+        })
+      }
+    />
+    <Toggle
+      label="Reference Orbits"
+      checked={referenceOrbits}
+      callback={() =>
+        modifyScenarioProperty({
+          key: 'referenceOrbits',
+          value: !referenceOrbits
         })
       }
     />

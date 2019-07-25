@@ -11,6 +11,8 @@ export interface ScenarioProps {
   elementsToVectors?: boolean;
   exoPlanetArchive?: boolean;
   integrator: string;
+  habitableZone: boolean;
+  referenceOrbits: boolean;
   useBarnesHut?: boolean;
   theta: number;
   type: string;

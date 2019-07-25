@@ -48,6 +48,7 @@ const computeDerivedMassesData = (
       ...mass,
       m: 'm' in template ? template.m : 'm' in mass ? mass.m : 1e-9999,
       temperature: 'temperature' in template ? template.temperature : 0,
+      luminosity: 'luminosity' in template ? template.luminosity : 0,
       spacecraft: 'spacecraft' in template ? template.spacecraft : false,
       radius:
         'radius' in template
@@ -110,6 +111,68 @@ const computeDerivedScenarioData = (
     ...scenario.particles
   }
 });
+
+export const processExoplanetArchiveData = (data: any[]) => {
+  const sunRadius = 9767.441860465116;
+  const jupiterMass = 9.543e-4;
+  const jupiterRadius = 976.7441860465117;
+  const dt = 0.0000075;
+  const g = 39.5;
+  const yearOverDays = 0.00273973;
+  const starRadius =
+    (data[0].st_rad == null ? 0.5 : data[0].st_rad) * sunRadius;
+
+  return {
+    habitableZone: true,
+    referenceOrbits: true,
+    dt,
+    exoPlanetArchive: false,
+    tol: dt * 0.000000000000000001,
+    maxDt: dt * 4,
+    minDt: 2 * dt * 0.000000000001 - dt,
+    barycenterMassOne: data[0].pl_hostname,
+    barycenterMassTwo: data[0].pl_letter,
+    rotatingReferenceFrame: data[0].pl_hostname,
+    cameraPosition: 'Free',
+    cameraFocus: 'Origo',
+    freeOrigo: {
+      x: 850402.9676702506,
+      y: 526245.3241717573,
+      z: 384930.22925721033
+    },
+    primary: data[0].pl_hostname,
+    massBeingModified: data[0].pl_hostname,
+    masses: elementsToVectors(
+      {
+        m: data[0].st_mass,
+        radius: starRadius === 0 ? sunRadius : starRadius,
+        type: 'star',
+        name: data[0].pl_hostname,
+        color: '#bfcfff',
+        trailVertices: 1000,
+        temperature: isNaN(data[0].st_teff) ? 3000 : data[0].st_teff
+      },
+      data.map((entry: any) => {
+        return {
+          name: entry.pl_letter,
+          noTexture: true,
+          m: entry.pl_bmassj * jupiterMass,
+          radius: (entry.pl_rad == null ? 0.1 : entry.pl_rad) * jupiterRadius,
+          a: entry.pl_orbsmax == null ? 0.2 : entry.pl_orbsmax,
+          e: entry.pl_orbeccen == null ? 0 : entry.pl_orbeccen,
+          w: entry.pl_orblper == null ? 0 : entry.pl_orblper,
+          i: entry.pl_orbinc == null ? 0 : entry.pl_orbinc,
+          color: getRandomColor(),
+          trailVertices: calculateOrbitalVertices(
+            entry.pl_orbper * yearOverDays,
+            dt
+          )
+        };
+      }),
+      g
+    )
+  };
+};
 
 export const scenarios = [
   voyagerNeptune,

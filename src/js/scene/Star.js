@@ -1,12 +1,90 @@
 import * as THREE from 'three';
 import MassManifestation from './MassManifestation';
 import starMaterial from './starMaterial';
+import HabitableZone from './HabitableZone';
+import CustomEllipseCurve from './CustomEllipseCurve';
 
 export default class extends MassManifestation {
   constructor(mass) {
     super(mass);
 
     this.clock = new THREE.Clock();
+  }
+
+  getHabitableZone() {
+    this.add(new HabitableZone(this.mass));
+  }
+
+  removeHabitableZone() {
+    this.remove(this.getObjectByName(`${this.mass.name} Habitable Zone`));
+  }
+
+  getReferenceOrbits(referenceOrbits) {
+    const mercuryOrbitCurve = new CustomEllipseCurve(
+      0,
+      0,
+      200,
+      200,
+      0,
+      2 * Math.PI,
+      false,
+      0,
+      500,
+      'pink'
+    );
+
+    mercuryOrbitCurve.position.z = 0;
+
+    mercuryOrbitCurve.update(
+      referenceOrbits.mercury.orbit.focus * 2100000,
+      0,
+      referenceOrbits.mercury.orbit.xRadius * 2100000,
+      referenceOrbits.mercury.orbit.yRadius * 2100000,
+      0,
+      2 * Math.PI,
+      false,
+      0,
+      { x: 0, y: referenceOrbits.mercury.i, z: referenceOrbits.mercury.w }
+    );
+
+    const earthOrbitCurve = new CustomEllipseCurve(
+      0,
+      0,
+      200,
+      200,
+      0,
+      2 * Math.PI,
+      false,
+      0,
+      500,
+      'skyblue'
+    );
+
+    earthOrbitCurve.position.z = 0;
+
+    earthOrbitCurve.update(
+      referenceOrbits.earth.orbit.focus * 2100000,
+      0,
+      referenceOrbits.earth.orbit.xRadius * 2100000,
+      referenceOrbits.earth.orbit.yRadius * 2100000,
+      0,
+      2 * Math.PI,
+      false,
+      0,
+      { x: 0, y: referenceOrbits.earth.i, z: referenceOrbits.earth.w }
+    );
+
+    const container = new THREE.Object3D();
+
+    container.name = 'Reference Orbits';
+
+    container.add(mercuryOrbitCurve, earthOrbitCurve);
+
+    this.add(container);
+  }
+
+  removeReferenceOrbits() {
+    this.remove(this.getObjectByName('Reference Orbits'));
   }
 
   getMain() {
@@ -50,8 +128,13 @@ export default class extends MassManifestation {
   draw(x, y, z, camera) {
     const main = this.getObjectByName('Main');
     const trail = this.getObjectByName('Trail');
+    const habitableZone = this.getObjectByName(
+      `${this.mass.name} Habitable Zone`
+    );
 
     main.position.set(x, y, z);
+
+    if (habitableZone) habitableZone.position.set(x, y, z);
 
     main.material.uniforms.time.value += 0.2 * this.clock.getDelta();
 

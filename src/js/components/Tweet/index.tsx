@@ -16,16 +16,20 @@ export default memo(
     cssClassName,
     hashtags
   }: TweetProps): ReactElement => (
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href={`https://twitter.com/intent/tweet/?text=${encodeURI(
-        shareText
-      )}&url=${encodeURIComponent(shareUrl)}&hashtags=${hashtags}`}
-      className={cssClassName}
-    >
-      <span>{callToAction}</span>
-    </a>
+    <div className={cssClassName}>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={`https://twitter.com/intent/tweet/?text=${encodeURI(
+          shareText
+        )}&url=${encodeURIComponent(shareUrl)}&hashtags=${hashtags}`}
+      >
+        <span>
+          <i className="fa fa-twitter fa-2x" />
+          {callToAction}
+        </span>
+      </a>
+    </div>
   ),
   (prevProps, nextProps) => prevProps.shareUrl === nextProps.shareUrl
 );

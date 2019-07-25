@@ -8,7 +8,6 @@ import { boot, setLoading } from '../../action-creators/app';
 import { Action, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import cachedFetch from '../../cachedFetch';
-import { scenarioDefaults } from '../../data/scenarios/defaults';
 import { removeDuplicatesByKey } from '../../utils';
 
 export const addScenario = (payload: {
@@ -61,15 +60,14 @@ export const fetchExoplanetArchiveScenarios = (
 
   for (let entry of payload) {
     const data: any[] = await cachedFetch(
-      `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname&where=pl_facility like '${
-        entry.name
-      }'&format=json`
+      `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname&${
+        entry.query
+      } and st_mass>0&format=json`
     );
 
     removeDuplicatesByKey(data, 'pl_hostname').forEach((scenario: any) =>
       dispatch(
         addScenario({
-          ...scenarioDefaults,
           name: scenario.pl_hostname,
           type: entry.alias,
           exoPlanetArchive: true

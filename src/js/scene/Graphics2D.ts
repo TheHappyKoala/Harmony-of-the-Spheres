@@ -50,7 +50,8 @@ export default class {
     isTarget: boolean,
     placement: string,
     color: string,
-    drawSymbolCallback: Function
+    drawSymbolCallback: Function,
+    topOffset = 0
   ): void {
     p = this.threeToTwo(p, camera, isOrbital, isTarget);
 
@@ -65,19 +66,19 @@ export default class {
 
       const offset = placement === 'right' ? 0 : textBoxWidth + 20;
 
-      drawSymbolCallback(ctx, x, y, color);
+      drawSymbolCallback(ctx, x, y + topOffset, color);
 
       ctx.lineWidth = 1;
 
       ctx.globalAlpha = 0.5;
       ctx.fillStyle = '#545454';
-      ctx.fillRect(x + 13 - offset, y - 10, textBoxWidth, 20);
+      ctx.fillRect(x + 13 - offset, y - 10 + topOffset, textBoxWidth, 20);
 
       ctx.globalAlpha = 1;
       ctx.fillStyle = color;
-      ctx.fillText(name, x + 16 - offset, y + 3);
+      ctx.fillText(name, x + 16 - offset, y + 3 + topOffset);
 
-      ctx.strokeRect(x + 13 - offset, y - 10, textBoxWidth, 20);
+      ctx.strokeRect(x + 13 - offset, y - 10 + topOffset, textBoxWidth, 20);
     }
   }
 }
@@ -112,3 +113,22 @@ export function drawMassLabel(
   ctx.arc(x, y, 8, 0, 2 * Math.PI);
   ctx.stroke();
 }
+
+export const drawReferenceOrbitLabel = (
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  color: string
+) => {
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+
+  ctx.moveTo(x, y + 80);
+  ctx.lineTo(x, y);
+  ctx.stroke();
+
+  ctx.moveTo(x, y);
+  ctx.lineTo(x + 30, y);
+  ctx.stroke();
+};

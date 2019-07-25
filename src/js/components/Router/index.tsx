@@ -11,7 +11,7 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 const mapDispatchToProps = {
-  fetchExoplanetArchiveScenarioss: fetchExoplanetArchiveScenarios
+  fetchExoplanetArchiveScenarios: fetchExoplanetArchiveScenarios
 };
 
 interface RouterProps {
@@ -20,15 +20,13 @@ interface RouterProps {
     loading: boolean;
     whatIsLoading: string;
   };
-  fetchExoplanetArchiveScenarioss: typeof fetchExoplanetArchiveScenarios;
+  fetchExoplanetArchiveScenarios: typeof fetchExoplanetArchiveScenarios;
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  ({ app, fetchExoplanetArchiveScenarioss }: RouterProps): ReactElement => {
+  ({ app, fetchExoplanetArchiveScenarios }: RouterProps): ReactElement => {
     useEffect(() => {
-      fetchExoplanetArchiveScenarioss([
-        { name: 'Transiting Exoplanet Survey Satellite (TESS)', alias: 'TESS' }
-      ]);
+      fetchExoplanetArchiveScenarios(EXOPLANET_ARCHIVE_DATA);
     }, []);
 
     return (
@@ -40,7 +38,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                 <Redirect
                   exact
                   from="/"
-                  to="/category/What-If/scenario/Earth VS. the Rings of Saturn"
+                  to={`/category/What-If/scenario/${DEFAULT_SCENARIO}`}
                 />
                 <Route
                   path="/category/:category?/scenario/:name?"

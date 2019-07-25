@@ -18,7 +18,11 @@ import {
 import ParticleService from '../Physics/particles/ParticleService';
 import arena from './arena';
 import Camera from './Camera';
-import Graphics2D, { drawBaryCenterLabel, drawMassLabel } from './Graphics2D';
+import Graphics2D, {
+  drawBaryCenterLabel,
+  drawMassLabel,
+  drawReferenceOrbitLabel
+} from './Graphics2D';
 import MassManifestation from './MassManifestation';
 import Star from './Star';
 import Model from './Model';
@@ -42,6 +46,19 @@ export default {
       this.w,
       this.h
     );
+
+    this.referenceOrbits = {
+      mercury: {
+        orbit: getEllipse(0.38709893, 0.20563069),
+        w: 77.45645,
+        i: 7.00487
+      },
+      earth: {
+        orbit: getEllipse(1.000001018, 0.0167086),
+        w: 288.1,
+        i: 0
+      }
+    };
 
     this.requestAnimationFrameId = null;
 
@@ -593,13 +610,93 @@ export default {
           this.camera.position,
           cameraDistanceToFocus
         );
-      else
+      else {
         massManifestation.draw(
           this.manifestationPosition.x,
           this.manifestationPosition.y,
           this.manifestationPosition.z,
           this.camera
         );
+
+        const habitableZone = massManifestation.getObjectByName(
+          `${mass.name} Habitable Zone`
+        );
+
+        if (habitableZone === undefined) {
+          if (this.scenario.habitableZone) massManifestation.getHabitableZone();
+        } else {
+          if (!this.scenario.habitableZone)
+            massManifestation.removeHabitableZone();
+        }
+
+        const referenceOrbits = massManifestation.getObjectByName(
+          'Reference Orbits'
+        );
+
+        if (referenceOrbits === undefined) {
+          if (this.scenario.referenceOrbits)
+            massManifestation.getReferenceOrbits(this.referenceOrbits);
+        } else {
+          if (!this.scenario.referenceOrbits)
+            massManifestation.removeReferenceOrbits();
+
+          if (this.scenario.referenceOrbits) {
+            this.graphics2D.drawLabel(
+              'The Orbit of Planet Earth',
+              this.utilityVector
+                .set(
+                  this.manifestationPosition.x -
+                    this.referenceOrbits.earth.orbit.xRadius *
+                      this.scenario.scale,
+                  this.manifestationPosition.y,
+                  this.manifestationPosition.z
+                )
+                .applyAxisAngle(
+                  { x: 1, y: 0, z: 0 },
+                  this.referenceOrbits.earth.w * 0.0174533
+                )
+                .applyAxisAngle(
+                  { x: 0, y: 1, z: 0 },
+                  this.referenceOrbits.earth.i * 0.0174533
+                ),
+              this.camera,
+              cameraPosition === 'Free' ? true : false,
+              false,
+              'left',
+              'skyblue',
+              drawReferenceOrbitLabel,
+              -80
+            );
+
+            this.graphics2D.drawLabel(
+              'The Orbit of Planet Mercury',
+              this.utilityVector
+                .set(
+                  this.manifestationPosition.x -
+                    (this.referenceOrbits.mercury.orbit.yRadius - 0.022) *
+                      this.scenario.scale,
+                  this.manifestationPosition.y,
+                  this.manifestationPosition.z
+                )
+                .applyAxisAngle(
+                  { x: 1, y: 0, z: 0 },
+                  this.referenceOrbits.mercury.w * 0.0174533
+                )
+                .applyAxisAngle(
+                  { x: 0, y: 1, z: 0 },
+                  this.referenceOrbits.mercury.i * 0.0174533
+                ),
+              this.camera,
+              cameraPosition === 'Free' ? true : false,
+              false,
+              'left',
+              'pink',
+              drawReferenceOrbitLabel,
+              -80
+            );
+          }
+        }
+      }
 
       const trail = massManifestation.getObjectByName('Trail');
 

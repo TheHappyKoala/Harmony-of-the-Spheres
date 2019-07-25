@@ -10,6 +10,9 @@ import Button from '../Button';
 import { NavLink } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Modal from '../Modal';
+import Iframe from '../Iframe';
+import Credits from '../Content/Credits';
+import Tweet from '../Tweet';
 import Dropdown from '../Dropdown';
 import LazyDog from '../LazyDog';
 import Physics from '../Content/Physics';
@@ -76,8 +79,12 @@ export default connect(mapStateToProps, mapDispatchToProps)(
       [scenarioName]
     );
 
+    console.log(scenarios);
+
     const [display, setDisplay] = useState({
-      saveScenario: false
+      saveScenario: false,
+      credits: false,
+      scenarioWiki: false
     });
 
     return (
@@ -124,16 +131,63 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                 </div>
               ))}
             </Dropdown>
-            <Button
-              cssClassName="save-scenario-button"
-              callback={() =>
-                setDisplay({ ...display, saveScenario: !display.saveScenario })
-              }
-            >
-              <span>
-                <i className="fas fa-save fa-3x" />Save
-              </span>
-            </Button>
+            <div className="menu-left">
+              <Button
+                cssClassName="button"
+                callback={() =>
+                  setDisplay({
+                    ...display,
+                    saveScenario: !display.saveScenario
+                  })
+                }
+              >
+                <span>
+                  <i className="fas fa-save fa-2x" />Save
+                </span>
+              </Button>
+              <Button
+                cssClassName="button"
+                callback={() =>
+                  setDisplay({
+                    ...display,
+                    scenarioWiki: !display.scenarioWiki
+                  })
+                }
+              >
+                <span>
+                  <i className="fas fa-wikipedia-w fa-2x" />Scenario
+                </span>
+              </Button>
+              <Button
+                cssClassName="button"
+                callback={() =>
+                  setDisplay({ ...display, credits: !display.credits })
+                }
+              >
+                <span>
+                  <i className="fas fa-glass fa-2x button" />Credits
+                </span>
+              </Button>
+              <Tweet
+                shareText={`Hey friends! Check out this 3D gravity simulation of ${
+                  scenario.name
+                }. It will run in your browser :)!`}
+                shareUrl={document.location.toString()}
+                callToAction="Tweet"
+                cssClassName="button"
+                hashtags="Space,HarmonyOfTheSpheres,Science"
+              />
+              <Button cssClassName="button">
+                <a
+                  href="https://github.com/TheHappyKoala/Harmony-of-the-Spheres"
+                  target="blank"
+                >
+                  <span>
+                    <i className="fas fa-github fa-2x" />Contribute
+                  </span>
+                </a>
+              </Button>
+            </div>
             <Button
               cssClassName="set-simulation-state-button"
               callback={() =>
@@ -158,7 +212,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                 leaveTimeout: 250
               }}
             >
-              <div data-label="Physics" data-icon="fas fa-cube fa-3x">
+              <div data-label="Physics" data-icon="fas fa-cube fa-2x">
                 <Physics
                   integrator={scenario.integrator}
                   useBarnesHut={scenario.useBarnesHut}
@@ -177,16 +231,18 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                   modifyScenarioProperty={modifyScenarioProperty}
                 />
               </div>
-              <div data-label="Graphics" data-icon="fas fa-paint-brush fa-3x">
+              <div data-label="Graphics" data-icon="fas fa-paint-brush fa-2x">
                 <Graphics
                   barycenter={scenario.barycenter}
                   trails={scenario.trails}
                   labels={scenario.labels}
                   sizeAttenuation={scenario.sizeAttenuation}
                   modifyScenarioProperty={modifyScenarioProperty}
+                  habitableZone={scenario.habitableZone}
+                  referenceOrbits={scenario.referenceOrbits}
                 />
               </div>
-              <div data-label="Camera" data-icon="fas fa-camera-retro fa-3x">
+              <div data-label="Camera" data-icon="fas fa-camera-retro fa-2x">
                 <Camera
                   rotatingReferenceFrame={scenario.rotatingReferenceFrame}
                   cameraPosition={scenario.cameraPosition}
@@ -195,7 +251,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                   modifyScenarioProperty={modifyScenarioProperty}
                 />
               </div>
-              <div data-label="Masses" data-icon="fas fa-globe fa-3x">
+              <div data-label="Masses" data-icon="fas fa-globe fa-2x">
                 <Masses
                   massBeingModified={scenario.massBeingModified}
                   masses={scenario.masses}
@@ -210,7 +266,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                   deleteMass={deleteMass}
                 />
               </div>
-              <div data-label="Add" data-icon="fas fa-plus-circle fa-3x">
+              <div data-label="Add" data-icon="fas fa-plus-circle fa-2x">
                 <AddMass
                   a={scenario.a}
                   e={scenario.e}
@@ -248,6 +304,29 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                       })
                     }
                   />
+                </Modal>
+              )}
+
+              {display.scenarioWiki && (
+                <Modal
+                  callback={() =>
+                    setDisplay({
+                      ...display,
+                      scenarioWiki: !display.scenarioWiki
+                    })
+                  }
+                >
+                  <Iframe url={scenario.scenarioWikiUrl} />
+                </Modal>
+              )}
+
+              {display.credits && (
+                <Modal
+                  callback={() =>
+                    setDisplay({ ...display, credits: !display.credits })
+                  }
+                >
+                  <Credits />
                 </Modal>
               )}
             </ReactCSSTransitionGroup>

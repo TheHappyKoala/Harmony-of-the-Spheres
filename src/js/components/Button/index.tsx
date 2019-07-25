@@ -4,10 +4,9 @@ import React, {
   ReactChild,
   MouseEvent
 } from 'react';
-import './Button.less';
 
 interface ButtonProps {
-  callback: (event: MouseEvent<HTMLDivElement>) => void;
+  callback?: (event: MouseEvent<HTMLDivElement>) => void;
   children: ReactChildren | ReactChild;
   cssClassName: string;
 }
