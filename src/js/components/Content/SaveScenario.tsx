@@ -35,9 +35,10 @@ export default ({
             type="text"
             placeholder="Enter the name of the scenario here"
             onChange={e => setScenarioName(e.target.value)}
+            className="box"
           />
           <Button
-            cssClassName="button"
+            cssClassName="button box top"
             callback={() => {
               if (
                 scenarios

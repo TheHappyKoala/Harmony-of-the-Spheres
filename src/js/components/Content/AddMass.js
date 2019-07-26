@@ -246,7 +246,7 @@ export default class extends Component {
               }
             })
           }
-          cssClassName="button top"
+          cssClassName="button box top"
         >
           Add {this.state.texture}
         </Button>
