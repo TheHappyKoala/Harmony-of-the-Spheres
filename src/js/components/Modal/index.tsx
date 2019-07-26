@@ -15,9 +15,10 @@ export default ({ children, callback }: ModalProps): ReactElement => (
   <div className="modal-wrapper">
     <section className="modal">
       {children}
-      <button onClick={callback} className="modal-close-button">
-        X
-      </button>
+      <i
+        className="fa fa-window-close-o fa-2x close-button"
+        onClick={callback}
+      />
     </section>
   </div>
 );

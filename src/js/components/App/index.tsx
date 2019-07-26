@@ -79,8 +79,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
       [scenarioName]
     );
 
-    console.log(scenarios);
-
     const [display, setDisplay] = useState({
       saveScenario: false,
       credits: false,
@@ -95,15 +93,15 @@ export default connect(mapStateToProps, mapDispatchToProps)(
             <Dropdown
               selectedOption={scenario.name}
               tabs={{
-                cssClass: 'dropdown-tabs',
-                activeCssClass: 'dropdown-tabs-active',
+                cssClass: 'tabs',
+                activeCssClass: 'active',
                 optionsCssClass: 'dropdown-content',
                 identifier: 'category',
                 selectedCategory: scenarioCategory
               }}
               dropdownWrapperCssClassName="scenario-dropdown-wrapper"
               selectedOptionCssClassName="selected-option"
-              optionsWrapperCssClass="scenario-menu"
+              optionsWrapperCssClass="scenario-menu box"
               dynamicChildrenLen={scenarios.length}
               transition={{
                 name: 'left',
@@ -131,6 +129,21 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                 </div>
               ))}
             </Dropdown>
+            <Button
+              cssClassName="button simulation-state"
+              callback={() =>
+                modifyScenarioProperty({
+                  key: 'playing',
+                  value: !scenario.playing
+                })
+              }
+            >
+              <i
+                className={`fas fa-${
+                  scenario.playing ? 'pause' : 'play'
+                } fa-3x`}
+              />
+            </Button>
             <div className="menu-left">
               <Button
                 cssClassName="button"
@@ -188,24 +201,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                 </a>
               </Button>
             </div>
-            <Button
-              cssClassName="set-simulation-state-button"
-              callback={() =>
-                modifyScenarioProperty({
-                  key: 'playing',
-                  value: !scenario.playing
-                })
-              }
-            >
-              <i
-                className={`fas fa-${
-                  scenario.playing ? 'pause' : 'play'
-                } fa-3x`}
-              />
-            </Button>
             <Tabs
               tabsWrapperClassName="sidebar-wrapper"
-              tabsContentClassName="sidebar-content"
+              tabsContentClassName="sidebar-content box"
               transition={{
                 name: 'slide',
                 enterTimeout: 250,

@@ -83,6 +83,7 @@ export default props => {
                   </div>
                 ))}
               </Dropdown>
+              <label className="top">State Vectors</label>
               <Tabs
                 tabsWrapperClassName="vector-tabs"
                 tabsContentClassName="vector-content"
@@ -188,7 +189,7 @@ export default props => {
               </Tabs>
               <Button
                 callback={() => props.deleteMass(mass.name)}
-                cssClassName="button top"
+                cssClassName="button box top"
               >
                 Delete Mass
               </Button>
