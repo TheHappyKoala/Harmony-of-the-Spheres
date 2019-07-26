@@ -37,22 +37,26 @@ export default ({
 
   return (
     <div className={tabsWrapperClassName}>
-      <ul>
+      <ul className="tabs box">
         {panes.map((child, i) => (
           <li
             key={i}
             onClick={() => setSelectedTabIndex(i)}
-            className={i === selectedTabIndex ? 'active-sidebar-tab' : ''}
+            className={`button ${selectedTabIndex === i ? 'active' : ''}`}
           >
             {isValidElement<{
               ['data-label']?: string;
               ['data-icon']?: string;
             }>(child) && (
               <Fragment>
-                {child.props['data-icon'] !== undefined && (
-                  <i className={child.props['data-icon']} />
-                )}
-                <p>{child.props['data-label']}</p>
+                <span>
+                  <i
+                    className={`${
+                      child.props['data-icon'] ? child.props['data-icon'] : ''
+                    }`}
+                  />
+                  {child.props['data-label']}
+                </span>
               </Fragment>
             )}
           </li>
@@ -67,7 +71,7 @@ export default ({
           <div className={tabsContentClassName}>
             {!noCloseButton && (
               <i
-                className="fa fa-window-close fa-3x tabs-close-button"
+                className="fa fa-window-close-o fa-2x close-button"
                 onClick={() => setSelectedTabIndex(-1)}
               />
             )}
