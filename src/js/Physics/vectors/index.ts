@@ -125,10 +125,12 @@ export default class {
   }
 
   cross(v: VectorType): this {
-    this.x = this.y * v.z - this.z * v.y;
-    this.y = this.z * v.x - this.x * v.z;
-    this.z = this.x * v.y - this.y * v.x;
-
+    const x = this.y * v.z - this.z * v.y;
+    const y = this.z * v.x - this.x * v.z;
+    const z = this.x * v.y - this.y * v.x;
+    this.x = x;
+    this.y = y;
+    this.z = z;
     return this;
   }
 
