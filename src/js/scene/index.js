@@ -30,12 +30,15 @@ import ParticlePhysics from '../Physics/particles';
 import ParticlesManifestation from './ParticlesManifestation';
 import CollisionsService from '../Physics/collisions/';
 import CustomEllipseCurve from './CustomEllipseCurve';
+import { planFlight } from '../Physics/spacecraft/lambert';
 
 const TWEEN = require('@tweenjs/tween.js');
 
 export default {
-  init(webGlCanvas, graphics2DCanvas) {
+  init(webGlCanvas, graphics2DCanvas, audio) {
     this.scenario = store.getState().scenario;
+
+    this.scenario.collisions = false;
 
     this.w = window.innerWidth;
     this.h = window.innerHeight;
@@ -46,6 +49,8 @@ export default {
       this.w,
       this.h
     );
+
+    this.audio = audio;
 
     this.referenceOrbits = {
       mercury: {
