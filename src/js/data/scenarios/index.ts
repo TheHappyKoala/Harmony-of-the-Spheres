@@ -80,6 +80,7 @@ const computeDerivedScenarioData = (
 ) => ({
   ...scenarioDefaults,
   ...scenario,
+  forAllMankind: 'forAllMankind' in scenario ? scenario.forAllMankind : false,
   tol: 'tol' in scenario ? scenario.tol : scenario!.dt * 0.000000000000000001,
   maxDt: 'maxDt' in scenario ? scenario.maxDt : scenario!.dt * 4,
   minDt:

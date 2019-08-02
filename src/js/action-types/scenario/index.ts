@@ -10,6 +10,7 @@ export interface ScenarioProps {
   isLoaded: boolean;
   elementsToVectors?: boolean;
   exoPlanetArchive?: boolean;
+  forAllMankind?: boolean;
   integrator: string;
   habitableZone: boolean;
   referenceOrbits: boolean;
