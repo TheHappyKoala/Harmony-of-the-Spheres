@@ -146,6 +146,7 @@ export default {
     this.loop = this.loop.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
     this.collisionCallback = this.collisionCallback.bind(this);
+    this.setSpacecraftTrajectory = this.setSpacecraftTrajectory.bind(this);
 
     setTimeout(() => {
       store.dispatch({
@@ -160,6 +161,30 @@ export default {
 
     window.addEventListener('resize', this.onWindowResize, false);
     window.addEventListener('orientationchange', this.onWindowResize, false);
+  },
+
+  setSpacecraftTrajectory(
+    spacecraft,
+    destination,
+    timeOfFlight,
+    primary,
+    callback
+  ) {
+    const [velocity] = planFlight(
+      timeOfFlight,
+      spacecraft,
+      destination,
+      primary
+    );
+
+    const departureVelocity = velocity.initVel;
+    const arrivalVelocity = velocity.finalVel;
+
+    spacecraft.vx = departureVelocity.x;
+    spacecraft.vy = departureVelocity.y;
+    spacecraft.vz = departureVelocity.z;
+
+    callback && callback([departureVelocity, arrivalVelocity]);
   },
 
   addManifestation(mass) {
