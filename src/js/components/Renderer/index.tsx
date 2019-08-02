@@ -12,14 +12,16 @@ export default memo(({ scenarioName }: RendererProps): ReactElement => {
   const audio = useRef(null);
 
   useEffect(() =>
-    scene.reset().init(webGlCanvas.current, graphics2DCanvas.current, audio)
+    scene
+      .reset()
+      .init(webGlCanvas.current, graphics2DCanvas.current, audio.current)
   );
 
   return (
     <Fragment>
       <canvas ref={webGlCanvas} />
       <canvas ref={graphics2DCanvas} className="graphics-2d-canvas" />
-      <audio ref={audio} />
+      <audio ref={audio} style={{ display: 'none' }} />
     </Fragment>
   );
 }, (prevProps, nextProps) => prevProps.scenarioName === nextProps.scenarioName);
