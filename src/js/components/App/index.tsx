@@ -21,6 +21,7 @@ import Camera from '../Content/Camera';
 import Masses from '../Content/Masses';
 import SaveScenario from '../Content/SaveScenario';
 import AddMass from '../Content/AddMass';
+import CockpitDashboard from '../CockpitDashboard';
 import './App.less';
 
 const mapStateToProps = (state: AppState, ownProps: any) => ({
@@ -35,6 +36,7 @@ const mapDispatchToProps = {
   getScenario: scenarioActionCreators.getScenario,
   modifyScenarioProperty: scenarioActionCreators.modifyScenarioProperty,
   modifyMassProperty: scenarioActionCreators.modifyMassProperty,
+  getTrajectory: scenarioActionCreators.getTrajectory,
   addMass: scenarioActionCreators.addMass,
   deleteMass: scenarioActionCreators.deleteMass,
   saveScenario: scenariosActionCreators.saveScenario
@@ -46,6 +48,7 @@ interface AppProps {
   modifyMassProperty: typeof scenarioActionCreators.modifyMassProperty;
   deleteMass: typeof scenarioActionCreators.deleteMass;
   addMass: typeof scenarioActionCreators.addMass;
+  getTrajectory: typeof scenarioActionCreators.getTrajectory;
   getScenario: typeof scenarioActionCreators.getScenario;
   saveScenario: typeof scenariosActionCreators.saveScenario;
   scenarioCategory: string;
@@ -64,6 +67,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     scenario,
     modifyScenarioProperty,
     modifyMassProperty,
+    getTrajectory,
     deleteMass,
     addMass,
     getScenario,
@@ -278,6 +282,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                 />
               </div>
             </Tabs>
+            <CockpitDashboard
+              scenario={scenario}
+              modifyScenarioProperty={modifyScenarioProperty}
+              getTrajectory={getTrajectory}
+            />
             <ReactCSSTransitionGroup
               transitionName="fade"
               transitionEnterTimeout={250}

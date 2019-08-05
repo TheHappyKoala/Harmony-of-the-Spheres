@@ -11,6 +11,11 @@ export interface ScenarioProps {
   elementsToVectors?: boolean;
   exoPlanetArchive?: boolean;
   forAllMankind?: boolean;
+  trajectoryTarget: string;
+  trajectoryTargetArrival: number;
+  trajectoryDepartureVelocity: number;
+  trajectoryArrivalVelocity: number;
+  trajectoryRelativeTo: string;
   integrator: string;
   habitableZone: boolean;
   referenceOrbits: boolean;
