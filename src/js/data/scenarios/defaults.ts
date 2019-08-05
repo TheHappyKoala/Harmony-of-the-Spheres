@@ -1,7 +1,6 @@
 export const scenarioDefaults = {
   isLoaded: false,
   playing: false,
-  tcmsData: false,
   g: 39.5,
   integrator: 'RKN12',
   elapsedTime: 0,

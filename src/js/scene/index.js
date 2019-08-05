@@ -9,7 +9,6 @@ import getIntegrator from '../Physics/Integrators';
 import { getObjFromArrByKeyValuePair } from '../utils';
 import {
   getDistanceParams,
-  getOrbit,
   getRandomNumberInRange,
   setBarycenter,
   clampAbs,
@@ -859,52 +858,6 @@ export default {
 
     if (this.scenario.particles && this.scenario.playing)
       this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);
-
-    if (this.scenario.tcmsData.length) {
-      const [tcm] = this.scenario.tcmsData;
-
-      if (tcm.t <= this.scenario.elapsedTime) {
-        let spacecraft = this.system.masses[0];
-        let targetMass = this.system.masses[1];
-
-        let events = [];
-
-        if (tcm.insertion) {
-          let orbit = getOrbit(targetMass, spacecraft, this.scenario.g, false);
-
-          const vFactorX = tcm.vFactorX ? tcm.vFactorX : 1;
-          const vFactorY = tcm.vFactorY ? tcm.vFactorY : 1;
-          const vFactorZ = tcm.vFactorZ ? tcm.vFactorZ : 1;
-
-          spacecraft.vx = orbit.vx * vFactorX;
-          spacecraft.vy = orbit.vy * vFactorY;
-          spacecraft.vz = orbit.vz * vFactorZ;
-        } else if (tcm.v) {
-          spacecraft.vx = tcm.v.x;
-          spacecraft.vy = tcm.v.y;
-          spacecraft.vz = tcm.v.z;
-        }
-
-        for (const key in tcm)
-          if (this.scenario.hasOwnProperty(key)) {
-            events = [...events, { key, value: tcm[key] }];
-
-            if (key === 'dt') this.system.dt = tcm[key];
-          }
-
-        this.scenario.tcmsData.shift();
-
-        store.dispatch(
-          modifyScenarioProperty(
-            {
-              key: 'tcmsData',
-              value: this.scenario.tcmsData
-            },
-            ...events
-          )
-        );
-      }
-    }
 
     store.dispatch(
       modifyScenarioProperty(
