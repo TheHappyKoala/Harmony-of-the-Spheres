@@ -20,6 +20,7 @@ import {
 import { Action, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import { scenarioDefaults } from '../../data/scenarios/defaults';
+import TrajectoryCruncher from 'worker-loader!../../Physics/spacecraft/trajectoryCruncher';
 
 export const getScenario = (
   name: string
@@ -104,3 +105,76 @@ export const deleteMass = (name: string): ScenarioActionTypes => ({
   type: DELETE_MASS,
   name
 });
+
+export const getTrajectory = (payload: {
+  timeOfFlight: number;
+  departureTime: number;
+  target: string;
+  primary: string;
+}): ThunkAction<void, AppState, void, Action> => async (
+  dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
+  getState: any
+) => {
+  dispatch({
+    type: MODIFY_SCENARIO_PROPERTY,
+    payload: {
+      key: 'playing',
+      value: false
+    }
+  });
+
+  dispatch({
+    type: SET_LOADING,
+    payload: {
+      loading: true,
+      whatIsLoading: 'Generating future simulation state'
+    }
+  });
+
+  const trajectoryCruncher = new TrajectoryCruncher();
+
+  const scenario = getState().scenario;
+
+  const getTrajectory = () =>
+    new Promise(resolve => {
+      trajectoryCruncher.addEventListener(
+        'message',
+        ({ data: { trajectory } }: any) => {
+          resolve(trajectory);
+        }
+      );
+
+      trajectoryCruncher.postMessage({
+        integrator: scenario.integrator,
+        g: scenario.g,
+        dt: scenario.dt,
+        tol: scenario.tol,
+        minDt: scenario.minDt,
+        maxDt: scenario.maxDt,
+        elapsedTime: scenario.elapsedTime,
+        masses: scenario.masses,
+        departure: scenario.elapsedTime,
+        arrival: scenario.elapsedTime + payload.timeOfFlight,
+        target: payload.target,
+        primary: payload.primary
+      });
+    });
+
+  const [trajectory] = await getTrajectory();
+
+  const [spacecraft] = scenario.masses;
+
+  spacecraft.vx = trajectory.x;
+  spacecraft.vy = trajectory.y;
+  spacecraft.vz = trajectory.z;
+
+  trajectoryCruncher.terminate();
+
+  dispatch({
+    type: SET_LOADING,
+    payload: {
+      loading: false,
+      whatIsLoading: ''
+    }
+  });
+};
