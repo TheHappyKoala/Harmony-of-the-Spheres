@@ -39,6 +39,37 @@ To be decided. If you have a suggestion, please submit a pull request!
 ## Create a Production Build
 ```npm run build```
 
+## Integrators
+### Background
+**Harmony of the Spheres** calculates the positions and velocities of the planets, moons and other space objects by integrating Newton's laws numerically. The once used is *Newton's Law of Gravity* (`F = G * m * M / r^2`) and *Newton's Second Law* (`F = m * a`) to get the acceleration `d^2(r)/dt^2 = a = G * M / r^2`. There are numerous different methods to solve this equation, here called integrators, which have their pros and cons.
+### Timestep `dt`
+One thing they have in common is that they take small timesteps `dt` forward in time every iteration. Generally a bigger `dt` is faster but less accurate and a smaller `dt` is slower but more accurate. It's a science in itself to find the suitable balance between those two.
+### Order of an integrator
+The order of an integrator describes the relationship between the timestep `dt` and the error `E`. If the order is `n` then the error is proportional to `dt^n`. In other words if we half `dt` we lower the error by approx. `1/2^n`.
+For example if we have `dt = 0.1`, `n = 2` and `E = 0.5` and instead uses half the timestep (`dt = 0.05`) we should get a error roughly `E = 0.5 * 1/2^2 = 0.5/4 = 0.125`. If we instead had used a method of order 5 the error would have been `E = 0.5 * 1/2^5 = 0.5/32 = 0.015625` which is one order of magnitude smaller. The catch with higher order integrators is that they are remarkably slower if we don't need a tiny tiny error (`E > 1e-8`. In that case a lower order method can be more effective.
+### Adaptive vs fixed `dt`
+One way of finding a good balance between efficency and accuracy is to vary the timestep depending on how much is changing. 
+"Are all the planets just cruising along in their orbits? Cool, let's use a bigger timestep". "Is a giant asteroid approaching Earth? Let's use a smaller timestep so we simulate the (hopefully) near impact accuratly". This is all done by the computer, all we have to provide is an error tolerance, the maximum allowed error in one timestep. If you watch the `dt`-slider when using an adaptive timestep you should either see it glued to the right or swooshing back and forth. 
+### Symplectic Integrator
+There exists general integrators that's suited for a variety of different problems (Runge Kutta for example) and then there are integrators that are specifically tailored for certain kinds of problems. Symplectic integrators are one such type of integrators. They are not necessarily more accurate but they do have properties that makes them more suitable for long-time simulations. Mostly they preserve a quantity of the system (for example angular momentum and energy) so that the simulation is qualitatively accurate (the planets stay in their orbit and doesn't spiral into the Sun). But for simulations over a few thousand years this should not be a problem for the higher order non-symplectic integrators either, they are in fact often more efficient the symplectic integrators. The symplectic integrators are mainly useful for observing the general behavior of a system over long time periods. 
+## List of Integrators
+| Integrator | Order | Symplectic | Adaptive `dt` |
+| ---------- | ----- | ---------- | ------------- |
+| Euler | 1 | False | False |
+| Verlet | 2 | True | False |
+| RK4 | 4 | False | False |
+| PEFRL | 4 | True | False |
+| Nystrom3 | 4 | False | False |
+| Nystrom4 | 5 | False | False |
+| Nystrom5 | 6 | False | False |
+| RKN64 | 6 | False | True |
+| Yoshida6 | 6 | True | False |
+| Nystrom6 | 7 | False | False |
+| KahanLi8 | 8 | True | False |
+| RKN12 | 12 | False | True |
+
+
+
 ## License
 
 Copyright (C) 2019 Darrell Huffman - GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
