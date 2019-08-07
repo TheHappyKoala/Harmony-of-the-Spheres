@@ -72,7 +72,7 @@ export default {
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas,
       antialias: true,
-      powerPreference: 'high-performance',
+      powerPreference: 'low-power',
       logarithmicDepthBuffer: this.scenario.logarithmicDepthBuffer
     });
     this.renderer.setSize(this.w, this.h);
@@ -80,8 +80,8 @@ export default {
     this.camera = new Camera(
       45,
       this.w / this.h,
-      this.scenario.logarithmicDepthBuffer ? 1e-9 : 1,
-      this.scenario.logarithmicDepthBuffer ? 1e27 : 1500000000000,
+      this.scenario.logarithmicDepthBuffer ? 1e-4 : 1,
+      this.scenario.logarithmicDepthBuffer ? 1e150 : 1500000000000,
       this.graphics2D.canvas
     );
 
