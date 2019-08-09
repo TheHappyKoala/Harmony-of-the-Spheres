@@ -250,6 +250,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                   cameraPosition={scenario.cameraPosition}
                   cameraFocus={scenario.cameraFocus}
                   masses={scenario.masses}
+                  forAllMankind={scenario.forAllMankind}
                   modifyScenarioProperty={modifyScenarioProperty}
                 />
               </div>
@@ -282,11 +283,14 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                 />
               </div>
             </Tabs>
-            <CockpitDashboard
-              scenario={scenario}
-              modifyScenarioProperty={modifyScenarioProperty}
-              getTrajectory={getTrajectory}
-            />
+            {scenario.forAllMankind &&
+              scenario.cameraPosition === 'Cockpit' && (
+                <CockpitDashboard
+                  scenario={scenario}
+                  modifyScenarioProperty={modifyScenarioProperty}
+                  getTrajectory={getTrajectory}
+                />
+              )}
             <ReactCSSTransitionGroup
               transitionName="fade"
               transitionEnterTimeout={250}

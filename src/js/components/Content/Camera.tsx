@@ -5,6 +5,7 @@ import Dropdown from '../Dropdown';
 import Tooltip from '../Tooltip';
 
 interface CameraProps {
+  forAllMankind: boolean;
   modifyScenarioProperty: typeof modifyScenarioProperty;
   masses: MassType[];
   rotatingReferenceFrame: string;
@@ -13,6 +14,7 @@ interface CameraProps {
 }
 
 export default ({
+  forAllMankind,
   modifyScenarioProperty,
   masses,
   rotatingReferenceFrame,
@@ -90,6 +92,20 @@ export default ({
       dynamicChildrenLen={masses.length}
       transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
     >
+      {forAllMankind && (
+        <div
+          data-name="Cockpit"
+          key="Cockpit"
+          onClick={() =>
+            modifyScenarioProperty({
+              key: 'cameraPosition',
+              value: 'Cockpit'
+            })
+          }
+        >
+          Cockpit
+        </div>
+      )}
       <div
         data-name="Free"
         key="Free"
