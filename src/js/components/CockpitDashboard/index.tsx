@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect, useRef } from 'react';
 import Dropdown from '../Dropdown';
 import Slider from '../Slider';
 import Button from '../Button';
@@ -7,6 +7,7 @@ import {
   getTrajectory
 } from '../../action-creators/scenario';
 import './CockpitDashboard.less';
+import { getDistanceParams } from '../../Physics/utils';
 import { getObjFromArrByKeyValuePair } from '../../utils';
 import { MassType, VectorType } from '../../Physics/types';
 
@@ -34,53 +35,57 @@ export default ({
     scenario.trajectoryTarget
   );
 
+  const trajectoryMap = useRef(null);
+
+  useEffect(() => {
+    const canvas = trajectoryMap.current;
+    canvas.width = 300;
+    canvas.height = 300;
+
+    const ctx = canvas.getContext(canvas.parentNode.clientHeight);
+  });
+
   return (
     <div className="cockpit-dashboard">
-      <section className="cockpit-state-vectors">
-        <h2>{`Spacecraft: ${spacecraft.name}`}</h2>
-        <section>
-          <h3>Position</h3>
-          <p>{`x ${spacecraft.x}`}</p>
-          <p>{`y ${spacecraft.y}`}</p>
-          <p>{`z ${spacecraft.z}`}</p>
-        </section>
-        <section>
-          <h3>Velocity</h3>
-          <p>
-            {`${getVelocityMagnitude({
-              x: spacecraft.vx,
-              y: spacecraft.vy,
-              z: spacecraft.vz
-            }).toFixed(4)} AU per Year`}
-          </p>
-        </section>
-      </section>
-      <section className="cockpit-state-vectors">
-        <h2>{`Target: ${target.name}`}</h2>
-        <section>
-          <h3>Position</h3>
-          <p>{`x ${target.x}`}</p>
-          <p>{`y ${target.y}`}</p>
-          <p>{`z ${target.z}`}</p>
-        </section>
-        <section>
-          <h3>Velocity</h3>
-          <p>
-            {`${getVelocityMagnitude({
-              x: target.vx,
-              y: target.vy,
-              z: target.vz
-            }).toFixed(4)} AU per Year`}
-          </p>
-        </section>
+      <section>
+        <table className="trajectory-table">
+          <tr>
+            <td>Distance [AU]:</td>
+            <td>
+              {Math.sqrt(
+                getDistanceParams(spacecraft, target).dSquared
+              ).toFixed(4)}
+            </td>
+          </tr>
+          <tr>
+            <td>Spacecraft Velcoity [AU/Y]:</td>
+            <td>
+              {getVelocityMagnitude({
+                x: spacecraft.vx,
+                y: spacecraft.vy,
+                z: spacecraft.vz
+              }).toFixed(4)}
+            </td>
+          </tr>
+          <tr>
+            <td>Target Velocity [AU/Y]:</td>
+            <td>
+              {getVelocityMagnitude({
+                x: target.vx,
+                y: target.vy,
+                z: target.vz
+              }).toFixed(4)}
+            </td>
+          </tr>
+        </table>
+        <canvas className="trajectory-map-canvas top" ref={trajectoryMap} />
       </section>
       <section>
-        <h2>Lambert Solver</h2>
         <label>Target</label>
         <Dropdown
           selectedOption={scenario.trajectoryTarget}
           dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-          selectedOptionCssClassName="selected-option"
+          selectedOptionCssClassName="selected-option cockpit-element"
           optionsWrapperCssClass="options"
           dynamicChildrenLen={scenario.masses.length}
           transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
@@ -100,11 +105,11 @@ export default ({
             </div>
           ))}
         </Dropdown>
-        <label>Primary</label>
+        <label className="top">Primary</label>
         <Dropdown
           selectedOption={scenario.trajectoryRelativeTo}
           dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-          selectedOptionCssClassName="selected-option"
+          selectedOptionCssClassName="selected-option cockpit-element"
           optionsWrapperCssClass="options"
           dynamicChildrenLen={scenario.masses.length}
           transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
@@ -124,7 +129,7 @@ export default ({
             </div>
           ))}
         </Dropdown>
-        <label>Transfer Time</label>
+        <label className="top">Time of Target Rendevouz</label>
         <Slider
           payload={{ key: 'trajectoryTargetArrival' }}
           value={scenario.trajectoryTargetArrival}
@@ -133,21 +138,21 @@ export default ({
           min={scenario.elapsedTime}
           step={0.05}
         />
+        <Button
+          cssClassName="button cockpit-element top"
+          callback={() =>
+            getTrajectory({
+              timeOfFlight:
+                scenario.trajectoryTargetArrival - scenario.elapsedTime,
+              departureTime: scenario.elapsedTime,
+              target: scenario.trajectoryTarget,
+              primary: scenario.trajectoryRelativeTo
+            })
+          }
+        >
+          Set Trajectory
+        </Button>
       </section>
-      <Button
-        cssClassName="button box top"
-        callback={() =>
-          getTrajectory({
-            timeOfFlight:
-              scenario.trajectoryTargetArrival - scenario.elapsedTime,
-            departureTime: scenario.elapsedTime,
-            target: scenario.trajectoryTarget,
-            primary: scenario.trajectoryRelativeTo
-          })
-        }
-      >
-        Fire Thrusters
-      </Button>
     </div>
   );
 };

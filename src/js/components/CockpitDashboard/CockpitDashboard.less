@@ -2,6 +2,39 @@
   position: absolute;
   z-index: 400;
   bottom: 0;
-  left: 200px;
-  right: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 680px;
+  font-family: 'Orbitron', sans-serif;
+  color: #30c735;
+  display: grid;
+  grid-template-columns: 300px 300px;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+}
+
+.cockpit-dashboard ::-webkit-scrollbar-thumb {
+  background: green;
+  border-radius: 2px;
+}
+
+.trajectory-table > tr > td {
+  padding: 5px 0;
+}
+
+.cockpit-dashboard > section > button {
+  color: #30c735;
+}
+
+.trajectory-map-canvas {
+  background-image: url(../../../images/mapgrid.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.cockpit-element {
+  background: transparent;
+  border: 1px solid green;
 }
