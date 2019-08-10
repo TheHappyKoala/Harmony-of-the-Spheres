@@ -75,11 +75,16 @@ export const modifyScenarioProperty = (
   );
 
 export const modifyMassProperty = (
-  payload: MassProperty
-): ScenarioActionTypes => ({
-  type: MODIFY_MASS_PROPERTY,
-  payload
-});
+  ...massProperties: MassProperty[]
+): ThunkAction<void, AppState, void, Action> => (
+  dispatch: Dispatch<ScenarioActionTypes>
+) =>
+  massProperties.forEach(massProperty =>
+    dispatch({
+      type: MODIFY_MASS_PROPERTY,
+      payload: massProperty
+    })
+  );
 
 export const addMass = (
   payload: AddMass
