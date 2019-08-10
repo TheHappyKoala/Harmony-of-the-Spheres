@@ -115,13 +115,7 @@ export const getTrajectory = (payload: {
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
   getState: any
 ) => {
-  dispatch({
-    type: MODIFY_SCENARIO_PROPERTY,
-    payload: {
-      key: 'playing',
-      value: false
-    }
-  });
+  modifyScenarioProperty({ key: 'playing', value: false });
 
   dispatch({
     type: SET_LOADING,
@@ -160,7 +154,7 @@ export const getTrajectory = (payload: {
       });
     });
 
-  const [trajectory] = await getTrajectory();
+  const [trajectory, rendevouz] = await getTrajectory();
 
   const [spacecraft] = scenario.masses;
 
@@ -169,6 +163,8 @@ export const getTrajectory = (payload: {
   spacecraft.vz = trajectory.z;
 
   trajectoryCruncher.terminate();
+
+  modifyScenarioProperty({ key: 'trajectoryRendevouz', value: rendevouz });
 
   dispatch({
     type: SET_LOADING,
