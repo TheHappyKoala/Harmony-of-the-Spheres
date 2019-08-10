@@ -12,6 +12,7 @@ import cruithne from './cruithne';
 import plutoSystem from './thePlutonianSystem';
 import planetNine from './planetNine';
 import shoemakerLevy9 from './shoemakerLevy9';
+import forAllMankind from './forAllMankind';
 import rh120 from './rh120';
 import hd98800 from './hd98800';
 import venusPentagram from './venusPentagram';
@@ -80,6 +81,7 @@ const computeDerivedScenarioData = (
 ) => ({
   ...scenarioDefaults,
   ...scenario,
+  forAllMankind: 'forAllMankind' in scenario ? scenario.forAllMankind : false,
   tol: 'tol' in scenario ? scenario.tol : scenario!.dt * 0.000000000000000001,
   maxDt: 'maxDt' in scenario ? scenario.maxDt : scenario!.dt * 4,
   minDt:
@@ -182,6 +184,7 @@ export const scenarios = [
   hd98800,
   collisionsTest,
   innerSolarSystem,
+  forAllMankind,
   lunarFreeReturn,
   shenanigans,
   venusPentagram,

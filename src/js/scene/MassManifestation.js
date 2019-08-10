@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import atmosphereMaterial from './atmosphereMaterial';
 import { degreesToRadians } from '../Physics/utils';
 
 export default class extends THREE.Object3D {
@@ -133,22 +132,6 @@ export default class extends THREE.Object3D {
     this.add(mesh);
   }
 
-  getAtmosphere() {
-    const geometry = new THREE.SphereBufferGeometry(
-      this.mass.radius + this.mass.radius / 15,
-      this.segments,
-      this.segments
-    );
-
-    const material = atmosphereMaterial(this.mass.atmosphere.color, 7, 0.7);
-
-    const mesh = new THREE.Mesh(geometry, material);
-
-    mesh.name = 'Atmosphere';
-
-    this.add(mesh);
-  }
-
   getClouds() {
     const geometry = new THREE.SphereBufferGeometry(
       this.mass.radius + this.mass.radius / 80,
@@ -206,27 +189,12 @@ export default class extends THREE.Object3D {
 
   createManifestation() {
     this.getMain();
-    this.mass.atmosphere && this.getAtmosphere();
     this.mass.clouds && this.getClouds();
   }
 
-  draw(x, y, z, cameraPositionVector, distanceToCamera) {
+  draw(x, y, z) {
     const main = this.getObjectByName('Main');
     const trail = this.getObjectByName('Trail');
-
-    if (this.mass.atmosphere) {
-      const atmosphere = this.getObjectByName('Atmosphere');
-
-      atmosphere.material.uniforms.viewVector.value = new THREE.Vector3().subVectors(
-        cameraPositionVector,
-        { x, y, z }
-      );
-
-      atmosphere.material.uniforms.p.value =
-        distanceToCamera / this.mass.atmosphere.scaleFactor;
-
-      atmosphere.position.set(x, y, z);
-    }
 
     if (this.mass.clouds) {
       const clouds = this.getObjectByName('Clouds');

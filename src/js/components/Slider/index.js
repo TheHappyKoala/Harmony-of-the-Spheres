@@ -46,6 +46,13 @@ export default class extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
+    if (this.props.value < this.props.min) {
+      this.props.callback({
+        ...this.props.payload,
+        value: this.props.min
+      });
+    }
+
     if (nextProps.value !== this.props.value) return true;
 
     if (nextProps.step !== this.props.step) return true;

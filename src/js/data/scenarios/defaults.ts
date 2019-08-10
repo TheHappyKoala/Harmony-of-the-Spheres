@@ -1,9 +1,19 @@
 export const scenarioDefaults = {
   isLoaded: false,
   playing: false,
-  tcmsData: false,
   g: 39.5,
   integrator: 'RKN12',
+  trajectoryRendevouz: {
+    x: 0,
+    y: 0,
+    z: 0,
+    p: {
+      x: 0,
+      y: 0,
+      z: 0,
+      t: 0
+    }
+  },
   elapsedTime: 0,
   useBarnesHut: false,
   theta: 0.5,

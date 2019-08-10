@@ -44,7 +44,7 @@ module.exports = {
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
-        exclude: /node_modules/,
+        exclude: /node_modules/,   
         use: ["babel-loader"]
       }
     ]
@@ -54,6 +54,7 @@ module.exports = {
   },
   output: {
     path: `${__dirname}/dist`,
-    filename: "bundle.[hash].js"
+    filename: "bundle.[hash].js",
+    globalObject: 'this'
   }
 };
