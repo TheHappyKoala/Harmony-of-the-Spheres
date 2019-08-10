@@ -12,6 +12,7 @@ import cruithne from './cruithne';
 import plutoSystem from './thePlutonianSystem';
 import planetNine from './planetNine';
 import shoemakerLevy9 from './shoemakerLevy9';
+import forAllMankind from './forAllMankind';
 import rh120 from './rh120';
 import hd98800 from './hd98800';
 import venusPentagram from './venusPentagram';
@@ -183,6 +184,7 @@ export const scenarios = [
   hd98800,
   collisionsTest,
   innerSolarSystem,
+  forAllMankind,
   lunarFreeReturn,
   shenanigans,
   venusPentagram,

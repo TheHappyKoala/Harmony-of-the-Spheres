@@ -16,6 +16,7 @@ export interface ScenarioProps {
   trajectoryDepartureVelocity: number;
   trajectoryArrivalVelocity: number;
   trajectoryRelativeTo: string;
+  trajectoryRendevouz: any;
   integrator: string;
   habitableZone: boolean;
   referenceOrbits: boolean;
