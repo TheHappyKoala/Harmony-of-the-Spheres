@@ -120,7 +120,13 @@ export const getTrajectory = (payload: {
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
   getState: any
 ) => {
-  modifyScenarioProperty({ key: 'playing', value: false });
+  dispatch({
+    type: MODIFY_SCENARIO_PROPERTY,
+    payload: {
+      key: 'playing',
+      value: false
+    }
+  });
 
   dispatch({
     type: SET_LOADING,
@@ -168,6 +174,39 @@ export const getTrajectory = (payload: {
   spacecraft.vz = trajectory.z;
 
   trajectoryCruncher.terminate();
+
+  dispatch({
+    type: MODIFY_MASS_PROPERTY,
+    payload: {
+      name: spacecraft.name,
+      key: 'vx',
+      value: trajectory.x
+    }
+  });
+  dispatch({
+    type: MODIFY_MASS_PROPERTY,
+    payload: {
+      name: spacecraft.name,
+      key: 'vy',
+      value: trajectory.y
+    }
+  });
+  dispatch({
+    type: MODIFY_MASS_PROPERTY,
+    payload: {
+      name: spacecraft.name,
+      key: 'vz',
+      value: trajectory.z
+    }
+  });
+
+  dispatch({
+    type: MODIFY_SCENARIO_PROPERTY,
+    payload: {
+      key: 'trajectoryRendevouz',
+      value: rendevouz
+    }
+  });
 
   modifyScenarioProperty({ key: 'trajectoryRendevouz', value: rendevouz });
 
