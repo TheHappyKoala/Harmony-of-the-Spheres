@@ -34,15 +34,80 @@ export default ({
     'name',
     scenario.trajectoryTarget
   );
+  const primary = getObjFromArrByKeyValuePair(
+    scenario.masses,
+    'name',
+    scenario.trajectoryRelativeTo
+  );
+  const rendevouz = scenario.trajectoryRendevouz;
+  const rendevouzPosition = rendevouz.p;
 
   const trajectoryMap = useRef(null);
 
   useEffect(() => {
     const canvas = trajectoryMap.current;
-    canvas.width = 300;
-    canvas.height = 300;
+    const w = (canvas.width = 300);
+    const h = (canvas.height = 300);
+    const ctx = canvas.getContext('2d');
 
-    const ctx = canvas.getContext(canvas.parentNode.clientHeight);
+    const scale = 90 / Math.sqrt(getDistanceParams(primary, target).dSquared);
+    const radius = 7;
+
+    ctx.fillStyle = 'limegreen';
+
+    ctx.beginPath();
+
+    ctx.arc(
+      (primary.x - primary.x) * scale + w / 2,
+      (primary.y - primary.y) * scale + h / 2,
+      radius,
+      0,
+      2 * Math.PI
+    );
+
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(
+      (primary.x - spacecraft.x) * scale + w / 2,
+      (primary.y - spacecraft.y) * scale + h / 2,
+      radius,
+      0,
+      2 * Math.PI
+    );
+
+    ctx.arc(
+      (primary.x - target.x) * scale + w / 2,
+      (primary.y - target.y) * scale + h / 2,
+      radius,
+      0,
+      2 * Math.PI
+    );
+
+    ctx.fill();
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+      (primary.x - rendevouzPosition.x) * scale + w / 2 - 5,
+      (primary.y - rendevouzPosition.y) * scale + h / 2 - 5
+    );
+    ctx.lineTo(
+      (primary.x - rendevouzPosition.x) * scale + w / 2 + 5,
+      (primary.y - rendevouzPosition.y) * scale + h / 2 + 5
+    );
+
+    ctx.moveTo(
+      (primary.x - rendevouzPosition.x) * scale + w / 2 + 5,
+      (primary.y - rendevouzPosition.y) * scale + h / 2 - 5
+    );
+    ctx.lineTo(
+      (primary.x - rendevouzPosition.x) * scale + w / 2 - 5,
+      (primary.y - rendevouzPosition.y) * scale + h / 2 + 5
+    );
+    ctx.strokeStyle = 'limegreen';
+    ctx.lineWidth = 3;
+    ctx.stroke();
   });
 
   return (
