@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { degreesToRadians } from '../Physics/utils';
 
-export default function() {
+export default (): THREE.Mesh => {
   const geometry = new THREE.SphereBufferGeometry(
     1500 * 1000000000000000000000000000,
     20,
@@ -30,4 +30,4 @@ export default function() {
   mesh.name = 'Arena';
 
   return mesh;
-}
+};

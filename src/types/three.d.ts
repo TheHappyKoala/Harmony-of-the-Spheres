@@ -63,7 +63,21 @@ declare module 'three' {
       material: LineBasicMaterial
     );
   }
-  export class ShaderMaterial {
+  export class Points extends Object3D {
+    constructor(geometry: BufferGeometry, material: ShaderMaterial);
+  }
+  export class SphereBufferGeometry extends BufferGeometry {
+    constructor(radius: number, widthSegments: number, heightSegments: number);
+  }
+  export const BackSide: number;
+  export class TextureLoader {
+    constructor();
+    load(url: string): any;
+  }
+  export class Material {
+    constructor(parameters: { map?: any; side?: number });
+  }
+  export class ShaderMaterial extends Material {
     constructor(parameters: {
       vertexShader: string;
       fragmentShader: string;
@@ -74,7 +88,12 @@ declare module 'three' {
       side?: number;
     });
   }
-  export class Points extends Object3D {
-    constructor(geometry: BufferGeometry, material: ShaderMaterial);
+  export class MeshBasicMaterial extends Material {}
+  export class Mesh extends Object3D {
+    constructor(geometry: BufferGeometry, material: Material);
+    name: string;
+    rotateX(rad: number): this;
+    rotateY(rad: number): this;
+    rotateZ(rad: number): this;
   }
 }
