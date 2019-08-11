@@ -19,35 +19,27 @@ self.onmessage = ({ data: { integrator, g, dt, tol, minDt, maxDt, elapsedTime, m
         masses,
         elapsedTime
     });
-    const futurePositions = [];
-    let primaryAtDeparture;
+    const [spacecraft] = system.masses;
+    let targetMass = getObjFromArrByKeyValuePair(system.masses, 'name', target);
+    for (let i = 0; i < system.masses.length; i++) {
+        const name = system.masses[i].name;
+        if (name !== target && name !== primary && name !== target.perturber) {
+            system.masses.splice(i, 1);
+            i--;
+        }
+    }
+    let primaryAtDeparture = (primaryAtDeparture = getObjFromArrByKeyValuePair(system.masses, 'name', primary));
     const trajectoryGenerator = () => {
         return new Promise(resolve => {
             const interval = setInterval(() => {
-                system.iterate();
-                if (system.elapsedTime >= departure && !futurePositions.length) {
-                    const [spacecraft] = system.masses;
-                    futurePositions.push({
-                        x: spacecraft.x,
-                        y: spacecraft.y,
-                        z: spacecraft.z,
-                        t: system.elapsedTime
-                    });
-                    primaryAtDeparture = getObjFromArrByKeyValuePair(system.masses, 'name', primary);
-                }
+                for (let i = 0; i < 15; i++)
+                    system.iterate();
                 if (system.elapsedTime >= arrival) {
-                    const targetPosition = getObjFromArrByKeyValuePair(system.masses, 'name', target);
-                    futurePositions.push({
-                        x: targetPosition.x,
-                        y: targetPosition.y,
-                        z: targetPosition.z,
-                        t: system.elapsedTime
-                    });
+                    targetMass = getObjFromArrByKeyValuePair(system.masses, 'name', target);
                     clearInterval(interval);
-                    const [departurePosition, arrivalPosition] = futurePositions;
-                    resolve(planFlight(arrival - departure, departurePosition, arrivalPosition, primaryAtDeparture));
+                    resolve(planFlight(system.elapsedTime - departure, spacecraft, targetMass, primaryAtDeparture));
                 }
-            }, 4);
+            }, 16);
         });
     };
     const [velocities] = yield trajectoryGenerator();
@@ -56,14 +48,13 @@ self.onmessage = ({ data: { integrator, g, dt, tol, minDt, maxDt, elapsedTime, m
             {
                 x: velocities.initVel.x,
                 y: velocities.initVel.y,
-                z: velocities.initVel.z,
-                t: futurePositions[0].t
+                z: velocities.initVel.z
             },
             {
                 x: velocities.finalVel.x,
                 y: velocities.finalVel.y,
                 z: velocities.finalVel.z,
-                t: futurePositions[1].t
+                p: Object.assign({}, targetMass, { t: system.elapsedTime })
             }
         ]
     });
