@@ -16,7 +16,16 @@ export default class extends MassManifestation {
   }
 
   removeHabitableZone() {
-    this.remove(this.getObjectByName(`${this.mass.name} Habitable Zone`));
+    const habitableZone = this.getObjectByName(
+      `${this.mass.name} Habitable Zone`
+    );
+
+    if (habitableZone) {
+      const habitableZoneMain = habitableZone.getObjectByName('Main');
+      habitableZoneMain.geometry.dispose();
+      habitableZoneMain.material.dispose();
+      this.remove(habitableZone);
+    }
   }
 
   getReferenceOrbits(referenceOrbits) {
@@ -78,13 +87,40 @@ export default class extends MassManifestation {
 
     container.name = 'Reference Orbits';
 
+    mercuryOrbitCurve.name = 'Mercury';
+    earthOrbitCurve.name = 'Earth';
+
     container.add(mercuryOrbitCurve, earthOrbitCurve);
 
     this.add(container);
   }
 
   removeReferenceOrbits() {
-    this.remove(this.getObjectByName('Reference Orbits'));
+    const referenceOrbits = this.getObjectByName('Reference Orbits');
+
+    if (referenceOrbits) {
+      const mercuryOrbit = referenceOrbits.getObjectByName('Mercury');
+
+      const [mercuryOrbitChild] = mercuryOrbit.children;
+      mercuryOrbitChild.geometry.dispose();
+      mercuryOrbitChild.material.dispose();
+
+      mercuryOrbit.remove(mercuryOrbitChild);
+
+      referenceOrbits.remove(mercuryOrbit);
+
+      const earthOrbit = referenceOrbits.getObjectByName('Earth');
+
+      const [earthOrbitChild] = earthOrbit.children;
+      earthOrbitChild.geometry.dispose();
+      earthOrbitChild.material.dispose();
+
+      earthOrbit.remove(earthOrbitChild);
+
+      referenceOrbits.remove(earthOrbit);
+
+      this.remove(referenceOrbits);
+    }
   }
 
   getMain() {
@@ -145,5 +181,22 @@ export default class extends MassManifestation {
       trail.geometry.vertices.length = this.mass.trailVertices;
       trail.geometry.verticesNeedUpdate = true;
     }
+  }
+
+  dispose() {
+    const main = this.getObjectByName('Main');
+
+    if (main) {
+      main.geometry.dispose();
+      main.material.uniforms.texture.value.dispose();
+      main.material.dispose();
+      this.remove(main);
+    }
+
+    this.removeHabitableZone();
+
+    this.removeTrail();
+
+    this.removeReferenceOrbits();
   }
 }

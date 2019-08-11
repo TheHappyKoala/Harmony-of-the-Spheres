@@ -41,4 +41,8 @@ export default class extends MassManifestation {
       }
     );
   }
+
+  dispose() {
+    //Need to look into how to go about this since models have a fairly deep and nested data structure.
+  }
 }
