@@ -191,9 +191,14 @@ export default {
 
         if (newMasses.some(entry2 => entry1.name === entry2.name)) ++i;
         else {
-          previousMasses.splice(i, 1);
+          const massToBeDeleted = this.scene.getObjectByName(
+            previousMasses[i].name
+          );
 
-          this.scene.remove(this.scene.getObjectByName(entry1.name));
+          massToBeDeleted.dispose();
+          this.scene.remove(massToBeDeleted);
+
+          previousMasses.splice(i, 1);
         }
       }
 
@@ -931,7 +936,73 @@ export default {
   },
 
   reset() {
+    //Dispose of the camera controls
     this.camera && this.camera.controls.dispose();
+
+    //Dispose of all the mass manifestations
+    if (this.massManifestations)
+      this.massManifestations.forEach(manifestation => {
+        manifestation.dispose();
+        this.scene.remove(this.scene.getObjectByName(manifestation.name));
+      });
+
+    //Dispose of the particles system
+    if (this.particles) {
+      this.particles.dispose();
+      this.scene.remove(this.scene.getObjectByName('ParticlesManifestation'));
+    }
+
+    if (this.ellipseCurve) {
+      this.ellipseCurve.dispose();
+      this.scene.remove(this.ellipseCurve);
+    }
+
+    //Dispose of the scene and arena
+    let arena;
+
+    if (this.scene) {
+      arena = this.scene.getObjectByName('Arena');
+
+      if (arena) {
+        arena.geometry.dispose();
+        arena.material.map.dispose();
+        arena.material.dispose();
+        this.scene.remove(arena);
+      }
+
+      this.scene.dispose();
+    }
+
+    //Dispose of the renderer and although the garbage collector takes care of this, just to be sure
+    //Null the scene properties to make sure memory is freed up
+    if (this.renderer) {
+      this.renderer.renderLists.dispose();
+      this.renderer.dispose();
+
+      this.scenario.null;
+      this.webGlCanvas = null;
+      this.graphics2DCanvas = null;
+      this.graphics2D = null;
+      this.w = null;
+      this.h = null;
+      this.audio = null;
+      this.camera = null;
+      this.system = null;
+      this.renderer = null;
+      this.scene = null;
+      this.utilityVector = null;
+      this.barycenterPosition = null;
+      this.rotatingReferenceFrame = null;
+      this.rotatingVelocity = null;
+      this.manifestationPosition = null;
+      this.particlePhysics = null;
+      this.previousCameraFocus = null;
+      this.previousRotatingReferenceFrame = null;
+      this.previousIntegrator = null;
+      this.massManifestations = null;
+      this.particles = null;
+      this.ellipseCurve = null;
+    }
 
     cancelAnimationFrame(this.requestAnimationFrameId);
 
