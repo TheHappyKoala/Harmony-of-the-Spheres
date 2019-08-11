@@ -184,7 +184,13 @@ export default class extends THREE.Object3D {
   }
 
   removeTrail() {
-    this.remove(this.getObjectByName('Trail'));
+    const trail = this.getObjectByName('Trail');
+
+    if (trail) {
+      trail.geometry.dispose();
+      trail.material.dispose();
+      this.remove(trail);
+    }
   }
 
   createManifestation() {
@@ -211,6 +217,35 @@ export default class extends THREE.Object3D {
       trail.geometry.vertices.unshift({ x, y, z });
       trail.geometry.vertices.length = this.mass.trailVertices;
       trail.geometry.verticesNeedUpdate = true;
+    }
+  }
+
+  dispose() {
+    const main = this.getObjectByName('Main');
+
+    if (main) {
+      main.geometry.dispose();
+      if (main.material.map) main.material.map.dispose();
+      if (main.material.bumpMap) main.material.bumpMap.dispose();
+      main.material.dispose();
+      this.remove(main);
+    }
+
+    const trail = this.getObjectByName('Trail');
+
+    if (trail) {
+      trail.geometry.dispose();
+      trail.material.dispose();
+      this.remove(trail);
+    }
+
+    const clouds = this.getObjectByName('Clouds');
+
+    if (clouds) {
+      clouds.geometry.dispose();
+      clouds.material.map.dispose();
+      clouds.material.dispose();
+      this.remove(trail);
     }
   }
 }
