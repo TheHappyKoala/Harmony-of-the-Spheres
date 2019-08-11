@@ -36,6 +36,8 @@ export default class extends Object3D {
   }: ParticlesManifestationType) {
     super();
 
+    this.name = 'ParticlesManifestation';
+
     this.particles = particles;
 
     this.scenarioScale = scenarioScale;
@@ -136,5 +138,16 @@ export default class extends Object3D {
 
     geometry.attributes.size.needsUpdate = true;
     geometry.attributes.position.needsUpdate = true;
+  }
+
+  dispose() {
+    const system = this.getObjectByName('system');
+
+    if (system) {
+      system.geometry.dispose();
+      system.material.uniforms.texture.value.dispose();
+      system.material.dispose();
+      this.remove(system);
+    }
   }
 }
