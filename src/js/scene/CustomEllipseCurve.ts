@@ -143,7 +143,10 @@ export default class extends Object3D {
       );
     };
 
-    this.add(new Line(ellipseGeometry, ellipseMaterial));
+    const mesh = new Line(ellipseGeometry, ellipseMaterial);
+    mesh.name = 'CustomEllipse';
+
+    this.add(mesh);
   }
 
   rotateAroundFocus(axisRotations: VectorType): void {
@@ -173,5 +176,15 @@ export default class extends Object3D {
     this.uniforms.aRotation.value = aRotation;
 
     this.rotateAroundFocus(axisRotations);
+  }
+
+  dispose() {
+    const customEllipse = this.getObjectByName('CustomEllipse');
+
+    if (customEllipse) {
+      customEllipse.geometry.dispose();
+      customEllipse.material.dispose();
+      this.remove(customEllipse);
+    }
   }
 }
