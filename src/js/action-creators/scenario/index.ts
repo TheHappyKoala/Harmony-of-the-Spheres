@@ -141,29 +141,31 @@ export const getTrajectory = (payload: {
   const scenario = getState().scenario;
 
   const getTrajectory = () =>
-    new Promise(resolve => {
-      trajectoryCruncher.addEventListener(
-        'message',
-        ({ data: { trajectory } }: any) => {
-          resolve(trajectory);
-        }
-      );
+    new Promise<{ x: number; y: number; z: number; p?: MassProperty }[]>(
+      resolve => {
+        trajectoryCruncher.addEventListener(
+          'message',
+          ({ data: { trajectory } }) => {
+            resolve(trajectory);
+          }
+        );
 
-      trajectoryCruncher.postMessage({
-        integrator: scenario.integrator,
-        g: scenario.g,
-        dt: scenario.dt,
-        tol: scenario.tol,
-        minDt: scenario.minDt,
-        maxDt: scenario.maxDt,
-        elapsedTime: scenario.elapsedTime,
-        masses: scenario.masses,
-        departure: scenario.elapsedTime,
-        arrival: scenario.elapsedTime + payload.timeOfFlight,
-        target: payload.target,
-        primary: payload.primary
-      });
-    });
+        trajectoryCruncher.postMessage({
+          integrator: scenario.integrator,
+          g: scenario.g,
+          dt: scenario.dt,
+          tol: scenario.tol,
+          minDt: scenario.minDt,
+          maxDt: scenario.maxDt,
+          elapsedTime: scenario.elapsedTime,
+          masses: scenario.masses,
+          departure: scenario.elapsedTime,
+          arrival: scenario.elapsedTime + payload.timeOfFlight,
+          target: payload.target,
+          primary: payload.primary
+        });
+      }
+    );
 
   const [trajectory, rendevouz] = await getTrajectory();
 
