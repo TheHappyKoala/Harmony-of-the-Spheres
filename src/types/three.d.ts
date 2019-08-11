@@ -70,6 +70,7 @@ declare module 'three' {
     constructor(radius: number, widthSegments: number, heightSegments: number);
   }
   export const BackSide: number;
+  export const DoubleSide: number;
   export class TextureLoader {
     constructor();
     load(url: string): any;

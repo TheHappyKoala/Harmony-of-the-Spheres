@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import habitableZone from './shaders/habitableZone';
 
-export default function(start, end) {
-  return new THREE.ShaderMaterial({
+export default (start: number, end: number): THREE.ShaderMaterial =>
+  new THREE.ShaderMaterial({
     uniforms: {
       resolution: { value: new THREE.Vector3(1, 1, 1) },
       start: { value: start },
@@ -12,4 +12,3 @@ export default function(start, end) {
     fragmentShader: habitableZone.fragment,
     side: THREE.DoubleSide
   });
-}
