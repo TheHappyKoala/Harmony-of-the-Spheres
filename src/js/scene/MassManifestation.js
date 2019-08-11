@@ -231,13 +231,7 @@ export default class extends THREE.Object3D {
       this.remove(main);
     }
 
-    const trail = this.getObjectByName('Trail');
-
-    if (trail) {
-      trail.geometry.dispose();
-      trail.material.dispose();
-      this.remove(trail);
-    }
+    this.removeTrail();
 
     const clouds = this.getObjectByName('Clouds');
 
@@ -245,7 +239,7 @@ export default class extends THREE.Object3D {
       clouds.geometry.dispose();
       clouds.material.map.dispose();
       clouds.material.dispose();
-      this.remove(trail);
+      this.remove(clouds);
     }
   }
 }
