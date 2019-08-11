@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import MassManifestation from './MassManifestation';
 import starMaterial from './starMaterial';
-import HabitableZone from './HabitableZone';
+import habitableZone from './habitableZone';
 import CustomEllipseCurve from './CustomEllipseCurve';
 
 export default class extends MassManifestation {
@@ -12,18 +12,15 @@ export default class extends MassManifestation {
   }
 
   getHabitableZone() {
-    this.add(new HabitableZone(this.mass));
+    this.add(habitableZone(this.mass.m));
   }
 
   removeHabitableZone() {
-    const habitableZone = this.getObjectByName(
-      `${this.mass.name} Habitable Zone`
-    );
+    const habitableZone = this.getObjectByName('Habitable Zone');
 
     if (habitableZone) {
-      const habitableZoneMain = habitableZone.getObjectByName('Main');
-      habitableZoneMain.geometry.dispose();
-      habitableZoneMain.material.dispose();
+      habitableZone.geometry.dispose();
+      habitableZone.material.dispose();
       this.remove(habitableZone);
     }
   }
@@ -125,8 +122,8 @@ export default class extends MassManifestation {
 
   getMain() {
     const geometry = new THREE.PlaneGeometry(
-      this.mass.radius * 3,
-      this.mass.radius * 3,
+      this.mass.radius * 4,
+      this.mass.radius * 4,
       16
     );
 
@@ -164,9 +161,7 @@ export default class extends MassManifestation {
   draw(x, y, z, camera) {
     const main = this.getObjectByName('Main');
     const trail = this.getObjectByName('Trail');
-    const habitableZone = this.getObjectByName(
-      `${this.mass.name} Habitable Zone`
-    );
+    const habitableZone = this.getObjectByName('Habitable Zone');
 
     main.position.set(x, y, z);
 

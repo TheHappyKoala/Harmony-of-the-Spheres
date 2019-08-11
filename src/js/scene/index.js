@@ -627,7 +627,7 @@ export default {
         );
 
         const habitableZone = massManifestation.getObjectByName(
-          `${mass.name} Habitable Zone`
+          'Habitable Zone'
         );
 
         if (habitableZone === undefined) {

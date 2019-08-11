@@ -30,6 +30,9 @@ declare module 'three' {
     remove(obj: Object3D): this;
     add(obj: Object3D): this;
     getObjectByName(name: string): Object3D;
+    rotateX(rad: number): this;
+    rotateY(rad: number): this;
+    rotateZ(rad: number): this;
   }
   export class Geometry {
     constructor();
@@ -69,6 +72,9 @@ declare module 'three' {
   export class SphereBufferGeometry extends BufferGeometry {
     constructor(radius: number, widthSegments: number, heightSegments: number);
   }
+  export class RingBufferGeometry extends BufferGeometry {
+    constructor(inner: number, outer: number, segments: number);
+  }
   export const BackSide: number;
   export const DoubleSide: number;
   export class TextureLoader {
@@ -76,6 +82,7 @@ declare module 'three' {
     load(url: string): any;
   }
   export class Material {
+    transparent: boolean;
     constructor(parameters: { map?: any; side?: number });
   }
   export class ShaderMaterial extends Material {
@@ -93,8 +100,5 @@ declare module 'three' {
   export class Mesh extends Object3D {
     constructor(geometry: BufferGeometry, material: Material);
     name: string;
-    rotateX(rad: number): this;
-    rotateY(rad: number): this;
-    rotateZ(rad: number): this;
   }
 }
