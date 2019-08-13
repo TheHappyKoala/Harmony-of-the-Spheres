@@ -7,7 +7,7 @@ module.exports = merge(common, {
   devServer: {
     contentBase: './src',    
     hot: true,
-    port: 3000
+    port: 7000
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()

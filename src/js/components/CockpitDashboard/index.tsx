@@ -50,7 +50,7 @@ export default ({
     const h = (canvas.height = 300);
     const ctx = canvas.getContext('2d');
 
-    const scale = 90 / Math.sqrt(getDistanceParams(primary, target).dSquared);
+    const scale = 40 / Math.sqrt(getDistanceParams(primary, target).dSquared);
     const radius = 7;
 
     ctx.fillStyle = 'limegreen';
