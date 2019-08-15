@@ -115,6 +115,10 @@ export default ({
       <section>
         <table className="trajectory-table">
           <tr>
+            <td>Elapsed Time [Y]:</td>
+            <td>{scenario.elapsedTime.toFixed(4)}</td>
+          </tr>
+          <tr>
             <td>Distance [AU]:</td>
             <td>
               {Math.sqrt(
@@ -139,6 +143,17 @@ export default ({
                 x: target.vx,
                 y: target.vy,
                 z: target.vz
+              }).toFixed(4)}
+            </td>{' '}
+            //getEscapeVMag(g, m, d)
+          </tr>
+          <tr>
+            <td>Relative Rendevouz Velocity [AU/Y]:</td>
+            <td>
+              {getVelocityMagnitude({
+                x: rendevouz.x - rendevouzPosition.vx,
+                y: rendevouz.y - rendevouzPosition.vy,
+                z: rendevouz.z - rendevouzPosition.vz
               }).toFixed(4)}
             </td>
           </tr>
