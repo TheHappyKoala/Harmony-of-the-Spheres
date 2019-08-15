@@ -1,6 +1,7 @@
 import H3 from '../vectors';
-import { VectorType, MassType } from '../types';
-
+import { VectorType, MassType, SOITree } from '../types';
+import { getDistanceParams } from '../utils';
+import { getObjFromArrByKeyValuePair } from '../../utils';
 function hyp2f1b(x: number): number {
   let res = 1.0;
   let resOld = 1.0;
@@ -364,6 +365,144 @@ export function stateToKepler(
     vi: vi * convFactor
   };
 }
+
+function radiusSOI(largerMass: SOITree, smallerMass: SOITree): number {
+  const d = Math.sqrt(getDistanceParams(largerMass, smallerMass).dSquared);
+  return d * Math.pow(smallerMass.m / largerMass.m, 2 / 5);
+}
+
+function recursiveTree(tree: SOITree): SOITree {
+  if (tree.children.length == 0) {
+    return tree;
+  }
+  let children = tree.children;
+  // Calculate the Sphere of Influence relative to the tree root
+  for (let i = 0; i < tree.children.length; i++) {
+    children[i].SOIradius = radiusSOI(tree, children[i]);
+  }
+  // Sort and place bodies
+  var len = children.length;
+  var i = 0;
+  while (i < len) {
+    var j = 0;
+    while (j < len) {
+      if (i != j) {
+        const d = Math.sqrt(
+          getDistanceParams(children[i], children[j]).dSquared
+        );
+        if (d < children[i].SOIradius) {
+          children[i].children.push(children[j]);
+          children.splice(j, 1);
+          len -= 1;
+          if (j < i) {
+            i--;
+          }
+        } else {
+          j++;
+        }
+      } else {
+        j++;
+      }
+    }
+    i = i + 1;
+  }
+  // Do all of the above recursivly for all remaining direct children of the root
+  for (let i = 0; i < children.length; i++) {
+    children[i] = recursiveTree(children[i]);
+  }
+  tree.children = children;
+  return tree;
+}
+
+function simplifyTree(tree: SOITree): SOITree {
+  let newTree = {
+    name: tree.name,
+    children: tree.children,
+    SOIradius: tree.SOIradius
+  };
+  if (newTree.children.length == 0) {
+    return newTree;
+  }
+  for (let i = 0; i < newTree.children.length; i++) {
+    newTree.children[i] = simplifyTree(newTree.children[i]);
+  }
+  return newTree;
+}
+
+// masses is scenario.masses
+export function constructSOITree(masses: Array<MassType>): SOITree {
+  const sun: MassType = getObjFromArrByKeyValuePair(masses, 'name', 'Sun');
+  let tree: SOITree = {
+    SOIradius: 1e100,
+    children: [],
+    name: 'Sun',
+    m: sun.m,
+    x: sun.x,
+    y: sun.y,
+    z: sun.z
+  };
+  masses.forEach(val => {
+    if (val.name != 'Sun') {
+      let newVal: SOITree = {
+        SOIradius: 0,
+        children: [],
+        name: val.name,
+        m: val.m,
+        x: val.x,
+        y: val.y,
+        z: val.z
+      };
+      tree.children.push(newVal);
+    }
+  });
+  tree = recursiveTree(tree);
+  // construct simplified tree with just name and SOIradius
+  const simpleTree = simplifyTree(tree);
+  return simpleTree;
+}
+
+// pos is the position and masses is scenario.masses
+export function findCurrentSOI(
+  pos: MassType,
+  tree: SOITree,
+  masses: Array<MassType>
+): MassType {
+  if (tree.children.length == 0) {
+    return getObjFromArrByKeyValuePair(masses, 'name', tree.name);
+  }
+  for (let i = 0; i < tree.children.length; i++) {
+    if (tree.children[i].name == pos.name) {
+      continue;
+    }
+    const currentBody: MassType = getObjFromArrByKeyValuePair(
+      masses,
+      'name',
+      tree.children[i].name
+    );
+    const d = Math.sqrt(getDistanceParams(currentBody, pos).dSquared);
+    if (d < tree.children[i].SOIradius) {
+      return findCurrentSOI(pos, tree.children[i], masses);
+    }
+  }
+  return getObjFromArrByKeyValuePair(masses, 'name', tree.name);
+}
+/*
+export function allPassingSOI(tree: SOITree, name: string){
+  if (tree.name == name){
+    return name;
+  }
+  // Check tree's children
+  for (let i = 0; i < tree.children.length; i++){
+    if (tree.children[i].name == name){
+      return name;
+    }
+  }
+  // Check tree's grandchildren
+  for (let i = 0; i < tree.children.length; i++){
+
+  }
+}
+*/
 
 // ellipseTest() {
 
