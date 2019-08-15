@@ -42,15 +42,21 @@ export default ({
   const rendevouz = scenario.trajectoryRendevouz;
   const rendevouzPosition = rendevouz.p;
 
+  const relativeVelocityAtRendevouz = getVelocityMagnitude({
+    x: rendevouz.x - rendevouzPosition.vx,
+    y: rendevouz.y - rendevouzPosition.vy,
+    z: rendevouz.z - rendevouzPosition.vz
+  }).toFixed(4);
+
   const trajectoryMap = useRef(null);
 
   useEffect(() => {
     const canvas = trajectoryMap.current;
-    const w = (canvas.width = 300);
-    const h = (canvas.height = 300);
+    const w = (canvas.width = 380);
+    const h = (canvas.height = 380);
     const ctx = canvas.getContext('2d');
 
-    const scale = 40 / Math.sqrt(getDistanceParams(primary, target).dSquared);
+    const scale = 45 / Math.sqrt(getDistanceParams(primary, target).dSquared);
     const radius = 7;
 
     ctx.fillStyle = 'limegreen';
@@ -145,16 +151,13 @@ export default ({
                 z: target.vz
               }).toFixed(4)}
             </td>{' '}
-            //getEscapeVMag(g, m, d)
           </tr>
           <tr>
             <td>Relative Rendevouz Velocity [AU/Y]:</td>
             <td>
-              {getVelocityMagnitude({
-                x: rendevouz.x - rendevouzPosition.vx,
-                y: rendevouz.y - rendevouzPosition.vy,
-                z: rendevouz.z - rendevouzPosition.vz
-              }).toFixed(4)}
+              {isNaN(relativeVelocityAtRendevouz as any)
+                ? 0
+                : relativeVelocityAtRendevouz}
             </td>
           </tr>
         </table>
