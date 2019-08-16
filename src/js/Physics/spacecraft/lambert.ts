@@ -1,3 +1,5 @@
+// Implementation from https://github.com/poliastro/poliastro/
+
 import H3 from '../vectors';
 import { VectorType, MassType, SOITree } from '../types';
 import { getDistanceParams } from '../utils';
