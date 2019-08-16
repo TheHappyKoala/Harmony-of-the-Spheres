@@ -45,6 +45,31 @@ function initial_guess(T: number, ll: number, M: number): Array<number> {
   }
 }
 
+function tofEq(x: number, T0: number, ll: number, M: number): number {
+  return tofEqY(x, computeY(x, ll), T0, ll, M);
+}
+
+function computeTmin(
+  ll: number,
+  M: number,
+  numiter: number,
+  rtol: number
+): number {
+  if (ll == 1) {
+    return tofEq(0.0, 0.0, ll, M);
+  } else {
+    if (M == 0) {
+      return 0.0;
+    } else {
+      const xi = 0.1;
+      const Ti = tofEq(xi, 0.0, ll, M);
+      const xTmin = halley(xi, Ti, ll, rtol, numiter);
+      const Tmin = tofEq(xTmin, 0.0, ll, M);
+      return Tmin;
+    }
+  }
+}
+
 function computeY(x: number, ll: number): number {
   return Math.sqrt(1 - ll ** 2 * (1 - x ** 2));
 }
@@ -106,6 +131,35 @@ function tofEqP3(
   );
 }
 
+function halley(
+  p0: number,
+  T0: number,
+  ll: number,
+  tol: number,
+  maxiter: number
+): number {
+  let y = 0;
+  let p = 0;
+  let fder = 0;
+  let fder2 = 0;
+  let fder3 = 0;
+  for (let ii = 0; ii < maxiter; ii++) {
+    y = computeY(p0, ll);
+    fder = tofEqP(p0, y, T0, ll);
+    fder2 = tofEqP2(p0, y, T0, fder, ll);
+    if (fder2 == 0) {
+      console.log('fder2 was 0');
+    }
+    fder3 = tofEqP3(p0, y, T0, fder, fder2, ll);
+    p = p0 - 2 * fder * fder2 / (2 * fder2 ** 2 - fder * fder3);
+    if (Math.abs(p - p0) < tol) {
+      return p;
+    }
+    p0 = p;
+  }
+  console.log('halley failed :(');
+}
+
 function householder(
   p0: number,
   T0: number,
@@ -148,10 +202,16 @@ export function findXY(
   numiter: number,
   rtol: number
 ): Array<{ x: number; y: number }> {
-  const Mmax = Math.floor(T / Math.PI);
-  //const T00 = Math.acos(ll) + ll * Math.sqrt(1 - ll * ll);
+  let Mmax = Math.floor(T / Math.PI);
+  const T00 = Math.acos(ll) + ll * Math.sqrt(1 - ll * ll);
 
   // Refine maximum number of revolutions if necessary (NotImplemented)
+  if (T < T00 + Mmax * Math.PI && Mmax > 0) {
+    const Tmin = computeTmin(ll, Mmax, numiter, rtol);
+    if (T < Tmin) {
+      Mmax -= 1;
+    }
+  }
   if (M > Mmax) {
     console.log('M > Mmax error');
   }
