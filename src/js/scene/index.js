@@ -85,6 +85,8 @@ export default {
       this.graphics2D.canvas
     );
 
+    this.clock = new THREE.Clock();
+
     this.previousCameraFocus = null;
     this.previousRotatingReferenceFrame = null;
     this.previousIntegrator = this.scenario.integrator;
@@ -239,7 +241,7 @@ export default {
         (this.rotatingReferenceFrame.z - primary.z) * scale;
 
       this.ellipseCurve.update(
-        (this.rotatingReferenceFrame.x - primary.x - ellipse.focus) * scale,
+        (this.rotatingReferenceFrame.x - primary.x + ellipse.focus) * scale,
         (this.rotatingReferenceFrame.y - primary.y) * scale,
         ellipse.xRadius * scale,
         ellipse.yRadius * scale,
@@ -525,8 +527,19 @@ export default {
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
-    if (cameraPosition === 'Free') this.camera.controls.enabled = true;
-    else this.camera.controls.enabled = false;
+    if (cameraPosition === 'Free' || cameraPosition === 'Cockpit') {
+      if (
+        cameraPosition === 'Cockpit' &&
+        this.camera.currentControls !== 'Fly Controls'
+      )
+        this.camera.setControls('Fly Controls');
+
+      if (
+        cameraPosition === 'Free' &&
+        this.camera.currentControls !== 'Orbit Controls'
+      )
+        this.camera.setControls('Orbit Controls');
+    } else this.camera.controls.dispose();
 
     this.graphics2D.clear();
 
@@ -546,14 +559,14 @@ export default {
         drawBaryCenterLabel
       );
 
-    if (cameraFocus === 'Origo') {
+    if (cameraFocus === 'Origo' && cameraPosition !== 'Cockpit') {
       if (cameraPosition !== 'Free') this.camera.lookAt(0, 0, 0);
       else this.camera.controls.target.set(0, 0, 0);
     }
 
     let barycenterPositionArray;
 
-    if (cameraFocus === 'Barycenter') {
+    if (cameraFocus === 'Barycenter' && cameraPosition !== 'Cockpit') {
       barycenterPositionArray = this.barycenterPosition.toArray();
 
       if (cameraPosition !== 'Free')
@@ -562,6 +575,7 @@ export default {
     }
 
     if (
+      cameraPosition !== 'Cockpit' &&
       this.previousCameraFocus !== cameraFocus &&
       (cameraFocus === 'Origo' || cameraFocus === 'Barycenter')
     ) {
@@ -727,6 +741,7 @@ export default {
         if (trail.visible) {
           if (
             (cameraPosition === 'Chase' && cameraFocus === name) ||
+            (cameraPosition === 'Cockpit' && i === 0) ||
             cameraPosition === name ||
             (cameraPosition === 'Free' &&
               cameraFocus === name &&
@@ -749,14 +764,15 @@ export default {
           if (
             cameraPosition !== 'Free' &&
             cameraPosition !== 'Chase' &&
-            cameraPosition !== name
+            cameraPosition !== name &&
+            cameraPosition !== 'Cockpit'
           ) {
             trail.visible = true;
           }
         }
       }
 
-      if (cameraFocus === name) {
+      if (cameraFocus === name && cameraPosition !== 'Cockpit') {
         if (cameraPosition !== 'Free')
           this.camera.lookAt(...manifestationPositionArray);
         else if (cameraPosition === 'Free' && cameraFocus !== 'Origo') {
@@ -771,7 +787,11 @@ export default {
         this.camera.position.set(...manifestationPositionArray);
       }
 
-      if (this.previousCameraFocus !== cameraFocus && cameraFocus === name) {
+      if (
+        this.previousCameraFocus !== cameraFocus &&
+        cameraFocus === name &&
+        cameraPosition !== 'Cockpit'
+      ) {
         this.previousCameraFocus = cameraFocus;
 
         if (cameraPosition === 'Free') {
@@ -785,7 +805,11 @@ export default {
         }
       }
 
-      if (this.scenario.labels && cameraPosition !== name)
+      if (
+        this.scenario.labels &&
+        cameraPosition !== name &&
+        (cameraPosition === 'Cockpit' && i === 0 ? false : true)
+      ) {
         this.graphics2D.drawLabel(
           name,
           this.utilityVector.set(...manifestationPositionArray),
@@ -796,6 +820,7 @@ export default {
           'white',
           drawMassLabel
         );
+      }
 
       const main = massManifestation.getObjectByName('Main');
 
@@ -837,6 +862,14 @@ export default {
 
       if (cameraPosition === name) massManifestation.visible = false;
       else massManifestation.visible = true;
+
+      if (cameraPosition === 'Cockpit' && i === 0) {
+        this.camera.position.set(
+          this.manifestationPosition.x,
+          this.manifestationPosition.y,
+          this.manifestationPosition.z
+        );
+      }
     }
 
     if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame) {
@@ -889,6 +922,8 @@ export default {
     );
 
     TWEEN.update();
+    if (this.camera.currentControls === 'Fly Controls')
+      this.camera.controls.update(this.clock.getDelta());
     this.requestAnimationFrameId = requestAnimationFrame(this.loop);
     this.renderer.render(this.scene, this.camera);
   },
@@ -937,7 +972,7 @@ export default {
 
   reset() {
     //Dispose of the camera controls
-    this.camera && this.camera.controls.dispose();
+    if (this.camera && this.camera.controls) this.camera.controls.dispose();
 
     //Dispose of all the mass manifestations
     if (this.massManifestations)
