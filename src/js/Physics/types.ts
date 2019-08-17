@@ -41,3 +41,13 @@ export interface TreeNodeType {
   mass: number;
   children: TreeNodeType[] | MassType[];
 }
+
+export interface SOITree {
+  name: string;
+  SOIradius: number;
+  children: Array<SOITree>;
+  m?: number;
+  x?: number;
+  y?: number;
+  z?: number;
+}
