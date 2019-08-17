@@ -726,9 +726,9 @@ export default {
 
         if (cameraPosition === 'Free') {
           this.camera.position.set(
-            this.manifestationPosition.x,
+            this.manifestationPosition.x + mass.radius * 4,
             this.manifestationPosition.y,
-            this.manifestationPosition.z + 1
+            this.manifestationPosition.z + mass.radius * 3
           );
 
           this.camera.lookAt(...manifestationPositionArray);
