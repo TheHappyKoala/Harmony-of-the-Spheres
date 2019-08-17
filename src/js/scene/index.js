@@ -539,7 +539,7 @@ export default {
         this.camera.currentControls !== 'Orbit Controls'
       )
         this.camera.setControls('Orbit Controls');
-    } else this.camera.controls.dispose();
+    } else this.camera.setControls();
 
     this.graphics2D.clear();
 
@@ -604,7 +604,7 @@ export default {
       const massManifestation = this.massManifestations[i];
       const mass = this.system.masses[i];
 
-      let { name, trailVertices, radius } = this.system.masses[i];
+      let { name, trailVertices } = this.system.masses[i];
 
       this.manifestationPosition
         .set({ x: mass.x, y: mass.y, z: mass.z })
@@ -612,12 +612,6 @@ export default {
         .multiplyByScalar(this.scenario.scale);
 
       const manifestationPositionArray = this.manifestationPosition.toArray();
-
-      this.lastPosition = {
-        x: manifestationPositionArray[0],
-        y: manifestationPositionArray[1],
-        z: manifestationPositionArray[2]
-      };
 
       const cameraDistanceToFocus = Math.sqrt(
         getDistanceParams(this.camera.position, this.manifestationPosition)
@@ -731,60 +725,12 @@ export default {
           trail.geometry.verticesNeedUpdate = false;
       } else massManifestation.removeTrail();
 
-      let zOffset;
-
-      if (dt < 0.0002) zOffset = radius * 80;
-      if (dt > 0.0002) zOffset = radius < 18 ? 60000 : radius * 1500;
-      if (dt > 0.5) zOffset = radius !== 1.2 ? radius * 500000 : 4000000;
-
-      if (trail) {
-        if (trail.visible) {
-          if (
-            (cameraPosition === 'Chase' && cameraFocus === name) ||
-            (cameraPosition === 'Cockpit' && i === 0) ||
-            cameraPosition === name ||
-            (cameraPosition === 'Free' &&
-              cameraFocus === name &&
-              cameraDistanceToFocus < zOffset * 0.5)
-          ) {
-            trail.visible = false;
-          }
-        }
-
-        if (!trail.visible || !massManifestation.visible) {
-          if (
-            (cameraPosition === 'Free' && cameraFocus !== name) ||
-            (cameraPosition === 'Free' &&
-              cameraFocus === name &&
-              cameraDistanceToFocus > zOffset * 0.5)
-          ) {
-            trail.visible = true;
-          }
-
-          if (
-            cameraPosition !== 'Free' &&
-            cameraPosition !== 'Chase' &&
-            cameraPosition !== name &&
-            cameraPosition !== 'Cockpit'
-          ) {
-            trail.visible = true;
-          }
-        }
-      }
-
       if (cameraFocus === name && cameraPosition !== 'Cockpit') {
         if (cameraPosition !== 'Free')
           this.camera.lookAt(...manifestationPositionArray);
         else if (cameraPosition === 'Free' && cameraFocus !== 'Origo') {
           this.camera.trackMovingObjectWithControls(massManifestation);
         }
-      }
-
-      if (cameraPosition === name) {
-        if (cameraPosition === cameraFocus)
-          this.manifestationPosition.y += radius * 7;
-
-        this.camera.position.set(...manifestationPositionArray);
       }
 
       if (
@@ -798,7 +744,7 @@ export default {
           this.camera.position.set(
             this.manifestationPosition.x,
             this.manifestationPosition.y,
-            this.manifestationPosition.z + zOffset
+            this.manifestationPosition.z + 1
           );
 
           this.camera.lookAt(...manifestationPositionArray);
@@ -859,9 +805,6 @@ export default {
 
         main.lookAt(directionOfVelocity);
       }
-
-      if (cameraPosition === name) massManifestation.visible = false;
-      else massManifestation.visible = true;
 
       if (cameraPosition === 'Cockpit' && i === 0) {
         this.camera.position.set(

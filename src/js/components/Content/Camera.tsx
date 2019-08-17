@@ -130,20 +130,6 @@ export default ({
       >
         Chase
       </div>
-      {masses.map(mass => (
-        <div
-          data-name={mass.name}
-          key={mass.name}
-          onClick={() =>
-            modifyScenarioProperty({
-              key: 'cameraPosition',
-              value: mass.name
-            })
-          }
-        >
-          {mass.name}
-        </div>
-      ))}
     </Dropdown>
     <label className="top">
       Camera Focus{' '}
