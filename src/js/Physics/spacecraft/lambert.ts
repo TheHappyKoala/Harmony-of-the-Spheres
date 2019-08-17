@@ -1,6 +1,9 @@
-import H3 from '../vectors';
-import { VectorType, MassType } from '../types';
+// Implementation from https://github.com/poliastro/poliastro/
 
+import H3 from '../vectors';
+import { VectorType, MassType, SOITree } from '../types';
+import { getDistanceParams } from '../utils';
+import { getObjFromArrByKeyValuePair } from '../../utils';
 function hyp2f1b(x: number): number {
   let res = 1.0;
   let resOld = 1.0;
@@ -39,6 +42,31 @@ function initial_guess(T: number, ll: number, M: number): Array<number> {
       ((8 * T / (M * pi)) ** (2 / 3) - 1) / ((8 * T / (M * pi)) ** (2 / 3) + 1);
 
     return [x_0l, x_0r];
+  }
+}
+
+function tofEq(x: number, T0: number, ll: number, M: number): number {
+  return tofEqY(x, computeY(x, ll), T0, ll, M);
+}
+
+function computeTmin(
+  ll: number,
+  M: number,
+  numiter: number,
+  rtol: number
+): number {
+  if (ll == 1) {
+    return tofEq(0.0, 0.0, ll, M);
+  } else {
+    if (M == 0) {
+      return 0.0;
+    } else {
+      const xi = 0.1;
+      const Ti = tofEq(xi, 0.0, ll, M);
+      const xTmin = halley(xi, Ti, ll, rtol, numiter);
+      const Tmin = tofEq(xTmin, 0.0, ll, M);
+      return Tmin;
+    }
   }
 }
 
@@ -103,6 +131,35 @@ function tofEqP3(
   );
 }
 
+function halley(
+  p0: number,
+  T0: number,
+  ll: number,
+  tol: number,
+  maxiter: number
+): number {
+  let y = 0;
+  let p = 0;
+  let fder = 0;
+  let fder2 = 0;
+  let fder3 = 0;
+  for (let ii = 0; ii < maxiter; ii++) {
+    y = computeY(p0, ll);
+    fder = tofEqP(p0, y, T0, ll);
+    fder2 = tofEqP2(p0, y, T0, fder, ll);
+    if (fder2 == 0) {
+      console.log('fder2 was 0');
+    }
+    fder3 = tofEqP3(p0, y, T0, fder, fder2, ll);
+    p = p0 - 2 * fder * fder2 / (2 * fder2 ** 2 - fder * fder3);
+    if (Math.abs(p - p0) < tol) {
+      return p;
+    }
+    p0 = p;
+  }
+  console.log('halley failed :(');
+}
+
 function householder(
   p0: number,
   T0: number,
@@ -145,10 +202,16 @@ export function findXY(
   numiter: number,
   rtol: number
 ): Array<{ x: number; y: number }> {
-  const Mmax = Math.floor(T / Math.PI);
-  //const T00 = Math.acos(ll) + ll * Math.sqrt(1 - ll * ll);
+  let Mmax = Math.floor(T / Math.PI);
+  const T00 = Math.acos(ll) + ll * Math.sqrt(1 - ll * ll);
 
   // Refine maximum number of revolutions if necessary (NotImplemented)
+  if (T < T00 + Mmax * Math.PI && Mmax > 0) {
+    const Tmin = computeTmin(ll, Mmax, numiter, rtol);
+    if (T < Tmin) {
+      Mmax -= 1;
+    }
+  }
   if (M > Mmax) {
     console.log('M > Mmax error');
   }
@@ -364,6 +427,144 @@ export function stateToKepler(
     vi: vi * convFactor
   };
 }
+
+function radiusSOI(largerMass: SOITree, smallerMass: SOITree): number {
+  const d = Math.sqrt(getDistanceParams(largerMass, smallerMass).dSquared);
+  return d * Math.pow(smallerMass.m / largerMass.m, 2 / 5);
+}
+
+function recursiveTree(tree: SOITree): SOITree {
+  if (tree.children.length == 0) {
+    return tree;
+  }
+  let children = tree.children;
+  // Calculate the Sphere of Influence relative to the tree root
+  for (let i = 0; i < tree.children.length; i++) {
+    children[i].SOIradius = radiusSOI(tree, children[i]);
+  }
+  // Sort and place bodies
+  var len = children.length;
+  var i = 0;
+  while (i < len) {
+    var j = 0;
+    while (j < len) {
+      if (i != j) {
+        const d = Math.sqrt(
+          getDistanceParams(children[i], children[j]).dSquared
+        );
+        if (d < children[i].SOIradius) {
+          children[i].children.push(children[j]);
+          children.splice(j, 1);
+          len -= 1;
+          if (j < i) {
+            i--;
+          }
+        } else {
+          j++;
+        }
+      } else {
+        j++;
+      }
+    }
+    i = i + 1;
+  }
+  // Do all of the above recursivly for all remaining direct children of the root
+  for (let i = 0; i < children.length; i++) {
+    children[i] = recursiveTree(children[i]);
+  }
+  tree.children = children;
+  return tree;
+}
+
+function simplifyTree(tree: SOITree): SOITree {
+  let newTree = {
+    name: tree.name,
+    children: tree.children,
+    SOIradius: tree.SOIradius
+  };
+  if (newTree.children.length == 0) {
+    return newTree;
+  }
+  for (let i = 0; i < newTree.children.length; i++) {
+    newTree.children[i] = simplifyTree(newTree.children[i]);
+  }
+  return newTree;
+}
+
+// masses is scenario.masses
+export function constructSOITree(masses: Array<MassType>): SOITree {
+  const sun: MassType = getObjFromArrByKeyValuePair(masses, 'name', 'Sun');
+  let tree: SOITree = {
+    SOIradius: 1e100,
+    children: [],
+    name: 'Sun',
+    m: sun.m,
+    x: sun.x,
+    y: sun.y,
+    z: sun.z
+  };
+  masses.forEach(val => {
+    if (val.name != 'Sun') {
+      let newVal: SOITree = {
+        SOIradius: 0,
+        children: [],
+        name: val.name,
+        m: val.m,
+        x: val.x,
+        y: val.y,
+        z: val.z
+      };
+      tree.children.push(newVal);
+    }
+  });
+  tree = recursiveTree(tree);
+  // construct simplified tree with just name and SOIradius
+  const simpleTree = simplifyTree(tree);
+  return simpleTree;
+}
+
+// pos is the position and masses is scenario.masses
+export function findCurrentSOI(
+  pos: MassType,
+  tree: SOITree,
+  masses: Array<MassType>
+): MassType {
+  if (tree.children.length == 0) {
+    return getObjFromArrByKeyValuePair(masses, 'name', tree.name);
+  }
+  for (let i = 0; i < tree.children.length; i++) {
+    if (tree.children[i].name == pos.name) {
+      continue;
+    }
+    const currentBody: MassType = getObjFromArrByKeyValuePair(
+      masses,
+      'name',
+      tree.children[i].name
+    );
+    const d = Math.sqrt(getDistanceParams(currentBody, pos).dSquared);
+    if (d < tree.children[i].SOIradius) {
+      return findCurrentSOI(pos, tree.children[i], masses);
+    }
+  }
+  return getObjFromArrByKeyValuePair(masses, 'name', tree.name);
+}
+/*
+export function allPassingSOI(tree: SOITree, name: string){
+  if (tree.name == name){
+    return name;
+  }
+  // Check tree's children
+  for (let i = 0; i < tree.children.length; i++){
+    if (tree.children[i].name == name){
+      return name;
+    }
+  }
+  // Check tree's grandchildren
+  for (let i = 0; i < tree.children.length; i++){
+
+  }
+}
+*/
 
 // ellipseTest() {
 
