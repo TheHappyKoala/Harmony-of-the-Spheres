@@ -584,7 +584,9 @@ export default {
       }
     }
 
-    for (let i = 0; i < this.massManifestations.length; i++) {
+    const massesLen = this.system.masses.length;
+
+    for (let i = 0; i < massesLen; i++) {
       const massManifestation = this.massManifestations[i];
       const mass = this.system.masses[i];
 
