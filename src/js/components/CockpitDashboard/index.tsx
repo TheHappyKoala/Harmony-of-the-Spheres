@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useRef } from 'react';
+import React, { ReactElement, useState, useEffect } from 'react';
 import Dropdown from '../Dropdown';
 import Slider from '../Slider';
 import Button from '../Button';
@@ -8,6 +8,10 @@ import {
 } from '../../action-creators/scenario';
 import './CockpitDashboard.less';
 import { getDistanceParams } from '../../Physics/utils';
+import {
+  constructSOITree,
+  findCurrentSOI
+} from '../../Physics/spacecraft/lambert';
 import { getObjFromArrByKeyValuePair } from '../../utils';
 import { MassType, VectorType } from '../../Physics/types';
 
@@ -43,6 +47,31 @@ export default ({
     z: rendevouz.z - rendevouzPosition.vz
   }).toFixed(4);
 
+  const [soi, setSOI] = useState({
+    tree: constructSOITree(scenario.masses),
+    currentSOI: null,
+    scenario: scenario.name
+  });
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      if (scenario.name !== soi.scenario)
+        setSOI({
+          ...soi,
+          tree: constructSOITree(scenario.masses),
+          scenario: scenario.name
+        });
+
+      setSOI({
+        ...soi,
+        currentSOI: findCurrentSOI(spacecraft, soi.tree, scenario.masses).name
+      });
+    }, 1000);
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, []);
+
   return (
     <div className="cockpit-dashboard">
       <section>
@@ -50,6 +79,10 @@ export default ({
           <tr>
             <td>Elapsed Time [Y]:</td>
             <td>{scenario.elapsedTime.toFixed(4)}</td>
+          </tr>
+          <tr>
+            <td>Sphere of Influence:</td>
+            <td>{soi.currentSOI}</td>
           </tr>
           <tr>
             <td>Distance [AU]:</td>
