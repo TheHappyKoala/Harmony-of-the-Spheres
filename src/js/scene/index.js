@@ -447,25 +447,6 @@ export default {
       this.previousIntegrator = this.scenario.integrator;
     }
 
-    if (this.scenario.particles) {
-      const particleSystemMaterial = this.scene.getObjectByName('system')
-        .material;
-
-      if (
-        !this.scenariosizeAttenuation &&
-        particleSystemMaterial.uniforms.sizeAttenuation.value
-      ) {
-        particleSystemMaterial.uniforms.sizeAttenuation.value = false;
-      }
-
-      if (
-        this.scenario.sizeAttenuation &&
-        !particleSystemMaterial.uniforms.sizeAttenuation.value
-      ) {
-        particleSystemMaterial.uniforms.sizeAttenuation.value = true;
-      }
-    }
-
     this.system.useBarnesHut = this.scenario.useBarnesHut;
     this.system.theta = this.scenario.theta;
     this.system.softeningSquared =

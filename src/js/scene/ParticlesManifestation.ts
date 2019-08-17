@@ -114,7 +114,6 @@ export default class extends Object3D {
     geometry.setDrawRange(0, particlesLen - 1);
 
     const positions = geometry.attributes.position.array;
-    const sizes = geometry.attributes.size.array;
 
     let j = 0;
 
@@ -132,11 +131,8 @@ export default class extends Object3D {
       positions[j + 2] = z;
 
       j += 3;
-
-      sizes[i] = this.size;
     }
 
-    geometry.attributes.size.needsUpdate = true;
     geometry.attributes.position.needsUpdate = true;
   }
 
