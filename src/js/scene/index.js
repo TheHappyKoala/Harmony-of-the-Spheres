@@ -85,6 +85,12 @@ export default {
       this.graphics2D.canvas
     );
 
+    this.camera.position.set(
+      this.scenario.freeOrigo.x,
+      this.scenario.freeOrigo.y,
+      this.scenario.freeOrigo.z
+    );
+
     this.clock = new THREE.Clock();
 
     this.previousCameraFocus = null;
@@ -268,18 +274,10 @@ export default {
 
       store.dispatch(
         modifyScenarioProperty(
-          {
-            key: 'freeOrigo',
-            value: {
-              x: looser.vx * dt * scale * (radius / 3),
-              y: looser.vy * dt * scale * (radius / 3),
-              z: looser.vz * dt * scale * (radius / 3)
-            }
-          },
           { key: 'primary', value: survivor.name },
           { key: 'rotatingReferenceFrame', value: survivor.name },
           { key: 'cameraPosition', value: 'Free' },
-          { key: 'cameraFocus', value: 'Origo' }
+          { key: 'cameraFocus', value: survivor.name }
         )
       );
     }
@@ -429,7 +427,6 @@ export default {
       rotatingReferenceFrame,
       cameraPosition,
       cameraFocus,
-      freeOrigo,
       barycenterMassOne,
       barycenterMassTwo
     } = this.scenario;
@@ -493,9 +490,7 @@ export default {
       this.barycenterPosition
     );
 
-    if (rotatingReferenceFrame === 'Origo')
-      this.rotatingReferenceFrame.set({ x: 0, y: 0, z: 0 });
-    else if (rotatingReferenceFrame === 'Barycenter')
+    if (rotatingReferenceFrame === 'Barycenter')
       this.rotatingReferenceFrame.set(this.barycenterPosition);
     else {
       for (let i = 0; i < this.system.masses.length; i++) {
@@ -559,11 +554,6 @@ export default {
         drawBaryCenterLabel
       );
 
-    if (cameraFocus === 'Origo' && cameraPosition !== 'Cockpit') {
-      if (cameraPosition !== 'Free') this.camera.lookAt(0, 0, 0);
-      else this.camera.controls.target.set(0, 0, 0);
-    }
-
     let barycenterPositionArray;
 
     if (cameraFocus === 'Barycenter' && cameraPosition !== 'Cockpit') {
@@ -577,17 +567,11 @@ export default {
     if (
       cameraPosition !== 'Cockpit' &&
       this.previousCameraFocus !== cameraFocus &&
-      (cameraFocus === 'Origo' || cameraFocus === 'Barycenter')
+      cameraFocus === 'Barycenter'
     ) {
       this.previousCameraFocus = cameraFocus;
 
       if (cameraPosition === 'Free') {
-        if (cameraFocus === 'Origo') {
-          this.camera.position.set(freeOrigo.x, freeOrigo.y, freeOrigo.z);
-
-          this.camera.lookAt(0, 0, 0);
-        }
-
         if (cameraFocus === 'Barycenter') {
           this.camera.position.set(
             this.barycenterPosition.x,
@@ -728,7 +712,7 @@ export default {
       if (cameraFocus === name && cameraPosition !== 'Cockpit') {
         if (cameraPosition !== 'Free')
           this.camera.lookAt(...manifestationPositionArray);
-        else if (cameraPosition === 'Free' && cameraFocus !== 'Origo') {
+        else if (cameraPosition === 'Free') {
           this.camera.trackMovingObjectWithControls(massManifestation);
         }
       }
@@ -817,11 +801,6 @@ export default {
 
     if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame) {
       this.previousRotatingReferenceFrame = rotatingReferenceFrame;
-
-      if (cameraPosition === 'Free' && cameraFocus === 'Origo') {
-        this.camera.position.set(freeOrigo.x, freeOrigo.y, freeOrigo.z);
-        this.camera.lookAt(0, 0, 0);
-      }
     }
 
     if (this.scenario.particles)

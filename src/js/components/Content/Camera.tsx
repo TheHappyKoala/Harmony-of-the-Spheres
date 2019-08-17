@@ -39,18 +39,6 @@ export default ({
       transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
     >
       <div
-        data-name="Origo"
-        key="Origo"
-        onClick={() =>
-          modifyScenarioProperty({
-            key: 'rotatingReferenceFrame',
-            value: 'Origo'
-          })
-        }
-      >
-        Origo
-      </div>
-      <div
         data-name="Barycenter"
         key="Barycenter"
         onClick={() =>
@@ -146,18 +134,6 @@ export default ({
       dynamicChildrenLen={masses.length}
       transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
     >
-      <div
-        data-name="Origo"
-        key="Origo"
-        onClick={() =>
-          modifyScenarioProperty({
-            key: 'cameraFocus',
-            value: 'Origo'
-          })
-        }
-      >
-        Origo
-      </div>
       <div
         data-name="Barycenter"
         key="Barycenter"
