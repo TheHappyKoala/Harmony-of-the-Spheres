@@ -548,6 +548,21 @@ export function findCurrentSOI(
   }
   return getObjFromArrByKeyValuePair(masses, 'name', tree.name);
 }
+
+export function reverseAcceleration(
+  pos: MassType,
+  primary: MassType,
+  g = 39.5
+): VectorType {
+  const rVec = new H3().set({
+    x: pos.x - primary.x,
+    y: pos.y - primary.y,
+    z: pos.z - primary.z
+  });
+  const r = rVec.getLength();
+  const reverseAcc = rVec.multiplyByScalar(g * primary.m / r ** 3).toObject();
+  return reverseAcc;
+}
 /*
 export function allPassingSOI(tree: SOITree, name: string){
   if (tree.name == name){
