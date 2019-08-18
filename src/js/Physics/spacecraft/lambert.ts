@@ -260,11 +260,11 @@ export function planFlight(
   const vCentral = { x: centralBody.vx, y: centralBody.vy, z: centralBody.vz };
   const r1Rel = v1
     .set(r1)
-    .subtract(rCentral)
+    //.subtract(rCentral)
     .toObject();
   const r2Rel = v1
     .set(r2)
-    .subtract(rCentral)
+    //.subtract(rCentral)
     .toObject();
   const gm = g * centralBody.m;
 
@@ -547,6 +547,21 @@ export function findCurrentSOI(
     }
   }
   return getObjFromArrByKeyValuePair(masses, 'name', tree.name);
+}
+
+export function reverseAcceleration(
+  pos: MassType,
+  primary: MassType,
+  g = 39.5
+): VectorType {
+  const rVec = new H3().set({
+    x: pos.x - primary.x,
+    y: pos.y - primary.y,
+    z: pos.z - primary.z
+  });
+  const r = rVec.getLength();
+  const reverseAcc = rVec.multiplyByScalar(g * primary.m / r ** 3).toObject();
+  return reverseAcc;
 }
 /*
 export function allPassingSOI(tree: SOITree, name: string){
