@@ -124,15 +124,13 @@ export default ({
         min={minDt}
         step={dt / 1000}
       />
-      {(integrator === 'RKF' ||
-        integrator === 'RKN64' ||
-        integrator === 'RKN12') && (
+      {(integrator === 'RKN64' || integrator === 'RKN12') && (
         <Fragment>
           <label className="top">
             Error Tolerance
             <Tooltip
               position="left"
-              content="The tolerated error according to which delta time is adapted when the RKF integrator is used."
+              content="The tolerated error according to which delta time is adapted when the RKN12 or RKN64 integrator is used."
             />
           </label>
           <Slider
