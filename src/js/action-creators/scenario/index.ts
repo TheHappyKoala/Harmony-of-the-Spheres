@@ -171,10 +171,6 @@ export const getTrajectory = (payload: {
 
   const [spacecraft] = scenario.masses;
 
-  spacecraft.vx = trajectory.x;
-  spacecraft.vy = trajectory.y;
-  spacecraft.vz = trajectory.z;
-
   trajectoryCruncher.terminate();
 
   dispatch({
