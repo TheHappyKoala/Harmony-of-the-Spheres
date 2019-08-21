@@ -4,7 +4,8 @@ import Slider from '../Slider';
 import Button from '../Button';
 import {
   modifyScenarioProperty,
-  getTrajectory
+  getTrajectory,
+  getOrbitalBurn
 } from '../../action-creators/scenario';
 import './CockpitDashboard.less';
 import { getDistanceParams } from '../../Physics/utils';
@@ -25,12 +26,14 @@ interface CockpitDashboardProps {
   scenario: any;
   modifyScenarioProperty: typeof modifyScenarioProperty;
   getTrajectory: typeof getTrajectory;
+  getOrbitalBurn: typeof getOrbitalBurn;
 }
 
 export default ({
   scenario,
   modifyScenarioProperty,
-  getTrajectory
+  getTrajectory,
+  getOrbitalBurn
 }: CockpitDashboardProps): ReactElement => {
   const [spacecraft] = scenario.masses;
   const target = getObjFromArrByKeyValuePair(
@@ -49,9 +52,20 @@ export default ({
 
   const [soi, setSOI] = useState({
     tree: constructSOITree(scenario.masses),
-    currentSOI: null,
+    currentSOI: findCurrentSOI(
+      spacecraft,
+      constructSOITree(scenario.masses),
+      scenario.masses
+    ),
     scenario: scenario.name
   });
+
+  const [orbit, setOrbit] = useState({
+    apoapsis: 0
+  });
+
+  const setOrbitParam = (payload: { key: string; value: number }) =>
+    setOrbit({ ...orbit, [payload.key]: payload.value });
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -64,7 +78,7 @@ export default ({
 
       setSOI({
         ...soi,
-        currentSOI: findCurrentSOI(spacecraft, soi.tree, scenario.masses).name
+        currentSOI: findCurrentSOI(spacecraft, soi.tree, scenario.masses)
       });
     }, 1000);
     return () => {
@@ -82,7 +96,7 @@ export default ({
           </tr>
           <tr>
             <td>Sphere of Influence:</td>
-            <td>{soi.currentSOI}</td>
+            <td>{soi.currentSOI.name}</td>
           </tr>
           <tr>
             <td>Distance [AU]:</td>
@@ -147,30 +161,6 @@ export default ({
             </div>
           ))}
         </Dropdown>
-        <label className="top">Primary</label>
-        <Dropdown
-          selectedOption={scenario.trajectoryRelativeTo}
-          dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-          selectedOptionCssClassName="selected-option cockpit-element"
-          optionsWrapperCssClass="options"
-          dynamicChildrenLen={scenario.masses.length}
-          transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
-        >
-          {scenario.masses.map((mass: MassType) => (
-            <div
-              data-name={mass.name}
-              key={mass.name}
-              onClick={() =>
-                modifyScenarioProperty({
-                  key: 'trajectoryRelativeTo',
-                  value: mass.name
-                })
-              }
-            >
-              {mass.name}
-            </div>
-          ))}
-        </Dropdown>
         <label className="top">Time of Target Rendevouz</label>
         <Slider
           payload={{ key: 'trajectoryTargetArrival' }}
@@ -193,6 +183,33 @@ export default ({
           }
         >
           Set Trajectory
+        </Button>
+      </section>
+      <section>
+        <label>Apoapsis</label>
+        <Slider
+          payload={{ key: 'apoapsis' }}
+          value={orbit.apoapsis}
+          callback={setOrbitParam}
+          max={soi.currentSOI.soi}
+          min={Math.sqrt(
+            getDistanceParams(spacecraft, soi.currentSOI).dSquared
+          )}
+          step={soi.currentSOI.soi / 300}
+        />
+        <Button
+          cssClassName="button cockpit-element top"
+          callback={() =>
+            getOrbitalBurn({
+              primary: soi.currentSOI.name,
+              periapsis: Math.sqrt(
+                getDistanceParams(spacecraft, soi.currentSOI).dSquared
+              ),
+              apoapsis: orbit.apoapsis
+            })
+          }
+        >
+          Set Orbital Burn
         </Button>
       </section>
     </div>
