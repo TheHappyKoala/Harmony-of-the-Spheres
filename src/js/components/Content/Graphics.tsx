@@ -54,16 +54,6 @@ export default ({
       }
     />
     <Toggle
-      label="Particle Size Attenuation"
-      checked={sizeAttenuation}
-      callback={() =>
-        modifyScenarioProperty({
-          key: 'sizeAttenuation',
-          value: !sizeAttenuation
-        })
-      }
-    />
-    <Toggle
       label="Habitable Zone"
       checked={habitableZone}
       callback={() =>

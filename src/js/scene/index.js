@@ -85,6 +85,14 @@ export default {
       this.graphics2D.canvas
     );
 
+    this.camera.position.set(
+      this.scenario.freeOrigo.x,
+      this.scenario.freeOrigo.y,
+      this.scenario.freeOrigo.z
+    );
+
+    this.clock = new THREE.Clock();
+
     this.previousCameraFocus = null;
     this.previousRotatingReferenceFrame = null;
     this.previousIntegrator = this.scenario.integrator;
@@ -239,7 +247,7 @@ export default {
         (this.rotatingReferenceFrame.z - primary.z) * scale;
 
       this.ellipseCurve.update(
-        (this.rotatingReferenceFrame.x - primary.x - ellipse.focus) * scale,
+        (this.rotatingReferenceFrame.x - primary.x + ellipse.focus) * scale,
         (this.rotatingReferenceFrame.y - primary.y) * scale,
         ellipse.xRadius * scale,
         ellipse.yRadius * scale,
@@ -266,18 +274,10 @@ export default {
 
       store.dispatch(
         modifyScenarioProperty(
-          {
-            key: 'freeOrigo',
-            value: {
-              x: looser.vx * dt * scale * (radius / 3),
-              y: looser.vy * dt * scale * (radius / 3),
-              z: looser.vz * dt * scale * (radius / 3)
-            }
-          },
           { key: 'primary', value: survivor.name },
           { key: 'rotatingReferenceFrame', value: survivor.name },
           { key: 'cameraPosition', value: 'Free' },
-          { key: 'cameraFocus', value: 'Origo' }
+          { key: 'cameraFocus', value: survivor.name }
         )
       );
     }
@@ -427,7 +427,6 @@ export default {
       rotatingReferenceFrame,
       cameraPosition,
       cameraFocus,
-      freeOrigo,
       barycenterMassOne,
       barycenterMassTwo
     } = this.scenario;
@@ -446,25 +445,6 @@ export default {
       });
 
       this.previousIntegrator = this.scenario.integrator;
-    }
-
-    if (this.scenario.particles) {
-      const particleSystemMaterial = this.scene.getObjectByName('system')
-        .material;
-
-      if (
-        !this.scenariosizeAttenuation &&
-        particleSystemMaterial.uniforms.sizeAttenuation.value
-      ) {
-        particleSystemMaterial.uniforms.sizeAttenuation.value = false;
-      }
-
-      if (
-        this.scenario.sizeAttenuation &&
-        !particleSystemMaterial.uniforms.sizeAttenuation.value
-      ) {
-        particleSystemMaterial.uniforms.sizeAttenuation.value = true;
-      }
     }
 
     this.system.useBarnesHut = this.scenario.useBarnesHut;
@@ -491,9 +471,7 @@ export default {
       this.barycenterPosition
     );
 
-    if (rotatingReferenceFrame === 'Origo')
-      this.rotatingReferenceFrame.set({ x: 0, y: 0, z: 0 });
-    else if (rotatingReferenceFrame === 'Barycenter')
+    if (rotatingReferenceFrame === 'Barycenter')
       this.rotatingReferenceFrame.set(this.barycenterPosition);
     else {
       for (let i = 0; i < this.system.masses.length; i++) {
@@ -525,8 +503,19 @@ export default {
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
-    if (cameraPosition === 'Free') this.camera.controls.enabled = true;
-    else this.camera.controls.enabled = false;
+    if (cameraPosition === 'Free' || cameraPosition === 'Cockpit') {
+      if (
+        cameraPosition === 'Cockpit' &&
+        this.camera.currentControls !== 'Fly Controls'
+      )
+        this.camera.setControls('Fly Controls');
+
+      if (
+        cameraPosition === 'Free' &&
+        this.camera.currentControls !== 'Orbit Controls'
+      )
+        this.camera.setControls('Orbit Controls');
+    } else this.camera.setControls();
 
     this.graphics2D.clear();
 
@@ -546,14 +535,9 @@ export default {
         drawBaryCenterLabel
       );
 
-    if (cameraFocus === 'Origo') {
-      if (cameraPosition !== 'Free') this.camera.lookAt(0, 0, 0);
-      else this.camera.controls.target.set(0, 0, 0);
-    }
-
     let barycenterPositionArray;
 
-    if (cameraFocus === 'Barycenter') {
+    if (cameraFocus === 'Barycenter' && cameraPosition !== 'Cockpit') {
       barycenterPositionArray = this.barycenterPosition.toArray();
 
       if (cameraPosition !== 'Free')
@@ -562,18 +546,13 @@ export default {
     }
 
     if (
+      cameraPosition !== 'Cockpit' &&
       this.previousCameraFocus !== cameraFocus &&
-      (cameraFocus === 'Origo' || cameraFocus === 'Barycenter')
+      cameraFocus === 'Barycenter'
     ) {
       this.previousCameraFocus = cameraFocus;
 
       if (cameraPosition === 'Free') {
-        if (cameraFocus === 'Origo') {
-          this.camera.position.set(freeOrigo.x, freeOrigo.y, freeOrigo.z);
-
-          this.camera.lookAt(0, 0, 0);
-        }
-
         if (cameraFocus === 'Barycenter') {
           this.camera.position.set(
             this.barycenterPosition.x,
@@ -586,11 +565,13 @@ export default {
       }
     }
 
-    for (let i = 0; i < this.massManifestations.length; i++) {
+    const massesLen = this.system.masses.length;
+
+    for (let i = 0; i < massesLen; i++) {
       const massManifestation = this.massManifestations[i];
       const mass = this.system.masses[i];
 
-      let { name, trailVertices, radius } = this.system.masses[i];
+      let { name, trailVertices } = this.system.masses[i];
 
       this.manifestationPosition
         .set({ x: mass.x, y: mass.y, z: mass.z })
@@ -598,12 +579,6 @@ export default {
         .multiplyByScalar(this.scenario.scale);
 
       const manifestationPositionArray = this.manifestationPosition.toArray();
-
-      this.lastPosition = {
-        x: manifestationPositionArray[0],
-        y: manifestationPositionArray[1],
-        z: manifestationPositionArray[2]
-      };
 
       const cameraDistanceToFocus = Math.sqrt(
         getDistanceParams(this.camera.position, this.manifestationPosition)
@@ -717,75 +692,37 @@ export default {
           trail.geometry.verticesNeedUpdate = false;
       } else massManifestation.removeTrail();
 
-      let zOffset;
-
-      if (dt < 0.0002) zOffset = radius * 80;
-      if (dt > 0.0002) zOffset = radius < 18 ? 60000 : radius * 1500;
-      if (dt > 0.5) zOffset = radius !== 1.2 ? radius * 500000 : 4000000;
-
-      if (trail) {
-        if (trail.visible) {
-          if (
-            (cameraPosition === 'Chase' && cameraFocus === name) ||
-            cameraPosition === name ||
-            (cameraPosition === 'Free' &&
-              cameraFocus === name &&
-              cameraDistanceToFocus < zOffset * 0.5)
-          ) {
-            trail.visible = false;
-          }
-        }
-
-        if (!trail.visible || !massManifestation.visible) {
-          if (
-            (cameraPosition === 'Free' && cameraFocus !== name) ||
-            (cameraPosition === 'Free' &&
-              cameraFocus === name &&
-              cameraDistanceToFocus > zOffset * 0.5)
-          ) {
-            trail.visible = true;
-          }
-
-          if (
-            cameraPosition !== 'Free' &&
-            cameraPosition !== 'Chase' &&
-            cameraPosition !== name
-          ) {
-            trail.visible = true;
-          }
-        }
-      }
-
-      if (cameraFocus === name) {
+      if (cameraFocus === name && cameraPosition !== 'Cockpit') {
         if (cameraPosition !== 'Free')
           this.camera.lookAt(...manifestationPositionArray);
-        else if (cameraPosition === 'Free' && cameraFocus !== 'Origo') {
+        else if (cameraPosition === 'Free') {
           this.camera.trackMovingObjectWithControls(massManifestation);
         }
       }
 
-      if (cameraPosition === name) {
-        if (cameraPosition === cameraFocus)
-          this.manifestationPosition.y += radius * 7;
-
-        this.camera.position.set(...manifestationPositionArray);
-      }
-
-      if (this.previousCameraFocus !== cameraFocus && cameraFocus === name) {
+      if (
+        this.previousCameraFocus !== cameraFocus &&
+        cameraFocus === name &&
+        cameraPosition !== 'Cockpit'
+      ) {
         this.previousCameraFocus = cameraFocus;
 
         if (cameraPosition === 'Free') {
           this.camera.position.set(
-            this.manifestationPosition.x,
+            this.manifestationPosition.x + mass.radius * 4,
             this.manifestationPosition.y,
-            this.manifestationPosition.z + zOffset
+            this.manifestationPosition.z + mass.radius * 3
           );
 
           this.camera.lookAt(...manifestationPositionArray);
         }
       }
 
-      if (this.scenario.labels && cameraPosition !== name)
+      if (
+        this.scenario.labels &&
+        cameraPosition !== name &&
+        (cameraPosition === 'Cockpit' && i === 0 ? false : true)
+      ) {
         this.graphics2D.drawLabel(
           name,
           this.utilityVector.set(...manifestationPositionArray),
@@ -796,6 +733,7 @@ export default {
           'white',
           drawMassLabel
         );
+      }
 
       const main = massManifestation.getObjectByName('Main');
 
@@ -835,17 +773,17 @@ export default {
         main.lookAt(directionOfVelocity);
       }
 
-      if (cameraPosition === name) massManifestation.visible = false;
-      else massManifestation.visible = true;
+      if (cameraPosition === 'Cockpit' && i === 0) {
+        this.camera.position.set(
+          this.manifestationPosition.x,
+          this.manifestationPosition.y,
+          this.manifestationPosition.z
+        );
+      }
     }
 
     if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame) {
       this.previousRotatingReferenceFrame = rotatingReferenceFrame;
-
-      if (cameraPosition === 'Free' && cameraFocus === 'Origo') {
-        this.camera.position.set(freeOrigo.x, freeOrigo.y, freeOrigo.z);
-        this.camera.lookAt(0, 0, 0);
-      }
     }
 
     if (this.scenario.particles)
@@ -889,6 +827,8 @@ export default {
     );
 
     TWEEN.update();
+    if (this.camera.currentControls === 'Fly Controls')
+      this.camera.controls.update(this.clock.getDelta());
     this.requestAnimationFrameId = requestAnimationFrame(this.loop);
     this.renderer.render(this.scene, this.camera);
   },
@@ -937,7 +877,7 @@ export default {
 
   reset() {
     //Dispose of the camera controls
-    this.camera && this.camera.controls.dispose();
+    if (this.camera && this.camera.controls) this.camera.controls.dispose();
 
     //Dispose of all the mass manifestations
     if (this.massManifestations)

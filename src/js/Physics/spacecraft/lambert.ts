@@ -2,7 +2,7 @@
 
 import H3 from '../vectors';
 import { VectorType, MassType, SOITree } from '../types';
-import { getDistanceParams } from '../utils';
+import { getDistanceParams, getVMag, getSemiMajorAxis } from '../utils';
 import { getObjFromArrByKeyValuePair } from '../../utils';
 function hyp2f1b(x: number): number {
   let res = 1.0;
@@ -260,11 +260,11 @@ export function planFlight(
   const vCentral = { x: centralBody.vx, y: centralBody.vy, z: centralBody.vz };
   const r1Rel = v1
     .set(r1)
-    .subtract(rCentral)
+    //.subtract(rCentral)
     .toObject();
   const r2Rel = v1
     .set(r2)
-    .subtract(rCentral)
+    //.subtract(rCentral)
     .toObject();
   const gm = g * centralBody.m;
 
@@ -546,8 +546,33 @@ export function findCurrentSOI(
       return findCurrentSOI(pos, tree.children[i], masses);
     }
   }
-  return getObjFromArrByKeyValuePair(masses, 'name', tree.name);
+  return {
+    ...getObjFromArrByKeyValuePair(masses, 'name', tree.name),
+    soi: tree.SOIradius
+  };
 }
+
+export const orbitalInsertion = (
+  primary: MassType,
+  spacecraft: { periapsis: number; apoapsis: number },
+  g: number
+): VectorType =>
+  new H3()
+    .set({ x: primary.vx, y: primary.vy, z: primary.vz })
+    .addScaledVector(
+      getVMag(
+        g,
+        primary,
+        spacecraft.periapsis,
+        (spacecraft.periapsis + spacecraft.apoapsis) / 2
+      ) / spacecraft.periapsis,
+      {
+        x: 0,
+        y: spacecraft.periapsis,
+        z: 0
+      }
+    )
+    .toObject();
 
 export function reverseAcceleration(
   pos: MassType,

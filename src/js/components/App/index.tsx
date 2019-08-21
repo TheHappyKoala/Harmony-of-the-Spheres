@@ -37,6 +37,7 @@ const mapDispatchToProps = {
   modifyScenarioProperty: scenarioActionCreators.modifyScenarioProperty,
   modifyMassProperty: scenarioActionCreators.modifyMassProperty,
   getTrajectory: scenarioActionCreators.getTrajectory,
+  getOrbitalBurn: scenarioActionCreators.getOrbitalBurn,
   addMass: scenarioActionCreators.addMass,
   deleteMass: scenarioActionCreators.deleteMass,
   saveScenario: scenariosActionCreators.saveScenario
@@ -49,6 +50,7 @@ interface AppProps {
   deleteMass: typeof scenarioActionCreators.deleteMass;
   addMass: typeof scenarioActionCreators.addMass;
   getTrajectory: typeof scenarioActionCreators.getTrajectory;
+  getOrbitalBurn: typeof scenarioActionCreators.getOrbitalBurn;
   getScenario: typeof scenarioActionCreators.getScenario;
   saveScenario: typeof scenariosActionCreators.saveScenario;
   scenarioCategory: string;
@@ -68,6 +70,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     modifyScenarioProperty,
     modifyMassProperty,
     getTrajectory,
+    getOrbitalBurn,
     deleteMass,
     addMass,
     getScenario,
@@ -283,14 +286,14 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                 />
               </div>
             </Tabs>
-            {scenario.forAllMankind &&
-              scenario.cameraPosition === 'Cockpit' && (
-                <CockpitDashboard
-                  scenario={scenario}
-                  modifyScenarioProperty={modifyScenarioProperty}
-                  getTrajectory={getTrajectory}
-                />
-              )}
+            {scenario.forAllMankind && (
+              <CockpitDashboard
+                scenario={scenario}
+                modifyScenarioProperty={modifyScenarioProperty}
+                getTrajectory={getTrajectory}
+                getOrbitalBurn={getOrbitalBurn}
+              />
+            )}
             <ReactCSSTransitionGroup
               transitionName="fade"
               transitionEnterTimeout={250}

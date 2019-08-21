@@ -1,13 +1,19 @@
-import React, { ReactElement, useEffect, useRef } from 'react';
+import React, { Fragment, ReactElement, useState, useEffect } from 'react';
 import Dropdown from '../Dropdown';
 import Slider from '../Slider';
 import Button from '../Button';
+import Tabs from '../Tabs';
 import {
   modifyScenarioProperty,
-  getTrajectory
+  getTrajectory,
+  getOrbitalBurn
 } from '../../action-creators/scenario';
 import './CockpitDashboard.less';
 import { getDistanceParams } from '../../Physics/utils';
+import {
+  constructSOITree,
+  findCurrentSOI
+} from '../../Physics/spacecraft/lambert';
 import { getObjFromArrByKeyValuePair } from '../../utils';
 import { MassType, VectorType } from '../../Physics/types';
 
@@ -21,12 +27,14 @@ interface CockpitDashboardProps {
   scenario: any;
   modifyScenarioProperty: typeof modifyScenarioProperty;
   getTrajectory: typeof getTrajectory;
+  getOrbitalBurn: typeof getOrbitalBurn;
 }
 
 export default ({
   scenario,
   modifyScenarioProperty,
-  getTrajectory
+  getTrajectory,
+  getOrbitalBurn
 }: CockpitDashboardProps): ReactElement => {
   const [spacecraft] = scenario.masses;
   const target = getObjFromArrByKeyValuePair(
@@ -34,190 +42,201 @@ export default ({
     'name',
     scenario.trajectoryTarget
   );
-  const primary = getObjFromArrByKeyValuePair(
-    scenario.masses,
-    'name',
-    scenario.trajectoryRelativeTo
-  );
   const rendevouz = scenario.trajectoryRendevouz;
   const rendevouzPosition = rendevouz.p;
 
-  const trajectoryMap = useRef(null);
+  const [soi, setSOI] = useState({
+    tree: constructSOITree(scenario.masses),
+    currentSOI: findCurrentSOI(
+      spacecraft,
+      constructSOITree(scenario.masses),
+      scenario.masses
+    ),
+    scenario: scenario.name
+  });
+
+  const [orbit, setOrbit] = useState({
+    apoapsis: 0
+  });
+
+  const setOrbitParam = (payload: { key: string; value: number }) =>
+    setOrbit({ ...orbit, [payload.key]: payload.value });
+
+  const [displayCockpit, setDisplayCockpit] = useState(true);
+
+  const relativeVelocityAtRendevouz =
+    displayCockpit &&
+    getVelocityMagnitude({
+      x: rendevouz.x - rendevouzPosition.vx,
+      y: rendevouz.y - rendevouzPosition.vy,
+      z: rendevouz.z - rendevouzPosition.vz
+    }).toFixed(4);
 
   useEffect(() => {
-    const canvas = trajectoryMap.current;
-    const w = (canvas.width = 300);
-    const h = (canvas.height = 300);
-    const ctx = canvas.getContext('2d');
+    const timer = window.setInterval(() => {
+      if (displayCockpit) {
+        if (scenario.name !== soi.scenario)
+          setSOI({
+            ...soi,
+            tree: constructSOITree(scenario.masses),
+            scenario: scenario.name
+          });
 
-    const scale = 90 / Math.sqrt(getDistanceParams(primary, target).dSquared);
-    const radius = 7;
-
-    ctx.fillStyle = 'limegreen';
-
-    ctx.beginPath();
-
-    ctx.arc(
-      (primary.x - primary.x) * scale + w / 2,
-      (primary.y - primary.y) * scale + h / 2,
-      radius,
-      0,
-      2 * Math.PI
-    );
-
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(
-      (primary.x - spacecraft.x) * scale + w / 2,
-      (primary.y - spacecraft.y) * scale + h / 2,
-      radius,
-      0,
-      2 * Math.PI
-    );
-
-    ctx.arc(
-      (primary.x - target.x) * scale + w / 2,
-      (primary.y - target.y) * scale + h / 2,
-      radius,
-      0,
-      2 * Math.PI
-    );
-
-    ctx.fill();
-
-    ctx.beginPath();
-
-    ctx.moveTo(
-      (primary.x - rendevouzPosition.x) * scale + w / 2 - 5,
-      (primary.y - rendevouzPosition.y) * scale + h / 2 - 5
-    );
-    ctx.lineTo(
-      (primary.x - rendevouzPosition.x) * scale + w / 2 + 5,
-      (primary.y - rendevouzPosition.y) * scale + h / 2 + 5
-    );
-
-    ctx.moveTo(
-      (primary.x - rendevouzPosition.x) * scale + w / 2 + 5,
-      (primary.y - rendevouzPosition.y) * scale + h / 2 - 5
-    );
-    ctx.lineTo(
-      (primary.x - rendevouzPosition.x) * scale + w / 2 - 5,
-      (primary.y - rendevouzPosition.y) * scale + h / 2 + 5
-    );
-    ctx.strokeStyle = 'limegreen';
-    ctx.lineWidth = 3;
-    ctx.stroke();
-  });
+        setSOI({
+          ...soi,
+          currentSOI: findCurrentSOI(spacecraft, soi.tree, scenario.masses)
+        });
+      }
+    }, 1000);
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, []);
 
   return (
     <div className="cockpit-dashboard">
-      <section>
-        <table className="trajectory-table">
-          <tr>
-            <td>Distance [AU]:</td>
-            <td>
-              {Math.sqrt(
-                getDistanceParams(spacecraft, target).dSquared
-              ).toFixed(4)}
-            </td>
-          </tr>
-          <tr>
-            <td>Spacecraft Velcoity [AU/Y]:</td>
-            <td>
-              {getVelocityMagnitude({
-                x: spacecraft.vx,
-                y: spacecraft.vy,
-                z: spacecraft.vz
-              }).toFixed(4)}
-            </td>
-          </tr>
-          <tr>
-            <td>Target Velocity [AU/Y]:</td>
-            <td>
-              {getVelocityMagnitude({
-                x: target.vx,
-                y: target.vy,
-                z: target.vz
-              }).toFixed(4)}
-            </td>
-          </tr>
-        </table>
-        <canvas className="trajectory-map-canvas top" ref={trajectoryMap} />
-      </section>
-      <section>
-        <label>Target</label>
-        <Dropdown
-          selectedOption={scenario.trajectoryTarget}
-          dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-          selectedOptionCssClassName="selected-option cockpit-element"
-          optionsWrapperCssClass="options"
-          dynamicChildrenLen={scenario.masses.length}
-          transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
-        >
-          {scenario.masses.map((mass: MassType) => (
-            <div
-              data-name={mass.name}
-              key={mass.name}
-              onClick={() =>
-                modifyScenarioProperty({
-                  key: 'trajectoryTarget',
-                  value: mass.name
-                })
-              }
-            >
-              {mass.name}
+      {displayCockpit && (
+        <Fragment>
+          <Tabs
+            tabsWrapperClassName="cockpit-dashboard-tabs"
+            tabsContentClassName="box cockpit-dashboard-tabs-pane"
+            transition={{ enterTimeout: false, leaveTimeout: false }}
+            initTab={0}
+            noCloseButton={true}
+          >
+            <div data-label="Trajectory" data-icon="fas fa-rocket fa-2x">
+              <label>Target</label>
+              <Dropdown
+                selectedOption={scenario.trajectoryTarget}
+                dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+                selectedOptionCssClassName="selected-option cockpit-element"
+                optionsWrapperCssClass="options"
+                dynamicChildrenLen={scenario.masses.length}
+                transition={{
+                  name: 'fall',
+                  enterTimeout: 150,
+                  leaveTimeout: 150
+                }}
+              >
+                {scenario.masses.map((mass: MassType) => (
+                  <div
+                    data-name={mass.name}
+                    key={mass.name}
+                    onClick={() =>
+                      modifyScenarioProperty({
+                        key: 'trajectoryTarget',
+                        value: mass.name
+                      })
+                    }
+                  >
+                    {mass.name}
+                  </div>
+                ))}
+              </Dropdown>
+              <label className="top">Time of Target Rendevouz</label>
+              <Slider
+                payload={{ key: 'trajectoryTargetArrival' }}
+                value={scenario.trajectoryTargetArrival}
+                callback={modifyScenarioProperty}
+                max={scenario.elapsedTime + 30}
+                min={scenario.elapsedTime}
+                step={0.00273973}
+              />
+              <Button
+                cssClassName="button cockpit-element top"
+                callback={() => getTrajectory(soi.currentSOI.name)}
+              >
+                Set Trajectory
+              </Button>
             </div>
-          ))}
-        </Dropdown>
-        <label className="top">Primary</label>
-        <Dropdown
-          selectedOption={scenario.trajectoryRelativeTo}
-          dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-          selectedOptionCssClassName="selected-option cockpit-element"
-          optionsWrapperCssClass="options"
-          dynamicChildrenLen={scenario.masses.length}
-          transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
-        >
-          {scenario.masses.map((mass: MassType) => (
-            <div
-              data-name={mass.name}
-              key={mass.name}
-              onClick={() =>
-                modifyScenarioProperty({
-                  key: 'trajectoryRelativeTo',
-                  value: mass.name
-                })
-              }
-            >
-              {mass.name}
+            <div data-label="Orbit" data-icon="fas fa-circle-o-notch fa-2x">
+              <label>Apoapsis</label>
+              <Slider
+                payload={{ key: 'apoapsis' }}
+                value={orbit.apoapsis}
+                callback={setOrbitParam}
+                max={soi.currentSOI.soi}
+                min={Math.sqrt(
+                  getDistanceParams(spacecraft, soi.currentSOI).dSquared
+                )}
+                step={soi.currentSOI.soi / 300}
+              />
+              <Button
+                cssClassName="button cockpit-element top"
+                callback={() =>
+                  getOrbitalBurn({
+                    primary: soi.currentSOI.name,
+                    periapsis: Math.sqrt(
+                      getDistanceParams(spacecraft, soi.currentSOI).dSquared
+                    ),
+                    apoapsis: orbit.apoapsis
+                  })
+                }
+              >
+                Set Orbital Burn
+              </Button>
             </div>
-          ))}
-        </Dropdown>
-        <label className="top">Time of Target Rendevouz</label>
-        <Slider
-          payload={{ key: 'trajectoryTargetArrival' }}
-          value={scenario.trajectoryTargetArrival}
-          callback={modifyScenarioProperty}
-          max={400}
-          min={scenario.elapsedTime}
-          step={0.05}
-        />
-        <Button
-          cssClassName="button cockpit-element top"
-          callback={() =>
-            getTrajectory({
-              timeOfFlight:
-                scenario.trajectoryTargetArrival - scenario.elapsedTime,
-              departureTime: scenario.elapsedTime,
-              target: scenario.trajectoryTarget,
-              primary: scenario.trajectoryRelativeTo
-            })
-          }
-        >
-          Set Trajectory
-        </Button>
-      </section>
+          </Tabs>
+          <section className="spacecraft-stats">
+            <table className="trajectory-table">
+              <tr>
+                <td>Elapsed Time [Y]:</td>
+                <td>{scenario.elapsedTime.toFixed(4)}</td>
+              </tr>
+              <tr>
+                <td>Sphere of Influence:</td>
+                <td>{soi.currentSOI.name}</td>
+              </tr>
+              <tr>
+                <td>Distance [AU]:</td>
+                <td>
+                  {Math.sqrt(
+                    getDistanceParams(spacecraft, target).dSquared
+                  ).toFixed(4)}
+                </td>
+              </tr>
+              <tr>
+                <td>Relative Rendevouz Velocity [AU/Y]:</td>
+                <td>
+                  {isNaN(relativeVelocityAtRendevouz as any)
+                    ? 0
+                    : relativeVelocityAtRendevouz}
+                </td>
+              </tr>
+              <tr>
+                <td>Spacecraft Velcoity [AU/Y]:</td>
+                <td>
+                  {getVelocityMagnitude({
+                    x: spacecraft.vx,
+                    y: spacecraft.vy,
+                    z: spacecraft.vz
+                  }).toFixed(4)}
+                </td>
+              </tr>
+              <tr>
+                <td>Target Velocity [AU/Y]:</td>
+                <td>
+                  {getVelocityMagnitude({
+                    x: target.vx,
+                    y: target.vy,
+                    z: target.vz
+                  }).toFixed(4)}
+                </td>{' '}
+              </tr>
+            </table>
+          </section>
+        </Fragment>
+      )}
+      <Button
+        cssClassName="button box toggle-cockpit"
+        callback={() => setDisplayCockpit(!displayCockpit)}
+      >
+        {
+          <i
+            className={`fas fa-chevron-${displayCockpit ? 'down' : 'up'} fa-2x`}
+          />
+        }
+      </Button>
     </div>
   );
 };

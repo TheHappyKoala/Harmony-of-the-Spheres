@@ -39,18 +39,6 @@ export default ({
       transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
     >
       <div
-        data-name="Origo"
-        key="Origo"
-        onClick={() =>
-          modifyScenarioProperty({
-            key: 'rotatingReferenceFrame',
-            value: 'Origo'
-          })
-        }
-      >
-        Origo
-      </div>
-      <div
         data-name="Barycenter"
         key="Barycenter"
         onClick={() =>
@@ -130,20 +118,6 @@ export default ({
       >
         Chase
       </div>
-      {masses.map(mass => (
-        <div
-          data-name={mass.name}
-          key={mass.name}
-          onClick={() =>
-            modifyScenarioProperty({
-              key: 'cameraPosition',
-              value: mass.name
-            })
-          }
-        >
-          {mass.name}
-        </div>
-      ))}
     </Dropdown>
     <label className="top">
       Camera Focus{' '}
@@ -160,18 +134,6 @@ export default ({
       dynamicChildrenLen={masses.length}
       transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
     >
-      <div
-        data-name="Origo"
-        key="Origo"
-        onClick={() =>
-          modifyScenarioProperty({
-            key: 'cameraFocus',
-            value: 'Origo'
-          })
-        }
-      >
-        Origo
-      </div>
       <div
         data-name="Barycenter"
         key="Barycenter"

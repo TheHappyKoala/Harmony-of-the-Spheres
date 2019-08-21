@@ -4,6 +4,7 @@ import filterScenarios, {
 } from '../../data/scenarios';
 import { getObjFromArrByKeyValuePair } from '../../utils';
 import { getOrbit } from '../../Physics/utils';
+import { orbitalInsertion } from '../../Physics/spacecraft/lambert';
 import cachedFetch from '../../cachedFetch';
 import { AppActionTypes, SET_LOADING } from '../../action-types/app';
 import {
@@ -111,12 +112,10 @@ export const deleteMass = (name: string): ScenarioActionTypes => ({
   name
 });
 
-export const getTrajectory = (payload: {
-  timeOfFlight: number;
-  departureTime: number;
-  target: string;
-  primary: string;
-}): ThunkAction<void, AppState, void, Action> => async (
+export const getTrajectory = (
+  primary: string,
+  applyTrajectory = true
+): ThunkAction<void, AppState, void, Action> => async (
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
   getState: any
 ) => {
@@ -132,7 +131,7 @@ export const getTrajectory = (payload: {
     type: SET_LOADING,
     payload: {
       loading: true,
-      whatIsLoading: 'Generating future simulation state'
+      whatIsLoading: 'Generating trajectory'
     }
   });
 
@@ -160,9 +159,11 @@ export const getTrajectory = (payload: {
           elapsedTime: scenario.elapsedTime,
           masses: scenario.masses,
           departure: scenario.elapsedTime,
-          arrival: scenario.elapsedTime + payload.timeOfFlight,
-          target: payload.target,
-          primary: payload.primary
+          arrival:
+            scenario.elapsedTime +
+            (scenario.trajectoryTargetArrival - scenario.elapsedTime),
+          target: scenario.trajectoryTarget,
+          primary
         });
       }
     );
@@ -171,36 +172,34 @@ export const getTrajectory = (payload: {
 
   const [spacecraft] = scenario.masses;
 
-  spacecraft.vx = trajectory.x;
-  spacecraft.vy = trajectory.y;
-  spacecraft.vz = trajectory.z;
-
   trajectoryCruncher.terminate();
 
-  dispatch({
-    type: MODIFY_MASS_PROPERTY,
-    payload: {
-      name: spacecraft.name,
-      key: 'vx',
-      value: trajectory.x
-    }
-  });
-  dispatch({
-    type: MODIFY_MASS_PROPERTY,
-    payload: {
-      name: spacecraft.name,
-      key: 'vy',
-      value: trajectory.y
-    }
-  });
-  dispatch({
-    type: MODIFY_MASS_PROPERTY,
-    payload: {
-      name: spacecraft.name,
-      key: 'vz',
-      value: trajectory.z
-    }
-  });
+  if (applyTrajectory) {
+    dispatch({
+      type: MODIFY_MASS_PROPERTY,
+      payload: {
+        name: spacecraft.name,
+        key: 'vx',
+        value: trajectory.x
+      }
+    });
+    dispatch({
+      type: MODIFY_MASS_PROPERTY,
+      payload: {
+        name: spacecraft.name,
+        key: 'vy',
+        value: trajectory.y
+      }
+    });
+    dispatch({
+      type: MODIFY_MASS_PROPERTY,
+      payload: {
+        name: spacecraft.name,
+        key: 'vz',
+        value: trajectory.z
+      }
+    });
+  }
 
   dispatch({
     type: MODIFY_SCENARIO_PROPERTY,
@@ -217,6 +216,60 @@ export const getTrajectory = (payload: {
     payload: {
       loading: false,
       whatIsLoading: ''
+    }
+  });
+};
+
+export const getOrbitalBurn = (
+  payload: { primary: string; periapsis: number; apoapsis: number },
+  applyBurn = true
+): ThunkAction<void, AppState, void, Action> => (
+  dispatch: Dispatch<ScenarioActionTypes>,
+  getState: any
+) => {
+  const scenario = getState().scenario;
+
+  const primary = getObjFromArrByKeyValuePair(
+    scenario.masses,
+    'name',
+    payload.primary
+  );
+  const orbit = orbitalInsertion(primary, payload, scenario.g);
+
+  if (applyBurn) {
+    const [spacecraft] = scenario.masses;
+
+    dispatch({
+      type: MODIFY_MASS_PROPERTY,
+      payload: {
+        name: spacecraft.name,
+        key: 'vx',
+        value: orbit.x
+      }
+    });
+    dispatch({
+      type: MODIFY_MASS_PROPERTY,
+      payload: {
+        name: spacecraft.name,
+        key: 'vy',
+        value: orbit.y
+      }
+    });
+    dispatch({
+      type: MODIFY_MASS_PROPERTY,
+      payload: {
+        name: spacecraft.name,
+        key: 'vz',
+        value: orbit.z
+      }
+    });
+  }
+
+  dispatch({
+    type: MODIFY_SCENARIO_PROPERTY,
+    payload: {
+      key: 'orbitalInsertionV',
+      value: { x: orbit.x, y: orbit.y, z: orbit.z }
     }
   });
 };
