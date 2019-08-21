@@ -2,7 +2,7 @@
 
 import H3 from '../vectors';
 import { VectorType, MassType, SOITree } from '../types';
-import { getDistanceParams } from '../utils';
+import { getDistanceParams, getVMag, getSemiMajorAxis } from '../utils';
 import { getObjFromArrByKeyValuePair } from '../../utils';
 function hyp2f1b(x: number): number {
   let res = 1.0;
@@ -546,7 +546,10 @@ export function findCurrentSOI(
       return findCurrentSOI(pos, tree.children[i], masses);
     }
   }
-  return getObjFromArrByKeyValuePair(masses, 'name', tree.name);
+  return {
+    ...getObjFromArrByKeyValuePair(masses, 'name', tree.name),
+    soi: tree.SOIradius
+  };
 }
 
 export function reverseAcceleration(
