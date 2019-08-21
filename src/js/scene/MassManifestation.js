@@ -10,7 +10,7 @@ export default class extends THREE.Object3D {
     this.name = this.mass.name;
     this.textureLoader = new THREE.TextureLoader();
 
-    this.segments = 50;
+    this.segments = 25;
 
     this.createManifestation();
   }
