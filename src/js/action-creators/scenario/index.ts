@@ -113,7 +113,8 @@ export const deleteMass = (name: string): ScenarioActionTypes => ({
 });
 
 export const getTrajectory = (
-  primary: string
+  primary: string,
+  applyTrajectory = true
 ): ThunkAction<void, AppState, void, Action> => async (
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
   getState: any
@@ -173,30 +174,32 @@ export const getTrajectory = (
 
   trajectoryCruncher.terminate();
 
-  dispatch({
-    type: MODIFY_MASS_PROPERTY,
-    payload: {
-      name: spacecraft.name,
-      key: 'vx',
-      value: trajectory.x
-    }
-  });
-  dispatch({
-    type: MODIFY_MASS_PROPERTY,
-    payload: {
-      name: spacecraft.name,
-      key: 'vy',
-      value: trajectory.y
-    }
-  });
-  dispatch({
-    type: MODIFY_MASS_PROPERTY,
-    payload: {
-      name: spacecraft.name,
-      key: 'vz',
-      value: trajectory.z
-    }
-  });
+  if (applyTrajectory) {
+    dispatch({
+      type: MODIFY_MASS_PROPERTY,
+      payload: {
+        name: spacecraft.name,
+        key: 'vx',
+        value: trajectory.x
+      }
+    });
+    dispatch({
+      type: MODIFY_MASS_PROPERTY,
+      payload: {
+        name: spacecraft.name,
+        key: 'vy',
+        value: trajectory.y
+      }
+    });
+    dispatch({
+      type: MODIFY_MASS_PROPERTY,
+      payload: {
+        name: spacecraft.name,
+        key: 'vz',
+        value: trajectory.z
+      }
+    });
+  }
 
   dispatch({
     type: MODIFY_SCENARIO_PROPERTY,
