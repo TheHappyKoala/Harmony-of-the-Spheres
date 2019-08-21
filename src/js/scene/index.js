@@ -269,9 +269,6 @@ export default {
       this.scenario.cameraFocus === looser.name ||
       this.scenario.cameraPosition === looser.name
     ) {
-      const scale = this.scenario.scale;
-      const radius = survivor.radius;
-
       store.dispatch(
         modifyScenarioProperty(
           { key: 'primary', value: survivor.name },
