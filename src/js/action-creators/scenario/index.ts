@@ -130,7 +130,7 @@ export const getTrajectory = (
     type: SET_LOADING,
     payload: {
       loading: true,
-      whatIsLoading: 'Generating future simulation state'
+      whatIsLoading: 'Generating trajectory'
     }
   });
 
