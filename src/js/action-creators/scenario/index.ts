@@ -112,12 +112,9 @@ export const deleteMass = (name: string): ScenarioActionTypes => ({
   name
 });
 
-export const getTrajectory = (payload: {
-  timeOfFlight: number;
-  departureTime: number;
-  target: string;
-  primary: string;
-}): ThunkAction<void, AppState, void, Action> => async (
+export const getTrajectory = (
+  primary: string
+): ThunkAction<void, AppState, void, Action> => async (
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
   getState: any
 ) => {
@@ -161,9 +158,11 @@ export const getTrajectory = (payload: {
           elapsedTime: scenario.elapsedTime,
           masses: scenario.masses,
           departure: scenario.elapsedTime,
-          arrival: scenario.elapsedTime + payload.timeOfFlight,
-          target: payload.target,
-          primary: payload.primary
+          arrival:
+            scenario.elapsedTime +
+            (scenario.trajectoryTargetArrival - scenario.elapsedTime),
+          target: scenario.trajectoryTarget,
+          primary
         });
       }
     );

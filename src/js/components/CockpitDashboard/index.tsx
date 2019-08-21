@@ -172,15 +172,7 @@ export default ({
         />
         <Button
           cssClassName="button cockpit-element top"
-          callback={() =>
-            getTrajectory({
-              timeOfFlight:
-                scenario.trajectoryTargetArrival - scenario.elapsedTime,
-              departureTime: scenario.elapsedTime,
-              target: scenario.trajectoryTarget,
-              primary: scenario.trajectoryRelativeTo
-            })
-          }
+          callback={() => getTrajectory(soi.currentSOI.name)}
         >
           Set Trajectory
         </Button>
