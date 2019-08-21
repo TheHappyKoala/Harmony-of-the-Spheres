@@ -2,28 +2,66 @@
   position: absolute;
   z-index: 400;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 700px;
-  font-family: 'Orbitron', sans-serif;
-  color: #30c735;
+  left: 100px;
+  width: 500px;
+  color: #eee;
   display: grid;
-  grid-template-columns: 220px 220px 220px;
+  grid-template-columns: 240px 240px;
   justify-content: space-evenly;
   padding-bottom: 20px;
 }
 
-.cockpit-dashboard ::-webkit-scrollbar-thumb {
-  background: green;
-  border-radius: 2px;
+.cockpit-dashboard-tabs {
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cockpit-dashboard-tabs ul {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.cockpit-dashboard-tabs ul .button {
+  border: none;
+  padding: 5px;
+}
+
+.cockpit-dashboard-tabs i {
+  margin-bottom: 12px;
+}
+
+.box.cockpit-dashboard-tabs-pane {
+  height: 260px;
+  border-top: none;
+}
+
+.trajectory-table {
+  border-collapse: collapse;
+}
+
+.toggle-cockpit {
+  grid-column: 1 / span 2;
+  margin-top: 7px;
 }
 
 .trajectory-table > tr > td {
-  padding: 5px 0;
+  width: 20%;
+  padding: 8px;
+  overflow: hidden;
 }
 
-.cockpit-dashboard > section > button {
-  color: #30c735;
+.trajectory-table > tr:nth-child(even) {
+  background: transparent;
+}
+.trajectory-table > tr:nth-child(odd) {
+  background: #191919;
+}
+
+.spacecraft-stats {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #545454;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .trajectory-map-canvas {
@@ -34,45 +72,7 @@
   background-attachment: fixed;
 }
 
-.cockpit-element {
-  background: transparent;
-  border: 1px solid green;
-}
-
-@import '../App/App.less';
-
-.cockpit-dashboard .range-wrapper {
-  width: 80%;
-  height: 65px;
-  float: left;
-}
-
-.cockpit-dashboard input.slider[type='range'] {
-  background: transparent;
-  border: 1px solid green;
-}
-
-.cockpit-dashboard input.slider[type='range']::-webkit-slider-thumb {
-  background-color: transparent;
-  border: 1px solid green;
-}
-
-.cockpit-dashboard .slider-value {
-  border: 1px solid green;
-  border-bottom: none;
-  background-color: transparent;
-}
-
-.cockpit-dashboard .slider-button {
-  background-color: transparent;
-  border: 1px solid green;
-  border-left: none;
-}
-
-.cockpit-dashboard .slider-increment-button {
-  border-bottom: none;
-}
-
 .cockpit-dashboard .button {
-  padding: 15px;
+  padding: 10px;
+  border: 1px solid #545454;
 }
