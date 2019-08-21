@@ -107,26 +107,6 @@ export default ({
             </td>
           </tr>
           <tr>
-            <td>Spacecraft Velcoity [AU/Y]:</td>
-            <td>
-              {getVelocityMagnitude({
-                x: spacecraft.vx,
-                y: spacecraft.vy,
-                z: spacecraft.vz
-              }).toFixed(4)}
-            </td>
-          </tr>
-          <tr>
-            <td>Target Velocity [AU/Y]:</td>
-            <td>
-              {getVelocityMagnitude({
-                x: target.vx,
-                y: target.vy,
-                z: target.vz
-              }).toFixed(4)}
-            </td>{' '}
-          </tr>
-          <tr>
             <td>Relative Rendevouz Velocity [AU/Y]:</td>
             <td>
               {isNaN(relativeVelocityAtRendevouz as any)
@@ -166,9 +146,9 @@ export default ({
           payload={{ key: 'trajectoryTargetArrival' }}
           value={scenario.trajectoryTargetArrival}
           callback={modifyScenarioProperty}
-          max={400}
+          max={scenario.elapsedTime + 30}
           min={scenario.elapsedTime}
-          step={0.05}
+          step={0.00273973}
         />
         <Button
           cssClassName="button cockpit-element top"
