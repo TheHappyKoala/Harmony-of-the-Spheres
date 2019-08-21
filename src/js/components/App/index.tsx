@@ -286,16 +286,14 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                 />
               </div>
             </Tabs>
-            {scenario.forAllMankind &&
-              scenario.cameraPosition === 'Cockpit' && (
-                <CockpitDashboard
-                  scenario={scenario}
-                  modifyScenarioProperty={modifyScenarioProperty}
-                  getTrajectory={getTrajectory}
-                  getOrbitalBurn={getOrbitalBurn}
-                  loading={app.loading}
-                />
-              )}
+            {scenario.forAllMankind && (
+              <CockpitDashboard
+                scenario={scenario}
+                modifyScenarioProperty={modifyScenarioProperty}
+                getTrajectory={getTrajectory}
+                getOrbitalBurn={getOrbitalBurn}
+              />
+            )}
             <ReactCSSTransitionGroup
               transitionName="fade"
               transitionEnterTimeout={250}
