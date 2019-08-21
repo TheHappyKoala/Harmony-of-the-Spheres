@@ -556,7 +556,7 @@ export const orbitalInsertion = (
   primary: MassType,
   spacecraft: { periapsis: number; apoapsis: number },
   g: number
-) =>
+): VectorType =>
   new H3()
     .set({ x: primary.vx, y: primary.vy, z: primary.vz })
     .addScaledVector(
