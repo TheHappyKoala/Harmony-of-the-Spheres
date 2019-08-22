@@ -153,7 +153,7 @@ export default class extends MassManifestation {
     mesh.name = 'Main';
 
     if (this.light !== false) {
-      const light = new THREE.PointLight(0xffffff, 4.5, 0);
+      const light = new THREE.PointLight(0xffffff, 3.0, 0);
       light.position.set(0, 0, 0);
       light.color.setHSL(0.55, 0.1, 0.5);
 
