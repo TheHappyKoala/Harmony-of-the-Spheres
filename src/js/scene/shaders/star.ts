@@ -82,7 +82,7 @@ export default {
         float r = dot(sp,sp);
       float f = (1.0-sqrt(abs(1.0-r)))/(r) + brightness * 0.5;
       
-      float starGlow	= min( max( 1.0 - dist * ( 1.0 - brightness ), 0.0 ), 1.0 );
+      float starGlow	= min( max( 0.6 - dist * ( 1.0 - brightness ), 0.0 ), 1.0 );
       fragColor.rgb	= vec3( f * ( 0.45 + brightness * 0.7 ) * orange ) + starSphere + corona * orange + starGlow * orangeRed;
       
       fragColor.a	= 1.0 / pow( dist * invRadius, 2.0 );
