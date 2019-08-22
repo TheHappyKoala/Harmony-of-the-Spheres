@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import MassManifestation from './MassManifestation';
 import starMaterial from './starMaterial';
 import habitableZone from './habitableZone';
+import { getRandomNumberInRange } from '../Physics/utils';
 import CustomEllipseCurve from './CustomEllipseCurve';
 
 export default class extends MassManifestation {
@@ -120,12 +121,16 @@ export default class extends MassManifestation {
     }
   }
 
+  randomColor() {
+    let h = getRandomNumberInRange(0, 1);
+    let s = getRandomNumberInRange(0, 0.9);
+    let l = 0.5;
+    let color = new THREE.Color().setHSL(h, s, l);
+    return color;
+  }
+
   getMain() {
-    const geometry = new THREE.PlaneGeometry(
-      this.mass.radius * 4,
-      this.mass.radius * 4,
-      16
-    );
+    const geometry = new THREE.CircleBufferGeometry(this.mass.radius * 5, 50);
 
     const texture = this.textureLoader.load('./textures/star.jpg');
     texture.minFilter = THREE.NearestFilter;
@@ -148,7 +153,7 @@ export default class extends MassManifestation {
     mesh.name = 'Main';
 
     if (this.light !== false) {
-      const light = new THREE.PointLight(0xffffff, 2.7, 0);
+      const light = new THREE.PointLight(0xffffff, 4.5, 0);
       light.position.set(0, 0, 0);
       light.color.setHSL(0.55, 0.1, 0.5);
 

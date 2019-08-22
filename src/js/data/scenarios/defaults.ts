@@ -24,7 +24,7 @@ export const scenarioDefaults = {
   systemBarycenter: true,
   logarithmicDepthBuffer: false,
   scale: 2100000,
-  barycenter: true,
+  barycenter: false,
   trails: true,
   labels: true,
   particles: {
