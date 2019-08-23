@@ -60,6 +60,8 @@ export default {
       }
     };
 
+    this.iteration = 0;
+
     this.requestAnimationFrameId = null;
 
     this.scene = new THREE.Scene();
@@ -438,7 +440,13 @@ export default {
     this.system.softeningSquared =
       this.scenario.softeningConstant * this.scenario.softeningConstant;
 
-    if (this.scenario.playing) this.system.iterate();
+    let drawTrail = false;
+
+    if (this.scenario.playing) {
+      this.system.iterate();
+      this.iteration++;
+      if (this.iteration % this.scenario.drawLineEvery == 0) drawTrail = true;
+    }
 
     dt = this.system.dt;
 
@@ -545,7 +553,8 @@ export default {
           this.manifestationPosition.x,
           this.manifestationPosition.y,
           this.manifestationPosition.z,
-          this.scenario.playing
+          this.scenario.playing,
+          drawTrail
         );
       else {
         massManifestation.draw(
@@ -553,7 +562,8 @@ export default {
           this.manifestationPosition.y,
           this.manifestationPosition.z,
           this.camera,
-          this.scenario.playing
+          this.scenario.playing,
+          drawTrail
         );
 
         const habitableZone = massManifestation.getObjectByName(

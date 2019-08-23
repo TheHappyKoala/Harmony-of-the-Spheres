@@ -16,6 +16,7 @@ export const scenarioDefaults = {
     }
   },
   elapsedTime: 0,
+  drawLineEvery: 6,
   useBarnesHut: false,
   theta: 0.5,
   collisions: true,
