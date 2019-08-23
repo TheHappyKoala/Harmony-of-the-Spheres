@@ -77,7 +77,7 @@ export default {
     this.camera = new Camera(
       45,
       this.w / this.h,
-      this.scenario.logarithmicDepthBuffer ? 1e-9 : 1,
+      this.scenario.logarithmicDepthBuffer ? 1e-5 : 1,
       1500000000000,
       this.graphics2D.canvas
     );
@@ -545,14 +545,15 @@ export default {
           this.manifestationPosition.x,
           this.manifestationPosition.y,
           this.manifestationPosition.z,
-          this.camera.position
+          this.scenario.playing
         );
       else {
         massManifestation.draw(
           this.manifestationPosition.x,
           this.manifestationPosition.y,
           this.manifestationPosition.z,
-          this.camera
+          this.camera,
+          this.scenario.playing
         );
 
         const habitableZone = massManifestation.getObjectByName(

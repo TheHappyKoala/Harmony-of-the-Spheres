@@ -163,7 +163,7 @@ export default class extends MassManifestation {
     this.add(mesh);
   }
 
-  draw(x, y, z, camera) {
+  draw(x, y, z, camera, playing) {
     const main = this.getObjectByName('Main');
     const trail = this.getObjectByName('Trail');
     const habitableZone = this.getObjectByName('Habitable Zone');
@@ -176,7 +176,7 @@ export default class extends MassManifestation {
 
     main.quaternion.copy(camera.quaternion);
 
-    if (trail !== undefined) {
+    if (trail !== undefined && playing) {
       trail.geometry.vertices.unshift({ x, y, z });
       trail.geometry.vertices.length = this.mass.trailVertices;
       trail.geometry.verticesNeedUpdate = true;
