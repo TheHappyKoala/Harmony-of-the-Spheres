@@ -3,6 +3,7 @@ export const scenarioDefaults = {
   playing: false,
   g: 39.5,
   integrator: 'RKN12',
+  barycenterZ: 1000000,
   trajectoryRendevouz: {
     x: 0,
     y: 0,

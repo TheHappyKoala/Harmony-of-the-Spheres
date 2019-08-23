@@ -8,7 +8,6 @@ import H3 from '../Physics/vectors';
 import getIntegrator from '../Physics/Integrators';
 import { getObjFromArrByKeyValuePair } from '../utils';
 import {
-  getDistanceParams,
   getRandomNumberInRange,
   setBarycenter,
   clampAbs,
@@ -35,8 +34,6 @@ const TWEEN = require('@tweenjs/tween.js');
 export default {
   init(webGlCanvas, graphics2DCanvas, audio) {
     this.scenario = store.getState().scenario;
-
-    this.scenario.collisions = false;
 
     this.w = window.innerWidth;
     this.h = window.innerHeight;
@@ -80,15 +77,9 @@ export default {
     this.camera = new Camera(
       45,
       this.w / this.h,
-      this.scenario.logarithmicDepthBuffer ? 1e-4 : 1,
-      this.scenario.logarithmicDepthBuffer ? 1e150 : 1500000000000,
+      this.scenario.logarithmicDepthBuffer ? 1e-9 : 1,
+      1500000000000,
       this.graphics2D.canvas
-    );
-
-    this.camera.position.set(
-      this.scenario.freeOrigo.x,
-      this.scenario.freeOrigo.y,
-      this.scenario.freeOrigo.z
     );
 
     this.clock = new THREE.Clock();
@@ -128,7 +119,6 @@ export default {
 
     this.barycenterPosition = new H3();
     this.rotatingReferenceFrame = new H3();
-    this.rotatingVelocity = new H3();
     this.manifestationPosition = new H3();
 
     this.particlePhysics = new ParticlePhysics(this.scenario.scale);
@@ -269,9 +259,6 @@ export default {
       this.scenario.cameraFocus === looser.name ||
       this.scenario.cameraPosition === looser.name
     ) {
-      const scale = this.scenario.scale;
-      const radius = survivor.radius;
-
       store.dispatch(
         modifyScenarioProperty(
           { key: 'primary', value: survivor.name },
@@ -425,7 +412,6 @@ export default {
 
     const {
       rotatingReferenceFrame,
-      cameraPosition,
       cameraFocus,
       barycenterMassOne,
       barycenterMassTwo
@@ -473,7 +459,7 @@ export default {
 
     if (rotatingReferenceFrame === 'Barycenter')
       this.rotatingReferenceFrame.set(this.barycenterPosition);
-    else {
+    else
       for (let i = 0; i < this.system.masses.length; i++) {
         const mass = this.system.masses[i];
 
@@ -483,14 +469,8 @@ export default {
             y: mass.y,
             z: mass.z
           });
-          this.rotatingVelocity.set({
-            x: mass.vx,
-            y: mass.vy,
-            z: mass.vz
-          });
         }
       }
-    }
 
     this.updateEllipseCurve();
 
@@ -503,20 +483,6 @@ export default {
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
-    if (cameraPosition === 'Free' || cameraPosition === 'Cockpit') {
-      if (
-        cameraPosition === 'Cockpit' &&
-        this.camera.currentControls !== 'Fly Controls'
-      )
-        this.camera.setControls('Fly Controls');
-
-      if (
-        cameraPosition === 'Free' &&
-        this.camera.currentControls !== 'Orbit Controls'
-      )
-        this.camera.setControls('Orbit Controls');
-    } else this.camera.setControls();
-
     this.graphics2D.clear();
 
     if (this.scenario.barycenter)
@@ -528,7 +494,6 @@ export default {
           this.barycenterPosition.z
         ),
         this.camera,
-        cameraPosition === 'Free' ? true : false,
         cameraFocus === 'Barycenter' ? true : false,
         'left',
         'limegreen',
@@ -537,31 +502,26 @@ export default {
 
     let barycenterPositionArray;
 
-    if (cameraFocus === 'Barycenter' && cameraPosition !== 'Cockpit') {
+    if (cameraFocus === 'Barycenter') {
       barycenterPositionArray = this.barycenterPosition.toArray();
 
-      if (cameraPosition !== 'Free')
-        this.camera.lookAt(...barycenterPositionArray);
-      else this.camera.controls.target.set(...barycenterPositionArray);
+      this.camera.controls.target.set(...barycenterPositionArray);
     }
 
     if (
-      cameraPosition !== 'Cockpit' &&
       this.previousCameraFocus !== cameraFocus &&
       cameraFocus === 'Barycenter'
     ) {
       this.previousCameraFocus = cameraFocus;
 
-      if (cameraPosition === 'Free') {
-        if (cameraFocus === 'Barycenter') {
-          this.camera.position.set(
-            this.barycenterPosition.x,
-            this.barycenterPosition.y,
-            this.barycenterPosition.z + 100000000
-          );
+      if (cameraFocus === 'Barycenter') {
+        this.camera.position.set(
+          this.barycenterPosition.x,
+          this.barycenterPosition.y,
+          this.barycenterPosition.z + this.scenario.barycenterZ
+        );
 
-          this.camera.lookAt(...barycenterPositionArray);
-        }
+        this.camera.lookAt(...barycenterPositionArray);
       }
     }
 
@@ -580,18 +540,12 @@ export default {
 
       const manifestationPositionArray = this.manifestationPosition.toArray();
 
-      const cameraDistanceToFocus = Math.sqrt(
-        getDistanceParams(this.camera.position, this.manifestationPosition)
-          .dSquared
-      );
-
       if (mass.type !== 'star')
         massManifestation.draw(
           this.manifestationPosition.x,
           this.manifestationPosition.y,
           this.manifestationPosition.z,
-          this.camera.position,
-          cameraDistanceToFocus
+          this.camera.position
         );
       else {
         massManifestation.draw(
@@ -616,7 +570,7 @@ export default {
           'Reference Orbits'
         );
 
-        if (referenceOrbits === undefined) {
+        if (!referenceOrbits) {
           if (this.scenario.referenceOrbits)
             massManifestation.getReferenceOrbits(this.referenceOrbits);
         } else {
@@ -643,7 +597,6 @@ export default {
                   this.referenceOrbits.earth.i * 0.0174533
                 ),
               this.camera,
-              cameraPosition === 'Free' ? true : false,
               false,
               'left',
               'skyblue',
@@ -670,7 +623,6 @@ export default {
                   this.referenceOrbits.mercury.i * 0.0174533
                 ),
               this.camera,
-              cameraPosition === 'Free' ? true : false,
               false,
               'left',
               'pink',
@@ -692,75 +644,36 @@ export default {
           trail.geometry.verticesNeedUpdate = false;
       } else massManifestation.removeTrail();
 
-      if (cameraFocus === name && cameraPosition !== 'Cockpit') {
-        if (cameraPosition !== 'Free')
-          this.camera.lookAt(...manifestationPositionArray);
-        else if (cameraPosition === 'Free') {
-          this.camera.trackMovingObjectWithControls(massManifestation);
-        }
-      }
+      if (cameraFocus === name) {
+        this.camera.trackMovingObjectWithControls(massManifestation);
 
-      if (
-        this.previousCameraFocus !== cameraFocus &&
-        cameraFocus === name &&
-        cameraPosition !== 'Cockpit'
-      ) {
+        if (trail) trail.visible = false;
+      } else if (trail) trail.visible = true;
+
+      if (this.previousCameraFocus !== cameraFocus && cameraFocus === name) {
         this.previousCameraFocus = cameraFocus;
 
-        if (cameraPosition === 'Free') {
-          this.camera.position.set(
-            this.manifestationPosition.x + mass.radius * 4,
-            this.manifestationPosition.y,
-            this.manifestationPosition.z + mass.radius * 3
-          );
+        this.camera.position.set(
+          -(this.manifestationPosition.x + mass.radius * 20),
+          this.manifestationPosition.y,
+          this.manifestationPosition.z + mass.radius * 5
+        );
 
-          this.camera.lookAt(...manifestationPositionArray);
-        }
+        this.camera.lookAt(...manifestationPositionArray);
       }
 
-      if (
-        this.scenario.labels &&
-        cameraPosition !== name &&
-        (cameraPosition === 'Cockpit' && i === 0 ? false : true)
-      ) {
+      if (this.scenario.labels)
         this.graphics2D.drawLabel(
           name,
           this.utilityVector.set(...manifestationPositionArray),
           this.camera,
-          cameraPosition === 'Free' ? true : false,
           cameraFocus === name ? true : false,
           'right',
           'white',
           drawMassLabel
         );
-      }
 
       const main = massManifestation.getObjectByName('Main');
-
-      if (cameraPosition === 'Chase' && cameraFocus === name) {
-        const rotatingVelocity = new H3()
-          .set({ x: mass.vx, y: mass.vy, z: mass.vz })
-          .subtractFrom(this.rotatingVelocity);
-
-        const rotatingVelocityLen = rotatingVelocity.getLength();
-
-        const factor = mass.radius * (mass.type === 'model' ? 25 : 5);
-
-        this.camera.position.set(
-          ...new H3()
-            .set({
-              x: this.manifestationPosition.x,
-              y: this.manifestationPosition.y,
-              z: this.manifestationPosition.z
-            })
-            .subtract({
-              x: rotatingVelocity.x / rotatingVelocityLen * factor,
-              y: rotatingVelocity.y / rotatingVelocityLen * factor,
-              z: rotatingVelocity.z / rotatingVelocityLen * factor
-            })
-            .toArray()
-        );
-      }
 
       if (mass.spacecraft && this.scenario.playing) {
         const directionOfVelocity = new THREE.Vector3(
@@ -772,19 +685,10 @@ export default {
 
         main.lookAt(directionOfVelocity);
       }
-
-      if (cameraPosition === 'Cockpit' && i === 0) {
-        this.camera.position.set(
-          this.manifestationPosition.x,
-          this.manifestationPosition.y,
-          this.manifestationPosition.z
-        );
-      }
     }
 
-    if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame) {
+    if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame)
       this.previousRotatingReferenceFrame = rotatingReferenceFrame;
-    }
 
     if (this.scenario.particles)
       this.particles.draw(
@@ -827,8 +731,6 @@ export default {
     );
 
     TWEEN.update();
-    if (this.camera.currentControls === 'Fly Controls')
-      this.camera.controls.update(this.clock.getDelta());
     this.requestAnimationFrameId = requestAnimationFrame(this.loop);
     this.renderer.render(this.scene, this.camera);
   },
@@ -933,7 +835,6 @@ export default {
       this.utilityVector = null;
       this.barycenterPosition = null;
       this.rotatingReferenceFrame = null;
-      this.rotatingVelocity = null;
       this.manifestationPosition = null;
       this.particlePhysics = null;
       this.previousCameraFocus = null;

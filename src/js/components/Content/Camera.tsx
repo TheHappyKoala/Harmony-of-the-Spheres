@@ -5,20 +5,16 @@ import Dropdown from '../Dropdown';
 import Tooltip from '../Tooltip';
 
 interface CameraProps {
-  forAllMankind: boolean;
   modifyScenarioProperty: typeof modifyScenarioProperty;
   masses: MassType[];
   rotatingReferenceFrame: string;
-  cameraPosition: string;
   cameraFocus: string;
 }
 
 export default ({
-  forAllMankind,
   modifyScenarioProperty,
   masses,
   rotatingReferenceFrame,
-  cameraPosition,
   cameraFocus
 }: CameraProps): ReactElement => (
   <Fragment>
@@ -64,60 +60,6 @@ export default ({
           {mass.name}
         </div>
       ))}
-    </Dropdown>
-    <label className="top">
-      Camera Position{' '}
-      <Tooltip
-        position="left"
-        content="Select the position of the camera. If the position is set to free, you can zoom in on and orbit around the focus of the camera with your mouse or touch screen."
-      />
-    </label>
-    <Dropdown
-      selectedOption={cameraPosition}
-      dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-      selectedOptionCssClassName="selected-option"
-      optionsWrapperCssClass="options"
-      dynamicChildrenLen={masses.length}
-      transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
-    >
-      {forAllMankind && (
-        <div
-          data-name="Cockpit"
-          key="Cockpit"
-          onClick={() =>
-            modifyScenarioProperty({
-              key: 'cameraPosition',
-              value: 'Cockpit'
-            })
-          }
-        >
-          Cockpit
-        </div>
-      )}
-      <div
-        data-name="Free"
-        key="Free"
-        onClick={() =>
-          modifyScenarioProperty({
-            key: 'cameraPosition',
-            value: 'Free'
-          })
-        }
-      >
-        Free
-      </div>
-      <div
-        data-name="Chase"
-        key="Chase"
-        onClick={() =>
-          modifyScenarioProperty({
-            key: 'cameraPosition',
-            value: 'Chase'
-          })
-        }
-      >
-        Chase
-      </div>
     </Dropdown>
     <label className="top">
       Camera Focus{' '}
