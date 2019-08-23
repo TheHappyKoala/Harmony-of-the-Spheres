@@ -2,7 +2,7 @@ export const scenarioDefaults = {
   isLoaded: false,
   playing: false,
   g: 39.5,
-  integrator: 'RKN12',
+  integrator: 'PEFRL',
   barycenterZ: 1000000,
   trajectoryRendevouz: {
     x: 0,
