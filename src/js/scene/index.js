@@ -445,8 +445,12 @@ export default {
     let drawTrail = false;
 
     if (this.scenario.playing) {
+      const oldMasses = JSON.parse(JSON.stringify(this.scenario.masses));
+      
       this.system.iterate();
+      
       this.iteration++;
+      
       if (this.iteration % this.scenario.drawLineEvery == 0) drawTrail = true;
     }
 
@@ -718,7 +722,12 @@ export default {
       );
 
     if (this.scenario.particles && this.scenario.playing)
-      this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);
+      this.particlePhysics.iterate(
+        oldMasses,
+        this.system.masses,
+        this.scenario.g,
+        dt
+      );
 
     store.dispatch(
       modifyScenarioProperty(
