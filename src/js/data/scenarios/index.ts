@@ -150,13 +150,7 @@ export const processExoplanetArchiveData = (data: any[]) => {
     barycenterMassOne: data[0].pl_hostname,
     barycenterMassTwo: data[0].pl_letter,
     rotatingReferenceFrame: data[0].pl_hostname,
-    cameraPosition: 'Free',
-    cameraFocus: 'Origo',
-    freeOrigo: {
-      x: 850402.9676702506,
-      y: 526245.3241717573,
-      z: 384930.22925721033
-    },
+    barycenterZ: 3400000,
     primary: data[0].pl_hostname,
     massBeingModified: data[0].pl_hostname,
     masses: elementsToVectors(

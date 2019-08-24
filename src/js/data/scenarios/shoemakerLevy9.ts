@@ -6,18 +6,7 @@ export default {
   dt: 0.00001,
   rotatingReferenceFrame: 'Jupiter',
   labels: true,
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: -10188.201041522296,
-    y: 7677.3601581006415,
-    z: 8520.764467240198
-  },
-  particles: {
-    max: 40000,
-    size: 400,
-    rings: []
-  },
+  cameraFocus: 'Jupiter',
   massBeingModified: 'Jupiter',
   distMax: 50,
   distMin: -50,

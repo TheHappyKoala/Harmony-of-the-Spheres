@@ -2,20 +2,15 @@ export default {
   name: 'The Plutonian System',
   type: 'Solar System',
   g: 39.5,
-  dt: 9e-7,
+  dt: 9e-6,
   distMax: 50,
   distMin: -50,
   systemBarycenter: false,
   barycenterMassOne: 'Pluto',
   barycenterMassTwo: 'Charon',
   rotatingReferenceFrame: 'Barycenter',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: 416.1025807215511,
-    y: -412.48715302884926,
-    z: -503.42551847530746
-  },
+  barycenterZ: 1200,
+  cameraFocus: 'Barycenter',
   particles: {
     max: 20000,
     size: 140,
@@ -38,7 +33,7 @@ export default {
       vx: -7.537689569861475e-6 * 365.25,
       vy: 2.757783324063138e-6 * 365.25,
       vz: 1.882283849176868e-7 * 365.25,
-      trailVertices: 6e3
+      trailVertices: 1e3
     },
     {
       name: 'Pluto',

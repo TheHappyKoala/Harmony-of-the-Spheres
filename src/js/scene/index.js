@@ -668,7 +668,7 @@ export default {
         this.previousCameraFocus = cameraFocus;
 
         this.camera.position.set(
-          -(this.manifestationPosition.x + mass.radius * 20),
+          -(this.manifestationPosition.x + mass.radius * 10),
           this.manifestationPosition.y,
           this.manifestationPosition.z + mass.radius * 5
         );

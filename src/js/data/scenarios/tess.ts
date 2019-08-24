@@ -5,14 +5,8 @@ export default {
   dt: 85e-7,
   distMax: 50,
   distMin: -50,
-  rotatingReferenceFrame: 'Earth',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: 31.634445180052754,
-    y: 551.9256768615364,
-    z: 117.69438629186993
-  },
+  rotatingReferenceFrame: 'Moon',
+  cameraFocus: 'Earth',
   particles: {
     max: 20000,
     size: 80,

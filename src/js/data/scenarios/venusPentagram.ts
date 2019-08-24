@@ -6,9 +6,8 @@ export default {
   distMax: 50,
   distMin: -50,
   rotatingReferenceFrame: 'Earth',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: { x: 0, y: 0, z: 9950000 },
+  cameraFocus: 'Barycenter',
+  barycenterZ: 20000000,
   massBeingModified: 'Sun',
   primary: 'Sun',
   maximumDistance: { name: 'Sun to Kuiper Belt', value: 55 },
@@ -23,7 +22,7 @@ export default {
       vx: 0.0020869837917339754,
       vy: -9.759759745137204e-4,
       vz: -4.519598528871196e-5,
-      trailVertices: 10000
+      trailVertices: 1000
     },
     {
       name: 'Venus',
@@ -33,7 +32,7 @@ export default {
       vx: -3.5713994857490308,
       vy: 6.445551271928175,
       vz: 0.29452473854502614,
-      trailVertices: 150000
+      trailVertices: 15000
     },
     {
       name: 'Earth',

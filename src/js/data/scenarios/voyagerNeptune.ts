@@ -6,13 +6,7 @@ export default {
   distMax: 50,
   distMin: -50,
   rotatingReferenceFrame: 'Neptune',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: -2118.150178902576,
-    y: -1992.556723911082,
-    z: 2120.3231321690787
-  },
+  cameraFocus: 'Neptune',
   particles: {
     max: 20000,
     size: 140,

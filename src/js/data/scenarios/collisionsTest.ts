@@ -1,22 +1,17 @@
 export default {
   name: 'Collisions Test - Take that Jupiter!',
+  integrator: 'RKN12',
   type: 'What-If',
   g: 39.5,
   dt: 0.000000035,
   trails: false,
   rotatingReferenceFrame: 'Jupiter',
   cameraPosition: 'Free',
-  cameraFocus: 'Origo',
+  cameraFocus: 'Jupiter',
   freeOrigo: {
     x: -8048.487016330836,
     y: 15137.002537610133,
     z: 5123.4647847315355
-  },
-  particles: {
-    max: 20000,
-    size: 400,
-    hsl: [0, 0.9, 0.5],
-    rings: []
   },
   massBeingModified: 'Jupiter',
   distMax: 50,

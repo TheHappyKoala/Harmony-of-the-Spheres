@@ -2,8 +2,10 @@ export const scenarioDefaults = {
   isLoaded: false,
   playing: false,
   g: 39.5,
+  rotatingReferenceFrame: 'Barycenter',
+  cameraFocus: 'Barycenter',
   integrator: 'PEFRL',
-  barycenterZ: 1000000,
+  barycenterZ: 10000,
   trajectoryRendevouz: {
     x: 0,
     y: 0,
