@@ -7,25 +7,22 @@ interface ParticlesManifestationType {
   scenarioScale: number;
   size: number;
   max: number;
-  type: string;
-  hsl: [number, number, number];
+  textureLoader: THREE.TextureLoader;
 }
 
 export default class extends Object3D {
   particles: MassType[];
   scenarioScale: number;
   size: number;
-  type: string;
   max: number;
-  hsl: [number, number, number];
+  textureLoader: THREE.TextureLoader;
 
   constructor({
     particles,
     scenarioScale,
     size,
     max,
-    type,
-    hsl
+    textureLoader
   }: ParticlesManifestationType) {
     super();
 
@@ -37,11 +34,9 @@ export default class extends Object3D {
 
     this.size = size;
 
-    this.type = type;
-
     this.max = max;
 
-    this.hsl = hsl;
+    this.textureLoader = textureLoader;
 
     this.getParticles();
   }
@@ -68,7 +63,7 @@ export default class extends Object3D {
     geometry.addAttribute('position', new BufferAttribute(positions, 3));
     geometry.addAttribute('size', new BufferAttribute(sizes, 1));
 
-    const material = particleMaterial('particle');
+    const material = particleMaterial(this.textureLoader, 'particle');
 
     const mesh = new Points(geometry, material);
 

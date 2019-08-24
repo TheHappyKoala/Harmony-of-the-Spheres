@@ -6,8 +6,8 @@ import { getRandomNumberInRange } from '../Physics/utils';
 import CustomEllipseCurve from './CustomEllipseCurve';
 
 export default class extends MassManifestation {
-  constructor(mass) {
-    super(mass);
+  constructor(mass, textureLoader) {
+    super(mass, textureLoader);
 
     this.clock = new THREE.Clock();
   }

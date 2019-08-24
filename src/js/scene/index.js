@@ -64,6 +64,8 @@ export default {
 
     this.requestAnimationFrameId = null;
 
+    this.textureLoader = new THREE.TextureLoader();
+
     this.scene = new THREE.Scene();
 
     this.utilityVector = new THREE.Vector3();
@@ -90,7 +92,7 @@ export default {
     this.previousRotatingReferenceFrame = null;
     this.previousIntegrator = this.scenario.integrator;
 
-    this.scene.add(arena());
+    this.scene.add(arena(this.textureLoader));
 
     this.ellipseCurve = new CustomEllipseCurve(
       0,
@@ -132,9 +134,7 @@ export default {
       scenarioScale: this.scenario.scale,
       size: this.scenario.particles.size,
       max: this.scenario.particles.max,
-      type: this.scenario.type,
-      hsl: this.scenario.particles.hsl,
-      twinklingParticles: this.scenario.particles.twinkling
+      textureLoader: this.textureLoader
     });
 
     this.scene.add(this.particles);
@@ -163,13 +163,13 @@ export default {
   addManifestation(mass) {
     switch (mass.type) {
       case 'star':
-        return new Star(mass);
+        return new Star(mass, this.textureLoader);
 
       case 'model':
-        return new Model(mass);
+        return new Model(mass, this.textureLoader);
 
       default:
-        return new MassManifestation(mass);
+        return new MassManifestation(mass, this.textureLoader);
     }
   },
 
@@ -842,6 +842,7 @@ export default {
       this.camera = null;
       this.system = null;
       this.renderer = null;
+      this.textureLoader = null;
       this.scene = null;
       this.clock = null;
       this.utilityVector = null;

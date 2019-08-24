@@ -1,11 +1,11 @@
 import * as THREE from 'three';
 import particle from './shaders/particle';
 
-export default function(texture) {
+export default (textureLoader, texture) => {
   return new THREE.ShaderMaterial({
     uniforms: {
       texture: {
-        value: new THREE.TextureLoader().load(`./textures/${texture}.png`)
+        value: textureLoader.load(`./textures/${texture}.png`)
       },
       sizeAttenuation: { value: true }
     },
@@ -14,4 +14,4 @@ export default function(texture) {
     blending: THREE.AdditiveBlending,
     transparent: true
   });
-}
+};
