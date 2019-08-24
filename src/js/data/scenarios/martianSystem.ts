@@ -6,13 +6,7 @@ export default {
   distMax: 50,
   distMin: -50,
   rotatingReferenceFrame: 'Mars',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: -9.401642562455261e-14,
-    y: -306.1964940362069,
-    z: 102.79005884167552
-  },
+  cameraFocus: 'Mars',
   particles: {
     max: 20000,
     size: 10,

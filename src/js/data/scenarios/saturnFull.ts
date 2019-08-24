@@ -4,13 +4,7 @@ export default {
   g: 39.5,
   dt: 0.000005,
   rotatingReferenceFrame: 'Saturn',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: 4179.634541486797,
-    y: 5301.841140561859,
-    z: 100.55825363900749
-  },
+  cameraFocus: 'Saturn',
   massBeingModified: 'Saturn',
   distMax: 50,
   distMin: -50,

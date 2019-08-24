@@ -2,22 +2,11 @@ export default {
   name: 'The Earth and Moon System',
   type: 'Solar System',
   g: 39.5,
-  dt: 85e-7,
+  dt: 85e-9,
   distMax: 50,
   distMin: -50,
   rotatingReferenceFrame: 'Earth',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: 283.6330113898189,
-    y: 588.0320929243479,
-    z: 104.3987821010098
-  },
-  particles: {
-    max: 20000,
-    size: 80,
-    rings: []
-  },
+  cameraFocus: 'Earth',
   massBeingModified: 'Sun',
   primary: 'Earth',
   maximumDistance: { name: 'Moon to Earth * 10', value: 0.0256955529 },

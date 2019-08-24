@@ -45,7 +45,7 @@ export default {
   
       float brightness	= freqs[1] * 0.25 + freqs[2] * 0.25;
       float radius		= 0.24 + brightness * 0.2;
-      float invRadius 	= 0.9/radius;
+      float invRadius 	= 0.95/radius;
       
       vec3 orange			= vec3( 0.8, 0.65, 0.3 );
       vec3 orangeRed		= starColor;
@@ -55,7 +55,7 @@ export default {
       vec2 p 			= -0.5 + uv;
       p.x *= aspect;
   
-      float fade		= pow( length( 2.0 * p ), 0.5 );
+      float fade		= pow( length( 1.5 * p ), 0.4 );
       float fVal1		= 1.0 - fade;
       float fVal2		= 1.0 - fade;
       
@@ -68,8 +68,8 @@ export default {
       float power = pow( 2.0, 2.0 );
       fVal1 += ( 0.5 / power ) * snoise( coord + vec3( 0.0, -time, time * 0.2 ), ( power * ( 10.0 ) * ( newTime1 + 1.0 ) ) );
 
-      float corona		= pow( fVal1 * max( 1.1 - fade, 0.0 ), 2.0 ) * 50.0;
-      corona				+= pow( fVal2 * max( 1.1 - fade, 0.0 ), 2.0 ) * 50.0;
+      float corona		= pow( fVal1 * max( 1.1 - fade, 0.0 ), 3.0 ) * 30.0;
+      corona				+= pow( fVal2 * max( 1.1 - fade, 0.0 ), 3.0 ) * 30.0;
       corona				*= 1.2 - newTime1;
       vec3 sphereNormal 	= vec3( 0.0, 0.0, 1.0 );
       vec3 dir 			= vec3( 0.0 );
@@ -78,14 +78,14 @@ export default {
       
       vec2 sp = -1.0 + 2.0 * uv;
       sp.x *= aspect;
-      sp *= ( 2.0 - brightness );
+      sp *= ( 3.0 - brightness );
         float r = dot(sp,sp);
       float f = (1.0-sqrt(abs(1.0-r)))/(r) + brightness * 0.5;
       
-      float starGlow	= min( max( 1.0 - dist * ( 1.0 - brightness ), 0.0 ), 1.0 );
-      fragColor.rgb	= vec3( f * ( 0.75 + brightness * 0.3 ) * orange ) + starSphere + corona * orange + starGlow * orangeRed;
+      float starGlow	= min( max( 0.6 - dist * ( 1.0 - brightness ), 0.0 ), 1.0 );
+      fragColor.rgb	= vec3( f * ( 0.45 + brightness * 0.7 ) * orange ) + starSphere + corona * orange + starGlow * orangeRed;
       
-      fragColor.a	= 1.0 / pow( dist * invRadius, 7.0 );
+      fragColor.a	= 1.0 / pow( dist * invRadius, 2.0 );
   }
   
   
