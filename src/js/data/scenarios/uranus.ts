@@ -7,13 +7,7 @@ export default {
   distMax: 50,
   distMin: -50,
   rotatingReferenceFrame: 'Uranus',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: -10073.365619633045,
-    y: 11286.252642088353,
-    z: 384.45596874593684
-  },
+  cameraFocus: 'Uranus',
   particles: {
     max: 60000,
     rings: [

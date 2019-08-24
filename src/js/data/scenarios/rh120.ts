@@ -6,16 +6,10 @@ export default {
   distMax: 50,
   distMin: -50,
   rotatingReferenceFrame: 'Earth',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
+  cameraFocus: '2006 RH120',
   primary: 'Earth',
   maximumDistance: { name: 'Moon to Earth * 10', value: 0.0256955529 },
   distanceStep: { name: 'Moon to Earth / 100', value: 0.000025695552899999998 },
-  freeOrigo: {
-    x: 17606.193632543513,
-    y: 48372.61945116485,
-    z: 11305.982517894732
-  },
   particles: {
     max: 20000,
     size: 80,

@@ -4,8 +4,8 @@ import MassManifestation from './MassManifestation';
 import { degreesToRadians } from '../Physics/utils';
 
 export default class extends MassManifestation {
-  constructor(mass) {
-    super(mass);
+  constructor(mass, textureLoader) {
+    super(mass, textureLoader);
   }
 
   getMain() {

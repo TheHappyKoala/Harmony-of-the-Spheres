@@ -11,12 +11,8 @@ export default {
   velStep: 9.999999999999999e-5,
   rotatingReferenceFrame: 'Sun',
   cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: 5191960505.287371,
-    y: -1366929125.5562208,
-    z: 3664021134.9333267
-  },
+  cameraFocus: 'Barycenter',
+  barycenterZ: 3000000000,
   massBeingModified: 'Sun',
   primary: 'Sun',
   maximumDistance: { name: 'Sun to Planet 9', value: 1000 },

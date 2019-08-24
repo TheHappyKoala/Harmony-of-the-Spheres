@@ -2,7 +2,10 @@ export const scenarioDefaults = {
   isLoaded: false,
   playing: false,
   g: 39.5,
-  integrator: 'RKN12',
+  rotatingReferenceFrame: 'Barycenter',
+  cameraFocus: 'Barycenter',
+  integrator: 'PEFRL',
+  barycenterZ: 10000,
   trajectoryRendevouz: {
     x: 0,
     y: 0,
@@ -15,6 +18,7 @@ export const scenarioDefaults = {
     }
   },
   elapsedTime: 0,
+  drawLineEvery: 6,
   useBarnesHut: false,
   theta: 0.5,
   collisions: true,
@@ -24,12 +28,12 @@ export const scenarioDefaults = {
   systemBarycenter: true,
   logarithmicDepthBuffer: false,
   scale: 2100000,
-  barycenter: true,
+  barycenter: false,
   trails: true,
   labels: true,
   particles: {
-    max: 20000,
-    size: 70,
+    max: 1000,
+    size: 100,
     rings: <{
       primary?: string;
       tilt?: [number, number, number];

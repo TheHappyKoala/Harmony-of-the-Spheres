@@ -9,13 +9,8 @@ export default {
   distMax: 50,
   distMin: -50,
   rotatingReferenceFrame: 'Sun',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: 83221101.56513624,
-    y: -52002315.80013949,
-    z: 51595937.75983344
-  },
+  cameraFocus: 'Barycenter',
+  barycenterZ: 100000000,
   massBeingModified: 'Sun',
   primary: 'Sun',
   maximumDistance: { name: 'Sun to Kuiper Belt', value: 55 },

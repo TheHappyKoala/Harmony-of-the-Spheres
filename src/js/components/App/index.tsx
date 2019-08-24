@@ -250,10 +250,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               <div data-label="Camera" data-icon="fas fa-camera-retro fa-2x">
                 <Camera
                   rotatingReferenceFrame={scenario.rotatingReferenceFrame}
-                  cameraPosition={scenario.cameraPosition}
                   cameraFocus={scenario.cameraFocus}
                   masses={scenario.masses}
-                  forAllMankind={scenario.forAllMankind}
                   modifyScenarioProperty={modifyScenarioProperty}
                 />
               </div>

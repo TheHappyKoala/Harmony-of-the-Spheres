@@ -4,13 +4,7 @@ export default {
   g: 39.5,
   dt: 0.000006,
   rotatingReferenceFrame: 'Jupiter',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: 0,
-    y: 0,
-    z: 50000
-  },
+  cameraFocus: 'Jupiter',
   particles: {
     max: 20000,
     size: 400,

@@ -36,7 +36,8 @@ import { getRandomColor, getObjFromArrByKeyValuePair } from '../../utils';
 const computeDerivedMassesData = (
   scenarioMasses: MassType[],
   massTemplates: MassTemplate[],
-  dt: number
+  dt: number,
+  drawLineEvery: number
 ) =>
   scenarioMasses.map((mass: MassType) => {
     const template = getObjFromArrByKeyValuePair(
@@ -59,8 +60,12 @@ const computeDerivedMassesData = (
         'trailVertices' in mass
           ? mass.trailVertices
           : 'orbitalPeriod' in template
-            ? calculateOrbitalVertices(template.orbitalPeriod, dt)
-            : calculateOrbitalVertices(mass.orbitalPeriod, dt),
+            ? calculateOrbitalVertices(
+                template.orbitalPeriod,
+                dt,
+                drawLineEvery
+              )
+            : calculateOrbitalVertices(mass.orbitalPeriod, dt, drawLineEvery),
       tilt: 'tilt' in template ? template.tilt : 0,
       atmosphere: 'atmosphere' in template ? template.atmosphere : false,
       clouds: 'clouds' in template ? template.clouds : false,
@@ -84,6 +89,10 @@ const computeDerivedScenarioData = (
   forAllMankind: 'forAllMankind' in scenario ? scenario.forAllMankind : false,
   tol: 'tol' in scenario ? scenario.tol : scenario!.dt * 0.000000000000000001,
   maxDt: 'maxDt' in scenario ? scenario.maxDt : scenario!.dt * 4,
+  drawLineEvery:
+    'drawLineEvery' in scenario
+      ? scenario.drawLineEvery
+      : scenarioDefaults.drawLineEvery,
   minDt:
     'minDt' in scenario
       ? scenario.minDt
@@ -105,9 +114,15 @@ const computeDerivedScenarioData = (
             scenario.g
           ),
           masses,
-          scenario.dt
+          scenario.dt,
+          scenarioDefaults!.drawLineEvery
         )
-      : computeDerivedMassesData(scenario!.masses, masses, scenario!.dt),
+      : computeDerivedMassesData(
+          scenario!.masses,
+          masses,
+          scenario!.dt,
+          scenarioDefaults!.drawLineEvery
+        ),
   particles: {
     ...scenarioDefaults.particles,
     ...scenario.particles
@@ -135,13 +150,7 @@ export const processExoplanetArchiveData = (data: any[]) => {
     barycenterMassOne: data[0].pl_hostname,
     barycenterMassTwo: data[0].pl_letter,
     rotatingReferenceFrame: data[0].pl_hostname,
-    cameraPosition: 'Free',
-    cameraFocus: 'Origo',
-    freeOrigo: {
-      x: 850402.9676702506,
-      y: 526245.3241717573,
-      z: 384930.22925721033
-    },
+    barycenterZ: 3400000,
     primary: data[0].pl_hostname,
     massBeingModified: data[0].pl_hostname,
     masses: elementsToVectors(

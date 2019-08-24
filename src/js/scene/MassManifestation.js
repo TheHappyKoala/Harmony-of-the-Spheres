@@ -2,15 +2,15 @@ import * as THREE from 'three';
 import { degreesToRadians } from '../Physics/utils';
 
 export default class extends THREE.Object3D {
-  constructor(mass) {
+  constructor(mass, textureLoader) {
     super();
 
     this.mass = mass;
 
     this.name = this.mass.name;
-    this.textureLoader = new THREE.TextureLoader();
+    this.textureLoader = textureLoader;
 
-    this.segments = 50;
+    this.segments = 25;
 
     this.createManifestation();
   }
@@ -198,7 +198,7 @@ export default class extends THREE.Object3D {
     this.mass.clouds && this.getClouds();
   }
 
-  draw(x, y, z) {
+  draw(x, y, z, playing, drawTrail) {
     const main = this.getObjectByName('Main');
     const trail = this.getObjectByName('Trail');
 
@@ -213,10 +213,12 @@ export default class extends THREE.Object3D {
 
     if (!this.mass.spacecraft) main.rotation.y += 0.001;
 
-    if (trail !== undefined) {
-      trail.geometry.vertices.unshift({ x, y, z });
-      trail.geometry.vertices.length = this.mass.trailVertices;
-      trail.geometry.verticesNeedUpdate = true;
+    if (drawTrail) {
+      if (trail !== undefined && playing) {
+        trail.geometry.vertices.unshift({ x, y, z });
+        trail.geometry.vertices.length = this.mass.trailVertices;
+        trail.geometry.verticesNeedUpdate = true;
+      }
     }
   }
 

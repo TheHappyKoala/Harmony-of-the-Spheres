@@ -20,16 +20,11 @@ export default class {
     return this;
   }
 
-  threeToTwo(
-    p: Vector3,
-    camera: PerspectiveCamera,
-    isOrbital: boolean,
-    isTarget: boolean
-  ): any {
+  threeToTwo(p: Vector3, camera: PerspectiveCamera, isTarget: boolean): any {
     const w = this.canvas.width;
     const h = this.canvas.height;
 
-    if ((isOrbital && isTarget) || isTarget) return { x: w / 2, y: h / 2 };
+    if (isTarget) return { x: w / 2, y: h / 2 };
 
     p = p.project(camera);
 
@@ -46,14 +41,13 @@ export default class {
     name: string,
     p: Vector3,
     camera: PerspectiveCamera,
-    isOrbital: boolean,
     isTarget: boolean,
     placement: string,
     color: string,
     drawSymbolCallback: Function,
     topOffset = 0
   ): void {
-    p = this.threeToTwo(p, camera, isOrbital, isTarget);
+    p = this.threeToTwo(p, camera, isTarget);
 
     if (p) {
       const ctx = this.ctx;

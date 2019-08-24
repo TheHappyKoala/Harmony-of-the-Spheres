@@ -6,12 +6,7 @@ export default {
   dt: 0.000002,
   rotatingReferenceFrame: 'Saturn',
   cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: -5604.812818415091,
-    y: -2207.7944830346014,
-    z: 4436.5549778635595
-  },
+  cameraFocus: 'Saturn',
   massBeingModified: 'Saturn',
   distMax: 50,
   distMin: -50,
@@ -24,7 +19,7 @@ export default {
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Saturn',
   particles: {
     max: 60000,
-    size: 100,
+    size: 50,
     rings: [
       {
         primary: 'Saturn',

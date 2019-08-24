@@ -10,13 +10,8 @@ export default {
   velMin: -12,
   velStep: 5e-6,
   rotatingReferenceFrame: 'Sun',
-  cameraPosition: 'Free',
-  cameraFocus: 'Origo',
-  freeOrigo: {
-    x: -17784913.815497126,
-    y: 6297968.292925428,
-    z: 6483435.505698438
-  },
+  cameraFocus: 'Barycenter',
+  barycenterZ: 10000000,
   massBeingModified: 'Sun',
   primary: 'Sun',
   maximumDistance: { name: 'Sun to Kuiper Belt', value: 55 },

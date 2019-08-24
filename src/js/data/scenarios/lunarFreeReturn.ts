@@ -1,5 +1,6 @@
 export default {
   name: 'Lunar Free Return Trajectory',
+  integrator: 'RKN12',
   tcmsData: [
     {
       t: 0,
@@ -16,16 +17,13 @@ export default {
   dt: 20e-8,
   distMax: 50,
   distMin: -50,
-  rotatingReferenceFrame: 'Earth',
-  cameraPosition: 'Chase',
-  cameraFocus: 'Apollo 11',
+  barycenterMassOne: 'Earth',
+  barycenterMassTwo: 'Moon',
+  rotatingReferenceFrame: 'Barycenter',
+  systemBarycenter: false,
+  cameraFocus: 'Barycenter',
+  barycenterZ: 16000,
   collisions: true,
-  freeOrigo: { x: 0, y: 0, z: 16000 },
-  particles: {
-    max: 20000,
-    size: 20,
-    rings: []
-  },
   massBeingModified: 'Sun',
   primary: 'Earth',
   maximumDistance: { name: 'Moon to Earth * 10', value: 0.0256955529 },
