@@ -6,7 +6,7 @@ export default {
   distMax: 50,
   distMin: -50,
   rotatingReferenceFrame: 'Earth',
-  cameraFocus: 'Barycenter',
+  cameraFocus: 'Sun',
   barycenterZ: 8000000,
   massBeingModified: 'Sun',
   primary: 'Sun',
