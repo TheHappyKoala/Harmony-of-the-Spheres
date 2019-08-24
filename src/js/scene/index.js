@@ -449,6 +449,7 @@ export default {
     this.system.softeningSquared =
       this.scenario.softeningConstant * this.scenario.softeningConstant;
 
+    const oldMasses = JSON.parse(JSON.stringify(this.scenario.masses));
     if (this.scenario.playing) this.system.iterate();
 
     dt = this.system.dt;
@@ -797,7 +798,12 @@ export default {
       );
 
     if (this.scenario.particles && this.scenario.playing)
-      this.particlePhysics.iterate(this.system.masses, this.scenario.g, dt);
+      this.particlePhysics.iterate(
+        oldMasses,
+        this.system.masses,
+        this.scenario.g,
+        dt
+      );
 
     store.dispatch(
       modifyScenarioProperty(
