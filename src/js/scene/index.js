@@ -325,17 +325,17 @@ export default {
       tween.start();
     }
 
-    const numberOfFragments = 300;
+    const numberOfFragments = 200;
 
     const totalWithAddedFragments =
-      this.particlePhysics.particles + numberOfFragments;
+      this.particlePhysics.particles.length + numberOfFragments;
     const excessFragments =
       this.scenario.particles.max - totalWithAddedFragments;
 
     if (excessFragments < 0)
       this.particlePhysics.particles.splice(0, -excessFragments);
 
-    const maxAngle = 30;
+    const maxAngle = 45;
     const fragmentMass = 1.005570862e-29;
 
     const kineticVelocity = {

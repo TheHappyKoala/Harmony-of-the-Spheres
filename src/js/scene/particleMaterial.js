@@ -1,10 +1,9 @@
 import * as THREE from 'three';
 import particle from './shaders/particle';
 
-export default function(depthTest, texture) {
+export default function(texture) {
   return new THREE.ShaderMaterial({
     uniforms: {
-      color: { value: new THREE.Color(0xffffff) },
       texture: {
         value: new THREE.TextureLoader().load(`./textures/${texture}.png`)
       },
@@ -13,7 +12,6 @@ export default function(depthTest, texture) {
     vertexShader: particle.vertex,
     fragmentShader: particle.fragment,
     blending: THREE.AdditiveBlending,
-    depthTest: depthTest,
     transparent: true
   });
 }
