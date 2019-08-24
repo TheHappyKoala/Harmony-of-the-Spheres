@@ -843,9 +843,11 @@ export default {
       this.system = null;
       this.renderer = null;
       this.scene = null;
+      this.clock = null;
       this.utilityVector = null;
       this.barycenterPosition = null;
       this.rotatingReferenceFrame = null;
+      this.referenceOrbits = null;
       this.manifestationPosition = null;
       this.particlePhysics = null;
       this.previousCameraFocus = null;
