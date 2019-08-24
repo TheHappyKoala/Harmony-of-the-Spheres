@@ -123,12 +123,16 @@ export function degreesToRadians(degrees) {
   return Math.PI / 180 * degrees;
 }
 
-export function calculateOrbitalVertices(orbitalPeriod, dt) {
-  const maxVertices = 10000;
-  const orbitalVertices = parseFloat((orbitalPeriod / dt * 1.1).toFixed(0));
+export const calculateOrbitalVertices = (orbitalPeriod, dt, drawLineEvery) => {
+  const maxVertices = 2000;
+  const orbitalVertices = parseFloat(
+    (orbitalPeriod / (dt * drawLineEvery) * 1.1).toFixed(0)
+  );
 
-  return orbitalVertices >= maxVertices ? maxVertices : orbitalVertices;
-}
+  return orbitalVertices > maxVertices || isNaN(orbitalVertices)
+    ? maxVertices
+    : orbitalVertices;
+};
 
 export function getRandomNumberInRange(min, max) {
   return Math.random() * (max - min) + min;
