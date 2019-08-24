@@ -8,8 +8,6 @@ import CustomEllipseCurve from './CustomEllipseCurve';
 export default class extends MassManifestation {
   constructor(mass, textureLoader) {
     super(mass, textureLoader);
-
-    this.clock = new THREE.Clock();
   }
 
   getHabitableZone() {
@@ -163,7 +161,7 @@ export default class extends MassManifestation {
     this.add(mesh);
   }
 
-  draw(x, y, z, camera, playing, drawTrail) {
+  draw(x, y, z, camera, playing, drawTrail, delta) {
     const main = this.getObjectByName('Main');
     const trail = this.getObjectByName('Trail');
     const habitableZone = this.getObjectByName('Habitable Zone');
@@ -172,7 +170,7 @@ export default class extends MassManifestation {
 
     if (habitableZone) habitableZone.position.set(x, y, z);
 
-    main.material.uniforms.time.value += 0.2 * this.clock.getDelta();
+    main.material.uniforms.time.value += 0.2 * delta;
 
     main.quaternion.copy(camera.quaternion);
 

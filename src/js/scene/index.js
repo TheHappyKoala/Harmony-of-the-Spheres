@@ -405,6 +405,8 @@ export default {
   loop() {
     this.scenario = store.getState().scenario;
 
+    const delta = this.clock.getDelta();
+
     this.system.g = this.scenario.g;
     this.system.masses = this.scenario.masses;
     this.system.tol = this.scenario.tol;
@@ -563,7 +565,8 @@ export default {
           this.manifestationPosition.z,
           this.camera,
           this.scenario.playing,
-          drawTrail
+          drawTrail,
+          delta
         );
 
         const habitableZone = massManifestation.getObjectByName(
