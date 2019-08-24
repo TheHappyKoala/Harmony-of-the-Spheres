@@ -444,13 +444,15 @@ export default {
 
     let drawTrail = false;
 
+    let oldMasses;
+
     if (this.scenario.playing) {
-      const oldMasses = JSON.parse(JSON.stringify(this.scenario.masses));
-      
+      oldMasses = JSON.parse(JSON.stringify(this.scenario.masses));
+
       this.system.iterate();
-      
+
       this.iteration++;
-      
+
       if (this.iteration % this.scenario.drawLineEvery == 0) drawTrail = true;
     }
 
