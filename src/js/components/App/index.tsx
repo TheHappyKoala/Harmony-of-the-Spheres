@@ -104,7 +104,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                 activeCssClass: 'active',
                 optionsCssClass: 'dropdown-content',
                 identifier: 'category',
-                selectedCategory: scenarioCategory
+                selectedCategory: scenarioCategory,
+                pagination: {
+                  itemsPerPage: 8,
+                  paginationListCssClass: 'dropdown-pagination-list'
+                }
               }}
               dropdownWrapperCssClassName="scenario-dropdown-wrapper"
               selectedOptionCssClassName="selected-option"

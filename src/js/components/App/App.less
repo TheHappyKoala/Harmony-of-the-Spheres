@@ -146,9 +146,10 @@ h4 {
     ul {
       padding: 10px;
       border-bottom: @border;
-      margin-bottom: 25px;
+      margin-bottom: 5px;
     }
     .dropdown-content {
+      margin-top: 25px;
       display: grid;
       grid-gap: 15px;
       grid-template-columns: 159.42028985507247px 159.42028985507247px 159.42028985507247px 159.42028985507247px;
@@ -162,6 +163,19 @@ h4 {
     }
     .scenario-menu-option {
       position: relative;
+    }
+  }
+  .dropdown-pagination-list {
+    list-style: none;
+    width: 100%;
+    li {
+      display: inline-block;
+      font-size: 14px;
+      padding: 8px;
+      cursor: pointer;
+    }
+    li.active {
+      font-weight: bold;
     }
   }
 }

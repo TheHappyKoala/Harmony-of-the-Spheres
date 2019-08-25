@@ -5,7 +5,8 @@ import React, {
   Fragment,
   useState,
   useRef,
-  Children
+  Children,
+  useEffect
 } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './Dropdown.less';
@@ -19,6 +20,10 @@ interface DropdownProps {
     optionsCssClass: string;
     identifier: string;
     selectedCategory: string;
+    pagination: {
+      itemsPerPage: number;
+      paginationListCssClass: string;
+    };
   };
   transition: {
     name?: string;
@@ -46,8 +51,100 @@ export default memo(
     const [selectedTab, setSelectedTab] = useState<string>(
       tabs && tabs.selectedCategory
     );
+    const [pagination, setPagination] = useState<{
+      count: number;
+      start: number;
+      end: number;
+      page: number;
+    }>({
+      count: 0,
+      start: 0,
+      end: 0,
+      page: 1
+    });
 
     const tabsLabels: string[] = [];
+
+    let childrenToRender;
+
+    const getRange = (page: number, count: number) => {
+      let start;
+      let end;
+
+      if (count <= 10) {
+        start = 1;
+        end = count;
+      } else {
+        if (page <= 6) {
+          start = 1;
+          end = 10;
+        } else if (page + 4 >= count) {
+          start = count - 9;
+          end = count;
+        } else {
+          start = page - 5;
+          end = page + 4;
+        }
+      }
+
+      return { start, end };
+    };
+
+    const renderRange = (
+      range: { start: number; end: number },
+      itemsPerPage: number
+    ) => {
+      const items = [
+        <li
+          key="pagination-first-page"
+          onClick={() =>
+            setPagination({
+              ...pagination,
+              start: 0 * itemsPerPage,
+              end: 1 * itemsPerPage,
+              page: 1
+            })
+          }
+        >
+          First Page
+        </li>
+      ];
+
+      for (let i = range.start; i <= range.end; i++)
+        items.push(
+          <li
+            key={i}
+            onClick={() =>
+              setPagination({
+                ...pagination,
+                start: (i - 1) * itemsPerPage,
+                end: i * itemsPerPage,
+                page: i
+              })
+            }
+            className={pagination.page === i ? tabs.activeCssClass : ''}
+          >
+            {i}
+          </li>
+        );
+
+      return [
+        ...items,
+        <li
+          key="pagination-last-page"
+          onClick={() =>
+            setPagination({
+              ...pagination,
+              start: (pagination.count - 1) * itemsPerPage,
+              end: pagination.count * itemsPerPage,
+              page: pagination.count
+            })
+          }
+        >
+          Last Page
+        </li>
+      ];
+    };
 
     if (tabs) {
       Children.toArray(children).forEach(
@@ -55,11 +152,33 @@ export default memo(
           tabsLabels.indexOf(entry.props['data-identifier']) === -1 &&
           tabsLabels.push(entry.props['data-identifier'])
       );
+
+      childrenToRender = Children.map(
+        children,
+        (option: ReactElement): ReactElement => {
+          if (option.props['data-identifier'] === selectedTab) return option;
+          else return null;
+        }
+      );
+
+      useEffect(
+        () => {
+          setPagination({
+            count: Math.ceil(
+              childrenToRender.length / tabs.pagination.itemsPerPage
+            ),
+            start: 0 * tabs.pagination.itemsPerPage,
+            end: 1 * tabs.pagination.itemsPerPage,
+            page: 1
+          });
+        },
+        [selectedTab]
+      );
     }
 
     const optionsWrapper = useRef(null);
     const optionsWithTabs = useRef(null);
-    const dropdownTabs = useRef(null);
+    const dropdownNavigation = useRef(null);
 
     const handleOpenOptions = () => {
       if (options) return;
@@ -70,7 +189,7 @@ export default memo(
 
     const handleClickWhenOptionsAreOpen = (e: MouseEvent) => {
       if (
-        (tabs !== undefined && dropdownTabs.current.contains(e.target)) ||
+        (tabs !== undefined && dropdownNavigation.current.contains(e.target)) ||
         e.target === optionsWrapper.current ||
         e.target === optionsWithTabs.current
       )
@@ -98,8 +217,8 @@ export default memo(
           {options && (
             <div ref={optionsWrapper} className={optionsWrapperCssClass}>
               {tabs && (
-                <Fragment>
-                  <ul ref={dropdownTabs} className={tabs.cssClass}>
+                <nav ref={dropdownNavigation}>
+                  <ul className={tabs.cssClass}>
                     {tabsLabels.map(tabLabel => (
                       <li
                         key={tabLabel}
@@ -112,17 +231,18 @@ export default memo(
                       </li>
                     ))}
                   </ul>
+                  {pagination.count > 1 && (
+                    <ul className={tabs.pagination.paginationListCssClass}>
+                      {renderRange(
+                        getRange(pagination.page, pagination.count),
+                        tabs.pagination.itemsPerPage
+                      )}
+                    </ul>
+                  )}
                   <div className={tabs.optionsCssClass} ref={optionsWithTabs}>
-                    {Children.map(
-                      children,
-                      (option: ReactElement): ReactElement => {
-                        if (option.props['data-identifier'] === selectedTab)
-                          return option;
-                        else return null;
-                      }
-                    )}
+                    {childrenToRender.slice(pagination.start, pagination.end)}
                   </div>
-                </Fragment>
+                </nav>
               )}
               {!tabs && children}
             </div>
