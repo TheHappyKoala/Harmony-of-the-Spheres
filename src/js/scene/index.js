@@ -332,8 +332,9 @@ export default {
     const excessFragments =
       this.scenario.particles.max - totalWithAddedFragments;
 
-    if (excessFragments < 0)
+    if (excessFragments < 0) {
       this.particlePhysics.particles.splice(0, -excessFragments);
+    }
 
     const maxAngle = 45;
     const fragmentMass = 1.005570862e-29;
@@ -716,19 +717,19 @@ export default {
         this.rotatingReferenceFrame
       );
 
-    if (this.scenario.playing && this.scenario.collisions)
-      CollisionsService.doCollisions(
-        this.system.masses,
-        this.scenario.scale,
-        this.collisionCallback
-      );
-
     if (this.scenario.particles && this.scenario.playing)
       this.particlePhysics.iterate(
         oldMasses,
         this.system.masses,
         this.scenario.g,
         dt
+      );
+
+    if (this.scenario.playing && this.scenario.collisions)
+      CollisionsService.doCollisions(
+        this.system.masses,
+        this.scenario.scale,
+        this.collisionCallback
       );
 
     store.dispatch(
