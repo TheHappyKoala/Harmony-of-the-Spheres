@@ -5,16 +5,14 @@ import { connect } from 'react-redux';
 import * as scenarioActionCreators from '../../action-creators/scenario';
 import * as scenariosActionCreators from '../../action-creators/scenarios';
 import Renderer from '../Renderer';
+import ScenarioNavigation from '../ScenarioNavigation';
 import Tabs from '../Tabs';
 import Button from '../Button';
-import { NavLink } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Modal from '../Modal';
 import Iframe from '../Iframe';
 import Credits from '../Content/Credits';
 import Tweet from '../Tweet';
-import Dropdown from '../Dropdown';
-import LazyDog from '../LazyDog';
 import Physics from '../Content/Physics';
 import Graphics from '../Content/Graphics';
 import Camera from '../Content/Camera';
@@ -27,7 +25,6 @@ import './App.less';
 const mapStateToProps = (state: AppState, ownProps: any) => ({
   app: state.app,
   scenarioName: ownProps.match.params.name,
-  scenarioCategory: ownProps.match.params.category,
   scenario: state.scenario,
   scenarios: state.scenarios
 });
@@ -53,9 +50,7 @@ interface AppProps {
   getOrbitalBurn: typeof scenarioActionCreators.getOrbitalBurn;
   getScenario: typeof scenarioActionCreators.getScenario;
   saveScenario: typeof scenariosActionCreators.saveScenario;
-  scenarioCategory: string;
   scenarioName: string;
-  scenarios: ScenarioProps[];
   app: {
     booted: boolean;
     loading: boolean;
@@ -75,9 +70,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     addMass,
     getScenario,
     saveScenario,
-    scenarioCategory,
-    scenarioName,
-    scenarios
+    scenarioName
   }: AppProps): ReactElement => {
     useEffect(
       () => {
@@ -97,49 +90,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
         {app.booted && (
           <Fragment>
             <Renderer scenarioName={scenario.name} />
-            <Dropdown
-              selectedOption={scenario.name}
-              tabs={{
-                cssClass: 'tabs',
-                activeCssClass: 'active',
-                optionsCssClass: 'dropdown-content',
-                identifier: 'category',
-                selectedCategory: scenarioCategory,
-                pagination: {
-                  itemsPerPage: 8,
-                  paginationListCssClass: 'dropdown-pagination-list'
-                }
-              }}
-              dropdownWrapperCssClassName="scenario-dropdown-wrapper"
-              selectedOptionCssClassName="selected-option"
-              optionsWrapperCssClass="scenario-menu box"
-              dynamicChildrenLen={scenarios.length}
-              transition={{
-                name: 'left',
-                enterTimeout: 150,
-                leaveTimeout: 150
-              }}
-            >
-              {scenarios.map(scenario => (
-                <div
-                  className="scenario-menu-option"
-                  data-identifier={scenario.type}
-                >
-                  <NavLink
-                    to={`/category/${scenario.type}/scenario/${scenario.name}`}
-                  >
-                    <LazyDog
-                      src={`./images/scenarios/${scenario.name}.png`}
-                      alt={scenario.name}
-                      caption={scenario.name}
-                      width={159.42028985507247}
-                      height={100}
-                      placeHolderIcon="fa fa-venus-mars fa-2x"
-                    />
-                  </NavLink>
-                </div>
-              ))}
-            </Dropdown>
+            <ScenarioNavigation />
             <Button
               cssClassName="button simulation-state"
               callback={() =>
@@ -311,7 +262,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                   }
                 >
                   <SaveScenario
-                    scenarios={scenarios}
                     callback={saveScenario}
                     closeWindowCallback={() =>
                       setDisplay({

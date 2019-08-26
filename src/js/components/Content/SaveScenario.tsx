@@ -1,21 +1,18 @@
 import React, { ReactElement, Fragment, useState, useEffect } from 'react';
 import Button from '../Button';
-import { ScenarioProps } from '../../action-types/scenario';
 import { saveScenario } from '../../action-creators/scenarios';
 
 interface SaveScenarioProps {
-  scenarios: any;
   closeWindowCallback: Function;
   callback: typeof saveScenario;
 }
 
 export default ({
-  scenarios,
   callback,
   closeWindowCallback
 }: SaveScenarioProps): ReactElement => {
   const [scenarioName, setScenarioName] = useState();
-  const [validation, setValidation] = useState({ status: false, feedback: '' });
+  const [confirmation, setConfirmation] = useState({ status: false });
 
   let timer: number;
 
@@ -27,7 +24,7 @@ export default ({
 
   return (
     <section className="save-scenario-wrapper">
-      {!validation.status && (
+      {!confirmation.status && (
         <Fragment>
           <h2>Save Simulation</h2>
           <input
@@ -40,38 +37,26 @@ export default ({
           <Button
             cssClassName="button box top"
             callback={() => {
-              if (
-                scenarios
-                  .map((scenario: ScenarioProps) => scenario.name)
-                  .indexOf(scenarioName) === -1
-              ) {
-                callback(scenarioName);
-                setValidation({
-                  status: true,
-                  feedback: `Simulation saved as ${scenarioName}`
-                });
-                timer = setTimeout(closeWindowCallback, 1300);
-              } else
-                setValidation({
-                  status: false,
-                  feedback: `Could not save the simulation as there already is a simulation with the name ${scenarioName}.`
-                });
+              callback(scenarioName);
+              setConfirmation({
+                status: true
+              });
+              timer = setTimeout(closeWindowCallback, 1300);
             }}
           >
             Save Simulation
           </Button>
         </Fragment>
       )}
-      {validation.feedback !== '' && (
+      {confirmation.status && (
         <p
           style={{
             padding: '24px',
             textAlign: 'center',
-            fontSize: '16px',
-            border: `1px solid ${validation.status ? 'green' : 'red'}`
+            fontSize: '16px'
           }}
         >
-          {validation.feedback}
+          {`Simulation saved as ${scenarioName}`}
         </p>
       )}
     </section>
