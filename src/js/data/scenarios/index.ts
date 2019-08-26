@@ -130,46 +130,36 @@ const computeDerivedScenarioData = (
 });
 
 export const processExoplanetArchiveData = (data: any[]) => {
+  //Constants that we'll be working with
+
   const sunRadius = 9767.441860465116;
   const jupiterMass = 9.543e-4;
   const jupiterRadius = 976.7441860465117;
-  const dt = 0.0000075;
   const g = 39.5;
+  const dt = 0.00005;
   const yearOverDays = 0.00273973;
-  const starRadius =
-    (data[0].st_rad == null ? 0.5 : data[0].st_rad) * sunRadius;
+  const scale = 2100000;
 
-  return {
-    habitableZone: true,
-    referenceOrbits: true,
-    dt,
-    exoPlanetArchive: false,
-    tol: dt * 0.000000000000000001,
-    maxDt: dt * 4,
-    minDt: 2 * dt * 0.000000000001 - dt,
-    barycenterMassOne: data[0].pl_hostname,
-    barycenterMassTwo: data[0].pl_letter,
-    rotatingReferenceFrame: data[0].pl_hostname,
-    barycenterZ: 3400000,
-    primary: data[0].pl_hostname,
-    massBeingModified: data[0].pl_hostname,
-    masses: elementsToVectors(
-      {
-        m: data[0].st_mass,
-        radius: starRadius === 0 ? sunRadius : starRadius,
-        type: 'star',
-        name: data[0].pl_hostname,
-        color: '#bfcfff',
-        trailVertices: 1000,
-        temperature: isNaN(data[0].st_teff) ? 3000 : data[0].st_teff
-      },
-      data.map((entry: any) => {
+  //Does not include the star around which the planets orbit
+
+  const masses = data
+    .map((entry: any) => {
+      //Where there is no eccentricity data, we can set a default of 0
+      //Same holds true for the inclination of an orbit and the argument of periapsis
+      //However, for planets with no semi-major axis data, it is pointless to include the planet
+      //The few masses that lack semi-major axis data were discovered through microlensing events or using
+      //The radial velocity method
+
+      if (entry.pl_orbsmax)
         return {
           name: entry.pl_letter,
           noTexture: true,
-          m: entry.pl_bmassj * jupiterMass,
+          m:
+            entry.pl_bmassj == null
+              ? 0.0000000000001
+              : entry.pl_bmassj * jupiterMass,
           radius: (entry.pl_rad == null ? 0.1 : entry.pl_rad) * jupiterRadius,
-          a: entry.pl_orbsmax == null ? 0.2 : entry.pl_orbsmax,
+          a: entry.pl_orbsmax,
           e: entry.pl_orbeccen == null ? 0 : entry.pl_orbeccen,
           w: entry.pl_orblper == null ? 0 : entry.pl_orblper,
           i: entry.pl_orbinc == null ? 0 : entry.pl_orbinc,
@@ -179,7 +169,59 @@ export const processExoplanetArchiveData = (data: any[]) => {
             dt
           )
         };
-      }),
+    })
+
+    //Filter out the poor puppies that didn't have a semi-major axis value
+    //and thus had a return value of undefined
+
+    .filter(planet => typeof planet !== 'undefined');
+
+  //Get the largest semi-major axis of da planets in da system
+  //We will use it to set a suitable "height" for the camera
+  //So that all of the planets are on show when the scenario renders
+
+  const widestOrbit = Math.max(...masses.map(mass => mass.a));
+
+  const [primary] = data;
+  const [firstPlanet] = masses;
+
+  return {
+    habitableZone: true,
+    referenceOrbits: true,
+    dt,
+    exoPlanetArchive: false,
+    tol: 0.00000000001,
+    maxDt: dt * 4,
+    minDt: 2 * dt * 0.000000000001 - dt,
+    systemBarycenter: true,
+    barycenter: true,
+    barycenterMassOne: primary.pl_hostname,
+    barycenterMassTwo: firstPlanet.name,
+    rotatingReferenceFrame: 'Barycenter',
+
+    //We want to give the user a sense of perspective by showing the orbits of Mercury and Earth
+    //If the semi-major axis of the widest orbit is bigger than 3.5 au, that will be the height of the camera
+    //Otherwise we set it to 3.5 au (the height at which Earth's orbit is included in the viewport)
+
+    barycenterZ: Math.max(widestOrbit * 3 * scale, scale * 3.5),
+
+    primary: primary.pl_hostname,
+    massBeingModified: primary.pl_hostname,
+    masses: elementsToVectors(
+      {
+        m: primary.st_mass,
+        radius: primary.st_rad * sunRadius,
+        type: 'star',
+        name: primary.pl_hostname,
+        color: getRandomColor(),
+        trailVertices: 100,
+
+        //Once I've gotten to writing an equation that relates the color of stars to their mass
+        //the temperature value will not be hard coded any longer
+
+        temperature: 3000
+      },
+      masses,
       g
     )
   };

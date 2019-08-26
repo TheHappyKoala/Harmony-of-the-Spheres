@@ -62,7 +62,9 @@ export const fetchExoplanetArchiveScenarios = (
     const data: any[] = await cachedFetch(
       `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname&${
         entry.query
-      } and st_mass>0&format=json`
+      } and st_mass>0 and st_rad>0&format=json`,
+      undefined,
+      6.048e8
     );
 
     removeDuplicatesByKey(data, 'pl_hostname').forEach((scenario: any) =>
