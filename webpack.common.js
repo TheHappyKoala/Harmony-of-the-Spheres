@@ -18,7 +18,7 @@ module.exports = {
           alias: "TESS"
         },
         {
-          query: `where=pl_pnum>3`,
+          query: `where=pl_pnum>4`,
           alias: "Multiplanetary Exosystems"
         }
       ])
