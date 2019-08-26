@@ -217,32 +217,34 @@ export default memo(
           {options && (
             <div ref={optionsWrapper} className={optionsWrapperCssClass}>
               {tabs && (
-                <nav ref={dropdownNavigation}>
-                  <ul className={tabs.cssClass}>
-                    {tabsLabels.map(tabLabel => (
-                      <li
-                        key={tabLabel}
-                        onClick={() => setSelectedTab(tabLabel)}
-                        className={
-                          selectedTab === tabLabel ? tabs.activeCssClass : ''
-                        }
-                      >
-                        {tabLabel}
-                      </li>
-                    ))}
-                  </ul>
-                  {pagination.count > 1 && (
-                    <ul className={tabs.pagination.paginationListCssClass}>
-                      {renderRange(
-                        getRange(pagination.page, pagination.count),
-                        tabs.pagination.itemsPerPage
-                      )}
+                <Fragment>
+                  <nav ref={dropdownNavigation}>
+                    <ul className={tabs.cssClass}>
+                      {tabsLabels.map(tabLabel => (
+                        <li
+                          key={tabLabel}
+                          onClick={() => setSelectedTab(tabLabel)}
+                          className={
+                            selectedTab === tabLabel ? tabs.activeCssClass : ''
+                          }
+                        >
+                          {tabLabel}
+                        </li>
+                      ))}
                     </ul>
-                  )}
+                    {pagination.count > 1 && (
+                      <ul className={tabs.pagination.paginationListCssClass}>
+                        {renderRange(
+                          getRange(pagination.page, pagination.count),
+                          tabs.pagination.itemsPerPage
+                        )}
+                      </ul>
+                    )}
+                  </nav>
                   <div className={tabs.optionsCssClass} ref={optionsWithTabs}>
                     {childrenToRender.slice(pagination.start, pagination.end)}
                   </div>
-                </nav>
+                </Fragment>
               )}
               {!tabs && children}
             </div>
