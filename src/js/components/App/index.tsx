@@ -231,6 +231,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                   e={scenario.e}
                   w={scenario.w}
                   i={scenario.i}
+                  o={scenario.o}
                   primary={scenario.primary}
                   maximumDistance={scenario.maximumDistance}
                   masses={scenario.masses}

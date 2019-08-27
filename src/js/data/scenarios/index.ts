@@ -163,6 +163,7 @@ export const processExoplanetArchiveData = (data: any[]) => {
           e: entry.pl_orbeccen == null ? 0 : entry.pl_orbeccen,
           w: entry.pl_orblper == null ? 0 : entry.pl_orblper,
           i: entry.pl_orbinc == null ? 0 : entry.pl_orbinc,
+          o: 0,
           color: getRandomColor(),
           trailVertices: calculateOrbitalVertices(
             entry.pl_orbper * yearOverDays,

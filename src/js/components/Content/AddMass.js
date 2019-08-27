@@ -177,6 +177,21 @@ export default class extends Component {
           step={0.1}
         />
         <label className="top">
+          Longitude of the Ascending Node{' '}
+          <Tooltip
+            position="left"
+            content="Orbital inclination, i, measures the tilt of an object's orbit around a celestial body. It is expressed as the angle between a reference plane and the orbital plane or axis of direction of the orbiting object."
+          />
+        </label>
+        <Slider
+          payload={{ key: 'o' }}
+          value={this.props.o}
+          callback={this.props.modifyScenarioProperty}
+          max={360}
+          min={0}
+          step={0.1}
+        />
+        <label className="top">
           Mass Template
           <Tooltip
             position="left"
@@ -242,7 +257,8 @@ export default class extends Component {
                 a: this.props.a,
                 e: this.props.e,
                 w: this.props.w,
-                i: this.props.i
+                i: this.props.i,
+                o: this.props.o
               }
             })
           }

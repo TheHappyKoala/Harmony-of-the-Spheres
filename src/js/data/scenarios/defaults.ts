@@ -54,5 +54,6 @@ export const scenarioDefaults = {
   a: 0,
   e: 0,
   w: 0,
-  i: 0
+  i: 0,
+  o: 0
 };
