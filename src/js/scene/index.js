@@ -125,6 +125,8 @@ export default {
     this.rotatingReferenceFrame = new H3();
     this.manifestationPosition = new H3();
 
+    this.previousI = this.scenario.i;
+
     this.particlePhysics = new ParticlePhysics(this.scenario.scale);
 
     this.scenario.particles.rings && this.addRing();
@@ -230,6 +232,7 @@ export default {
       const e = scenario.e;
       const w = scenario.w;
       const i = scenario.i;
+      const o = scenario.o;
 
       const ellipse = getEllipse(a, e);
 
@@ -247,7 +250,7 @@ export default {
         2 * Math.PI,
         false,
         0,
-        { x: 0, y: i, z: w }
+        { x: i, y: o, z: w }
       );
     } else this.ellipseCurve.visible = false;
   },

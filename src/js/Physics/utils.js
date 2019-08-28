@@ -40,8 +40,9 @@ export function getOrbit(primary, secondary, g) {
 
   const secondaryP = new H3()
     .set({ x: apoapsis, y: 0, z: 0 })
-    .rotate({ x: 0, y: 0, z: 1 }, secondary.w)
-    .rotate({ x: 0, y: 1, z: 0 }, secondary.i);
+    .rotate({ x: 0, y: 0, z: 1 }, secondary.w - 180)
+    .rotate({ x: 1, y: 0, z: 0 }, secondary.i)
+    .rotate({ x: 0, y: 0, z: 1 }, secondary.o);
 
   const secondaryV = new H3()
     .set({
@@ -49,8 +50,9 @@ export function getOrbit(primary, secondary, g) {
       y: dParams.dx * vMag / d,
       z: dParams.dz * vMag / d
     })
-    .rotate({ x: 0, y: 0, z: 1 }, secondary.w)
-    .rotate({ x: 0, y: 1, z: 0 }, secondary.i);
+    .rotate({ x: 0, y: 0, z: 1 }, secondary.w - 180)
+    .rotate({ x: 1, y: 0, z: 0 }, secondary.i)
+    .rotate({ x: 0, y: 0, z: 1 }, secondary.o);
 
   return {
     ...secondary,

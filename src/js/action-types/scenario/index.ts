@@ -68,6 +68,7 @@ export interface ScenarioProps {
   e: number;
   w: number;
   i: number;
+  o: number;
 }
 
 export interface GetScenarioAction {
@@ -108,6 +109,7 @@ export interface AddMass {
     e: number;
     w: number;
     i: number;
+    o: number;
   };
 }
 

@@ -99,7 +99,6 @@ export default class extends Object3D {
         uniform float vertCount;
       
         attribute float vertIndex;
-
         vec3 getPoint(float t){
           vec3 point = vec3(0);
           
@@ -150,9 +149,16 @@ export default class extends Object3D {
   }
 
   rotateAroundFocus(axisRotations: VectorType): void {
-    this.rotation.x = degreesToRadians(axisRotations.x);
-    this.rotation.y = degreesToRadians(axisRotations.y);
-    this.rotation.z = degreesToRadians(axisRotations.z);
+    const ellipse = this.getObjectByName('CustomEllipse');
+
+    ellipse.rotation.z = degreesToRadians(axisRotations.z);
+    ellipse.rotation.x = degreesToRadians(axisRotations.x);
+
+    //No can do ZXZ rotations, so we rotate the z axis of the parent object
+    //of the ellipse instead to give the ellipse the correct orientation in 3D space around
+    //its focus
+
+    this.rotation.z = degreesToRadians(axisRotations.y);
   }
 
   update(
