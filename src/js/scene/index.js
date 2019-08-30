@@ -11,7 +11,8 @@ import {
   getRandomNumberInRange,
   setBarycenter,
   clampAbs,
-  getEllipse
+  getEllipse,
+  radiansToDegrees
 } from '../Physics/utils';
 import ParticleService from '../Physics/particles/ParticleService';
 import arena from './arena';
@@ -260,10 +261,7 @@ export default {
 
     const dt = this.system.dt;
 
-    if (
-      this.scenario.cameraFocus === looser.name ||
-      this.scenario.cameraPosition === looser.name
-    ) {
+    if (this.scenario.cameraFocus === looser.name) {
       store.dispatch(
         modifyScenarioProperty(
           { key: 'primary', value: survivor.name },
@@ -292,9 +290,9 @@ export default {
         }),
         survivor.radius,
         {
-          x: survivingManifestationRotation.x * 57.295779513,
-          y: survivingManifestationRotation.y * 57.295779513,
-          z: survivingManifestationRotation.z * 57.295779513
+          x: radiansToDegrees(survivingManifestationRotation.x),
+          y: radiansToDegrees(survivingManifestationRotation.y),
+          z: radiansToDegrees(survivingManifestationRotation.z)
         }
       );
 
@@ -335,37 +333,19 @@ export default {
     const excessFragments =
       this.scenario.particles.max - totalWithAddedFragments;
 
-    if (excessFragments < 0) {
+    if (excessFragments < 0)
       this.particlePhysics.particles.splice(0, -excessFragments);
-    }
 
-    const maxAngle = 45;
-    const fragmentMass = 1.005570862e-29;
-
-    const kineticVelocity = {
-      x: CollisionsService.convertKineticEnergyToVelocityComponent(
-        looser,
-        fragmentMass,
-        0.00000000001,
-        'vx'
-      ),
-      y: CollisionsService.convertKineticEnergyToVelocityComponent(
-        looser,
-        fragmentMass,
-        0.00000000001,
-        'vy'
-      ),
-      z: CollisionsService.convertKineticEnergyToVelocityComponent(
-        looser,
-        fragmentMass,
-        0.00000000001,
-        'vz'
-      )
-    };
+    const maxAngle = 15;
 
     const hitPointWorldPosition = survivingManifestation
       .getObjectByName('Main')
       .localToWorld(new THREE.Vector3(hitPoint.x, hitPoint.y, hitPoint.z));
+
+    const deflectedVelocity = CollisionsService.getDeflectedVelocity(
+      survivor,
+      looser
+    );
 
     for (let i = 0; i < numberOfFragments; i++) {
       const angleX = getRandomNumberInRange(-maxAngle, maxAngle);
@@ -373,14 +353,7 @@ export default {
       const angleZ = getRandomNumberInRange(-maxAngle, maxAngle);
 
       const particleVelocity = new H3()
-        .set(
-          CollisionsService.getDeflectedVelocity(survivor, {
-            ...looser,
-            vx: kineticVelocity.x,
-            vy: kineticVelocity.y,
-            vz: kineticVelocity.z
-          })
-        )
+        .set(deflectedVelocity)
         .rotate({ x: 1, y: 0, z: 0 }, angleX)
         .rotate({ x: 0, y: 1, z: 0 }, angleY)
         .rotate({ x: 0, y: 0, z: 1 }, angleZ)
@@ -401,7 +374,8 @@ export default {
           .toObject(),
         vx: particleVelocity.x / clampAbs(1, maxAngle, angleX / 10),
         vy: particleVelocity.y / clampAbs(1, maxAngle, angleY / 10),
-        vz: particleVelocity.z / clampAbs(1, maxAngle, angleZ / 10)
+        vz: particleVelocity.z / clampAbs(1, maxAngle, angleZ / 10),
+        lives: 25
       });
     }
   },

@@ -60,23 +60,8 @@ export default class {
       .rotate({ x: 0, y: 0, z: 1 }, -rotation.z);
   }
 
-  static convertKineticEnergyToVelocityComponent(
-    mass: MassType,
-    fragmentMass: number,
-    c: number,
-    component: string
-  ) {
-    return (
-      Math.sign(mass[component]) *
-      Math.sqrt(
-        2 * this.getComponentKineticEnergy(mass, component) / fragmentMass
-      ) *
-      c
-    );
-  }
-
-  static getComponentKineticEnergy(mass: MassType, component: string): number {
-    return 0.5 * mass.m * (mass[component] * mass[component]);
+  static getKineticEnergy(mass: MassType, vMag: number) {
+    return 0.5 * mass.m * (vMag * vMag);
   }
 
   static getDeflectedVelocity(

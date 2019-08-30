@@ -29,9 +29,9 @@ export default class {
 
         let d = Math.sqrt(dSquared);
 
-        if (d * this.scale < massJ.radius) {
+        if (d * this.scale < massJ.radius && massI.lives < 0)
           massI.collided = true;
-        } else {
+        else {
           if (massJ.m > 0) {
             let fact = g * massJ.m / (dSquared * d);
 
@@ -69,7 +69,8 @@ export default class {
     }
     for (let i = 0; i < particlesLen; i++) {
       const massI = this.particles[i];
-      if (massI.collided === true) {
+      massI.lives--;
+      if (massI.collided) {
         this.particles.splice(i, 1);
         particlesLen--;
         i--;

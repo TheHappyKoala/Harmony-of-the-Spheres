@@ -21,7 +21,6 @@ import lunarFreeReturn from './lunarFreeReturn';
 import starOfDavid from './starOfDavid';
 import shenanigans from './shenanigans';
 import innerSolarSystem from './innerSolarSystem';
-import collisionsTest from './collisionsTest';
 import masses from '../masses';
 import { MassTemplate } from '../../action-types/scenario';
 import { scenarioDefaults } from './defaults';
@@ -234,7 +233,6 @@ export const scenarios = [
   saturn,
   uranianSystem,
   hd98800,
-  collisionsTest,
   innerSolarSystem,
   forAllMankind,
   lunarFreeReturn,

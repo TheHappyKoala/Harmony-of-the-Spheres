@@ -33,7 +33,7 @@ export const scenarioDefaults = {
   labels: true,
   particles: {
     max: 1000,
-    size: 100,
+    size: 15,
     rings: <{
       primary?: string;
       tilt?: [number, number, number];
