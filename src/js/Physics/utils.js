@@ -125,6 +125,8 @@ export function degreesToRadians(degrees) {
   return Math.PI / 180 * degrees;
 }
 
+export const radiansToDegrees = radians => radians * 57.295779513;
+
 export const calculateOrbitalVertices = (orbitalPeriod, dt, drawLineEvery) => {
   const maxVertices = 2000;
   const orbitalVertices = parseFloat(
