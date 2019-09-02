@@ -81,11 +81,9 @@ self.onmessage = async ({
     }
   }
 
-  let primaryAtDeparture = (primaryAtDeparture = getObjFromArrByKeyValuePair(
-    system.masses,
-    'name',
-    primary
-  ));
+  let primaryAtDeparture = {
+    ...getObjFromArrByKeyValuePair(system.masses, 'name', primary)
+  };
 
   const trajectoryGenerator = () => {
     return new Promise(resolve => {
