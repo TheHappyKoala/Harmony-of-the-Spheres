@@ -139,6 +139,20 @@ export const getTrajectory = (
 
   const scenario = getState().scenario;
 
+  const referenceMass = {
+    ...getObjFromArrByKeyValuePair(scenario.masses, 'name', primary)
+  };
+
+  const rotatedScenario = scenario.masses.map((mass: MassType) => ({
+    ...mass,
+    x: referenceMass.x - mass.x,
+    y: referenceMass.y - mass.y,
+    z: referenceMass.z - mass.z,
+    vx: referenceMass.vx - mass.vx,
+    vy: referenceMass.vy - mass.vy,
+    vz: referenceMass.vz - mass.vz
+  }));
+
   const getTrajectory = () =>
     new Promise<{ x: number; y: number; z: number; p?: MassProperty }[]>(
       resolve => {
@@ -157,7 +171,7 @@ export const getTrajectory = (
           minDt: scenario.minDt,
           maxDt: scenario.maxDt,
           elapsedTime: scenario.elapsedTime,
-          masses: scenario.masses,
+          masses: rotatedScenario,
           departure: scenario.elapsedTime,
           arrival:
             scenario.elapsedTime +
@@ -175,6 +189,14 @@ export const getTrajectory = (
   trajectoryCruncher.terminate();
 
   if (applyTrajectory) {
+    dispatch({
+      type: MODIFY_SCENARIO_PROPERTY,
+      payload: {
+        key: 'masses',
+        value: rotatedScenario
+      }
+    });
+
     dispatch({
       type: MODIFY_MASS_PROPERTY,
       payload: {
