@@ -186,6 +186,7 @@ export const processExoplanetArchiveData = (data: any[]) => {
 
   return {
     habitableZone: true,
+    forAllMankind: false,
     referenceOrbits: true,
     dt,
     exoPlanetArchive: false,
