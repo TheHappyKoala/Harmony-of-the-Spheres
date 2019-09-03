@@ -183,7 +183,6 @@ export const processExoplanetArchiveData = (data: any[]) => {
   const widestOrbit = Math.max(...masses.map(mass => mass.a));
 
   const [primary] = data;
-  const [firstPlanet] = masses;
 
   return {
     habitableZone: true,

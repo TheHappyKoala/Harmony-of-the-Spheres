@@ -61,7 +61,7 @@ export default {
       trailVertices: 5000
     },
     {
-      name: 'Apollo 11',
+      name: 'Apollo',
       x: 0.4240447232851519,
       y: -0.9247715402118077,
       z: -1.129301018611092e-4,

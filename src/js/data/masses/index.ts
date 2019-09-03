@@ -213,7 +213,7 @@ export default [
     radius: 0.0001,
     type: 'model',
     spacecraft: true,
-    name: 'Apollo 11'
+    name: 'Apollo'
   },
   {
     m: 4.490848296995278e-8,
