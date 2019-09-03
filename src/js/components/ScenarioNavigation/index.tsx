@@ -41,7 +41,7 @@ export default withRouter(
           identifier: 'category',
           selectedCategory: scenarioCategory,
           pagination: {
-            itemsPerPage: 4,
+            itemsPerPage: 12,
             paginationListCssClass: 'dropdown-pagination-list'
           }
         }}
