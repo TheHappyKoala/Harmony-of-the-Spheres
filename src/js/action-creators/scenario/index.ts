@@ -122,10 +122,22 @@ export const getTrajectory = (
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
   getState: any
 ) => {
+  const scenario = getState().scenario;
+
+  const originalPlayState = scenario.playing ? true : false;
+
   dispatch({
     type: MODIFY_SCENARIO_PROPERTY,
     payload: {
       key: 'playing',
+      value: false
+    }
+  });
+
+  dispatch({
+    type: MODIFY_SCENARIO_PROPERTY,
+    payload: {
+      key: 'trails',
       value: false
     }
   });
@@ -139,8 +151,6 @@ export const getTrajectory = (
   });
 
   const trajectoryCruncher = new TrajectoryCruncher();
-
-  const scenario = getState().scenario;
 
   const currentSOIChildOf = findCurrentSOI(
     getObjFromArrByKeyValuePair(scenario.masses, 'name', currentSOI.name),
@@ -258,6 +268,22 @@ export const getTrajectory = (
     payload: {
       loading: false,
       whatIsLoading: ''
+    }
+  });
+
+  dispatch({
+    type: MODIFY_SCENARIO_PROPERTY,
+    payload: {
+      key: 'trails',
+      value: true
+    }
+  });
+
+  dispatch({
+    type: MODIFY_SCENARIO_PROPERTY,
+    payload: {
+      key: 'playing',
+      value: originalPlayState
     }
   });
 };

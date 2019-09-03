@@ -93,6 +93,19 @@ export default ({
             scenario.masses
           );
 
+          const { name } = currentSOI;
+
+          //Autopilot
+          //Update the trajectory unless the target mass's sphere of influence has been reached
+
+          if (
+            name !== soi.currentSOI.name &&
+            name !== scenario.trajectoryTarget &&
+            spacecraft.spacecraft
+          ) {
+            getTrajectory(soi.tree, currentSOI);
+          }
+
           setSOI({
             ...soi,
             currentSOI
@@ -100,7 +113,7 @@ export default ({
 
           modifyScenarioProperty({
             key: 'soi',
-            value: currentSOI.name
+            value: name
           });
         }
       }, 1000);
@@ -162,7 +175,10 @@ export default ({
               />
               <Button
                 cssClassName="button cockpit-element top"
-                callback={() => getTrajectory(soi.tree, soi.currentSOI)}
+                callback={() =>
+                  spacecraft.spacecraft &&
+                  getTrajectory(soi.tree, soi.currentSOI)
+                }
               >
                 Set Trajectory
               </Button>
@@ -180,6 +196,7 @@ export default ({
               <Button
                 cssClassName="button cockpit-element top"
                 callback={() =>
+                  spacecraft.spacecraft &&
                   getOrbitalBurn({
                     primary: soi.currentSOI.name,
                     periapsis: Math.sqrt(
