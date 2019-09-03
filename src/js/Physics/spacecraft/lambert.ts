@@ -1,5 +1,3 @@
-// Implementation from https://github.com/poliastro/poliastro/
-
 import H3 from '../vectors';
 import { VectorType, MassType, SOITree } from '../types';
 import { getDistanceParams, getVMag, getSemiMajorAxis } from '../utils';
@@ -243,30 +241,18 @@ export function reconstruct(
   return { Vr1, Vr2, Vt1, Vt2 };
 }
 
-// centralBody needs m, x, y, z, vx, vy, vz
-// r1, r2 relative to inertial ref. system (ie not relative to centralBody)
 export function planFlight(
   tof: number,
   r1: VectorType,
   r2: VectorType,
-  centralBody: MassType,
-  g = 39.5,
+  mu: number,
   M = 0,
   rtol = 1e-8,
   maxiter = 35
 ): Array<{ initVel: VectorType; finalVel: VectorType }> {
   const v1 = new H3();
-  const rCentral = { x: centralBody.x, y: centralBody.y, z: centralBody.z };
-  const vCentral = { x: centralBody.vx, y: centralBody.vy, z: centralBody.vz };
-  const r1Rel = v1
-    .set(r1)
-    //.subtract(rCentral)
-    .toObject();
-  const r2Rel = v1
-    .set(r2)
-    //.subtract(rCentral)
-    .toObject();
-  const gm = g * centralBody.m;
+  const r1Rel = v1.set(r1).toObject();
+  const r2Rel = v1.set(r2).toObject();
 
   const c = v1
     .set(r2Rel)
@@ -310,11 +296,11 @@ export function planFlight(
     .cross(ir2)
     .toObject();
 
-  const T = Math.sqrt(2 * gm / s ** 3) * tof;
+  const T = Math.sqrt(2 * mu / s ** 3) * tof;
 
   const xy = findXY(ll, T, M, maxiter, rtol);
 
-  const gamma = Math.sqrt(gm * s / 2);
+  const gamma = Math.sqrt(mu * s / 2);
   const rho = (r1Norm - r2Norm) / cNorm;
   const sigma = Math.sqrt(1 - rho ** 2);
 
@@ -334,13 +320,11 @@ export function planFlight(
       .set(ir1)
       .multiplyByScalar(Vr1)
       .addScaledVector(Vt1, it1)
-      .add(vCentral)
       .toObject();
     const finalVel = v1
       .set(ir2)
       .multiplyByScalar(Vr2)
       .addScaledVector(Vt2, it2)
-      .add(vCentral)
       .toObject();
     result.push({ initVel: initVel, finalVel: finalVel });
   });
@@ -601,7 +585,6 @@ export function allPassingSOI(tree: SOITree, name: string){
   }
   // Check tree's grandchildren
   for (let i = 0; i < tree.children.length; i++){
-
   }
 }
 */

@@ -72,26 +72,44 @@ export default ({
       z: rendevouz.z - rendevouzPosition.vz
     }).toFixed(4);
 
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      if (displayCockpit) {
-        if (scenario.name !== soi.scenario)
+  const distanceToTarget = Math.sqrt(
+    getDistanceParams(spacecraft, target).dSquared
+  );
+
+  useEffect(
+    () => {
+      const timer = window.setInterval(() => {
+        if (displayCockpit) {
+          if (scenario.name !== soi.scenario)
+            setSOI({
+              ...soi,
+              tree: constructSOITree(scenario.masses),
+              scenario: scenario.name
+            });
+
+          const currentSOI = findCurrentSOI(
+            spacecraft,
+            soi.tree,
+            scenario.masses
+          );
+
           setSOI({
             ...soi,
-            tree: constructSOITree(scenario.masses),
-            scenario: scenario.name
+            currentSOI
           });
 
-        setSOI({
-          ...soi,
-          currentSOI: findCurrentSOI(spacecraft, soi.tree, scenario.masses)
-        });
-      }
-    }, 1000);
-    return () => {
-      window.clearInterval(timer);
-    };
-  }, []);
+          modifyScenarioProperty({
+            key: 'soi',
+            value: currentSOI.name
+          });
+        }
+      }, 1000);
+      return () => {
+        window.clearInterval(timer);
+      };
+    },
+    [soi]
+  );
 
   return (
     <div className="cockpit-dashboard">
@@ -133,18 +151,18 @@ export default ({
                   </div>
                 ))}
               </Dropdown>
-              <label className="top">Time of Target Rendevouz</label>
+              <label className="top">Time of Target Rendevouz [Y]</label>
               <Slider
                 payload={{ key: 'trajectoryTargetArrival' }}
                 value={scenario.trajectoryTargetArrival}
                 callback={modifyScenarioProperty}
-                max={scenario.elapsedTime + 30}
+                max={scenario.elapsedTime + 20}
                 min={scenario.elapsedTime}
                 step={0.00273973}
               />
               <Button
                 cssClassName="button cockpit-element top"
-                callback={() => getTrajectory(soi.currentSOI.name)}
+                callback={() => getTrajectory(soi.tree, soi.currentSOI)}
               >
                 Set Trajectory
               </Button>
@@ -156,9 +174,7 @@ export default ({
                 value={orbit.apoapsis}
                 callback={setOrbitParam}
                 max={soi.currentSOI.soi}
-                min={Math.sqrt(
-                  getDistanceParams(spacecraft, soi.currentSOI).dSquared
-                )}
+                min={distanceToTarget}
                 step={soi.currentSOI.soi / 300}
               />
               <Button
@@ -179,50 +195,48 @@ export default ({
           </Tabs>
           <section className="spacecraft-stats">
             <table className="trajectory-table">
-              <tr>
-                <td>Elapsed Time [Y]:</td>
-                <td>{scenario.elapsedTime.toFixed(4)}</td>
-              </tr>
-              <tr>
-                <td>Sphere of Influence:</td>
-                <td>{soi.currentSOI.name}</td>
-              </tr>
-              <tr>
-                <td>Distance [AU]:</td>
-                <td>
-                  {Math.sqrt(
-                    getDistanceParams(spacecraft, target).dSquared
-                  ).toFixed(4)}
-                </td>
-              </tr>
-              <tr>
-                <td>Relative Rendevouz Velocity [AU/Y]:</td>
-                <td>
-                  {isNaN(relativeVelocityAtRendevouz as any)
-                    ? 0
-                    : relativeVelocityAtRendevouz}
-                </td>
-              </tr>
-              <tr>
-                <td>Spacecraft Velcoity [AU/Y]:</td>
-                <td>
-                  {getVelocityMagnitude({
-                    x: spacecraft.vx,
-                    y: spacecraft.vy,
-                    z: spacecraft.vz
-                  }).toFixed(4)}
-                </td>
-              </tr>
-              <tr>
-                <td>Target Velocity [AU/Y]:</td>
-                <td>
-                  {getVelocityMagnitude({
-                    x: target.vx,
-                    y: target.vy,
-                    z: target.vz
-                  }).toFixed(4)}
-                </td>{' '}
-              </tr>
+              <tbody>
+                <tr>
+                  <td>Elapsed Time [Y]:</td>
+                  <td>{scenario.elapsedTime.toFixed(4)}</td>
+                </tr>
+                <tr>
+                  <td>Sphere of Influence:</td>
+                  <td>{soi.currentSOI.name}</td>
+                </tr>
+                <tr>
+                  <td>Distance [AU]:</td>
+                  <td>{distanceToTarget.toFixed(4)}</td>
+                </tr>
+                <tr>
+                  <td>Relative Rendevouz Velocity [AU/Y]:</td>
+                  <td>
+                    {isNaN(relativeVelocityAtRendevouz as any)
+                      ? 0
+                      : relativeVelocityAtRendevouz}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Spacecraft Velcoity [AU/Y]:</td>
+                  <td>
+                    {getVelocityMagnitude({
+                      x: spacecraft.vx,
+                      y: spacecraft.vy,
+                      z: spacecraft.vz
+                    }).toFixed(4)}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Target Velocity [AU/Y]:</td>
+                  <td>
+                    {getVelocityMagnitude({
+                      x: target.vx,
+                      y: target.vy,
+                      z: target.vz
+                    }).toFixed(4)}
+                  </td>{' '}
+                </tr>
+              </tbody>
             </table>
           </section>
         </Fragment>

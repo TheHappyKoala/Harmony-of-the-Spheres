@@ -81,11 +81,7 @@ self.onmessage = async ({
     }
   }
 
-  let primaryAtDeparture = (primaryAtDeparture = getObjFromArrByKeyValuePair(
-    system.masses,
-    'name',
-    primary
-  ));
+  let primaryM = getObjFromArrByKeyValuePair(system.masses, 'name', primary).m;
 
   const trajectoryGenerator = () => {
     return new Promise(resolve => {
@@ -106,7 +102,7 @@ self.onmessage = async ({
               system.elapsedTime - departure,
               spacecraft,
               targetMass,
-              primaryAtDeparture
+              g * primaryM
             )
           );
         }

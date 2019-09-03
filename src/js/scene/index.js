@@ -29,6 +29,7 @@ import ParticlePhysics from '../Physics/particles';
 import ParticlesManifestation from './ParticlesManifestation';
 import CollisionsService from '../Physics/collisions/';
 import CustomEllipseCurve from './CustomEllipseCurve';
+import { stateToKepler } from '../Physics/spacecraft/lambert';
 
 const TWEEN = require('@tweenjs/tween.js');
 
@@ -95,7 +96,7 @@ export default {
 
     this.scene.add(arena(this.textureLoader));
 
-    this.ellipseCurve = new CustomEllipseCurve(
+    this.addMassTrajectory = new CustomEllipseCurve(
       0,
       0,
       200,
@@ -108,7 +109,24 @@ export default {
       'limegreen'
     );
 
-    this.scene.add(this.ellipseCurve);
+    this.scene.add(this.addMassTrajectory);
+
+    if (this.scenario.forAllMankind) {
+      this.spacecraftTrajectoryCurve = new CustomEllipseCurve(
+        0,
+        0,
+        200,
+        200,
+        0,
+        2 * Math.PI,
+        false,
+        0,
+        500,
+        'pink'
+      );
+
+      this.scene.add(this.spacecraftTrajectoryCurve);
+    }
 
     this.massManifestations = [];
 
@@ -217,11 +235,11 @@ export default {
     }
   },
 
-  updateEllipseCurve() {
+  updateAddMassTrajectory() {
     const scenario = this.scenario;
 
     if (scenario.isMassBeingAdded) {
-      this.ellipseCurve.visible = true;
+      this.addMassTrajectory.visible = true;
 
       const primary = getObjFromArrByKeyValuePair(
         scenario.masses,
@@ -239,10 +257,10 @@ export default {
 
       const scale = scenario.scale;
 
-      this.ellipseCurve.position.z =
+      this.addMassTrajectory.position.z =
         (this.rotatingReferenceFrame.z - primary.z) * scale;
 
-      this.ellipseCurve.update(
+      this.addMassTrajectory.update(
         (this.rotatingReferenceFrame.x - primary.x + ellipse.focus) * scale,
         (this.rotatingReferenceFrame.y - primary.y) * scale,
         ellipse.xRadius * scale,
@@ -253,7 +271,56 @@ export default {
         0,
         { x: i, y: o, z: w }
       );
-    } else this.ellipseCurve.visible = false;
+    } else this.addMassTrajectory.visible = false;
+  },
+
+  updateSpacecraftTrajectoryCurve() {
+    const [spacecraft] = this.system.masses;
+
+    const primary = getObjFromArrByKeyValuePair(
+      this.scenario.masses,
+      'name',
+      this.scenario.soi
+    );
+
+    const spacecraftOrbitalElements = stateToKepler(
+      {
+        x: primary.x - spacecraft.x,
+        y: primary.y - spacecraft.y,
+        z: primary.z - spacecraft.z
+      },
+      {
+        x: primary.vx - spacecraft.vx,
+        y: primary.vy - spacecraft.vy,
+        z: primary.vz - spacecraft.vz
+      },
+      this.scenario.g * primary.m
+    );
+
+    const a = spacecraftOrbitalElements.a;
+    const e = spacecraftOrbitalElements.e;
+    const w = spacecraftOrbitalElements.argp;
+    const i = spacecraftOrbitalElements.i;
+    const o = spacecraftOrbitalElements.omega;
+
+    const ellipse = getEllipse(a, e);
+
+    const scale = this.scenario.scale;
+
+    this.spacecraftTrajectoryCurve.position.z =
+      (this.rotatingReferenceFrame.z - primary.z) * scale;
+
+    this.spacecraftTrajectoryCurve.update(
+      (this.rotatingReferenceFrame.x - primary.x + ellipse.focus) * scale,
+      (this.rotatingReferenceFrame.y - primary.y) * scale,
+      ellipse.xRadius * scale,
+      ellipse.yRadius * scale,
+      0,
+      2 * Math.PI,
+      false,
+      0,
+      { x: i, y: o, z: w - 180 }
+    );
   },
 
   collisionCallback(looser, survivor) {
@@ -466,7 +533,9 @@ export default {
         }
       }
 
-    this.updateEllipseCurve();
+    this.updateAddMassTrajectory();
+
+    if (this.scenario.forAllMankind) this.updateSpacecraftTrajectoryCurve();
 
     const barycenterPositionScaleFactor =
       rotatingReferenceFrame !== 'Barycenter' ? this.scenario.scale : 1;

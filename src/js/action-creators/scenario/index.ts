@@ -21,6 +21,8 @@ import {
 import { Action, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import { scenarioDefaults } from '../../data/scenarios/defaults';
+import { findCurrentSOI } from '../../Physics/spacecraft/lambert';
+import { SOITree, MassType } from '../../Physics/types';
 import TrajectoryCruncher from 'worker-loader!../../Physics/spacecraft/trajectoryCruncher';
 
 export const getScenario = (
@@ -113,7 +115,8 @@ export const deleteMass = (name: string): ScenarioActionTypes => ({
 });
 
 export const getTrajectory = (
-  primary: string,
+  soiTree: SOITree,
+  currentSOI: MassType,
   applyTrajectory = true
 ): ThunkAction<void, AppState, void, Action> => async (
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
@@ -139,6 +142,37 @@ export const getTrajectory = (
 
   const scenario = getState().scenario;
 
+  const currentSOIChildOf = findCurrentSOI(
+    getObjFromArrByKeyValuePair(scenario.masses, 'name', currentSOI.name),
+    soiTree,
+    scenario.masses
+  );
+
+  let referenceMass: MassType;
+
+  if (currentSOIChildOf.name === scenario.trajectoryTarget)
+    referenceMass = currentSOI;
+  else
+    referenceMass = findCurrentSOI(
+      getObjFromArrByKeyValuePair(
+        scenario.masses,
+        'name',
+        scenario.trajectoryTarget
+      ),
+      soiTree,
+      scenario.masses
+    );
+
+  const rotatedScenario = scenario.masses.map((mass: MassType) => ({
+    ...mass,
+    x: referenceMass.x - mass.x,
+    y: referenceMass.y - mass.y,
+    z: referenceMass.z - mass.z,
+    vx: referenceMass.vx - mass.vx,
+    vy: referenceMass.vy - mass.vy,
+    vz: referenceMass.vz - mass.vz
+  }));
+
   const getTrajectory = () =>
     new Promise<{ x: number; y: number; z: number; p?: MassProperty }[]>(
       resolve => {
@@ -157,13 +191,13 @@ export const getTrajectory = (
           minDt: scenario.minDt,
           maxDt: scenario.maxDt,
           elapsedTime: scenario.elapsedTime,
-          masses: scenario.masses,
+          masses: rotatedScenario,
           departure: scenario.elapsedTime,
           arrival:
             scenario.elapsedTime +
             (scenario.trajectoryTargetArrival - scenario.elapsedTime),
           target: scenario.trajectoryTarget,
-          primary
+          primary: referenceMass.name
         });
       }
     );
@@ -175,6 +209,14 @@ export const getTrajectory = (
   trajectoryCruncher.terminate();
 
   if (applyTrajectory) {
+    dispatch({
+      type: MODIFY_SCENARIO_PROPERTY,
+      payload: {
+        key: 'masses',
+        value: rotatedScenario
+      }
+    });
+
     dispatch({
       type: MODIFY_MASS_PROPERTY,
       payload: {
