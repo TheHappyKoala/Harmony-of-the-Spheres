@@ -21,6 +21,8 @@ import {
 import { Action, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import { scenarioDefaults } from '../../data/scenarios/defaults';
+import { findCurrentSOI } from '../../Physics/spacecraft/lambert';
+import { SOITree, MassType } from '../../Physics/types';
 import TrajectoryCruncher from 'worker-loader!../../Physics/spacecraft/trajectoryCruncher';
 
 export const getScenario = (
@@ -113,7 +115,8 @@ export const deleteMass = (name: string): ScenarioActionTypes => ({
 });
 
 export const getTrajectory = (
-  primary: string,
+  soiTree: SOITree,
+  currentSOI: MassType,
   applyTrajectory = true
 ): ThunkAction<void, AppState, void, Action> => async (
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
@@ -139,9 +142,26 @@ export const getTrajectory = (
 
   const scenario = getState().scenario;
 
-  const referenceMass = {
-    ...getObjFromArrByKeyValuePair(scenario.masses, 'name', primary)
-  };
+  const currentSOIChildOf = findCurrentSOI(
+    getObjFromArrByKeyValuePair(scenario.masses, 'name', currentSOI.name),
+    soiTree,
+    scenario.masses
+  );
+
+  let referenceMass: MassType;
+
+  if (currentSOIChildOf.name === scenario.trajectoryTarget)
+    referenceMass = currentSOI;
+  else
+    referenceMass = findCurrentSOI(
+      getObjFromArrByKeyValuePair(
+        scenario.masses,
+        'name',
+        scenario.trajectoryTarget
+      ),
+      soiTree,
+      scenario.masses
+    );
 
   const rotatedScenario = scenario.masses.map((mass: MassType) => ({
     ...mass,
@@ -177,7 +197,7 @@ export const getTrajectory = (
             scenario.elapsedTime +
             (scenario.trajectoryTargetArrival - scenario.elapsedTime),
           target: scenario.trajectoryTarget,
-          primary
+          primary: referenceMass.name
         });
       }
     );

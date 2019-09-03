@@ -104,7 +104,7 @@ export function elementsToVectors(primary, masses, g) {
 
   const output = [primaryWithVectors];
 
-  const referencePlane = masses[0].i;
+  const referencePlane = 0;
 
   for (let i = 0; i < masses.length; i++) {
     const mass = masses[i];

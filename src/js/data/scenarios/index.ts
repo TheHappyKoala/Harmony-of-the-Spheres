@@ -196,7 +196,7 @@ export const processExoplanetArchiveData = (data: any[]) => {
     systemBarycenter: true,
     barycenter: true,
     barycenterMassOne: primary.pl_hostname,
-    barycenterMassTwo: firstPlanet.name,
+    barycenterMassTwo: primary.pl_hostname,
     rotatingReferenceFrame: 'Barycenter',
 
     //We want to give the user a sense of perspective by showing the orbits of Mercury and Earth

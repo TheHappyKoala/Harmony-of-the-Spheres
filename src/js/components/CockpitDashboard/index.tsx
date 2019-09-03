@@ -72,6 +72,10 @@ export default ({
       z: rendevouz.z - rendevouzPosition.vz
     }).toFixed(4);
 
+  const distanceToTarget = Math.sqrt(
+    getDistanceParams(spacecraft, target).dSquared
+  );
+
   useEffect(
     () => {
       const timer = window.setInterval(() => {
@@ -136,18 +140,18 @@ export default ({
                   </div>
                 ))}
               </Dropdown>
-              <label className="top">Time of Target Rendevouz</label>
+              <label className="top">Time of Target Rendevouz [Y]</label>
               <Slider
                 payload={{ key: 'trajectoryTargetArrival' }}
                 value={scenario.trajectoryTargetArrival}
                 callback={modifyScenarioProperty}
-                max={scenario.elapsedTime + 30}
+                max={scenario.elapsedTime + 20}
                 min={scenario.elapsedTime}
                 step={0.00273973}
               />
               <Button
                 cssClassName="button cockpit-element top"
-                callback={() => getTrajectory(soi.currentSOI.name)}
+                callback={() => getTrajectory(soi.tree, soi.currentSOI)}
               >
                 Set Trajectory
               </Button>
@@ -159,9 +163,7 @@ export default ({
                 value={orbit.apoapsis}
                 callback={setOrbitParam}
                 max={soi.currentSOI.soi}
-                min={Math.sqrt(
-                  getDistanceParams(spacecraft, soi.currentSOI).dSquared
-                )}
+                min={distanceToTarget}
                 step={soi.currentSOI.soi / 300}
               />
               <Button
@@ -193,11 +195,7 @@ export default ({
                 </tr>
                 <tr>
                   <td>Distance [AU]:</td>
-                  <td>
-                    {Math.sqrt(
-                      getDistanceParams(spacecraft, target).dSquared
-                    ).toFixed(4)}
-                  </td>
+                  <td>{distanceToTarget.toFixed(4)}</td>
                 </tr>
                 <tr>
                   <td>Relative Rendevouz Velocity [AU/Y]:</td>
