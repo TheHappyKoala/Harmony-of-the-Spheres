@@ -72,26 +72,29 @@ export default ({
       z: rendevouz.z - rendevouzPosition.vz
     }).toFixed(4);
 
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      if (displayCockpit) {
-        if (scenario.name !== soi.scenario)
+  useEffect(
+    () => {
+      const timer = window.setInterval(() => {
+        if (displayCockpit) {
+          if (scenario.name !== soi.scenario)
+            setSOI({
+              ...soi,
+              tree: constructSOITree(scenario.masses),
+              scenario: scenario.name
+            });
+
           setSOI({
             ...soi,
-            tree: constructSOITree(scenario.masses),
-            scenario: scenario.name
+            currentSOI: findCurrentSOI(spacecraft, soi.tree, scenario.masses)
           });
-
-        setSOI({
-          ...soi,
-          currentSOI: findCurrentSOI(spacecraft, soi.tree, scenario.masses)
-        });
-      }
-    }, 1000);
-    return () => {
-      window.clearInterval(timer);
-    };
-  }, []);
+        }
+      }, 1000);
+      return () => {
+        window.clearInterval(timer);
+      };
+    },
+    [soi]
+  );
 
   return (
     <div className="cockpit-dashboard">
@@ -179,50 +182,52 @@ export default ({
           </Tabs>
           <section className="spacecraft-stats">
             <table className="trajectory-table">
-              <tr>
-                <td>Elapsed Time [Y]:</td>
-                <td>{scenario.elapsedTime.toFixed(4)}</td>
-              </tr>
-              <tr>
-                <td>Sphere of Influence:</td>
-                <td>{soi.currentSOI.name}</td>
-              </tr>
-              <tr>
-                <td>Distance [AU]:</td>
-                <td>
-                  {Math.sqrt(
-                    getDistanceParams(spacecraft, target).dSquared
-                  ).toFixed(4)}
-                </td>
-              </tr>
-              <tr>
-                <td>Relative Rendevouz Velocity [AU/Y]:</td>
-                <td>
-                  {isNaN(relativeVelocityAtRendevouz as any)
-                    ? 0
-                    : relativeVelocityAtRendevouz}
-                </td>
-              </tr>
-              <tr>
-                <td>Spacecraft Velcoity [AU/Y]:</td>
-                <td>
-                  {getVelocityMagnitude({
-                    x: spacecraft.vx,
-                    y: spacecraft.vy,
-                    z: spacecraft.vz
-                  }).toFixed(4)}
-                </td>
-              </tr>
-              <tr>
-                <td>Target Velocity [AU/Y]:</td>
-                <td>
-                  {getVelocityMagnitude({
-                    x: target.vx,
-                    y: target.vy,
-                    z: target.vz
-                  }).toFixed(4)}
-                </td>{' '}
-              </tr>
+              <tbody>
+                <tr>
+                  <td>Elapsed Time [Y]:</td>
+                  <td>{scenario.elapsedTime.toFixed(4)}</td>
+                </tr>
+                <tr>
+                  <td>Sphere of Influence:</td>
+                  <td>{soi.currentSOI.name}</td>
+                </tr>
+                <tr>
+                  <td>Distance [AU]:</td>
+                  <td>
+                    {Math.sqrt(
+                      getDistanceParams(spacecraft, target).dSquared
+                    ).toFixed(4)}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Relative Rendevouz Velocity [AU/Y]:</td>
+                  <td>
+                    {isNaN(relativeVelocityAtRendevouz as any)
+                      ? 0
+                      : relativeVelocityAtRendevouz}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Spacecraft Velcoity [AU/Y]:</td>
+                  <td>
+                    {getVelocityMagnitude({
+                      x: spacecraft.vx,
+                      y: spacecraft.vy,
+                      z: spacecraft.vz
+                    }).toFixed(4)}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Target Velocity [AU/Y]:</td>
+                  <td>
+                    {getVelocityMagnitude({
+                      x: target.vx,
+                      y: target.vy,
+                      z: target.vz
+                    }).toFixed(4)}
+                  </td>{' '}
+                </tr>
+              </tbody>
             </table>
           </section>
         </Fragment>
