@@ -6,7 +6,7 @@ export default {
   forAllMankind: true,
   trails: false,
   trajectoryTarget: 'Jupiter',
-  trajectoryTargetArrival: 3,
+  trajectoryTargetArrival: 2,
   trajectoryDepartureVelocity: 0,
   trajectoryArrivalVelocity: 0,
   trajectoryRelativeTo: 'Earth',
@@ -16,6 +16,7 @@ export default {
   distMin: -50,
   rotatingReferenceFrame: 'Barycenter',
   cameraFocus: 'Barycenter',
+  soi: 'Earth',
   barycenterZ: 10500000,
   collisions: true,
   particles: {
@@ -24,7 +25,7 @@ export default {
     rings: []
   },
   massBeingModified: 'Sun',
-  primary: 'Earth',
+  primary: 'Sun',
   maximumDistance: { name: 'Moon to Earth * 10', value: 0.0256955529 },
   distanceStep: { name: 'Moon to Earth / 100', value: 0.000025695552899999998 },
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Free-return_trajectory',

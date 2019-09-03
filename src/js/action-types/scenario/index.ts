@@ -21,6 +21,7 @@ export interface ScenarioProps {
   habitableZone: boolean;
   referenceOrbits: boolean;
   useBarnesHut?: boolean;
+  soi?: string;
   theta: number;
   type: string;
   dt: number;

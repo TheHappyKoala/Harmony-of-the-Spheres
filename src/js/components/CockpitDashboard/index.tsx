@@ -87,9 +87,20 @@ export default ({
               scenario: scenario.name
             });
 
+          const currentSOI = findCurrentSOI(
+            spacecraft,
+            soi.tree,
+            scenario.masses
+          );
+
           setSOI({
             ...soi,
-            currentSOI: findCurrentSOI(spacecraft, soi.tree, scenario.masses)
+            currentSOI
+          });
+
+          modifyScenarioProperty({
+            key: 'soi',
+            value: currentSOI.name
           });
         }
       }, 1000);
