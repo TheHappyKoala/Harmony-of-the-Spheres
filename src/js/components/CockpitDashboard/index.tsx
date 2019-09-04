@@ -1,4 +1,5 @@
 import React, { Fragment, ReactElement, useState, useEffect } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Dropdown from '../Dropdown';
 import Slider from '../Slider';
 import Button from '../Button';
@@ -116,112 +117,118 @@ export default ({
 
   return (
     <div className="cockpit-dashboard">
-      {displayCockpit && (
-        <Fragment>
-          <Tabs
-            tabsWrapperClassName="cockpit-dashboard-tabs"
-            tabsContentClassName="box cockpit-dashboard-tabs-pane"
-            transition={{ enterTimeout: false, leaveTimeout: false }}
-            initTab={0}
-            noCloseButton={true}
-          >
-            <div data-label="Trajectory" data-icon="fas fa-rocket fa-2x">
-              <label>Target</label>
-              <Dropdown
-                selectedOption={scenario.trajectoryTarget}
-                dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-                selectedOptionCssClassName="selected-option cockpit-element"
-                optionsWrapperCssClass="options"
-                dynamicChildrenLen={scenario.masses.length}
-                transition={{
-                  name: 'fall',
-                  enterTimeout: 150,
-                  leaveTimeout: 150
-                }}
-              >
-                {scenario.masses.map((mass: MassType) => (
-                  <div
-                    data-name={mass.name}
-                    key={mass.name}
-                    onClick={() =>
-                      modifyScenarioProperty({
-                        key: 'trajectoryTarget',
-                        value: mass.name
-                      })
-                    }
-                  >
-                    {mass.name}
-                  </div>
-                ))}
-              </Dropdown>
-              <label className="top">Time of Target Rendevouz [Y]</label>
-              <Slider
-                payload={{ key: 'trajectoryTargetArrival' }}
-                value={scenario.trajectoryTargetArrival}
-                callback={modifyScenarioProperty}
-                max={scenario.elapsedTime + 20}
-                min={scenario.elapsedTime}
-                step={0.00273973}
-              />
-              <Button
-                cssClassName="button cockpit-element top"
-                callback={() =>
-                  spacecraft.spacecraft &&
-                  getTrajectory(soi.tree, soi.currentSOI)
-                }
-              >
-                Set Trajectory
-              </Button>
-            </div>
-          </Tabs>
-          <section className="spacecraft-stats">
-            <table className="trajectory-table">
-              <tbody>
-                <tr>
-                  <td>Elapsed Time [Y]:</td>
-                  <td>{scenario.elapsedTime.toFixed(4)}</td>
-                </tr>
-                <tr>
-                  <td>Sphere of Influence:</td>
-                  <td>{soi.currentSOI.name}</td>
-                </tr>
-                <tr>
-                  <td>Distance [AU]:</td>
-                  <td>{distanceToTarget.toFixed(4)}</td>
-                </tr>
-                <tr>
-                  <td>Relative Rendevouz Velocity [AU/Y]:</td>
-                  <td>
-                    {isNaN(relativeVelocityAtRendevouz as any)
-                      ? 0
-                      : relativeVelocityAtRendevouz}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Spacecraft Velcoity [AU/Y]:</td>
-                  <td>
-                    {getVelocityMagnitude({
-                      x: spacecraft.vx,
-                      y: spacecraft.vy,
-                      z: spacecraft.vz
-                    }).toFixed(4)}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Target Velocity [AU/Y]:</td>
-                  <td>
-                    {getVelocityMagnitude({
-                      x: target.vx,
-                      y: target.vy,
-                      z: target.vz
-                    }).toFixed(4)}
-                  </td>{' '}
-                </tr>
-              </tbody>
-            </table>
-          </section>
-        </Fragment>
-      )}
+      <ReactCSSTransitionGroup
+        transitionName="slide"
+        transitionEnterTimeout={150}
+        transitionLeaveTimeout={150}
+      >
+        {displayCockpit && (
+          <div className="cockpit-dashboard-grid">
+            <Tabs
+              tabsWrapperClassName="cockpit-dashboard-tabs"
+              tabsContentClassName="box cockpit-dashboard-tabs-pane"
+              transition={{ enterTimeout: false, leaveTimeout: false }}
+              initTab={0}
+              noCloseButton={true}
+            >
+              <div data-label="Trajectory" data-icon="fas fa-rocket fa-2x">
+                <label>Target</label>
+                <Dropdown
+                  selectedOption={scenario.trajectoryTarget}
+                  dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+                  selectedOptionCssClassName="selected-option cockpit-element"
+                  optionsWrapperCssClass="options"
+                  dynamicChildrenLen={scenario.masses.length}
+                  transition={{
+                    name: 'fall',
+                    enterTimeout: 150,
+                    leaveTimeout: 150
+                  }}
+                >
+                  {scenario.masses.map((mass: MassType) => (
+                    <div
+                      data-name={mass.name}
+                      key={mass.name}
+                      onClick={() =>
+                        modifyScenarioProperty({
+                          key: 'trajectoryTarget',
+                          value: mass.name
+                        })
+                      }
+                    >
+                      {mass.name}
+                    </div>
+                  ))}
+                </Dropdown>
+                <label className="top">Time of Target Rendevouz [Y]</label>
+                <Slider
+                  payload={{ key: 'trajectoryTargetArrival' }}
+                  value={scenario.trajectoryTargetArrival}
+                  callback={modifyScenarioProperty}
+                  max={scenario.elapsedTime + 20}
+                  min={scenario.elapsedTime}
+                  step={0.00273973}
+                />
+                <Button
+                  cssClassName="button cockpit-element top"
+                  callback={() =>
+                    spacecraft.spacecraft &&
+                    getTrajectory(soi.tree, soi.currentSOI)
+                  }
+                >
+                  Set Trajectory
+                </Button>
+              </div>
+            </Tabs>
+            <section className="spacecraft-stats">
+              <table className="trajectory-table">
+                <tbody>
+                  <tr>
+                    <td>Elapsed Time [Y]:</td>
+                    <td>{scenario.elapsedTime.toFixed(4)}</td>
+                  </tr>
+                  <tr>
+                    <td>Sphere of Influence:</td>
+                    <td>{soi.currentSOI.name}</td>
+                  </tr>
+                  <tr>
+                    <td>Distance [AU]:</td>
+                    <td>{distanceToTarget.toFixed(4)}</td>
+                  </tr>
+                  <tr>
+                    <td>Relative Rendevouz Velocity [AU/Y]:</td>
+                    <td>
+                      {isNaN(relativeVelocityAtRendevouz as any)
+                        ? 0
+                        : relativeVelocityAtRendevouz}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spacecraft Velcoity [AU/Y]:</td>
+                    <td>
+                      {getVelocityMagnitude({
+                        x: spacecraft.vx,
+                        y: spacecraft.vy,
+                        z: spacecraft.vz
+                      }).toFixed(4)}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Target Velocity [AU/Y]:</td>
+                    <td>
+                      {getVelocityMagnitude({
+                        x: target.vx,
+                        y: target.vy,
+                        z: target.vz
+                      }).toFixed(4)}
+                    </td>{' '}
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+        )}
+      </ReactCSSTransitionGroup>
       <Button
         cssClassName="button box toggle-cockpit"
         callback={() => setDisplayCockpit(!displayCockpit)}

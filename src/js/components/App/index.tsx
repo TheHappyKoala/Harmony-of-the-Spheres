@@ -103,7 +103,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               <i
                 className={`fas fa-${
                   scenario.playing ? 'pause' : 'play'
-                } fa-3x`}
+                } fa-2x`}
               />
             </Button>
 
@@ -111,7 +111,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               cssClassName="button simulation-reset"
               callback={() => resetScenario()}
             >
-              <i className="fas fa-refresh fa-3x" />
+              <i className="fas fa-refresh fa-2x" />
             </Button>
 
             <div className="menu-left">
