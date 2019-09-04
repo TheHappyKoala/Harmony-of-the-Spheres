@@ -536,28 +536,6 @@ export function findCurrentSOI(
   };
 }
 
-export const orbitalInsertion = (
-  primary: MassType,
-  spacecraft: { periapsis: number; apoapsis: number },
-  g: number
-): VectorType =>
-  new H3()
-    .set({ x: primary.vx, y: primary.vy, z: primary.vz })
-    .addScaledVector(
-      getVMag(
-        g,
-        primary,
-        spacecraft.periapsis,
-        (spacecraft.periapsis + spacecraft.apoapsis) / 2
-      ) / spacecraft.periapsis,
-      {
-        x: 0,
-        y: spacecraft.periapsis,
-        z: 0
-      }
-    )
-    .toObject();
-
 export function reverseAcceleration(
   pos: MassType,
   primary: MassType,

@@ -55,13 +55,6 @@ export default ({
     scenario: scenario.name
   });
 
-  const [orbit, setOrbit] = useState({
-    apoapsis: 0
-  });
-
-  const setOrbitParam = (payload: { key: string; value: number }) =>
-    setOrbit({ ...orbit, [payload.key]: payload.value });
-
   const [displayCockpit, setDisplayCockpit] = useState(true);
 
   const relativeVelocityAtRendevouz =
@@ -181,32 +174,6 @@ export default ({
                 }
               >
                 Set Trajectory
-              </Button>
-            </div>
-            <div data-label="Orbit" data-icon="fas fa-circle-o-notch fa-2x">
-              <label>Apoapsis</label>
-              <Slider
-                payload={{ key: 'apoapsis' }}
-                value={orbit.apoapsis}
-                callback={setOrbitParam}
-                max={soi.currentSOI.soi}
-                min={distanceToTarget}
-                step={soi.currentSOI.soi / 300}
-              />
-              <Button
-                cssClassName="button cockpit-element top"
-                callback={() =>
-                  spacecraft.spacecraft &&
-                  getOrbitalBurn({
-                    primary: soi.currentSOI.name,
-                    periapsis: Math.sqrt(
-                      getDistanceParams(spacecraft, soi.currentSOI).dSquared
-                    ),
-                    apoapsis: orbit.apoapsis
-                  })
-                }
-              >
-                Set Orbital Burn
               </Button>
             </div>
           </Tabs>
