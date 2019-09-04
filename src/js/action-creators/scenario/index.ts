@@ -4,9 +4,8 @@ import filterScenarios, {
 } from '../../data/scenarios';
 import { getObjFromArrByKeyValuePair } from '../../utils';
 import { getOrbit } from '../../Physics/utils';
-import { orbitalInsertion } from '../../Physics/spacecraft/lambert';
 import cachedFetch from '../../cachedFetch';
-import { AppActionTypes, SET_LOADING } from '../../action-types/app';
+import { AppActionTypes } from '../../action-types/app';
 import {
   ScenarioActionTypes,
   GET_SCENARIO,
@@ -18,6 +17,7 @@ import {
   ScenarioProperty,
   MassProperty
 } from '../../action-types/scenario';
+import { setLoading } from '../../action-creators/app';
 import { Action, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import { scenarioDefaults } from '../../data/scenarios/defaults';
@@ -29,17 +29,16 @@ export const getScenario = (
   name: string
 ): ThunkAction<void, AppState, void, Action> => async (
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
-  getState: any
+  getState: () => AppState
 ) => {
   const scenario = filterScenarios(name, getState().scenarios);
 
-  dispatch({
-    type: SET_LOADING,
-    payload: {
+  dispatch(
+    setLoading({
       loading: true,
       whatIsLoading: scenario.name
-    }
-  });
+    })
+  );
 
   if (!scenario.exoPlanetArchive) {
     dispatch({
@@ -116,7 +115,7 @@ export const addMass = (
   payload: AddMass
 ): ThunkAction<void, AppState, void, Action> => (
   dispatch: Dispatch<ScenarioActionTypes>,
-  getState: any
+  getState: () => AppState
 ) => {
   const scenario = getState().scenario;
 
@@ -143,35 +142,30 @@ export const getTrajectory = (
   applyTrajectory = true
 ): ThunkAction<void, AppState, void, Action> => async (
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
-  getState: any
+  getState: () => AppState
 ) => {
   const scenario = getState().scenario;
 
   const originalPlayState = scenario.playing ? true : false;
+  const originalTrailsState = scenario.trails ? true : false;
 
-  dispatch({
-    type: MODIFY_SCENARIO_PROPERTY,
-    payload: {
+  modifyScenarioProperty(
+    {
       key: 'playing',
       value: false
-    }
-  });
-
-  dispatch({
-    type: MODIFY_SCENARIO_PROPERTY,
-    payload: {
+    },
+    {
       key: 'trails',
       value: false
     }
-  });
+  )(dispatch, getState);
 
-  dispatch({
-    type: SET_LOADING,
-    payload: {
+  dispatch(
+    setLoading({
       loading: true,
       whatIsLoading: 'Generating trajectory'
-    }
-  });
+    })
+  );
 
   const trajectoryCruncher = new TrajectoryCruncher();
 
@@ -242,71 +236,40 @@ export const getTrajectory = (
   trajectoryCruncher.terminate();
 
   if (applyTrajectory) {
-    dispatch({
-      type: MODIFY_SCENARIO_PROPERTY,
-      payload: {
-        key: 'masses',
-        value: rotatedScenario
-      }
-    });
+    modifyScenarioProperty({
+      key: 'masses',
+      value: rotatedScenario
+    })(dispatch, getState);
 
-    dispatch({
-      type: MODIFY_MASS_PROPERTY,
-      payload: {
+    modifyMassProperty(
+      {
         name: spacecraft.name,
         key: 'vx',
         value: trajectory.x
-      }
-    });
-    dispatch({
-      type: MODIFY_MASS_PROPERTY,
-      payload: {
+      },
+      {
         name: spacecraft.name,
         key: 'vy',
         value: trajectory.y
-      }
-    });
-    dispatch({
-      type: MODIFY_MASS_PROPERTY,
-      payload: {
+      },
+      {
         name: spacecraft.name,
         key: 'vz',
         value: trajectory.z
       }
-    });
+    )(dispatch, getState);
   }
 
-  dispatch({
-    type: MODIFY_SCENARIO_PROPERTY,
-    payload: {
-      key: 'trajectoryRendevouz',
-      value: rendevouz
-    }
-  });
+  modifyScenarioProperty(
+    { key: 'trajectoryRendevouz', value: rendevouz },
+    { key: 'trails', value: originalTrailsState },
+    { key: 'playing', value: originalPlayState }
+  )(dispatch, getState);
 
-  modifyScenarioProperty({ key: 'trajectoryRendevouz', value: rendevouz });
-
-  dispatch({
-    type: SET_LOADING,
-    payload: {
+  dispatch(
+    setLoading({
       loading: false,
       whatIsLoading: ''
-    }
-  });
-
-  dispatch({
-    type: MODIFY_SCENARIO_PROPERTY,
-    payload: {
-      key: 'trails',
-      value: true
-    }
-  });
-
-  dispatch({
-    type: MODIFY_SCENARIO_PROPERTY,
-    payload: {
-      key: 'playing',
-      value: originalPlayState
-    }
-  });
+    })
+  );
 };
