@@ -5,8 +5,7 @@ import Button from '../Button';
 import Tabs from '../Tabs';
 import {
   modifyScenarioProperty,
-  getTrajectory,
-  getOrbitalBurn
+  getTrajectory
 } from '../../action-creators/scenario';
 import './CockpitDashboard.less';
 import { getDistanceParams } from '../../Physics/utils';
@@ -27,14 +26,12 @@ interface CockpitDashboardProps {
   scenario: any;
   modifyScenarioProperty: typeof modifyScenarioProperty;
   getTrajectory: typeof getTrajectory;
-  getOrbitalBurn: typeof getOrbitalBurn;
 }
 
 export default ({
   scenario,
   modifyScenarioProperty,
-  getTrajectory,
-  getOrbitalBurn
+  getTrajectory
 }: CockpitDashboardProps): ReactElement => {
   const [spacecraft] = scenario.masses;
   const target = getObjFromArrByKeyValuePair(
@@ -71,7 +68,7 @@ export default ({
 
   useEffect(
     () => {
-      const timer = window.setInterval(() => {
+      const timer = setInterval(() => {
         if (displayCockpit) {
           if (scenario.name !== soi.scenario)
             setSOI({
@@ -111,7 +108,7 @@ export default ({
         }
       }, 1000);
       return () => {
-        window.clearInterval(timer);
+        clearInterval(timer);
       };
     },
     [soi]
