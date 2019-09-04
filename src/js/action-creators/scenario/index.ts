@@ -46,19 +46,28 @@ export const getScenario = (
       type: GET_SCENARIO,
       scenario: scenario
     });
+
+    sessionStorage.setItem('currentScenario', JSON.stringify(scenario));
   } else {
     const data = await cachedFetch(
       `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl&where=pl_hostname like '${name}'&format=json`
     );
 
+    const processedExoplanetData = {
+      ...scenarioDefaults,
+      ...scenario,
+      ...processExoplanetArchiveData(data)
+    };
+
     dispatch({
       type: GET_SCENARIO,
-      scenario: {
-        ...scenarioDefaults,
-        ...scenario,
-        ...processExoplanetArchiveData(data)
-      }
+      scenario: processedExoplanetData
     });
+
+    sessionStorage.setItem(
+      'currentScenario',
+      JSON.stringify(processExoplanetArchiveData)
+    );
   }
 };
 
@@ -75,6 +84,20 @@ export const modifyScenarioProperty = (
         value: scenarioProperty.value
       }
     })
+  );
+
+export const resetScenario = () =>
+  modifyScenarioProperty(
+    ...Object.entries(
+      JSON.parse(sessionStorage.getItem('currentScenario'))
+    ).map(([key, value]: [string, any]) => ({
+      key,
+      value
+    })),
+    {
+      key: 'reset',
+      value: true
+    }
   );
 
 export const modifyMassProperty = (

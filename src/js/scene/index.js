@@ -450,6 +450,8 @@ export default {
   loop() {
     this.scenario = store.getState().scenario;
 
+    if (this.scenario.reset) this.resetParticlePhysics();
+
     const delta = this.clock.getDelta();
 
     this.system.g = this.scenario.g;
@@ -702,14 +704,18 @@ export default {
 
       const trail = massManifestation.getObjectByName('Trail');
 
-      if (
-        this.scenario.trails &&
-        rotatingReferenceFrame === this.previousRotatingReferenceFrame
-      ) {
+      if (this.scenario.trails) {
         if (!trail) massManifestation.getTrail(trailVertices);
         if (!this.scenario.playing && trail)
           trail.geometry.verticesNeedUpdate = false;
-      } else massManifestation.removeTrail();
+      }
+
+      if (
+        !this.scenario.trails ||
+        rotatingReferenceFrame !== this.previousRotatingReferenceFrame ||
+        this.scenario.reset
+      )
+        massManifestation.removeTrail();
 
       if (cameraFocus === name) {
         this.camera.trackMovingObjectWithControls(massManifestation);
@@ -781,6 +787,10 @@ export default {
     store.dispatch(
       modifyScenarioProperty(
         {
+          key: 'reset',
+          value: false
+        },
+        {
           key: 'masses',
           value: this.system.masses
         },
@@ -805,6 +815,12 @@ export default {
     TWEEN.update();
     this.requestAnimationFrameId = requestAnimationFrame(this.loop);
     this.renderer.render(this.scene, this.camera);
+  },
+
+  resetParticlePhysics() {
+    this.particlePhysics.particles = [];
+
+    this.scenario.particles.rings && this.addRing();
   },
 
   addRing() {
@@ -887,37 +903,9 @@ export default {
       this.scene.dispose();
     }
 
-    //Dispose of the renderer and although the garbage collector takes care of this, just to be sure
-    //Null the scene properties to make sure memory is freed up
     if (this.renderer) {
       this.renderer.renderLists.dispose();
       this.renderer.dispose();
-
-      this.scenario.null;
-      this.webGlCanvas = null;
-      this.graphics2DCanvas = null;
-      this.graphics2D = null;
-      this.w = null;
-      this.h = null;
-      this.audio = null;
-      this.camera = null;
-      this.system = null;
-      this.renderer = null;
-      this.textureLoader = null;
-      this.scene = null;
-      this.clock = null;
-      this.utilityVector = null;
-      this.barycenterPosition = null;
-      this.rotatingReferenceFrame = null;
-      this.referenceOrbits = null;
-      this.manifestationPosition = null;
-      this.particlePhysics = null;
-      this.previousCameraFocus = null;
-      this.previousRotatingReferenceFrame = null;
-      this.previousIntegrator = null;
-      this.massManifestations = null;
-      this.particles = null;
-      this.ellipseCurve = null;
     }
 
     cancelAnimationFrame(this.requestAnimationFrameId);

@@ -31,6 +31,7 @@ const mapStateToProps = (state: AppState, ownProps: any) => ({
 
 const mapDispatchToProps = {
   getScenario: scenarioActionCreators.getScenario,
+  resetScenario: scenarioActionCreators.resetScenario,
   modifyScenarioProperty: scenarioActionCreators.modifyScenarioProperty,
   modifyMassProperty: scenarioActionCreators.modifyMassProperty,
   getTrajectory: scenarioActionCreators.getTrajectory,
@@ -49,6 +50,7 @@ interface AppProps {
   getTrajectory: typeof scenarioActionCreators.getTrajectory;
   getOrbitalBurn: typeof scenarioActionCreators.getOrbitalBurn;
   getScenario: typeof scenarioActionCreators.getScenario;
+  resetScenario: typeof scenarioActionCreators.resetScenario;
   saveScenario: typeof scenariosActionCreators.saveScenario;
   scenarioName: string;
   app: {
@@ -69,6 +71,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     deleteMass,
     addMass,
     getScenario,
+    resetScenario,
     saveScenario,
     scenarioName
   }: AppProps): ReactElement => {
@@ -106,6 +109,14 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                 } fa-3x`}
               />
             </Button>
+
+            <Button
+              cssClassName="button simulation-reset"
+              callback={() => resetScenario()}
+            >
+              <i className="fas fa-refresh fa-3x" />
+            </Button>
+
             <div className="menu-left">
               <Button
                 cssClassName="button"
