@@ -3,6 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Dropdown from '../Dropdown';
 import Slider from '../Slider';
 import Button from '../Button';
+import Tooltip from '../Tooltip';
 import Tabs from '../Tabs';
 import {
   modifyScenarioProperty,
@@ -132,7 +133,13 @@ export default ({
               noCloseButton={true}
             >
               <div data-label="Trajectory" data-icon="fas fa-rocket fa-2x">
-                <label>Target</label>
+                <label>
+                  Target{' '}
+                  <Tooltip
+                    position="left"
+                    content="The celestial object that you want to travel to."
+                  />
+                </label>
                 <Dropdown
                   selectedOption={scenario.trajectoryTarget}
                   dropdownWrapperCssClassName="tabs-dropdown-wrapper"
@@ -160,7 +167,12 @@ export default ({
                     </div>
                   ))}
                 </Dropdown>
-                <label className="top">Time of Target Rendevouz [Y]</label>
+                <label className="top">
+                  Time of Target Rendevouz [Y]<Tooltip
+                    position="left"
+                    content="The time when your spacecraft will rendevouz with its target. This quantity always has a minimum value of the time that has elapsed in the simulation, so if one year has passed and you want to get to Mars in half a year, you set a value of 1.5."
+                  />
+                </label>
                 <Slider
                   payload={{ key: 'trajectoryTargetArrival' }}
                   value={scenario.trajectoryTargetArrival}
