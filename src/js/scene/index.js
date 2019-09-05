@@ -405,10 +405,6 @@ export default {
 
     const maxAngle = 15;
 
-    const hitPointWorldPosition = survivingManifestation
-      .getObjectByName('Main')
-      .localToWorld(new THREE.Vector3(hitPoint.x, hitPoint.y, hitPoint.z));
-
     const deflectedVelocity = CollisionsService.getDeflectedVelocity(
       survivor,
       looser
@@ -421,6 +417,7 @@ export default {
 
       const particleVelocity = new H3()
         .set(deflectedVelocity)
+        .multiplyByScalar(getRandomNumberInRange(0.3, 1))
         .rotate({ x: 1, y: 0, z: 0 }, angleX)
         .rotate({ x: 0, y: 1, z: 0 }, angleY)
         .rotate({ x: 0, y: 0, z: 1 }, angleZ)
@@ -429,14 +426,9 @@ export default {
       this.particlePhysics.particles.push({
         ...new H3()
           .set({
-            x: hitPointWorldPosition.x / this.scenario.scale,
-            y: hitPointWorldPosition.y / this.scenario.scale,
-            z: hitPointWorldPosition.z / this.scenario.scale
-          })
-          .add({
-            x: survivor.x - looser.vx * dt,
-            y: survivor.y - looser.vy * dt,
-            z: survivor.z - looser.vz * dt
+            x: looser.x,
+            y: looser.y,
+            z: looser.z
           })
           .toObject(),
         vx: particleVelocity.x / clampAbs(1, maxAngle, angleX / 10),
