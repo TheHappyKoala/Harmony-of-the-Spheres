@@ -14,7 +14,11 @@ export default (): ReactElement => (
             <p className="contributor-description">
               Environmental economist and software developer with a strong
               interest in science. Has no clue what he is doing.{' '}
-              <a href="https://thehappykoala.github.io/" target="blank">
+              <a
+                href="https://thehappykoala.github.io/"
+                target="blank"
+                className="credits-learn-more"
+              >
                 Learn More
               </a>
             </p>
@@ -30,7 +34,11 @@ export default (): ReactElement => (
             <p className="contributor-description">
               Swedish science and programming enthusiast. Studying Engineering
               Physics.{' '}
-              <a href="https://hugogranstrom.com/" target="blank">
+              <a
+                href="https://hugogranstrom.com/"
+                target="blank"
+                className="credits-learn-more"
+              >
                 Learn More
               </a>
             </p>
@@ -49,6 +57,7 @@ export default (): ReactElement => (
               <a
                 href="https://discourse.threejs.org/u/prisoner849/summary"
                 target="blank"
+                className="credits-learn-more"
               >
                 Learn More
               </a>
@@ -65,7 +74,11 @@ export default (): ReactElement => (
             <p className="contributor-description">
               Makes maps of planets and moons, along with minor bodies and
               asteroids.{' '}
-              <a href="https://github.com/JohnVV" target="blank">
+              <a
+                href="https://github.com/JohnVV"
+                target="blank"
+                className="credits-learn-more"
+              >
                 Learn More
               </a>
             </p>
