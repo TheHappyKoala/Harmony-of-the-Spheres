@@ -142,7 +142,7 @@ export const processExoplanetArchiveData = (data: any[]) => {
   //Does not include the star around which the planets orbit
 
   const masses = data
-    .map((entry: any) => {
+    .map((entry: any): { [x: string]: any } | void => {
       //Where there is no eccentricity data, we can set a default of 0
       //Same holds true for the inclination of an orbit and the argument of periapsis
       //However, for planets with no semi-major axis data, it is pointless to include the planet
@@ -180,13 +180,15 @@ export const processExoplanetArchiveData = (data: any[]) => {
   //We will use it to set a suitable "height" for the camera
   //So that all of the planets are on show when the scenario renders
 
-  const widestOrbit = Math.max(...masses.map(mass => mass.a));
+  const widestOrbit = Math.max(
+    ...masses.map((mass: { [x: string]: any }) => mass.a)
+  );
 
   const [primary] = data;
-  const [firstPlanet] = masses;
 
   return {
     habitableZone: true,
+    forAllMankind: false,
     referenceOrbits: true,
     dt,
     exoPlanetArchive: false,

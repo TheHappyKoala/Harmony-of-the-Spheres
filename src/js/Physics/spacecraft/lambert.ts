@@ -1,6 +1,6 @@
 import H3 from '../vectors';
 import { VectorType, MassType, SOITree } from '../types';
-import { getDistanceParams, getVMag, getSemiMajorAxis } from '../utils';
+import { getDistanceParams } from '../utils';
 import { getObjFromArrByKeyValuePair } from '../../utils';
 function hyp2f1b(x: number): number {
   let res = 1.0;
@@ -62,7 +62,7 @@ function computeTmin(
       const xi = 0.1;
       const Ti = tofEq(xi, 0.0, ll, M);
       const xTmin = halley(xi, Ti, ll, rtol, numiter);
-      const Tmin = tofEq(xTmin, 0.0, ll, M);
+      const Tmin = tofEq(xTmin as number, 0.0, ll, M);
       return Tmin;
     }
   }
@@ -135,7 +135,7 @@ function halley(
   ll: number,
   tol: number,
   maxiter: number
-): number {
+): number | void {
   let y = 0;
   let p = 0;
   let fder = 0;
@@ -165,7 +165,7 @@ function householder(
   M: number,
   tol: number,
   maxiter: number
-): number {
+): number | void {
   let y = 0;
   let p = 0;
   let fval = 0;
@@ -217,8 +217,8 @@ export function findXY(
   const initGuesses = initial_guess(T, ll, M);
   let xys: Array<{ x: number; y: number }> = [];
   initGuesses.forEach(x0 => {
-    const x = householder(x0, T, ll, M, rtol, numiter);
-    const y = computeY(x, ll);
+    const x = <number>householder(x0, T, ll, M, rtol, numiter);
+    const y = computeY(x as number, ll);
     xys.push({ x: x, y: y });
   });
   return xys;
@@ -373,12 +373,9 @@ export function stateToKepler(
   const e = v1.set(eVec).getLength();
   const E = vNorm ** 2 / 2 - mu / rNorm;
   let a = 0;
-  let p = 0;
   if (e != 1) {
     a = -mu / (2 * E);
-    p = a * (1 - e ** 2);
   } else {
-    p = hNorm ** 2 / mu;
     a = Infinity;
   }
 
@@ -535,28 +532,6 @@ export function findCurrentSOI(
     soi: tree.SOIradius
   };
 }
-
-export const orbitalInsertion = (
-  primary: MassType,
-  spacecraft: { periapsis: number; apoapsis: number },
-  g: number
-): VectorType =>
-  new H3()
-    .set({ x: primary.vx, y: primary.vy, z: primary.vz })
-    .addScaledVector(
-      getVMag(
-        g,
-        primary,
-        spacecraft.periapsis,
-        (spacecraft.periapsis + spacecraft.apoapsis) / 2
-      ) / spacecraft.periapsis,
-      {
-        x: 0,
-        y: spacecraft.periapsis,
-        z: 0
-      }
-    )
-    .toObject();
 
 export function reverseAcceleration(
   pos: MassType,

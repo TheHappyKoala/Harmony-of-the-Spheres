@@ -9,6 +9,7 @@ import React, {
   useEffect
 } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { getPaginationRange } from '../../utils';
 import './Dropdown.less';
 
 interface DropdownProps {
@@ -66,29 +67,6 @@ export default memo(
     const tabsLabels: string[] = [];
 
     let childrenToRender;
-
-    const getRange = (page: number, count: number) => {
-      let start;
-      let end;
-
-      if (count <= 10) {
-        start = 1;
-        end = count;
-      } else {
-        if (page <= 6) {
-          start = 1;
-          end = 10;
-        } else if (page + 4 >= count) {
-          start = count - 9;
-          end = count;
-        } else {
-          start = page - 5;
-          end = page + 4;
-        }
-      }
-
-      return { start, end };
-    };
 
     const renderRange = (
       range: { start: number; end: number },
@@ -235,7 +213,7 @@ export default memo(
                     {pagination.count > 1 && (
                       <ul className={tabs.pagination.paginationListCssClass}>
                         {renderRange(
-                          getRange(pagination.page, pagination.count),
+                          getPaginationRange(pagination.page, pagination.count),
                           tabs.pagination.itemsPerPage
                         )}
                       </ul>

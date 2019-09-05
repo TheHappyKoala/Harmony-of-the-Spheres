@@ -60,14 +60,20 @@ export const fetchExoplanetArchiveScenarios = (
 
   for (let entry of payload) {
     const data: any[] = await cachedFetch(
-      `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname&${
+      `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,pl_pnum&${
         entry.query
       } and st_mass>0 and st_rad>0&format=json`,
       undefined,
       6.048e8
     );
 
-    removeDuplicatesByKey(data, 'pl_hostname').forEach((scenario: any) =>
+    //Sort our exoplanetary systems by the number of planets they contain in descending order
+
+    const sortedData = data.sort(
+      (entryA, entryB) => entryB.pl_pnum - entryA.pl_pnum
+    );
+
+    removeDuplicatesByKey(sortedData, 'pl_hostname').forEach((scenario: any) =>
       dispatch(
         addScenario({
           name: scenario.pl_hostname,

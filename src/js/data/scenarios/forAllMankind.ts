@@ -1,10 +1,10 @@
 export default {
-  name: 'Ad Astra',
+  name: 'Apollo Reloaded',
   integrator: 'RKN12',
   type: 'For All Mankind',
   logarithmicDepthBuffer: true,
   forAllMankind: true,
-  trails: false,
+  trails: true,
   trajectoryTarget: 'Jupiter',
   trajectoryTargetArrival: 2,
   trajectoryDepartureVelocity: 0,
@@ -17,7 +17,7 @@ export default {
   rotatingReferenceFrame: 'Barycenter',
   cameraFocus: 'Barycenter',
   soi: 'Earth',
-  barycenterZ: 10500000,
+  barycenterZ: 25500000,
   collisions: true,
   particles: {
     max: 20000,
@@ -31,14 +31,14 @@ export default {
   scenarioWikiUrl: 'https://en.wikipedia.org/wiki/Free-return_trajectory',
   masses: [
     {
-      name: 'Starship',
+      name: 'Apollo',
       x: 0.9197324105567349 * 1.0001,
       y: -0.4147318273536994,
       z: -1.750037390352759e-5,
       vx: 2.4645428337894026,
       vy: 5.7097644117945805 * 1.2,
       vz: -3.3177815766459033e-4,
-      trailVertices: 4000
+      trailVertices: 0
     },
     {
       name: 'Earth',
@@ -47,8 +47,7 @@ export default {
       z: -1.750037390352759e-5,
       vx: 2.4645428337894026,
       vy: 5.7097644117945805,
-      vz: -3.3177815766459033e-4,
-      trailVertices: 4000
+      vz: -3.3177815766459033e-4
     },
     {
       name: 'Mercury',
@@ -67,7 +66,7 @@ export default {
       vx: 0.0020869837917339754,
       vy: -9.759759745137204e-4,
       vz: -4.519598528871196e-5,
-      trailVertices: 300
+      trailVertices: 0
     },
     {
       name: 'Venus',

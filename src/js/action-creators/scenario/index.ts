@@ -4,9 +4,8 @@ import filterScenarios, {
 } from '../../data/scenarios';
 import { getObjFromArrByKeyValuePair } from '../../utils';
 import { getOrbit } from '../../Physics/utils';
-import { orbitalInsertion } from '../../Physics/spacecraft/lambert';
 import cachedFetch from '../../cachedFetch';
-import { AppActionTypes, SET_LOADING } from '../../action-types/app';
+import { AppActionTypes } from '../../action-types/app';
 import {
   ScenarioActionTypes,
   GET_SCENARIO,
@@ -18,6 +17,7 @@ import {
   ScenarioProperty,
   MassProperty
 } from '../../action-types/scenario';
+import { setLoading } from '../../action-creators/app';
 import { Action, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import { scenarioDefaults } from '../../data/scenarios/defaults';
@@ -29,36 +29,44 @@ export const getScenario = (
   name: string
 ): ThunkAction<void, AppState, void, Action> => async (
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
-  getState: any
+  getState: () => AppState
 ) => {
   const scenario = filterScenarios(name, getState().scenarios);
 
-  dispatch({
-    type: SET_LOADING,
-    payload: {
+  dispatch(
+    setLoading({
       loading: true,
       whatIsLoading: scenario.name
-    }
-  });
+    })
+  );
 
   if (!scenario.exoPlanetArchive) {
     dispatch({
       type: GET_SCENARIO,
       scenario: scenario
     });
+
+    sessionStorage.setItem('currentScenario', JSON.stringify(scenario));
   } else {
     const data = await cachedFetch(
       `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl&where=pl_hostname like '${name}'&format=json`
     );
 
+    const processedExoplanetData = {
+      ...scenarioDefaults,
+      ...scenario,
+      ...processExoplanetArchiveData(data)
+    };
+
     dispatch({
       type: GET_SCENARIO,
-      scenario: {
-        ...scenarioDefaults,
-        ...scenario,
-        ...processExoplanetArchiveData(data)
-      }
+      scenario: processedExoplanetData
     });
+
+    sessionStorage.setItem(
+      'currentScenario',
+      JSON.stringify(processExoplanetArchiveData)
+    );
   }
 };
 
@@ -77,6 +85,20 @@ export const modifyScenarioProperty = (
     })
   );
 
+export const resetScenario = () =>
+  modifyScenarioProperty(
+    ...Object.entries(
+      JSON.parse(sessionStorage.getItem('currentScenario'))
+    ).map(([key, value]: [string, any]) => ({
+      key,
+      value
+    })),
+    {
+      key: 'reset',
+      value: true
+    }
+  );
+
 export const modifyMassProperty = (
   ...massProperties: MassProperty[]
 ): ThunkAction<void, AppState, void, Action> => (
@@ -93,7 +115,7 @@ export const addMass = (
   payload: AddMass
 ): ThunkAction<void, AppState, void, Action> => (
   dispatch: Dispatch<ScenarioActionTypes>,
-  getState: any
+  getState: () => AppState
 ) => {
   const scenario = getState().scenario;
 
@@ -120,27 +142,32 @@ export const getTrajectory = (
   applyTrajectory = true
 ): ThunkAction<void, AppState, void, Action> => async (
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
-  getState: any
+  getState: () => AppState
 ) => {
-  dispatch({
-    type: MODIFY_SCENARIO_PROPERTY,
-    payload: {
+  const scenario = getState().scenario;
+
+  const originalPlayState = scenario.playing ? true : false;
+  const originalTrailsState = scenario.trails ? true : false;
+
+  modifyScenarioProperty(
+    {
       key: 'playing',
       value: false
+    },
+    {
+      key: 'trails',
+      value: false
     }
-  });
+  )(dispatch, getState);
 
-  dispatch({
-    type: SET_LOADING,
-    payload: {
+  dispatch(
+    setLoading({
       loading: true,
       whatIsLoading: 'Generating trajectory'
-    }
-  });
+    })
+  );
 
   const trajectoryCruncher = new TrajectoryCruncher();
-
-  const scenario = getState().scenario;
 
   const currentSOIChildOf = findCurrentSOI(
     getObjFromArrByKeyValuePair(scenario.masses, 'name', currentSOI.name),
@@ -209,109 +236,40 @@ export const getTrajectory = (
   trajectoryCruncher.terminate();
 
   if (applyTrajectory) {
-    dispatch({
-      type: MODIFY_SCENARIO_PROPERTY,
-      payload: {
-        key: 'masses',
-        value: rotatedScenario
-      }
-    });
+    modifyScenarioProperty({
+      key: 'masses',
+      value: rotatedScenario
+    })(dispatch, getState);
 
-    dispatch({
-      type: MODIFY_MASS_PROPERTY,
-      payload: {
+    modifyMassProperty(
+      {
         name: spacecraft.name,
         key: 'vx',
         value: trajectory.x
-      }
-    });
-    dispatch({
-      type: MODIFY_MASS_PROPERTY,
-      payload: {
+      },
+      {
         name: spacecraft.name,
         key: 'vy',
         value: trajectory.y
-      }
-    });
-    dispatch({
-      type: MODIFY_MASS_PROPERTY,
-      payload: {
+      },
+      {
         name: spacecraft.name,
         key: 'vz',
         value: trajectory.z
       }
-    });
+    )(dispatch, getState);
   }
 
-  dispatch({
-    type: MODIFY_SCENARIO_PROPERTY,
-    payload: {
-      key: 'trajectoryRendevouz',
-      value: rendevouz
-    }
-  });
+  modifyScenarioProperty(
+    { key: 'trajectoryRendevouz', value: rendevouz },
+    { key: 'trails', value: originalTrailsState },
+    { key: 'playing', value: originalPlayState }
+  )(dispatch, getState);
 
-  modifyScenarioProperty({ key: 'trajectoryRendevouz', value: rendevouz });
-
-  dispatch({
-    type: SET_LOADING,
-    payload: {
+  dispatch(
+    setLoading({
       loading: false,
       whatIsLoading: ''
-    }
-  });
-};
-
-export const getOrbitalBurn = (
-  payload: { primary: string; periapsis: number; apoapsis: number },
-  applyBurn = true
-): ThunkAction<void, AppState, void, Action> => (
-  dispatch: Dispatch<ScenarioActionTypes>,
-  getState: any
-) => {
-  const scenario = getState().scenario;
-
-  const primary = getObjFromArrByKeyValuePair(
-    scenario.masses,
-    'name',
-    payload.primary
+    })
   );
-  const orbit = orbitalInsertion(primary, payload, scenario.g);
-
-  if (applyBurn) {
-    const [spacecraft] = scenario.masses;
-
-    dispatch({
-      type: MODIFY_MASS_PROPERTY,
-      payload: {
-        name: spacecraft.name,
-        key: 'vx',
-        value: orbit.x
-      }
-    });
-    dispatch({
-      type: MODIFY_MASS_PROPERTY,
-      payload: {
-        name: spacecraft.name,
-        key: 'vy',
-        value: orbit.y
-      }
-    });
-    dispatch({
-      type: MODIFY_MASS_PROPERTY,
-      payload: {
-        name: spacecraft.name,
-        key: 'vz',
-        value: orbit.z
-      }
-    });
-  }
-
-  dispatch({
-    type: MODIFY_SCENARIO_PROPERTY,
-    payload: {
-      key: 'orbitalInsertionV',
-      value: { x: orbit.x, y: orbit.y, z: orbit.z }
-    }
-  });
 };

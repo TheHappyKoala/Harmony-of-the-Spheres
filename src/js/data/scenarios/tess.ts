@@ -7,6 +7,7 @@ export default {
   distMin: -50,
   rotatingReferenceFrame: 'Moon',
   cameraFocus: 'Earth',
+  customCameraToBodyDistanceFactor: 180,
   particles: {
     max: 20000,
     size: 80,
@@ -54,7 +55,8 @@ export default {
       z: -6.857674452150818e-5,
       vx: -6.021880706772151,
       vy: 2.4879372578404126,
-      vz: -0.10271423737146826
+      vz: -0.10271423737146826,
+      trailVertices: 16000
     }
   ]
 };

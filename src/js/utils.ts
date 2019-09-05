@@ -52,3 +52,26 @@ export function subtractDateFromAnotherDate(date1: number, date2: number) {
 export function convertMillisecondsToYears(milliseconds: number) {
   return milliseconds / 31536000000;
 }
+
+export const getPaginationRange = (page: number, count: number) => {
+  let start;
+  let end;
+
+  if (count <= 10) {
+    start = 1;
+    end = count;
+  } else {
+    if (page <= 6) {
+      start = 1;
+      end = 10;
+    } else if (page + 4 >= count) {
+      start = count - 9;
+      end = count;
+    } else {
+      start = page - 5;
+      end = page + 4;
+    }
+  }
+
+  return { start, end };
+};

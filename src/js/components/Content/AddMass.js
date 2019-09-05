@@ -119,7 +119,7 @@ export default class extends Component {
           Semi-major Axis{' '}
           <Tooltip
             position="left"
-            content="Either of two points on the orbit of a planet or satellite that are nearest to or furthest from the body round which it moves. If apsis one is equal to apsis two you get the special case of a circular orbit."
+            content="The semi-major axis, a, is half of the longest diameter of the ellipse the constitutes the shape of the orbit. "
           />
         </label>
         <Slider
@@ -135,7 +135,7 @@ export default class extends Component {
           Eccentricity{' '}
           <Tooltip
             position="left"
-            content="The argument of periapsis, w, is one of the orbital elements of an orbiting body. Parametrically, w is the angle from the mass's ascending node to its periapsis, the point in its orbit where the mass is the closest to the body it orbits, measured in the direction of motion."
+            content="The orbital element that determines the shape of the orbit. Bound orbits always have a value between 0 and 1, a value of 0 means the orbit has the shape of a perfect circle."
           />
         </label>
         <Slider
@@ -150,7 +150,7 @@ export default class extends Component {
           Argument of Periapsis{' '}
           <Tooltip
             position="left"
-            content="The argument of periapsis, w, is one of the orbital elements of an orbiting body. Parametrically, w is the angle from the mass's ascending node to its periapsis, the point in its orbit where the mass is the closest to the body it orbits, measured in the direction of motion."
+            content="The angle, starting from the center of the orbit, between an orbiting body's periapsis, the point in space where it is the closest to the primary it is orbiting, and its ascending node."
           />
         </label>
         <Slider
@@ -165,7 +165,7 @@ export default class extends Component {
           Inclination{' '}
           <Tooltip
             position="left"
-            content="Orbital inclination, i, measures the tilt of an object's orbit around a celestial body. It is expressed as the angle between a reference plane and the orbital plane or axis of direction of the orbiting object."
+            content="Orbital inclination is the angle between the plane of an orbit and an arbitrarily defined equator. If a body has an orbital inclination of 90 degrees, orbits from the geographic South to North pole of its primary."
           />
         </label>
         <Slider
@@ -180,7 +180,7 @@ export default class extends Component {
           Longitude of the Ascending Node{' '}
           <Tooltip
             position="left"
-            content="Orbital inclination, i, measures the tilt of an object's orbit around a celestial body. It is expressed as the angle between a reference plane and the orbital plane or axis of direction of the orbiting object."
+            content="The ascending node is the angular position at which a celestial body passes from the southern side of an arbitrarily defined reference plane to the northern side."
           />
         </label>
         <Slider
