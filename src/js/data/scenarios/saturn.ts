@@ -1,5 +1,5 @@
 export default {
-  name: 'Earth VS. the Rings of Saturn',
+  name: 'Earth Spoils Saturn',
   type: 'What-If',
   integrator: 'RK4',
   g: 39.5,
@@ -24,7 +24,7 @@ export default {
       {
         primary: 'Saturn',
         tilt: [-26.73, 0, 0],
-        number: 40000,
+        number: 30000,
         minD: 0.0006749650466666667,
         maxD: 0.00111244757
       }

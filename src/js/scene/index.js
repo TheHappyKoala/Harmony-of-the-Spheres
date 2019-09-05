@@ -726,10 +726,21 @@ export default {
       if (this.previousCameraFocus !== cameraFocus && cameraFocus === name) {
         this.previousCameraFocus = cameraFocus;
 
+        const customCameraToBodyDistanceFactor = this.scenario
+          .customCameraToBodyDistanceFactor;
+
         this.camera.position.set(
-          this.manifestationPosition.x - mass.radius * 10,
+          this.manifestationPosition.x -
+            mass.radius *
+              (customCameraToBodyDistanceFactor
+                ? customCameraToBodyDistanceFactor
+                : 10),
           this.manifestationPosition.y,
-          this.manifestationPosition.z + mass.radius * 5
+          this.manifestationPosition.z +
+            mass.radius *
+              (customCameraToBodyDistanceFactor
+                ? customCameraToBodyDistanceFactor
+                : 5)
         );
 
         this.camera.lookAt(...manifestationPositionArray);

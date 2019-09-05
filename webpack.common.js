@@ -11,7 +11,7 @@ module.exports = {
       hash: true
     }),
     new webpack.DefinePlugin({
-      DEFAULT_SCENARIO: JSON.stringify("Earth VS. the Rings of Saturn"),
+      DEFAULT_SCENARIO: JSON.stringify("Earth Spoils Saturn"),
       EXOPLANET_ARCHIVE_DATA: JSON.stringify([
         {
           query: `where=pl_facility like 'Transiting Exoplanet Survey Satellite (TESS)'`,

@@ -11,6 +11,10 @@ export default {
   distMax: 50,
   distMin: -50,
   primary: 'Jupiter',
+  particles: {
+    max: 6000,
+    size: 200
+  },
   maximumDistance: { name: 'Io to Jupiter * 150', value: 0.42285 },
   distanceStep: { name: 'Io to Jupiter / 10', value: 0.00028189999999999997 },
   scenarioWikiUrl:

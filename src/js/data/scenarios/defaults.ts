@@ -5,6 +5,7 @@ export const scenarioDefaults = {
   rotatingReferenceFrame: 'Barycenter',
   cameraFocus: 'Barycenter',
   integrator: 'PEFRL',
+  customCameraToBodyDistanceFactor: false,
   barycenterZ: 10000,
   trajectoryRendevouz: {
     x: 0,
