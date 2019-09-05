@@ -420,6 +420,11 @@ h4 {
   color: #eee;
   padding-bottom: 20px;
 }
+.spaceflight-disclaimer {
+  font-weight: bold;
+  font-style: italic;
+  color: red;
+}
 .cockpit-dashboard-grid {
   display: grid;
   grid-template-columns: 240px 240px;
@@ -440,7 +445,7 @@ h4 {
   margin-bottom: 12px;
 }
 .box.cockpit-dashboard-tabs-pane {
-  height: 260px;
+  height: 320px;
   border-top: none;
 }
 .trajectory-table {
