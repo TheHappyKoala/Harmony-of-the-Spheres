@@ -133,7 +133,10 @@ export default ({
               noCloseButton={true}
             >
               <div data-label="Trajectory" data-icon="fas fa-rocket fa-2x">
-                <label>
+                <p className="spaceflight-disclaimer">
+                  This feature is in development and this is just a demo.
+                </p>
+                <label className="top">
                   Target{' '}
                   <Tooltip
                     position="left"
