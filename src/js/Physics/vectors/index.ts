@@ -48,6 +48,22 @@ export default class {
     return { dx, dy, dz, dSquared, d: Math.sqrt(dSquared) };
   }
 
+  getDirectionalSlope(v: VectorType) {
+    const dParams = this.getDistanceParameters(v);
+
+    const dx = dParams.dx;
+    const dy = dParams.dy;
+    const dz = dParams.dz;
+
+    const d = dParams.d;
+
+    return {
+      x: dx / d * dx / d,
+      y: dy / d * dy / d,
+      z: dz / d * dz / d
+    };
+  }
+
   add(v: VectorType): this {
     this.x += v.x;
     this.y += v.y;
