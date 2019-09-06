@@ -132,28 +132,6 @@ export default class extends THREE.Object3D {
     this.add(mesh);
   }
 
-  getClouds() {
-    const geometry = new THREE.SphereBufferGeometry(
-      this.mass.radius + this.mass.radius / 80,
-      this.segments,
-      this.segments
-    );
-
-    const material = new THREE.MeshLambertMaterial({
-      map: this.textureLoader.load(`./textures/${this.mass.texture}Clouds.png`),
-      side: THREE.DoubleSide,
-      opacity: 0.8,
-      transparent: true,
-      depthWrite: false
-    });
-
-    const mesh = new THREE.Mesh(geometry, material);
-
-    mesh.name = 'Clouds';
-
-    this.add(mesh);
-  }
-
   getTrail() {
     const geometry = new THREE.Geometry();
 
@@ -195,19 +173,11 @@ export default class extends THREE.Object3D {
 
   createManifestation() {
     this.getMain();
-    this.mass.clouds && this.getClouds();
   }
 
   draw(x, y, z, playing, drawTrail) {
     const main = this.getObjectByName('Main');
     const trail = this.getObjectByName('Trail');
-
-    if (this.mass.clouds) {
-      const clouds = this.getObjectByName('Clouds');
-
-      clouds.position.set(x, y, z);
-      clouds.rotation.z += 0.0005;
-    }
 
     main.position.set(x, y, z);
 
@@ -234,14 +204,5 @@ export default class extends THREE.Object3D {
     }
 
     this.removeTrail();
-
-    const clouds = this.getObjectByName('Clouds');
-
-    if (clouds) {
-      clouds.geometry.dispose();
-      clouds.material.map.dispose();
-      clouds.material.dispose();
-      this.remove(clouds);
-    }
   }
 }
