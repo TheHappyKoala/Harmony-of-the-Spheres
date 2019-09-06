@@ -403,12 +403,16 @@ export default {
     if (excessFragments < 0)
       this.particlePhysics.particles.splice(0, -excessFragments);
 
-    const maxAngle = 15;
+    const maxAngle = 35;
 
     const deflectedVelocity = CollisionsService.getDeflectedVelocity(
       survivor,
       looser
     );
+
+    const directionalSlope = new H3().set(survivor).getDirectionalSlope(looser);
+
+    const realLooserRadius = looser.radius / this.scenario.scale;
 
     for (let i = 0; i < numberOfFragments; i++) {
       const angleX = getRandomNumberInRange(-maxAngle, maxAngle);
@@ -429,6 +433,11 @@ export default {
             x: looser.x,
             y: looser.y,
             z: looser.z
+          })
+          .add({
+            x: Math.sign(looser.vx) * (realLooserRadius * directionalSlope.x),
+            y: Math.sign(looser.vy) * (realLooserRadius * directionalSlope.y),
+            z: Math.sign(looser.vz) * (realLooserRadius * directionalSlope.z)
           })
           .toObject(),
         vx: particleVelocity.x / clampAbs(1, maxAngle, angleX / 10),
