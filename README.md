@@ -1,9 +1,9 @@
 # Harmony of the Spheres
 Newtonian n-body gravity simulator
 
-![Earth spoiling the rings of Saturn](src/images/saturn-min.gif)
-
 ![Moons acting out around Mars](src/images/lunacy-min.gif)
+
+![Earth spoiling the rings of Saturn](src/images/saturn-min.gif)
 
 [DEMO](https://thehappykoala.github.io/Harmony-of-the-Spheres/)
 
