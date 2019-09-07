@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import particle from './shaders/particle';
 
-export default (textureLoader, texture) => {
+export default (textureLoader: THREE.TextureLoader, texture: string) => {
   return new THREE.ShaderMaterial({
     uniforms: {
       texture: {

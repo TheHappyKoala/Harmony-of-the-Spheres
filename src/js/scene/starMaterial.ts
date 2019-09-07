@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import star from './shaders/star';
 
-export default function(texture, starColor) {
+export default function(texture: string, starColor: THREE.Vector3) {
   return new THREE.ShaderMaterial({
     uniforms: {
       time: { value: 0 },

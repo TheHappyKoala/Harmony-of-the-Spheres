@@ -1,8 +1,9 @@
 declare module 'three' {
+  export const AdditiveBlending: number;
+  export const NormalBlending: number;
   export class PerspectiveCamera {
     constructor(fov: Number, aspect: Number, near: Number, far: Number);
   }
-
   export class Vector3 {
     x: number;
     y: number;
