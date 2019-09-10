@@ -141,7 +141,6 @@ export default {
     });
 
     this.barycenterPosition = new H3();
-    this.rotatingReferenceFrame = new H3();
     this.manifestationPosition = new H3();
 
     this.previousI = this.scenario.i;
@@ -258,11 +257,12 @@ export default {
       const scale = scenario.scale;
 
       this.addMassTrajectory.position.z =
-        (this.rotatingReferenceFrame.z - primary.z) * scale;
+        (this.camera.rotatingReferenceFrame.z - primary.z) * scale;
 
       this.addMassTrajectory.update(
-        (this.rotatingReferenceFrame.x - primary.x + ellipse.focus) * scale,
-        (this.rotatingReferenceFrame.y - primary.y) * scale,
+        (this.camera.rotatingReferenceFrame.x - primary.x + ellipse.focus) *
+          scale,
+        (this.camera.rotatingReferenceFrame.y - primary.y) * scale,
         ellipse.xRadius * scale,
         ellipse.yRadius * scale,
         0,
@@ -308,11 +308,12 @@ export default {
     const scale = this.scenario.scale;
 
     this.spacecraftTrajectoryCurve.position.z =
-      (this.rotatingReferenceFrame.z - primary.z) * scale;
+      (this.camera.rotatingReferenceFrame.z - primary.z) * scale;
 
     this.spacecraftTrajectoryCurve.update(
-      (this.rotatingReferenceFrame.x - primary.x + ellipse.focus) * scale,
-      (this.rotatingReferenceFrame.y - primary.y) * scale,
+      (this.camera.rotatingReferenceFrame.x - primary.x + ellipse.focus) *
+        scale,
+      (this.camera.rotatingReferenceFrame.y - primary.y) * scale,
       ellipse.xRadius * scale,
       ellipse.yRadius * scale,
       0,
@@ -521,20 +522,11 @@ export default {
       this.barycenterPosition
     );
 
-    if (rotatingReferenceFrame === 'Barycenter')
-      this.rotatingReferenceFrame.set(this.barycenterPosition);
-    else
-      for (let i = 0; i < this.system.masses.length; i++) {
-        const mass = this.system.masses[i];
-
-        if (mass.name === rotatingReferenceFrame) {
-          this.rotatingReferenceFrame.set({
-            x: mass.x,
-            y: mass.y,
-            z: mass.z
-          });
-        }
-      }
+    this.camera.setRotatingReferenceFrame(
+      this.scenario.rotatingReferenceFrame,
+      this.system.masses,
+      this.barycenterPosition
+    );
 
     this.updateAddMassTrajectory();
 
@@ -544,7 +536,7 @@ export default {
       rotatingReferenceFrame !== 'Barycenter' ? this.scenario.scale : 1;
 
     this.barycenterPosition
-      .subtractFrom(this.rotatingReferenceFrame)
+      .subtractFrom(this.camera.rotatingReferenceFrame)
       .multiplyByScalar(barycenterPositionScaleFactor);
 
     this.diffMasses(this.massManifestations, this.scenario.masses);
@@ -601,7 +593,7 @@ export default {
 
       this.manifestationPosition
         .set({ x: mass.x, y: mass.y, z: mass.z })
-        .subtractFrom(this.rotatingReferenceFrame)
+        .subtractFrom(this.camera.rotatingReferenceFrame)
         .multiplyByScalar(this.scenario.scale);
 
       const manifestationPositionArray = this.manifestationPosition.toArray();
@@ -778,7 +770,7 @@ export default {
     if (this.scenario.particles)
       this.particles.draw(
         this.particlePhysics.particles,
-        this.rotatingReferenceFrame
+        this.camera.rotatingReferenceFrame
       );
 
     if (this.scenario.particles && this.scenario.playing)
