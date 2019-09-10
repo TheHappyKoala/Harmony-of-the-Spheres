@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement, useState, useEffect } from 'react';
+import React, { ReactElement, useState, useEffect } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Dropdown from '../Dropdown';
 import Slider from '../Slider';

@@ -7,7 +7,6 @@ interface GraphicsProps {
   barycenter: boolean;
   trails: boolean;
   labels: boolean;
-  sizeAttenuation: boolean;
   habitableZone: boolean;
   referenceOrbits: boolean;
 }
@@ -17,7 +16,6 @@ export default ({
   barycenter,
   trails,
   labels,
-  sizeAttenuation,
   habitableZone,
   referenceOrbits
 }: GraphicsProps): ReactElement => (

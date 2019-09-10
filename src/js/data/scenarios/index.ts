@@ -26,12 +26,12 @@ import masses from '../masses';
 import { MassTemplate } from '../../action-types/scenario';
 import { scenarioDefaults } from './defaults';
 import { MassType } from '../../Physics/types';
-import { ScenarioProps } from '../../action-types/scenario';
 import {
   calculateOrbitalVertices,
   elementsToVectors
 } from '../../Physics/utils';
 import { getRandomColor, getObjFromArrByKeyValuePair } from '../../utils';
+import { AppState } from '../../reducers';
 
 const computeDerivedMassesData = (
   scenarioMasses: MassType[],
@@ -67,8 +67,6 @@ const computeDerivedMassesData = (
               )
             : calculateOrbitalVertices(mass.orbitalPeriod, dt, drawLineEvery),
       tilt: 'tilt' in template ? template.tilt : 0,
-      atmosphere: 'atmosphere' in template ? template.atmosphere : false,
-      clouds: 'clouds' in template ? template.clouds : false,
       type:
         'type' in template ? template.type : 'type' in mass ? mass.type : false,
       texture:
@@ -257,14 +255,104 @@ export const scenarios = [
   rh120
 ];
 
-export default (scenario: string, scenarios: any[]): ScenarioProps | any => {
-  const selectedScenario: ScenarioProps = getObjFromArrByKeyValuePair(
+export default (
+  scenario: string,
+  scenarios: any[]
+): {
+  //Meta types
+
+  name: string;
+  type: string;
+  exoPlanetArchive?: boolean;
+  forAllMankind?: boolean;
+  scenarioWikiUrl?: string;
+
+  //State related types
+
+  playing: boolean;
+  isLoaded: boolean;
+
+  //Integrator related types
+
+  integrator: string;
+  dt: number;
+  tol: number;
+  minDt: number;
+  maxDt: number;
+  g: number;
+  softeningConstant: number;
+  useBarnesHut?: boolean;
+  theta: number;
+  elapsedTime: number;
+
+  //Barycenter related types
+
+  barycenter: boolean;
+  systemBarycenter: boolean;
+  barycenterMassOne: string;
+  barycenterMassTwo: string;
+
+  collisions: boolean;
+  particles?: {
+    max: number;
+    size: number;
+    rings: {
+      primary: string;
+      tilt: [number, number, number];
+      number: number;
+      minD: number;
+      maxD: number;
+    }[];
+  };
+  maximumDistance: number;
+  distMax: number;
+  distMin: number;
+  velMin: number;
+  velMax: number;
+  velStep: number;
+  masses: MassType[];
+  massBeingModified: string;
+
+  //Graphics related types
+
+  trails: boolean;
+  labels: boolean;
+  habitableZone: boolean;
+  referenceOrbits: boolean;
+
+  //Camera related types
+
+  logarithmicDepthBuffer: boolean;
+  rotatingReferenceFrame: string;
+  cameraFocus: string;
+
+  //Add mass related types
+
+  isMassBeingAdded: boolean;
+  primary: string;
+  a: number;
+  e: number;
+  w: number;
+  i: number;
+  o: number;
+
+  //Spaceflight related types
+
+  trajectoryTarget?: string;
+  trajectoryTargetArrival?: number;
+  trajectoryDepartureVelocity?: number;
+  trajectoryArrivalVelocity?: number;
+  trajectoryRelativeTo?: string;
+  trajectoryRendevouz?: any;
+  soi?: string;
+} => {
+  const selectedScenario: AppState['scenario'] = getObjFromArrByKeyValuePair(
     scenarios,
     'name',
     scenario
   );
 
-  if (selectedScenario.exoPlanetArchive === true) return selectedScenario;
+  if (selectedScenario.exoPlanetArchive) return selectedScenario;
 
   return computeDerivedScenarioData(
     JSON.parse(JSON.stringify(selectedScenario)),

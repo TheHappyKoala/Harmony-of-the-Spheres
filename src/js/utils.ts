@@ -1,22 +1,26 @@
-export function getRandomColor() {
+export const getRandomColor = (): string => {
   const letters = '0123456789ABCDEF';
   let color = '#';
 
   for (let i = 0; i < 6; i++) color += letters[Math.floor(Math.random() * 16)];
 
   return color;
-}
+};
 
-export function getObjFromArrByKeyValuePair(arr: any[], key: string, val: any) {
+export const getObjFromArrByKeyValuePair = (
+  arr: any[],
+  key: string,
+  val: any
+) => {
   const obj = arr.filter(entry => entry[key].indexOf(val) > -1)[0];
 
   return typeof obj !== 'undefined' ? obj : {};
-}
+};
 
-export function removeDuplicatesByKey(
+export const removeDuplicatesByKey = (
   arr: { [x: string]: any }[],
   key: string
-) {
+): { [x: string]: any }[] => {
   const trimmedArray = [];
   const values = [];
 
@@ -32,9 +36,15 @@ export function removeDuplicatesByKey(
   }
 
   return trimmedArray;
-}
+};
 
-export function getTextureFromCanvas(callback: Function) {
+export const getTextureFromCanvas = (
+  callback: (
+    ctx: CanvasRenderingContext2D,
+    width: number,
+    height: number
+  ) => void
+): HTMLCanvasElement => {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
   const width = window.innerWidth;
@@ -43,17 +53,20 @@ export function getTextureFromCanvas(callback: Function) {
   callback(ctx, width, height);
 
   return canvas;
-}
+};
 
-export function subtractDateFromAnotherDate(date1: number, date2: number) {
-  return Math.abs(date2 - date1);
-}
+export const subtractDateFromAnotherDate = (
+  date1: number,
+  date2: number
+): number => Math.abs(date2 - date1);
 
-export function convertMillisecondsToYears(milliseconds: number) {
-  return milliseconds / 31536000000;
-}
+export const convertMillisecondsToYears = (milliseconds: number): number =>
+  milliseconds / 31536000000;
 
-export const getPaginationRange = (page: number, count: number) => {
+export const getPaginationRange = (
+  page: number,
+  count: number
+): { start: number; end: number } => {
   let start;
   let end;
 

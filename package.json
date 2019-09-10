@@ -6,19 +6,23 @@
     "start": "node server.js",
     "dev": "webpack-dev-server --config ./webpack.dev.js --mode development",
     "build": "webpack --config ./webpack.prod.js --mode production",
+    "lint": "tsc --noEmit",
     "test": "echo \"No test specified\" && exit 0",
     "prettier": "prettier --single-quote --print-width 80 \"src/**/*.{js,ts,tsx,less}\" --write"
   },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "linters": {
+      "src/**/*.{ts,tsx}": [
+        "npm run lint --silent"
+      ],
       "src/**/*.{js,ts,tsx,less}": [
-        "prettier --single-quote --print-width 80 \"src/**/*.{js,ts,tsx,less}\" --write",
-        "git add"
+        "npm run prettier"
       ]
     }
   },
@@ -44,6 +48,8 @@
     "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "@types/webpack-env": "^1.13.9",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.6",

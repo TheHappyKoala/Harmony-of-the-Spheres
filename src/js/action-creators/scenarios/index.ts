@@ -11,6 +11,8 @@ import cachedFetch from '../../cachedFetch';
 import { removeDuplicatesByKey } from '../../utils';
 
 export const addScenario = (payload: {
+  name: string;
+  type: string;
   [x: string]: any;
 }): ScenariosActionTypes => ({
   type: ADD_SCENARIO,
@@ -21,7 +23,7 @@ export const saveScenario = (
   payload: string
 ): ThunkAction<void, AppState, void, Action> => (
   dispatch: Dispatch<ScenariosActionTypes>,
-  getState: any
+  getState: () => AppState
 ) => {
   const scenario = getState().scenario;
 

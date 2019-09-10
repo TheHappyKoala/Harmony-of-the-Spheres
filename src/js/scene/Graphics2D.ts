@@ -44,7 +44,12 @@ export default class {
     isTarget: boolean,
     placement: string,
     color: string,
-    drawSymbolCallback: Function,
+    drawSymbolCallback: (
+      ctx: CanvasRenderingContext2D,
+      x: number,
+      y: number,
+      color: string
+    ) => void,
     topOffset = 0
   ): void {
     p = this.threeToTwo(p, camera, isTarget);
@@ -77,12 +82,12 @@ export default class {
   }
 }
 
-export function drawBaryCenterLabel(
+export const drawBaryCenterLabel = (
   ctx: CanvasRenderingContext2D,
   x: number,
   y: number,
   color: string
-): void {
+): void => {
   ctx.strokeStyle = color;
   ctx.lineWidth = 2;
   ctx.beginPath();
@@ -94,26 +99,26 @@ export function drawBaryCenterLabel(
   ctx.moveTo(x, y);
   ctx.lineTo(x + 30, y);
   ctx.stroke();
-}
+};
 
-export function drawMassLabel(
+export const drawMassLabel = (
   ctx: CanvasRenderingContext2D,
   x: number,
   y: number,
   color: string
-): void {
+): void => {
   ctx.strokeStyle = color;
   ctx.beginPath();
   ctx.arc(x, y, 8, 0, 2 * Math.PI);
   ctx.stroke();
-}
+};
 
 export const drawReferenceOrbitLabel = (
   ctx: CanvasRenderingContext2D,
   x: number,
   y: number,
   color: string
-) => {
+): void => {
   ctx.strokeStyle = color;
   ctx.lineWidth = 2;
   ctx.beginPath();

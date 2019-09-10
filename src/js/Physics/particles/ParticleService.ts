@@ -1,6 +1,5 @@
 import { MassType } from '../types';
 import H3 from '../vectors';
-
 import { getRandomNumberInRange, getRandomRadian, getVMag } from '../utils';
 
 export default class {
@@ -8,7 +7,7 @@ export default class {
     number: number,
     minD: number,
     maxD: number,
-    callback: Function
+    callback: (particles: MassType[], minD: number, maxD: number) => void
   ): MassType[] {
     const particles: MassType[] = [];
 

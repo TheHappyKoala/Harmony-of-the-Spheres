@@ -1,6 +1,5 @@
 import React, { ReactElement, useEffect, Fragment, useState } from 'react';
 import { AppState } from '../../reducers';
-import { ScenarioProps } from '../../action-types/scenario';
 import { connect } from 'react-redux';
 import * as scenarioActionCreators from '../../action-creators/scenario';
 import * as scenariosActionCreators from '../../action-creators/scenarios';
@@ -40,8 +39,7 @@ const mapDispatchToProps = {
   saveScenario: scenariosActionCreators.saveScenario
 };
 
-interface AppProps {
-  scenario: ScenarioProps;
+interface AppProps extends AppState {
   modifyScenarioProperty: typeof scenarioActionCreators.modifyScenarioProperty;
   modifyMassProperty: typeof scenarioActionCreators.modifyMassProperty;
   deleteMass: typeof scenarioActionCreators.deleteMass;
@@ -51,11 +49,6 @@ interface AppProps {
   resetScenario: typeof scenarioActionCreators.resetScenario;
   saveScenario: typeof scenariosActionCreators.saveScenario;
   scenarioName: string;
-  app: {
-    booted: boolean;
-    loading: boolean;
-    whatIsLoading: string;
-  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(
@@ -204,7 +197,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                   barycenter={scenario.barycenter}
                   trails={scenario.trails}
                   labels={scenario.labels}
-                  sizeAttenuation={scenario.sizeAttenuation}
                   modifyScenarioProperty={modifyScenarioProperty}
                   habitableZone={scenario.habitableZone}
                   referenceOrbits={scenario.referenceOrbits}
