@@ -12,6 +12,7 @@
   },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
@@ -21,8 +22,7 @@
         "npm run lint"
       ],
       "src/**/*.{js,ts,tsx,less}": [
-        "prettier --single-quote --print-width 80 \"src/**/*.{js,ts,tsx,less}\" --write",
-        "git add"
+        "prettier --single-quote --print-width 80 \"src/**/*.{js,ts,tsx,less}\" --write"
       ]
     }
   },
@@ -48,6 +48,8 @@
     "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "@types/webpack-env": "^1.13.9",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.6",
