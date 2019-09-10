@@ -17,7 +17,8 @@
     "target": "ES2015",
     "jsx": "react",
     "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "noErrorTruncation": true
   },    
   "include": [
     "src/**/*"
