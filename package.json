@@ -19,10 +19,10 @@
   "lint-staged": {
     "linters": {
       "src/**/*.{ts,tsx}": [
-        "npm run lint"
+        "npm run lint --silent"
       ],
       "src/**/*.{js,ts,tsx,less}": [
-        "prettier --single-quote --print-width 80 \"src/**/*.{js,ts,tsx,less}\" --write"
+        "npm run prettier"
       ]
     }
   },
