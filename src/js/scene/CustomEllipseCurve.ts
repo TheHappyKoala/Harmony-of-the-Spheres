@@ -3,7 +3,8 @@ import {
   BufferGeometry,
   Float32BufferAttribute,
   LineBasicMaterial,
-  Line
+  Line,
+  Vector3
 } from 'three';
 import { degreesToRadians } from '../Physics/utils';
 import { VectorType } from '../Physics/types';
@@ -20,7 +21,7 @@ export default class extends Object3D {
     aRotation: { value: number };
   };
   verticesNumber: number;
-  vertices: VectorType[];
+  vertices: Vector3[];
   verticesIndices: Float32Array;
   color: string;
 
@@ -61,8 +62,10 @@ export default class extends Object3D {
   getEllipseCurve(): void {
     const verticesNumber = this.verticesNumber;
 
+    const vector = new Vector3();
+
     for (let i = 0; i < verticesNumber; i++) {
-      this.vertices.push({ x: 0, y: 0, z: 0 });
+      this.vertices.push(vector);
       this.verticesIndices[i] = i;
     }
 
@@ -185,11 +188,14 @@ export default class extends Object3D {
   }
 
   dispose() {
-    const customEllipse = this.getObjectByName('CustomEllipse');
+    const customEllipse = this.getObjectByName('CustomEllipse') as Line;
 
     if (customEllipse) {
       customEllipse.geometry.dispose();
-      customEllipse.material.dispose();
+ 
+      const material = customEllipse.material as LineBasicMaterial;
+
+      material.dispose();
       this.remove(customEllipse);
     }
   }
