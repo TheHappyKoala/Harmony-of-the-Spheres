@@ -1,5 +1,11 @@
 import { MassType } from '../Physics/types';
-import { Object3D, BufferGeometry, BufferAttribute, Points } from 'three';
+import {
+  Object3D,
+  BufferGeometry,
+  BufferAttribute,
+  Points,
+  ShaderMaterial
+} from 'three';
 import particleMaterial from './particleMaterial';
 
 interface ParticlesManifestationType {
@@ -78,15 +84,15 @@ export default class extends Object3D {
     particles: MassType[],
     frameOfRef: { x: number; y: number; z: number }
   ): void {
-    const mesh = this.getObjectByName('system');
+    const mesh = this.getObjectByName('system') as Points;
 
     const particlesLen = particles.length;
 
-    const geometry = mesh.geometry;
+    const geometry = mesh.geometry as BufferGeometry;
 
     geometry.setDrawRange(0, particlesLen);
 
-    const positions = geometry.attributes.position.array;
+    const positions = geometry.attributes.position.array as Float32Array;
 
     let j = 0;
 
@@ -106,16 +112,21 @@ export default class extends Object3D {
       j += 3;
     }
 
-    geometry.attributes.position.needsUpdate = true;
+    (<BufferAttribute>geometry.getAttribute(
+      'position'
+    )).needsUpdate = true;
   }
 
   dispose() {
-    const system = this.getObjectByName('system');
+    const system = this.getObjectByName('system') as Points;
 
     if (system) {
       system.geometry.dispose();
-      system.material.uniforms.texture.value.dispose();
-      system.material.dispose();
+
+      const material = system.material as ShaderMaterial;
+
+      material.uniforms.texture.value.dispose();
+      material.dispose();
       this.remove(system);
     }
   }

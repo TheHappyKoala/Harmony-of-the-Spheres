@@ -88,7 +88,7 @@
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "three": "^0.105.2",
+    "three": "^0.108.0",
     "three-collada-loader": "0.0.1"
   },
   "optionalDependencies": {
