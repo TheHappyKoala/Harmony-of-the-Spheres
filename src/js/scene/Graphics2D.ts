@@ -44,7 +44,12 @@ export default class {
     isTarget: boolean,
     placement: string,
     color: string,
-    drawSymbolCallback: Function,
+    drawSymbolCallback: (
+      ctx: CanvasRenderingContext2D,
+      x: number,
+      y: number,
+      color: string
+    ) => void,
     topOffset = 0
   ): void {
     p = this.threeToTwo(p, camera, isTarget);
