@@ -1,11 +1,12 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = merge(common, {
   devtool: 'source-map',
   devServer: {
-    contentBase: './src',    
+    contentBase: path.resolve(__dirname, 'src'),    
     hot: true,
     port: 7000
   },
@@ -16,19 +17,7 @@ module.exports = merge(common, {
     rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      use: ['babel-loader', 'eslint-loader']
-    }, {
-      test: /\.less$/,
-      use: [{
-          loader: 'style-loader'
-        },
-        {
-          loader: 'css-loader'
-        },
-        {
-          loader: 'less-loader'
-        }
-      ]
+      use: ['babel-loader']
     }]
   }
 });
