@@ -22,7 +22,6 @@ export default [
     radius: 86.95652173913044,
     tilt: 2.63,
     orbitalPeriod: 0.62,
-    atmosphere: { color: '#ffffe6', scaleFactor: 80 },
     name: 'Venus',
     bodyType: 'Planet'
   },
@@ -31,8 +30,6 @@ export default [
     radius: 91.74311926605505,
     tilt: -23.44,
     orbitalPeriod: 1,
-    atmosphere: { color: '#93cfef', scaleFactor: 110 },
-    clouds: true,
     name: 'Earth',
     bump: true,
     bodyType: 'Planet'
@@ -50,7 +47,6 @@ export default [
     radius: 48.62385321100918,
     tilt: -25.19,
     orbitalPeriod: 1.88,
-    atmosphere: { color: '#ffccb3', scaleFactor: 40 },
     name: 'Mars',
     bump: true,
     bodyType: 'Planet'
@@ -60,7 +56,6 @@ export default [
     radius: 1027.5229357798166,
     tilt: -3.13,
     orbitalPeriod: 11.86,
-    atmosphere: { color: '#ffccb3', scaleFactor: 1100 },
     name: 'Jupiter',
     bodyType: 'Planet'
   },
@@ -248,7 +243,6 @@ export default [
     radius: 862.3853211009175,
     tilt: -26.73,
     orbitalPeriod: 29.46,
-    atmosphere: { color: '#ffffe6', scaleFactor: 900 },
     name: 'Saturn',
     bodyType: 'Planet'
   },
@@ -257,7 +251,6 @@ export default [
     radius: 33.944954128440365,
     tilt: 0,
     orbitalPeriod: 0.0436849315,
-    atmosphere: { color: '#ffffe6', scaleFactor: 35 },
     name: 'Titan',
     bodyType: 'Moon'
   },
@@ -309,7 +302,6 @@ export default [
     radius: 370.6422018348624,
     tilt: -82.23,
     orbitalPeriod: 84.01,
-    atmosphere: { color: '#93cfef', scaleFactor: 350 },
     name: 'Uranus',
     bodyType: 'Planet'
   },
@@ -361,7 +353,6 @@ export default [
     radius: 355.9633027522936,
     tilt: -28.32,
     orbitalPeriod: 164.8,
-    atmosphere: { color: '#93cfef', scaleFactor: 350 },
     name: 'Neptune',
     bodyType: 'Planet'
   },
@@ -388,7 +379,6 @@ export default [
     radius: 19.467889908256883,
     tilt: -57.47,
     orbitalPeriod: 0.0175342,
-    atmosphere: { color: '#93cfef', scaleFactor: 20 },
     name: 'Pluto',
     bump: true,
     bodyType: 'Dwarf Planet'
@@ -417,7 +407,6 @@ export default [
     orbitalPeriod: 11200,
     radius: 355.9633027522936,
     tilt: -57.47,
-    atmosphere: { color: '#93cfef', scaleFactor: 250 },
     name: 'Planet 9',
     bodyType: 'Planet'
   },

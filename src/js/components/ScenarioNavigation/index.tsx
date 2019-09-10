@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { withRouter } from 'react-router-dom';
-import { ScenarioProps } from '../../action-types/scenario';
+import { AppState } from '../../reducers';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Dropdown from '../Dropdown';
@@ -10,7 +10,7 @@ const mapStateToProps = (
   state: {
     scenarioCategory: string;
     scenarioName: string;
-    scenarios: ScenarioProps;
+    scenarios: AppState['scenarios'];
   },
   ownProps: any
 ) => ({
@@ -22,7 +22,7 @@ const mapStateToProps = (
 interface ScenarioNavigationProps {
   scenarioCategory: string;
   scenarioName: string;
-  scenarios: ScenarioProps[];
+  scenarios: AppState['scenarios'];
 }
 
 export default withRouter(

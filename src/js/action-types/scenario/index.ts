@@ -4,74 +4,6 @@ export const MODIFY_MASS_PROPERTY = 'MODIFY_MASS_PROPERTY';
 export const ADD_MASS = 'ADD_MASS';
 export const DELETE_MASS = 'DELETE_MASS';
 
-export interface ScenarioProps {
-  name: string;
-  playing: boolean;
-  isLoaded: boolean;
-  elementsToVectors?: boolean;
-  exoPlanetArchive?: boolean;
-  forAllMankind?: boolean;
-  trajectoryTarget: string;
-  trajectoryTargetArrival: number;
-  trajectoryDepartureVelocity: number;
-  trajectoryArrivalVelocity: number;
-  trajectoryRelativeTo: string;
-  trajectoryRendevouz: any;
-  integrator: string;
-  habitableZone: boolean;
-  referenceOrbits: boolean;
-  useBarnesHut?: boolean;
-  soi?: string;
-  theta: number;
-  type: string;
-  dt: number;
-  tol: number;
-  minDt: number;
-  maxDt: number;
-  g: number;
-  softeningConstant: number;
-  barycenter: boolean;
-  systemBarycenter: boolean;
-  barycenterMassOne: string;
-  barycenterMassTwo: string;
-  collisions: boolean;
-  particles?: {
-    max: number;
-    size: number;
-    rings: {
-      primary: string;
-      tilt: [number, number, number];
-      number: number;
-      minD: number;
-      maxD: number;
-    }[];
-    hsl: [number, number, number];
-  };
-  maximumDistance: number;
-  distMax: number;
-  distMin: number;
-  velMin: number;
-  velMax: number;
-  velStep: number;
-  primary: string;
-  masses: any[];
-  massBeingModified: string;
-  trails: boolean;
-  labels: boolean;
-  sizeAttenuation: boolean;
-  rotatingReferenceFrame: string;
-  logarithmicDepthBuffer: boolean;
-  cameraPosition: string;
-  cameraFocus: string;
-  scenarioWikiUrl?: string;
-  isMassBeingAdded: boolean;
-  a: number;
-  e: number;
-  w: number;
-  i: number;
-  o: number;
-}
-
 export interface GetScenarioAction {
   type: typeof GET_SCENARIO;
   scenario: { [x: string]: any };
@@ -129,7 +61,6 @@ export interface AddMassAction {
     vx: number;
     vy: number;
     vz: number;
-    [x: string]: any;
   };
 }
 

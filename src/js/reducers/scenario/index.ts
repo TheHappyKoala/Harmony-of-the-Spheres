@@ -1,5 +1,4 @@
 import {
-  ScenarioProps,
   ScenarioActionTypes,
   GET_SCENARIO,
   MODIFY_SCENARIO_PROPERTY,
@@ -13,7 +12,7 @@ import filterScenarios, { scenarios } from '../../data/scenarios';
 export default function(
   state = filterScenarios(DEFAULT_SCENARIO, scenarios),
   action: ScenarioActionTypes
-): ScenarioProps {
+): ReturnType<typeof filterScenarios> {
   switch (action.type) {
     case GET_SCENARIO:
       return { ...state, ...action.scenario };
@@ -52,7 +51,6 @@ export default function(
           massBeingModified: 'There are no masses',
           masses: newMasses,
           rotatingReferenceFrame: 'Origo',
-          cameraPosition: 'Free',
           cameraFocus: 'Origo'
         };
       else
@@ -63,10 +61,6 @@ export default function(
           rotatingReferenceFrame:
             action.name !== state.rotatingReferenceFrame
               ? state.rotatingReferenceFrame
-              : newMasses[0].name,
-          cameraPosition:
-            action.name !== state.cameraPosition
-              ? state.cameraPosition
               : newMasses[0].name,
           cameraFocus:
             action.name !== state.cameraFocus

@@ -7,7 +7,7 @@ import {
 export default (
   state = scenarios,
   action: ScenariosActionTypes
-): { [x: string]: any }[] => {
+): { name: string; type: string; [x: string]: any }[] => {
   switch (action.type) {
     case ADD_SCENARIO:
       return [...state, action.payload];
