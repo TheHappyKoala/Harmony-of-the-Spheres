@@ -6,6 +6,7 @@
     "start": "node server.js",
     "dev": "webpack-dev-server --config ./webpack.dev.js --mode development",
     "build": "webpack --config ./webpack.prod.js --mode production",
+    "lint": "tsc --noEmit",
     "test": "echo \"No test specified\" && exit 0",
     "prettier": "prettier --single-quote --print-width 80 \"src/**/*.{js,ts,tsx,less}\" --write"
   },
@@ -16,6 +17,9 @@
   },
   "lint-staged": {
     "linters": {
+      "src/**/*.{ts,tsx}": [
+        "npm run lint"
+      ],
       "src/**/*.{js,ts,tsx,less}": [
         "prettier --single-quote --print-width 80 \"src/**/*.{js,ts,tsx,less}\" --write",
         "git add"
