@@ -51,7 +51,7 @@ Originally the codebase was all written in plain JavaScript, but when a certain 
 
 ## Pre-commit Hooks
 
-For the time being, the only pre-commit hook in place is one that prettifies the code before it is submitted, to make sure all code is uniformly and properly formatted, but the plan is to add hooks for commit messages and TypeScript linting, as well, shortly. 
+A commit can only be made if the TypeScript code is free from errors and the commit message adheres to the commitlint contentional format. The code is prettified before being committed, too.
 
 
 ## Commands
@@ -59,13 +59,16 @@ For the time being, the only pre-commit hook in place is one that prettifies the
 Getting up and running with Harmony of the Spheres is a simple affair.
 
 ### Run the App Locally
-```npm run dev```
+```npm start```
    
 ### Create a Production Build
 ```npm run build```
 
 ### Prettify the Code
 ```npm run prettier```
+
+### Lint the TypeScript Code
+```npm run lint```
 
 
 ## Integrators
