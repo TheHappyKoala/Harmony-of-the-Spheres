@@ -141,7 +141,6 @@ export default {
     });
 
     this.barycenterPosition = new H3();
-    this.manifestationPosition = new H3();
 
     this.previousI = this.scenario.i;
 
@@ -522,34 +521,36 @@ export default {
       this.barycenterPosition
     );
 
-    this.camera.setRotatingReferenceFrame(
-      this.scenario.rotatingReferenceFrame,
-      this.system.masses,
-      this.barycenterPosition
-    );
+    this.camera
+      .setRotatingReferenceFrame(
+        this.scenario.rotatingReferenceFrame,
+        this.system.masses,
+        this.barycenterPosition
+      )
+      .rotateSystem(
+        this.system.masses,
+        this.barycenterPosition,
+        rotatingReferenceFrame !== 'Barycenter' ? this.scenario.scale : 1,
+        this.scenario.scale
+      );
 
     this.updateAddMassTrajectory();
 
     if (this.scenario.forAllMankind) this.updateSpacecraftTrajectoryCurve();
 
-    const barycenterPositionScaleFactor =
-      rotatingReferenceFrame !== 'Barycenter' ? this.scenario.scale : 1;
-
-    this.barycenterPosition
-      .subtractFrom(this.camera.rotatingReferenceFrame)
-      .multiplyByScalar(barycenterPositionScaleFactor);
-
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
     this.graphics2D.clear();
+
+    const rotatedBarycenter = this.camera.rotatedBarycenter;
 
     if (this.scenario.barycenter)
       this.graphics2D.drawLabel(
         'Barycenter',
         this.utilityVector.set(
-          this.barycenterPosition.x,
-          this.barycenterPosition.y,
-          this.barycenterPosition.z
+          rotatedBarycenter.x,
+          rotatedBarycenter.y,
+          rotatedBarycenter.z
         ),
         this.camera,
         cameraFocus === 'Barycenter' ? true : false,
@@ -560,11 +561,12 @@ export default {
 
     let barycenterPositionArray;
 
-    if (cameraFocus === 'Barycenter') {
-      barycenterPositionArray = this.barycenterPosition.toArray();
-
-      this.camera.controls.target.set(...barycenterPositionArray);
-    }
+    if (cameraFocus === 'Barycenter')
+      this.camera.controls.target.set(
+        rotatedBarycenter.x,
+        rotatedBarycenter.y,
+        rotatedBarycenter.z
+      );
 
     if (
       this.previousCameraFocus !== cameraFocus &&
@@ -574,12 +576,16 @@ export default {
 
       if (cameraFocus === 'Barycenter') {
         this.camera.position.set(
-          this.barycenterPosition.x,
-          this.barycenterPosition.y,
-          this.barycenterPosition.z + this.scenario.barycenterZ
+          rotatedBarycenter.x,
+          rotatedBarycenter.y,
+          rotatedBarycenter.z + this.scenario.barycenterZ
         );
 
-        this.camera.lookAt(...barycenterPositionArray);
+        this.camera.lookAt(
+          rotatedBarycenter.x,
+          rotatedBarycenter.y,
+          rotatedBarycenter.z
+        );
       }
     }
 
@@ -591,26 +597,21 @@ export default {
 
       let { name, trailVertices } = this.system.masses[i];
 
-      this.manifestationPosition
-        .set({ x: mass.x, y: mass.y, z: mass.z })
-        .subtractFrom(this.camera.rotatingReferenceFrame)
-        .multiplyByScalar(this.scenario.scale);
-
-      const manifestationPositionArray = this.manifestationPosition.toArray();
+      const rotatedPosition = this.camera.rotatedMasses[i];
 
       if (mass.type !== 'star')
         massManifestation.draw(
-          this.manifestationPosition.x,
-          this.manifestationPosition.y,
-          this.manifestationPosition.z,
+          rotatedPosition.x,
+          rotatedPosition.y,
+          rotatedPosition.z,
           this.scenario.playing,
           drawTrail
         );
       else {
         massManifestation.draw(
-          this.manifestationPosition.x,
-          this.manifestationPosition.y,
-          this.manifestationPosition.z,
+          rotatedPosition.x,
+          rotatedPosition.y,
+          rotatedPosition.z,
           this.camera,
           this.scenario.playing,
           drawTrail,
@@ -644,11 +645,11 @@ export default {
               'The Orbit of Planet Earth',
               this.utilityVector
                 .set(
-                  this.manifestationPosition.x -
+                  rotatedPosition.x -
                     this.referenceOrbits.earth.orbit.xRadius *
                       this.scenario.scale,
-                  this.manifestationPosition.y,
-                  this.manifestationPosition.z
+                  rotatedPosition.y,
+                  rotatedPosition.z
                 )
                 .applyAxisAngle(
                   { x: 1, y: 0, z: 0 },
@@ -670,11 +671,11 @@ export default {
               'The Orbit of Planet Mercury',
               this.utilityVector
                 .set(
-                  this.manifestationPosition.x -
+                  rotatedPosition.x -
                     (this.referenceOrbits.mercury.orbit.yRadius - 0.022) *
                       this.scenario.scale,
-                  this.manifestationPosition.y,
-                  this.manifestationPosition.z
+                  rotatedPosition.y,
+                  rotatedPosition.z
                 )
                 .applyAxisAngle(
                   { x: 1, y: 0, z: 0 },
@@ -723,26 +724,34 @@ export default {
           .customCameraToBodyDistanceFactor;
 
         this.camera.position.set(
-          this.manifestationPosition.x -
+          rotatedPosition.x -
             mass.radius *
               (customCameraToBodyDistanceFactor
                 ? customCameraToBodyDistanceFactor
                 : 10),
-          this.manifestationPosition.y,
-          this.manifestationPosition.z +
+          rotatedPosition.y,
+          rotatedPosition.z +
             mass.radius *
               (customCameraToBodyDistanceFactor
                 ? customCameraToBodyDistanceFactor
                 : 5)
         );
 
-        this.camera.lookAt(...manifestationPositionArray);
+        this.camera.lookAt(
+          rotatedPosition.x,
+          rotatedPosition.y,
+          rotatedPosition.z
+        );
       }
 
       if (this.scenario.labels)
         this.graphics2D.drawLabel(
           name,
-          this.utilityVector.set(...manifestationPositionArray),
+          this.utilityVector.set(
+            rotatedPosition.x,
+            rotatedPosition.y,
+            rotatedPosition.z
+          ),
           this.camera,
           cameraFocus === name ? true : false,
           'right',

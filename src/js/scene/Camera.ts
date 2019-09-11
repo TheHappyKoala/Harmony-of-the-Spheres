@@ -7,6 +7,8 @@ import { VectorType, MassType } from '../Physics/types';
 export default class extends PerspectiveCamera {
   controls: ReturnType<typeof CustomizedOrbitControls>;
   rotatingReferenceFrame: H3;
+  rotatedMasses: VectorType[];
+  rotatedBarycenter: VectorType;
 
   constructor(
     fov: number,
@@ -24,9 +26,11 @@ export default class extends PerspectiveCamera {
     this.controls.noPan = true;
 
     this.rotatingReferenceFrame = new H3();
+    this.rotatedMasses = [];
+    this.rotatedBarycenter = { x: 0, y: 0, z: 0 };
   }
 
-  trackMovingObjectWithControls(movingObject: Object3D) {
+  trackMovingObjectWithControls(movingObject: Object3D): void {
     this.controls.customPan.add(
       movingObject
         .getObjectByName('Main')
@@ -45,27 +49,55 @@ export default class extends PerspectiveCamera {
     rotatingReferenceFrame: string,
     masses: MassType[],
     barycenter: VectorType
-  ): void {
+  ): this {
     if (rotatingReferenceFrame === 'Barycenter') {
       this.rotatingReferenceFrame.set(barycenter);
 
-      return;
-    } else {
-      const massesLen = masses.length;
+      return this;
+    }
 
-      for (let i = 0; i < massesLen; i++) {
-        const mass = masses[i];
+    const massesLen = masses.length;
 
-        if (mass.name === rotatingReferenceFrame) {
-          this.rotatingReferenceFrame.set({
-            x: mass.x,
-            y: mass.y,
-            z: mass.z
-          });
+    for (let i = 0; i < massesLen; i++) {
+      const mass = masses[i];
 
-          return;
-        }
+      if (mass.name === rotatingReferenceFrame) {
+        this.rotatingReferenceFrame.set({
+          x: mass.x,
+          y: mass.y,
+          z: mass.z
+        });
+
+        return this;
       }
     }
+    return this;
+  }
+
+  rotateSystem(
+    masses: MassType[],
+    barycenter: VectorType,
+    barycenterScale: number,
+    scale: number
+  ): void {
+    const massesLen = masses.length;
+
+    const vector = new H3();
+
+    for (let i = 0; i < massesLen; i++) {
+      const mass = masses[i];
+
+      this.rotatedMasses[i] = vector
+        .set({ x: mass.x, y: mass.y, z: mass.z })
+        .subtractFrom(this.rotatingReferenceFrame)
+        .multiplyByScalar(scale)
+        .toObject();
+    }
+
+    this.rotatedBarycenter = vector
+      .set({ x: barycenter.x, y: barycenter.y, z: barycenter.z })
+      .subtractFrom(this.rotatingReferenceFrame)
+      .multiplyByScalar(barycenterScale)
+      .toObject();
   }
 }
