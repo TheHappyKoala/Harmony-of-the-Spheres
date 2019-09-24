@@ -16,12 +16,11 @@ import {
   findCurrentSOI
 } from '../../Physics/spacecraft/lambert';
 import { getObjFromArrByKeyValuePair } from '../../utils';
-import { MassType, VectorType } from '../../Physics/types';
 
 //We could do this with the H3 class
 //But seems a bit excessive importing it just to get the magnitude of the velocity vector.
 
-const getVelocityMagnitude = (v: VectorType) =>
+const getVelocityMagnitude = (v: Vector) =>
   Math.sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
 
 interface CockpitDashboardProps {

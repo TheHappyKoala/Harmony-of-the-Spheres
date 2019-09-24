@@ -22,7 +22,6 @@ import { Action, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import { scenarioDefaults } from '../../data/scenarios/defaults';
 import { findCurrentSOI } from '../../Physics/spacecraft/lambert';
-import { SOITree, MassType } from '../../Physics/types';
 import TrajectoryCruncher from 'worker-loader!../../Physics/spacecraft/trajectoryCruncher';
 
 export const getScenario = (

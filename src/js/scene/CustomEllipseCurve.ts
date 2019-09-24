@@ -7,7 +7,6 @@ import {
   Vector3
 } from 'three';
 import { degreesToRadians } from '../Physics/utils';
-import { VectorType } from '../Physics/types';
 
 export default class extends Object3D {
   uniforms: {
@@ -151,7 +150,7 @@ export default class extends Object3D {
     this.add(mesh);
   }
 
-  rotateAroundFocus(axisRotations: VectorType): void {
+  rotateAroundFocus(axisRotations: Vector): void {
     const ellipse = this.getObjectByName('CustomEllipse');
 
     ellipse.rotation.z = degreesToRadians(axisRotations.z);
@@ -173,7 +172,7 @@ export default class extends Object3D {
     aEndAngle: number,
     aClockwise: boolean,
     aRotation: number,
-    axisRotations: VectorType
+    axisRotations: Vector
   ): void {
     this.uniforms.aX.value = aX;
     this.uniforms.aY.value = aY;
@@ -192,7 +191,7 @@ export default class extends Object3D {
 
     if (customEllipse) {
       customEllipse.geometry.dispose();
- 
+
       const material = customEllipse.material as LineBasicMaterial;
 
       material.dispose();

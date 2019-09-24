@@ -1,10 +1,9 @@
 import Euler from './Euler';
 import H3 from '../vectors';
-import { IntegratorType, VectorType } from '../types';
 
 export default class extends Euler {
   utilityVector: H3;
-  lastAcc: VectorType[];
+  lastAcc: Vector[];
 
   constructor({ g, dt, masses, elapsedTime }: IntegratorType) {
     super({ g, dt, masses, elapsedTime });
@@ -17,10 +16,10 @@ export default class extends Euler {
   }
 
   generateVerletPositionVectors(
-    s: { p: VectorType[]; v: VectorType[] },
-    a: VectorType[],
+    s: { p: Vector[]; v: Vector[] },
+    a: Vector[],
     dt: number
-  ): VectorType[] {
+  ): Vector[] {
     const p = [];
     const aLen = a.length;
 
@@ -43,10 +42,10 @@ export default class extends Euler {
   }
 
   generateVerletVelocityVectors(
-    a1: VectorType[],
-    a2: VectorType[],
+    a1: Vector[],
+    a2: Vector[],
     dt: number
-  ): VectorType[] {
+  ): Vector[] {
     const v = [];
     const aLen = a1.length;
 

@@ -2,13 +2,12 @@ import { PerspectiveCamera, Vector3, Object3D } from 'three';
 import CustomizedOrbitControls from './CustomizedOrbitControls';
 import H3 from '../Physics/vectors';
 import { degreesToRadians } from '../Physics/utils';
-import { VectorType, MassType } from '../Physics/types';
 
 export default class extends PerspectiveCamera {
   controls: ReturnType<typeof CustomizedOrbitControls>;
   rotatingReferenceFrame: H3;
-  rotatedMasses: VectorType[];
-  rotatedBarycenter: VectorType;
+  rotatedMasses: Vector[];
+  rotatedBarycenter: Vector;
 
   constructor(
     fov: number,
@@ -48,7 +47,7 @@ export default class extends PerspectiveCamera {
   setRotatingReferenceFrame(
     rotatingReferenceFrame: string,
     masses: MassType[],
-    barycenter: VectorType
+    barycenter: Vector
   ): this {
     if (rotatingReferenceFrame === 'Barycenter') {
       this.rotatingReferenceFrame.set(barycenter);
@@ -76,7 +75,7 @@ export default class extends PerspectiveCamera {
 
   rotateSystem(
     masses: MassType[],
-    barycenter: VectorType,
+    barycenter: Vector,
     barycenterScale: number,
     scale: number
   ): void {

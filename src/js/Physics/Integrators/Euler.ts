@@ -1,4 +1,3 @@
-import { IntegratorType, VectorType, MassType, TreeNodeType } from '../types';
 import H3 from '../vectors';
 
 export default class {
@@ -34,7 +33,7 @@ export default class {
     this.p = new H3();
   }
 
-  getDistanceParams(p1: VectorType, p2: VectorType) {
+  getDistanceParams(p1: Vector, p2: Vector) {
     const dx = p2.x - p1.x;
     const dy = p2.y - p1.y;
     const dz = p2.z - p1.z;
@@ -42,7 +41,7 @@ export default class {
     return { dx, dy, dz, dSquared: dx * dx + dy * dy + dz * dz };
   }
 
-  getStateVectors(m: MassType[]): { p: VectorType[]; v: VectorType[] } {
+  getStateVectors(m: MassType[]): { p: Vector[]; v: Vector[] } {
     const p = [];
     const v = [];
     const mLen = m.length;
@@ -66,7 +65,7 @@ export default class {
     return { p, v };
   }
 
-  updateStateVectors(p: VectorType[], v: VectorType[]): void {
+  updateStateVectors(p: Vector[], v: Vector[]): void {
     const mLen = p.length;
 
     for (let i = 0; i < mLen; i++) {
@@ -83,7 +82,7 @@ export default class {
     }
   }
 
-  generatePositionVectors(v: VectorType[], dt: number): VectorType[] {
+  generatePositionVectors(v: Vector[], dt: number): Vector[] {
     const p = [];
     const vLen = v.length;
 
@@ -100,7 +99,7 @@ export default class {
     return p;
   }
 
-  generateAccelerationVectors(p: VectorType[]): VectorType[] {
+  generateAccelerationVectors(p: Vector[]): Vector[] {
     if (this.useBarnesHut) {
       const tree = this.constructBHTree(p);
       const a = this.BHGenerateAccelerationVectors(p, tree);
@@ -140,7 +139,7 @@ export default class {
     }
   }
 
-  generateVelocityVectors(a: VectorType[], dt: number): VectorType[] {
+  generateVelocityVectors(a: Vector[], dt: number): Vector[] {
     const v = [];
     const aLen = a.length;
 
@@ -174,7 +173,7 @@ export default class {
   }
 
   // Below slumbers the mighty Barnes Hut
-  isInTree(p: VectorType, tree: TreeNodeType): boolean {
+  isInTree(p: Vector, tree: TreeNodeType): boolean {
     const a = tree.size;
     if (
       tree.position.x <= p.x &&
@@ -352,7 +351,7 @@ export default class {
     return tree;
   }
 
-  BHAccelerate(p: VectorType, tree: TreeNodeType): VectorType | null {
+  BHAccelerate(p: Vector, tree: TreeNodeType): Vector | null {
     const v = new H3();
     const nChildren = tree.children.length;
     if (nChildren === 0) {
@@ -401,10 +400,7 @@ export default class {
     return null;
   }
 
-  BHGenerateAccelerationVectors(
-    p: VectorType[],
-    tree: TreeNodeType
-  ): VectorType[] {
+  BHGenerateAccelerationVectors(p: Vector[], tree: TreeNodeType): Vector[] {
     const nP = p.length;
     const acc = [];
     for (let i = 0; i < nP; i++) {

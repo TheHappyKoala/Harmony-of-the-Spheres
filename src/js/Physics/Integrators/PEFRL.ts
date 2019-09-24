@@ -1,5 +1,4 @@
 import Euler from './Euler';
-import { IntegratorType, VectorType } from '../types';
 
 export default class extends Euler {
   private epsilon: number;
@@ -14,11 +13,7 @@ export default class extends Euler {
     this.chi = -0.6626458266981849e-1;
   }
 
-  generatePositionVectors(
-    v: VectorType[],
-    dt: number,
-    p?: VectorType[]
-  ): VectorType[] {
+  generatePositionVectors(v: Vector[], dt: number, p?: Vector[]): Vector[] {
     super.generatePositionVectors(v, dt);
 
     const pFinal = [];
@@ -37,11 +32,7 @@ export default class extends Euler {
     return pFinal;
   }
 
-  generateVelocityVectors(
-    a: VectorType[],
-    dt: number,
-    v?: VectorType[]
-  ): VectorType[] {
+  generateVelocityVectors(a: Vector[], dt: number, v?: Vector[]): Vector[] {
     super.generateVelocityVectors(a, dt);
 
     const vFinal = [];

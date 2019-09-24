@@ -10,7 +10,6 @@ import RKN64 from './RKN64';
 import RKN12 from './RKN12';
 import Yoshida6 from './Yoshida6';
 import KahanLi8 from './KahanLi8';
-import { IntegratorType } from '../types';
 
 export const integrators = [
   'RK4',

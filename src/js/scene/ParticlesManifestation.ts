@@ -1,4 +1,3 @@
-import { MassType } from '../Physics/types';
 import {
   Object3D,
   BufferGeometry,
@@ -112,9 +111,7 @@ export default class extends Object3D {
       j += 3;
     }
 
-    (<BufferAttribute>geometry.getAttribute(
-      'position'
-    )).needsUpdate = true;
+    (<BufferAttribute>geometry.getAttribute('position')).needsUpdate = true;
   }
 
   dispose() {

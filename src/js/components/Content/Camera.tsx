@@ -1,6 +1,5 @@
 import React, { ReactElement, Fragment } from 'react';
 import { modifyScenarioProperty } from '../../action-creators/scenario';
-import { MassType } from '../../Physics/types';
 import Dropdown from '../Dropdown';
 import Tooltip from '../Tooltip';
 

@@ -1,12 +1,7 @@
 import Euler from './Euler';
-import { VectorType } from '../types';
 
 export default class extends Euler {
-  generatePositionVectors(
-    v: VectorType[],
-    dt: number,
-    p?: VectorType[]
-  ): VectorType[] {
+  generatePositionVectors(v: Vector[], dt: number, p?: Vector[]): Vector[] {
     const pFinal = [];
     const vLen = v.length;
 
@@ -23,11 +18,7 @@ export default class extends Euler {
     return pFinal;
   }
 
-  generateVelocityVectors(
-    a: VectorType[],
-    dt: number,
-    v?: VectorType[]
-  ): VectorType[] {
+  generateVelocityVectors(a: Vector[], dt: number, v?: Vector[]): Vector[] {
     const vFinal = [];
     const vLen = v.length;
 

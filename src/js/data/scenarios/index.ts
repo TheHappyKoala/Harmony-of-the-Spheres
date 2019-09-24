@@ -25,7 +25,6 @@ import innerSolarSystem from './innerSolarSystem';
 import masses from '../masses';
 import { MassTemplate } from '../../action-types/scenario';
 import { scenarioDefaults } from './defaults';
-import { MassType } from '../../Physics/types';
 import {
   calculateOrbitalVertices,
   elementsToVectors

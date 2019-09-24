@@ -1,5 +1,4 @@
 import rknBase from './rknBase';
-import { IntegratorType } from '../types';
 
 export default class extends rknBase {
   constructor({ g, dt, masses, elapsedTime }: IntegratorType) {

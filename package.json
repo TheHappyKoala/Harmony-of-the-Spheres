@@ -17,9 +17,6 @@
   },
   "lint-staged": {
     "linters": {
-      "src/**/*.{ts,tsx}": [
-        "npm run lint --silent"
-      ],
       "src/**/*.{js,ts,tsx,less}": [
         "npm run prettier"
       ]

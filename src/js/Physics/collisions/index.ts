@@ -1,4 +1,3 @@
-import { MassType, VectorType } from '../types';
 import { getDistanceParams } from '../utils';
 import H3 from '../vectors';
 
@@ -50,8 +49,8 @@ export default class {
   static getClosestPointOnSphere(
     point: H3,
     radius: number,
-    rotation: VectorType
-  ): H3 {
+    rotation: H3
+  ): Vector {
     return point
       .normalise()
       .multiplyByScalar(radius)
@@ -64,10 +63,7 @@ export default class {
     return 0.5 * mass.m * (vMag * vMag);
   }
 
-  static getDeflectedVelocity(
-    survivor: MassType,
-    looser: MassType
-  ): VectorType {
+  static getDeflectedVelocity(survivor: MassType, looser: MassType): Vector {
     const v = new H3().set({ x: looser.vx, y: looser.vy, z: 0 });
     const d = new H3().set({
       x: looser.x - survivor.x,

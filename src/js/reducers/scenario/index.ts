@@ -6,7 +6,6 @@ import {
   ADD_MASS,
   DELETE_MASS
 } from '../../action-types/scenario';
-import { MassType } from '../../Physics/types';
 import filterScenarios, { scenarios } from '../../data/scenarios';
 
 export default function(

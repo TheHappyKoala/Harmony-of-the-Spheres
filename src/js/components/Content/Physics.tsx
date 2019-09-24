@@ -1,6 +1,5 @@
 import React, { ReactElement, Fragment, useState } from 'react';
 import { modifyScenarioProperty } from '../../action-creators/scenario';
-import { MassType } from '../../Physics/types';
 import Dropdown from '../Dropdown';
 import Toggle from '../Toggle';
 import Slider from '../Slider';

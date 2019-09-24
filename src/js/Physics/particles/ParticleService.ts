@@ -1,4 +1,3 @@
-import { MassType } from '../types';
 import H3 from '../vectors';
 import { getRandomNumberInRange, getRandomRadian, getVMag } from '../utils';
 

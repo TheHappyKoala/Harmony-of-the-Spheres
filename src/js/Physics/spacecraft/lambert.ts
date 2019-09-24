@@ -1,5 +1,4 @@
 import H3 from '../vectors';
-import { VectorType, MassType, SOITree } from '../types';
 import { getDistanceParams } from '../utils';
 import { getObjFromArrByKeyValuePair } from '../../utils';
 function hyp2f1b(x: number): number {
@@ -243,13 +242,13 @@ export function reconstruct(
 
 export function planFlight(
   tof: number,
-  r1: VectorType,
-  r2: VectorType,
+  r1: Vector,
+  r2: Vector,
   mu: number,
   M = 0,
   rtol = 1e-8,
   maxiter = 35
-): Array<{ initVel: VectorType; finalVel: VectorType }> {
+): Array<{ initVel: Vector; finalVel: Vector }> {
   const v1 = new H3();
   const r1Rel = v1.set(r1).toObject();
   const r2Rel = v1.set(r2).toObject();
@@ -304,7 +303,7 @@ export function planFlight(
   const rho = (r1Norm - r2Norm) / cNorm;
   const sigma = Math.sqrt(1 - rho ** 2);
 
-  let result: Array<{ initVel: VectorType; finalVel: VectorType }> = [];
+  let result: Array<{ initVel: Vector; finalVel: Vector }> = [];
   xy.forEach(i => {
     const { Vr1, Vr2, Vt1, Vt2 } = reconstruct(
       i.x,
@@ -537,7 +536,7 @@ export function reverseAcceleration(
   pos: MassType,
   primary: MassType,
   g = 39.5
-): VectorType {
+): Vector {
   const rVec = new H3().set({
     x: pos.x - primary.x,
     y: pos.y - primary.y,

@@ -1,6 +1,5 @@
 import Euler from './Euler';
 import H3 from '../vectors';
-import { IntegratorType, VectorType } from '../types';
 
 export default class extends Euler {
   coefficients: any[];
@@ -23,7 +22,7 @@ export default class extends Euler {
     this.tempSumB = new H3();
   }
 
-  getK(s: { p: VectorType[]; v: VectorType[] }): any[] {
+  getK(s: { p: Vector[]; v: Vector[] }): any[] {
     const p = s.p;
     const v = s.v;
 
@@ -56,9 +55,9 @@ export default class extends Euler {
   }
 
   generateVectors(
-    s: { p: VectorType[]; v: VectorType[] },
+    s: { p: Vector[]; v: Vector[] },
     k: any[]
-  ): [VectorType[], VectorType[]] {
+  ): [Vector[], Vector[]] {
     const p = [];
     const v = [];
     const cLen = this.alpha.length;
