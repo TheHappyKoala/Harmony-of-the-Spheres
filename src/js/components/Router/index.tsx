@@ -4,14 +4,14 @@ import App from '../App';
 import LoadingScreen from '../LoadingScreen';
 import { connect } from 'react-redux';
 import { AppState } from '../../reducers';
-import { fetchExoplanetArchiveScenarios } from '../../action-creators/scenarios';
+import { fetchScenarios } from '../../action-creators/scenarios';
 
 const mapStateToProps = (state: AppState) => ({
   app: state.app
 });
 
 const mapDispatchToProps = {
-  fetchExoplanetArchiveScenarios: fetchExoplanetArchiveScenarios
+  fetchScenarios: fetchScenarios
 };
 
 interface RouterProps {
@@ -20,13 +20,13 @@ interface RouterProps {
     loading: boolean;
     whatIsLoading: string;
   };
-  fetchExoplanetArchiveScenarios: typeof fetchExoplanetArchiveScenarios;
+  fetchScenarios: typeof fetchScenarios;
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  ({ app, fetchExoplanetArchiveScenarios }: RouterProps): ReactElement => {
+  ({ app, fetchScenarios }: RouterProps): ReactElement => {
     useEffect(() => {
-      fetchExoplanetArchiveScenarios(EXOPLANET_ARCHIVE_DATA);
+      fetchScenarios(EXOPLANET_ARCHIVE_DATA);
     }, []);
 
     return (

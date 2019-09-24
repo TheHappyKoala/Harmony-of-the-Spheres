@@ -4,7 +4,7 @@ const app = express();
 
 app.use(cors());
 
-app.use(express.static(`${__dirname}/src/data/scenarios/`));
+app.use(express.static(`${__dirname}/src/data/`));
 
 const port = 9000;
 
