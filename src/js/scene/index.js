@@ -141,8 +141,6 @@ export default {
     });
 
     this.barycenterPosition = new H3();
-    this.rotatingReferenceFrame = new H3();
-    this.manifestationPosition = new H3();
 
     this.previousI = this.scenario.i;
 
@@ -258,11 +256,12 @@ export default {
       const scale = scenario.scale;
 
       this.addMassTrajectory.position.z =
-        (this.rotatingReferenceFrame.z - primary.z) * scale;
+        (this.camera.rotatingReferenceFrame.z - primary.z) * scale;
 
       this.addMassTrajectory.update(
-        (this.rotatingReferenceFrame.x - primary.x + ellipse.focus) * scale,
-        (this.rotatingReferenceFrame.y - primary.y) * scale,
+        (this.camera.rotatingReferenceFrame.x - primary.x + ellipse.focus) *
+          scale,
+        (this.camera.rotatingReferenceFrame.y - primary.y) * scale,
         ellipse.xRadius * scale,
         ellipse.yRadius * scale,
         0,
@@ -308,11 +307,12 @@ export default {
     const scale = this.scenario.scale;
 
     this.spacecraftTrajectoryCurve.position.z =
-      (this.rotatingReferenceFrame.z - primary.z) * scale;
+      (this.camera.rotatingReferenceFrame.z - primary.z) * scale;
 
     this.spacecraftTrajectoryCurve.update(
-      (this.rotatingReferenceFrame.x - primary.x + ellipse.focus) * scale,
-      (this.rotatingReferenceFrame.y - primary.y) * scale,
+      (this.camera.rotatingReferenceFrame.x - primary.x + ellipse.focus) *
+        scale,
+      (this.camera.rotatingReferenceFrame.y - primary.y) * scale,
       ellipse.xRadius * scale,
       ellipse.yRadius * scale,
       0,
@@ -521,43 +521,36 @@ export default {
       this.barycenterPosition
     );
 
-    if (rotatingReferenceFrame === 'Barycenter')
-      this.rotatingReferenceFrame.set(this.barycenterPosition);
-    else
-      for (let i = 0; i < this.system.masses.length; i++) {
-        const mass = this.system.masses[i];
-
-        if (mass.name === rotatingReferenceFrame) {
-          this.rotatingReferenceFrame.set({
-            x: mass.x,
-            y: mass.y,
-            z: mass.z
-          });
-        }
-      }
+    this.camera
+      .setRotatingReferenceFrame(
+        this.scenario.rotatingReferenceFrame,
+        this.system.masses,
+        this.barycenterPosition
+      )
+      .rotateSystem(
+        this.system.masses,
+        this.barycenterPosition,
+        rotatingReferenceFrame !== 'Barycenter' ? this.scenario.scale : 1,
+        this.scenario.scale
+      );
 
     this.updateAddMassTrajectory();
 
     if (this.scenario.forAllMankind) this.updateSpacecraftTrajectoryCurve();
 
-    const barycenterPositionScaleFactor =
-      rotatingReferenceFrame !== 'Barycenter' ? this.scenario.scale : 1;
-
-    this.barycenterPosition
-      .subtractFrom(this.rotatingReferenceFrame)
-      .multiplyByScalar(barycenterPositionScaleFactor);
-
     this.diffMasses(this.massManifestations, this.scenario.masses);
 
     this.graphics2D.clear();
+
+    const rotatedBarycenter = this.camera.rotatedBarycenter;
 
     if (this.scenario.barycenter)
       this.graphics2D.drawLabel(
         'Barycenter',
         this.utilityVector.set(
-          this.barycenterPosition.x,
-          this.barycenterPosition.y,
-          this.barycenterPosition.z
+          rotatedBarycenter.x,
+          rotatedBarycenter.y,
+          rotatedBarycenter.z
         ),
         this.camera,
         cameraFocus === 'Barycenter' ? true : false,
@@ -568,11 +561,12 @@ export default {
 
     let barycenterPositionArray;
 
-    if (cameraFocus === 'Barycenter') {
-      barycenterPositionArray = this.barycenterPosition.toArray();
-
-      this.camera.controls.target.set(...barycenterPositionArray);
-    }
+    if (cameraFocus === 'Barycenter')
+      this.camera.controls.target.set(
+        rotatedBarycenter.x,
+        rotatedBarycenter.y,
+        rotatedBarycenter.z
+      );
 
     if (
       this.previousCameraFocus !== cameraFocus &&
@@ -582,12 +576,16 @@ export default {
 
       if (cameraFocus === 'Barycenter') {
         this.camera.position.set(
-          this.barycenterPosition.x,
-          this.barycenterPosition.y,
-          this.barycenterPosition.z + this.scenario.barycenterZ
+          rotatedBarycenter.x,
+          rotatedBarycenter.y,
+          rotatedBarycenter.z + this.scenario.barycenterZ
         );
 
-        this.camera.lookAt(...barycenterPositionArray);
+        this.camera.lookAt(
+          rotatedBarycenter.x,
+          rotatedBarycenter.y,
+          rotatedBarycenter.z
+        );
       }
     }
 
@@ -599,26 +597,21 @@ export default {
 
       let { name, trailVertices } = this.system.masses[i];
 
-      this.manifestationPosition
-        .set({ x: mass.x, y: mass.y, z: mass.z })
-        .subtractFrom(this.rotatingReferenceFrame)
-        .multiplyByScalar(this.scenario.scale);
-
-      const manifestationPositionArray = this.manifestationPosition.toArray();
+      const rotatedPosition = this.camera.rotatedMasses[i];
 
       if (mass.type !== 'star')
         massManifestation.draw(
-          this.manifestationPosition.x,
-          this.manifestationPosition.y,
-          this.manifestationPosition.z,
+          rotatedPosition.x,
+          rotatedPosition.y,
+          rotatedPosition.z,
           this.scenario.playing,
           drawTrail
         );
       else {
         massManifestation.draw(
-          this.manifestationPosition.x,
-          this.manifestationPosition.y,
-          this.manifestationPosition.z,
+          rotatedPosition.x,
+          rotatedPosition.y,
+          rotatedPosition.z,
           this.camera,
           this.scenario.playing,
           drawTrail,
@@ -652,11 +645,11 @@ export default {
               'The Orbit of Planet Earth',
               this.utilityVector
                 .set(
-                  this.manifestationPosition.x -
+                  rotatedPosition.x -
                     this.referenceOrbits.earth.orbit.xRadius *
                       this.scenario.scale,
-                  this.manifestationPosition.y,
-                  this.manifestationPosition.z
+                  rotatedPosition.y,
+                  rotatedPosition.z
                 )
                 .applyAxisAngle(
                   { x: 1, y: 0, z: 0 },
@@ -678,11 +671,11 @@ export default {
               'The Orbit of Planet Mercury',
               this.utilityVector
                 .set(
-                  this.manifestationPosition.x -
+                  rotatedPosition.x -
                     (this.referenceOrbits.mercury.orbit.yRadius - 0.022) *
                       this.scenario.scale,
-                  this.manifestationPosition.y,
-                  this.manifestationPosition.z
+                  rotatedPosition.y,
+                  rotatedPosition.z
                 )
                 .applyAxisAngle(
                   { x: 1, y: 0, z: 0 },
@@ -731,26 +724,34 @@ export default {
           .customCameraToBodyDistanceFactor;
 
         this.camera.position.set(
-          this.manifestationPosition.x -
+          rotatedPosition.x -
             mass.radius *
               (customCameraToBodyDistanceFactor
                 ? customCameraToBodyDistanceFactor
                 : 10),
-          this.manifestationPosition.y,
-          this.manifestationPosition.z +
+          rotatedPosition.y,
+          rotatedPosition.z +
             mass.radius *
               (customCameraToBodyDistanceFactor
                 ? customCameraToBodyDistanceFactor
                 : 5)
         );
 
-        this.camera.lookAt(...manifestationPositionArray);
+        this.camera.lookAt(
+          rotatedPosition.x,
+          rotatedPosition.y,
+          rotatedPosition.z
+        );
       }
 
       if (this.scenario.labels)
         this.graphics2D.drawLabel(
           name,
-          this.utilityVector.set(...manifestationPositionArray),
+          this.utilityVector.set(
+            rotatedPosition.x,
+            rotatedPosition.y,
+            rotatedPosition.z
+          ),
           this.camera,
           cameraFocus === name ? true : false,
           'right',
@@ -778,7 +779,7 @@ export default {
     if (this.scenario.particles)
       this.particles.draw(
         this.particlePhysics.particles,
-        this.rotatingReferenceFrame
+        this.camera.rotatingReferenceFrame
       );
 
     if (this.scenario.particles && this.scenario.playing)
