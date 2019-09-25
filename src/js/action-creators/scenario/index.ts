@@ -39,34 +39,36 @@ export const getScenario = (
     })
   );
 
-  if (!scenario.exoPlanetArchive) {
-    dispatch({
-      type: GET_SCENARIO,
-      scenario: scenario
-    });
+  let scenarioToBeDispatched;
 
-    sessionStorage.setItem('currentScenario', JSON.stringify(scenario));
-  } else {
-    const data = await cachedFetch(
-      `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl&where=pl_hostname like '${name}'&format=json`
+  if (!scenario.exoPlanetArchive)
+    scenarioToBeDispatched = await cachedFetch(
+      `${
+        process.env.NODE_ENV === 'production'
+          ? './data/scenarios/'
+          : 'http://localhost:9000/scenarios/'
+      }${scenario.fileName}`
     );
-
-    const processedExoplanetData = {
+  else
+    scenarioToBeDispatched = {
       ...scenarioDefaults,
       ...scenario,
-      ...processExoplanetArchiveData(data)
+      ...processExoplanetArchiveData(
+        await cachedFetch(
+          `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl&where=pl_hostname like '${name}'&format=json`
+        )
+      )
     };
 
-    dispatch({
-      type: GET_SCENARIO,
-      scenario: processedExoplanetData
-    });
+  sessionStorage.setItem(
+    'currentScenario',
+    JSON.stringify(scenarioToBeDispatched)
+  );
 
-    sessionStorage.setItem(
-      'currentScenario',
-      JSON.stringify(processExoplanetArchiveData)
-    );
-  }
+  dispatch({
+    type: GET_SCENARIO,
+    scenario: scenarioToBeDispatched
+  });
 };
 
 export const modifyScenarioProperty = (
