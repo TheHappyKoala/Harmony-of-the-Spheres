@@ -1,7 +1,5 @@
 import { AppState } from '../../reducers';
-import filterScenarios, {
-  processExoplanetArchiveData
-} from '../../data/scenarios';
+import { processExoplanetArchiveData } from '../../data/scenarios';
 import { getObjFromArrByKeyValuePair } from '../../utils';
 import { getOrbit } from '../../Physics/utils';
 import cachedFetch from '../../cachedFetch';
@@ -30,7 +28,11 @@ export const getScenario = (
   dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
   getState: () => AppState
 ) => {
-  const scenario = filterScenarios(name, getState().scenarios);
+  const scenario = getObjFromArrByKeyValuePair(
+    getState().scenarios,
+    'name',
+    name
+  );
 
   dispatch(
     setLoading({
