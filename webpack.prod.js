@@ -10,7 +10,8 @@ module.exports = merge(common, {
     new CopyWebpackPlugin([
       {from:'src/images',to:'images'},          
       {from:'src/textures',to:'textures'},
-      {from:'src/models',to:'models'}       
+      {from:'src/models',to:'models'},
+      {from:'src/data',to:'data'}              
     ]),
     new BannerPlugin({
       banner: `
