@@ -6,12 +6,9 @@ import {
   ADD_MASS,
   DELETE_MASS
 } from '../../action-types/scenario';
-import filterScenarios, { scenarios } from '../../data/scenarios';
+import json from '../../../data/scenarios/spoilingSaturn.json';
 
-export default function(
-  state = filterScenarios(DEFAULT_SCENARIO, scenarios),
-  action: ScenarioActionTypes
-): ReturnType<typeof filterScenarios> {
+export default (state = <ScenarioState>json, action: ScenarioActionTypes) => {
   switch (action.type) {
     case GET_SCENARIO:
       return { ...state, ...action.scenario };
@@ -73,4 +70,4 @@ export default function(
     default:
       return state;
   }
-}
+};

@@ -10,11 +10,9 @@ import { ThunkAction } from 'redux-thunk';
 import cachedFetch from '../../cachedFetch';
 import { removeDuplicatesByKey } from '../../utils';
 
-export const addScenario = (payload: {
-  name: string;
-  type: string;
-  [x: string]: any;
-}): ScenariosActionTypes => ({
+export const addScenario = (
+  payload: ScenarioSeed | ScenarioState
+): ScenariosActionTypes => ({
   type: ADD_SCENARIO,
   payload
 });
@@ -27,7 +25,7 @@ export const saveScenario = (
 ) => {
   const scenario = getState().scenario;
 
-  const scenarioToSave: any = {
+  const scenarioToSave: ScenarioState = {
     ...scenario,
     name: payload,
     type: 'Saved Simulations',
@@ -49,7 +47,7 @@ export const saveScenario = (
 };
 
 export const fetchScenarios = (
-  payload: any
+  payload: ExoplanetArchiveQuery[]
 ): ThunkAction<void, AppState, void, Action> => async (
   dispatch: Dispatch<ScenariosActionTypes | AppActionTypes>
 ) => {
@@ -65,35 +63,6 @@ export const fetchScenarios = (
 
   const cacheDuration = 6.048e8;
 
-  //Fetch exoplanet scenarios first
-
-  for (let entry of payload) {
-    const data: any[] = await cachedFetch(
-      `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,pl_pnum&${
-        entry.query
-      } and st_mass>0 and st_rad>0&format=json`,
-      undefined,
-      cacheDuration
-    );
-
-    //Sort our exoplanetary systems by the number of planets they contain in descending order
-
-    const sortedData = data.sort(
-      (entryA, entryB) => entryB.pl_pnum - entryA.pl_pnum
-    );
-
-    removeDuplicatesByKey(sortedData, 'pl_hostname').forEach((scenario: any) =>
-      dispatch(
-        addScenario({
-          name: scenario.pl_hostname,
-          type: entry.alias,
-          exoPlanetArchive: true,
-          fileName: ''
-        })
-      )
-    );
-  }
-
   //Then get the custom made scenarios
 
   const data = await cachedFetch(
@@ -108,14 +77,36 @@ export const fetchScenarios = (
 
   //Dispatch them
 
-  data.forEach(
-    (scenario: {
-      name: string;
-      type: string;
-      exoPlanetArchive: boolean;
-      fileName: string;
-    }) => dispatch(addScenario(scenario))
-  );
+  data.forEach((scenario: ScenarioSeed) => dispatch(addScenario(scenario)));
+
+  //Fetch exoplanet scenarios
+
+  for (let entry of payload) {
+    const data: ExoplanetScenarioSeed[] = await cachedFetch(
+      `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,pl_pnum&${
+        entry.query
+      } and st_mass>0 and st_rad>0&format=json`,
+      undefined,
+      cacheDuration
+    );
+
+    //Sort our exoplanetary systems by the number of planets they contain in descending order
+
+    const sortedData = data.sort(
+      (entryA, entryB) => entryB.pl_pnum - entryA.pl_pnum
+    );
+
+    removeDuplicatesByKey(sortedData, 'pl_hostname').forEach(
+      (scenario: ExoplanetScenarioSeed) =>
+        dispatch(
+          addScenario({
+            name: scenario.pl_hostname,
+            type: entry.alias,
+            exoPlanetArchive: true
+          })
+        )
+    );
+  }
 
   //And we're ready to go
 

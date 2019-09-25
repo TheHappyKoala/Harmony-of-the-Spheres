@@ -38,7 +38,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
                 <Redirect
                   exact
                   from="/"
-                  to={`/category/What-If/scenario/${DEFAULT_SCENARIO}`}
+                  to={`/category/What-If/scenario/${DEFAULT_SCENARIO.name}`}
                 />
                 <Route
                   path="/category/:category?/scenario/:name?"

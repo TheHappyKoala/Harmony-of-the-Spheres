@@ -1,5 +1,5 @@
 import { AppState } from '../../reducers';
-import { processExoplanetArchiveData } from '../../data/scenarios';
+import processExoplanetArchiveData from '../../processExoplanetData';
 import { getObjFromArrByKeyValuePair } from '../../utils';
 import { getOrbit } from '../../Physics/utils';
 import cachedFetch from '../../cachedFetch';
@@ -18,7 +18,6 @@ import {
 import { setLoading } from '../../action-creators/app';
 import { Action, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
-import { scenarioDefaults } from '../../data/scenarios/defaults';
 import { findCurrentSOI } from '../../Physics/spacecraft/lambert';
 import TrajectoryCruncher from 'worker-loader!../../Physics/spacecraft/trajectoryCruncher';
 
@@ -53,7 +52,6 @@ export const getScenario = (
     );
   else
     scenarioToBeDispatched = {
-      ...scenarioDefaults,
       ...scenario,
       ...processExoplanetArchiveData(
         await cachedFetch(

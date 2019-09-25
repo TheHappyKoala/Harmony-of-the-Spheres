@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { degreesToRadians } from '../Physics/utils';
+import { degreesToRadians, calculateOrbitalVertices } from '../Physics/utils';
 
 export default class extends THREE.Object3D {
   constructor(mass, textureLoader) {
@@ -11,6 +11,8 @@ export default class extends THREE.Object3D {
     this.textureLoader = textureLoader;
 
     this.segments = 25;
+
+    this.trailVertices = 0;
 
     this.createManifestation();
   }
@@ -132,10 +134,14 @@ export default class extends THREE.Object3D {
     this.add(mesh);
   }
 
-  getTrail() {
+  getTrail(dt, drawLineEvery) {
     const geometry = new THREE.Geometry();
 
-    const trailVertices = this.mass.trailVertices;
+    this.trailVertices = calculateOrbitalVertices(
+      this.mass.orbitalPeriod,
+      dt,
+      drawLineEvery
+    );
 
     const mainPosition = this.getObjectByName('Main').position;
 
@@ -145,7 +151,7 @@ export default class extends THREE.Object3D {
       z: mainPosition.z
     };
 
-    for (let i = 0; i < trailVertices; i++)
+    for (let i = 0; i < this.trailVertices; i++)
       geometry.vertices.push(initialPosition);
 
     const material = new THREE.LineBasicMaterial({
@@ -186,7 +192,7 @@ export default class extends THREE.Object3D {
     if (drawTrail) {
       if (trail !== undefined && playing) {
         trail.geometry.vertices.unshift({ x, y, z });
-        trail.geometry.vertices.length = this.mass.trailVertices;
+        trail.geometry.vertices.length = this.trailVertices;
         trail.geometry.verticesNeedUpdate = true;
       }
     }

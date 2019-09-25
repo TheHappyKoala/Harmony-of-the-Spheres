@@ -501,7 +501,7 @@ export default {
 
       this.iteration++;
 
-      if (this.iteration % this.scenario.drawLineEvery == 0) drawTrail = true;
+      if (this.iteration % 3 == 0) drawTrail = true;
     }
 
     dt = this.system.dt;
@@ -699,7 +699,7 @@ export default {
       const trail = massManifestation.getObjectByName('Trail');
 
       if (this.scenario.trails) {
-        if (!trail) massManifestation.getTrail(trailVertices);
+        if (!trail) massManifestation.getTrail(dt, this.scenario.drawLineEvery);
         if (!this.scenario.playing && trail)
           trail.geometry.verticesNeedUpdate = false;
       }

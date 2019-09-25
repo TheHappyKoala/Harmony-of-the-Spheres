@@ -177,7 +177,7 @@ export default class extends MassManifestation {
     if (drawTrail) {
       if (trail !== undefined && playing) {
         trail.geometry.vertices.unshift({ x, y, z });
-        trail.geometry.vertices.length = this.mass.trailVertices;
+        trail.geometry.vertices.length = this.trailVertices;
         trail.geometry.verticesNeedUpdate = true;
       }
     }

@@ -127,10 +127,10 @@ export function degreesToRadians(degrees) {
 
 export const radiansToDegrees = radians => radians * 57.295779513;
 
-export const calculateOrbitalVertices = (orbitalPeriod, dt, drawLineEvery) => {
-  const maxVertices = 2000;
+export const calculateOrbitalVertices = (orbitalPeriod, dt) => {
+  const maxVertices = 3000;
   const orbitalVertices = parseFloat(
-    (orbitalPeriod / (dt * drawLineEvery) * 1.1).toFixed(0)
+    (orbitalPeriod / (dt * 3) * 1.1).toFixed(0)
   );
 
   return orbitalVertices > maxVertices || isNaN(orbitalVertices)
