@@ -69,6 +69,32 @@ export default class {
     });
   }
 
+  static getCircleArea(radius: number): number {
+    return Math.PI * (radius * radius);
+  }
+
+  static getSphereVolume(radius: number): number {
+    return 4 / 3 * Math.PI * (radius * radius * radius);
+  }
+
+  static getMassWithinCircularOrbit(
+    orbitalRadius: number,
+    maxRadius: number,
+    particles: number,
+    particleMass: number,
+    sphere: boolean
+  ): number {
+    const totalMass = particles * particleMass;
+
+    return !sphere
+      ? this.getCircleArea(orbitalRadius) /
+          this.getCircleArea(maxRadius) *
+          totalMass
+      : this.getSphereVolume(orbitalRadius) /
+          this.getSphereVolume(maxRadius) *
+          totalMass;
+  }
+
   static getParticleSystem(
     vectors: MassType[],
     tilt: [number, number, number],
