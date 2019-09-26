@@ -857,7 +857,6 @@ export default {
         ),
         ring.tilt,
         primary,
-        [0, 0],
         this.scenario.g,
         true
       );

@@ -99,9 +99,13 @@ export default class {
     vectors: MassType[],
     tilt: [number, number, number],
     primary: MassType,
-    mRange: [number, number],
     g: number,
-    withOrbit: boolean
+    withOrbit: boolean,
+    withMass?: {
+      sphere: boolean;
+      maxD: number;
+      m: number;
+    }
   ): MassType[] {
     const p = new H3();
     const v = new H3();
@@ -115,7 +119,21 @@ export default class {
       if (withOrbit) {
         const dParams = p.getDistanceParameters({ x: 0, y: 0, z: 0 });
 
-        const vMag = getVMag(g, primary, dParams.d);
+        const vMag = getVMag(
+          g,
+          !withMass
+            ? primary
+            : {
+                m: this.getMassWithinCircularOrbit(
+                  dParams.d,
+                  withMass.maxD,
+                  vectors.length,
+                  withMass.m,
+                  withMass.sphere
+                )
+              },
+          dParams.d
+        );
 
         v.set({
           x: -dParams.dy * vMag / dParams.d,
@@ -134,10 +152,8 @@ export default class {
         .rotate({ x: 0, y: 1, z: 0 }, yTilt)
         .rotate({ x: 0, y: 0, z: 1 }, zTilt);
 
-      const [mMin, mMax] = mRange;
-
       return {
-        m: getRandomNumberInRange(mMin, mMax),
+        m: withMass ? withMass.m : 0,
         x: primary.x + p.x,
         y: primary.y + p.y,
         z: primary.z + p.z,
