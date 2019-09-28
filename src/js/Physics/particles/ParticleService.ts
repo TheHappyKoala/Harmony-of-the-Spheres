@@ -105,12 +105,6 @@ export default class {
       p.set({ x: item.x, y: item.y, z: item.z });
       v.set({ x: item.vx, y: item.vy, z: item.vz });
 
-      if (!flatLand)
-        p
-          .rotate({ x: 1, y: 0, z: 0 }, getRandomNumberInRange(0, 360))
-          .rotate({ x: 0, y: 1, z: 0 }, getRandomNumberInRange(0, 360))
-          .rotate({ x: 0, y: 0, z: 1 }, getRandomNumberInRange(0, 360));
-
       if (withOrbit) {
         const dParams = p.getDistanceParameters({ x: 0, y: 0, z: 0 });
 
@@ -122,7 +116,12 @@ export default class {
           z: 0
         });
 
-        if (!flatLand)
+        if (flatLand)
+          v
+            .rotate({ x: 1, y: 0, z: 0 }, xTilt)
+            .rotate({ x: 0, y: 1, z: 0 }, yTilt)
+            .rotate({ x: 0, y: 0, z: 1 }, zTilt);
+        else
           v
             .rotate({ x: 1, y: 0, z: 0 }, getRandomNumberInRange(0, 360))
             .rotate({ x: 0, y: 1, z: 0 }, getRandomNumberInRange(0, 360))
@@ -134,12 +133,11 @@ export default class {
           .rotate({ x: 1, y: 0, z: 0 }, xTilt)
           .rotate({ x: 0, y: 1, z: 0 }, yTilt)
           .rotate({ x: 0, y: 0, z: 1 }, zTilt);
-
-      if (flatLand && withOrbit)
-        v
-          .rotate({ x: 1, y: 0, z: 0 }, xTilt)
-          .rotate({ x: 0, y: 1, z: 0 }, yTilt)
-          .rotate({ x: 0, y: 0, z: 1 }, zTilt);
+      else
+        p
+          .rotate({ x: 1, y: 0, z: 0 }, getRandomNumberInRange(0, 360))
+          .rotate({ x: 0, y: 1, z: 0 }, getRandomNumberInRange(0, 360))
+          .rotate({ x: 0, y: 0, z: 1 }, getRandomNumberInRange(0, 360));
 
       return {
         m: withMass ? withMass.m : 0,

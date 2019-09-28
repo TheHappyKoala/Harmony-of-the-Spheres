@@ -146,7 +146,7 @@ export default {
 
     this.particlePhysics = new ParticlePhysics(this.scenario.scale);
 
-    this.scenario.particles.rings && this.addRing();
+    this.scenario.particles.shapes && this.addParticleSystems();
 
     this.particles = new ParticlesManifestation({
       particles: this.particlePhysics.particles,
@@ -833,35 +833,36 @@ export default {
   resetParticlePhysics() {
     this.particlePhysics.particles = [];
 
-    this.scenario.particles.rings && this.addRing();
-  },
+    this.scenario.particles.shapes && this.addParticleSystems();
+  }, 
 
-  addRing() {
-    for (let i = 0; i < this.scenario.particles.rings.length; i++) {
-      const ring = this.scenario.particles.rings[i];
+  addParticleSystems() {
+    for (let i = 0; i < this.scenario.particles.shapes.length; i++) {
+      const shape = this.scenario.particles.shapes[i];
       const primary =
-        ring.primary !== 'custom'
+        shape.primary !== 'custom'
           ? getObjFromArrByKeyValuePair(
               this.scenario.masses,
               'name',
-              ring.primary
+              shape.primary
             )
-          : ring.customPrimaryData;
+          : shape.customPrimaryData;
 
       const generatedParticles = ParticleService.getParticleSystem(
         ParticleService.getShapeOfParticles(
-          ring.number,
-          ring.minD,
-          ring.maxD,
-          ParticleService.getDiscParticle
+          shape.number,
+          shape.minD,
+          shape.maxD,
+          ParticleService[shape.type]
         ),
-        ring.tilt,
+        shape.tilt,
         primary,
         this.scenario.g,
-        true
+        true,
+        shape.flatLand
       );
 
-      for (let i = 0; i < ring.number; i++)
+      for (let i = 0; i < shape.number; i++)
         this.particlePhysics.particles.push(generatedParticles[i]);
     }
   },
