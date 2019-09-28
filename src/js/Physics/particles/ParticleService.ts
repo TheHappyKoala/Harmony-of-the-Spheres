@@ -15,17 +15,17 @@ export default class {
     return particles;
   }
 
-  static getDiscParticle(
+  static getRingParticle(
     particles: MassType[],
     minD: number,
     maxD: number
   ): void {
     const radian = getRandomRadian();
-    const d = getRandomNumberInRange(minD, maxD);
+    const dist = getRandomNumberInRange(minD, maxD);
 
     particles.push({
-      x: Math.cos(radian) * d,
-      y: Math.sin(radian) * d,
+      x: Math.cos(radian) * dist,
+      y: Math.sin(radian) * dist,
       z: 0,
       vx: 0,
       vy: 0,
@@ -33,36 +33,25 @@ export default class {
     });
   }
 
-  static getSphereParticle(
+  static getRadialParticle(
     particles: MassType[],
     minD: number,
     maxD: number
   ): void {
-    const dist = getRandomNumberInRange(minD, maxD);
+    let dist = getRandomNumberInRange(minD, maxD);
 
-    const theta = getRandomNumberInRange(-360, 360);
-    const phi = getRandomNumberInRange(-360, 360);
+    const cosTheta = getRandomNumberInRange(-1, 1);
+    const phi = getRandomNumberInRange(0, 2 * Math.PI);
+    const u = getRandomNumberInRange(0, 1);
+
+    const theta = Math.acos(cosTheta);
+
+    dist = dist * Math.cbrt(u);
 
     particles.push({
       x: dist * Math.sin(theta) * Math.cos(phi),
       y: dist * Math.sin(theta) * Math.sin(phi),
-      z: dist * Math.cos(theta),
-      vx: 0,
-      vy: 0,
-      vz: 0
-    });
-  }
-
-  static getCubeParticle(
-    particles: MassType[],
-    minD: number,
-    maxD: number,
-    cube: boolean
-  ): void {
-    particles.push({
-      x: getRandomNumberInRange(minD, maxD),
-      y: getRandomNumberInRange(minD, maxD),
-      z: cube ? getRandomNumberInRange(minD, maxD) : 0,
+      z: 0,
       vx: 0,
       vy: 0,
       vz: 0
@@ -82,11 +71,11 @@ export default class {
     maxRadius: number,
     particles: number,
     particleMass: number,
-    sphere: boolean
+    flatLand: boolean
   ): number {
     const totalMass = particles * particleMass;
 
-    return !sphere
+    return !flatLand
       ? this.getCircleArea(orbitalRadius) /
           this.getCircleArea(maxRadius) *
           totalMass
@@ -101,8 +90,8 @@ export default class {
     primary: MassType,
     g: number,
     withOrbit: boolean,
+    flatLand: boolean,
     withMass?: {
-      sphere: boolean;
       maxD: number;
       m: number;
     }
@@ -116,41 +105,41 @@ export default class {
       p.set({ x: item.x, y: item.y, z: item.z });
       v.set({ x: item.vx, y: item.vy, z: item.vz });
 
+      if (!flatLand)
+        p
+          .rotate({ x: 1, y: 0, z: 0 }, getRandomNumberInRange(0, 360))
+          .rotate({ x: 0, y: 1, z: 0 }, getRandomNumberInRange(0, 360))
+          .rotate({ x: 0, y: 0, z: 1 }, getRandomNumberInRange(0, 360));
+
       if (withOrbit) {
         const dParams = p.getDistanceParameters({ x: 0, y: 0, z: 0 });
 
-        const vMag = getVMag(
-          g,
-          !withMass
-            ? primary
-            : {
-                m: this.getMassWithinCircularOrbit(
-                  dParams.d,
-                  withMass.maxD,
-                  vectors.length,
-                  withMass.m,
-                  withMass.sphere
-                )
-              },
-          dParams.d
-        );
+        const vMag = getVMag(g, primary, dParams.d);
 
         v.set({
           x: -dParams.dy * vMag / dParams.d,
           y: dParams.dx * vMag / dParams.d,
           z: 0
         });
+
+        if (!flatLand)
+          v
+            .rotate({ x: 1, y: 0, z: 0 }, getRandomNumberInRange(0, 360))
+            .rotate({ x: 0, y: 1, z: 0 }, getRandomNumberInRange(0, 360))
+            .rotate({ x: 0, y: 0, z: 1 }, getRandomNumberInRange(0, 360));
       }
 
-      p
-        .rotate({ x: 1, y: 0, z: 0 }, xTilt)
-        .rotate({ x: 0, y: 1, z: 0 }, yTilt)
-        .rotate({ x: 0, y: 0, z: 1 }, zTilt);
+      if (flatLand)
+        p
+          .rotate({ x: 1, y: 0, z: 0 }, xTilt)
+          .rotate({ x: 0, y: 1, z: 0 }, yTilt)
+          .rotate({ x: 0, y: 0, z: 1 }, zTilt);
 
-      v
-        .rotate({ x: 1, y: 0, z: 0 }, xTilt)
-        .rotate({ x: 0, y: 1, z: 0 }, yTilt)
-        .rotate({ x: 0, y: 0, z: 1 }, zTilt);
+      if (flatLand && withOrbit)
+        v
+          .rotate({ x: 1, y: 0, z: 0 }, xTilt)
+          .rotate({ x: 0, y: 1, z: 0 }, yTilt)
+          .rotate({ x: 0, y: 0, z: 1 }, zTilt);
 
       return {
         m: withMass ? withMass.m : 0,
