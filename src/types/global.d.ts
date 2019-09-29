@@ -14,6 +14,10 @@ interface MassType extends Vector {
   [key: string]: any;
 }
 
+interface Barycenter extends Vector {
+  m: number
+}
+
 interface Exoplanet {
   name: string;
   noTexture: boolean;
