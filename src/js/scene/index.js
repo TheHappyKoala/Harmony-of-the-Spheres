@@ -787,7 +787,10 @@ export default {
         oldMasses,
         this.system.masses,
         this.scenario.g,
-        dt
+        dt,
+        this.scenario.particles.softening
+          ? this.scenario.particles.softening
+          : 0
       );
 
     if (this.scenario.playing && this.scenario.collisions)
@@ -834,7 +837,7 @@ export default {
     this.particlePhysics.particles = [];
 
     this.scenario.particles.shapes && this.addParticleSystems();
-  }, 
+  },
 
   addParticleSystems() {
     for (let i = 0; i < this.scenario.particles.shapes.length; i++) {

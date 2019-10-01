@@ -5,7 +5,7 @@ export default class {
     this.particles = [];
   }
 
-  calculateAcceleration(masses, g) {
+  calculateAcceleration(masses, g, softeningConstant) {
     let particlesLen = this.particles.length;
     const massesLen = masses.length;
 
@@ -33,7 +33,7 @@ export default class {
           massI.collided = true;
         else {
           if (massJ.m > 0) {
-            let fact = g * massJ.m / (dSquared * d);
+            let fact = g * massJ.m / (dSquared * d) + softeningConstant;
 
             ax += dx * fact;
             ay += dy * fact;
@@ -46,8 +46,8 @@ export default class {
     return acc;
   }
 
-  iterate(oldMasses, newMasses, g, dt) {
-    const acc = this.calculateAcceleration(oldMasses, g);
+  iterate(oldMasses, newMasses, g, dt, softeningConstant) {
+    const acc = this.calculateAcceleration(oldMasses, g, softeningConstant);
     let particlesLen = this.particles.length;
     // update particle positions
     for (let i = 0; i < particlesLen; i++) {
@@ -57,7 +57,7 @@ export default class {
       massI.y += massI.vy * dt + 0.5 * dt * dt * aI.y;
       massI.z += massI.vz * dt + 0.5 * dt * dt * aI.z;
     }
-    const acc2 = this.calculateAcceleration(newMasses, g);
+    const acc2 = this.calculateAcceleration(newMasses, g, softeningConstant);
     particlesLen = this.particles.length;
     for (let i = 0; i < particlesLen; i++) {
       const massI = this.particles[i];
