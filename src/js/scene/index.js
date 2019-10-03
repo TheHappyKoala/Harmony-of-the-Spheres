@@ -153,6 +153,8 @@ export default {
       scenarioScale: this.scenario.scale,
       size: this.scenario.particles.size,
       max: this.scenario.particles.max,
+      spriteDepthTest: this.scenario.particles.spriteDepthTest,
+      transparentSprite: this.scenario.particles.transparentSprite,
       textureLoader: this.textureLoader
     });
 
@@ -587,6 +589,20 @@ export default {
           rotatedBarycenter.z
         );
       }
+
+      if (cameraFocus === 'Barycenter' && this.scenario.particlesFun) {
+        this.camera.position.set(
+          7681151.548763126,
+          -5788162.859024099,
+          3722227.255314761
+        );
+
+        this.camera.lookAt(
+          rotatedBarycenter.x,
+          rotatedBarycenter.y,
+          rotatedBarycenter.z
+        );
+      }
     }
 
     const massesLen = this.system.masses.length;
@@ -856,16 +872,20 @@ export default {
           shape.number,
           shape.minD,
           shape.maxD,
+          shape.verticalDispersion,
           ParticleService[shape.type]
         ),
         shape.tilt,
         primary,
         this.scenario.g,
         true,
-        shape.flatLand
+        shape.flatLand,
+        shape.hsl
       );
 
-      for (let i = 0; i < shape.number; i++)
+      const generatedParticlesLen = generatedParticles.length;
+
+      for (let i = 0; i < generatedParticlesLen; i++)
         this.particlePhysics.particles.push(generatedParticles[i]);
     }
   },

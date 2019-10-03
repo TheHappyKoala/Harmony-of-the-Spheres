@@ -13,7 +13,7 @@ export default class {
     maxD: number,
     verticalDispersion = 0,
     callback: (
-      particles: MassType[],   
+      particles: MassType[],
       minD: number,
       maxD: number,
       verticalDispersion: number,
