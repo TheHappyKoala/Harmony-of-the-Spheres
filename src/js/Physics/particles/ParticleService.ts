@@ -1,16 +1,30 @@
 import H3 from '../vectors';
-import { getRandomNumberInRange, getRandomRadian, getVMag } from '../utils';
+import {
+  getRandomNumberInRange,
+  getRandomRadian,
+  getVMag,
+  getDistanceParams
+} from '../utils';
 
 export default class {
   static getShapeOfParticles(
     number: number,
     minD: number,
     maxD: number,
-    callback: (particles: MassType[], minD: number, maxD: number) => void
+    verticalDispersion = 0,
+    callback: (
+      particles: MassType[],   
+      minD: number,
+      maxD: number,
+      verticalDispersion: number,
+      i: number,
+      maxParticles: number
+    ) => void
   ): MassType[] {
     const particles: MassType[] = [];
 
-    for (let i = 0; i < number; i++) callback(particles, minD, maxD);
+    for (let i = 0; i < number; i++)
+      callback(particles, minD, maxD, verticalDispersion, i, number);
 
     return particles;
   }
@@ -18,7 +32,10 @@ export default class {
   static getRingParticle(
     particles: MassType[],
     minD: number,
-    maxD: number
+    maxD: number,
+    verticalDispersion: number,
+    _i: number,
+    _maxParticles: number
   ): void {
     const radian = getRandomRadian();
     const dist = getRandomNumberInRange(minD, maxD);
@@ -26,7 +43,7 @@ export default class {
     particles.push({
       x: Math.cos(radian) * dist,
       y: Math.sin(radian) * dist,
-      z: 0,
+      z: getRandomNumberInRange(-verticalDispersion, verticalDispersion),
       vx: 0,
       vy: 0,
       vz: 0
@@ -36,7 +53,10 @@ export default class {
   static getRadialParticle(
     particles: MassType[],
     minD: number,
-    maxD: number
+    maxD: number,
+    verticalDispersion: number,
+    _i: number,
+    _maxParticles: number
   ): void {
     let dist = getRandomNumberInRange(minD, maxD);
 
@@ -51,7 +71,59 @@ export default class {
     particles.push({
       x: dist * Math.sin(theta) * Math.cos(phi),
       y: dist * Math.sin(theta) * Math.sin(phi),
-      z: 0,
+      z: getRandomNumberInRange(-verticalDispersion, verticalDispersion),
+      vx: 0,
+      vy: 0,
+      vz: 0
+    });
+  }
+
+  static getLogarithmicSpiralParticle(
+    particles: MassType[],
+    _minD: number,
+    _maxD: number,
+    verticalDispersion: number,
+    i: number,
+    maxParticles: number
+  ) {
+    const linCoef = 0.00001;
+    const logCoef = 0.1;
+
+    const scaledIndex = i + maxParticles * 2.8;
+
+    const offset = maxParticles / 200;
+
+    const mCoef = maxParticles / 3300000;
+
+    const x =
+      linCoef *
+      Math.pow(
+        Math.E,
+        logCoef *
+          getRandomNumberInRange(scaledIndex - offset, scaledIndex + offset) *
+          mCoef
+      ) *
+      Math.cos(
+        getRandomNumberInRange(scaledIndex - offset, scaledIndex + offset) *
+          mCoef
+      );
+    const y =
+      linCoef *
+      Math.pow(
+        Math.E,
+        logCoef *
+          getRandomNumberInRange(scaledIndex - offset, scaledIndex + offset) *
+          mCoef
+      ) *
+      Math.sin(
+        getRandomNumberInRange(scaledIndex - offset, scaledIndex + offset) *
+          mCoef
+      );
+
+    particles.push({
+      x,
+      y,
+      z: getRandomNumberInRange(-verticalDispersion, verticalDispersion),
       vx: 0,
       vy: 0,
       vz: 0
@@ -91,6 +163,7 @@ export default class {
     g: number,
     withOrbit: boolean,
     flatLand: boolean,
+    hsl?: [number, number, number],
     withMass?: {
       maxD: number;
       m: number;
@@ -146,7 +219,8 @@ export default class {
         z: primary.z + p.z,
         vx: primary.vx + v.x,
         vy: primary.vy + v.y,
-        vz: primary.vz + v.z
+        vz: primary.vz + v.z,
+        hsl
       };
     });
   }
