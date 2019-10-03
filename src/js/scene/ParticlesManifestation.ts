@@ -3,6 +3,7 @@ import {
   BufferGeometry,
   BufferAttribute,
   Points,
+  Color,
   ShaderMaterial
 } from 'three';
 import particleMaterial from './particleMaterial';
@@ -12,6 +13,8 @@ interface ParticlesManifestationType {
   scenarioScale: number;
   size: number;
   max: number;
+  spriteDepthTest: boolean;
+  transparentSprite: boolean;
   textureLoader: THREE.TextureLoader;
 }
 
@@ -20,6 +23,8 @@ export default class extends Object3D {
   scenarioScale: number;
   size: number;
   max: number;
+  spriteDepthTest: boolean;
+  transparentSprite: boolean;
   textureLoader: THREE.TextureLoader;
 
   constructor({
@@ -27,6 +32,8 @@ export default class extends Object3D {
     scenarioScale,
     size,
     max,
+    spriteDepthTest,
+    transparentSprite,
     textureLoader
   }: ParticlesManifestationType) {
     super();
@@ -41,6 +48,10 @@ export default class extends Object3D {
 
     this.max = max;
 
+    this.spriteDepthTest = spriteDepthTest;
+
+    this.transparentSprite = transparentSprite;
+
     this.textureLoader = textureLoader;
 
     this.getParticles();
@@ -51,6 +62,9 @@ export default class extends Object3D {
 
     const positions = new Float32Array(particlesLen * 3);
     const sizes = new Float32Array(particlesLen);
+    const colors = new Float32Array(particlesLen * 3);
+
+    var color = new Color(0xffffff);
 
     let j = 0;
 
@@ -61,14 +75,30 @@ export default class extends Object3D {
 
       sizes[i] = this.size;
 
+      if (i < this.particles.length && this.particles[i].hsl) {
+        color.setHSL(
+          this.particles[i].hsl[0],
+          this.particles[i].hsl[1],
+          this.particles[i].hsl[2]
+        );
+      } else color.setHSL(0.9, 0.9, 0.9);
+
+      color.toArray(colors, i * 3);
+
       j += 3;
     }
 
     const geometry = new BufferGeometry();
     geometry.addAttribute('position', new BufferAttribute(positions, 3));
+    geometry.addAttribute('customColor', new BufferAttribute(colors, 3));
     geometry.addAttribute('size', new BufferAttribute(sizes, 1));
 
-    const material = particleMaterial(this.textureLoader, 'particle');
+    const material = particleMaterial(
+      this.textureLoader,
+      'particle',
+      this.transparentSprite,
+      this.spriteDepthTest
+    );
 
     const mesh = new Points(geometry, material);
 
