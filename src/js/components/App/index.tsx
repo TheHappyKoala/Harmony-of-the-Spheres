@@ -2,7 +2,6 @@ import React, { ReactElement, useEffect, Fragment, useState } from 'react';
 import { AppState } from '../../reducers';
 import { connect } from 'react-redux';
 import * as scenarioActionCreators from '../../action-creators/scenario';
-import * as scenariosActionCreators from '../../action-creators/scenarios';
 import Renderer from '../Renderer';
 import ScenarioNavigation from '../ScenarioNavigation';
 import Tabs from '../Tabs';
@@ -16,7 +15,6 @@ import Physics from '../Content/Physics';
 import Graphics from '../Content/Graphics';
 import Camera from '../Content/Camera';
 import Masses from '../Content/Masses';
-import SaveScenario from '../Content/SaveScenario';
 import AddMass from '../Content/AddMass';
 import CockpitDashboard from '../CockpitDashboard';
 import './App.less';
@@ -35,8 +33,7 @@ const mapDispatchToProps = {
   modifyMassProperty: scenarioActionCreators.modifyMassProperty,
   getTrajectory: scenarioActionCreators.getTrajectory,
   addMass: scenarioActionCreators.addMass,
-  deleteMass: scenarioActionCreators.deleteMass,
-  saveScenario: scenariosActionCreators.saveScenario
+  deleteMass: scenarioActionCreators.deleteMass
 };
 
 interface AppProps extends AppState {
@@ -47,7 +44,6 @@ interface AppProps extends AppState {
   getTrajectory: typeof scenarioActionCreators.getTrajectory;
   getScenario: typeof scenarioActionCreators.getScenario;
   resetScenario: typeof scenarioActionCreators.resetScenario;
-  saveScenario: typeof scenariosActionCreators.saveScenario;
   scenarioName: string;
 }
 
@@ -62,7 +58,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     addMass,
     getScenario,
     resetScenario,
-    saveScenario,
     scenarioName
   }: AppProps): ReactElement => {
     useEffect(
@@ -73,7 +68,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     );
 
     const [display, setDisplay] = useState({
-      saveScenario: false,
       credits: false,
       scenarioWiki: false
     });
@@ -108,19 +102,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
             </Button>
 
             <div className="menu-left">
-              <Button
-                cssClassName="button"
-                callback={() =>
-                  setDisplay({
-                    ...display,
-                    saveScenario: !display.saveScenario
-                  })
-                }
-              >
-                <span>
-                  <i className="fas fa-save fa-2x" />Save
-                </span>
-              </Button>
               <Button
                 cssClassName="button"
                 callback={() =>
@@ -252,27 +233,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               transitionEnterTimeout={250}
               transitionLeaveTimeout={250}
             >
-              {display.saveScenario && (
-                <Modal
-                  callback={() =>
-                    setDisplay({
-                      ...display,
-                      saveScenario: !display.saveScenario
-                    })
-                  }
-                >
-                  <SaveScenario
-                    callback={saveScenario}
-                    closeWindowCallback={() =>
-                      setDisplay({
-                        ...display,
-                        saveScenario: !display.saveScenario
-                      })
-                    }
-                  />
-                </Modal>
-              )}
-
               {display.scenarioWiki && (
                 <Modal
                   callback={() =>

@@ -17,35 +17,6 @@ export const addScenario = (
   payload
 });
 
-export const saveScenario = (
-  payload: string
-): ThunkAction<void, AppState, void, Action> => (
-  dispatch: Dispatch<ScenariosActionTypes>,
-  getState: () => AppState
-) => {
-  const scenario = getState().scenario;
-
-  const scenarioToSave: ScenarioState = {
-    ...scenario,
-    name: payload,
-    type: 'Saved Simulations',
-    playing: false,
-    isLoaded: false
-  };
-
-  const savedScenarios = JSON.parse(localStorage.getItem('scenarios'));
-
-  localStorage.setItem(
-    'scenarios',
-    JSON.stringify([
-      ...(Array.isArray(savedScenarios) ? savedScenarios : []),
-      scenarioToSave
-    ])
-  );
-
-  dispatch(addScenario(scenarioToSave));
-};
-
 export const fetchScenarios = (
   payload: ExoplanetArchiveQuery[]
 ): ThunkAction<void, AppState, void, Action> => async (
