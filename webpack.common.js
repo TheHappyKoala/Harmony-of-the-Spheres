@@ -21,15 +21,11 @@ module.exports = {
       filename: 'main.[hash].css'
     }),
     new webpack.DefinePlugin({
-      DEFAULT_SCENARIO: JSON.stringify({name: "Earth Spoils Saturn", type: "What-If", fileName: "spoilingSaturn.json"}),
+      DEFAULT_SCENARIO: JSON.stringify({name: "When Galaxies Collide", type: "Misc", fileName: "whenGalaxiesCollide.json"}),
       EXOPLANET_ARCHIVE_DATA: JSON.stringify([
         {
-          query: `where=pl_facility like 'Transiting Exoplanet Survey Satellite (TESS)'`,
-          alias: "TESS"
-        },
-        {
           query: `where=pl_pnum>1`,
-          alias: "Multiplanetary Exosystems"
+          alias: "Exosystems"
         }   
       ])
     })

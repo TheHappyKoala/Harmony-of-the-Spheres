@@ -364,7 +364,7 @@ export default class {
       //
       // add softening here
       //
-      if (r === Infinity) {
+      if (r === 0) {
         return { x: 0, y: 0, z: 0 };
       }
       const acc = rVector
@@ -375,8 +375,8 @@ export default class {
       return acc;
     } else if (nChildren === 8) {
       const rVector = v.set(tree.CoM).subtract(p);
-      const r = rVector.getLength(); 
-      if (r === Infinity) {
+      const r = rVector.getLength();
+      if (r === 0) {
         return { x: 0, y: 0, z: 0 };
       }
       if (tree.size / r < this.theta) {

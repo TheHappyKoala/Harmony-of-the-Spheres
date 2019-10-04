@@ -6,7 +6,7 @@ import {
   ADD_MASS,
   DELETE_MASS
 } from '../../action-types/scenario';
-import json from '../../../data/scenarios/spoilingSaturn.json';
+import json from '../../../data/scenarios/whenGalaxiesCollide.json';
 
 export default (state = <ScenarioState>json, action: ScenarioActionTypes) => {
   switch (action.type) {
