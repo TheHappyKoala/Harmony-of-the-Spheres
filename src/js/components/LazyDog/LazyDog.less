@@ -1,21 +1,26 @@
 .lazy-dog-wrapper {
-  text-align: center;
-  display: inline-block;
-  margin: 0;
-  border: 1px solid #545454;
+  position: relative;
   overflow: hidden;
-  figcaption {
+  border: 1px solid #545454;
+  background-color: #000;
+  text-align: center;
+  &:hover {
+    font-weight: bold;
+  }
+  min-height: 100px;
+  p {
+    width: 85%;
     position: absolute;
-    z-index: 10;
-    bottom: 12px;
-    width: 100%;
+    left: 50%;
+    font-size: 11px;
+    transform: translateX(-50%);
+    bottom: 0;
   }
   i {
-    display: block;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    left: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   img {
     opacity: 0;
@@ -26,6 +31,6 @@
   }
 }
 
-.lazy-dog-wrapper:hover > figcaption {
-  font-weight: bold;
+.lazy-dog-wrapper:hover {
+  box-shadow: 0px 0px 3px skyblue;
 }

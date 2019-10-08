@@ -15,7 +15,7 @@ interface MassType extends Vector {
 }
 
 interface Barycenter extends Vector {
-  m: number
+  m: number;
 }
 
 interface Exoplanet {
@@ -75,6 +75,7 @@ interface ScenarioSeed {
   type: string;
   exoPlanetArchive?: boolean;
   fileName?: string;
+  scenarioWikiUrl?: string;
 }
 
 interface ExoplanetArchiveQuery {

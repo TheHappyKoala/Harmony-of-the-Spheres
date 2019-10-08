@@ -40,7 +40,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -84,7 +84,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rubik Mono One', sans-serif;
 }
 
 .button {
@@ -99,16 +99,7 @@ h4 {
 }
 
 .active {
-  text-shadow: 2px 2px 6px #eee;
-}
-
-.tabs {
-  display: flex;
-  justify-content: space-evenly;
-  width: inherit;
-  li {
-    cursor: pointer;
-  }
+  border-bottom: 1px solid #fff;
 }
 
 .tabs-dropdown-wrapper {
@@ -129,67 +120,16 @@ h4 {
   }
 }
 
-.scenario-dropdown-wrapper {
-  width: 195px;
-  position: absolute;
-  top: 10px;
-  left: 5px;
-  .scenario-menu {
-    .absolute();
-    box-sizing: content-box;
-    z-index: 2;
-    padding: 25px;
-    padding-top: 0;
-    max-height: 75vh;
-    overflow: auto;
-    border: @border;
-    ul {
-      padding: 10px;
-      border-bottom: @border;
-      margin-bottom: 5px;
-    }
-    .dropdown-content {
-      margin-top: 25px;
-      display: grid;
-      grid-gap: 15px;
-      grid-template-columns: 159.42028985507247px 159.42028985507247px 159.42028985507247px 159.42028985507247px;
-      @media screen and (max-width: 1200px) {
-        grid-template-columns: 159.42028985507247px 159.42028985507247px 159.42028985507247px 159.42028985507247px;
-      }
-      .lazy-dog-wrapper {
-        height: 100px;
-        width: 159.42028985507247px;
-      }
-    }
-    .scenario-menu-option {
-      position: relative;
-    }
-  }
-  .dropdown-pagination-list {
-    list-style: none;
-    width: 100%;
-    li {
-      display: inline-block;
-      font-size: 14px;
-      padding: 8px;
-      cursor: pointer;
-    }
-    li.active {
-      font-weight: bold;
-    }
-  }
-}
-
 .simulation-state {
   .absolute();
-  top: 20px;
-  left: 210px;
+  top: 8px;
+  left: 225px;
 }
 
 .simulation-reset {
   .absolute();
-  top: 20px;
-  left: 245px;
+  top: 8px;
+  left: 260px;
 }
 
 .sidebar-wrapper {
@@ -211,6 +151,8 @@ h4 {
 .sidebar-wrapper > ul {
   border-top: none;
   border-right: none;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .mass-tabs {
@@ -226,6 +168,7 @@ h4 {
     border: none;
     border-top: @border;
     background-color: #000;
+    min-height: auto;
   }
   .lazy-dog-wrapper {
     img {
@@ -325,22 +268,22 @@ h4 {
 }
 
 .left-enter {
-  left: -200px;
+  transform: translateX(-200px)
 }
 
 .left-enter.left-enter-active {
-  left: 5px;
-  transition: left 150ms ease-in;
+  transform: translateX(0);
+  transition: transform 150ms ease-in;
 }
 
 .left-leave {
-  left: 5px;
+  transform: translateX(0);
 }
 
 .left-leave.left-leave-active {
-  left: -200px;
-  transition: left 150ms ease-in;
-}
+  transform: translateX(-200px);
+  transition: transform 150ms ease-in;
+}  
 
 .slide-enter {
   margin-right: -280px;

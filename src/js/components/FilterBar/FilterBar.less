@@ -1,0 +1,50 @@
+.filter-bar {
+  width: 215px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.filter-bar-selected {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  border: 1px solid #545454;
+  padding: 10px;
+  line-height: 22px;
+  cursor: pointer;
+  i {
+    float: right;
+    transition: transform 0.15s ease-in;
+  }
+}
+
+.filter-bar-results {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: calc(100vh - 43px);
+  overflow: auto;
+  z-index: 2;
+  padding: 10px;
+  padding-top: 0;
+  padding-bottom: 90px;
+  overflow: auto;
+  border: 1px solid #545454;
+  width: 100%;
+}
+
+.filter-tabs {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: 0;
+  padding: 15px 0;
+  border: 1px solid #545454;
+  border-top: none;
+  li {
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
+}

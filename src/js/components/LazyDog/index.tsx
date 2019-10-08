@@ -4,8 +4,8 @@ import './LazyDog.less';
 interface LazyDogProps {
   src: string;
   alt: string;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   caption: string;
   placeHolderIcon: string;
 }
@@ -21,7 +21,7 @@ export default ({
   const [loading, setLoading] = useState(true);
 
   return (
-    <figure className="lazy-dog-wrapper">
+    <div className="lazy-dog-wrapper">
       <img
         onLoad={() => setLoading(false)}
         src={src}
@@ -29,9 +29,10 @@ export default ({
         width={width}
         height={height}
         className={!loading && 'loaded-image'}
+        style={{ width: !width && '100%' }}
       />
-      <figcaption>{caption}</figcaption>
+      <p>{caption}</p>
       {loading && <i className={placeHolderIcon} />}
-    </figure>
+    </div>
   );
 };
