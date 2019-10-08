@@ -92,7 +92,6 @@ export default class extends Component {
           selectedOptionCssClassName="selected-option"
           optionsWrapperCssClass="options"
           dynamicChildrenLen={this.props.masses.length}
-          transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
         >
           {this.props.masses.map(mass => (
             <div

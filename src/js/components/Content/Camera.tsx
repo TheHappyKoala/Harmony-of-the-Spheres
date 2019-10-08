@@ -31,7 +31,6 @@ export default ({
       selectedOptionCssClassName="selected-option"
       optionsWrapperCssClass="options"
       dynamicChildrenLen={masses.length}
-      transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
     >
       <div
         data-name="Barycenter"
@@ -73,7 +72,6 @@ export default ({
       selectedOptionCssClassName="selected-option"
       optionsWrapperCssClass="options"
       dynamicChildrenLen={masses.length}
-      transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
     >
       <div
         data-name="Barycenter"

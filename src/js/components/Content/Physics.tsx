@@ -62,7 +62,6 @@ export default ({
         dropdownWrapperCssClassName="tabs-dropdown-wrapper"
         optionsWrapperCssClass="options"
         dynamicChildrenLen={integrators.length}
-        transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
       >
         {integrators.map(integrator => (
           <div
@@ -209,7 +208,6 @@ export default ({
             selectedOptionCssClassName="selected-option"
             optionsWrapperCssClass="options"
             dynamicChildrenLen={masses.length}
-            transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
           >
             {masses.map(mass => (
               <div
@@ -239,7 +237,6 @@ export default ({
             selectedOptionCssClassName="selected-option"
             optionsWrapperCssClass="options"
             dynamicChildrenLen={masses.length}
-            transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
           >
             {masses.map(mass => (
               <div

@@ -25,7 +25,6 @@ export default props => {
         selectedOptionCssClassName="selected-option"
         optionsWrapperCssClass="options"
         dynamicChildrenLen={props.masses.length}
-        transition={{ name: 'fall', enterTimeout: 150, leaveTimeout: 150 }}
       >
         {props.masses.map(mass => (
           <div
@@ -59,11 +58,6 @@ export default props => {
                 selectedOptionCssClassName="selected-option"
                 optionsWrapperCssClass="options"
                 dynamicChildrenLen={bodies.length}
-                transition={{
-                  name: 'fall',
-                  enterTimeout: 150,
-                  leaveTimeout: 150
-                }}
               >
                 {bodies.map(body => (
                   <div
