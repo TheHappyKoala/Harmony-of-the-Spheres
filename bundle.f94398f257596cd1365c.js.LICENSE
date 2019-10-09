@@ -1,0 +1,54 @@
+/*!
+ * 
+ *         Harmony of the Spheres - Newtonian n-body gravity simulator
+ *         Copyright (C) 2019 Darrell A. Huffman
+ *         License: GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+ *         Email: darrell.arjuna.huffman@gmail.com
+ *         Full License: https://github.com/TheHappyKoala/Harmony-of-the-Spheres/blob/master/LICENSE
+ * 
+ *       
+ */
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/** @license React v16.8.6
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.8.6
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v0.13.6
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.8.4
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+//!\ DECLARE ALIAS AFTER assign prototype !
