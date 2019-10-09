@@ -107,17 +107,14 @@ h4 {
   width: inherit;
 }
 
-.menu-left {
+.menu-bottom {
   .absolute();
-  top: 50%;
-  transform: translateY(-50%);
-  .button {
-    margin-top: 10px;
-    padding: 0 5px;
-  }
-  @media screen and (max-width: 700px) {
-    top: 55%;
-  }
+  width: 150px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .simulation-state {
