@@ -8,9 +8,7 @@ import Tabs from '../Tabs';
 import Button from '../Button';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Modal from '../Modal';
-import Iframe from '../Iframe';
 import Credits from '../Content/Credits';
-import Tweet from '../Tweet';
 import Physics from '../Content/Physics';
 import Graphics from '../Content/Graphics';
 import Camera from '../Content/Camera';
@@ -68,8 +66,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     );
 
     const [display, setDisplay] = useState({
-      credits: false,
-      scenarioWiki: false
+      credits: false
     });
 
     return (
@@ -100,51 +97,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
             >
               <i className="fas fa-refresh fa-2x" />
             </Button>
-
-            <div className="menu-left">
-              <Button
-                cssClassName="button"
-                callback={() =>
-                  setDisplay({
-                    ...display,
-                    scenarioWiki: !display.scenarioWiki
-                  })
-                }
-              >
-                <span>
-                  <i className="fas fa-wikipedia-w fa-2x" />Scenario
-                </span>
-              </Button>
-              <Button
-                cssClassName="button"
-                callback={() =>
-                  setDisplay({ ...display, credits: !display.credits })
-                }
-              >
-                <span>
-                  <i className="fas fa-glass fa-2x button" />Credits
-                </span>
-              </Button>
-              <Tweet
-                shareText={`Hey friends! Check out this 3D gravity simulation of ${
-                  scenario.name
-                }. It will run in your browser :)!`}
-                shareUrl={document.location.toString()}
-                callToAction="Tweet"
-                cssClassName="button"
-                hashtags="Space,HarmonyOfTheSpheres,Science"
-              />
-              <Button cssClassName="button">
-                <a
-                  href="https://github.com/TheHappyKoala/Harmony-of-the-Spheres"
-                  target="blank"
-                >
-                  <span>
-                    <i className="fas fa-github fa-2x" />Contribute
-                  </span>
-                </a>
-              </Button>
-            </div>
             <Tabs
               tabsWrapperClassName="sidebar-wrapper"
               tabsContentClassName="sidebar-content box"
@@ -233,19 +185,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
               transitionEnterTimeout={250}
               transitionLeaveTimeout={250}
             >
-              {display.scenarioWiki && (
-                <Modal
-                  callback={() =>
-                    setDisplay({
-                      ...display,
-                      scenarioWiki: !display.scenarioWiki
-                    })
-                  }
-                >
-                  <Iframe url={scenario.scenarioWikiUrl} />
-                </Modal>
-              )}
-
               {display.credits && (
                 <Modal
                   callback={() =>

@@ -175,7 +175,7 @@ export default {
         }
       });
       this.loop();
-    }, 3000);
+    }, 5000);
 
     window.addEventListener('resize', this.onWindowResize, false);
     window.addEventListener('orientationchange', this.onWindowResize, false);

@@ -70,19 +70,19 @@ export const getPaginationRange = (
   let start;
   let end;
 
-  if (count <= 10) {
+  if (count <= 3) {
     start = 1;
     end = count;
   } else {
-    if (page <= 6) {
+    if (page <= 2) {
       start = 1;
-      end = 10;
-    } else if (page + 4 >= count) {
-      start = count - 9;
+      end = 3;
+    } else if (page + 1 >= count) {
+      start = count - 2;
       end = count;
     } else {
-      start = page - 5;
-      end = page + 4;
+      start = page - 1;
+      end = page + 1;
     }
   }
 

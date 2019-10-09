@@ -71,7 +71,7 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: @font;
-  font-size: 12px;
+  font-size: 11px;
   color: @font-color;
   background-color: #000;
   i {
@@ -123,26 +123,25 @@ h4 {
 .simulation-state {
   .absolute();
   top: 8px;
-  left: 225px;
+  left: 280px;
 }
 
 .simulation-reset {
   .absolute();
   top: 8px;
-  left: 260px;
+  left: 305px;
 }
 
 .sidebar-wrapper {
   .absolute();
   top: 0;
   right: 0;
-  width: 280px;
+  width: 230px;
   .sidebar-content {
     height: calc(100vh - 45px);
-    width: 280px;
+    width: 230px;
     float: right;
     border-top: none;
-    border-right: none;
     overflow: auto;
     padding-bottom: 45px;
   }
@@ -150,12 +149,18 @@ h4 {
 
 .sidebar-wrapper > ul {
   border-top: none;
-  border-right: none;
   display: flex;
   justify-content: space-evenly;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 11px;
 }
 
 .mass-tabs {
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
   .mass-content {
     height: 150px;
     overflow: auto;
@@ -268,7 +273,7 @@ h4 {
 }
 
 .left-enter {
-  transform: translateX(-200px)
+  transform: translateX(-200px);
 }
 
 .left-enter.left-enter-active {
@@ -283,7 +288,7 @@ h4 {
 .left-leave.left-leave-active {
   transform: translateX(-200px);
   transition: transform 150ms ease-in;
-}  
+}
 
 .slide-enter {
   margin-right: -280px;

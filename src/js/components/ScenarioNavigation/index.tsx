@@ -4,6 +4,7 @@ import { AppState } from '../../reducers';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import FilterBar from '../FilterBar';
+import Tweet from '../Tweet';
 import LazyDog from '../LazyDog';
 import Button from '../Button';
 import Modal from '../Modal';
