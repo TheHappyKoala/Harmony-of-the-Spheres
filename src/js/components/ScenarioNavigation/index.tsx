@@ -89,6 +89,16 @@ export default withRouter(
                     </Button>
                   </div>
                 )}
+                <div className="twitter-cta">
+                  <Tweet
+                    shareText={`Hey friends! Check out this 3D gravity simulation of ${
+                      scenario.name
+                    }. It will run in your browser :)!`}
+                    shareUrl={document.location.toString()}
+                    cssClassName="button"
+                    hashtags="Space,HarmonyOfTheSpheres,Science"
+                  />
+                </div>
               </div>
             ))}
           </FilterBar>

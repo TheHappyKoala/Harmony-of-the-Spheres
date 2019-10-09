@@ -3,7 +3,7 @@ import React, { ReactElement, memo } from 'react';
 interface TweetProps {
   shareText: string;
   shareUrl: string;
-  callToAction: string;
+  callToAction?: string;
   cssClassName: string;
   hashtags: string;
 }
