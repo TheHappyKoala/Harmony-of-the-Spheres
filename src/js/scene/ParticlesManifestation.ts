@@ -81,7 +81,7 @@ export default class extends Object3D {
           this.particles[i].hsl[1],
           this.particles[i].hsl[2]
         );
-      } else color.setHSL(0.9, 0.9, 0.9);
+      } else color.setHSL(0.6, 0.6, 0.6);
 
       color.toArray(colors, i * 3);
 
