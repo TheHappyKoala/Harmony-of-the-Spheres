@@ -24,7 +24,8 @@ fs.writeFileSync(
     hooverDir("./src/data/scenarios/").map(scenario => ({
       name: scenario.name,
       type: scenario.type,
-      fileName: scenario.fileName
+      fileName: scenario.fileName,
+      scenarioWikiUrl: scenario.scenarioWikiUrl
     }))
   )
 );
