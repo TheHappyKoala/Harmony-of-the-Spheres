@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
+import Nav from '../Nav';
+import NavItem from '../NavItem';
 import { getPaginationRange } from '../../utils';
-import './Pagination.less';
 
 interface PaginationProps {
   itemsPerPage: number;
@@ -23,9 +24,9 @@ export default ({
     itemsPerPage: number
   ) => {
     const items = [
-      <li
+      <NavItem
         key="pagination-first-page"
-        onClick={() =>
+        callback={() =>
           setPagination({
             ...pagination,
             start: 0 * itemsPerPage,
@@ -35,14 +36,14 @@ export default ({
         }
       >
         First Page
-      </li>
+      </NavItem>
     ];
 
     for (let i = range.start; i <= range.end; i++) {
       items.push(
-        <li
+        <NavItem
           key={i}
-          onClick={() =>
+          callback={() =>
             setPagination({
               ...pagination,
               start: (i - 1) * itemsPerPage,
@@ -50,18 +51,18 @@ export default ({
               page: i
             })
           }
-          className={`${i === pagination.page ? 'active' : ''}`}
+          active={i === pagination.page}
         >
           {i}
-        </li>
+        </NavItem>
       );
     }
 
     return [
       ...items,
-      <li
+      <NavItem
         key="pagination-last-page"
-        onClick={() =>
+        callback={() =>
           setPagination({
             ...pagination,
             start: (pagination.count - 1) * itemsPerPage,
@@ -71,16 +72,16 @@ export default ({
         }
       >
         Last Page
-      </li>
+      </NavItem>
     ];
   };
 
   return (
-    <ul className="pagination">
+    <Nav>
       {renderRange(
         getPaginationRange(pagination.page, pagination.count),
         itemsPerPage
       )}
-    </ul>
+    </Nav>
   );
 };

@@ -6,6 +6,8 @@ import React, {
   Children,
   isValidElement
 } from 'react';
+import Nav from '../Nav';
+import NavItem from '../NavItem';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 interface TabsProps {
@@ -37,12 +39,12 @@ export default ({
 
   return (
     <div className={tabsWrapperClassName}>
-      <ul className="tabs box">
+      <Nav>
         {panes.map((child, i) => (
-          <li
+          <NavItem
             key={i}
-            onClick={() => setSelectedTabIndex(i)}
-            className={`button ${selectedTabIndex === i ? 'active' : ''}`}
+            callback={() => setSelectedTabIndex(i)}
+            active={selectedTabIndex === i}
           >
             {isValidElement<{
               ['data-label']?: string;
@@ -59,9 +61,9 @@ export default ({
                 </span>
               </Fragment>
             )}
-          </li>
+          </NavItem>
         ))}
-      </ul>
+      </Nav>
       <ReactCSSTransitionGroup
         transitionName={transition.name}
         transitionEnterTimeout={transition.enterTimeout}

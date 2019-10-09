@@ -8,6 +8,8 @@ import React, {
   Children,
   useEffect
 } from 'react';
+import Nav from '../Nav';
+import NavItem from '../NavItem';
 import Pagination from '../Pagination';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './FilterBar.less';
@@ -106,17 +108,17 @@ export default memo(
           {options && (
             <div>
               <Fragment>
-                <ul className="filter-tabs">
+                <Nav css={{ borderBottom: 'none' }}>
                   {tabsLabels.map(tabLabel => (
-                    <li
+                    <NavItem
                       key={tabLabel}
-                      onClick={() => setSelectedTab(tabLabel)}
-                      className={`${selectedTab === tabLabel ? 'active' : ''}`}
+                      callback={() => setSelectedTab(tabLabel)}
+                      active={selectedTab === tabLabel}
                     >
                       {tabLabel}
-                    </li>
+                    </NavItem>
                   ))}
-                </ul>
+                </Nav>
                 {pagination.count > 1 && (
                   <Pagination
                     pagination={pagination}
