@@ -3,6 +3,10 @@ import H3 from '../vectors/';
 export default class {
   static getOrbitalInsertionDeltaV() {}
 
+  static setM(spacecraft: MassType, dt: number): void {
+    spacecraft.m -= (spacecraft.mfr * dt);
+  }
+
   static getThrustDeltaV(
     dm: number,
     fm: number,
@@ -10,7 +14,7 @@ export default class {
     mfr: number,
     dt: number
   ): number {
-    return (-ev * mfr / (dm + fm)) * dt;
+    return (-ev * mfr / (dm + fm) * dt);
   }
 
   static applyThrust(spacecraft: MassType, deltaV: number): void {
