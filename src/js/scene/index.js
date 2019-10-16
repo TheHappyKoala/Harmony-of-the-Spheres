@@ -396,47 +396,15 @@ export default {
 
     const maxAngle = 35;
 
-    const deflectedVelocity = CollisionsService.getDeflectedVelocity(
-      survivor,
-      looser
-    );
-
-    const directionalSlope = new H3().set(survivor).getDirectionalSlope(looser);
-
-    const realLooserRadius = looser.radius / this.scenario.scale;
-
-    for (let i = 0; i < numberOfFragments; i++) {
-      const angleX = getRandomNumberInRange(-maxAngle, maxAngle);
-      const angleY = getRandomNumberInRange(-maxAngle, maxAngle);
-      const angleZ = getRandomNumberInRange(-maxAngle, maxAngle);
-
-      const particleVelocity = new H3()
-        .set(deflectedVelocity)
-        .multiplyByScalar(getRandomNumberInRange(0.3, 1))
-        .rotate({ x: 1, y: 0, z: 0 }, angleX)
-        .rotate({ x: 0, y: 1, z: 0 }, angleY)
-        .rotate({ x: 0, y: 0, z: 1 }, angleZ)
-        .add({ x: survivor.vx, y: survivor.vy, z: survivor.vz });
-
-      this.particlePhysics.particles.push({
-        ...new H3()
-          .set({
-            x: looser.x,
-            y: looser.y,
-            z: looser.z
-          })
-          .add({
-            x: Math.sign(looser.vx) * (realLooserRadius * directionalSlope.x),
-            y: Math.sign(looser.vy) * (realLooserRadius * directionalSlope.y),
-            z: Math.sign(looser.vz) * (realLooserRadius * directionalSlope.z)
-          })
-          .toObject(),
-        vx: particleVelocity.x / clampAbs(1, maxAngle, angleX / 10),
-        vy: particleVelocity.y / clampAbs(1, maxAngle, angleY / 10),
-        vz: particleVelocity.z / clampAbs(1, maxAngle, angleZ / 10),
-        lives: 25
-      });
-    }
+    this.particlePhysics.particles = [
+      ...this.particlePhysics.particles,
+      ...CollisionsService.generateEjectaStateVectors(
+        survivor,
+        looser,
+        numberOfFragments,
+        this.scenario.scale
+      )
+    ];
   },
 
   loop() {

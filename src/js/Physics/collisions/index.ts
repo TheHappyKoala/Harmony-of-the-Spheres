@@ -1,4 +1,4 @@
-import { getDistanceParams } from '../utils';
+import { getDistanceParams, getRandomNumberInRange, clampAbs } from '../utils';
 import H3 from '../vectors';
 
 export default class {
@@ -44,6 +44,75 @@ export default class {
         }
       }
     }
+  }
+
+  static getRandomRotationVector(maxAngle: number): Vector {
+    return {
+      x: getRandomNumberInRange(-maxAngle, maxAngle),
+      y: getRandomNumberInRange(-maxAngle, maxAngle),
+      z: getRandomNumberInRange(-maxAngle, maxAngle)
+    };
+  }
+
+  static getCollisionDirectionVector(
+    survivor: MassType,
+    looser: MassType
+  ): Vector {
+    return new H3().set(survivor).getDirectionalSlope(looser);
+  }
+
+  static generateEjectaStateVectors(
+    survivor: MassType,
+    looser: MassType,
+    fragments: number,
+    scale: number
+  ) {
+    const velocity = this.getDeflectedVelocity(survivor, looser);
+    const collisionDirectionVector = this.getCollisionDirectionVector(
+      survivor,
+      looser
+    );
+    const looserRadius = looser.radius / scale;
+
+    return [...new Array(fragments)].map(_fragment => {
+      const ejectaRotationVector = this.getRandomRotationVector(30);
+
+      const particleVelocity = new H3()
+        .set(velocity)
+        .multiplyByScalar(getRandomNumberInRange(0.3, 1))
+        .rotate({ x: 1, y: 0, z: 0 }, ejectaRotationVector.x)
+        .rotate({ x: 0, y: 1, z: 0 }, ejectaRotationVector.y)
+        .rotate({ x: 0, y: 0, z: 1 }, ejectaRotationVector.z)
+        .add({ x: survivor.vx, y: survivor.vy, z: survivor.vz })
+        .divide({
+          x: clampAbs(1, 30, ejectaRotationVector.x / 10),
+          y: clampAbs(1, 30, ejectaRotationVector.y / 10),
+          z: clampAbs(1, 30, ejectaRotationVector.z / 10)
+        });
+
+      const position = new H3()
+        .set({
+          x: looser.x,
+          y: looser.y,
+          z: looser.z
+        })
+        .add({
+          x: Math.sign(looser.vx) * (looserRadius * collisionDirectionVector.x),
+          y: Math.sign(looser.vy) * (looserRadius * collisionDirectionVector.y),
+          z: Math.sign(looser.vz) * (looserRadius * collisionDirectionVector.z)
+        })
+        .toObject();
+
+      return {
+        x: position.x,
+        y: position.y,
+        z: position.z,
+        vx: particleVelocity.x,
+        vy: particleVelocity.y,
+        vz: particleVelocity.z,
+        lives: 25
+      };
+    });
   }
 
   static getClosestPointOnSphere(
