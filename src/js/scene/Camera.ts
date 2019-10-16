@@ -32,7 +32,7 @@ export default class extends PerspectiveCamera {
   trackMovingObjectWithControls(movingObject: Object3D): void {
     this.controls.customPan.add(
       movingObject
-        .getObjectByName('Main')
+        .getObjectByName('main')
         .position.clone()
         .sub(this.controls.target)
     );

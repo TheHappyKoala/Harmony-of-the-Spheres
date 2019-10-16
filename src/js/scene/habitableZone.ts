@@ -5,10 +5,12 @@ import habitableZoneMaterial from './habitableZoneMaterial';
 export default (m: number): THREE.Mesh => {
   const [start, end] = StellarService.getHabitableZoneBounds(m);
 
+  const scale = 2100000;
+
   const geometry = new THREE.RingBufferGeometry(
-    start * 2100000 * 0.9,
-    end * 2100000 * 1.1,
-    42
+    start * scale * 0.9,
+    end * scale * 1.1,
+    32
   );
 
   const material = habitableZoneMaterial(
@@ -20,7 +22,7 @@ export default (m: number): THREE.Mesh => {
 
   const mesh = new THREE.Mesh(geometry, material);
 
-  mesh.name = 'Habitable Zone';
+  mesh.name = 'habitable zone';
 
   return mesh;
 };

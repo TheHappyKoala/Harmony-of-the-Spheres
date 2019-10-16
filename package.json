@@ -11,12 +11,6 @@
     "test": "echo \"No test specified\" && exit 0",
     "prettier": "prettier --single-quote --print-width 80 \"src/**/*.{js,ts,tsx,less}\" --write"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "linters": {
       "src/**/*.{js,ts,tsx,less}": [

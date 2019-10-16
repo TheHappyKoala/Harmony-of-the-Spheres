@@ -4,7 +4,7 @@ export default class {
   static getOrbitalInsertionDeltaV() {}
 
   static setM(spacecraft: MassType, dt: number): void {
-    spacecraft.m -= (spacecraft.mfr * dt);
+    spacecraft.m -= spacecraft.mfr * dt;
   }
 
   static getThrustDeltaV(
@@ -14,7 +14,7 @@ export default class {
     mfr: number,
     dt: number
   ): number {
-    return (-ev * mfr / (dm + fm) * dt);
+    return -ev * mfr / (dm + fm) * dt;
   }
 
   static applyThrust(spacecraft: MassType, deltaV: number): void {
@@ -26,9 +26,9 @@ export default class {
         z: spacecraft.z + spacecraft.vz
       });
 
-    spacecraft.vx += deltaV * directionalSlope.x;
-    spacecraft.vy += deltaV * directionalSlope.y;
-    spacecraft.vz += deltaV * directionalSlope.z;
+    spacecraft.vx += deltaV * Math.sign(spacecraft.vx) * directionalSlope.x;
+    spacecraft.vy += deltaV * Math.sign(spacecraft.vy) * directionalSlope.y;
+    spacecraft.vz += deltaV * Math.sign(spacecraft.vx) * directionalSlope.z;
   }
 
   static applyOrbitalInsertionBurn(

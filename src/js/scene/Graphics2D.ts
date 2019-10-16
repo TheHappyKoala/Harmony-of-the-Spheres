@@ -112,22 +112,3 @@ export const drawMassLabel = (
   ctx.arc(x, y, 8, 0, 2 * Math.PI);
   ctx.stroke();
 };
-
-export const drawReferenceOrbitLabel = (
-  ctx: CanvasRenderingContext2D,
-  x: number,
-  y: number,
-  color: string
-): void => {
-  ctx.strokeStyle = color;
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-
-  ctx.moveTo(x, y + 80);
-  ctx.lineTo(x, y);
-  ctx.stroke();
-
-  ctx.moveTo(x, y);
-  ctx.lineTo(x + 30, y);
-  ctx.stroke();
-};

@@ -61,15 +61,5 @@ export default ({
         })
       }
     />
-    <Toggle
-      label="Reference Orbits"
-      checked={referenceOrbits}
-      callback={() =>
-        modifyScenarioProperty({
-          key: 'referenceOrbits',
-          value: !referenceOrbits
-        })
-      }
-    />
   </Fragment>
 );

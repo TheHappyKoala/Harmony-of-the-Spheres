@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import store from '../store';
 import {
   modifyScenarioProperty,
+  modifyMassProperty,
   deleteMass
 } from '../action-creators/scenario';
 import H3 from '../Physics/vectors';
@@ -17,17 +18,14 @@ import {
 import ParticleService from '../Physics/particles/ParticleService';
 import arena from './arena';
 import Camera from './Camera';
-import Graphics2D, {
-  drawBaryCenterLabel,
-  drawMassLabel,
-  drawReferenceOrbitLabel
-} from './Graphics2D';
+import Graphics2D, { drawBaryCenterLabel, drawMassLabel } from './Graphics2D';
 import MassManifestation from './MassManifestation';
 import Star from './Star';
 import Model from './Model';
 import ParticlePhysics from '../Physics/particles';
 import ParticlesManifestation from './ParticlesManifestation';
 import CollisionsService from '../Physics/collisions/';
+import SpacecraftService from '../Physics/spacecraft/SpacecraftService';
 import CustomEllipseCurve from './CustomEllipseCurve';
 import { stateToKepler } from '../Physics/spacecraft/lambert';
 
@@ -48,19 +46,6 @@ export default {
     );
 
     this.audio = audio;
-
-    this.referenceOrbits = {
-      mercury: {
-        orbit: getEllipse(0.38709893, 0.20563069),
-        w: 77.45645,
-        i: 7.00487
-      },
-      earth: {
-        orbit: getEllipse(1.000001018, 0.0167086),
-        w: 288.1,
-        i: 0
-      }
-    };
 
     this.iteration = 0;
 
@@ -181,7 +166,9 @@ export default {
     window.addEventListener('orientationchange', this.onWindowResize, false);
   },
 
-  addManifestation(mass) {
+  createManifestation(mass) {
+    const segments = 25;
+
     switch (mass.type) {
       case 'star':
         return new Star(mass, this.textureLoader);
@@ -190,13 +177,13 @@ export default {
         return new Model(mass, this.textureLoader);
 
       default:
-        return new MassManifestation(mass, this.textureLoader);
+        return new MassManifestation(mass, this.textureLoader, segments);
     }
   },
 
   addManifestations() {
     this.scenario.masses.forEach(mass => {
-      const manifestation = this.addManifestation(mass);
+      const manifestation = this.createManifestation(mass);
 
       this.massManifestations.push(manifestation);
       this.scene.add(manifestation);
@@ -228,7 +215,7 @@ export default {
 
     if (newMasses.length > previousMasses.length) {
       const newMass = newMasses[newMasses.length - 1];
-      const manifestation = this.addManifestation(newMass);
+      const manifestation = this.createManifestation(newMass);
 
       this.massManifestations.push(manifestation);
       this.scene.add(manifestation);
@@ -348,7 +335,7 @@ export default {
 
     if (survivingManifestation.materialShader) {
       survivingManifestationRotation = survivingManifestation.getObjectByName(
-        'Main'
+        'main'
       ).rotation;
 
       hitPoint = CollisionsService.getClosestPointOnSphere(
@@ -615,27 +602,19 @@ export default {
 
       const rotatedPosition = this.camera.rotatedMasses[i];
 
-      if (mass.type !== 'star')
-        massManifestation.draw(
-          rotatedPosition.x,
-          rotatedPosition.y,
-          rotatedPosition.z,
-          this.scenario.playing,
-          drawTrail
-        );
-      else {
-        massManifestation.draw(
-          rotatedPosition.x,
-          rotatedPosition.y,
-          rotatedPosition.z,
-          this.camera,
-          this.scenario.playing,
-          drawTrail,
-          delta
-        );
+      massManifestation.draw(
+        rotatedPosition.x,
+        rotatedPosition.y,
+        rotatedPosition.z,
+        this.scenario.playing,
+        drawTrail,
+        this.camera,
+        delta
+      );
 
+      if (mass.type === 'star') {
         const habitableZone = massManifestation.getObjectByName(
-          'Habitable Zone'
+          'habitable zone'
         );
 
         if (habitableZone === undefined) {
@@ -644,78 +623,12 @@ export default {
           if (!this.scenario.habitableZone)
             massManifestation.removeHabitableZone();
         }
-
-        const referenceOrbits = massManifestation.getObjectByName(
-          'Reference Orbits'
-        );
-
-        if (!referenceOrbits) {
-          if (this.scenario.referenceOrbits)
-            massManifestation.getReferenceOrbits(this.referenceOrbits);
-        } else {
-          if (!this.scenario.referenceOrbits)
-            massManifestation.removeReferenceOrbits();
-
-          if (this.scenario.referenceOrbits) {
-            this.graphics2D.drawLabel(
-              'The Orbit of Planet Earth',
-              this.utilityVector
-                .set(
-                  rotatedPosition.x -
-                    this.referenceOrbits.earth.orbit.xRadius *
-                      this.scenario.scale,
-                  rotatedPosition.y,
-                  rotatedPosition.z
-                )
-                .applyAxisAngle(
-                  { x: 1, y: 0, z: 0 },
-                  this.referenceOrbits.earth.w * 0.0174533
-                )
-                .applyAxisAngle(
-                  { x: 0, y: 1, z: 0 },
-                  this.referenceOrbits.earth.i * 0.0174533
-                ),
-              this.camera,
-              false,
-              'left',
-              'skyblue',
-              drawReferenceOrbitLabel,
-              -80
-            );
-
-            this.graphics2D.drawLabel(
-              'The Orbit of Planet Mercury',
-              this.utilityVector
-                .set(
-                  rotatedPosition.x -
-                    (this.referenceOrbits.mercury.orbit.yRadius - 0.022) *
-                      this.scenario.scale,
-                  rotatedPosition.y,
-                  rotatedPosition.z
-                )
-                .applyAxisAngle(
-                  { x: 1, y: 0, z: 0 },
-                  this.referenceOrbits.mercury.w * 0.0174533
-                )
-                .applyAxisAngle(
-                  { x: 0, y: 1, z: 0 },
-                  this.referenceOrbits.mercury.i * 0.0174533
-                ),
-              this.camera,
-              false,
-              'left',
-              'pink',
-              drawReferenceOrbitLabel,
-              -80
-            );
-          }
-        }
       }
 
-      const trail = massManifestation.getObjectByName('Trail');
+      const trail = massManifestation.getObjectByName('trail');
 
       if (this.scenario.trails) {
-        if (!trail) massManifestation.getTrail(dt, this.scenario.drawLineEvery);
+        if (!trail) massManifestation.addTrail(dt, this.scenario.drawLineEvery);
         if (!this.scenario.playing && trail)
           trail.geometry.verticesNeedUpdate = false;
       }
@@ -775,7 +688,7 @@ export default {
           drawMassLabel
         );
 
-      const main = massManifestation.getObjectByName('Main');
+      const main = massManifestation.getObjectByName('main');
 
       if (mass.spacecraft && this.scenario.playing) {
         const directionOfVelocity = new THREE.Vector3(

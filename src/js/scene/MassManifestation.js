@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { degreesToRadians, calculateOrbitalVertices } from '../Physics/utils';
 
 export default class extends THREE.Object3D {
-  constructor(mass, textureLoader) {
+  constructor(mass, textureLoader, segments) {
     super();
 
     this.mass = mass;
@@ -10,32 +10,44 @@ export default class extends THREE.Object3D {
     this.name = this.mass.name;
     this.textureLoader = textureLoader;
 
-    this.segments = 25;
+    this.segments = segments;
 
     this.trailVertices = 0;
 
-    this.createManifestation();
+    this.getMain();
   }
 
   getMain() {
+    const segments = this.mass.type !== 'asteroid' ? this.segments : 6;
+
     const geometry = new THREE.SphereBufferGeometry(
       this.mass.radius,
-      this.mass.type !== 'asteroid' ? this.segments : 6,
-      this.mass.type !== 'asteroid' ? this.segments : 6
+      segments,
+      segments
     );
 
-    const material = new THREE.MeshPhongMaterial({
-      map: this.textureLoader.load(
-        this.mass.type === 'asteroid'
-          ? './textures/Deimos.jpg'
-          : `./textures/${this.mass.texture}.jpg`
-      ),
-      bumpMap:
-        this.mass.bump === true
-          ? this.textureLoader.load(`./textures/${this.mass.texture}Bump.jpg`)
-          : null,
-      bumpScale: 0.7
-    });
+    let material;
+
+    if (this.mass.bump)
+      material = new THREE.MeshPhongMaterial({
+        map: this.textureLoader.load(
+          this.mass.type === 'asteroid'
+            ? './textures/Deimos.jpg'
+            : `./textures/${this.mass.texture}.jpg`
+        ),
+        bumpMap: this.textureLoader.load(
+          `./textures/${this.mass.texture}Bump.jpg`
+        ),
+        bumpScale: 0.7
+      });
+    else
+      material = new THREE.MeshLambertMaterial({
+        map: this.textureLoader.load(
+          this.mass.type === 'asteroid'
+            ? './textures/Deimos.jpg'
+            : `./textures/${this.mass.texture}.jpg`
+        )
+      });
 
     /*
      * Extend the shader of our material with an impact shockwave animation
@@ -54,7 +66,7 @@ export default class extends THREE.Object3D {
        * The max number of impacts, duh
       */
 
-      const maxImpactAmount = 20;
+      const maxImpactAmount = 5;
 
       /*
        * Create some impact uniforms
@@ -125,7 +137,7 @@ export default class extends THREE.Object3D {
     };
 
     const mesh = new THREE.Mesh(geometry, material);
-    mesh.name = 'Main';
+    mesh.name = 'main';
 
     mesh.rotateX(degreesToRadians(90));
     this.mass.tilt &&
@@ -134,7 +146,7 @@ export default class extends THREE.Object3D {
     this.add(mesh);
   }
 
-  getTrail(dt, drawLineEvery) {
+  addTrail(dt, drawLineEvery) {
     const geometry = new THREE.Geometry();
 
     this.trailVertices = calculateOrbitalVertices(
@@ -143,16 +155,14 @@ export default class extends THREE.Object3D {
       drawLineEvery
     );
 
-    const mainPosition = this.getObjectByName('Main').position;
-
-    const initialPosition = {
-      x: mainPosition.x,
-      y: mainPosition.y,
-      z: mainPosition.z
-    };
+    const mainPosition = this.getObjectByName('main').position;
 
     for (let i = 0; i < this.trailVertices; i++)
-      geometry.vertices.push(initialPosition);
+      geometry.vertices.push({
+        x: mainPosition.x,
+        y: mainPosition.y,
+        z: mainPosition.z
+      });
 
     const material = new THREE.LineBasicMaterial({
       color: this.mass.color
@@ -160,7 +170,7 @@ export default class extends THREE.Object3D {
 
     const mesh = new THREE.Line(geometry, material);
 
-    mesh.name = 'Trail';
+    mesh.name = 'trail';
 
     mesh.frustumCulled = false;
 
@@ -168,7 +178,7 @@ export default class extends THREE.Object3D {
   }
 
   removeTrail() {
-    const trail = this.getObjectByName('Trail');
+    const trail = this.getObjectByName('trail');
 
     if (trail) {
       trail.geometry.dispose();
@@ -177,20 +187,16 @@ export default class extends THREE.Object3D {
     }
   }
 
-  createManifestation() {
-    this.getMain();
-  }
-
   draw(x, y, z, playing, drawTrail) {
-    const main = this.getObjectByName('Main');
-    const trail = this.getObjectByName('Trail');
+    const main = this.getObjectByName('main');
+    const trail = this.getObjectByName('trail');
 
     main.position.set(x, y, z);
 
     if (!this.mass.spacecraft) main.rotation.y += 0.001;
 
     if (drawTrail) {
-      if (trail !== undefined && playing) {
+      if (trail && playing) {
         trail.geometry.vertices.unshift({ x, y, z });
         trail.geometry.vertices.length = this.trailVertices;
         trail.geometry.verticesNeedUpdate = true;
@@ -199,7 +205,7 @@ export default class extends THREE.Object3D {
   }
 
   dispose() {
-    const main = this.getObjectByName('Main');
+    const main = this.getObjectByName('main');
 
     if (main) {
       main.geometry.dispose();

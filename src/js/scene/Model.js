@@ -11,7 +11,7 @@ export default class extends MassManifestation {
   getMain() {
     const container = new THREE.Object3D();
 
-    container.name = 'Main';
+    container.name = 'main';
 
     if (this.mass.spacecraft) container.rotateX(degreesToRadians(90));
 
@@ -28,14 +28,6 @@ export default class extends MassManifestation {
           this.mass.radius,
           this.mass.radius
         );
-
-        if (this.mass.asteroidTexture) {
-          let texture = this.textureLoader.load('./textures/Deimos.jpg');
-
-          collada.scene.traverse(node => {
-            if (node.isMesh) node.material.map = texture;
-          });
-        }
 
         container.add(collada.scene);
       }
