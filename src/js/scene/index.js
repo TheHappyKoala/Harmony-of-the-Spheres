@@ -19,15 +19,13 @@ import ParticleService from '../Physics/particles/ParticleService';
 import arena from './arena';
 import Camera from './Camera';
 import Graphics2D, { drawBaryCenterLabel, drawMassLabel } from './Graphics2D';
-import MassManifestation from './MassManifestation';
-import Star from './Star';
-import Model from './Model';
 import ParticlePhysics from '../Physics/particles';
 import ParticlesManifestation from './ParticlesManifestation';
 import CollisionsService from '../Physics/collisions/';
 import SpacecraftService from '../Physics/spacecraft/SpacecraftService';
 import CustomEllipseCurve from './CustomEllipseCurve';
 import { stateToKepler } from '../Physics/spacecraft/lambert';
+import ManifestationsService from './ManifestationsService';
 
 const TWEEN = require('@tweenjs/tween.js');
 
@@ -115,8 +113,6 @@ export default {
       this.scene.add(this.spacecraftTrajectoryCurve);
     }
 
-    this.massManifestations = [];
-
     this.system = getIntegrator(this.scenario.integrator, {
       g: this.scenario.g,
       dt: this.scenario.dt,
@@ -147,7 +143,11 @@ export default {
 
     this.scene.add(this.particles);
 
-    this.addManifestations();
+    this.manifestationsService = new ManifestationsService(
+      this.system.masses,
+      this.textureLoader,
+      this.scene
+    );
 
     this.loop = this.loop.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
@@ -166,62 +166,6 @@ export default {
 
     window.addEventListener('resize', this.onWindowResize, false);
     window.addEventListener('orientationchange', this.onWindowResize, false);
-  },
-
-  createManifestation(mass) {
-    const segments = 25;
-
-    switch (mass.type) {
-      case 'star':
-        return new Star(mass, this.textureLoader);
-
-      case 'model':
-        return new Model(mass, this.textureLoader);
-
-      default:
-        return new MassManifestation(mass, this.textureLoader, segments);
-    }
-  },
-
-  addManifestations() {
-    this.scenario.masses.forEach(mass => {
-      const manifestation = this.createManifestation(mass);
-
-      this.massManifestations.push(manifestation);
-      this.scene.add(manifestation);
-    });
-  },
-
-  diffMasses(previousMasses, newMasses) {
-    if (newMasses.length < previousMasses.length) {
-      let i = 0;
-
-      while (i < previousMasses.length) {
-        let entry1 = previousMasses[i];
-
-        if (newMasses.some(entry2 => entry1.name === entry2.name)) ++i;
-        else {
-          const massToBeDeleted = this.scene.getObjectByName(
-            previousMasses[i].name
-          );
-
-          massToBeDeleted.dispose();
-          this.scene.remove(massToBeDeleted);
-
-          previousMasses.splice(i, 1);
-        }
-      }
-
-      return;
-    }
-
-    if (newMasses.length > previousMasses.length) {
-      const newMass = newMasses[newMasses.length - 1];
-      const manifestation = this.createManifestation(newMass);
-
-      this.massManifestations.push(manifestation);
-      this.scene.add(manifestation);
-    }
   },
 
   updateAddMassTrajectory() {
@@ -497,7 +441,7 @@ export default {
 
     if (this.scenario.forAllMankind) this.updateSpacecraftTrajectoryCurve();
 
-    this.diffMasses(this.massManifestations, this.scenario.masses);
+    this.manifestationsService.diff(this.scenario.masses);
 
     this.graphics2D.clear();
 
@@ -565,7 +509,7 @@ export default {
     const massesLen = this.system.masses.length;
 
     for (let i = 0; i < massesLen; i++) {
-      const massManifestation = this.massManifestations[i];
+      const massManifestation = this.manifestationsService.manifestations[i];
       const mass = this.system.masses[i];
 
       let { name, trailVertices } = this.system.masses[i];
@@ -788,12 +732,7 @@ export default {
     //Dispose of the camera controls
     if (this.camera && this.camera.controls) this.camera.controls.dispose();
 
-    //Dispose of all the mass manifestations
-    if (this.massManifestations)
-      this.massManifestations.forEach(manifestation => {
-        manifestation.dispose();
-        this.scene.remove(this.scene.getObjectByName(manifestation.name));
-      });
+    if (this.manifestationsService) this.manifestationsService.dispose();
 
     //Dispose of the particles system
     if (this.particles) {
