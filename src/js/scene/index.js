@@ -33,7 +33,9 @@ const TWEEN = require('@tweenjs/tween.js');
 
 export default {
   init(webGlCanvas, graphics2DCanvas, audio) {
-    this.scenario = store.getState().scenario;
+    this.store = store;
+
+    this.scenario = this.store.getState().scenario;
 
     this.w = window.innerWidth;
     this.h = window.innerHeight;
@@ -152,7 +154,7 @@ export default {
     this.collisionCallback = this.collisionCallback.bind(this);
 
     setTimeout(() => {
-      store.dispatch({
+      this.store.dispatch({
         type: 'SET_LOADING',
         payload: {
           loading: false,
@@ -313,12 +315,12 @@ export default {
   },
 
   collisionCallback(looser, survivor) {
-    store.dispatch(deleteMass(looser.name));
+    this.store.dispatch(deleteMass(looser.name));
 
     const dt = this.system.dt;
 
     if (this.scenario.cameraFocus === looser.name) {
-      store.dispatch(
+      this.store.dispatch(
         modifyScenarioProperty(
           { key: 'primary', value: survivor.name },
           { key: 'rotatingReferenceFrame', value: survivor.name },
@@ -438,7 +440,7 @@ export default {
   },
 
   loop() {
-    this.scenario = store.getState().scenario;
+    this.scenario = this.store.getState().scenario;
 
     if (this.scenario.reset) this.resetParticlePhysics();
 
@@ -729,7 +731,7 @@ export default {
         this.collisionCallback
       );
 
-    store.dispatch(
+    this.store.dispatch(
       modifyScenarioProperty(
         {
           key: 'reset',
