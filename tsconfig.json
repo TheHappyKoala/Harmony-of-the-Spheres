@@ -18,7 +18,8 @@
     "jsx": "react",
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
-    "noErrorTruncation": true
+    "noErrorTruncation": true,
+    "skipLibCheck": true
   },    
   "include": [
     "src/**/*"
