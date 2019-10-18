@@ -47,8 +47,6 @@ export default {
 
     this.audio = audio;
 
-    this.iteration = 0;
-
     this.requestAnimationFrameId = null;
 
     this.textureLoader = new THREE.TextureLoader();
@@ -399,18 +397,12 @@ export default {
     this.system.softeningSquared =
       this.scenario.softeningConstant * this.scenario.softeningConstant;
 
-    let drawTrail = false;
-
     let oldMasses;
 
     if (this.scenario.playing) {
       oldMasses = JSON.parse(JSON.stringify(this.scenario.masses));
 
       this.system.iterate();
-
-      this.iteration++;
-
-      if (this.iteration % 3 == 0) drawTrail = true;
     }
 
     dt = this.system.dt;
@@ -522,49 +514,21 @@ export default {
 
       const rotatedPosition = this.camera.rotatedMasses[i];
 
-      massManifestation.draw(
-        rotatedPosition.x,
-        rotatedPosition.y,
-        rotatedPosition.z,
-        this.scenario.playing,
-        drawTrail,
-        this.camera,
-        delta
-      );
+      massManifestation
+        .drawTrail(
+          rotatedPosition,
+          this.scenario.playing,
+          this.scenario.trails,
+          this.scenario.cameraFocus,
+          this.scenario.rotatingReferenceFrame,
+          this.previousRotatingReferenceFrame,
+          this.scenario.reset,
+          this.scenario.dt
+        )
+        .draw(rotatedPosition, this.camera, delta, this.scenario.habitableZone);
 
-      if (mass.type === 'star') {
-        const habitableZone = massManifestation.getObjectByName(
-          'habitable zone'
-        );
-
-        if (habitableZone === undefined) {
-          if (this.scenario.habitableZone) massManifestation.getHabitableZone();
-        } else {
-          if (!this.scenario.habitableZone)
-            massManifestation.removeHabitableZone();
-        }
-      }
-
-      const trail = massManifestation.getObjectByName('trail');
-
-      if (this.scenario.trails) {
-        if (!trail) massManifestation.addTrail(dt, this.scenario.drawLineEvery);
-        if (!this.scenario.playing && trail)
-          trail.geometry.verticesNeedUpdate = false;
-      }
-
-      if (
-        !this.scenario.trails ||
-        rotatingReferenceFrame !== this.previousRotatingReferenceFrame ||
-        this.scenario.reset
-      )
-        massManifestation.removeTrail();
-
-      if (cameraFocus === name) {
+      if (cameraFocus === name)
         this.camera.trackMovingObjectWithControls(massManifestation);
-
-        if (trail) trail.visible = false;
-      } else if (trail) trail.visible = true;
 
       if (this.previousCameraFocus !== cameraFocus && cameraFocus === name) {
         this.previousCameraFocus = cameraFocus;

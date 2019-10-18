@@ -30,11 +30,7 @@ export default class extends THREE.Object3D {
 
     if (this.mass.bump)
       material = new THREE.MeshPhongMaterial({
-        map: this.textureLoader.load(
-          this.mass.type === 'asteroid'
-            ? './textures/Deimos.jpg'
-            : `./textures/${this.mass.texture}.jpg`
-        ),
+        map: this.textureLoader.load(`./textures/${this.mass.texture}.jpg`),
         bumpMap: this.textureLoader.load(
           `./textures/${this.mass.texture}Bump.jpg`
         ),
@@ -146,14 +142,10 @@ export default class extends THREE.Object3D {
     this.add(mesh);
   }
 
-  addTrail(dt, drawLineEvery) {
+  addTrail(dt) {
     const geometry = new THREE.Geometry();
 
-    this.trailVertices = calculateOrbitalVertices(
-      this.mass.orbitalPeriod,
-      dt,
-      drawLineEvery
-    );
+    this.trailVertices = calculateOrbitalVertices(this.mass.orbitalPeriod, dt);
 
     const mainPosition = this.getObjectByName('main').position;
 
@@ -177,9 +169,7 @@ export default class extends THREE.Object3D {
     this.add(mesh);
   }
 
-  removeTrail() {
-    const trail = this.getObjectByName('trail');
-
+  removeTrail(trail) {
     if (trail) {
       trail.geometry.dispose();
       trail.material.dispose();
@@ -187,21 +177,46 @@ export default class extends THREE.Object3D {
     }
   }
 
-  draw(x, y, z, playing, drawTrail) {
-    const main = this.getObjectByName('main');
+  drawTrail(
+    position,
+    playing,
+    trails,
+    cameraFocus,
+    rotatingReferenceFrame,
+    previousRotatingReferenceFrame,
+    reset,
+    dt
+  ) {
     const trail = this.getObjectByName('trail');
 
-    main.position.set(x, y, z);
+    if (
+      !trails ||
+      rotatingReferenceFrame !== previousRotatingReferenceFrame ||
+      reset
+    ) {
+      this.removeTrail(trail);
 
-    if (!this.mass.spacecraft) main.rotation.y += 0.001;
-
-    if (drawTrail) {
-      if (trail && playing) {
-        trail.geometry.vertices.unshift({ x, y, z });
-        trail.geometry.vertices.length = this.trailVertices;
-        trail.geometry.verticesNeedUpdate = true;
-      }
+      return this;
     }
+
+    if (trails && !trail) this.addTrail(dt);
+
+    if (trail && playing) {
+      trail.geometry.vertices.unshift(position);
+      trail.geometry.vertices.length = this.trailVertices;
+      trail.geometry.verticesNeedUpdate = true;
+    }
+
+    if (cameraFocus === this.mass.name && trail) trail.visible = false;
+    else if (trail) trail.visible = true;
+
+    return this;
+  }
+
+  draw(position) {
+    const main = this.getObjectByName('main');
+
+    main.position.set(position.x, position.y, position.z);
   }
 
   dispose() {

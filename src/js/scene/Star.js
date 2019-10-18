@@ -10,13 +10,11 @@ export default class extends MassManifestation {
     super(mass, textureLoader);
   }
 
-  getHabitableZone() {
+  addHabitableZone() {
     this.add(habitableZone(this.mass.m));
   }
 
-  removeHabitableZone() {
-    const habitableZone = this.getObjectByName('habitable zone');
-
+  removeHabitableZone(habitableZone) {
     if (habitableZone) {
       habitableZone.geometry.dispose();
       habitableZone.material.dispose();
@@ -50,26 +48,22 @@ export default class extends MassManifestation {
     this.add(mesh);
   }
 
-  draw(x, y, z, playing, drawTrail, camera, delta) {
+  draw(position, camera, delta, drawHabitableZone) {
     const main = this.getObjectByName('main');
-    const trail = this.getObjectByName('trail');
     const habitableZone = this.getObjectByName('habitable zone');
 
-    main.position.set(x, y, z);
+    if (!habitableZone && drawHabitableZone) {
+      this.addHabitableZone();
+    } else if (!drawHabitableZone) this.removeHabitableZone(habitableZone);
 
-    if (habitableZone) habitableZone.position.set(x, y, z);
+    main.position.set(position.x, position.y, position.z);
+
+    if (habitableZone)
+      habitableZone.position.set(position.x, position.y, position.z);
 
     main.material.uniforms.time.value += 0.2 * delta;
 
     main.quaternion.copy(camera.quaternion);
-
-    if (drawTrail) {
-      if (trail && playing) {
-        trail.geometry.vertices.unshift({ x, y, z });
-        trail.geometry.vertices.length = this.trailVertices;
-        trail.geometry.verticesNeedUpdate = true;
-      }
-    }
   }
 
   dispose() {
