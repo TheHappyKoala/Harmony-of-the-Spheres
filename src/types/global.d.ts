@@ -152,3 +152,16 @@ interface ScenarioState {
   trajectoryRendevouz?: any;
   soi?: string;
 }
+
+interface Shape {
+  type: string;
+  primary: string;
+  flatLand: boolean;
+  number: number;
+  minD: number;
+  maxD: number;
+  tilt: [number, number, number];
+  verticalDispersion: number;
+  customPrimaryData?: MassType;
+  hsl?: [number, number, number];
+}

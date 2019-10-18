@@ -129,7 +129,13 @@ export default {
 
     this.particlePhysics = new ParticlePhysics(this.scenario.scale);
 
-    this.scenario.particles.shapes && this.addParticleSystems();
+    this.scenario.particles.shapes &&
+      ParticleService.addParticleSystems(
+        this.scenario.particles.shapes,
+        this.scenario.masses,
+        this.scenario.g,
+        this.particlePhysics.particles
+      );
 
     this.particles = new ParticlesManifestation({
       particles: this.particlePhysics.particles,
@@ -679,42 +685,13 @@ export default {
   resetParticlePhysics() {
     this.particlePhysics.particles = [];
 
-    this.scenario.particles.shapes && this.addParticleSystems();
-  },
-
-  addParticleSystems() {
-    for (let i = 0; i < this.scenario.particles.shapes.length; i++) {
-      const shape = this.scenario.particles.shapes[i];
-      const primary =
-        shape.primary !== 'custom'
-          ? getObjFromArrByKeyValuePair(
-              this.scenario.masses,
-              'name',
-              shape.primary
-            )
-          : shape.customPrimaryData;
-
-      const generatedParticles = ParticleService.getParticleSystem(
-        ParticleService.getShapeOfParticles(
-          shape.number,
-          shape.minD,
-          shape.maxD,
-          shape.verticalDispersion,
-          ParticleService[shape.type]
-        ),
-        shape.tilt,
-        primary,
+    this.scenario.particles.shapes &&
+      ParticleService.addParticleSystems(
+        this.scenario.particles.shapes,
+        this.scenario.masses,
         this.scenario.g,
-        true,
-        shape.flatLand,
-        shape.hsl
+        this.particlePhysics.particles
       );
-
-      const generatedParticlesLen = generatedParticles.length;
-
-      for (let i = 0; i < generatedParticlesLen; i++)
-        this.particlePhysics.particles.push(generatedParticles[i]);
-    }
   },
 
   onWindowResize() {

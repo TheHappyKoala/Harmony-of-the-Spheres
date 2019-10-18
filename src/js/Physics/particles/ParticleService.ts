@@ -1,63 +1,118 @@
 import H3 from '../vectors';
-import {
-  getRandomNumberInRange,
-  getRandomRadian,
-  getVMag,
-  getDistanceParams
-} from '../utils';
+import { getRandomNumberInRange, getRandomRadian, getVMag } from '../utils';
+import { getObjFromArrByKeyValuePair } from '../../utils';
 
 export default class {
+  static getParticleSystem(
+    vectors: MassType[],
+    tilt: [number, number, number],
+    primary: MassType,
+    g: number,
+    withOrbit: boolean,
+    flatLand: boolean,
+    hsl?: [number, number, number]
+  ): MassType[] {
+    const p = new H3();
+    const v = new H3();
+
+    const [xTilt, yTilt, zTilt] = tilt;
+
+    return vectors.map(item => {
+      p.set({ x: item.x, y: item.y, z: item.z });
+      v.set({ x: item.vx, y: item.vy, z: item.vz });
+
+      if (withOrbit) {
+        const dParams = p.getDistanceParameters({ x: 0, y: 0, z: 0 });
+
+        const vMag = getVMag(g, primary, dParams.d);
+
+        v.set({
+          x: -dParams.dy * vMag / dParams.d,
+          y: dParams.dx * vMag / dParams.d,
+          z: 0
+        });
+
+        if (flatLand) {
+          v
+            .rotate({ x: 1, y: 0, z: 0 }, xTilt)
+            .rotate({ x: 0, y: 1, z: 0 }, yTilt)
+            .rotate({ x: 0, y: 0, z: 1 }, zTilt);
+        } else
+          v
+            .rotate({ x: 1, y: 0, z: 0 }, getRandomNumberInRange(0, 360))
+            .rotate({ x: 0, y: 1, z: 0 }, getRandomNumberInRange(0, 360))
+            .rotate({ x: 0, y: 0, z: 1 }, getRandomNumberInRange(0, 360));
+      }
+
+      if (flatLand)
+        p
+          .rotate({ x: 1, y: 0, z: 0 }, xTilt)
+          .rotate({ x: 0, y: 1, z: 0 }, yTilt)
+          .rotate({ x: 0, y: 0, z: 1 }, zTilt);
+      else
+        p
+          .rotate({ x: 1, y: 0, z: 0 }, getRandomNumberInRange(0, 360))
+          .rotate({ x: 0, y: 1, z: 0 }, getRandomNumberInRange(0, 360))
+          .rotate({ x: 0, y: 0, z: 1 }, getRandomNumberInRange(0, 360));
+
+      return {
+        m: 0,
+        x: primary.x + p.x,
+        y: primary.y + p.y,
+        z: primary.z + p.z,
+        vx: primary.vx + v.x,
+        vy: primary.vy + v.y,
+        vz: primary.vz + v.z,
+        hsl
+      };
+    });
+  }
+
   static getShapeOfParticles(
     number: number,
     minD: number,
     maxD: number,
     verticalDispersion = 0,
     callback: (
-      particles: MassType[],
       minD: number,
       maxD: number,
       verticalDispersion: number,
       i: number,
       maxParticles: number
-    ) => void
+    ) => MassType
   ): MassType[] {
-    const particles: MassType[] = [];
-
-    for (let i = 0; i < number; i++)
-      callback(particles, minD, maxD, verticalDispersion, i, number);
-
-    return particles;
+    return [...new Array(number)].map((_entry, i) =>
+      callback(minD, maxD, verticalDispersion, i, number)
+    );
   }
 
   static getRingParticle(
-    particles: MassType[],
     minD: number,
     maxD: number,
     verticalDispersion: number,
     _i: number,
     _maxParticles: number
-  ): void {
+  ): MassType {
     const radian = getRandomRadian();
     const dist = getRandomNumberInRange(minD, maxD);
 
-    particles.push({
+    return {
       x: Math.cos(radian) * dist,
       y: Math.sin(radian) * dist,
       z: getRandomNumberInRange(-verticalDispersion, verticalDispersion),
       vx: 0,
       vy: 0,
       vz: 0
-    });
+    };
   }
 
   static getRadialParticle(
-    particles: MassType[],
     minD: number,
     maxD: number,
     verticalDispersion: number,
     _i: number,
     _maxParticles: number
-  ): void {
+  ): MassType {
     let dist = getRandomNumberInRange(minD, maxD);
 
     const cosTheta = getRandomNumberInRange(-1, 1);
@@ -68,24 +123,23 @@ export default class {
 
     dist = dist * Math.cbrt(u);
 
-    particles.push({
+    return {
       x: dist * Math.sin(theta) * Math.cos(phi),
       y: dist * Math.sin(theta) * Math.sin(phi),
       z: getRandomNumberInRange(-verticalDispersion, verticalDispersion),
       vx: 0,
       vy: 0,
       vz: 0
-    });
+    };
   }
 
   static getLogarithmicSpiralParticle(
-    particles: MassType[],
     _minD: number,
     _maxD: number,
     verticalDispersion: number,
     i: number,
     maxParticles: number
-  ) {
+  ): MassType {
     const linCoef = 0.00001;
     const logCoef = 0.1;
 
@@ -120,108 +174,46 @@ export default class {
           mCoef
       );
 
-    particles.push({
+    return {
       x,
       y,
       z: getRandomNumberInRange(-verticalDispersion, verticalDispersion),
       vx: 0,
       vy: 0,
       vz: 0
-    });
+    };
   }
 
-  static getCircleArea(radius: number): number {
-    return Math.PI * (radius * radius);
-  }
-
-  static getSphereVolume(radius: number): number {
-    return 4 / 3 * Math.PI * (radius * radius * radius);
-  }
-
-  static getMassWithinCircularOrbit(
-    orbitalRadius: number,
-    maxRadius: number,
-    particles: number,
-    particleMass: number,
-    flatLand: boolean
-  ): number {
-    const totalMass = particles * particleMass;
-
-    return !flatLand
-      ? this.getCircleArea(orbitalRadius) /
-          this.getCircleArea(maxRadius) *
-          totalMass
-      : this.getSphereVolume(orbitalRadius) /
-          this.getSphereVolume(maxRadius) *
-          totalMass;
-  }
-
-  static getParticleSystem(
-    vectors: MassType[],
-    tilt: [number, number, number],
-    primary: MassType,
+  static addParticleSystems(
+    shapes: Shape[],
+    masses: MassType[],
     g: number,
-    withOrbit: boolean,
-    flatLand: boolean,
-    hsl?: [number, number, number],
-    withMass?: {
-      maxD: number;
-      m: number;
-    }
-  ): MassType[] {
-    const p = new H3();
-    const v = new H3();
+    target: MassType[]
+  ): void {
+    shapes.forEach(shape => {
+      let primary;
 
-    const [xTilt, yTilt, zTilt] = tilt;
+      if (shape.primary !== 'custom')
+        primary = getObjFromArrByKeyValuePair(masses, 'name', shape.primary);
+      else primary = shape.customPrimaryData;
 
-    return vectors.map(item => {
-      p.set({ x: item.x, y: item.y, z: item.z });
-      v.set({ x: item.vx, y: item.vy, z: item.vz });
+      const particles = this.getParticleSystem(
+        this.getShapeOfParticles(
+          shape.number,
+          shape.minD,
+          shape.maxD,
+          shape.verticalDispersion,
+          this[shape.type]
+        ),
+        shape.tilt,
+        primary,
+        g,
+        true,
+        shape.flatLand,
+        shape.hsl
+      );
 
-      if (withOrbit) {
-        const dParams = p.getDistanceParameters({ x: 0, y: 0, z: 0 });
-
-        const vMag = getVMag(g, primary, dParams.d);
-
-        v.set({
-          x: -dParams.dy * vMag / dParams.d,
-          y: dParams.dx * vMag / dParams.d,
-          z: 0
-        });
-
-        if (flatLand)
-          v
-            .rotate({ x: 1, y: 0, z: 0 }, xTilt)
-            .rotate({ x: 0, y: 1, z: 0 }, yTilt)
-            .rotate({ x: 0, y: 0, z: 1 }, zTilt);
-        else
-          v
-            .rotate({ x: 1, y: 0, z: 0 }, getRandomNumberInRange(0, 360))
-            .rotate({ x: 0, y: 1, z: 0 }, getRandomNumberInRange(0, 360))
-            .rotate({ x: 0, y: 0, z: 1 }, getRandomNumberInRange(0, 360));
-      }
-
-      if (flatLand)
-        p
-          .rotate({ x: 1, y: 0, z: 0 }, xTilt)
-          .rotate({ x: 0, y: 1, z: 0 }, yTilt)
-          .rotate({ x: 0, y: 0, z: 1 }, zTilt);
-      else
-        p
-          .rotate({ x: 1, y: 0, z: 0 }, getRandomNumberInRange(0, 360))
-          .rotate({ x: 0, y: 1, z: 0 }, getRandomNumberInRange(0, 360))
-          .rotate({ x: 0, y: 0, z: 1 }, getRandomNumberInRange(0, 360));
-
-      return {
-        m: withMass ? withMass.m : 0,
-        x: primary.x + p.x,
-        y: primary.y + p.y,
-        z: primary.z + p.z,
-        vx: primary.vx + v.x,
-        vy: primary.vy + v.y,
-        vz: primary.vz + v.z,
-        hsl
-      };
+      particles.forEach(particle => target.push(particle));
     });
   }
 }
