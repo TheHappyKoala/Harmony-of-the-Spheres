@@ -5,11 +5,9 @@ export default class {
     this.particles = [];
   }
 
-  calculateAcceleration(masses, g, softeningConstant) {
+  iterate(masses, g, dt, softeningConstant) {
     let particlesLen = this.particles.length;
     const massesLen = masses.length;
-
-    const acc = [];
 
     for (let i = 0; i < particlesLen; i++) {
       const massI = this.particles[i];
@@ -29,9 +27,17 @@ export default class {
 
         let d = Math.sqrt(dSquared);
 
-        if (d * this.scale < massJ.radius && massI.lives < 0)
-          massI.collided = true;
-        else {
+        if (d * this.scale < massJ.radius) {
+          massI.lives--;
+
+          if (massI.lives < 0) {
+            this.particles.splice(i, 1);
+
+            particlesLen--;
+
+            i--;
+          }
+        } else {
           if (massJ.m > 0) {
             let fact = g * massJ.m / (dSquared * d) + softeningConstant;
 
@@ -41,40 +47,14 @@ export default class {
           }
         }
       }
-      acc[i] = { x: ax, y: ay, z: az };
-    }
-    return acc;
-  }
 
-  iterate(oldMasses, newMasses, g, dt, softeningConstant) {
-    const acc = this.calculateAcceleration(oldMasses, g, softeningConstant);
-    let particlesLen = this.particles.length;
-    // update particle positions
-    for (let i = 0; i < particlesLen; i++) {
-      const massI = this.particles[i];
-      const aI = acc[i];
-      massI.x += massI.vx * dt + 0.5 * dt * dt * aI.x;
-      massI.y += massI.vy * dt + 0.5 * dt * dt * aI.y;
-      massI.z += massI.vz * dt + 0.5 * dt * dt * aI.z;
-    }
-    const acc2 = this.calculateAcceleration(newMasses, g, softeningConstant);
-    particlesLen = this.particles.length;
-    for (let i = 0; i < particlesLen; i++) {
-      const massI = this.particles[i];
-      const a1 = acc[i];
-      const a2 = acc2[i];
-      massI.vx += 0.5 * dt * (a1.x + a2.x);
-      massI.vy += 0.5 * dt * (a1.y + a2.y);
-      massI.vz += 0.5 * dt * (a1.z + a2.z);
-    }
-    for (let i = 0; i < particlesLen; i++) {
-      const massI = this.particles[i];
-      massI.lives--;
-      if (massI.collided) {
-        this.particles.splice(i, 1);
-        particlesLen--;
-        i--;
-      }
+      massI.vx += ax * dt;
+      massI.vy += ay * dt;
+      massI.vz += az * dt;
+
+      massI.x += massI.vx * dt;
+      massI.y += massI.vy * dt;
+      massI.z += massI.vz * dt;
     }
   }
 }

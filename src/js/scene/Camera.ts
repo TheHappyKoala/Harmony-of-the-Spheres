@@ -109,7 +109,7 @@ export default class extends PerspectiveCamera {
     masses: MassType[],
     manifestations: Manifestation[]
   ): void {
-    if (previous.cameraFocus !== cameraFocus) {
+    if (previous.cameraFocus !== cameraFocus && cameraFocus === 'Barycenter') {
       previous.cameraFocus = cameraFocus;
 
       if (cameraFocus === 'Barycenter') {
@@ -135,31 +135,35 @@ export default class extends PerspectiveCamera {
       return;
     }
 
-    masses.forEach((mass, i: number) => {
-      if (cameraFocus === mass.name)
-        this.trackMovingObjectWithControls(manifestations[i]);
+    if (previous.cameraFocus !== cameraFocus) {
+      previous.cameraFocus = cameraFocus;
 
-      if (cameraFocus === mass.name) {
-        this.position.set(
-          this.rotatedMasses[i].x -
-            mass.radius *
-              (customCameraToBodyDistanceFactor
-                ? customCameraToBodyDistanceFactor
-                : 10),
-          this.rotatedMasses[i].y,
-          this.rotatedMasses[i].z +
-            mass.radius *
-              (customCameraToBodyDistanceFactor
-                ? customCameraToBodyDistanceFactor
-                : 5)
-        );
+      masses.forEach((mass, i: number) => {
+        if (cameraFocus === mass.name)
+          this.trackMovingObjectWithControls(manifestations[i]);
 
-        this.lookAt(
-          this.rotatedMasses[i].x,
-          this.rotatedMasses[i].y,
-          this.rotatedMasses[i].z
-        );
-      }
-    });
+        if (cameraFocus === mass.name) {
+          this.position.set(
+            this.rotatedMasses[i].x -
+              mass.radius *
+                (customCameraToBodyDistanceFactor
+                  ? customCameraToBodyDistanceFactor
+                  : 10),
+            this.rotatedMasses[i].y,
+            this.rotatedMasses[i].z +
+              mass.radius *
+                (customCameraToBodyDistanceFactor
+                  ? customCameraToBodyDistanceFactor
+                  : 5)
+          );
+
+          this.lookAt(
+            this.rotatedMasses[i].x,
+            this.rotatedMasses[i].y,
+            this.rotatedMasses[i].z
+          );
+        }
+      });
+    }
   }
 }

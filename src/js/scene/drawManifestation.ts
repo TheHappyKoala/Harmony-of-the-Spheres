@@ -8,8 +8,8 @@ export default function(
   delta: number
 ) {
   const scenario: ScenarioState = this.scenario;
-  const previousRotatingReferenceFrame: string = this
-    .previousRotatingReferenceFrame;
+  const previousRotatingReferenceFrame: string = this.previous
+    .rotatingReferenceFrame;
 
   manifestation.drawTrail(
     rotatedPosition,

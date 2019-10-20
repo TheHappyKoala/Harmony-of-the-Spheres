@@ -32,12 +32,38 @@ const TWEEN = require('@tweenjs/tween.js');
 
 const scene = {
   init(webGlCanvas, graphics2DCanvas, audio) {
+    this.w = window.innerWidth;
+    this.h = window.innerHeight;
+
     this.store = store;
 
     this.scenario = this.store.getState().scenario;
 
-    this.w = window.innerWidth;
-    this.h = window.innerHeight;
+    this.previous = {
+      cameraFocus: null,
+      rotatingReferenceFrame: null,
+      integrator: this.scenario.integrator
+    };
+
+    this.system = getIntegrator(this.scenario.integrator, {
+      g: this.scenario.g,
+      dt: this.scenario.dt,
+      tol: this.scenario.tol,
+      minDt: this.scenario.minDt,
+      maxDt: this.scenario.maxDt,
+      masses: this.scenario.masses,
+      elapsedTime: this.scenario.elapsedTime
+    });
+
+    this.particlePhysics = new ParticlePhysics(this.scenario.scale);
+
+    if (this.scenario.particles.shapes)
+      ParticleService.addParticleSystems(
+        this.scenario.particles.shapes,
+        this.scenario.masses,
+        this.scenario.g,
+        this.particlePhysics.particles
+      );
 
     this.webGlCanvas = webGlCanvas;
 
@@ -48,13 +74,12 @@ const scene = {
 
     this.audio = audio;
 
+    this.utilityVector = new THREE.Vector3();
+    this.barycenterPosition = new H3();
+
     this.requestAnimationFrameId = null;
 
-    this.textureLoader = new THREE.TextureLoader();
-
     this.scene = new THREE.Scene();
-
-    this.utilityVector = new THREE.Vector3();
 
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas,
@@ -72,15 +97,9 @@ const scene = {
       this.graphics2D.canvas
     );
 
+    this.textureLoader = new THREE.TextureLoader();
+
     this.clock = new THREE.Clock();
-
-    this.previousCameraFocus = null;
-    this.previousRotatingReferenceFrame = null;
-    this.previousIntegrator = this.scenario.integrator;
-
-    this.previous = {
-      cameraFocus: null
-    };
 
     this.scene.add(arena(this.textureLoader));
 
@@ -99,29 +118,11 @@ const scene = {
 
     this.scene.add(this.addMassTrajectory);
 
-    this.system = getIntegrator(this.scenario.integrator, {
-      g: this.scenario.g,
-      dt: this.scenario.dt,
-      tol: this.scenario.tol,
-      minDt: this.scenario.minDt,
-      maxDt: this.scenario.maxDt,
-      masses: this.scenario.masses,
-      elapsedTime: this.scenario.elapsedTime
-    });
-
-    this.barycenterPosition = new H3();
-
-    this.previousI = this.scenario.i;
-
-    this.particlePhysics = new ParticlePhysics(this.scenario.scale);
-
-    this.scenario.particles.shapes &&
-      ParticleService.addParticleSystems(
-        this.scenario.particles.shapes,
-        this.scenario.masses,
-        this.scenario.g,
-        this.particlePhysics.particles
-      );
+    this.manifestationsService = new ManifestationsService(
+      this.scenario.masses,
+      this.textureLoader,
+      this.scene
+    );
 
     this.particles = new ParticlesManifestation({
       particles: this.particlePhysics.particles,
@@ -134,12 +135,6 @@ const scene = {
     });
 
     this.scene.add(this.particles);
-
-    this.manifestationsService = new ManifestationsService(
-      this.system.masses,
-      this.textureLoader,
-      this.scene
-    );
 
     this.loop = this.loop.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
@@ -203,8 +198,6 @@ const scene = {
   collisionCallback(looser, survivor) {
     this.store.dispatch(deleteMass(looser.name));
 
-    const dt = this.system.dt;
-
     if (this.scenario.cameraFocus === looser.name) {
       this.store.dispatch(
         modifyScenarioProperty(
@@ -228,9 +221,9 @@ const scene = {
 
       hitPoint = CollisionsService.getClosestPointOnSphere(
         new H3().set({
-          x: looser.x - survivor.x - looser.vx * dt,
-          y: looser.y - survivor.y - looser.vy * dt,
-          z: looser.z - survivor.z - looser.vz * dt
+          x: looser.x - survivor.x - looser.vx * this.scenario.dt,
+          y: looser.y - survivor.y - looser.vy * this.scenario.dt,
+          z: looser.z - survivor.z - looser.vz * this.scenario.dt
         }),
         survivor.radius,
         {
@@ -294,29 +287,17 @@ const scene = {
   },
 
   loop() {
-    this.scenario = this.store.getState().scenario;
+    this.scenario = JSON.parse(JSON.stringify(this.store.getState().scenario));
 
     if (this.scenario.reset) this.resetParticlePhysics();
 
     const delta = this.clock.getDelta();
 
-    this.system.g = this.scenario.g;
-    this.system.masses = this.scenario.masses;
-    this.system.tol = this.scenario.tol;
-    this.system.dt = this.scenario.dt;
-    this.system.minDt = this.scenario.minDt;
-    this.system.maxDt = this.scenario.maxDt;
+    this.system.sync(this.scenario);
 
-    const {
-      rotatingReferenceFrame,
-      cameraFocus,
-      barycenterMassOne,
-      barycenterMassTwo
-    } = this.scenario;
+    const { cameraFocus, barycenterMassOne, barycenterMassTwo } = this.scenario;
 
-    let dt = this.scenario.dt;
-
-    if (this.scenario.integrator !== this.previousIntegrator) {
+    if (this.scenario.integrator !== this.previous.integrator) {
       this.system = getIntegrator(this.scenario.integrator, {
         g: this.scenario.g,
         dt: this.scenario.dt,
@@ -327,23 +308,10 @@ const scene = {
         elapsedTime: this.scenario.elapsedTime
       });
 
-      this.previousIntegrator = this.scenario.integrator;
+      this.previous.integrator = this.scenario.integrator;
     }
 
-    this.system.useBarnesHut = this.scenario.useBarnesHut;
-    this.system.theta = this.scenario.theta;
-    this.system.softeningSquared =
-      this.scenario.softeningConstant * this.scenario.softeningConstant;
-
-    let oldMasses;
-
-    if (this.scenario.playing) {
-      oldMasses = JSON.parse(JSON.stringify(this.scenario.masses));
-
-      this.system.iterate();
-    }
-
-    dt = this.system.dt;
+    if (this.scenario.playing) this.system.iterate();
 
     setBarycenter(
       this.scenario.systemBarycenter
@@ -363,13 +331,15 @@ const scene = {
     this.camera
       .setRotatingReferenceFrame(
         this.scenario.rotatingReferenceFrame,
-        this.system.masses,
+        this.scenario.masses,
         this.barycenterPosition
       )
       .rotateSystem(
-        this.system.masses,
+        this.scenario.masses,
         this.barycenterPosition,
-        rotatingReferenceFrame !== 'Barycenter' ? this.scenario.scale : 1,
+        this.scenario.rotatingReferenceFrame !== 'Barycenter'
+          ? this.scenario.scale
+          : 1,
         this.scenario.scale
       );
 
@@ -396,15 +366,8 @@ const scene = {
         drawBaryCenterLabel
       );
 
-    let barycenterPositionArray;
-
-    const massesLen = this.system.masses.length;
-
-    for (let i = 0; i < massesLen; i++) {
+    this.scenario.masses.forEach((mass, i) => {
       const massManifestation = this.manifestationsService.manifestations[i];
-      const mass = this.system.masses[i];
-
-      let { name, trailVertices } = this.system.masses[i];
 
       const rotatedPosition = this.camera.rotatedMasses[i];
 
@@ -412,19 +375,19 @@ const scene = {
 
       if (this.scenario.labels)
         this.graphics2D.drawLabel(
-          name,
+          mass.name,
           this.utilityVector.set(
             rotatedPosition.x,
             rotatedPosition.y,
             rotatedPosition.z
           ),
           this.camera,
-          cameraFocus === name ? true : false,
+          this.scenario.cameraFocus === mass.name ? true : false,
           'right',
           'white',
           drawMassLabel
         );
-    }
+    });
 
     this.camera.setCamera(
       this.scenario.cameraFocus,
@@ -435,8 +398,11 @@ const scene = {
       this.manifestationsService.manifestations
     );
 
-    if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame)
-      this.previousRotatingReferenceFrame = rotatingReferenceFrame;
+    if (
+      this.scenario.rotatingReferenceFrame !==
+      this.previous.rotatingReferenceFrame
+    )
+      this.previous.rotatingReferenceFrame = this.scenario.rotatingReferenceFrame;
 
     if (this.scenario.particles)
       this.particles.draw(
@@ -444,23 +410,23 @@ const scene = {
         this.camera.rotatingReferenceFrame
       );
 
-    if (this.scenario.particles && this.scenario.playing)
+    if (this.scenario.playing) {
       this.particlePhysics.iterate(
-        oldMasses,
         this.system.masses,
         this.scenario.g,
-        dt,
+        this.scenario.dt,
         this.scenario.particles.softening
           ? this.scenario.particles.softening
           : 0
       );
 
-    if (this.scenario.playing && this.scenario.collisions)
-      CollisionsService.doCollisions(
-        this.system.masses,
-        this.scenario.scale,
-        this.collisionCallback
-      );
+      if (this.scenario.collisions)
+        CollisionsService.doCollisions(
+          this.system.masses,
+          this.scenario.scale,
+          this.collisionCallback
+        );
+    }
 
     this.store.dispatch(
       modifyScenarioProperty(
@@ -519,12 +485,10 @@ const scene = {
   },
 
   reset() {
-    //Dispose of the camera controls
     if (this.camera && this.camera.controls) this.camera.controls.dispose();
 
     if (this.manifestationsService) this.manifestationsService.dispose();
 
-    //Dispose of the particles system
     if (this.particles) {
       this.particles.dispose();
       this.scene.remove(this.scene.getObjectByName('ParticlesManifestation'));
@@ -535,7 +499,6 @@ const scene = {
       this.scene.remove(this.ellipseCurve);
     }
 
-    //Dispose of the scene and arena
     let arena;
 
     if (this.scene) {

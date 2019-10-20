@@ -3,6 +3,9 @@ import H3 from '../vectors';
 export default class {
   g: number;
   dt: number;
+  tol: number;
+  maxDt: number;
+  minDt: number;
   masses: any[];
   elapsedTime: number;
   softening: number;
@@ -154,6 +157,19 @@ export default class {
     }
 
     return v;
+  }
+
+  sync(scenario: ScenarioState) {
+    this.g = scenario.g;
+    this.masses = scenario.masses;
+    this.tol = scenario.tol;
+    this.dt = scenario.dt;
+    this.minDt = scenario.minDt;
+    this.maxDt = scenario.maxDt;
+    this.useBarnesHut = scenario.useBarnesHut;
+    this.theta = scenario.theta;
+    this.softeningSquared =
+      scenario.softeningConstant * scenario.softeningConstant;
   }
 
   iterate(): void {
