@@ -99,6 +99,8 @@ interface ScenarioState {
   integrator: string;
   dt: number;
   tol: number;
+  scale: number;
+  reset: boolean;
   minDt: number;
   maxDt: number;
   g: number;

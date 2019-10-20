@@ -1,8 +1,9 @@
 import MassManifestation from './MassManifestation';
 import Star from './Star';
 import Model from './Model';
+import Spacecraft from './Spacecraft';
 
-type Manifestation = MassManifestation | Star | Model;
+export type Manifestation = MassManifestation | Star | Model | Spacecraft;
 
 export default class {
   masses: MassType[];
@@ -34,7 +35,10 @@ export default class {
         return new Star(mass, this.textureLoader);
 
       case 'model':
-        return new Model(mass, this.textureLoader);
+        return new Model(mass);
+
+      case 'spacecraft':
+        return new Spacecraft(mass);
 
       default:
         return new MassManifestation(mass, this.textureLoader, segments);

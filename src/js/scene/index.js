@@ -26,10 +26,11 @@ import SpacecraftService from '../Physics/spacecraft/SpacecraftService';
 import CustomEllipseCurve from './CustomEllipseCurve';
 import { stateToKepler } from '../Physics/spacecraft/lambert';
 import ManifestationsService from './ManifestationsService';
+import drawManifestation from './drawManifestation';
 
 const TWEEN = require('@tweenjs/tween.js');
 
-export default {
+const scene = {
   init(webGlCanvas, graphics2DCanvas, audio) {
     this.store = store;
 
@@ -93,23 +94,6 @@ export default {
     );
 
     this.scene.add(this.addMassTrajectory);
-
-    if (this.scenario.forAllMankind) {
-      this.spacecraftTrajectoryCurve = new CustomEllipseCurve(
-        0,
-        0,
-        200,
-        200,
-        0,
-        2 * Math.PI,
-        false,
-        0,
-        500,
-        'pink'
-      );
-
-      this.scene.add(this.spacecraftTrajectoryCurve);
-    }
 
     this.system = getIntegrator(this.scenario.integrator, {
       g: this.scenario.g,
@@ -210,56 +194,6 @@ export default {
         { x: i, y: o, z: w }
       );
     } else this.addMassTrajectory.visible = false;
-  },
-
-  updateSpacecraftTrajectoryCurve() {
-    const [spacecraft] = this.system.masses;
-
-    const primary = getObjFromArrByKeyValuePair(
-      this.scenario.masses,
-      'name',
-      this.scenario.soi
-    );
-
-    const spacecraftOrbitalElements = stateToKepler(
-      {
-        x: primary.x - spacecraft.x,
-        y: primary.y - spacecraft.y,
-        z: primary.z - spacecraft.z
-      },
-      {
-        x: primary.vx - spacecraft.vx,
-        y: primary.vy - spacecraft.vy,
-        z: primary.vz - spacecraft.vz
-      },
-      this.scenario.g * primary.m
-    );
-
-    const a = spacecraftOrbitalElements.a;
-    const e = spacecraftOrbitalElements.e;
-    const w = spacecraftOrbitalElements.argp;
-    const i = spacecraftOrbitalElements.i;
-    const o = spacecraftOrbitalElements.omega;
-
-    const ellipse = getEllipse(a, e);
-
-    const scale = this.scenario.scale;
-
-    this.spacecraftTrajectoryCurve.position.z =
-      (this.camera.rotatingReferenceFrame.z - primary.z) * scale;
-
-    this.spacecraftTrajectoryCurve.update(
-      (this.camera.rotatingReferenceFrame.x - primary.x + ellipse.focus) *
-        scale,
-      (this.camera.rotatingReferenceFrame.y - primary.y) * scale,
-      ellipse.xRadius * scale,
-      ellipse.yRadius * scale,
-      0,
-      2 * Math.PI,
-      false,
-      0,
-      { x: i, y: o, z: w - 180 }
-    );
   },
 
   collisionCallback(looser, survivor) {
@@ -437,8 +371,6 @@ export default {
 
     this.updateAddMassTrajectory();
 
-    if (this.scenario.forAllMankind) this.updateSpacecraftTrajectoryCurve();
-
     this.manifestationsService.diff(this.scenario.masses);
 
     this.graphics2D.clear();
@@ -514,18 +446,7 @@ export default {
 
       const rotatedPosition = this.camera.rotatedMasses[i];
 
-      massManifestation
-        .drawTrail(
-          rotatedPosition,
-          this.scenario.playing,
-          this.scenario.trails,
-          this.scenario.cameraFocus,
-          this.scenario.rotatingReferenceFrame,
-          this.previousRotatingReferenceFrame,
-          this.scenario.reset,
-          this.scenario.dt
-        )
-        .draw(rotatedPosition, this.camera, delta, this.scenario.habitableZone);
+      this.drawManifestation(massManifestation, rotatedPosition, delta);
 
       if (cameraFocus === name)
         this.camera.trackMovingObjectWithControls(massManifestation);
@@ -573,17 +494,6 @@ export default {
         );
 
       const main = massManifestation.getObjectByName('main');
-
-      if (mass.spacecraft && this.scenario.playing) {
-        const directionOfVelocity = new THREE.Vector3(
-          (mass.x + mass.vx * dt) * this.scenario.scale,
-          (mass.y + mass.vy * dt) * this.scenario.scale,
-          (mass.z + mass.vz * dt) * this.scenario.scale
-        );
-        directionOfVelocity.setFromMatrixPosition(main.matrixWorld);
-
-        main.lookAt(directionOfVelocity);
-      }
     }
 
     if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame)
@@ -715,3 +625,5 @@ export default {
     return this;
   }
 };
+
+export default { ...scene, drawManifestation };
