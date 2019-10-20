@@ -78,6 +78,10 @@ const scene = {
     this.previousRotatingReferenceFrame = null;
     this.previousIntegrator = this.scenario.integrator;
 
+    this.previous = {
+      cameraFocus: null
+    };
+
     this.scene.add(arena(this.textureLoader));
 
     this.addMassTrajectory = new CustomEllipseCurve(
@@ -394,48 +398,6 @@ const scene = {
 
     let barycenterPositionArray;
 
-    if (cameraFocus === 'Barycenter')
-      this.camera.controls.target.set(
-        rotatedBarycenter.x,
-        rotatedBarycenter.y,
-        rotatedBarycenter.z
-      );
-
-    if (
-      this.previousCameraFocus !== cameraFocus &&
-      cameraFocus === 'Barycenter'
-    ) {
-      this.previousCameraFocus = cameraFocus;
-
-      if (cameraFocus === 'Barycenter') {
-        this.camera.position.set(
-          rotatedBarycenter.x,
-          rotatedBarycenter.y,
-          rotatedBarycenter.z + this.scenario.barycenterZ
-        );
-
-        this.camera.lookAt(
-          rotatedBarycenter.x,
-          rotatedBarycenter.y,
-          rotatedBarycenter.z
-        );
-      }
-
-      if (cameraFocus === 'Barycenter' && this.scenario.particlesFun) {
-        this.camera.position.set(
-          7681151.548763126,
-          -5788162.859024099,
-          3722227.255314761
-        );
-
-        this.camera.lookAt(
-          rotatedBarycenter.x,
-          rotatedBarycenter.y,
-          rotatedBarycenter.z
-        );
-      }
-    }
-
     const massesLen = this.system.masses.length;
 
     for (let i = 0; i < massesLen; i++) {
@@ -447,36 +409,6 @@ const scene = {
       const rotatedPosition = this.camera.rotatedMasses[i];
 
       this.drawManifestation(massManifestation, rotatedPosition, delta);
-
-      if (cameraFocus === name)
-        this.camera.trackMovingObjectWithControls(massManifestation);
-
-      if (this.previousCameraFocus !== cameraFocus && cameraFocus === name) {
-        this.previousCameraFocus = cameraFocus;
-
-        const customCameraToBodyDistanceFactor = this.scenario
-          .customCameraToBodyDistanceFactor;
-
-        this.camera.position.set(
-          rotatedPosition.x -
-            mass.radius *
-              (customCameraToBodyDistanceFactor
-                ? customCameraToBodyDistanceFactor
-                : 10),
-          rotatedPosition.y,
-          rotatedPosition.z +
-            mass.radius *
-              (customCameraToBodyDistanceFactor
-                ? customCameraToBodyDistanceFactor
-                : 5)
-        );
-
-        this.camera.lookAt(
-          rotatedPosition.x,
-          rotatedPosition.y,
-          rotatedPosition.z
-        );
-      }
 
       if (this.scenario.labels)
         this.graphics2D.drawLabel(
@@ -492,9 +424,16 @@ const scene = {
           'white',
           drawMassLabel
         );
-
-      const main = massManifestation.getObjectByName('main');
     }
+
+    this.camera.setCamera(
+      this.scenario.cameraFocus,
+      this.previous,
+      this.scenario.barycenterZ,
+      this.scenario.customCameraToBodyDistanceFactor,
+      this.scenario.masses,
+      this.manifestationsService.manifestations
+    );
 
     if (rotatingReferenceFrame !== this.previousRotatingReferenceFrame)
       this.previousRotatingReferenceFrame = rotatingReferenceFrame;

@@ -2,6 +2,7 @@ import { PerspectiveCamera, Vector3, Object3D } from 'three';
 import CustomizedOrbitControls from './CustomizedOrbitControls';
 import H3 from '../Physics/vectors';
 import { degreesToRadians } from '../Physics/utils';
+import { Manifestation } from './ManifestationsService';
 
 export default class extends PerspectiveCamera {
   controls: ReturnType<typeof CustomizedOrbitControls>;
@@ -98,5 +99,67 @@ export default class extends PerspectiveCamera {
       .subtractFrom(this.rotatingReferenceFrame)
       .multiplyByScalar(barycenterScale)
       .toObject();
+  }
+
+  setCamera(
+    cameraFocus: string,
+    previous: { cameraFocus: string },
+    barycenterZ: number,
+    customCameraToBodyDistanceFactor: number,
+    masses: MassType[],
+    manifestations: Manifestation[]
+  ): void {
+    if (previous.cameraFocus !== cameraFocus) {
+      previous.cameraFocus = cameraFocus;
+
+      if (cameraFocus === 'Barycenter') {
+        this.controls.target.set(
+          this.rotatedBarycenter.x,
+          this.rotatedBarycenter.y,
+          this.rotatedBarycenter.z
+        );
+
+        this.position.set(
+          this.rotatedBarycenter.x,
+          this.rotatedBarycenter.y,
+          this.rotatedBarycenter.z + barycenterZ
+        );
+
+        this.lookAt(
+          this.rotatedBarycenter.x,
+          this.rotatedBarycenter.y,
+          this.rotatedBarycenter.z
+        );
+      }
+
+      return;
+    }
+
+    masses.forEach((mass, i: number) => {
+      if (cameraFocus === mass.name)
+        this.trackMovingObjectWithControls(manifestations[i]);
+
+      if (cameraFocus === mass.name) {
+        this.position.set(
+          this.rotatedMasses[i].x -
+            mass.radius *
+              (customCameraToBodyDistanceFactor
+                ? customCameraToBodyDistanceFactor
+                : 10),
+          this.rotatedMasses[i].y,
+          this.rotatedMasses[i].z +
+            mass.radius *
+              (customCameraToBodyDistanceFactor
+                ? customCameraToBodyDistanceFactor
+                : 5)
+        );
+
+        this.lookAt(
+          this.rotatedMasses[i].x,
+          this.rotatedMasses[i].y,
+          this.rotatedMasses[i].z
+        );
+      }
+    });
   }
 }
