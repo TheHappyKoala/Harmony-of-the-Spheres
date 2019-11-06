@@ -6,7 +6,7 @@ import Tooltip from "../Tooltip";
 import { getRandomColor } from "../../utils";
 import Tabs from "../Tabs";
 import LazyDog from "../LazyDog";
-import bodies from "../../data/masses";
+import bodies from "../../masses";
 
 export default class extends Component {
   constructor(props) {

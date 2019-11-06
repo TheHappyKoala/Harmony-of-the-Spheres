@@ -4,7 +4,7 @@ import Dropdown from "../Dropdown";
 import Button from "../Button";
 import Slider from "../Slider";
 import Tooltip from "../Tooltip";
-import bodies from "../../data/masses";
+import bodies from "../../masses";
 
 export default props => {
   const [selectedMass, setSelectedMass] = useState(bodies[0].name);
