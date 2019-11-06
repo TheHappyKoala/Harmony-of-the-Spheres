@@ -17,10 +17,6 @@ exports.createPages = async ({ actions, graphql }) => {
   `);
 
   results.data.allScenariosJson.edges.forEach(({ node }) =>
-    console.log(node.id)
-  );
-
-  results.data.allScenariosJson.edges.forEach(({ node }) =>
     createPage({
       path: `/${node.name}`,
       component: require.resolve(`./src/templates/Scenario.tsx`),
