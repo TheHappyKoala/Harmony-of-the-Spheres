@@ -6,7 +6,9 @@ import * as scenarioActionCreators from "../state/creators/scenario";
 import Simulator from "../components/Simulator";
 
 interface ScenarioProps {
-  data: ScenarioState;
+  data: {
+    scenariosJson: ScenarioState;
+  };
   scenario: ScenarioState;
   getScenario: any;
   modifyScenarioProperty: typeof scenarioActionCreators.modifyScenarioProperty;
