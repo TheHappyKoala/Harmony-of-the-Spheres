@@ -32,7 +32,6 @@ const Scenario = ({
   const scenarioFromData = data.scenariosJson;
   const scenariosInCategory = data.allScenariosJson.edges;
 
-  console.log(scenariosInCategory);
   useEffect(() => {
     getScenario(scenarioFromData);
   }, []);
@@ -45,6 +44,7 @@ const Scenario = ({
       addMass={addMass}
       deleteMass={deleteMass}
       scenario={scenario}
+      scenariosInCategory={scenariosInCategory}
     />
   );
 };

@@ -1,5 +1,4 @@
 import React, { ReactElement, Fragment, useState } from "react";
-import { AppState } from "../../state/reducers";
 import * as scenarioActionCreators from "../../state/creators/scenario";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import Button from "../Button";
@@ -11,10 +10,13 @@ import Graphics from "../Content/Graphics";
 import Camera from "../Content/Camera";
 import Masses from "../Content/Masses";
 import AddMass from "../Content/AddMass";
+import Navigation from "../Navigation";
+import Tweet from "../Tweet";
 import "./App.less";
 
 interface SimulatorProps {
   scenario: ScenarioState;
+  scenariosInCategory: { node: { name: string } }[];
   modifyScenarioProperty: typeof scenarioActionCreators.modifyScenarioProperty;
   modifyMassProperty: typeof scenarioActionCreators.modifyMassProperty;
   deleteMass: typeof scenarioActionCreators.deleteMass;
@@ -28,7 +30,8 @@ export default ({
   deleteMass,
   addMass,
   resetScenario,
-  scenario
+  scenario,
+  scenariosInCategory
 }: SimulatorProps): ReactElement => {
   const [display, setDisplay] = useState({
     credits: false
@@ -36,6 +39,7 @@ export default ({
 
   return (
     <Fragment>
+      <Navigation scenariosInCategory={scenariosInCategory} />
       <Tabs
         tabsWrapperClassName="sidebar-wrapper"
         tabsContentClassName="sidebar-content box"
