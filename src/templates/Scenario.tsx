@@ -8,6 +8,7 @@ import Simulator from "../components/Simulator";
 interface ScenarioProps {
   data: {
     scenariosJson: ScenarioState;
+    allScenariosJson: { edges: { node: { name: string } }[] };
   };
   scenario: ScenarioState;
   getScenario: any;
@@ -29,7 +30,9 @@ const Scenario = ({
   scenario
 }: ScenarioProps): ReactElement => {
   const scenarioFromData = data.scenariosJson;
+  const scenariosInCategory = data.allScenariosJson.edges;
 
+  console.log(scenariosInCategory);
   useEffect(() => {
     getScenario(scenarioFromData);
   }, []);
@@ -65,7 +68,7 @@ export default connect(
 )(Scenario);
 
 export const pageQuery = graphql`
-  query($id: String) {
+  query($id: String, $category: String) {
     scenariosJson(id: { eq: $id }) {
       name
       type
@@ -125,6 +128,13 @@ export const pageQuery = graphql`
         vx
         vy
         vz
+      }
+    }
+    allScenariosJson(filter: { type: { eq: $category } }) {
+      edges {
+        node {
+          name
+        }
       }
     }
   }

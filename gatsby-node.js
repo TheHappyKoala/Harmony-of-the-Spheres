@@ -10,6 +10,7 @@ exports.createPages = async ({ actions, graphql }) => {
           node {
             id
             name
+            type
           }
         }
       }
@@ -21,7 +22,8 @@ exports.createPages = async ({ actions, graphql }) => {
       path: `/${node.name}`,
       component: require.resolve(`./src/templates/Scenario.tsx`),
       context: {
-        id: node.id
+        id: node.id,
+        category: node.type
       }
     })
   );
