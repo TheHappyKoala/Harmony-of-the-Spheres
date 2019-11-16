@@ -1,5 +1,7 @@
 {
   "name": "The Centaurs",
+  "img": "../images/scenarios/Borisov Saying Hello.png",
+
   "particlesFun": false,
   "type": "Solar System",
   "integrator": "PEFRL",

@@ -1,5 +1,7 @@
 {
   "name": "Borisov Saying Hello",
+  "path": "/",
+  "img": "../images/scenarios/Borisov Saying Hello.png",
   "type": "Solar System",
   "particlesFun": false,
   "g": 39.5,

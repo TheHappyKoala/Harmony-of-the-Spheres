@@ -1,5 +1,7 @@
 {
   "name": "Earth Spoils Saturn",
+  "path": "/Misc",
+  "img": "../../images/scenarios/Borisov Saying Hello.png",
   "particlesFun": false,
   "type": "Misc",
   "integrator": "RK4",

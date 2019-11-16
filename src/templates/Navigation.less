@@ -1,0 +1,43 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+main {
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    width: 100%;
+    z-index: 10; 
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 50px;
+    justify-items: center;
+    width: 90%;
+    transform: translateX(-50%);
+}
+
+.scenario-link {
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 0px 3px skyblue;
+
+}
+
+
+.scenario-image {
+    width: 100%;
+}
+
+.scenario-name {
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+  }

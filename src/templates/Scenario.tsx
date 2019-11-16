@@ -1,14 +1,14 @@
-import React, { ReactElement, useEffect } from "react";
+import React, { ReactElement, useEffect, Fragment } from "react";
 import { AppState } from "../state/reducers";
 import { graphql } from "gatsby";
 import { connect } from "react-redux";
 import * as scenarioActionCreators from "../state/creators/scenario";
 import Simulator from "../components/Simulator";
+import Head from "../components/Head";
 
 interface ScenarioProps {
   data: {
     scenariosJson: ScenarioState;
-    allScenariosJson: { edges: { node: { name: string } }[] };
   };
   scenario: ScenarioState;
   getScenario: any;
@@ -30,22 +30,23 @@ const Scenario = ({
   scenario
 }: ScenarioProps): ReactElement => {
   const scenarioFromData = data.scenariosJson;
-  const scenariosInCategory = data.allScenariosJson.edges;
 
   useEffect(() => {
     getScenario(scenarioFromData);
-  }, []);
+  }, [scenarioFromData.name]);
 
   return (
-    <Simulator
-      resetScenario={resetScenario}
-      modifyScenarioProperty={modifyScenarioProperty}
-      modifyMassProperty={modifyMassProperty}
-      addMass={addMass}
-      deleteMass={deleteMass}
-      scenario={scenario}
-      scenariosInCategory={scenariosInCategory}
-    />
+    <Fragment>
+      <Head />
+      <Simulator
+        resetScenario={resetScenario}
+        modifyScenarioProperty={modifyScenarioProperty}
+        modifyMassProperty={modifyMassProperty}
+        addMass={addMass}
+        deleteMass={deleteMass}
+        scenario={scenario}
+      />
+    </Fragment>
   );
 };
 
@@ -68,7 +69,7 @@ export default connect(
 )(Scenario);
 
 export const pageQuery = graphql`
-  query($id: String, $category: String) {
+  query($id: String) {
     scenariosJson(id: { eq: $id }) {
       name
       type
@@ -128,13 +129,6 @@ export const pageQuery = graphql`
         vx
         vy
         vz
-      }
-    }
-    allScenariosJson(filter: { type: { eq: $category } }) {
-      edges {
-        node {
-          name
-        }
       }
     }
   }

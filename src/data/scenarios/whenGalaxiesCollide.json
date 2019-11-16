@@ -1,5 +1,6 @@
 {
   "name": "When Galaxies Collide",
+  "img": "../images/scenarios/Borisov Saying Hello.png",
   "type": "Misc",
   "particlesFun": true,
   "integrator": "RK4",
