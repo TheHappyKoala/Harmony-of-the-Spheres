@@ -5,13 +5,22 @@ interface Vector {
 }
 
 interface MassType extends Vector {
-  name?: string;
-  color?: string;
-  m?: number;
-  vx?: number;
-  vy?: number;
-  vz?: number;
-  [key: string]: any;
+  name: string;
+  color: string;
+  m: number;
+  vx: number;
+  vy: number;
+  vz: number;
+  radius: number;
+  type: boolean;
+  bump: boolean;
+  luminosity: number;
+  color: string;
+  temperature: number;
+  tilt: number;
+  spacecraft: boolean;
+  orbitalPeriod: number;
+  texture: string;
 }
 
 interface Barycenter extends Vector {
@@ -115,6 +124,7 @@ interface ScenarioState {
   collisions: boolean;
   particles: {
     max: number;
+    number: number;
     size: number;
     rings: {
       primary: string;
@@ -124,7 +134,8 @@ interface ScenarioState {
       maxD: number;
     }[];
   };
-  maximumDistance: number;
+  maximumDistance: { name: string; value: number };
+  distanceStep: { name: string; value: number };
   distMax: number;
   distMin: number;
   velMin: number;
@@ -151,7 +162,12 @@ interface ScenarioState {
   trajectoryDepartureVelocity?: number;
   trajectoryArrivalVelocity?: number;
   trajectoryRelativeTo?: string;
-  trajectoryRendevouz?: any;
+  trajectoryRendevouz?: {
+    x: number;
+    y: number;
+    z: number;
+    p: { x: number; y: number; z: number; t: number };
+  };
   soi?: string;
 }
 

@@ -93,6 +93,14 @@ export const pageQuery = graphql`
       barycenterMassOne
       barycenterMassTwo
       collisions
+      maximumDistance {
+        name
+        value
+      }
+      distanceStep {
+        name
+        value
+      }
       distMax
       distMin
       velMin
@@ -118,10 +126,31 @@ export const pageQuery = graphql`
       trajectoryDepartureVelocity
       trajectoryArrivalVelocity
       trajectoryRelativeTo
+      trajectoryRendevouz {
+        x
+        y
+        z
+        p {
+          x
+          y
+          z
+          t
+        }
+      }
       soi
+      particles {
+        max
+        size
+        rings {
+          primary
+          tilt
+          number
+          minD
+          maxD
+        }
+      }
       masses {
         name
-        color
         m
         x
         y
@@ -129,6 +158,16 @@ export const pageQuery = graphql`
         vx
         vy
         vz
+        radius
+        bump
+        luminosity
+        color
+        temperature
+        tilt
+        spacecraft
+        orbitalPeriod
+        texture
+        bodyType
       }
     }
   }
