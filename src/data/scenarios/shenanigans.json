@@ -57,7 +57,7 @@
   "masses": [
     {
       "name": "Adelie",
-      "type": "star",
+      "massType": "star",
       "light": false,
       "trailVertices": 200,
       "radius": 6000000,
@@ -78,7 +78,7 @@
     },
     {
       "name": "Kian",
-      "type": "star",
+      "massType": "star",
       "light": false,
       "radius": 6000000,
       "m": 10000,
@@ -98,7 +98,7 @@
     },
     {
       "name": "Kelwin",
-      "type": "star",
+      "massType": "star",
       "light": false,
       "trailVertices": 200,
       "radius": 6000000,

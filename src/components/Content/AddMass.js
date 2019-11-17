@@ -43,7 +43,7 @@ export default class extends Component {
           m: selectedMass.m,
           radius: selectedMass.radius,
           texture: selectedMass.name,
-          type: selectedMass.type,
+          type: selectedMass.massType,
           bodyTypes
         });
       }

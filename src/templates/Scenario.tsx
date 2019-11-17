@@ -158,6 +158,7 @@ export const pageQuery = graphql`
         vx
         vy
         vz
+        massType
         radius
         bump
         luminosity

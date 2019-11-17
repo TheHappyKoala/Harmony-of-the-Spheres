@@ -59,7 +59,7 @@
     {
       "m": 1,
       "radius": 42767.441860465115,
-      "type": "star",
+      "massType": "star",
       "bump": false,
       "luminosity": 1,
       "name": "Sun",
@@ -85,7 +85,7 @@
       "vz": -0.0544323438357962,
       "bump": false,
       "spacecraft": false,
-      "type": "sphere",
+      "massType": "sphere",
       "luminosity": 0,
       "temperature": 0,
       "m": 0.0009543,
@@ -106,7 +106,7 @@
       "vz": -0.08247594519597591,
       "spacecraft": false,
       "bump": false,
-      "type": "sphere",
+      "massType": "sphere",
       "luminosity": 0,
       "temperature": 0,
       "m": 0.0002857,
@@ -127,7 +127,7 @@
       "vz": 0.014240700477078809,
       "spacecraft": false,
       "bump": false,
-      "type": "sphere",
+      "massType": "sphere",
       "luminosity": 0,
       "temperature": 0,
       "m": 0.00004365,
@@ -147,7 +147,7 @@
       "vy": 1.1186110213994829,
       "vz": -0.02944037737803112,
       "spacecraft": false,
-      "type": "sphere",
+      "massType": "sphere",
       "bump": false,
       "luminosity": 0,
       "temperature": 0,
@@ -162,7 +162,7 @@
     {
       "name": "Chiron",
       "orbitalPeriod": 53,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 18.72534308330106,
       "y": 0.4594555629397964,
       "z": 1.065521546340884,
@@ -182,7 +182,7 @@
     {
       "name": "Asbolus",
       "orbitalPeriod": 77,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 4.033949891878749,
       "y": 20.72417852927671,
       "z": 6.411557384286739,
@@ -202,7 +202,7 @@
     {
       "name": "Bienor",
       "orbitalPeriod": 68,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 6.342896972418538,
       "y": 12.21961599712277,
       "z": 5.190615325226985,
@@ -222,7 +222,7 @@
     {
       "name": "Chariklo",
       "orbitalPeriod": 64,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 5.483552908372026,
       "y": -15.08162052879368,
       "z": -1.258497143238418,
@@ -242,7 +242,7 @@
     {
       "name": "38P/Stephan–Oterma",
       "orbitalPeriod": 39,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": -1.473069166174047,
       "y": 1.368240972458926,
       "z": 0.5714214270336836,
@@ -262,7 +262,7 @@
     {
       "name": "Hylonome",
       "orbitalPeriod": 128,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 4.693829877338169,
       "y": -23.70869744330285,
       "z": 1.706036713311614,
@@ -282,7 +282,7 @@
     {
       "name": "Nessus",
       "orbitalPeriod": 124,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 25.96034939671905,
       "y": -10.1591114625977,
       "z": -6.207897776753946,
@@ -302,7 +302,7 @@
     {
       "name": "Amycus",
       "orbitalPeriod": 127,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 5.600530657522697,
       "y": -20.27685464037974,
       "z": -2.499971701660879,
@@ -322,7 +322,7 @@
     {
       "name": "Pholus",
       "orbitalPeriod": 93,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 0.2368312598466348,
       "y": -27.46631869161681,
       "z": 6.092321579564652,
@@ -342,7 +342,7 @@
     {
       "name": "Okyrhoe",
       "orbitalPeriod": 24,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 8.676987756371403,
       "y": -6.35741339754493,
       "z": 1.476544458738926,
@@ -362,7 +362,7 @@
     {
       "name": "Damocles",
       "orbitalPeriod": 41,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 15.32518703539241,
       "y": -10.76849784073682,
       "z": 6.536745375937859,
@@ -382,7 +382,7 @@
     {
       "name": "Crantor",
       "orbitalPeriod": 86,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 12.8683756106439,
       "y": -14.03118953369237,
       "z": -1.125329028222062,
@@ -402,7 +402,7 @@
     {
       "name": "2005 RO43",
       "orbitalPeriod": 93,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 3.548168725586727,
       "y": 16.37819321604338,
       "z": -10.29411860293829,
@@ -422,7 +422,7 @@
     {
       "name": "Echeclus",
       "orbitalPeriod": 35,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 3.398003127578456,
       "y": 7.751296602238959,
       "z": -0.6142858006365057,
@@ -442,7 +442,7 @@
     {
       "name": "Thereus",
       "orbitalPeriod": 35,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": -7.952547922419576,
       "y": 8.782817557903781,
       "z": -4.204115693795586,
@@ -462,7 +462,7 @@
     {
       "name": "2004 YH32",
       "orbitalPeriod": 24,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": -8.454106280560145,
       "y": -9.224942187827137,
       "z": 0.2271085735700706,
@@ -482,7 +482,7 @@
     {
       "name": "Elatus",
       "orbitalPeriod": 41,
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": -15.94371011850192,
       "y": -3.014320352109324,
       "z": 1.447877665533239,

@@ -57,7 +57,7 @@
   "masses": [
     {
       "name": "Feynman",
-      "type": "star",
+      "massType": "star",
       "light": false,
       "radius": 6000000,
       "m": 10000,
@@ -77,7 +77,7 @@
     },
     {
       "name": "Sagan",
-      "type": "star",
+      "massType": "star",
       "light": false,
       "radius": 6000000,
       "m": 10000,
@@ -97,7 +97,7 @@
     },
     {
       "name": "Einstein",
-      "type": "star",
+      "massType": "star",
       "light": false,
       "radius": 6000000,
       "m": 10000,
@@ -117,7 +117,7 @@
     },
     {
       "name": "Oppenheimer",
-      "type": "star",
+      "massType": "star",
       "light": false,
       "radius": 6000000,
       "m": 10000,

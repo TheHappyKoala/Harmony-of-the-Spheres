@@ -70,7 +70,7 @@
       "vz": 0.0000687504175911851,
       "m": 1,
       "radius": 42767.441860465115,
-      "type": "star",
+      "massType": "star",
       "bump": false,
       "luminosity": 1,
       "color": "#ffffff",
@@ -96,7 +96,7 @@
       "color": "grey",
       "texture": "Pluto",
       "spacecraft": false,
-      "type": "sphere",
+      "massType": "sphere",
       "luminosity": 0,
       "temperature": 0
     },
@@ -117,13 +117,13 @@
       "color": "grey",
       "texture": "Charon",
       "spacecraft": false,
-      "type": "sphere",
+      "massType": "sphere",
       "luminosity": 0,
       "temperature": 0
     },
     {
       "name": "Styx",
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 11.58946638490499,
       "y": -31.58295130987511,
       "z": 0.02706267382798246,
@@ -143,7 +143,7 @@
     },
     {
       "name": "Nix",
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 11.58985817844465,
       "y": -31.58259055271878,
       "z": 0.02695723105013233,
@@ -163,7 +163,7 @@
     },
     {
       "name": "Hydra",
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 11.5896416920007,
       "y": -31.58294950870845,
       "z": 0.02676492528338245,
@@ -183,7 +183,7 @@
     },
     {
       "name": "Kerberos",
-      "type": "asteroid",
+      "massType": "asteroid",
       "x": 11.58989092395531,
       "y": -31.58245095517379,
       "z": 0.02712989283176775,

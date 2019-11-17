@@ -18,7 +18,7 @@ export default class extends THREE.Object3D {
   }
 
   getMain() {
-    const segments = this.mass.type !== "asteroid" ? this.segments : 6;
+    const segments = this.mass.massType !== "asteroid" ? this.segments : 6;
 
     const geometry = new THREE.SphereBufferGeometry(
       this.mass.radius,
@@ -39,7 +39,7 @@ export default class extends THREE.Object3D {
     else
       material = new THREE.MeshLambertMaterial({
         map: this.textureLoader.load(
-          this.mass.type === "asteroid"
+          this.mass.massType === "asteroid"
             ? "/textures/Deimos.jpg"
             : `/textures/${this.mass.texture}.jpg`
         )

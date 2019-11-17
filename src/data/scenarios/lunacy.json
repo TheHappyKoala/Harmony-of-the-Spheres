@@ -41,7 +41,7 @@
       "tilt": 0,
       "atmosphere": false,
       "clouds": false,
-      "type": "star",
+      "massType": "star",
       "texture": "Sun",
       "bump": false,
       "color": "#ffffff"
@@ -63,13 +63,14 @@
       "tilt": -25.19,
       "atmosphere": { "color": "#ffccb3", "scaleFactor": 40 },
       "clouds": false,
-      "type": false,
+      "massType": "sphere",
       "texture": "Mars",
       "bump": true,
       "color": "#1F1002"
     },
     {
       "name": "Moon",
+      "massType": "sphere",
       "trailVertices": 3000,
       "m": 3.69396868e-8,
       "radius": 22.93577981651376,
@@ -89,6 +90,7 @@
     },
     {
       "name": "Ganymede",
+      "massType": "sphere",
       "trailVertices": 3000,
       "m": 7.450777301989e-8,
       "radius": 34.633027522935784,
@@ -108,6 +110,9 @@
     },
     {
       "name": "Callisto",
+
+      "massType": "sphere",
+
       "trailVertices": 3000,
       "m": 5.4300826548000004e-8,
       "radius": 35.74007220216607,
@@ -127,6 +132,8 @@
     },
     {
       "name": "Titan",
+      "massType": "sphere",
+
       "trailVertices": 3000,
       "m": 6.75675e-8,
       "radius": 33.944954128440365,
@@ -146,6 +153,8 @@
     },
     {
       "name": "Io",
+      "massType": "sphere",
+
       "trailVertices": 3000,
       "m": 4.490848296995278e-8,
       "radius": 24.082568807339452,
@@ -165,6 +174,8 @@
     },
     {
       "name": "Europa",
+      "massType": "sphere",
+
       "trailVertices": 3000,
       "m": 2.413291634272764e-8,
       "radius": 22.477064220183486,
@@ -184,6 +195,8 @@
     },
     {
       "name": "Enceladus",
+      "massType": "sphere",
+
       "trailVertices": 3000,
       "m": 5.4311887827482005e-11,
       "radius": 3.327981651376147,
@@ -203,6 +216,8 @@
     },
     {
       "name": "Rhea",
+      "massType": "sphere",
+
       "trailVertices": 3000,
       "m": 1.1596836467392582e-9,
       "radius": 11,
@@ -222,6 +237,8 @@
     },
     {
       "name": "Ceres",
+      "massType": "sphere",
+
       "trailVertices": 3000,
       "m": 4.504e-10,
       "radius": 5.5,
@@ -241,6 +258,9 @@
     },
     {
       "name": "Pluto",
+
+      "massType": "sphere",
+
       "trailVertices": 3000,
       "m": 6.58086572e-9,
       "radius": 19.467889908256883,
@@ -260,6 +280,8 @@
     },
     {
       "name": "Titania",
+      "massType": "sphere",
+
       "trailVertices": 3000,
       "m": 1.7733242151370002e-9,
       "radius": 11.330275229357799,
@@ -279,6 +301,7 @@
     },
     {
       "name": "Oberon",
+      "massType": "sphere",
       "trailVertices": 3000,
       "m": 1.5153952890340001e-9,
       "radius": 10.954128440366974,

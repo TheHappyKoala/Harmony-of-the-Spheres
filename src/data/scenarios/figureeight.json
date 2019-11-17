@@ -68,7 +68,7 @@
   "masses": [
     {
       "name": "Eva",
-      "type": "star",
+      "massType": "star",
       "light": false,
       "trailVertices": 220,
       "radius": 6000000,
@@ -89,7 +89,7 @@
     },
     {
       "name": "Sarada",
-      "type": "star",
+      "massType": "star",
       "light": false,
       "trailVertices": 220,
       "radius": 6000000,
@@ -110,7 +110,7 @@
     },
     {
       "name": "Arjuna",
-      "type": "star",
+      "massType": "star",
       "light": false,
       "trailVertices": 220,
       "radius": 6000000,

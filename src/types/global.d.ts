@@ -12,7 +12,7 @@ interface MassType extends Vector {
   vy: number;
   vz: number;
   radius: number;
-  type: boolean;
+  massType: string;
   bump: boolean;
   luminosity: number;
   color: string;

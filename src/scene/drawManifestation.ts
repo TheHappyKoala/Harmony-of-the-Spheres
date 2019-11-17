@@ -22,7 +22,7 @@ export default function(
     scenario.dt
   );
 
-  switch (manifestation.mass.type) {
+  switch (manifestation.mass.massType) {
     case "star":
       manifestation.draw(
         rotatedPosition,

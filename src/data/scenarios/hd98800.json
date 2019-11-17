@@ -51,7 +51,7 @@
   "masses": [
     {
       "name": "HD 98800 Ba",
-      "type": "star",
+      "massType": "star",
       "light": false,
       "trailVertices": 500,
       "radius": 70000,
@@ -72,7 +72,7 @@
     },
     {
       "name": "HD 98800 Bb",
-      "type": "star",
+      "massType": "star",
       "light": false,
       "trailVertices": 500,
       "radius": 70000,

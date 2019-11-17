@@ -30,7 +30,7 @@ export default class {
   createManifestation(mass: MassType): Manifestation {
     const segments = 25;
 
-    switch (mass.type) {
+    switch (mass.massType) {
       case "star":
         return new Star(mass, this.textureLoader);
 
