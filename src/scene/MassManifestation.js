@@ -30,9 +30,9 @@ export default class extends THREE.Object3D {
 
     if (this.mass.bump)
       material = new THREE.MeshPhongMaterial({
-        map: this.textureLoader.load(`./textures/${this.mass.texture}.jpg`),
+        map: this.textureLoader.load(`/textures/${this.mass.texture}.jpg`),
         bumpMap: this.textureLoader.load(
-          `./textures/${this.mass.texture}Bump.jpg`
+          `/textures/${this.mass.texture}Bump.jpg`
         ),
         bumpScale: 0.7
       });
@@ -40,8 +40,8 @@ export default class extends THREE.Object3D {
       material = new THREE.MeshLambertMaterial({
         map: this.textureLoader.load(
           this.mass.type === "asteroid"
-            ? "./textures/Deimos.jpg"
-            : `./textures/${this.mass.texture}.jpg`
+            ? "/textures/Deimos.jpg"
+            : `/textures/${this.mass.texture}.jpg`
         )
       });
 

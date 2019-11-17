@@ -4,6 +4,7 @@ import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import Button from "../Button";
 import Modal from "../Modal";
 import Credits from "../Content/Credits";
+import Renderer from "../Renderer";
 import Tabs from "../Tabs";
 import Physics from "../Content/Physics";
 import Graphics from "../Content/Graphics";
@@ -35,6 +36,7 @@ export default ({
 
   return (
     <Fragment>
+      <Renderer scenarioName={scenario.name} />
       <Tabs
         tabsWrapperClassName="sidebar-wrapper"
         tabsContentClassName="sidebar-content box"

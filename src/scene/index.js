@@ -1,30 +1,18 @@
 import * as THREE from "three";
 import store from "../state/store";
-import {
-  modifyScenarioProperty,
-  modifyMassProperty,
-  deleteMass
-} from "../state/creators/scenario";
-import H3 from "../Physics/vectors";
+import { modifyScenarioProperty, deleteMass } from "../state/creators/scenario";
+import H3 from "../physics/vectors";
 import getIntegrator from "../Physics/Integrators";
 import { getObjFromArrByKeyValuePair } from "../utils";
-import {
-  getRandomNumberInRange,
-  setBarycenter,
-  clampAbs,
-  getEllipse,
-  radiansToDegrees
-} from "../Physics/utils";
-import ParticleService from "../Physics/particles/ParticleService";
+import { setBarycenter, getEllipse, radiansToDegrees } from "../physics/utils";
+import ParticleService from "../physics/particles/ParticleService";
 import arena from "./arena";
 import Camera from "./Camera";
 import Graphics2D, { drawBaryCenterLabel, drawMassLabel } from "./Graphics2D";
-import ParticlePhysics from "../Physics/particles";
+import ParticlePhysics from "../physics/particles";
 import ParticlesManifestation from "./ParticlesManifestation";
-import CollisionsService from "../Physics/collisions/";
-import SpacecraftService from "../Physics/spacecraft/SpacecraftService";
+import CollisionsService from "../physics/collisions/";
 import CustomEllipseCurve from "./CustomEllipseCurve";
-import { stateToKepler } from "../Physics/spacecraft/lambert";
 import ManifestationsService from "./ManifestationsService";
 import drawManifestation from "./drawManifestation";
 
@@ -140,19 +128,18 @@ const scene = {
     this.onWindowResize = this.onWindowResize.bind(this);
     this.collisionCallback = this.collisionCallback.bind(this);
 
-    setTimeout(() => {
-      this.store.dispatch({
-        type: "SET_LOADING",
-        payload: {
-          loading: false,
-          whatIsLoading: ""
-        }
-      });
-      this.loop();
-    }, 5000);
-
     window.addEventListener("resize", this.onWindowResize, false);
     window.addEventListener("orientationchange", this.onWindowResize, false);
+
+    this.store.dispatch({
+      type: "SET_LOADING",
+      payload: {
+        loading: false,
+        whatIsLoading: ""
+      }
+    });
+
+    this.loop();
   },
 
   updateAddMassTrajectory() {

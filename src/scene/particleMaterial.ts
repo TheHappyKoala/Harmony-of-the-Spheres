@@ -11,7 +11,7 @@ export default (
     uniforms: {
       color: { value: new THREE.Color(0xffffff) },
       texture: {
-        value: textureLoader.load(`./textures/${texture}.png`)
+        value: textureLoader.load(`/textures/${texture}.png`)
       },
       sizeAttenuation: { value: true }
     },

@@ -1,7 +1,7 @@
 import MassManifestation from "./MassManifestation";
 import CustomEllipseCurve from "./CustomEllipseCurve";
 import { stateToKepler } from "../Physics/spacecraft/lambert";
-import { getEllipse } from "../Physics/utils";
+import { getEllipse } from "../physics/utils";
 import { Object3D, Vector3 } from "three";
 import ColladaLoader from "colladaloader2asmodule";
 
