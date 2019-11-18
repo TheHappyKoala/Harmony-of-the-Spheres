@@ -1,6 +1,6 @@
 import React, { ReactElement, Fragment } from "react";
 import { graphql, Link } from "gatsby";
-import Backdrop from "../components/LoadingScreen";
+import Starfield from "../components/Starfield";
 import Head from "../components/Head";
 import "./Navigation.less";
 
@@ -27,7 +27,7 @@ export default ({ data }: IndexProps): ReactElement => {
   return (
     <Fragment>
       <Head />
-      <Backdrop />
+      <Starfield />
       <header>
         <h1>Gravity Simulator</h1>
         <nav>
