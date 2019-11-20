@@ -164,6 +164,12 @@ export default class extends PerspectiveCamera {
           );
         }
       });
+    } else {
+      masses.forEach(
+        (mass, i: number) =>
+          cameraFocus === mass.name &&
+          this.trackMovingObjectWithControls(manifestations[i])
+      );
     }
   }
 }
