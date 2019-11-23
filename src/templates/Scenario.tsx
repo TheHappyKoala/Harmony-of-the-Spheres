@@ -92,6 +92,7 @@ export const pageQuery = graphql`
       systemBarycenter
       barycenterMassOne
       barycenterMassTwo
+      barycenterZ
       collisions
       maximumDistance {
         name
@@ -141,8 +142,10 @@ export const pageQuery = graphql`
       particles {
         max
         size
-        rings {
+        shapes {
           primary
+          type
+          flatLand
           tilt
           number
           minD
