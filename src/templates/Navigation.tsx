@@ -1,7 +1,6 @@
 import React, { ReactElement, Fragment } from "react";
 import { graphql, Link } from "gatsby";
 import kebabCase from "lodash/kebabCase";
-import Starfield from "../components/Starfield";
 import Head from "../components/Head";
 import Nav from "../components/Nav";
 import NavItem from "../components/NavItem";
