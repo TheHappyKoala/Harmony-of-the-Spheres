@@ -37,7 +37,7 @@ const Scenario = ({
 
   return (
     <Fragment>
-      <Head />
+      <Head pageTitle={scenario.name} pageDescription={scenario.description} />
       <Simulator
         resetScenario={resetScenario}
         modifyScenarioProperty={modifyScenarioProperty}
@@ -72,6 +72,7 @@ export const pageQuery = graphql`
   query($id: String) {
     scenariosJson(id: { eq: $id }) {
       name
+      description
       type
       forAllMankind
       scenarioWikiUrl

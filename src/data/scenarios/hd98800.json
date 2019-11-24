@@ -1,5 +1,6 @@
 {
   "name": "HD 98800 B",
+  "description": "Gravity simulation of HD 98800 B, a binary star system with a debris disk that orbits its center of mass.",
   "tol": 1e-12,
   "maxDt": 1e-3,
   "minDt": 1e-22,

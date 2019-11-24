@@ -1,5 +1,6 @@
 {
   "name": "Planet Nine",
+  "description": "Gravity simulation of Planet Nine, a hypothetical planet in the outer region of the Solar System. Its gravitational effects could explain the unusual clustering of orbits for a group of extreme trans-Neptunian objects.",
   "integrator": "PEFRL",
   "particlesFun": false,
   "type": "Misc",

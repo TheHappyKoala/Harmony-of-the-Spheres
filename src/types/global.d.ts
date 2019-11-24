@@ -99,6 +99,7 @@ interface ExoplanetScenarioSeed {
 
 interface ScenarioState {
   name: string;
+  description: string;
   type: string;
   exoPlanetArchive?: boolean;
   forAllMankind?: boolean;

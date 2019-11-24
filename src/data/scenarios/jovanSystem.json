@@ -1,5 +1,6 @@
 {
   "name": "The Jovian System",
+  "description": "Gravity simulation of the Galilean moons, the four largest moons of Jupiter — Io, Europa, Ganymede, and Callisto.",
   "type": "Solar System",
   "particlesFun": false,
   "g": 39.5,

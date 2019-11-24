@@ -1,5 +1,6 @@
 {
   "name": "Earth Spoils Saturn",
+  "description": "Find out what would happen to Saturn's rings if you put Earth into orbit around Saturn.",
   "path": "/Misc",
   "img": "../../images/scenarios/Borisov Saying Hello.png",
   "particlesFun": false,

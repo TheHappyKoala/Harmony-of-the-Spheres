@@ -1,5 +1,6 @@
 {
   "name": "TESS",
+  "description": "Gravity simulation of The Transiting Exoplanet Survey Satellite (TESS), a NASA space telescope, designed to search for exoplanets using the transit method.",
   "path": "/spaceflight",
   "isLoaded": false,
   "particlesFun": false,

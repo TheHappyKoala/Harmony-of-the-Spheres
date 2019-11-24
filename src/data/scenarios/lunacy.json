@@ -1,5 +1,6 @@
 {
   "name": "Lunacy!",
+  "Description": "Every major moon in the solar system in orbit around Mars. Watch as the Moons collide or get ejected!",
   "integrator": "PEFRL",
   "particlesFun": false,
   "trails": true,

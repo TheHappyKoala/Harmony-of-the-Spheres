@@ -1,5 +1,6 @@
 {
   "name": "Pentagram of Venus",
+  "description": "Gravity simulation of the pentagram of Venus, the dazzling path that Venus makes as observed from Earth.",
   "particlesFun": false,
   "type": "Solar System",
   "g": 39.5,

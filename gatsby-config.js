@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Harmony of the Spheres`,
+    title: `Gravity Simulator`,
     author: `Darrell Huffman`,
     lang: `en`
   },
@@ -15,6 +15,12 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/data/`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.gravitysimulator.org`
       }
     }
   ]

@@ -1,5 +1,6 @@
 {
   "name": "Borisov Saying Hello",
+  "description": "Gravity simulation of 2I/Borisov, the first observed interstellar comet. It has an orbital eccentricity of 3.36 and is not bound to the Sun.",
   "path": "/",
   "img": "../images/scenarios/Borisov Saying Hello.png",
   "type": "Solar System",

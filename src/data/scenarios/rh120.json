@@ -1,5 +1,6 @@
 {
   "name": "Temporary Moon of Earth",
+  "description": "2006 RH120 is a tiny near-Earth asteroid that ordinarily orbits the Sun but makes close approaches to the Earth–Moon system around every twenty years, when it can temporarily enter Earth orbit through temporary satellite capture.",
   "particlesFun": false,
   "type": "Solar System",
   "g": 39.5,

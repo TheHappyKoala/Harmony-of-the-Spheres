@@ -35,13 +35,11 @@ export default ({ data, pageContext }: IndexProps): ReactElement => {
   const categories = data.categories.group;
   const scenarios = data.scenarios.edges;
 
-  console.log(pageContext);
-
   return (
     <Fragment>
-      <Head />
-      <Starfield />
+      <Head pageTitle={pageContext.currentPageName} />
       <section className="scenarios-wrapper">
+        <h2>Scenarios</h2>
         <Nav>
           <NavItem active={pageContext.currentPageName === "All"}>
             <Link to={`/`}>All</Link>

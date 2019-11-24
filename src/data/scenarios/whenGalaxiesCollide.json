@@ -1,5 +1,6 @@
 {
   "name": "When Galaxies Collide",
+  "description": "Gravity simulation of two spiral galaxies colliding with each other head on.",
   "img": "../images/scenarios/Borisov Saying Hello.png",
   "type": "Misc",
   "particlesFun": true,

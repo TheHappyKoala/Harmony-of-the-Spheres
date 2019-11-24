@@ -60,7 +60,7 @@ exports.createPages = async ({ actions, graphql }) => {
           skip: i * scenariosPerPage,
           numPages,
           currentPage: i + 1,
-          currentPageName: _.kebabCase(fieldValue)
+          currentPageName: fieldValue
         }
       });
     });

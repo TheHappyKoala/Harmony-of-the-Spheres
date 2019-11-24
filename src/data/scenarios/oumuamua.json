@@ -1,5 +1,6 @@
 {
   "name": "Oumuamua",
+  "description": "Gravity simulation of ʻOumuamua, the first known interstellar object detected passing through the Solar System.",
   "type": "Solar System",
   "particlesFun": false,
   "g": 39.5,

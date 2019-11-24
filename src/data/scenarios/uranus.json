@@ -1,5 +1,6 @@
 {
   "name": "The Uranian System",
+  "description": "Gravity simulation of Uranus and its ring system and major moons.",
   "particlesFun": false,
   "type": "Solar System",
   "integrator": "RK4",

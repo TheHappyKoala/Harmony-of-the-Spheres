@@ -1,5 +1,6 @@
 {
   "name": "Quasi Moon of Earth",
+  "description": "Gravity simulation of Cruithne, an asteroid in orbit around the Sun in a 1:1 orbital resonance with Earth, making it a co-orbital object, or quasi moon.",
   "img": "../images/scenarios/Borisov Saying Hello.png",
   "particlesFun": false,
   "type": "Solar System",

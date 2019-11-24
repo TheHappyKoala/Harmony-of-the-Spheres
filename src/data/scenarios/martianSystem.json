@@ -1,5 +1,6 @@
 {
   "name": "The Martian System",
+  "description": "Gravity simulation of Mars's two Moons Phobos and Deimos. They are irregular in shape and much smaller than Earth's Moon",
   "particlesFun": false,
   "type": "Solar System",
   "g": 39.5,

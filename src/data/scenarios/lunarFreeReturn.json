@@ -1,5 +1,6 @@
 {
   "name": "Lunar Free Return",
+  "description": "Gravity simulation of a lunar free-return trajectory, a spacecraft trajectory traveling away from Earth where gravity due to the Moon causes the spacecraft to return to Earth without propulsion.",
   "integrator": "RKN12",
   "particlesFun": false,
   "logarithmicDepthBuffer": true,
