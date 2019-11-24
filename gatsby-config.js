@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Gravity Simulator`,
     author: `Darrell Huffman`,
-    lang: `en`
+    lang: `en`,
+    description: `Gravity simulations in 3D of the solar system, choreographies, exoplanets and even colliding galaxies. You can add, delete and modify any mass in a simulation.`
   },
   plugins: [
     `gatsby-plugin-typescript`,

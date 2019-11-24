@@ -4,7 +4,7 @@ export default (): {
   title: string;
   author: string;
   lang: string;
-  base: string;
+  description: string;
 } => {
   const { site } = useStaticQuery(
     graphql`
@@ -14,6 +14,7 @@ export default (): {
             title
             author
             lang
+            description
           }
         }
       }

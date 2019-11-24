@@ -10,6 +10,10 @@ interface HeadProps {
 export default ({ pageTitle, pageDescription }: HeadProps): ReactElement => {
   const siteMeta = useSiteMeta();
 
+  pageTitle = pageTitle !== undefined ? pageTitle : siteMeta.title;
+  pageDescription =
+    pageDescription !== undefined ? pageDescription : siteMeta.description;
+
   return (
     <Helmet>
       <html lang={siteMeta.lang} />
