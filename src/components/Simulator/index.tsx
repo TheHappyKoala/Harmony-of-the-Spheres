@@ -37,6 +37,23 @@ export default ({
   return (
     <Fragment>
       <Renderer scenarioName={scenario.name} />
+      <Button
+        cssClassName="button simulation-state"
+        callback={() =>
+          modifyScenarioProperty({
+            key: "playing",
+            value: !scenario.playing
+          })
+        }
+      >
+        <i className={`fas fa-${scenario.playing ? "pause" : "play"} fa-2x`} />
+      </Button>
+      <Button
+        cssClassName="button navigation"
+        callback={() => window.history.back()}
+      >
+        <i className={`fas fa-align-justify fa-2x`} />
+      </Button>
       <Tabs
         tabsWrapperClassName="sidebar-wrapper"
         tabsContentClassName="sidebar-content box"
@@ -113,28 +130,6 @@ export default ({
           />
         </div>
       </Tabs>
-      <div className="menu-bottom">
-        <Button
-          cssClassName="button"
-          callback={() => setDisplay({ ...display, credits: !display.credits })}
-        >
-          <span>
-            <i className="fas fa-glass fa-2x button" />
-            Credits
-          </span>
-        </Button>
-        <Button cssClassName="button">
-          <a
-            href="https://github.com/TheHappyKoala/Harmony-of-the-Spheres"
-            target="blank"
-          >
-            <span>
-              <i className="fas fa-github fa-2x" />
-              Contribute
-            </span>
-          </a>
-        </Button>
-      </div>{" "}
       <ReactCSSTransitionGroup
         transitionName="fade"
         transitionEnterTimeout={250}

@@ -45,7 +45,7 @@
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "three": "^0.110.0",
+    "three": "^0.108.0",
     "typescript": "^3.6.4"
   },
   "devDependencies": {
