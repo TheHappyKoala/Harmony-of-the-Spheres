@@ -1,4 +1,4 @@
-const path = require(`path`);
+const _ = require("lodash");
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -49,7 +49,7 @@ exports.createPages = async ({ actions, graphql }) => {
     const numPages = Math.ceil(numberOfScenariosPerCategory / scenariosPerPage);
 
     [...new Array(numPages)].forEach((scenario, i) => {
-      const pagePath = `/${fieldValue.toLowerCase()}`;
+      const pagePath = `/${_.kebabCase(fieldValue)}`;
       createPage({
         path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
         component: require.resolve(`./src/templates/Navigation.tsx`),
@@ -60,7 +60,7 @@ exports.createPages = async ({ actions, graphql }) => {
           skip: i * scenariosPerPage,
           numPages,
           currentPage: i + 1,
-          currentPageName: fieldValue
+          currentPageName: _.kebabCase(fieldValue)
         }
       });
     });
@@ -68,7 +68,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   results.data.allScenariosJson.edges.forEach(({ node }, i) =>
     createPage({
-      path: `/${node.type.toLowerCase()}/${node.name.toLowerCase()}`,
+      path: `/${_.kebabCase(node.type)}/${_.kebabCase(node.name)}`,
       component: require.resolve(`./src/templates/Scenario.tsx`),
       context: {
         id: node.id

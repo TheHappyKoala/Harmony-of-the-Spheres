@@ -1,5 +1,6 @@
 import React, { ReactElement, Fragment } from "react";
 import { graphql, Link } from "gatsby";
+import kebabCase from "lodash/kebabCase";
 import Starfield from "../components/Starfield";
 import Head from "../components/Head";
 import Nav from "../components/Nav";
@@ -47,9 +48,12 @@ export default ({ data, pageContext }: IndexProps): ReactElement => {
             <Link to={`/`}>All</Link>
           </NavItem>
           {categories.map(category => (
-            <Link to={`/${category.fieldValue.toLowerCase()}`}>
+            <Link to={`/${kebabCase(category.fieldValue)}`}>
               <NavItem
-                active={pageContext.currentPageName === category.fieldValue}
+                active={
+                  kebabCase(pageContext.currentPageName) ===
+                  kebabCase(category.fieldValue)
+                }
               >
                 {category.fieldValue}
               </NavItem>
@@ -58,7 +62,7 @@ export default ({ data, pageContext }: IndexProps): ReactElement => {
         </Nav>
         <div className="scenarios-gallery">
           {scenarios.map(({ node }) => (
-            <Link to={`/${node.type.toLowerCase()}/${node.name.toLowerCase()}`}>
+            <Link to={`/${kebabCase(node.type)}/${kebabCase(node.name)}`}>
               <div className="scenario-link">
                 <img
                   src={`/images/scenarios/${node.name}.png`}
