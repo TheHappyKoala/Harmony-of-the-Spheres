@@ -5,6 +5,5 @@ export default (): ReactElement => (
   <div className="starfield-wrapper">
     <div className="stars" />
     <div className="twinkling" />
-    <div className="blue-overlay" />
   </div>
 );

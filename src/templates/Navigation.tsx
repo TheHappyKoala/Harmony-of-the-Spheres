@@ -2,6 +2,9 @@ import React, { ReactElement, Fragment } from "react";
 import { graphql, Link } from "gatsby";
 import Starfield from "../components/Starfield";
 import Head from "../components/Head";
+import Nav from "../components/Nav";
+import NavItem from "../components/NavItem";
+import Pagination from "../components/Pagination";
 import "./Navigation.less";
 
 interface IndexProps {
@@ -18,46 +21,65 @@ interface IndexProps {
       group: { fieldValue: string }[];
     };
   };
+  pageContext: {
+    limit: number;
+    skip: number;
+    numPages: number;
+    currentPage: number;
+    currentPageName: string;
+    pagePath: string;
+  };
 }
 
-export default ({ data }: IndexProps): ReactElement => {
+export default ({ data, pageContext }: IndexProps): ReactElement => {
   const categories = data.categories.group;
   const scenarios = data.scenarios.edges;
+
+  console.log(pageContext);
 
   return (
     <Fragment>
       <Head />
       <Starfield />
-      <header>
-        <h1>Gravity Simulator</h1>
-        <nav>
-          <ul>
-            <li>
-              <Link to={`/`}>All</Link>
-            </li>
-            {categories.map(category => (
-              <li>
-                <Link to={`/${category.fieldValue.toLowerCase()}`}>
-                  {category.fieldValue}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
-      <main>
-        {scenarios.map(({ node }) => (
-          <Link to={`/${node.type.toLowerCase()}/${node.name.toLowerCase()}`}>
-            <div className="scenario-link">
-              <img
-                src={`/images/scenarios/${node.name}.png`}
-                className="scenario-image"
-              />
-              <p className="scenario-name">{node.name}</p>
-            </div>
-          </Link>
-        ))}
-      </main>
+      <section className="scenarios-wrapper">
+        <Nav>
+          <NavItem active={pageContext.currentPageName === "All"}>
+            <Link to={`/`}>All</Link>
+          </NavItem>
+          {categories.map(category => (
+            <Link to={`/${category.fieldValue.toLowerCase()}`}>
+              <NavItem
+                active={pageContext.currentPageName === category.fieldValue}
+              >
+                {category.fieldValue}
+              </NavItem>
+            </Link>
+          ))}
+        </Nav>
+        <div className="scenarios-gallery">
+          {scenarios.map(({ node }) => (
+            <Link to={`/${node.type.toLowerCase()}/${node.name.toLowerCase()}`}>
+              <div className="scenario-link">
+                <img
+                  src={`/images/scenarios/${node.name}.png`}
+                  className="scenario-image"
+                />
+                <p className="scenario-name">{node.name}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <Pagination
+          pagination={{
+            start: pageContext.skip,
+            end: pageContext.currentPage * pageContext.limit,
+            count: pageContext.numPages,
+            page: pageContext.currentPage,
+            path: pageContext.pagePath
+          }}
+          itemsPerPage={pageContext.limit}
+        />
+      </section>
     </Fragment>
   );
 };

@@ -20,24 +20,27 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `);
 
-  const scenariosPerPage = 4;
+  const scenariosPerPage = 6;
 
   const numPages = Math.ceil(
     results.data.allScenariosJson.edges.length / scenariosPerPage
   );
 
-  const allScenarios = [...new Array(numPages)].forEach((page, i) =>
+  [...new Array(numPages)].forEach((page, i) => {
+    const pagePath = `/`;
     createPage({
-      path: i === 0 ? `/` : `/${i + 1}`,
+      path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
       component: require.resolve(`./src/templates/Navigation.tsx`),
       context: {
+        pagePath: `/`,
         limit: scenariosPerPage,
         skip: i * scenariosPerPage,
         numPages,
-        currentPage: i + 1
+        currentPage: i + 1,
+        currentPageName: "All"
       }
-    })
-  );
+    });
+  });
 
   results.data.allScenariosJson.group.forEach(({ fieldValue }, i) => {
     const numberOfScenariosPerCategory = results.data.allScenariosJson.edges.filter(
@@ -45,22 +48,22 @@ exports.createPages = async ({ actions, graphql }) => {
     ).length;
     const numPages = Math.ceil(numberOfScenariosPerCategory / scenariosPerPage);
 
-    const allScenarios = [...new Array(numPages)].forEach((scenario, i) =>
+    [...new Array(numPages)].forEach((scenario, i) => {
+      const pagePath = `/${fieldValue.toLowerCase()}`;
       createPage({
-        path:
-          i === 0
-            ? `/${fieldValue.toLowerCase()}`
-            : `/${fieldValue.toLowerCase()}/${i + 1}`,
+        path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
         component: require.resolve(`./src/templates/Navigation.tsx`),
         context: {
+          pagePath,
           type: fieldValue,
           limit: scenariosPerPage,
           skip: i * scenariosPerPage,
           numPages,
-          currentPage: i + 1
+          currentPage: i + 1,
+          currentPageName: fieldValue
         }
-      })
-    );
+      });
+    });
   });
 
   results.data.allScenariosJson.edges.forEach(({ node }, i) =>

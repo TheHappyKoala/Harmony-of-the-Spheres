@@ -1,33 +1,28 @@
-header {
+.scenarios-wrapper {
+    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    bottom: 0;
     z-index: 10;
+    width: 100%;
+    padding: 10px 0;
 }
 
-main {
+.scenarios-gallery {
     padding: 20px;
-    position: absolute;
-    left: 50%;
     bottom: 20px;
-    width: 100%;
-    z-index: 10; 
+    width: fit-content;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 50px;
-    justify-items: center;
-    width: 90%;
-    transform: translateX(-50%);
+    grid-template-columns: 15% 15% 15% 15% 15% 15%;
+    justify-content: space-evenly;
+    margin: 0 auto;
 }
 
 .scenario-link {
     overflow: hidden;
     position: relative;
-    box-shadow: 0px 0px 3px skyblue;
+    border: 1px solid #545454;
 
 }
-
 
 .scenario-image {
     width: 100%;
