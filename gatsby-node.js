@@ -76,3 +76,14 @@ exports.createPages = async ({ actions, graphql }) => {
     })
   );
 };
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === "ScenariosJson") {
+    createNodeField({
+      node,
+      name: `scenarioImage`,
+      value: `../../images/scenarios/${node.name}.png`
+    });
+  }
+};

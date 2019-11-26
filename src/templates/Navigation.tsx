@@ -1,5 +1,6 @@
 import React, { ReactElement, Fragment } from "react";
 import { graphql, Link } from "gatsby";
+import Img from "gatsby-image";
 import kebabCase from "lodash/kebabCase";
 import Head from "../components/Head";
 import Nav from "../components/Nav";
@@ -14,8 +15,20 @@ interface IndexProps {
         node: {
           type: string;
           name: string;
+          fields: {
+            scenarioImage: {
+              childImageSharp: {
+                fixed: any;
+              };
+            };
+          };
         };
       }[];
+    };
+    file: {
+      childImageSharp: {
+        fixed: any;
+      };
     };
     categories: {
       group: { fieldValue: string }[];
@@ -37,9 +50,9 @@ export default ({ data, pageContext }: IndexProps): ReactElement => {
 
   return (
     <Fragment>
+      <Img fixed={data.file.childImageSharp.fixed} />
       <Head pageTitle={pageContext.currentPageName} />
       <section className="scenarios-wrapper">
-        <h2>Scenarios</h2>
         <Nav>
           <NavItem active={pageContext.currentPageName === "All"}>
             <Link to={`/`}>All</Link>
@@ -61,10 +74,7 @@ export default ({ data, pageContext }: IndexProps): ReactElement => {
           {scenarios.map(({ node }) => (
             <Link to={`/${kebabCase(node.type)}/${kebabCase(node.name)}`}>
               <div className="scenario-link">
-                <img
-                  src={`/images/scenarios/${node.name}.png`}
-                  className="scenario-image"
-                />
+                <Img fixed={node.fields.scenarioImage.childImageSharp.fixed} />
                 <p className="scenario-name">{node.name}</p>
               </div>
             </Link>
@@ -96,12 +106,28 @@ export const pageQuery = graphql`
         node {
           type
           name
+          fields {
+            scenarioImage {
+              childImageSharp {
+                fixed(width: 200, height: 120) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
+          }
         }
       }
     }
     categories: allScenariosJson {
       group(field: type) {
         fieldValue
+      }
+    }
+    file(relativePath: { eq: "background.jpg" }) {
+      childImageSharp {
+        fixed(width: 2000, height: 1000) {
+          ...GatsbyImageSharpFixed
+        }
       }
     }
   }
