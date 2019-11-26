@@ -52,6 +52,9 @@ export default ({ data, pageContext }: IndexProps): ReactElement => {
     <Fragment>
       <Img fixed={data.file.childImageSharp.fixed} />
       <Head pageTitle={pageContext.currentPageName} />
+      <header>
+        <h1>Gravity Simulator</h1>
+      </header>
       <section className="scenarios-wrapper">
         <Nav>
           <NavItem active={pageContext.currentPageName === "All"}>

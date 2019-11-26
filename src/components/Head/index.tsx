@@ -28,8 +28,8 @@ export default ({ pageTitle, pageDescription }: HeadProps): ReactElement => {
         property="og:image"
         content={`https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png}`}
       />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="627" />
+      <meta property="og:image:width" content="400" />
+      <meta property="og:image:height" content="250" />
       <meta property="og:image:type" content="image/png" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDescription} />
