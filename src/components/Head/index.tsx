@@ -16,6 +16,16 @@ export default ({ pageTitle, pageDescription }: HeadProps): ReactElement => {
 
   return (
     <Helmet>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-153406767-1"
+      ></script>
+      <script>{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-153406767-1');
+      `}</script>
       <html lang={siteMeta.lang} />
       <title>{`${siteMeta.title} | ${pageTitle}`}</title>
       <meta name="description" content={pageDescription} />
