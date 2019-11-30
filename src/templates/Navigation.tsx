@@ -27,7 +27,7 @@ interface IndexProps {
     };
     file: {
       childImageSharp: {
-        fixed: any;
+        fluid: any;
       };
     };
     categories: {
@@ -50,7 +50,10 @@ export default ({ data, pageContext }: IndexProps): ReactElement => {
 
   return (
     <Fragment>
-      <Img fixed={data.file.childImageSharp.fixed} />
+      <Img
+        fluid={data.file.childImageSharp.fluid}
+        style={{ position: "fixed", top: 0, bottom: 0, width: "100%" }}
+      />
       <Head pageTitle={pageContext.currentPageName} />
       <header>
         <h1>Gravity Simulator</h1>
@@ -73,6 +76,18 @@ export default ({ data, pageContext }: IndexProps): ReactElement => {
             </Link>
           ))}
         </Nav>
+        {pageContext.numPages > 1 && (
+          <Pagination
+            pagination={{
+              start: pageContext.skip,
+              end: pageContext.currentPage * pageContext.limit,
+              count: pageContext.numPages,
+              page: pageContext.currentPage,
+              path: pageContext.pagePath
+            }}
+            itemsPerPage={pageContext.limit}
+          />
+        )}
         <div className="scenarios-gallery">
           {scenarios.map(({ node }) => (
             <Link to={`/${kebabCase(node.type)}/${kebabCase(node.name)}`}>
@@ -83,16 +98,6 @@ export default ({ data, pageContext }: IndexProps): ReactElement => {
             </Link>
           ))}
         </div>
-        <Pagination
-          pagination={{
-            start: pageContext.skip,
-            end: pageContext.currentPage * pageContext.limit,
-            count: pageContext.numPages,
-            page: pageContext.currentPage,
-            path: pageContext.pagePath
-          }}
-          itemsPerPage={pageContext.limit}
-        />
       </section>
     </Fragment>
   );
@@ -128,8 +133,8 @@ export const pageQuery = graphql`
     }
     file(relativePath: { eq: "background.jpg" }) {
       childImageSharp {
-        fixed(width: 2000, height: 1000) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

@@ -1,25 +1,43 @@
 header {
+  padding: 15px;
   position: fixed;
-  z-index: 10;
+  z-index: 15;
   top: 0;
-  left: 15px;
+  width: 100%;
+  background-color: #000;
+  border-bottom: 1px solid #545454;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  h1 {
+    font-size: 17px;
+  }
 }
 
 .scenarios-wrapper {
-    background-color: rgba(0, 0, 0, 0.8);
-    position: fixed;
+    position: absolute;
     bottom: 0;
-    z-index: 10;
     width: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    @media screen and (max-width: 700px) {
+      position: relative;
+      margin-top: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      min-height: calc(100vh - 40px);
+    }
 }
 
 .scenarios-gallery {
     padding: 15px;
-    bottom: 10px;
     width: 100%;
     display: grid;
-    grid-template-columns: 200px 200px 200px 200px 200px 200px;
     justify-content: space-evenly;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, 200px);
+    grid-gap:1rem;
 }
 
 .scenario-link {

@@ -69,15 +69,18 @@ input {
 
 body {
   margin: 0;
-  overflow: hidden;
   font-family: @font;
   font-size: 11px;
   color: @font-color;
   background-color: #000;
+  overflow: hidden;
   i {
     font-family: FontAwesome;
     font-style: normal;
     color: #fff;
+  }
+  @media screen and (max-width: 700px) {
+    overflow: auto;
   }
 }
 

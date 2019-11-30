@@ -48,7 +48,7 @@ export default ({
   };
 
   return (
-    <Nav>
+    <Nav css={{ borderTop: "none" }}>
       {renderRange(
         getPaginationRange(pagination.page, pagination.count),
         itemsPerPage
