@@ -1,8 +1,8 @@
-import React, { ReactElement, ReactChild, CSSProperties } from "react";
+import React, { ReactElement, ReactNode, CSSProperties } from "react";
 import "./Nav.less";
 
 interface NavProps {
-  children: ReactChild[];
+  children: ReactNode[];
   css?: CSSProperties;
 }
 
