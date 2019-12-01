@@ -24,7 +24,6 @@
     "@types/react": "^16.9.9",
     "@types/react-dom": "^16.9.2",
     "@types/react-redux": "^7.1.5",
-    "babel-preset-gatsby": "^0.2.20",
     "colladaloader2asmodule": "^1.0.5",
     "gatsby": "^2.17.9",
     "gatsby-image": "^2.2.29",
@@ -47,11 +46,12 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "three": "^0.108.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "webworkify-webpack": "^2.1.5"
   },
   "devDependencies": {
     "@types/react-helmet": "^5.0.13",
     "prettier": "^1.18.2",
-    "worker-loader": "^2.0.0"
+    "webpack": "^4.41.2"
   }
 }
