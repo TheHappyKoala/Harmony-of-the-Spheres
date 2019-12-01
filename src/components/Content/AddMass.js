@@ -228,7 +228,7 @@ export default class extends Component {
                       }}
                     >
                       <LazyDog
-                        src={`./images/masses/${body.name}.png`}
+                        src={`/images/masses/${body.name}.png`}
                         alt={body.name}
                         caption={body.name}
                         width={75}
