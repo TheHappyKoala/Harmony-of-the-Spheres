@@ -41,90 +41,93 @@ import { getObjFromArrByKeyValuePair } from "../../utils";
 
 */
 
-self.onmessage = async ({
-  data: {
-    integrator,
-    g,
-    dt,
-    tol,
-    minDt,
-    maxDt,
-    elapsedTime,
-    masses,
-    departure,
-    arrival,
-    target,
-    primary
-  }
-}) => {
-  const system = getIntegrator(integrator, {
-    g,
-    dt,
-    tol,
-    minDt,
-    maxDt,
-    masses,
-    elapsedTime
-  });
-
-  const [spacecraft] = system.masses;
-  let targetMass = getObjFromArrByKeyValuePair(system.masses, "name", target);
-
-  //To speed things up, don't include masses that don't significantly perturb our target
-
-  for (let i = 0; i < system.masses.length; i++) {
-    const name = system.masses[i].name;
-
-    if (name !== target && name !== primary && name !== target.perturber) {
-      system.masses.splice(i, 1);
-      i--;
+export default function worker(self) {
+  self.onmessage = async ({
+    data: {
+      integrator,
+      g,
+      dt,
+      tol,
+      minDt,
+      maxDt,
+      elapsedTime,
+      masses,
+      departure,
+      arrival,
+      target,
+      primary
     }
-  }
+  }) => {
+    const system = getIntegrator(integrator, {
+      g,
+      dt,
+      tol,
+      minDt,
+      maxDt,
+      masses,
+      elapsedTime
+    });
 
-  let primaryM = getObjFromArrByKeyValuePair(system.masses, "name", primary).m;
+    const [spacecraft] = system.masses;
+    let targetMass = getObjFromArrByKeyValuePair(system.masses, "name", target);
 
-  const trajectoryGenerator = () => {
-    return new Promise(resolve => {
-      const interval = setInterval(() => {
-        for (let i = 0; i < 15; i++) system.iterate();
+    //To speed things up, don't include masses that don't significantly perturb our target
 
-        if (system.elapsedTime >= arrival) {
-          targetMass = getObjFromArrByKeyValuePair(
-            system.masses,
-            "name",
-            target
-          );
+    for (let i = 0; i < system.masses.length; i++) {
+      const name = system.masses[i].name;
 
-          clearInterval(interval);
+      if (name !== target && name !== primary && name !== target.perturber) {
+        system.masses.splice(i, 1);
+        i--;
+      }
+    }
 
-          resolve(
-            planFlight(
-              system.elapsedTime - departure,
-              spacecraft,
-              targetMass,
-              g * primaryM
-            )
-          );
+    let primaryM = getObjFromArrByKeyValuePair(system.masses, "name", primary)
+      .m;
+
+    const trajectoryGenerator = () => {
+      return new Promise(resolve => {
+        const interval = setInterval(() => {
+          for (let i = 0; i < 15; i++) system.iterate();
+
+          if (system.elapsedTime >= arrival) {
+            targetMass = getObjFromArrByKeyValuePair(
+              system.masses,
+              "name",
+              target
+            );
+
+            clearInterval(interval);
+
+            resolve(
+              planFlight(
+                system.elapsedTime - departure,
+                spacecraft,
+                targetMass,
+                g * primaryM
+              )
+            );
+          }
+        }, 16);
+      });
+    };
+
+    const [velocities] = await trajectoryGenerator();
+
+    self.postMessage({
+      trajectory: [
+        {
+          x: velocities.initVel.x,
+          y: velocities.initVel.y,
+          z: velocities.initVel.z
+        },
+        {
+          x: velocities.finalVel.x,
+          y: velocities.finalVel.y,
+          z: velocities.finalVel.z,
+          p: { ...targetMass, t: system.elapsedTime }
         }
-      }, 16);
+      ]
     });
   };
-
-  const [velocities] = await trajectoryGenerator();
-
-  self.postMessage({
-    trajectory: [
-      {
-        x: velocities.initVel.x,
-        y: velocities.initVel.y,
-        z: velocities.initVel.z
-      },
-      {
-        x: velocities.finalVel.x,
-        y: velocities.finalVel.y,
-        z: velocities.finalVel.z,
-        p: { ...targetMass, t: system.elapsedTime }
-      }
-    ]
-  });
 };

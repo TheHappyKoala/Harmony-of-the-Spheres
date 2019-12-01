@@ -8,8 +8,8 @@ import Tabs from "../Tabs";
 import {
   modifyScenarioProperty,
   getTrajectory
-} from "../../action-creators/scenario";
-import "./CockpitDashboard.less";
+} from "../../state/creators/scenario";
+import "./Spaceship.less";
 import { getDistanceParams } from "../../Physics/utils";
 import {
   constructSOITree,
@@ -145,6 +145,11 @@ export default ({
                   selectedOptionCssClassName="selected-option cockpit-element"
                   optionsWrapperCssClass="options"
                   dynamicChildrenLen={scenario.masses.length}
+                  transition={{
+                    name: "fall",
+                    enterTimeout: 150,
+                    leaveTimeout: 150
+                  }}
                 >
                   {scenario.masses.map((mass: MassType) => (
                     <div
@@ -184,19 +189,6 @@ export default ({
                   }
                 >
                   Set Trajectory
-                </Button>
-              </div>
-              <div data-label="Thrust">
-                <Button
-                  cssClassName="button cockpit-element top"
-                  callback={() =>
-                    modifyScenarioProperty({
-                      key: "thrust",
-                      value: !scenario.thrust
-                    })
-                  }
-                >
-                  Apply Thrust
                 </Button>
               </div>
             </Tabs>

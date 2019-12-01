@@ -20,6 +20,7 @@ interface SimulatorProps {
   deleteMass: typeof scenarioActionCreators.deleteMass;
   addMass: typeof scenarioActionCreators.addMass;
   resetScenario: typeof scenarioActionCreators.resetScenario;
+  getTrajectory: typeof scenarioActionCreators.getTrajectory;
 }
 
 export default ({
@@ -27,8 +28,8 @@ export default ({
   modifyMassProperty,
   deleteMass,
   addMass,
-  resetScenario,
-  scenario
+  scenario,
+  getTrajectory
 }: SimulatorProps): ReactElement => {
   const [display, setDisplay] = useState({
     credits: false

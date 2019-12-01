@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import * as scenarioActionCreators from "../state/creators/scenario";
 import Simulator from "../components/Simulator";
 import Head from "../components/Head";
+import Spaceship from "../components/Spaceship";
 
 interface ScenarioProps {
   data: {
@@ -12,6 +13,7 @@ interface ScenarioProps {
   };
   scenario: ScenarioState;
   getScenario: any;
+  getTrajectory: any;
   modifyScenarioProperty: typeof scenarioActionCreators.modifyScenarioProperty;
   modifyMassProperty: typeof scenarioActionCreators.modifyMassProperty;
   deleteMass: typeof scenarioActionCreators.deleteMass;
@@ -26,6 +28,7 @@ const Scenario = ({
   modifyMassProperty,
   addMass,
   deleteMass,
+  getTrajectory,
   data,
   scenario
 }: ScenarioProps): ReactElement => {
@@ -44,8 +47,16 @@ const Scenario = ({
         modifyMassProperty={modifyMassProperty}
         addMass={addMass}
         deleteMass={deleteMass}
+        getTrajectory={getTrajectory}
         scenario={scenario}
       />
+      {scenario.forAllMankind && (
+        <Spaceship
+          scenario={scenario}
+          modifyScenarioProperty={modifyScenarioProperty}
+          getTrajectory={getTrajectory}
+        />
+      )}
     </Fragment>
   );
 };
@@ -60,7 +71,8 @@ const mapDispatchToProps = {
   modifyScenarioProperty: scenarioActionCreators.modifyScenarioProperty,
   modifyMassProperty: scenarioActionCreators.modifyMassProperty,
   addMass: scenarioActionCreators.addMass,
-  deleteMass: scenarioActionCreators.deleteMass
+  deleteMass: scenarioActionCreators.deleteMass,
+  getTrajectory: scenarioActionCreators.getTrajectory
 };
 
 export default connect(
