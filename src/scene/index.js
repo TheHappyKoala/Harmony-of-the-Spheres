@@ -472,7 +472,6 @@ const scene = {
   },
 
   reset() {
-    console.log("poop");
     if (this.camera && this.camera.controls) this.camera.controls.dispose();
 
     if (this.manifestationsService) this.manifestationsService.dispose();
