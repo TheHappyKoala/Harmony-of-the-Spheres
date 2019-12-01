@@ -75,10 +75,7 @@ const mapDispatchToProps = {
   getTrajectory: scenarioActionCreators.getTrajectory
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Scenario);
+export default connect(mapStateToProps, mapDispatchToProps)(Scenario);
 
 export const pageQuery = graphql`
   query($id: String) {
@@ -106,6 +103,7 @@ export const pageQuery = graphql`
       barycenterMassOne
       barycenterMassTwo
       barycenterZ
+      customCameraToBodyDistanceFactor
       collisions
       maximumDistance {
         name
