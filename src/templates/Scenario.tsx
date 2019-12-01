@@ -13,7 +13,7 @@ interface ScenarioProps {
   };
   scenario: ScenarioState;
   setScenario: typeof scenarioActionCreators.setScenario;
-  getTrajectory: any;
+  getTrajectory: typeof scenarioActionCreators.getTrajectory;
   modifyScenarioProperty: typeof scenarioActionCreators.modifyScenarioProperty;
   modifyMassProperty: typeof scenarioActionCreators.modifyMassProperty;
   deleteMass: typeof scenarioActionCreators.deleteMass;
@@ -66,7 +66,7 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 const mapDispatchToProps = {
-  getScenario: scenarioActionCreators.setScenario,
+  setScenario: scenarioActionCreators.setScenario,
   resetScenario: scenarioActionCreators.resetScenario,
   modifyScenarioProperty: scenarioActionCreators.modifyScenarioProperty,
   modifyMassProperty: scenarioActionCreators.modifyMassProperty,

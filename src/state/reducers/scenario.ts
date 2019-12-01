@@ -7,7 +7,7 @@ import {
   DELETE_MASS
 } from "../types/scenario";
 
-export default (state = {}, action: ScenarioActionTypes) => {
+export default (state = <ScenarioState>{}, action: ScenarioActionTypes) => {
   switch (action.type) {
     case SET_SCENARIO:
       return { ...state, ...action.scenario };

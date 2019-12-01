@@ -24,7 +24,7 @@ const getVelocityMagnitude = (v: Vector) =>
   Math.sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
 
 interface CockpitDashboardProps {
-  scenario: any;
+  scenario: ScenarioState;
   modifyScenarioProperty: typeof modifyScenarioProperty;
   getTrajectory: typeof getTrajectory;
 }

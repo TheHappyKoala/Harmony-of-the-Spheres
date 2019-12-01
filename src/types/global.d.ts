@@ -5,22 +5,13 @@ interface Vector {
 }
 
 interface MassType extends Vector {
-  name: string;
-  color: string;
-  m: number;
-  vx: number;
-  vy: number;
-  vz: number;
-  radius: number;
-  massType: string;
-  bump: boolean;
-  luminosity: number;
-  color: string;
-  temperature: number;
-  tilt: number;
-  spacecraft: boolean;
-  orbitalPeriod: number;
-  texture: string;
+  name?: string;
+  color?: string;
+  m?: number;
+  vx?: number;
+  vy?: number;
+  vz?: number;
+  [key: string]: any;
 }
 
 interface Barycenter extends Vector {
@@ -158,12 +149,12 @@ interface ScenarioState {
   w: number;
   i: number;
   o: number;
-  trajectoryTarget?: string;
-  trajectoryTargetArrival?: number;
-  trajectoryDepartureVelocity?: number;
-  trajectoryArrivalVelocity?: number;
-  trajectoryRelativeTo?: string;
-  trajectoryRendevouz?: {
+  trajectoryTarget: string;
+  trajectoryTargetArrival: number;
+  trajectoryDepartureVelocity: number;
+  trajectoryArrivalVelocity: number;
+  trajectoryRelativeTo: string;
+  trajectoryRendevouz: {
     x: number;
     y: number;
     z: number;

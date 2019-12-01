@@ -1,4 +1,4 @@
-import { AppState } from '../reducers';
+import { AppState } from "../reducers";
 import { getObjFromArrByKeyValuePair } from "../../utils";
 import { getOrbit } from "../../physics/utils";
 import {
