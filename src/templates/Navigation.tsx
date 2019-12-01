@@ -60,9 +60,11 @@ export default ({ data, pageContext }: IndexProps): ReactElement => {
       </header>
       <section className="scenarios-wrapper">
         <Nav>
-          <NavItem active={pageContext.currentPageName === "All"}>
-            <Link to={`/`}>All</Link>
-          </NavItem>
+          <Link to={`/`}>
+            <NavItem active={pageContext.currentPageName === "All"}>
+              All
+            </NavItem>
+          </Link>
           {categories.map(category => (
             <Link to={`/${kebabCase(category.fieldValue)}`}>
               <NavItem
