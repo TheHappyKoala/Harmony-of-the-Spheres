@@ -1,3 +1,4 @@
+import { AppState } from '../reducers';
 import { getObjFromArrByKeyValuePair } from "../../utils";
 import { getOrbit } from "../../physics/utils";
 import {
@@ -92,7 +93,7 @@ export const getTrajectory = (
   currentSOI: MassType,
   applyTrajectory = true
 ): ThunkAction<void, AppState, void, Action> => async (
-  dispatch: Dispatch<ScenarioActionTypes | AppActionTypes>,
+  dispatch: Dispatch<ScenarioActionTypes>,
   getState: () => AppState
 ) => {
   const scenario = getState().scenario;
