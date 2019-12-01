@@ -2,7 +2,7 @@ import { getObjFromArrByKeyValuePair } from "../../utils";
 import { getOrbit } from "../../physics/utils";
 import {
   ScenarioActionTypes,
-  GET_SCENARIO,
+  SET_SCENARIO,
   MODIFY_SCENARIO_PROPERTY,
   MODIFY_MASS_PROPERTY,
   AddMass,
@@ -82,8 +82,8 @@ export const deleteMass = (name: string): ScenarioActionTypes => ({
   name
 });
 
-export const getScenario = (scenario: any): ScenarioActionTypes => ({
-  type: GET_SCENARIO,
+export const setScenario = (scenario: ScenarioState): ScenarioActionTypes => ({
+  type: SET_SCENARIO,
   scenario
 });
 
@@ -102,11 +102,11 @@ export const getTrajectory = (
 
   modifyScenarioProperty(
     {
-      key: "playing",
+      key: "trails",
       value: false
     },
     {
-      key: "trails",
+      key: "playing",
       value: false
     }
   )(dispatch, getState);
@@ -208,7 +208,7 @@ export const getTrajectory = (
 
   modifyScenarioProperty(
     { key: "trajectoryRendevouz", value: rendevouz },
-    { key: "trails", value: originalTrailsState },
-    { key: "playing", value: originalPlayState }
+    { key: "playing", value: originalPlayState },
+    { key: "trails", value: originalTrailsState }
   )(dispatch, getState);
 };

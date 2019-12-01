@@ -1,6 +1,6 @@
 import {
   ScenarioActionTypes,
-  GET_SCENARIO,
+  SET_SCENARIO,
   MODIFY_SCENARIO_PROPERTY,
   MODIFY_MASS_PROPERTY,
   ADD_MASS,
@@ -9,7 +9,7 @@ import {
 
 export default (state = {}, action: ScenarioActionTypes) => {
   switch (action.type) {
-    case GET_SCENARIO:
+    case SET_SCENARIO:
       return { ...state, ...action.scenario };
 
     case MODIFY_SCENARIO_PROPERTY:

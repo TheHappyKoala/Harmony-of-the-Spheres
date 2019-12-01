@@ -12,7 +12,7 @@ interface ScenarioProps {
     scenariosJson: ScenarioState;
   };
   scenario: ScenarioState;
-  getScenario: any;
+  setScenario: typeof scenarioActionCreators.setScenario;
   getTrajectory: any;
   modifyScenarioProperty: typeof scenarioActionCreators.modifyScenarioProperty;
   modifyMassProperty: typeof scenarioActionCreators.modifyMassProperty;
@@ -22,7 +22,7 @@ interface ScenarioProps {
 }
 
 const Scenario = ({
-  getScenario,
+  setScenario,
   resetScenario,
   modifyScenarioProperty,
   modifyMassProperty,
@@ -35,7 +35,7 @@ const Scenario = ({
   const scenarioFromData = data.scenariosJson;
 
   useEffect(() => {
-    getScenario(scenarioFromData);
+    setScenario(scenarioFromData);
   }, [scenarioFromData.name]);
 
   return (
@@ -66,7 +66,7 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 const mapDispatchToProps = {
-  getScenario: scenarioActionCreators.getScenario,
+  getScenario: scenarioActionCreators.setScenario,
   resetScenario: scenarioActionCreators.resetScenario,
   modifyScenarioProperty: scenarioActionCreators.modifyScenarioProperty,
   modifyMassProperty: scenarioActionCreators.modifyMassProperty,
