@@ -1,5 +1,5 @@
 import React, { ReactElement, Fragment } from "react";
-import { modifyScenarioProperty } from "../../action-creators/scenario";
+import { modifyScenarioProperty } from "../../state/creators/scenario";
 import Dropdown from "../Dropdown";
 import Tooltip from "../Tooltip";
 
