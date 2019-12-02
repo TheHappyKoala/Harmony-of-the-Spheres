@@ -15,12 +15,6 @@ import Masses from "../Content/Masses";
 import AddMass from "../Content/AddMass";
 import "./App.less";
 
-declare global {
-  interface Window {
-    PREVIOUS_PATH: string | null;
-  }
-}
-
 interface SimulatorProps {
   scenario: ScenarioState;
   modifyScenarioProperty: typeof scenarioActionCreators.modifyScenarioProperty;

@@ -175,3 +175,7 @@ interface Shape {
   customPrimaryData?: MassType;
   hsl?: [number, number, number];
 }
+
+interface Window {
+  PREVIOUS_PATH: string | null;
+}
