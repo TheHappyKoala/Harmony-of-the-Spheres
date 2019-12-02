@@ -1,10 +1,13 @@
 import React, { ReactElement, Fragment, useState, useCallback } from "react";
 import { navigate } from "gatsby";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import * as scenarioActionCreators from "../../state/creators/scenario";
 import kebabCase from "lodash/kebabCase";
 import Button from "../Button";
 import Renderer from "../Renderer";
 import Tabs from "../Tabs";
+import Modal from "../Modal";
+import Iframe from "../Iframe";
 import Physics from "../Content/Physics";
 import Graphics from "../Content/Graphics";
 import Camera from "../Content/Camera";
@@ -35,6 +38,12 @@ export default ({
   addMass,
   scenario
 }: SimulatorProps): ReactElement => {
+  const [displayWiki, setDisplayWiki] = useState(false);
+
+  const setWikiState = useCallback(() => setDisplayWiki(!displayWiki), [
+    displayWiki
+  ]);
+
   const setPlayState = useCallback(
     () =>
       modifyScenarioProperty({
@@ -55,14 +64,17 @@ export default ({
       <Button cssClassName="button simulation-state" callback={setPlayState}>
         <i className={`fas fa-${scenario.playing ? "pause" : "play"} fa-2x`} />
       </Button>
-      {
-        <Button
-          cssClassName="button navigation"
-          callback={navigateToScenariosMenu}
-        >
-          <i className={`fas fa-align-justify fa-2x`} />
-        </Button>
-      }
+
+      <Button
+        cssClassName="button navigation"
+        callback={navigateToScenariosMenu}
+      >
+        <i className={`fas fa-align-justify fa-2x`} />
+      </Button>
+
+      <Button cssClassName="button wiki" callback={setWikiState}>
+        <i className="fas fa-wikipedia-w fa-2x" />
+      </Button>
       <Tabs
         tabsWrapperClassName="sidebar-wrapper"
         tabsContentClassName="sidebar-content box"
@@ -139,6 +151,17 @@ export default ({
           />
         </div>
       </Tabs>
+      <ReactCSSTransitionGroup
+        transitionName="fade"
+        transitionEnterTimeout={250}
+        transitionLeaveTimeout={250}
+      >
+        {displayWiki && (
+          <Modal callback={setWikiState}>
+            <Iframe url={scenario.scenarioWikiUrl} />
+          </Modal>
+        )}
+      </ReactCSSTransitionGroup>
     </Fragment>
   );
 };
