@@ -56,18 +56,27 @@ export default ({
     <Fragment>
       <Renderer scenarioName={scenario.name} />
       <Button cssClassName="button simulation-state" callback={setPlayState}>
-        <i className={`fas fa-${scenario.playing ? "pause" : "play"} fa-2x`} />
+        <Fragment>
+          <i
+            className={`fas fa-${scenario.playing ? "pause" : "play"} fa-2x`}
+          />
+          {scenario.playing ? "Pause" : "Play"}
+        </Fragment>
       </Button>
-
       <Button
         cssClassName="button navigation"
         callback={navigateToScenariosMenu}
       >
-        <i className={`fas fa-align-justify fa-2x`} />
+        <Fragment>
+          <i className={`fas fa-align-justify fa-2x`} />
+          Scenarios
+        </Fragment>
       </Button>
-
       <Button cssClassName="button wiki" callback={setWikiState}>
-        <i className="fas fa-wikipedia-w fa-2x" />
+        <Fragment>
+          <i className="fas fa-wikipedia-w fa-2x" />
+          Scenario Wiki
+        </Fragment>
       </Button>
       <Tabs
         tabsWrapperClassName="sidebar-wrapper"
