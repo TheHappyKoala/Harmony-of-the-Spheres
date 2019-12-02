@@ -1,11 +1,8 @@
 import React, { ReactElement, Fragment, useState, useCallback } from "react";
 import { navigate } from "gatsby";
 import * as scenarioActionCreators from "../../state/creators/scenario";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import kebabCase from "lodash/kebabCase";
 import Button from "../Button";
-import Modal from "../Modal";
-import Credits from "../Content/Credits";
 import Renderer from "../Renderer";
 import Tabs from "../Tabs";
 import Physics from "../Content/Physics";
@@ -38,10 +35,6 @@ export default ({
   addMass,
   scenario
 }: SimulatorProps): ReactElement => {
-  const [display, setDisplay] = useState({
-    credits: false
-  });
-
   const setPlayState = useCallback(
     () =>
       modifyScenarioProperty({
@@ -146,21 +139,6 @@ export default ({
           />
         </div>
       </Tabs>
-      <ReactCSSTransitionGroup
-        transitionName="fade"
-        transitionEnterTimeout={250}
-        transitionLeaveTimeout={250}
-      >
-        {display.credits && (
-          <Modal
-            callback={() =>
-              setDisplay({ ...display, credits: !display.credits })
-            }
-          >
-            <Credits />
-          </Modal>
-        )}
-      </ReactCSSTransitionGroup>
     </Fragment>
   );
 };
