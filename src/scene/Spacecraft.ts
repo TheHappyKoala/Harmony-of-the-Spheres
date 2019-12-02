@@ -105,7 +105,7 @@ export default class extends MassManifestation {
 
     const loader = new ColladaLoader();
     loader.load(
-      `./models/${massNameLowerCase}/${massNameLowerCase}.dae`,
+      `/models/${massNameLowerCase}/${massNameLowerCase}.dae`,
       (collada: any) => {
         collada.scene.scale.set(
           this.mass.radius,
