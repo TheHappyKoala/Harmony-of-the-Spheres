@@ -8,6 +8,7 @@ import Renderer from "../Renderer";
 import Tabs from "../Tabs";
 import Modal from "../Modal";
 import Iframe from "../Iframe";
+import Tweet from "../Tweet";
 import Physics from "../Content/Physics";
 import Graphics from "../Content/Graphics";
 import Camera from "../Content/Camera";
@@ -78,6 +79,13 @@ export default ({
           Scenario Wiki
         </Fragment>
       </Button>
+      <Tweet
+        shareText={`Hey friends! Check out this 3D gravity simulation of ${scenario.name}. It will run in your browser :)!`}
+        shareUrl={document.location.toString()}
+        cssClassName="button twitter"
+        hashtags="Space,JavaScript,Science"
+        callToAction="Tweet Scenario"
+      />
       <Tabs
         tabsWrapperClassName="sidebar-wrapper"
         tabsContentClassName="sidebar-content box"
