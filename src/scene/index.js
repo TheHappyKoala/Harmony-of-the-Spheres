@@ -353,7 +353,10 @@ const scene = {
         drawBaryCenterLabel
       );
 
-    this.scenario.masses.forEach((mass, i) => {
+    const massesLen = this.system.masses.length;
+
+    for (let i = 0; i < massesLen; i++) {
+      const mass = this.system.masses[i];
       const massManifestation = this.manifestationsService.manifestations[i];
 
       const rotatedPosition = this.camera.rotatedMasses[i];
@@ -374,7 +377,7 @@ const scene = {
           "white",
           drawMassLabel
         );
-    });
+    }
 
     this.camera.setCamera(
       this.scenario.cameraFocus,

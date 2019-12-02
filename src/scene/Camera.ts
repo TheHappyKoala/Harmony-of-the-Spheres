@@ -35,7 +35,9 @@ export default class extends PerspectiveCamera {
 
     if (main === undefined) return;
 
-    this.controls.customPan.add(main.position.clone().sub(this.controls.target));
+    this.controls.customPan.add(
+      main.position.clone().sub(this.controls.target)
+    );
 
     this.controls.update();
   }
@@ -134,10 +136,14 @@ export default class extends PerspectiveCamera {
       return;
     }
 
+    const massesLen = masses.length;
+
     if (previous.cameraFocus !== cameraFocus) {
       previous.cameraFocus = cameraFocus;
 
-      masses.forEach((mass, i: number) => {
+      for (let i = 0; i < massesLen; i++) {
+        const mass = masses[i];
+
         if (cameraFocus === mass.name)
           this.trackMovingObjectWithControls(manifestations[i]);
 
@@ -162,13 +168,14 @@ export default class extends PerspectiveCamera {
             this.rotatedMasses[i].z
           );
         }
-      });
+      }
     } else {
-      masses.forEach(
-        (mass, i: number) =>
-          cameraFocus === mass.name &&
-          this.trackMovingObjectWithControls(manifestations[i])
-      );
+      for (let i = 0; i < massesLen; i++) {
+        const mass = masses[i];
+
+        cameraFocus === mass.name &&
+          this.trackMovingObjectWithControls(manifestations[i]);
+      }
     }
   }
 }
