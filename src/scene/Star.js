@@ -2,8 +2,6 @@ import * as THREE from "three";
 import MassManifestation from "./MassManifestation";
 import starMaterial from "./starMaterial";
 import habitableZone from "./habitableZone";
-import { getRandomNumberInRange } from "../Physics/utils";
-import CustomEllipseCurve from "./CustomEllipseCurve";
 
 export default class extends MassManifestation {
   constructor(mass, textureLoader) {
