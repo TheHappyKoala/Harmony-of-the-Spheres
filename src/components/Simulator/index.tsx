@@ -1,6 +1,8 @@
-import React, { ReactElement, Fragment, useState } from "react";
+import React, { ReactElement, Fragment, useState, useCallback } from "react";
+import { navigate } from "gatsby";
 import * as scenarioActionCreators from "../../state/creators/scenario";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import kebabCase from "lodash/kebabCase";
 import Button from "../Button";
 import Modal from "../Modal";
 import Credits from "../Content/Credits";
@@ -12,6 +14,12 @@ import Camera from "../Content/Camera";
 import Masses from "../Content/Masses";
 import AddMass from "../Content/AddMass";
 import "./App.less";
+
+declare global {
+  interface Window {
+    PREVIOUS_PATH: string | null;
+  }
+}
 
 interface SimulatorProps {
   scenario: ScenarioState;
@@ -28,33 +36,40 @@ export default ({
   modifyMassProperty,
   deleteMass,
   addMass,
-  scenario,
-  getTrajectory
+  scenario
 }: SimulatorProps): ReactElement => {
   const [display, setDisplay] = useState({
     credits: false
   });
 
+  const setPlayState = useCallback(
+    () =>
+      modifyScenarioProperty({
+        key: "playing",
+        value: !scenario.playing
+      }),
+    [scenario.playing]
+  );
+
+  const navigateToScenariosMenu = useCallback(() => {
+    if (window.PREVIOUS_PATH == null) navigate(`/${kebabCase(scenario.type)}/`);
+    else window.history.back();
+  }, []);
+
   return (
     <Fragment>
       <Renderer scenarioName={scenario.name} />
-      <Button
-        cssClassName="button simulation-state"
-        callback={() =>
-          modifyScenarioProperty({
-            key: "playing",
-            value: !scenario.playing
-          })
-        }
-      >
+      <Button cssClassName="button simulation-state" callback={setPlayState}>
         <i className={`fas fa-${scenario.playing ? "pause" : "play"} fa-2x`} />
       </Button>
-      <Button
-        cssClassName="button navigation"
-        callback={() => window.history.back()}
-      >
-        <i className={`fas fa-align-justify fa-2x`} />
-      </Button>
+      {
+        <Button
+          cssClassName="button navigation"
+          callback={navigateToScenariosMenu}
+        >
+          <i className={`fas fa-align-justify fa-2x`} />
+        </Button>
+      }
       <Tabs
         tabsWrapperClassName="sidebar-wrapper"
         tabsContentClassName="sidebar-content box"
