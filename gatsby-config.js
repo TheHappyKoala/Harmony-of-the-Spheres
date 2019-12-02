@@ -2,10 +2,10 @@ const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
+    siteUrl: "https://www.gravitysimulator.org",
     title: `Gravity Simulator`,
     author: `Darrell Huffman`,
     lang: `en`,
-    description: `3D Gravity Simulator. Simulate the solar system, exoplanets and even colliding galaxies. You can add, delete and modify any mass in a simulation.`
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -32,6 +32,8 @@ module.exports = {
       }
     },
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`
   ]
 };
