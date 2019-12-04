@@ -1,0 +1,40 @@
+
+  
+  .credits-wrapper {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: fit-content;
+      z-index: 10;
+      @media screen and (max-width: 700px) {
+        position: relative;
+        margin-top: 40px;
+        background-color: rgba(0, 0, 0, 0.5);
+        min-height: calc(100vh - 40px);
+      }
+  }
+
+  .credits-back {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    position: absolute;
+    top: -20%;
+  }
+
+  .contributors {
+    margin: 0 auto;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    @media screen and (max-width: 700px) {
+        position: relative;
+        top: 40px;
+        transform: none;
+      }
+    article {
+        box-sizing: content-box;
+        text-align: center;
+    }
+    border: 1px solid #545454;
+  }

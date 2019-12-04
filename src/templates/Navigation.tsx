@@ -2,10 +2,10 @@ import React, { ReactElement, Fragment } from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import kebabCase from "lodash/kebabCase";
-import Head from "../components/Head";
 import Nav from "../components/Nav";
 import NavItem from "../components/NavItem";
 import Pagination from "../components/Pagination";
+import Header from "../components/Header";
 import "./Navigation.less";
 
 interface IndexProps {
@@ -42,9 +42,10 @@ interface IndexProps {
     currentPageName: string;
     pagePath: string;
   };
+  location: any;
 }
 
-export default ({ data, pageContext }: IndexProps): ReactElement => {
+export default ({ data, pageContext, location }: IndexProps): ReactElement => {
   const categories = data.categories.group;
   const scenarios = data.scenarios.edges;
 
@@ -54,10 +55,11 @@ export default ({ data, pageContext }: IndexProps): ReactElement => {
         fluid={data.file.childImageSharp.fluid}
         style={{ position: "fixed", top: 0, bottom: 0, width: "100%" }}
       />
-      <Head pageTitle={pageContext.currentPageName} />
-      <header>
-        <h1>Gravity Simulator</h1>
-      </header>
+      <Header
+        pageTitle={pageContext.currentPageName}
+        pageDescription="3D Gravity Simulator. Simulate the solar system, exoplanets and even colliding galaxies. You can add, delete and modify any mass in a simulation."
+        location={location}
+      />
       <section className="scenarios-wrapper">
         <Nav>
           <Link to={`/`}>
@@ -109,6 +111,7 @@ export const pageQuery = graphql`
   query($type: String, $limit: Int, $skip: Int) {
     scenarios: allScenariosJson(
       filter: { type: { eq: $type } }
+      sort: { order: DESC, fields: [name] }
       limit: $limit
       skip: $skip
     ) {

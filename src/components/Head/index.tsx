@@ -4,15 +4,11 @@ import useSiteMeta from "../../hooks/useSiteMeta";
 
 interface HeadProps {
   pageTitle: string;
-  pageDescription?: string;
+  pageDescription: string;
 }
 
 export default ({ pageTitle, pageDescription }: HeadProps): ReactElement => {
   const siteMeta = useSiteMeta();
-
-  pageTitle = pageTitle !== undefined ? pageTitle : siteMeta.title;
-  pageDescription =
-    pageDescription !== undefined ? pageDescription : siteMeta.description;
 
   return (
     <Helmet>
@@ -36,7 +32,7 @@ export default ({ pageTitle, pageDescription }: HeadProps): ReactElement => {
       <meta property="og:description" content={pageDescription} />
       <meta
         property="og:image"
-        content={`https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png}`}
+        content={`https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`}
       />
       <meta property="og:image:width" content="400" />
       <meta property="og:image:height" content="250" />
