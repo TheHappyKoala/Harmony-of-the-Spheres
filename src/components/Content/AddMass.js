@@ -251,7 +251,7 @@ export default class extends Component {
                 m: this.state.m,
                 radius: this.state.radius,
                 texture: this.state.texture,
-                type: this.state.type,
+                massType: this.state.type,
                 color: getRandomColor(),
                 a: this.props.a,
                 e: this.props.e,
