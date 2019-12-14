@@ -81,7 +81,9 @@ export default ({
       </Button>
       <Tweet
         shareText={`Hey friends! Check out this 3D gravity simulation of ${scenario.name}. It will run in your browser :)!`}
-        shareUrl={document.location.toString()}
+        shareUrl={
+          typeof document !== "undefined" && document.location.toString()
+        }
         cssClassName="button twitter"
         hashtags="Space,JavaScript,Science"
         callToAction="Tweet Scenario"
