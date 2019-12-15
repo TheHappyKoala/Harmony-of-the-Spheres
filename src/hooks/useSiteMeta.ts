@@ -14,7 +14,6 @@ export default (): {
             title
             author
             lang
-            description
           }
         }
       }

@@ -99,7 +99,8 @@
       "spacecraft": false,
       "massType": "sphere",
       "luminosity": 0,
-      "temperature": 0
+      "temperature": 0,
+      "atmosphere": "skyblue"
     },
     {
       "name": "Charon",

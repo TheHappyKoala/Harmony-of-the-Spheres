@@ -114,7 +114,8 @@
       "z": -0.03188913026127027,
       "vx": -3.5713994857490308,
       "vy": 6.445551271928175,
-      "vz": 0.29452473854502614
+      "vz": 0.29452473854502614,
+      "atmosphere": "beige"
     },
     {
       "m": 0.000003003,
@@ -135,7 +136,8 @@
       "z": -0.00001750037390352759,
       "vx": 2.4645428337894026,
       "vy": 5.7097644117945805,
-      "vz": -0.00033177815766459033
+      "vz": -0.00033177815766459033,
+      "atmosphere": "skyblue"
     },
     {
       "name": "Mars",
@@ -156,7 +158,8 @@
       "z": -0.01515164037265145,
       "vx": 4.9225288800471425,
       "vy": -1.5065904473191791,
-      "vz": -0.1524041758922603
+      "vz": -0.1524041758922603,
+      "atmosphere": "orange"
     },
     {
       "name": "Oumuamua",
@@ -197,7 +200,8 @@
       "orbitalPeriod": 11.86,
       "texture": "Jupiter",
       "bodyType": "Planet",
-      "color": "orange"
+      "color": "orange",
+      "atmosphere": "beige"
     },
     {
       "name": "Saturn",
@@ -218,7 +222,8 @@
       "orbitalPeriod": 29.46,
       "texture": "Saturn",
       "bodyType": "Planet",
-      "color": "beige"
+      "color": "beige",
+      "atmosphere": "beige"
     },
     {
       "name": "Uranus",
@@ -239,7 +244,8 @@
       "orbitalPeriod": 84.01,
       "texture": "Uranus",
       "bodyType": "Planet",
-      "color": "skyblue"
+      "color": "skyblue",
+      "atmosphere": "skyblue"
     },
     {
       "name": "Neptune",
@@ -260,7 +266,8 @@
       "orbitalPeriod": 164.8,
       "texture": "Neptune",
       "bodyType": "Planet",
-      "color": "blue"
+      "color": "blue",
+      "atmosphere": "skyblue"
     }
   ]
 }

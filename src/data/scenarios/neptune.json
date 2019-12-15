@@ -96,7 +96,8 @@
       "orbitalPeriod": 164.8,
       "texture": "Neptune",
       "bodyType": "Planet",
-      "color": "blue"
+      "color": "blue",
+      "atmosphere": "skyblue"
     },
     {
       "name": "Triton",

@@ -103,7 +103,11 @@ export const pageQuery = graphql`
       barycenterMassOne
       barycenterMassTwo
       barycenterZ
-      customCameraToBodyDistanceFactor
+      customCameraPosition {
+        x
+        y
+        z
+      }
       collisions
       maximumDistance {
         name
@@ -183,6 +187,7 @@ export const pageQuery = graphql`
         orbitalPeriod
         texture
         bodyType
+        atmosphere
       }
     }
   }

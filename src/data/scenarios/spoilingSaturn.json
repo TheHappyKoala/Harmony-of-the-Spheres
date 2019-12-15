@@ -96,7 +96,8 @@
       "orbitalPeriod": 29.46,
       "texture": "Saturn",
       "bodyType": "Planet",
-      "color": "beige"
+      "color": "beige",
+      "atmosphere": "beige"
     },
     {
       "name": "Sun",
@@ -136,7 +137,8 @@
       "vz": -0.08092749245870556,
       "x": 1.456680725273908,
       "y": -9.949880746961366,
-      "z": 0.1150689429678489
+      "z": 0.1150689429678489,
+      "atmosphere": "skyblue"
     }
   ]
 }

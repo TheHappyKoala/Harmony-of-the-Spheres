@@ -94,7 +94,8 @@
       "orbitalPeriod": 11.86,
       "texture": "Jupiter",
       "bodyType": "Planet",
-      "color": "orange"
+      "color": "orange",
+      "atmosphere": "beige"
     },
     {
       "name": "Saturn",
@@ -115,7 +116,8 @@
       "orbitalPeriod": 29.46,
       "texture": "Saturn",
       "bodyType": "Planet",
-      "color": "beige"
+      "color": "beige",
+      "atmosphere": "beige"
     },
     {
       "name": "Uranus",
@@ -136,7 +138,8 @@
       "orbitalPeriod": 84.01,
       "texture": "Uranus",
       "bodyType": "Planet",
-      "color": "skyblue"
+      "color": "skyblue",
+      "atmosphere": "skyblue"
     },
     {
       "name": "Neptune",
@@ -157,7 +160,8 @@
       "orbitalPeriod": 164.8,
       "texture": "Neptune",
       "bodyType": "Planet",
-      "color": "blue"
+      "color": "blue",
+      "atmosphere": "skyblue"
     },
     {
       "name": "Chiron",

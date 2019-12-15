@@ -77,7 +77,8 @@
       "orbitalPeriod": 11.86,
       "texture": "Jupiter",
       "bodyType": "Planet",
-      "color": "orange"
+      "color": "orange",
+      "atmosphere": "beige"
     },
     {
       "name": "Sun",

@@ -142,7 +142,8 @@
       "spacecraft": false,
       "orbitalPeriod": 31.86,
       "texture": "Jupiter",
-      "bodyType": "Planet"
+      "bodyType": "Planet",
+      "atmosphere": "beige"
     }
   ]
 }

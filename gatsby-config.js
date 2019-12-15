@@ -5,7 +5,7 @@ module.exports = {
     siteUrl: "https://www.gravitysimulator.org",
     title: `Gravity Simulator`,
     author: `Darrell Huffman`,
-    lang: `en`,
+    lang: `en`
   },
   plugins: [
     `gatsby-plugin-typescript`,

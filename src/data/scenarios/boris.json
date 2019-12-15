@@ -116,7 +116,8 @@
       "z": 0.01430649442174309,
       "vx": -7.369037606167418,
       "vy": -0.8430696474882625,
-      "vz": 0.4137392524038775
+      "vz": 0.4137392524038775,
+      "atmosphere": "beige"
     },
     {
       "m": 0.000003003,
@@ -137,7 +138,8 @@
       "z": -0.00000766991988239961,
       "vx": -1.9287743434633904,
       "vy": 5.990210113519866,
-      "vz": -0.0001102590313683855
+      "vz": -0.0001102590313683855,
+      "atmosphere": "skyblue"
     },
     {
       "name": "Mars",
@@ -158,7 +160,8 @@
       "z": -0.03099636626018129,
       "vx": 5.303906895484618,
       "vy": 0.5182428229656241,
-      "vz": -0.11936927791092816
+      "vz": -0.11936927791092816,
+      "atmosphere": "orange"
     },
     {
       "name": "Borisov",
@@ -199,7 +202,8 @@
       "orbitalPeriod": 11.86,
       "texture": "Jupiter",
       "bodyType": "Planet",
-      "color": "orange"
+      "color": "orange",
+      "atmosphere": "beige"
     },
     {
       "name": "Saturn",
@@ -220,7 +224,8 @@
       "orbitalPeriod": 29.46,
       "texture": "Saturn",
       "bodyType": "Planet",
-      "color": "beige"
+      "color": "beige",
+      "atmosphere": "beige"
     },
     {
       "name": "Uranus",
@@ -241,7 +246,8 @@
       "orbitalPeriod": 84.01,
       "texture": "Uranus",
       "bodyType": "Planet",
-      "color": "skyblue"
+      "color": "skyblue",
+      "atmosphere": "skyblue"
     },
     {
       "name": "Neptune",
@@ -262,7 +268,8 @@
       "orbitalPeriod": 164.8,
       "texture": "Neptune",
       "bodyType": "Planet",
-      "color": "blue"
+      "color": "blue",
+      "atmosphere": "skyblue"
     }
   ]
 }

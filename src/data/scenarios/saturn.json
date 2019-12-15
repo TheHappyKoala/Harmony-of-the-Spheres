@@ -91,7 +91,8 @@
       "orbitalPeriod": 29.46,
       "texture": "Saturn",
       "bodyType": "Planet",
-      "color": "beige"
+      "color": "beige",
+      "atmosphere": "beige"
     },
     {
       "name": "Sun",
@@ -131,7 +132,8 @@
       "luminosity": 0,
       "temperature": 0,
       "texture": "Titan",
-      "color": "green"
+      "color": "green",
+      "atmosphere": "beige"
     },
     {
       "name": "Enceladus",

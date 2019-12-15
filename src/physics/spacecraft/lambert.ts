@@ -84,7 +84,7 @@ function computePsi(x: number, y: number, ll: number): number {
 
 function tofEqY(x: number, y: number, T0: number, ll: number, M: number) {
   let T = 0;
-  if (M == 0 && (Math.sqrt(0.6) < x && x < Math.sqrt(1.4))) {
+  if (M == 0 && Math.sqrt(0.6) < x && x < Math.sqrt(1.4)) {
     const eta = y - ll * x;
     const S1 = (1 - ll - x * eta) * 0.5;
     const Q = (4 / 3) * hyp2f1b(S1);

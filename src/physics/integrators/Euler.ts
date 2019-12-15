@@ -193,8 +193,10 @@ export default class {
     if (
       tree.position.x <= p.x &&
       p.x < tree.position.x + a &&
-      (tree.position.y <= p.y && p.y < tree.position.y + a) &&
-      (tree.position.z <= p.z && p.z < tree.position.z + a)
+      tree.position.y <= p.y &&
+      p.y < tree.position.y + a &&
+      tree.position.z <= p.z &&
+      p.z < tree.position.z + a
     ) {
       return true;
     } else {
@@ -316,9 +318,10 @@ export default class {
     } else if (nChildren === 8) {
       for (let i = 0; i < 8; i++) {
         if (
-          this.isInTree({ x: mass.x, y: mass.y, z: mass.z }, <TreeNodeType>(
-            tree.children[i]
-          ))
+          this.isInTree(
+            { x: mass.x, y: mass.y, z: mass.z },
+            <TreeNodeType>tree.children[i]
+          )
         ) {
           const v = new H3();
           tree.CoM = v

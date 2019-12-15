@@ -177,7 +177,8 @@
       "orbitalPeriod": 84.01,
       "texture": "Uranus",
       "bodyType": "Planet",
-      "color": "skyblue"
+      "color": "skyblue",
+      "atmosphere": "skyblue"
     },
     {
       "name": "Miranda",

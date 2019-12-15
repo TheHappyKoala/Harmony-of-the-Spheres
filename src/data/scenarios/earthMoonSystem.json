@@ -78,7 +78,8 @@
       "massType": "sphere",
       "luminosity": 0,
       "temperature": 0,
-      "trailVertices": 20000
+      "trailVertices": 20000,
+      "atmosphere": "skyblue"
     },
     {
       "m": 1,

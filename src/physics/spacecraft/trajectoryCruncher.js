@@ -130,4 +130,4 @@ export default function worker(self) {
       ]
     });
   };
-};
+}

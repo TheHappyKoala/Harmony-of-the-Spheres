@@ -15,11 +15,6 @@ import CollisionsService from "../physics/collisions/";
 import CustomEllipseCurve from "./CustomEllipseCurve";
 import ManifestationsService from "./ManifestationsService";
 import drawManifestation from "./drawManifestation";
-import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
-import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
-import { CopyShader } from "three/examples/jsm/shaders/CopyShader.js";
-import { FXAAShader } from "three/examples/jsm/shaders/FXAAShader.js";
 
 const TWEEN = require("@tweenjs/tween.js");
 
@@ -81,7 +76,6 @@ const scene = {
       logarithmicDepthBuffer: this.scenario.logarithmicDepthBuffer
     });
     this.renderer.setSize(this.w, this.h);
-    this.renderer.setPixelRatio(window.devicePixelRatio);
 
     this.camera = new Camera(
       45,
@@ -90,19 +84,6 @@ const scene = {
       1500000000000,
       this.graphics2D.canvas
     );
-
-    this.renderPass = new RenderPass(this.scene, this.camera);
-    this.fxaaPass = new ShaderPass(FXAAShader);
-    this.pixelRatio = this.renderer.getPixelRatio();
-    this.fxaaPass.material.uniforms["resolution"].value.x =
-      1 / (this.webGlCanvas.offsetWidth * this.pixelRatio);
-    this.fxaaPass.material.uniforms["resolution"].value.y =
-      1 / (this.webGlCanvas.offsetHeight * this.pixelRatio);
-    this.composer = new EffectComposer(this.renderer);
-    this.composer.addPass(this.renderPass);
-    this.composer.addPass(this.fxaaPass);
-    
-    this.copyPass = new ShaderPass(CopyShader);
 
     this.textureLoader = new THREE.TextureLoader();
 
@@ -467,9 +448,7 @@ const scene = {
 
     TWEEN.update();
     this.requestAnimationFrameId = requestAnimationFrame(this.loop);
-
-    this.renderer.setViewport(0, 0, this.webGlCanvas.offsetWidth, this.webGlCanvas.offsetHeight);
-    this.composer.render();
+    this.renderer.render(this.scene, this.camera);
   },
 
   resetParticlePhysics() {

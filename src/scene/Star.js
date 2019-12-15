@@ -23,7 +23,7 @@ export default class extends MassManifestation {
   getMain() {
     const geometry = new THREE.CircleBufferGeometry(this.mass.radius * 5, 50);
 
-    const texture = this.textureLoader.load("./textures/star.jpg");
+    const texture = this.textureLoader.load("/textures/star.jpg");
     texture.minFilter = THREE.NearestFilter;
     texture.magFilter = THREE.NearestFilter;
     texture.wrapS = THREE.RepeatWrapping;
