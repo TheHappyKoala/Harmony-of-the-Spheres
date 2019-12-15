@@ -4,8 +4,8 @@ import MassManifestation from "./MassManifestation";
 import { degreesToRadians } from "../Physics/utils";
 
 export default class extends MassManifestation {
-  constructor(mass) {
-    super(mass);
+  constructor(mass, textureLoader) {
+    super(mass, textureLoader);
   }
 
   getMain() {
@@ -28,6 +28,16 @@ export default class extends MassManifestation {
           this.mass.radius,
           this.mass.radius
         );
+
+        const texture = this.textureLoader.load("/textures/Vesta.jpg");
+        texture.minFilter = THREE.NearestFilter;
+        texture.magFilter = THREE.NearestFilter;
+        texture.wrapS = THREE.RepeatWrapping;
+        texture.wrapT = THREE.RepeatWrapping;
+
+        collada.scene.traverse(node => {
+          if (node.isMesh) node.material.map = texture;
+        });
 
         container.add(collada.scene);
       }

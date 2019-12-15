@@ -35,7 +35,7 @@ export default class {
         return new Star(mass, this.textureLoader);
 
       case "model":
-        return new Model(mass);
+        return new Model(mass, this.textureLoader);
 
       case "spacecraft":
         return new Spacecraft(mass);
