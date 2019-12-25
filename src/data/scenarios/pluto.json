@@ -25,9 +25,9 @@
     "value": 0.000023716915100000003
   },
   "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Pluto",
-  "tol": 1e-14,
-  "maxDt": 1e-10,
-  "minDt": 1e-22,
+  "tol": 1e-5,
+  "maxDt": 1e-4,
+  "minDt": 1e-7,
   "drawLineEvery": 6,
   "isLoaded": false,
   "playing": false,
