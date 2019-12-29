@@ -1,16 +1,20 @@
 import * as THREE from "three";
 import star from "./shaders/star";
 
-export default function(texture: string, starColor: THREE.Vector3) {
+export default (temperature: number) => {
   return new THREE.ShaderMaterial({
     uniforms: {
-      time: { value: 0 },
-      resolution: { value: new THREE.Vector3(1, 1, 1) },
-      starColor: { value: starColor },
-      texture: { value: texture }
+      time: { type: "f", value: 1.0 },
+      scale: { type: "f", value: 80 },
+      highTemp: { type: "f", value: temperature },
+      lowTemp: { type: "f", value: temperature / 4 }
     },
     vertexShader: star.vertex,
     fragmentShader: star.fragment,
-    blending: THREE.NormalBlending
+    transparent: false,
+    depthTest: true,
+    depthWrite: false,
+    polygonOffset: true,
+    polygonOffsetFactor: -4
   });
-}
+};

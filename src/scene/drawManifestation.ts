@@ -25,12 +25,7 @@ export default function(
 
     switch (manifestation.mass.massType) {
       case "star":
-        manifestation.draw(
-          rotatedPosition,
-          this.camera,
-          delta,
-          scenario.habitableZone
-        );
+        manifestation.draw(rotatedPosition, delta, scenario.habitableZone);
         break;
 
       case "spacecraft":

@@ -83,7 +83,7 @@
       "color": "#ffbe7f",
       "bump": false,
       "luminosity": 1,
-      "temperature": 5000,
+      "temperature": 45000,
       "tilt": 0,
       "spacecraft": false,
       "orbitalPeriod": 10
@@ -104,7 +104,7 @@
       "color": "#ffbe7f",
       "bump": false,
       "luminosity": 1,
-      "temperature": 5000,
+      "temperature": 45000,
       "tilt": 0,
       "spacecraft": false,
       "orbitalPeriod": 10
@@ -125,7 +125,7 @@
       "color": "#ffbe7f",
       "bump": false,
       "luminosity": 1,
-      "temperature": 5000,
+      "temperature": 45000,
       "tilt": 0,
       "spacecraft": false,
       "orbitalPeriod": 10

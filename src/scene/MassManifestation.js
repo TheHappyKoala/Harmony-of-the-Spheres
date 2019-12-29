@@ -34,7 +34,7 @@ export default class extends THREE.Object3D {
         bumpMap: this.textureLoader.load(
           `/textures/${this.mass.texture}Bump.jpg`
         ),
-        bumpScale: 0.7
+        bumpScale: 0.85
       });
     else
       material = new THREE.MeshLambertMaterial({
