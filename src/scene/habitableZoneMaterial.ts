@@ -10,5 +10,6 @@ export default (start: number, end: number): THREE.ShaderMaterial =>
     },
     vertexShader: habitableZone.vertex,
     fragmentShader: habitableZone.fragment,
-    side: THREE.DoubleSide
+    side: THREE.DoubleSide,
+    depthTest: false
   });
