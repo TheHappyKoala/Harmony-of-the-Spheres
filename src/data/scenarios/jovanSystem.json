@@ -26,7 +26,7 @@
   "drawLineEvery": 6,
   "isLoaded": false,
   "playing": false,
-  "integrator": "PEFRL",
+  "integrator": "Sofspa10",
   "customCameraToBodyDistanceFactor": false,
   "barycenterZ": 10000,
   "elapsedTime": 0,

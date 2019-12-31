@@ -291,7 +291,7 @@ const scene = {
         tol: this.scenario.tol,
         minDt: this.scenario.minDt,
         maxDt: this.scenario.maxDt,
-        masses: this.scenario.masses,
+        masses: this.scenario.masses, 
         elapsedTime: this.scenario.elapsedTime
       });
 
