@@ -181,7 +181,7 @@ export const clamp = (x, min, max) => {
   }
 
   return x;
-}
+};
 
 export const colorTemperatureToRGB = kelvin => {
   var temp = kelvin / 100;
@@ -215,4 +215,4 @@ export const colorTemperatureToRGB = kelvin => {
     g: clamp(green, 0, 255),
     b: clamp(blue, 0, 255)
   };
-}
+};
