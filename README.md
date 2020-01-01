@@ -114,6 +114,7 @@ There exist general integrators that's suited for a variety of different problem
 | Yoshida6 | 6 | True | False |
 | Nystrom6 | 7 | False | False |
 | KahanLi8 | 8 | True | False |
+| Sofspa10 | 10 | True | False |
 | RKN12 | 12 | False | True |
 
 
