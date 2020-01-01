@@ -8,25 +8,28 @@ const createExoplanetScenarios = async () => {
 
   const data = await response.json();
 
-  const sortedScenarios = data.sort(entry => entry["pl_hostname"]);
-
-  const chunkScenarios = (scenarios, i, currentScenarioName) => {
-    if (i >= sortedScenarios.length) {
+  const chunkScenarios = (data, scenarios, i, currentScenarioName) => {
+    if (i >= data.length) {
       return scenarios;
     } else {
-      if (sortedScenarios[i]["pl_hostname"] === currentScenarioName) {
-        scenarios[scenarios.length - 1].push(sortedScenarios[i]);
+      if (data[i]["pl_hostname"] === currentScenarioName) {
+        scenarios[scenarios.length - 1].push(data[i]);
       } else {
-        scenarios.push([sortedScenarios[i]]);
+        scenarios.push([data[i]]);
       }
       i++;
-      return chunkScenarios(scenarios, i, sortedScenarios[i - 1]["pl_hostname"]);
+      return chunkScenarios(data, scenarios, i, data[i - 1]["pl_hostname"]);
     }
   };
 
-  const scenarios = chunkScenarios([[]], 0, sortedScenarios[0]["pl_hostname"]);   
-  
-  console.log(scenarios)
+  const sortedScenarios = data.sort(entry => entry["pl_hostname"]);
+
+  const scenarios = chunkScenarios(
+    sortedScenarios,
+    [[]],
+    0,
+    sortedScenarios[0]["pl_hostname"]
+  );
 };
 
 createExoplanetScenarios();
