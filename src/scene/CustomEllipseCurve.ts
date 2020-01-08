@@ -6,7 +6,7 @@ import {
   Line,
   Vector3
 } from "three";
-import { degreesToRadians } from "../Physics/utils";
+import { degreesToRadians } from "../physics/utils";
 
 export default class extends Object3D {
   uniforms: {

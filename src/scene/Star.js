@@ -43,40 +43,14 @@ export default class extends MassManifestation {
       color: new THREE.Color(
         `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
       ),
-      blending: THREE.AdditiveBlending
+      blending: THREE.AdditiveBlending,
+      opacity: 0.7
     });
 
     const sprite = new THREE.Sprite(spriteMaterial);
-    sprite.scale.set(20, 20, 20);
+    sprite.scale.set(80, 80, 80);
 
-    const beamMap = new THREE.TextureLoader().load("/textures/beam.png");
-
-    const beam1Material = new THREE.SpriteMaterial({
-      map: beamMap,
-      color: new THREE.Color(
-        `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
-      ),
-      opacity: 0.65,
-      blending: THREE.AdditiveBlending
-    });
-
-    const beam1 = new THREE.Sprite(beam1Material);
-    beam1.scale.set(40, 40, 40);
-
-    const beam2Material = new THREE.SpriteMaterial({
-      map: beamMap,
-      color: new THREE.Color(
-        `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
-      ),
-      blending: THREE.AdditiveBlending,
-      opacity: 0.65,
-      rotation: Math.PI / 4
-    });
-
-    const beam2 = new THREE.Sprite(beam2Material);
-    beam2.scale.set(40, 40, 40);
-
-    mesh.add(sprite, beam1, beam2);
+    mesh.add(sprite);
 
     const light = new THREE.PointLight(0xffffff, 3.0, 0);
     light.position.set(0, 0, 0);

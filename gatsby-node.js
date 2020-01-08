@@ -83,7 +83,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `scenarioImage`,
-      value: `../../images/scenarios/${node.name}.png`
+      value: `../../images/scenarios/${
+        node.type !== "Exoplanets" ? node.name : "exoplanet"
+      }.png`
     });
   }
 };

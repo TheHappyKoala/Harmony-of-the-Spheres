@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { degreesToRadians, calculateOrbitalVertices } from "../Physics/utils";
+import { degreesToRadians, calculateOrbitalVertices } from "../physics/utils";
 
 export default class extends THREE.Object3D {
   constructor(mass, textureLoader, segments) {

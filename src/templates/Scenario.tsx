@@ -176,6 +176,11 @@ export const pageQuery = graphql`
         vx
         vy
         vz
+        a
+        e
+        o
+        i
+        w
         massType
         radius
         bump

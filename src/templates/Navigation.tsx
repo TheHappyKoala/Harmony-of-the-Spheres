@@ -111,7 +111,7 @@ export const pageQuery = graphql`
   query($type: String, $limit: Int, $skip: Int) {
     scenarios: allScenariosJson(
       filter: { type: { eq: $type } }
-      sort: { order: DESC, fields: [name] }
+      sort: { order: DESC, fields: [pl_pnum] }
       limit: $limit
       skip: $skip
     ) {
@@ -119,6 +119,7 @@ export const pageQuery = graphql`
         node {
           type
           name
+          pl_pnum
           fields {
             scenarioImage {
               childImageSharp {

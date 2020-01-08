@@ -3,6 +3,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
+    "moduleResolution": "node",
     "lib": ["dom", "es2017"],
     "allowJs": true,
     // "checkJs": true,

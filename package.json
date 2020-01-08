@@ -22,7 +22,6 @@
   "license": "GNU General Public License v3.0",
   "dependencies": {
     "@tweenjs/tween.js": "^17.4.0",
-    "@types/node": "^12.12.14",
     "@types/react": "^16.9.13",
     "@types/react-dom": "^16.9.4",
     "@types/react-redux": "^7.1.5",

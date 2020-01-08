@@ -1,6 +1,6 @@
 import { AppState } from "../reducers";
 import { getObjFromArrByKeyValuePair } from "../../utils";
-import { getOrbit } from "../../physics/utils";
+import { getOrbit, elementsToVectors } from "../../physics/utils";
 import {
   ScenarioActionTypes,
   SET_SCENARIO,
@@ -83,10 +83,23 @@ export const deleteMass = (name: string): ScenarioActionTypes => ({
   name
 });
 
-export const setScenario = (scenario: ScenarioState): ScenarioActionTypes => ({
-  type: SET_SCENARIO,
-  scenario
-});
+export const setScenario = (scenario: ScenarioState): ScenarioActionTypes => {
+  if (scenario.type === "Exoplanets") {
+    const [primary] = scenario.masses;
+    return {
+      type: SET_SCENARIO,
+      scenario: {
+        ...scenario,
+        masses: elementsToVectors(primary, scenario.masses.slice(1), scenario.g)
+      }
+    };
+  } else {
+    return {
+      type: SET_SCENARIO,
+      scenario
+    };
+  }
+};
 
 export const getTrajectory = (
   soiTree: SOITree,
