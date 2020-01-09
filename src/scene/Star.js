@@ -38,19 +38,58 @@ export default class extends MassManifestation {
 
     const rgb = colorTemperatureToRGB(this.mass.temperature / 4);
 
-    const spriteMaterial = new THREE.SpriteMaterial({
+    const halo1Material = new THREE.SpriteMaterial({
       map: spriteMap,
       color: new THREE.Color(
         `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
       ),
       blending: THREE.AdditiveBlending,
-      opacity: 0.7
+      opacity: 0.3
     });
 
-    const sprite = new THREE.Sprite(spriteMaterial);
-    sprite.scale.set(80, 80, 80);
+    const halo1 = new THREE.Sprite(halo1Material);
+    halo1.scale.set(50, 50, 50);
 
-    mesh.add(sprite);
+    const halo2Material = new THREE.SpriteMaterial({
+      map: spriteMap,
+      color: new THREE.Color(
+        `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
+      ),
+      blending: THREE.AdditiveBlending,
+      opacity: 0.3,
+      rotation: Math.PI / 4
+    });
+
+    const halo2 = new THREE.Sprite(halo2Material);
+    halo2.scale.set(80, 80, 80);
+
+    const halo3Material = new THREE.SpriteMaterial({
+      map: spriteMap,
+      color: new THREE.Color(
+        `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
+      ),
+      blending: THREE.AdditiveBlending,
+      opacity: 0.3,
+      rotation: Math.PI / 2
+    });
+
+    const halo3 = new THREE.Sprite(halo3Material);
+    halo3.scale.set(120, 120, 120);
+
+    const halo4Material = new THREE.SpriteMaterial({
+      map: spriteMap,
+      color: new THREE.Color(
+        `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
+      ),
+      blending: THREE.AdditiveBlending,
+      opacity: 0.15,
+      rotation: Math.PI / 2
+    });
+
+    const halo4 = new THREE.Sprite(halo4Material);
+    halo4.scale.set(160, 160, 160);
+
+    mesh.add(halo1, halo2, halo3);
 
     const light = new THREE.PointLight(0xffffff, 3.0, 0);
     light.position.set(0, 0, 0);

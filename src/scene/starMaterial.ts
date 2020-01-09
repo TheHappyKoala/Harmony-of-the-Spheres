@@ -13,7 +13,7 @@ export default (temperature: number) => {
     fragmentShader: star.fragment,
     transparent: false,
     depthTest: true,
-    depthWrite: true,
+    depthWrite: false,
     polygonOffset: true,
     polygonOffsetFactor: -4
   });
