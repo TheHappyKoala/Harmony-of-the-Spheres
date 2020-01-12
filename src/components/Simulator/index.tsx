@@ -53,6 +53,8 @@ export default ({
     else window.history.back();
   }, []);
 
+  console.log(scenario.masses);
+
   return (
     <Fragment>
       <Renderer scenarioName={scenario.name} />
@@ -89,6 +91,7 @@ export default ({
         callToAction="Tweet Scenario"
       />
       <Tabs
+        initTab={2}
         tabsWrapperClassName="sidebar-wrapper"
         tabsContentClassName="sidebar-content box"
         transition={{

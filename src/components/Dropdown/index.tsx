@@ -7,14 +7,12 @@ interface DropdownProps {
   dropdownWrapperCssClassName: string;
   selectedOptionCssClassName: string;
   optionsWrapperCssClass: string;
-  dynamicChildrenLen: number;
 }
 
 export default memo(
   ({
     children,
     selectedOption,
-    dynamicChildrenLen,
     dropdownWrapperCssClassName,
     selectedOptionCssClassName,
     optionsWrapperCssClass
@@ -57,6 +55,5 @@ export default memo(
     );
   },
   (prevProps, nextProps) =>
-    prevProps.selectedOption === nextProps.selectedOption &&
-    prevProps.dynamicChildrenLen === nextProps.dynamicChildrenLen
+    prevProps.selectedOption === nextProps.selectedOption
 );

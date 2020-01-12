@@ -55,11 +55,11 @@ export default ({ data, location }: IndexProps): ReactElement => {
         location={location}
       />
       <section className="credits-wrapper">
-      <Button cssClassName="button credits-back" callback={navigateBack}>
-        <Fragment>
-          <i className={`fas fa-chevron-left fa-2x`} />
-        </Fragment>
-      </Button>
+        <Button cssClassName="button credits-back" callback={navigateBack}>
+          <Fragment>
+            <i className={`fas fa-chevron-left fa-2x`} />
+          </Fragment>
+        </Button>
         <article>
           <h2>Contributors</h2>
           <ul>
