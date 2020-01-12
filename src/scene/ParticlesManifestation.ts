@@ -4,9 +4,11 @@ import {
   BufferAttribute,
   Points,
   Color,
-  ShaderMaterial
+  ShaderMaterial,
+  PointsMaterial,
+  AdditiveBlending,
+  TextureLoader
 } from "three";
-import particleMaterial from "./particleMaterial";
 
 interface ParticlesManifestationType {
   particles: MassType[];
@@ -93,12 +95,14 @@ export default class extends Object3D {
     geometry.addAttribute("customColor", new BufferAttribute(colors, 3));
     geometry.addAttribute("size", new BufferAttribute(sizes, 1));
 
-    const material = particleMaterial(
-      this.textureLoader,
-      "particle",
-      this.transparentSprite,
-      this.spriteDepthTest
-    );
+    const map = new TextureLoader().load("/textures/corona.png");
+
+    const material = new PointsMaterial({
+      color: "skyblue",
+      size: this.size,
+      blending: AdditiveBlending,
+      map
+    });
 
     const mesh = new Points(geometry, material);
 
