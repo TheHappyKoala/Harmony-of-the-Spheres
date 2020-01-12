@@ -44,11 +44,6 @@ export default ({ data, location }: IndexProps): ReactElement => {
 
   return (
     <Fragment>
-      <Button cssClassName="button credits-back" callback={navigateBack}>
-        <Fragment>
-          <i className={`fas fa-chevron-left fa-2x`} />
-        </Fragment>
-      </Button>
       <Img
         fluid={data.background.childImageSharp.fluid}
         style={{ position: "fixed", top: 0, bottom: 0, width: "100%" }}
@@ -60,6 +55,11 @@ export default ({ data, location }: IndexProps): ReactElement => {
         location={location}
       />
       <section className="credits-wrapper">
+      <Button cssClassName="button credits-back" callback={navigateBack}>
+        <Fragment>
+          <i className={`fas fa-chevron-left fa-2x`} />
+        </Fragment>
+      </Button>
         <article>
           <h2>Contributors</h2>
           <ul>
