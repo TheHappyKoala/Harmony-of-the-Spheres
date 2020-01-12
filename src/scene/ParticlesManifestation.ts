@@ -95,10 +95,9 @@ export default class extends Object3D {
     geometry.addAttribute("customColor", new BufferAttribute(colors, 3));
     geometry.addAttribute("size", new BufferAttribute(sizes, 1));
 
-    const map = new TextureLoader().load("/textures/corona.png");
+    const map = new TextureLoader().load("/textures/particle.png");
 
     const material = new PointsMaterial({
-      color: "skyblue",
       size: this.size,
       blending: AdditiveBlending,
       map
@@ -156,7 +155,6 @@ export default class extends Object3D {
 
       const material = system.material as ShaderMaterial;
 
-      material.uniforms.texture.value.dispose();
       material.dispose();
       this.remove(system);
     }

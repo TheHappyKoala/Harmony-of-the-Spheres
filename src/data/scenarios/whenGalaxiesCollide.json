@@ -27,7 +27,7 @@
   "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Interacting_galaxy",
   "particles": {
     "max": 260000,
-    "size": 50000,
+    "size": 15000,
     "softening": 5.0e-5,
     "spriteDepthTest": false,
     "transparentSprite": false,

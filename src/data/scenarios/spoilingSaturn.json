@@ -24,14 +24,14 @@
   "particles": {
     "max": 60000,
     "softening": 0,
-    "size": 50,
+    "size": 40,
     "shapes": [
       {
         "primary": "Saturn",
         "type": "getRingParticle",
         "flatLand": true,
         "tilt": [-26.73, 0, 0],
-        "number": 30000,
+        "number": 50000,
         "minD": 0.0006749650466666667,
         "maxD": 0.00111244757
       }

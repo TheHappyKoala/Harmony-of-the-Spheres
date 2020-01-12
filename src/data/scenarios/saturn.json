@@ -19,7 +19,7 @@
   "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Saturn",
   "particles": {
     "max": 20000,
-    "size": 60,
+    "size": 40,
     "shapes": [
       {
         "primary": "Saturn",

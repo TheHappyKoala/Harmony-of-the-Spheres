@@ -72,7 +72,6 @@ const scene = {
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas,
       antialias: true,
-      powerPreference: "low-power",
       logarithmicDepthBuffer: this.scenario.logarithmicDepthBuffer
     });
     this.renderer.setSize(this.w, this.h);

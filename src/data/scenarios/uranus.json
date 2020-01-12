@@ -12,7 +12,7 @@
   "cameraFocus": "Uranus",
   "particles": {
     "max": 60000,
-    "size": 60,
+    "size": 30,
     "shapes": [
       {
         "primary": "Uranus",
