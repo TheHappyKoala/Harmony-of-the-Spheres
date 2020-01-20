@@ -11,7 +11,7 @@
   "background": false,
   "barycenterZ": 9000000,
   "cameraPosition": "Free",
-  "cameraFocus": "Barycenter",
+  "cameraFocus": "Athena",
   "massBeingModified": "Hadropedia",
   "distMax": 50,
   "distMin": -50,
@@ -179,7 +179,12 @@
       "vx": -2.0878385351253206,
       "vy": 3.4644966308419827,
       "vz": -0.13743332747043174,
-      "orbitalPeriod": 0
+      "orbitalPeriod": 0,
+      "customCameraPosition": {
+        "x": -7000000,
+        "y": 2200000,
+        "z": -5500000
+      }
     },
     {
       "name": "Hadropedia",

@@ -93,7 +93,10 @@ export default ({
           name !== scenario.trajectoryTarget &&
           spacecraft.spacecraft
         ) {
-          getTrajectory(soi.tree, currentSOI);
+          modifyScenarioProperty({
+            key: "rotatingReferenceFrame",
+            value: name
+          });
         }
 
         setSOI({
@@ -129,9 +132,6 @@ export default ({
               noCloseButton={true}
             >
               <div data-label="Trajectory" data-icon="fas fa-rocket fa-2x">
-                <p className="spaceflight-disclaimer">
-                  This feature is in development and this is just a demo.
-                </p>
                 <label className="top">
                   Target{" "}
                   <Tooltip

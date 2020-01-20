@@ -1,0 +1,80 @@
+.cockpit-dashboard {
+    position: absolute;
+    z-index: 400;
+    bottom: 0;
+    left: 100px;
+    width: 500px;
+    color: #eee;
+    padding-bottom: 20px;
+  }
+  
+  .spaceflight-disclaimer {
+    font-weight: bold;
+    font-style: italic;
+    color: red;
+  }
+  
+  .cockpit-dashboard-grid {
+    display: grid;
+    grid-template-columns: 240px 240px;
+    justify-content: space-evenly;
+  }
+  
+  .cockpit-dashboard-tabs {
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .cockpit-dashboard-tabs ul {
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .cockpit-dashboard-tabs ul .button {
+    border: none;
+    padding: 5px;
+  }
+  
+  .cockpit-dashboard-tabs i {
+    margin-bottom: 12px;
+  }
+  
+  .box.cockpit-dashboard-tabs-pane {
+    height: 320px;
+    border-top: none;
+  }
+  
+  .trajectory-table {
+    border-collapse: collapse;
+    width: 90%;
+  }
+  
+  .toggle-cockpit {
+    grid-column: 1 / span 2;
+    margin-top: 7px;
+  }
+  
+  .trajectory-table > tbody > tr > td {
+    width: 20%;
+    padding: 10px;
+    overflow: hidden;
+  }
+  
+  .trajectory-table > tr:nth-child(even) {
+    background: transparent;
+  }
+  .trajectory-table > tr:nth-child(odd) {
+    background: #191919;
+  }
+  
+  .spacecraft-stats {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #545454;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cockpit-dashboard .button {
+    padding: 10px;
+    border: 1px solid #545454;
+  }

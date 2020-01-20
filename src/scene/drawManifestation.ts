@@ -29,15 +29,21 @@ export default function(
         break;
 
       case "spacecraft":
-        manifestation
-          .updateTrajectory(
+        if (scenario.cameraFocus !== manifestation.mass.name)
+          manifestation.updateTrajectory(
             getObjFromArrByKeyValuePair(scenario.masses, "name", scenario.soi),
             scenario.masses[0],
             scenario.g,
             scenario.scale,
             this.camera.rotatingReferenceFrame
-          )
-          .draw(rotatedPosition, scenario.dt, scenario.scale, scenario.playing);
+          );
+
+        manifestation.draw(
+          rotatedPosition,
+          scenario.dt,
+          scenario.scale,
+          scenario.playing
+        );
         break;
 
       default:

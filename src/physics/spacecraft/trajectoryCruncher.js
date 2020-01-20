@@ -58,12 +58,12 @@ export default function worker(self) {
       primary
     }
   }) => {
-    const system = getIntegrator(integrator, {
+    const system = getIntegrator("RKN12", {
       g,
       dt,
       tol,
-      minDt,
-      maxDt,
+      minDt: 0.00000000000000000000000000000001,
+      maxDt: 0.0001,
       masses,
       elapsedTime
     });

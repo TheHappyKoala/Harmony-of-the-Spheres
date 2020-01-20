@@ -84,7 +84,12 @@
       "luminosity": 0,
       "temperature": 0,
       "trailVertices": 20000,
-      "atmosphere": "skyblue"
+      "atmosphere": "skyblue",
+      "customCameraPosition": {
+        "x": 20,
+        "y": 5,
+        "z": 0
+      }
     },
     {
       "m": 1,

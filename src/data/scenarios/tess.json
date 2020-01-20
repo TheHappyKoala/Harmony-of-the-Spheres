@@ -80,7 +80,12 @@
       "luminosity": 0,
       "temperature": 0,
       "trailVertices": 20000,
-      "atmosphere": "skyblue"
+      "atmosphere": "skyblue",
+      "customCameraPosition": {
+        "x": 0,
+        "y": 250,
+        "z": 30
+      }
     },
     {
       "m": 1,
@@ -130,7 +135,7 @@
       "vy": 2.4879372578404126,
       "vz": -0.10271423737146826,
       "m": 1.005570862e-29,
-      "orbitalPeriod": 0.03753425,
+      "orbitalPeriod": 0.09753425,
       "radius": 1.2,
       "massType": "model",
       "tilt": -1.54,

@@ -53,8 +53,6 @@ export default ({
     else window.history.back();
   }, []);
 
-  console.log(scenario.masses);
-
   return (
     <Fragment>
       <Renderer scenarioName={scenario.name} />

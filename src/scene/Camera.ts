@@ -148,18 +148,15 @@ export default class extends PerspectiveCamera {
           this.trackMovingObjectWithControls(manifestations[i]);
 
         if (cameraFocus === mass.name) {
+          const customCameraPosition =
+            mass.customCameraPosition !== null
+              ? mass.customCameraPosition
+              : { x: 10, y: 0, z: 5 };
+
           this.position.set(
-            this.rotatedMasses[i].x -
-              mass.radius *
-                (customCameraToBodyDistanceFactor
-                  ? customCameraToBodyDistanceFactor
-                  : 10),
-            this.rotatedMasses[i].y,
-            this.rotatedMasses[i].z +
-              mass.radius *
-                (customCameraToBodyDistanceFactor
-                  ? customCameraToBodyDistanceFactor
-                  : 5)
+            this.rotatedMasses[i].x - mass.radius * customCameraPosition.x,
+            this.rotatedMasses[i].y - mass.radius * customCameraPosition.y,
+            this.rotatedMasses[i].z - mass.radius * customCameraPosition.z
           );
 
           this.lookAt(

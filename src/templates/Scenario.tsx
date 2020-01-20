@@ -193,6 +193,11 @@ export const pageQuery = graphql`
         texture
         bodyType
         atmosphere
+        customCameraPosition {
+          x
+          y
+          z
+        }
       }
     }
   }
