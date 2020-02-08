@@ -167,3 +167,14 @@ interface Shape {
   customPrimaryData?: MassType;
   hsl?: [number, number, number];
 }
+
+interface OrbitalElements {
+  a: number; // semi-major axis
+  e: number; // eccentricity
+  i: number; // inclination
+  argP: number; // argument of periapsis
+  lAn: number; // longitude of ascending node
+  trueAnom: number; // true anomaly
+  eccAnom: number; // eccentric anomaly
+  meanAnom: number; // mean anomaly
+}
