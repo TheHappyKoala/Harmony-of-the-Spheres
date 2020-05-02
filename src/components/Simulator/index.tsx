@@ -9,6 +9,7 @@ import Tabs from "../Tabs";
 import Modal from "../Modal";
 import Iframe from "../Iframe";
 import Tweet from "../Tweet";
+import FacebookShare from "../FacebookShare";
 import Physics from "../Content/Physics";
 import Graphics from "../Content/Graphics";
 import Masses from "../Content/Masses";
@@ -87,6 +88,15 @@ export default ({
         cssClassName="button twitter"
         hashtags="Space,JavaScript,Science"
         callToAction="Tweet Scenario"
+      />
+      <FacebookShare
+        shareText={`Hey friends! Check out this 3D gravity simulation of ${scenario.name}. It will run in your browser :)!`}
+        shareUrl={
+          typeof document !== "undefined" && document.location.toString()
+        }
+        cssClassName="button facebook"
+        hashtags="Space,JavaScript,Science"
+        callToAction="Share On Facebook"
       />
       <Tabs
         initTab={1}
