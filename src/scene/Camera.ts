@@ -4,6 +4,8 @@ import H3 from "../Physics/vectors";
 import { degreesToRadians } from "../Physics/utils";
 import { Manifestation } from "./ManifestationsService";
 
+const TWEEN = require("@tweenjs/tween.js");
+
 export default class extends PerspectiveCamera {
   controls: ReturnType<typeof CustomizedOrbitControls>;
   rotatingReferenceFrame: H3;
@@ -174,5 +176,23 @@ export default class extends PerspectiveCamera {
           this.trackMovingObjectWithControls(manifestations[i]);
       }
     }
+  }
+
+  tween(
+    from: Vector,
+    to: Vector,
+    lookAt: Vector,
+    duration: number,
+    callback: Function
+  ) {
+    const tween = new TWEEN.Tween(from)
+      .to(to, duration)
+      .easing(TWEEN.Easing.Cubic.In)
+      .onUpdate(() => {
+        this.position.set(from.x, from.y, from.z);
+        this.lookAt(new Vector3(lookAt.x, lookAt.y, lookAt.z));
+      })
+      .onComplete(() => callback())
+      .start();
   }
 }
