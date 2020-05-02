@@ -176,7 +176,7 @@ export default class extends Component {
           step={0.1}
         />
         <label className="top">
-          Longitude of the Ascending Node{" "}
+          Ascending Node{" "}
           <Tooltip
             position="left"
             content="The ascending node is the angular position at which a celestial body passes from the southern side of an arbitrarily defined reference plane to the northern side."
@@ -198,49 +198,30 @@ export default class extends Component {
           />
         </label>
 
-        <Tabs
-          tabsWrapperClassName="mass-tabs"
-          tabsContentClassName="mass-content"
-          transition={{ enterTimeout: false, leaveTimeout: false }}
-          noCloseButton={true}
-          initTab={0}
+        <Dropdown
+          selectedOption={this.state.texture}
+          dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+          selectedOptionCssClassName="selected-option"
+          optionsWrapperCssClass="options"
+          dynamicChildrenLen={this.props.masses.length}
         >
-          {this.state.bodyTypes.map(entry => (
-            <div data-label={entry} key={entry}>
-              {this.state.bodiesWithType.map(body => {
-                if (body.bodyType === entry)
-                  return (
-                    <div
-                      onClick={() =>
-                        this.insertMassTemplate({
-                          m: body.m,
-                          radius: body.radius,
-                          texture: body.name,
-                          type: body.type
-                        })
-                      }
-                      className="add-mass-entry-wrapper"
-                      style={{
-                        border:
-                          this.state.texture === body.name
-                            ? "1px solid red"
-                            : "none"
-                      }}
-                    >
-                      <LazyDog
-                        src={`/images/masses/${body.name}.png`}
-                        alt={body.name}
-                        caption={body.name}
-                        width={75}
-                        height={50}
-                        placeHolderIcon="fa fa-venus-mars fa-2x"
-                      />
-                    </div>
-                  );
-              })}
+          {bodies.map(body => (
+            <div
+              data-name={body.name}
+              key={body.name}
+              onClick={() =>
+                this.insertMassTemplate({
+                  m: body.m,
+                  radius: body.radius,
+                  texture: body.name,
+                  type: body.type
+                })
+              }
+            >
+              {body.name}
             </div>
           ))}
-        </Tabs>
+        </Dropdown>
         <Button
           callback={() =>
             this.props.addMass({

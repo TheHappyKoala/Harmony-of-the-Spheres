@@ -11,9 +11,9 @@ import Iframe from "../Iframe";
 import Tweet from "../Tweet";
 import Physics from "../Content/Physics";
 import Graphics from "../Content/Graphics";
-import Camera from "../Content/Camera";
 import Masses from "../Content/Masses";
 import AddMass from "../Content/AddMass";
+import SplashScreen from "../SplashScreen";
 import "./App.less";
 
 interface SimulatorProps {
@@ -24,6 +24,7 @@ interface SimulatorProps {
   addMass: typeof scenarioActionCreators.addMass;
   resetScenario: typeof scenarioActionCreators.resetScenario;
   getTrajectory: typeof scenarioActionCreators.getTrajectory;
+  app: any;
 }
 
 export default ({
@@ -31,7 +32,8 @@ export default ({
   modifyMassProperty,
   deleteMass,
   addMass,
-  scenario
+  scenario,
+  app
 }: SimulatorProps): ReactElement => {
   const [displayWiki, setDisplayWiki] = useState(false);
 
@@ -58,9 +60,7 @@ export default ({
       <Renderer scenarioName={scenario.name} />
       <Button cssClassName="button simulation-state" callback={setPlayState}>
         <Fragment>
-          <i
-            className={`fas fa-${scenario.playing ? "pause" : "play"} fa-2x`}
-          />
+          <i className={`fas fa-${scenario.playing ? "pause" : "play"}`} />
           {scenario.playing ? "Pause" : "Play"}
         </Fragment>
       </Button>
@@ -69,13 +69,13 @@ export default ({
         callback={navigateToScenariosMenu}
       >
         <Fragment>
-          <i className={`fas fa-align-justify fa-2x`} />
+          <i className={`fas fa-align-justify`} />
           Scenarios
         </Fragment>
       </Button>
       <Button cssClassName="button wiki" callback={setWikiState}>
         <Fragment>
-          <i className="fas fa-wikipedia-w fa-2x" />
+          <i className="fas fa-wikipedia-w" />
           Scenario Wiki
         </Fragment>
       </Button>
@@ -89,7 +89,7 @@ export default ({
         callToAction="Tweet Scenario"
       />
       <Tabs
-        initTab={2}
+        initTab={1}
         tabsWrapperClassName="sidebar-wrapper"
         tabsContentClassName="sidebar-content box"
         transition={{
@@ -98,7 +98,7 @@ export default ({
           leaveTimeout: 250
         }}
       >
-        <div data-label="Physics" data-icon="fas fa-cube fa-2x">
+        <div data-label="Physics" data-icon="fas fa-cube">
           <Physics
             integrator={scenario.integrator}
             useBarnesHut={scenario.useBarnesHut}
@@ -117,25 +117,19 @@ export default ({
             modifyScenarioProperty={modifyScenarioProperty}
           />
         </div>
-        <div data-label="Graphics" data-icon="fas fa-paint-brush fa-2x">
+        <div data-label="Graphics" data-icon="fas fa-paint-brush">
           <Graphics
             barycenter={scenario.barycenter}
             trails={scenario.trails}
             labels={scenario.labels}
             modifyScenarioProperty={modifyScenarioProperty}
             habitableZone={scenario.habitableZone}
-            referenceOrbits={scenario.referenceOrbits}
-          />
-        </div>
-        <div data-label="Camera" data-icon="fas fa-camera-retro fa-2x">
-          <Camera
             rotatingReferenceFrame={scenario.rotatingReferenceFrame}
             cameraFocus={scenario.cameraFocus}
             masses={scenario.masses}
-            modifyScenarioProperty={modifyScenarioProperty}
           />
         </div>
-        <div data-label="Masses" data-icon="fas fa-globe fa-2x">
+        <div data-label="Masses" data-icon="fas fa-globe">
           <Masses
             massBeingModified={scenario.massBeingModified}
             masses={scenario.masses}
@@ -150,7 +144,7 @@ export default ({
             deleteMass={deleteMass}
           />
         </div>
-        <div data-label="Add" data-icon="fas fa-plus-circle fa-2x">
+        <div data-label="Add" data-icon="fas fa-plus-circle">
           <AddMass
             a={scenario.a}
             e={scenario.e}
@@ -165,6 +159,7 @@ export default ({
           />
         </div>
       </Tabs>
+      {app.loading && <SplashScreen whatIsLoading={app.whatIsLoading} />}
       <ReactCSSTransitionGroup
         transitionName="fade"
         transitionEnterTimeout={250}

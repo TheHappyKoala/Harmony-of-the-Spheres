@@ -49,6 +49,78 @@ export default ({
   return (
     <Fragment>
       <h2>Physics</h2>
+      <Toggle
+        label="System Barycenter"
+        checked={systemBarycenter}
+        callback={() =>
+          modifyScenarioProperty({
+            key: "systemBarycenter",
+            value: !systemBarycenter
+          })
+        }
+      />
+      {!systemBarycenter && (
+        <Fragment>
+          <label className="top">
+            Barycenter Mass One
+            <Tooltip
+              position="left"
+              content="One of the masses in a two body system."
+            />
+          </label>
+          <Dropdown
+            selectedOption={barycenterMassOne}
+            dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+            selectedOptionCssClassName="selected-option"
+            optionsWrapperCssClass="options"
+            dynamicChildrenLen={masses.length}
+          >
+            {masses.map(mass => (
+              <div
+                data-name={mass.name}
+                key={mass.name}
+                onClick={() =>
+                  modifyScenarioProperty({
+                    key: "barycenterMassOne",
+                    value: mass.name
+                  })
+                }
+              >
+                {mass.name}
+              </div>
+            ))}
+          </Dropdown>
+          <label className="top">
+            Barycenter Mass Two
+            <Tooltip
+              position="left"
+              content="One of the masses in a two body system."
+            />
+          </label>
+          <Dropdown
+            selectedOption={barycenterMassTwo}
+            dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+            selectedOptionCssClassName="selected-option"
+            optionsWrapperCssClass="options"
+            dynamicChildrenLen={masses.length}
+          >
+            {masses.map(mass => (
+              <div
+                data-name={mass.name}
+                key={mass.name}
+                onClick={() =>
+                  modifyScenarioProperty({
+                    key: "barycenterMassTwo",
+                    value: mass.name
+                  })
+                }
+              >
+                {mass.name}
+              </div>
+            ))}
+          </Dropdown>
+        </Fragment>
+      )}
       <label className="top">
         Integrator
         <Tooltip
@@ -107,6 +179,16 @@ export default ({
           />
         </Fragment>
       )}
+      <Toggle
+        label="Collisions"
+        checked={collisions}
+        callback={() =>
+          modifyScenarioProperty({
+            key: "collisions",
+            value: !collisions
+          })
+        }
+      />
       <label className="top">
         Delta Time
         <Tooltip
@@ -182,79 +264,6 @@ export default ({
           )}
         </Fragment>
       )}
-
-      <Toggle
-        label="System Barycenter"
-        checked={systemBarycenter}
-        callback={() =>
-          modifyScenarioProperty({
-            key: "systemBarycenter",
-            value: !systemBarycenter
-          })
-        }
-      />
-      {!systemBarycenter && (
-        <Fragment>
-          <label className="top">
-            Barycenter Mass One
-            <Tooltip
-              position="left"
-              content="One of the masses in a two body system."
-            />
-          </label>
-          <Dropdown
-            selectedOption={barycenterMassOne}
-            dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-            selectedOptionCssClassName="selected-option"
-            optionsWrapperCssClass="options"
-            dynamicChildrenLen={masses.length}
-          >
-            {masses.map(mass => (
-              <div
-                data-name={mass.name}
-                key={mass.name}
-                onClick={() =>
-                  modifyScenarioProperty({
-                    key: "barycenterMassOne",
-                    value: mass.name
-                  })
-                }
-              >
-                {mass.name}
-              </div>
-            ))}
-          </Dropdown>
-          <label className="top">
-            Barycenter Mass Two
-            <Tooltip
-              position="left"
-              content="One of the masses in a two body system."
-            />
-          </label>
-          <Dropdown
-            selectedOption={barycenterMassTwo}
-            dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-            selectedOptionCssClassName="selected-option"
-            optionsWrapperCssClass="options"
-            dynamicChildrenLen={masses.length}
-          >
-            {masses.map(mass => (
-              <div
-                data-name={mass.name}
-                key={mass.name}
-                onClick={() =>
-                  modifyScenarioProperty({
-                    key: "barycenterMassTwo",
-                    value: mass.name
-                  })
-                }
-              >
-                {mass.name}
-              </div>
-            ))}
-          </Dropdown>
-        </Fragment>
-      )}
       <label className="top">
         Gravitational Constant
         <Tooltip
@@ -269,16 +278,6 @@ export default ({
         max={200}
         min={-200}
         step={0.5}
-      />
-      <Toggle
-        label="Collisions"
-        checked={collisions}
-        callback={() =>
-          modifyScenarioProperty({
-            key: "collisions",
-            value: !collisions
-          })
-        }
       />
       <label className="top">
         Softening Constant

@@ -11,7 +11,7 @@ export default props => {
 
   return (
     <Fragment>
-      <h2>Modify Masses</h2>
+      <h2>Masses</h2>
       <label className="top">
         Mass Being Modified
         <Tooltip

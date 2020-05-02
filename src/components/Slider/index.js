@@ -64,7 +64,7 @@ export default class extends Component {
     return (
       <Fragment>
         <div className="range-wrapper">
-          <div className="slider-value">{this.props.value}</div>
+          <div className="slider-value">{this.props.value.toFixed(12)}</div>
           <input
             className="slider"
             type="range"

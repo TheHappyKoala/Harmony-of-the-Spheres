@@ -25,7 +25,7 @@ export default memo(
         )}&url=${encodeURIComponent(shareUrl)}&hashtags=${hashtags}`}
       >
         <span>
-          <i className="fa fa-twitter fa-2x" />
+          <i className="fa fa-twitter" />
           {callToAction}
         </span>
       </a>

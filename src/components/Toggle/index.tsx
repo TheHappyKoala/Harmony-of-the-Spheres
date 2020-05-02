@@ -9,7 +9,7 @@ interface ToggleProps {
 
 export default memo(
   ({ checked, label, callback }: ToggleProps): ReactElement => (
-    <label className="toggle top">
+    <label className="toggle">
       {label}
       <input type="checkbox" checked={checked} onChange={() => callback()} />
       <span />
