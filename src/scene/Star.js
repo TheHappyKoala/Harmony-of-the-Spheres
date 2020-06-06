@@ -36,7 +36,7 @@ export default class extends MassManifestation {
 
     const spriteMap = new THREE.TextureLoader().load("/textures/corona.png");
 
-    const rgb = colorTemperatureToRGB(this.mass.temperature / 4);
+    const rgb = colorTemperatureToRGB(this.mass.temperature);
 
     const halo1Material = new THREE.SpriteMaterial({
       map: spriteMap,
@@ -48,7 +48,7 @@ export default class extends MassManifestation {
     });
 
     const halo1 = new THREE.Sprite(halo1Material);
-    halo1.scale.set(50, 50, 50);
+    halo1.scale.set(25, 25, 25);
 
     const halo2Material = new THREE.SpriteMaterial({
       map: spriteMap,
@@ -61,7 +61,7 @@ export default class extends MassManifestation {
     });
 
     const halo2 = new THREE.Sprite(halo2Material);
-    halo2.scale.set(80, 80, 80);
+    halo2.scale.set(40, 40, 40);
 
     const halo3Material = new THREE.SpriteMaterial({
       map: spriteMap,
@@ -74,7 +74,7 @@ export default class extends MassManifestation {
     });
 
     const halo3 = new THREE.Sprite(halo3Material);
-    halo3.scale.set(120, 120, 120);
+    halo3.scale.set(60, 60, 60); 
 
     const halo4Material = new THREE.SpriteMaterial({
       map: spriteMap,
@@ -85,9 +85,6 @@ export default class extends MassManifestation {
       opacity: 0.15,
       rotation: Math.PI / 2
     });
-
-    const halo4 = new THREE.Sprite(halo4Material);
-    halo4.scale.set(160, 160, 160);
 
     mesh.add(halo1, halo2, halo3);
 
