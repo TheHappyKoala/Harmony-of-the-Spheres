@@ -335,14 +335,7 @@ export function stateToKepler(
   r: { x: number; y: number; z: number },
   v: { x: number; y: number; z: number },
   mu: number
-): {
-  a: number;
-  e: number;
-  i: number;
-  argp: number;
-  omega: number;
-  vi: number;
-} {
+): OrbitalElements {
   let v1 = new H3();
   let v2 = new H3();
   const kHat = { x: 0, y: 0, z: 1 };
@@ -383,29 +376,115 @@ export function stateToKepler(
   const rvDot = v1.set(r).dot(v2.set(v));
 
   const i = Math.acos(h.z / hNorm);
-  let omega = Math.acos(n.x / nNorm);
+  let lAn = Math.acos(n.x / nNorm);
   if (n.y < 0) {
-    omega = 2 * Math.PI - omega;
+    lAn = 2 * Math.PI - lAn;
   }
-  let w = Math.acos(neDot / (nNorm * e));
+  let argP = Math.acos(neDot / (nNorm * e));
   if (eVec.z < 0) {
-    w = 2 * Math.PI - w;
+    argP = 2 * Math.PI - argP;
   }
-  let vi = Math.acos(reDot / (e * rNorm));
+  let trueAnom = Math.acos(reDot / (e * rNorm));
   if (rvDot < 0) {
-    vi = 2 * Math.PI - vi;
+    trueAnom = 2 * Math.PI - trueAnom;
   }
 
-  const convFactor = 180 / Math.PI;
+  const eccAnom = 2 * Math.atan(Math.tan(trueAnom / 2) / Math.sqrt((1+e)/(1-e)))
+  const meanAnom = eccAnom - e * Math.sin(eccAnom)
+
+  //const convFactor = 180 / Math.PI;
 
   return {
-    a: a,
-    e: e,
-    i: i * convFactor,
-    argp: w * convFactor,
-    omega: omega * convFactor,
-    vi: vi * convFactor
+    a: a, // semi-major axis
+    e: e, // eccentricity
+    i: i, // inclination
+    argP: argP, // argument of periapsis
+    lAn: lAn, // longitude of ascending node
+    trueAnom: trueAnom, // true anomaly
+    eccAnom: eccAnom, // eccentric anomly
+    meanAnom: meanAnom // mean anomaly
   };
+}
+
+export function stateToKepler2(
+  r: { x: number; y: number; z: number },
+  v: { x: number; y: number; z: number },
+  mu: number
+): OrbitalElements {
+  let v1 = new H3();
+  let v2 = new H3();
+  const rNorm = v1.set(r).getLength();
+  const vNorm = v1.set(v).getLength();
+  const hVec = v1.set(r).cross(v2.set(v)).toObject();
+  const eVec1 = v1.set(v).cross(v2.set(hVec)).divideByScalar(mu).toObject();
+  const rHat = v1.set(r).divideByScalar(rNorm).toObject();
+  const eVec = v1.set(eVec1).subtract(v2.set(rHat)).toObject();
+  const e = v1.set(eVec).getLength();
+  console.log("e: ", e)
+  return {
+    a: 1, // semi-major axis
+    e: 0, // eccentricity
+    i: 1, // inclination
+    argP: 1, // argument of periapsis
+    lAn: 1, // longitude of ascending node
+    trueAnom: 1, // true anomaly
+    eccAnom: 1, // eccentric anomly
+    meanAnom: 1 // mean anomaly
+  };
+}
+
+
+export function keplerToState(orb: OrbitalElements, gm: number): { posRel: Vector; velRel: Vector } {
+  // returns the position and velocity of the orbiting body RELATIVE to the primary body.
+  const a = orb.a;
+  const e = orb.e;
+  const i = orb.i;
+  const argP = orb.argP;
+  const lAn = orb.lAn;
+  const trueAnom = orb.trueAnom;
+  const eccAnom = orb.eccAnom;
+
+  const r_c = a * (1 - e * Math.cos(eccAnom)); // distance to central body
+  //vectors in orbital plane
+  const o = {x: r_c * Math.cos(trueAnom), y: r_c * Math.sin(trueAnom), z: 0}; // position in orbital plane
+  const o_dot_factor = Math.sqrt(gm*a) / r_c;
+  const o_dot =  {x: -Math.sin(eccAnom) * o_dot_factor, y: Math.sqrt(1-e*e) * Math.cos(eccAnom) * o_dot_factor, z: 0}; // velocity in orbital plane
+  const X = o.x * (Math.cos(argP)*Math.cos(lAn) - Math.sin(argP)*Math.cos(i)*Math.sin(lAn)) - o.y * (Math.sin(argP)*Math.cos(lAn) + Math.cos(argP)*Math.cos(i)*Math.sin(lAn)); // x-coordinate of position in inertial reference frame
+  const Y = o.x * (Math.cos(argP)*Math.sin(lAn) + Math.sin(argP)*Math.cos(i)*Math.cos(lAn)) + o.y * (Math.cos(argP)*Math.cos(i)*Math.cos(lAn) - Math.sin(argP)*Math.sin(lAn));
+  const Z = o.x * (Math.sin(argP)*Math.sin(i)) + o.y * (Math.cos(argP) * Math.sin(i));
+  const VX = o_dot.x * (Math.cos(argP)*Math.cos(lAn) - Math.sin(argP)*Math.cos(i)*Math.sin(lAn)) - o_dot.y * (Math.sin(argP)*Math.cos(lAn) + Math.cos(argP)*Math.cos(i)*Math.sin(lAn));
+  const VY = o_dot.x * (Math.cos(argP)*Math.sin(lAn) + Math.sin(argP)*Math.cos(i)*Math.cos(lAn)) + o_dot.y * (Math.cos(argP)*Math.cos(i)*Math.cos(lAn) - Math.sin(argP)*Math.sin(lAn));
+  const VZ = o_dot.x * (Math.sin(argP)*Math.sin(i)) + o_dot.y * (Math.cos(argP) * Math.sin(i));
+  return {posRel: {x: X, y: Y, z: Z}, velRel: {x: VX, y: VY, z: VZ}}
+}
+
+function solveKeplerEq(meanAnom: number, e: number, tol=1e-14): number {
+  // Solves Keplers third law M = E - e*sin(E) for E using Newton-Raphson
+  let E = meanAnom;
+  let E_last = E + 1e3*tol; // make sure we enter the while loop
+  while (Math.abs(E - E_last) > tol) {
+    E_last = E;
+    E = E - (E - e * Math.sin(E) - meanAnom) / (1 - e * Math.cos(E));
+  }
+  return E
+}
+
+export function propagateOrbitalElements(orb: OrbitalElements, dt: number, gm: number): OrbitalElements {
+  const mean_motion = Math.sqrt(gm / Math.pow(orb.a, 3));
+  const meanAnomNew = (orb.meanAnom + dt * mean_motion) % (2 * Math.PI); // calculate new mean anomaly and normalize it to [0, 2pi)
+  const eccAnomNew = solveKeplerEq(meanAnomNew, orb.e);
+  const trueAnomNew = 2 * Math.atan2(Math.sqrt(1+orb.e) * Math.sin(eccAnomNew / 2), Math.sqrt(1 - orb.e) * Math.cos(eccAnomNew / 2));
+  return {
+    a: orb.a, // semi-major axis
+    e: orb.e, // eccentricity
+    i: orb.i, // inclination
+    argP: orb.argP, // argument of periapsis
+    lAn: orb.lAn, // longitude of ascending node
+    trueAnom: trueAnomNew, // true anomaly
+    eccAnom: eccAnomNew, // eccentric anomly
+    meanAnom: meanAnomNew // mean anomaly
+  };
+
 }
 
 function radiusSOI(largerMass: SOITree, smallerMass: SOITree): number {

@@ -24,7 +24,7 @@ import ParticlesManifestation from './ParticlesManifestation';
 import CollisionsService from '../Physics/collisions/';
 import SpacecraftService from '../Physics/spacecraft/SpacecraftService';
 import CustomEllipseCurve from './CustomEllipseCurve';
-import { stateToKepler } from '../Physics/spacecraft/lambert';
+import { stateToKepler, keplerToState, propagateOrbitalElements } from '../Physics/spacecraft/lambert';
 import ManifestationsService from './ManifestationsService';
 import drawManifestation from './drawManifestation';
 
@@ -287,6 +287,18 @@ const scene = {
   },
 
   loop() {
+    console.log("Hej");
+    const r_test = {x: 4.917017576275505E-01 - 4.784783050070162E-04, y: -8.824042530509359E-01-6.996769603649001E-03, z: -5.209443792483747E-05+8.825066980424099E-05}
+    const v_test = {x: 1.477301441290793E-02 + 7.274639437336770E-06, y: 8.256590272640510E-03-3.444578400304152E-06, z: -2.300568124497324E-07-1.801755696778063E-07}
+    const gm_test = 0.999698356 * 0.000296001607;
+    console.log("Position Before: ", r_test, " Velocity Before: ", v_test)
+    const orb_test = stateToKepler(r_test, v_test, gm_test);
+    const newState2 = keplerToState(orb_test, gm_test)
+    console.log("Position After:  ", newState2.posRel, " Velocity After:  ", newState2.velRel)
+    console.log("Orbs before: ",orb_test)
+    const newOrbs = propagateOrbitalElements(orb_test, 1, gm_test);
+    const newState3 = keplerToState(newOrbs, gm_test);
+    console.log("Position Afterafter:  ", newState3.posRel, " Velocity Afterafter:  ", newState3.velRel)
     this.scenario = JSON.parse(JSON.stringify(this.store.getState().scenario));
 
     if (this.scenario.reset) this.resetParticlePhysics();
