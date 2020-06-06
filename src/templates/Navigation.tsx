@@ -61,7 +61,14 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
         location={location}
       />
       <section className="scenarios-wrapper">
-        <Nav css={{ borderLeft: "none", borderRight: "none" }}>
+        <Nav
+          css={{
+            borderLeft: "none",
+            borderRight: "none",
+            borderTop: "none",
+            fontWeight: "bold"
+          }}
+        >
           <Link to={`/`}>
             <NavItem active={pageContext.currentPageName === "All"}>
               All

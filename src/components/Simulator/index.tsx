@@ -14,7 +14,6 @@ import Physics from "../Content/Physics";
 import Graphics from "../Content/Graphics";
 import Masses from "../Content/Masses";
 import AddMass from "../Content/AddMass";
-import SplashScreen from "../SplashScreen";
 import "./App.less";
 
 interface SimulatorProps {
@@ -169,7 +168,6 @@ export default ({
           />
         </div>
       </Tabs>
-      {app.loading && <SplashScreen whatIsLoading={app.whatIsLoading} />}
       <ReactCSSTransitionGroup
         transitionName="fade"
         transitionEnterTimeout={250}
