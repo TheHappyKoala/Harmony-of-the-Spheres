@@ -11,6 +11,7 @@ exports.createPages = async ({ actions, graphql }) => {
         }
         edges {
           node {
+            sortOrder
             id
             name
             type
@@ -20,7 +21,7 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `);
 
-  const scenariosPerPage = 6;
+  const scenariosPerPage = 24;
 
   const numPages = Math.ceil(
     results.data.allScenariosJson.edges.length / scenariosPerPage
