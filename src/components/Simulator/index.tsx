@@ -86,16 +86,10 @@ export default ({
         }
         cssClassName="button twitter"
         hashtags="Space,JavaScript,Science"
-        callToAction="Tweet Scenario"
       />
       <FacebookShare
-        shareText={`Hey friends! Check out this 3D gravity simulation of ${scenario.name}. It will run in your browser :)!`}
-        shareUrl={
-          typeof document !== "undefined" && document.location.toString()
-        }
+        shareUrl={document?.location.toString()}
         cssClassName="button facebook"
-        hashtags="Space,JavaScript,Science"
-        callToAction="Share On Facebook"
       />
       <Tabs
         initTab={1}

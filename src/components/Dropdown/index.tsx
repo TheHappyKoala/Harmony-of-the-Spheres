@@ -44,7 +44,7 @@ export default memo(
           className={selectedOptionCssClassName}
         >
           {selectedOption}
-          <i className={"fa fa-chevron-circle-down"} />
+          <i className={"fa fa-chevron-down"} />
         </div>
         {options && (
           <div ref={optionsWrapper} className={optionsWrapperCssClass}>
