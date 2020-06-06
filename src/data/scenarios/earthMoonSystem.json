@@ -1,5 +1,6 @@
 {
   "name": "The Earth System",
+  "sortOrder": 24,
   "description": "Gravity simulation of the Moon, an astronomical body that orbits the Earth as its only permanent natural satellite. It is the fifth-largest satellite in the Solar System.",
   "particlesFun": false,
   "type": "Solar System",

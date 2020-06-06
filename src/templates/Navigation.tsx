@@ -118,7 +118,7 @@ export const pageQuery = graphql`
   query($type: String, $limit: Int, $skip: Int) {
     scenarios: allScenariosJson(
       filter: { type: { eq: $type } }
-      sort: { order: DESC, fields: [pl_pnum] }
+      sort: { order: ASC, fields: [sortOrder] }
       limit: $limit
       skip: $skip
     ) {

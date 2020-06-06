@@ -1,5 +1,6 @@
 {
   "name": "Shoemaker-Levy 9",
+  "sortOrder": 25,
   "description": "Gravity simulation of the collision between Jupiter and the fragments that made up comet Shoemaker-Levy 9 in 1994.",
   "particlesFun": false,
   "type": "Solar System",

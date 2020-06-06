@@ -1,5 +1,6 @@
 {
   "name": "The Star of David",
+  "sortOrder": 19,
   "description": "The n-body problem is the problem of taking the initial positions and velocities of n point masses and solving for their subsequent motion according to Newton's laws of motion and Newton's law of universal gravitation.",
   "type": "Misc",
   "particlesFun": false,

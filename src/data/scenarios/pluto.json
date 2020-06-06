@@ -1,5 +1,6 @@
 {
   "name": "The Plutonian System",
+  "sortOrder": 7,
   "description": "Gravity simulation of Pluto and its five known natural satellites. The closest to Pluto is Charon. Pluto and Charon orbit their center of mass, which is located outside of both bodies.",
   "particlesFun": false,
   "type": "Solar System",

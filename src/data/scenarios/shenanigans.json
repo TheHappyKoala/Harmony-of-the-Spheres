@@ -1,5 +1,6 @@
 {
   "name": "Three Body Shenanigans",
+  "sortOrder": 15,
   "description": "The n-body problem is the problem of taking the initial positions and velocities of n point masses and solving for their subsequent motion according to Newton's laws of motion and Newton's law of universal gravitation.",
   "particlesFun": false,
   "particleFun": false,

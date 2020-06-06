@@ -1,5 +1,6 @@
 {
   "name": "The Neptunian System",
+  "sortOrder": 23,
   "description": "Gravity simulation of Neptune and its 14 known moons. By far the largest of them is Triton.",
   "particlesFun": false,
   "type": "Solar System",

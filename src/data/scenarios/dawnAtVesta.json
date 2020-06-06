@@ -1,5 +1,6 @@
 {
   "name": "Dawn at Vesta",
+  "sortOrder": 16,
   "description": "Gravity simulation of Dawn's orbit, on the first of January 2012, around Vesta, the second-most-massive asteroid, which contributes an estimated 9% of the mass of the asteroid belt.",
   "integrator": "PEFRL",
   "particlesFun": false,
