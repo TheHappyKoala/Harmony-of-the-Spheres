@@ -1,10 +1,10 @@
 import React, { ReactElement, Fragment, useState } from "react";
-import { modifyScenarioProperty } from "../../action-creators/scenario";
+import { modifyScenarioProperty } from "../../state/creators/scenario";
 import Dropdown from "../Dropdown";
 import Toggle from "../Toggle";
 import Slider from "../Slider";
 import Tooltip from "../Tooltip";
-import { integrators } from "../../Physics/Integrators";
+import { integrators } from "../../physics/Integrators";
 
 interface PhysicsProps {
   modifyScenarioProperty: typeof modifyScenarioProperty;

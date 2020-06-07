@@ -74,7 +74,7 @@ export default class extends MassManifestation {
     });
 
     const halo3 = new THREE.Sprite(halo3Material);
-    halo3.scale.set(60, 60, 60); 
+    halo3.scale.set(60, 60, 60);
 
     const halo4Material = new THREE.SpriteMaterial({
       map: spriteMap,

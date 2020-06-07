@@ -88,7 +88,9 @@ export default ({
         hashtags="Space,JavaScript,Science"
       />
       <FacebookShare
-        shareUrl={document?.location.toString()}
+        shareUrl={
+          typeof document !== "undefined" && document.location.toString()
+        }
         cssClassName="button facebook"
       />
       <Tabs

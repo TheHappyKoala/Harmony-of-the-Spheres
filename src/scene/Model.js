@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import ColladaLoader from "colladaloader2asmodule";
 import MassManifestation from "./MassManifestation";
-import { degreesToRadians } from "../Physics/utils";
+import { degreesToRadians } from "../physics/utils";
 
 export default class extends MassManifestation {
   constructor(mass, textureLoader) {

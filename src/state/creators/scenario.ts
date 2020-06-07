@@ -14,7 +14,7 @@ import {
 } from "../types/scenario";
 import { Action, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
-import { findCurrentSOI } from "../../Physics/spacecraft/lambert";
+import { findCurrentSOI } from "../../physics/spacecraft/lambert";
 import work from "webworkify-webpack";
 
 export const modifyScenarioProperty = (

@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import StellarService from "../Physics/stars"; //Lol, not often you get a chance to go all puntacular on this level
+import StellarService from "../physics/stars"; //Lol, not often you get a chance to go all puntacular on this level
 import habitableZoneMaterial from "./habitableZoneMaterial";
 
 export default (m: number): THREE.Mesh => {

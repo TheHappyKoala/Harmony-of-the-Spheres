@@ -1,7 +1,7 @@
 import { PerspectiveCamera, Vector3, Object3D } from "three";
 import CustomizedOrbitControls from "./CustomizedOrbitControls";
-import H3 from "../Physics/vectors";
-import { degreesToRadians } from "../Physics/utils";
+import H3 from "../physics/vectors";
+import { degreesToRadians } from "../physics/utils";
 import { Manifestation } from "./ManifestationsService";
 
 const TWEEN = require("@tweenjs/tween.js");

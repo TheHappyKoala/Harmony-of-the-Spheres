@@ -10,11 +10,11 @@ import {
   getTrajectory
 } from "../../state/creators/scenario";
 import "./Spaceship.less";
-import { getDistanceParams } from "../../Physics/utils";
+import { getDistanceParams } from "../../physics/utils";
 import {
   constructSOITree,
   findCurrentSOI
-} from "../../Physics/spacecraft/lambert";
+} from "../../physics/spacecraft/lambert";
 import { getObjFromArrByKeyValuePair } from "../../utils";
 
 //We could do this with the H3 class
