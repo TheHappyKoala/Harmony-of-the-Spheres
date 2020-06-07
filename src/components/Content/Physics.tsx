@@ -4,7 +4,7 @@ import Dropdown from "../Dropdown";
 import Toggle from "../Toggle";
 import Slider from "../Slider";
 import Tooltip from "../Tooltip";
-import { integrators } from "../../physics/Integrators";
+import { integrators } from "../../physics/integrators";
 
 interface PhysicsProps {
   modifyScenarioProperty: typeof modifyScenarioProperty;

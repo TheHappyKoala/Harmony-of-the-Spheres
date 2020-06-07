@@ -1,4 +1,4 @@
-import getIntegrator from "../Integrators";
+import getIntegrator from "../integrators";
 import { planFlight } from "./lambert";
 import { getObjFromArrByKeyValuePair } from "../../utils";
 

@@ -2,7 +2,7 @@ import * as THREE from "three";
 import store from "../state/store";
 import { modifyScenarioProperty, deleteMass } from "../state/creators/scenario";
 import H3 from "../physics/vectors";
-import getIntegrator from "../physics/Integrators";
+import getIntegrator from "../physics/integrators";
 import { getObjFromArrByKeyValuePair } from "../utils";
 import { setBarycenter, getEllipse, radiansToDegrees } from "../physics/utils";
 import ParticleService from "../physics/particles/ParticleService";
