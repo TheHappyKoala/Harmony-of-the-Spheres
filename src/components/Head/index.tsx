@@ -43,8 +43,8 @@ export default ({ pageTitle, pageDescription }: HeadProps): ReactElement => {
         name="twitter:image"
         content={`https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png}`}
       />
-      <meta name="twitter:site" content="@DarrellAHuffma1" />
-      <meta name="twitter:creator" content="@DarrellAHuffma1" />
+      <meta name="twitter:site" content="@veryhappykoala" />
+      <meta name="twitter:creator" content="@veryhappykoala" />
       <link
         rel="stylesheet"
         type="text/css"
