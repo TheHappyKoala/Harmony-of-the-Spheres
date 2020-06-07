@@ -1,5 +1,5 @@
 {
-  "name": "Temporary Moon of Earth",
+  "name": "2006 RH120 - Former Mini Moon of Earth",
   "sortOrder": 14,
   "description": "2006 RH120 is a tiny near-Earth asteroid that ordinarily orbits the Sun but makes close approaches to the Earth–Moon system around every twenty years, when it can temporarily enter Earth orbit through temporary satellite capture.",
   "particlesFun": false,
@@ -80,7 +80,12 @@
       "luminosity": 0,
       "temperature": 0,
       "trailVertices": 20000,
-      "atmosphere": "skyblue"
+      "atmosphere": "skyblue",
+      "customCameraPosition": {
+        "x": 0,
+        "y": 180,
+        "z": 1000
+      }
     },
     {
       "m": 1,

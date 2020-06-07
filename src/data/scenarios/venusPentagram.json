@@ -117,7 +117,12 @@
       "vx": 2.4645428337894026,
       "vy": 5.7097644117945805,
       "vz": -0.00033177815766459033,
-      "atmosphere": "skyblue"
+      "atmosphere": "skyblue",
+      "customCameraPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 200000
+      }
     }
   ]
 }

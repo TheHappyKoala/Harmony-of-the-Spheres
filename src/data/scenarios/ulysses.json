@@ -12,7 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "Sun",
-  "cameraFocus": "Barycenter",
+  "cameraFocus": "Sun",
   "customCameraToBodyDistanceFactor": 180,
   "forAllMankind": false,
   "massBeingModified": "Sun",
@@ -101,7 +101,12 @@
       "spacecraft": false,
       "orbitalPeriod": 0,
       "texture": null,
-      "bodyType": null
+      "bodyType": null,
+      "customCameraPosition": {
+        "x": 600,
+        "y": 0,
+        "z": -400
+      }
     },
     {
       "name": "Earth",
