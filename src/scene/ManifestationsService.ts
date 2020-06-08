@@ -28,7 +28,7 @@ export default class {
   }
 
   createManifestation(mass: MassType): Manifestation {
-    const segments = 50;
+    const segments = 30;
 
     switch (mass.massType) {
       case "star":

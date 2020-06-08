@@ -22,7 +22,7 @@ export default class extends MassManifestation {
   }
 
   getMain() {
-    const geometry = new THREE.SphereBufferGeometry(1, 32, 32);
+    const geometry = new THREE.SphereBufferGeometry(1, 30, 30);
 
     const material = starMaterial(this.mass.temperature);
 
@@ -74,17 +74,7 @@ export default class extends MassManifestation {
     });
 
     const halo3 = new THREE.Sprite(halo3Material);
-    halo3.scale.set(60, 60, 60);
-
-    const halo4Material = new THREE.SpriteMaterial({
-      map: spriteMap,
-      color: new THREE.Color(
-        `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
-      ),
-      blending: THREE.AdditiveBlending,
-      opacity: 0.15,
-      rotation: Math.PI / 2
-    });
+    halo3.scale.set(30, 30, 60);
 
     mesh.add(halo1, halo2, halo3);
 
