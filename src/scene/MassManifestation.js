@@ -139,23 +139,6 @@ export default class extends THREE.Object3D {
     this.mass.tilt &&
       mesh.rotateOnAxis({ x: 1, y: 0, z: 0 }, degreesToRadians(this.mass.tilt));
 
-    if (this.mass.atmosphere) {
-      const spriteMap = new THREE.TextureLoader().load(
-        "/textures/atmosphere.png"
-      );
-
-      const spriteMaterial = new THREE.SpriteMaterial({
-        map: spriteMap,
-        color: this.mass.atmosphere,
-        blending: THREE.AdditiveBlending
-      });
-
-      const sprite = new THREE.Sprite(spriteMaterial);
-      sprite.scale.set(this.mass.radius * 2.4, this.mass.radius * 2.4, 1);
-
-      mesh.add(sprite);
-    }
-
     this.add(mesh);
   }
 
