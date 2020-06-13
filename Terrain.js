@@ -1,10 +1,22 @@
 const THREE = require("three");
 const Simplex = require("./Simplex");
 
+function getRandomNumberInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function getRandomRadian() {
+  return Math.PI * 2 * Math.random();
+}
+
+function getRandomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 module.exports = class {
-  constructor(mass, noiseScale, resolution, noiseDetail) {
+  constructor(mass, resolution, noiseDetail) {
     this.mass = mass;
-    this.noiseScale = noiseScale;
+    this.noiseScale = 0.007;
     this.resolution = resolution;
 
     this.terrainCallback = this[`get${this.mass.worldType}`].bind(this);

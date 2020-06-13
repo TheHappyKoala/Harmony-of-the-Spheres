@@ -65,19 +65,19 @@ module.exports = class {
 
     this.oRng = Math;
     this.iOctaves = 1;
-    this.fPersistence = 0.5;
+    this.fPersistence = 0.7;
     this.fFreq;
     this.fPers;
-    this.aOctavesFreq; 
-    this.aOctavesPers; 
-    this.fPersMax; 
+    this.aOctavesFreq;
+    this.aOctavesPers;
+    this.fPersMax;
 
     this.setPerm();
     this.octavesFreqPers();
   }
 
   octavesFreqPers() {
-    let fFreq; 
+    let fFreq;
     let fPers;
 
     this.aOctavesFreq = [];
@@ -106,22 +106,21 @@ module.exports = class {
     const p = [];
 
     for (i = 0; i < 256; i++) p[i] = Math.floor(this.oRng.random() * 256);
-    
+
     this.aPerm = [];
 
     for (i = 0; i < 512; i++) this.aPerm[i] = p[i & 255];
-    
   }
 
   noise(x, y, z) {
-    this.s = (x + y + z) * this.F3; 
+    this.s = (x + y + z) * this.F3;
     this.i = Math.floor(x + this.s);
     this.j = Math.floor(y + this.s);
     this.k = Math.floor(z + this.s);
     this.t = (this.i + this.j + this.k) * this.G3;
 
-    this.x0 = x - (this.i - this.t); 
-    this.y0 = y - (this.j - this.t); 
+    this.x0 = x - (this.i - this.t);
+    this.y0 = y - (this.j - this.t);
     this.z0 = z - (this.k - this.t);
 
     if (this.x0 >= this.y0) {
@@ -172,13 +171,13 @@ module.exports = class {
       }
     }
 
-    this.x1 = this.x0 - this.i1 + this.G3; 
+    this.x1 = this.x0 - this.i1 + this.G3;
     this.y1 = this.y0 - this.j1 + this.G3;
     this.z1 = this.z0 - this.k1 + this.G3;
-    this.x2 = this.x0 - this.i2 + this.F3; 
+    this.x2 = this.x0 - this.i2 + this.F3;
     this.y2 = this.y0 - this.j2 + this.F3;
     this.z2 = this.z0 - this.k2 + this.F3;
-    this.x3 = this.x0 - 0.5; 
+    this.x3 = this.x0 - 0.5;
     this.y3 = this.y0 - 0.5;
     this.z3 = this.z0 - 0.5;
 
@@ -249,7 +248,7 @@ module.exports = class {
       this.n3 =
         this.t3 *
         this.t3 *
-        this.dot(this.aGrad3[this.gi3], this.x3, this.y3, this.z3); 
+        this.dot(this.aGrad3[this.gi3], this.x3, this.y3, this.z3);
     }
 
     return 32 * (this.n0 + this.n1 + this.n2 + this.n3);
@@ -262,8 +261,7 @@ module.exports = class {
       this.fFreq = this.aOctavesFreq[this.g];
       this.fPers = this.aOctavesPers[this.g];
       fResult +=
-        this.fPers *
-        this.noise(this.fFreq * x, this.fFreq * y, this.fFreq * z);
+        this.fPers * this.noise(this.fFreq * x, this.fFreq * y, this.fFreq * z);
     }
 
     return (fResult * this.fPersMax + 1) * 0.5;
@@ -271,7 +269,6 @@ module.exports = class {
 
   noiseDetail(octaves, falloff) {
     this.iOctaves = octaves;
-    this.fPersistence = falloff || this.fPersistence;
 
     this.octavesFreqPers();
   }

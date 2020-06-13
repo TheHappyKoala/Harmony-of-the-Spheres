@@ -28,14 +28,17 @@ export default class extends THREE.Object3D {
 
     let material;
 
-    if (this.mass.bump)
+    if (this.mass.bump) {
       material = new THREE.MeshPhongMaterial({
         map: this.textureLoader.load(`/textures/${this.mass.texture}.jpg`),
         bumpMap: this.textureLoader.load(
-          `/textures/${this.mass.texture}Bump.jpg`
+          this.mass.exoplanet
+            ? `/textures/${this.mass.texture}.jpg`
+            : `/textures/${this.mass.texture}Bump.jpg`
         ),
-        bumpScale: 0.85
+        bumpScale: 0.75
       });
+    }
     else
       material = new THREE.MeshLambertMaterial({
         map: this.textureLoader.load(

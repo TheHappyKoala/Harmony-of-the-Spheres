@@ -187,6 +187,8 @@ const createExoplanetScenarios = async () => {
                 : inferMassFromRadius(planet.pl_radj) * JUPITER_MASS
               : planet.pl_bmassj * JUPITER_MASS;
 
+          const resolution = 2500;
+
           const terrain = new Terrain(
             {
               worldType: determineWorldType(
@@ -196,8 +198,7 @@ const createExoplanetScenarios = async () => {
                 planet.pl_letter
               )
             },
-            0.005,
-            2500,
+            resolution,
             20
           );
 
@@ -205,19 +206,22 @@ const createExoplanetScenarios = async () => {
 
           const rawImageData = {
             data: frameData,
-            width: 2500,
-            height: 2500
+            width: resolution,
+            height: resolution
           };
 
-          const jpegImageData = jpeg.encode(rawImageData, 200);
+          const jpegImageData = jpeg.encode(rawImageData, 65);
 
           fs.writeFileSync(
-            `./${planet.pl_hostname}-${planet.pl_letter}.jpg`,
+            `./static/textures/${planet.pl_hostname}-${planet.pl_letter}.jpg`,
             jpegImageData.data
           );
 
+          const isGasGiant = mass < 0.00020596;
+
           return {
             name: `${planet.pl_hostname}-${planet.pl_letter}`,
+            texture: `${planet.pl_hostname}-${planet.pl_letter}`,
             noTexture: true,
             m: mass,
             radius:
@@ -237,10 +241,8 @@ const createExoplanetScenarios = async () => {
             orbitalPeriod: planet.pl_orbper,
             temperature: planet.pl_eqt === null ? 700 : planet.pl_eqt,
             scenarioWikiUrl: planet.pl_pelink,
-            massType:
-              mass < 0.00020596
-                ? "proceduralTerrestrialPlanet"
-                : "proceduralGasGiantPlanet",
+            exoplanet: true,
+            bump: isGasGiant,
             color: getRandomColor()
           };
         })

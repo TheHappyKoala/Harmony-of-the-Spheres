@@ -193,6 +193,7 @@ export const pageQuery = graphql`
         texture
         bodyType
         atmosphere
+        exoplanet
         customCameraPosition {
           x
           y
