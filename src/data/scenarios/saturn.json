@@ -155,7 +155,8 @@
       "luminosity": 0,
       "temperature": 0,
       "texture": "Enceladus",
-      "color": "blue"
+      "color": "blue",
+      "bumpScale": 0.2
     },
     {
       "name": "Dione",

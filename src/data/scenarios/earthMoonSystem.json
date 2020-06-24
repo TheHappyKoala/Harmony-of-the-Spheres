@@ -65,6 +65,7 @@
       "tilt": -23.44,
       "orbitalPeriod": 1,
       "name": "Earth",
+      "clouds": true,
       "bump": true,
       "bodyType": "Planet",
       "color": "skyblue",

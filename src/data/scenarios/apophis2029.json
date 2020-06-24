@@ -84,6 +84,7 @@
       "massType": "sphere",
       "luminosity": 0,
       "temperature": 0,
+      "clouds": true,
       "trailVertices": 20000,
       "atmosphere": "skyblue",
       "customCameraPosition": {

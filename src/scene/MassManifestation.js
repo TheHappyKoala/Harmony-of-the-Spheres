@@ -1,6 +1,14 @@
 import * as THREE from "three";
 import { degreesToRadians, calculateOrbitalVertices } from "../physics/utils";
 
+function getRandomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function getRandomNumberInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
 export default class extends THREE.Object3D {
   constructor(mass, textureLoader, segments) {
     super();
@@ -36,10 +44,9 @@ export default class extends THREE.Object3D {
             ? `/textures/${this.mass.texture}.jpg`
             : `/textures/${this.mass.texture}Bump.jpg`
         ),
-        bumpScale: 0.75
+        bumpScale: this.mass.bumpScale ? this.mass.bumpScale : 1
       });
-    }
-    else
+    } else
       material = new THREE.MeshLambertMaterial({
         map: this.textureLoader.load(
           this.mass.massType === "asteroid"
@@ -143,6 +150,32 @@ export default class extends THREE.Object3D {
       mesh.rotateOnAxis({ x: 1, y: 0, z: 0 }, degreesToRadians(this.mass.tilt));
 
     this.add(mesh);
+
+    this.mass.clouds && this.getClouds();
+  }
+
+  getClouds() {
+    const geometry = new THREE.SphereBufferGeometry(
+      this.mass.radius + this.mass.radius / 200,
+      this.segments,
+      this.segments
+    );
+
+    const cloudNumber = getRandomInteger(0, 4);
+
+    const material = new THREE.MeshLambertMaterial({
+      map: this.textureLoader.load(`/textures/clouds${cloudNumber}.png`),
+      side: THREE.DoubleSide,
+      opacity: 0.8,
+      transparent: true,
+      depthWrite: false
+    });
+
+    const mesh = new THREE.Mesh(geometry, material);
+
+    mesh.name = "clouds";
+
+    this.getObjectByName("main").add(mesh);
   }
 
   addTrail(dt) {

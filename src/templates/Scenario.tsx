@@ -189,6 +189,8 @@ export const pageQuery = graphql`
         temperature
         tilt
         spacecraft
+        bumpScale
+        clouds
         orbitalPeriod
         texture
         bodyType

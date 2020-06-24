@@ -67,6 +67,7 @@
       "bodyType": "Planet",
       "color": "skyblue",
       "texture": "Earth",
+      "clouds": true,
       "spacecraft": false,
       "massType": "sphere",
       "luminosity": 0,
