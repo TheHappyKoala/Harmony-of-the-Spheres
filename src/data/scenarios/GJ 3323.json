@@ -1,5 +1,6 @@
 {
   "name": "GJ 3323",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 3323, which contains 2 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 3323",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3323_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 3323",
@@ -64,28 +65,44 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "GJ 3323-c",
+      "texture": "GJ 3323-c",
       "m": 0.000006937761000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 123.48815083985886,
       "a": 0.1264,
       "e": 0.17,
-      "w": 0,
-      "i": 0,
+      "w": 166.9370687161695,
       "o": 0,
-      "orbitalPeriod": 40.54
+      "orbitalPeriod": 40.54,
+      "temperature": 171.18506572279898,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3323_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 2,
+      "color": "#2C38A8",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 3323-b",
+      "texture": "GJ 3323-b",
       "m": 0.000006069348,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 116.74353063424284,
       "a": 0.03282,
       "e": 0.23,
-      "w": 0,
-      "i": 0,
+      "w": 42.927090860524395,
       "o": 0,
-      "orbitalPeriod": 5.3636
+      "orbitalPeriod": 5.3636,
+      "temperature": 335.9465013120614,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3323_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#3D41AB",
+      "clouds": false
     }
   ]
 }

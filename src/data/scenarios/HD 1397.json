@@ -1,5 +1,6 @@
 {
   "name": "HD 1397",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 1397, which contains 1 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 1397",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_1397_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 1397",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 1397-b",
+      "texture": "HD 1397-b",
       "m": 0.0003960345,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 675.0890059837516,
       "a": 0.1097,
       "e": 0.251,
       "w": 2.1,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 11.53533
+      "orbitalPeriod": 11.53533,
+      "temperature": 1228,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_1397_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#87FAE6",
+      "clouds": false
     }
   ]
 }

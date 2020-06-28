@@ -1,5 +1,6 @@
 {
   "name": "HD 15337",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 15337, which contains 2 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 15337",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/toi-402_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 15337",
@@ -64,28 +65,44 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 15337-c",
+      "texture": "HD 15337-c",
       "m": 0.000024353736000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 209.25252934350024,
       "a": 0.1268,
       "e": 0.05,
       "w": 329,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 17.1784
+      "orbitalPeriod": 17.1784,
+      "temperature": 642,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/toi-402_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#7907B5",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 15337-b",
+      "texture": "HD 15337-b",
       "m": 0.000022550109000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 202.59820717791527,
       "a": 0.0522,
       "e": 0.09,
       "w": 62,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4.75615
+      "orbitalPeriod": 4.75615,
+      "temperature": 1001,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/toi-402_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#898AE1",
+      "clouds": false
     }
   ]
 }

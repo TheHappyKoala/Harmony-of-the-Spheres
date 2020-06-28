@@ -1,5 +1,6 @@
 {
   "name": "Kepler-69",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-69, which contains 2 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-69",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-69_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-69",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-69-c",
+      "texture": "Kepler-69-c",
+      "m": 0.000010542518160202977,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": true,
+      "radius": 200,
       "a": 0.64,
       "e": 0.14,
-      "w": 0,
-      "i": 0,
+      "w": 193.90254434372645,
       "o": 0,
-      "orbitalPeriod": 242.4613
+      "orbitalPeriod": 242.4613,
+      "temperature": 299,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-69_c/",
+      "exoplanet": true,
+      "bump": true,
+      "color": "#4EB986",
+      "clouds": true
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-69-b",
+      "texture": "Kepler-69-b",
+      "m": 0.00002005196386994013,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.094,
       "e": 0.16,
-      "w": 0,
-      "i": 0,
+      "w": 156.94377403371595,
       "o": 0,
-      "orbitalPeriod": 13.722341
+      "orbitalPeriod": 13.722341,
+      "temperature": 779,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-69_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#F872D9",
+      "clouds": false
     }
   ]
 }

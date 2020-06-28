@@ -1,5 +1,6 @@
 {
   "name": "HD 85512",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 85512, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 85512",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_85512_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 85512",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 85512-b",
+      "texture": "HD 85512-b",
       "m": 0.000009543,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": true,
+      "radius": 141.18248923564875,
       "a": 0.26,
       "e": 0.11,
-      "w": 0,
-      "i": 0,
+      "w": 342.13095958484394,
       "o": 0,
-      "orbitalPeriod": 58.43
+      "orbitalPeriod": 58.43,
+      "temperature": 250.53251122027237,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_85512_b/",
+      "exoplanet": true,
+      "bump": true,
+      "color": "#3CCE6E",
+      "clouds": true
     }
   ]
 }

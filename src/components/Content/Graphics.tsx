@@ -1,5 +1,5 @@
 import React, { ReactElement, Fragment } from "react";
-import { modifyScenarioProperty } from "../../action-creators/scenario";
+import { modifyScenarioProperty } from "../../state/creators/scenario";
 import Dropdown from "../Dropdown";
 import Tooltip from "../Tooltip";
 import Toggle from "../Toggle";
@@ -111,10 +111,16 @@ export default ({
       label="Barycenter"
       checked={barycenter}
       callback={() =>
-        modifyScenarioProperty({
-          key: "barycenter",
-          value: !barycenter
-        })
+        modifyScenarioProperty(
+          {
+            key: "barycenter",
+            value: !barycenter
+          },
+          {
+            key: "cameraFocus",
+            value: !barycenter ? "Barycenter" : cameraFocus
+          }
+        )
       }
     />
     <Toggle
@@ -141,10 +147,16 @@ export default ({
       label="Habitable Zone"
       checked={habitableZone}
       callback={() =>
-        modifyScenarioProperty({
-          key: "habitableZone",
-          value: !habitableZone
-        })
+        modifyScenarioProperty(
+          {
+            key: "habitableZone",
+            value: !habitableZone
+          },
+          {
+            key: "cameraFocus",
+            value: !habitableZone ? "Habitable Zone" : cameraFocus
+          }
+        )
       }
     />
   </Fragment>

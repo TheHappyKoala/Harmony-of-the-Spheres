@@ -1,5 +1,6 @@
 {
   "name": "HD 221416",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 221416, which contains 1 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 221416",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 221416",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 221416-b",
+      "texture": "HD 221416-b",
       "m": 0.000181317,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 486.247461671827,
       "a": 0.1228,
       "e": 0.115,
       "w": -106,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 14.2767
+      "orbitalPeriod": 14.2767,
+      "temperature": 792.0256894737632,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BA4C6A",
+      "clouds": false
     }
   ]
 }

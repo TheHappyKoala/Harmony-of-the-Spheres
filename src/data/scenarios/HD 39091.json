@@ -1,6 +1,7 @@
 {
   "name": "HD 39091",
-  "description": "3D visualisation and gravity simulation of the exoplanet system HD 39091, which contains 2 planets and was discovered by Anglo-Australian Telescope.",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+  "description": "3D visualisation and gravity simulation of the exoplanet system HD 39091, which contains 2 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
   "pl_pnum": 2,
@@ -15,7 +16,7 @@
   "primary": "HD 39091",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/pi_men_c/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 39091",
@@ -28,7 +29,7 @@
   "playing": false,
   "integrator": "PEFRL",
   "customCameraToBodyDistanceFactor": false,
-  "barycenterZ": 19530000,
+  "barycenterZ": 430857,
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
@@ -64,28 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 39091-c",
+      "texture": "HD 39091-c",
       "m": 0.000014476731,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 168.18791191249773,
       "a": 0.06839,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 31.7992890866312,
       "o": 0,
-      "orbitalPeriod": 6.2679
-    },
-    {
-      "name": "b",
-      "noTexture": true,
-      "m": 0.009562086000000001,
-      "radius": 97.67441860465118,
-      "a": 3.1,
-      "e": 0.637,
-      "w": 330.61,
-      "i": 0,
-      "o": 0,
-      "orbitalPeriod": 2093.07
+      "orbitalPeriod": 6.2679,
+      "temperature": 1170,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/pi_men_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#E234FC",
+      "clouds": false
     }
   ]
 }

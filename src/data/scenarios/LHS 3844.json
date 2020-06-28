@@ -1,5 +1,6 @@
 {
   "name": "LHS 3844",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
   "description": "3D visualisation and gravity simulation of the exoplanet system LHS 3844, which contains 1 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "LHS 3844",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/lhs_3844_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "LHS 3844",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "LHS 3844-b",
+      "texture": "LHS 3844-b",
+      "m": 0.000005424804579259293,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.00622,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 174.7363409422639,
       "o": 0,
-      "orbitalPeriod": 0.46292913
+      "orbitalPeriod": 0.46292913,
+      "temperature": 805,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/lhs_3844_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#6A5F32",
+      "clouds": false
     }
   ]
 }

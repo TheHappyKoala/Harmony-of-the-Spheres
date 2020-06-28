@@ -1,5 +1,6 @@
 {
   "name": "GJ 357",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 357, which contains 3 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 357",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_357_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 357",
@@ -28,7 +29,7 @@
   "playing": false,
   "integrator": "PEFRL",
   "customCameraToBodyDistanceFactor": false,
-  "barycenterZ": 1285200,
+  "barycenterZ": 220500,
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
@@ -64,40 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 0.00001021101,
-      "radius": 97.67441860465118,
-      "a": 0.061,
-      "e": 0,
-      "w": 0,
-      "i": 0,
-      "o": 0,
-      "orbitalPeriod": 9.1247
-    },
-    {
-      "name": "d",
-      "noTexture": true,
-      "m": 0.000018313017,
-      "radius": 97.67441860465118,
-      "a": 0.204,
-      "e": 0,
-      "w": 0,
-      "i": 0,
-      "o": 0,
-      "orbitalPeriod": 55.661
-    },
-    {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 357-b",
+      "texture": "GJ 357-b",
       "m": 0.000005525397000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 112.22919080631706,
       "a": 0.035,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 275.674333900181,
       "o": 0,
-      "orbitalPeriod": 3.93072
+      "orbitalPeriod": 3.93072,
+      "temperature": 525,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_357_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#E11783",
+      "clouds": false
     }
   ]
 }

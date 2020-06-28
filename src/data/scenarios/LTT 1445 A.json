@@ -1,5 +1,6 @@
 {
   "name": "LTT 1445 A",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
   "description": "3D visualisation and gravity simulation of the exoplanet system LTT 1445 A, which contains 1 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "LTT 1445 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ltt_1445a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "LTT 1445 A",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "LTT 1445 A-b",
+      "texture": "LTT 1445 A-b",
       "m": 0.000006603756000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 120.95543689579321,
       "a": 0.03807,
       "e": 0.19,
       "w": -139,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 5.35882
+      "orbitalPeriod": 5.35882,
+      "temperature": 433,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ltt_1445a_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#9F703A",
+      "clouds": false
     }
   ]
 }

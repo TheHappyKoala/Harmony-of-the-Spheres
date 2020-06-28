@@ -181,7 +181,12 @@ export default class extends THREE.Object3D {
   addTrail(dt) {
     const geometry = new THREE.Geometry();
 
-    this.trailVertices = calculateOrbitalVertices(this.mass.orbitalPeriod, dt);
+    this.trailVertices = calculateOrbitalVertices(
+      !this.mass.exoplanet
+        ? this.mass.orbitalPeriod
+        : this.mass.orbitalPeriod / 365.25,
+      dt
+    );
 
     const mainPosition = this.getObjectByName("main").position;
 

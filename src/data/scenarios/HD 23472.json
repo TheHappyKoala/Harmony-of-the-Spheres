@@ -1,5 +1,6 @@
 {
   "name": "HD 23472",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 23472, which contains 2 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 23472",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_23472_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 23472",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 23472-c",
+      "texture": "HD 23472-c",
       "m": 0.000051579915000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 286.7840727718963,
       "a": 0.17,
       "e": 0,
       "w": 0,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 29.625
+      "orbitalPeriod": 29.625,
+      "temperature": 470.24145309467343,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_23472_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#314FBD",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 23472-b",
+      "texture": "HD 23472-b",
       "m": 0.000053803434,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 291.91295204431447,
       "a": 0.121,
       "e": 0,
       "w": 0,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 17.667
+      "orbitalPeriod": 17.667,
+      "temperature": 557.3816749165061,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_23472_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#493683",
+      "clouds": false
     }
   ]
 }

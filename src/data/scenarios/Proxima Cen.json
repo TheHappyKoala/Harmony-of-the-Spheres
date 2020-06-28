@@ -1,5 +1,6 @@
 {
   "name": "Proxima Cen",
+  "discoveryFacility": "European Southern Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system Proxima Cen, which contains 1 planets and was discovered by European Southern Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Proxima Cen",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/proxima_centauri_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Proxima Cen",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Proxima Cen-b",
+      "texture": "Proxima Cen-b",
       "m": 0.0000038172000000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "European Southern Observatory",
+      "potentiallyHabitableWorld": true,
+      "radius": 96.0828842013679,
       "a": 0.0485,
       "e": 0.35,
       "w": 310,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 11.186
+      "orbitalPeriod": 11.186,
+      "temperature": 234,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/proxima_centauri_b/",
+      "exoplanet": true,
+      "bump": true,
+      "color": "#5E4B60",
+      "clouds": true
     }
   ]
 }

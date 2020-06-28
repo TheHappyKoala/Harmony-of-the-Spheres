@@ -1,5 +1,6 @@
 {
   "name": "HD 213885",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 213885, which contains 2 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 213885",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_213885_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 213885",
@@ -28,7 +29,7 @@
   "playing": false,
   "integrator": "PEFRL",
   "customCameraToBodyDistanceFactor": false,
-  "barycenterZ": 357827.4,
+  "barycenterZ": 126756,
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
@@ -64,28 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 0.00005990141100000001,
-      "radius": 97.67441860465118,
-      "a": 0.056798,
-      "e": 0,
-      "w": 0,
-      "i": 0,
-      "o": 0,
-      "orbitalPeriod": 4.78503
-    },
-    {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 213885-b",
+      "texture": "HD 213885-b",
       "m": 0.000026510454,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 216.8444824943562,
       "a": 0.02012,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 342.9392464046112,
       "o": 0,
-      "orbitalPeriod": 1.008035
+      "orbitalPeriod": 1.008035,
+      "temperature": 2128,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_213885_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#5ADE3C",
+      "clouds": false
     }
   ]
 }

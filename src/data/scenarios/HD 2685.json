@@ -1,5 +1,6 @@
 {
   "name": "HD 2685",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 2685, which contains 1 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 2685",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_2685_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 2685",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 2685-b",
+      "texture": "HD 2685-b",
       "m": 0.001116531,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 1043.323276906635,
       "a": 0.0568,
       "e": 0.091,
       "w": 184.36,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4.12688
+      "orbitalPeriod": 4.12688,
+      "temperature": 2061,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_2685_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A435AD",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 219666",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 219666, which contains 1 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 219666",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_219666_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 219666",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 219666-b",
+      "texture": "HD 219666-b",
       "m": 0.000049843089,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 282.6879169614387,
       "a": 0.06356,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 352.0018801034999,
       "o": 0,
-      "orbitalPeriod": 6.03607
+      "orbitalPeriod": 6.03607,
+      "temperature": 1073,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_219666_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D46E56",
+      "clouds": false
     }
   ]
 }

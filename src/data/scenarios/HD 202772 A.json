@@ -1,5 +1,6 @@
 {
   "name": "HD 202772 A",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 202772 A, which contains 1 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 202772 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_202772_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 202772 A",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 202772 A-b",
+      "texture": "HD 202772 A-b",
       "m": 0.0009705231,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 983.6840624392325,
       "a": 0.05208,
       "e": 0.038,
       "w": 98,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3.308958
+      "orbitalPeriod": 3.308958,
+      "temperature": 2132,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_202772_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7CA798",
+      "clouds": false
     }
   ]
 }

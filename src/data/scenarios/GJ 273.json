@@ -1,5 +1,6 @@
 {
   "name": "GJ 273",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 273, which contains 2 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 273",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_273_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 273",
@@ -64,28 +65,44 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "GJ 273-c",
+      "texture": "GJ 273-c",
       "m": 0.0000035404530000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 93.09318237804476,
       "a": 0.036467,
       "e": 0.17,
-      "w": 0,
-      "i": 0,
+      "w": 93.78149990400402,
       "o": 0,
-      "orbitalPeriod": 4.7234
+      "orbitalPeriod": 4.7234,
+      "temperature": 497.8493034010248,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_273_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#C7EC62",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 273-b",
+      "texture": "GJ 273-b",
       "m": 0.000008674587000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 135.6368407887929,
       "a": 0.091101,
       "e": 0.1,
-      "w": 0,
-      "i": 0,
+      "w": 83.04074869823145,
       "o": 0,
-      "orbitalPeriod": 18.6498
+      "orbitalPeriod": 18.6498,
+      "temperature": 314.9824452993888,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_273_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#C2FA0B",
+      "clouds": false
     }
   ]
 }

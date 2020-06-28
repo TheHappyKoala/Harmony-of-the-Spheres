@@ -22,8 +22,19 @@ export default class {
     //Once we have the luminosity of the star, we can calculate the bounds of the habitable zone
     //https://www.planetarybiology.com/calculating_habitable_zone.html
 
-    const start = Math.sqrt(lum / 1.1);
-    const end = Math.sqrt(lum / 0.53);
+    let start;
+    let end;
+
+    if (m < 0.43) {
+      start = Math.sqrt(lum / 1.1);
+      end = Math.sqrt(lum / 0.28);
+    } else if (m < 0.845) {
+      start = Math.sqrt(lum / 1.1);
+      end = Math.sqrt(lum / 0.18);
+    } else {
+      start = Math.sqrt(lum / 1.1);
+      end = Math.sqrt(lum / 0.53);
+    }
 
     return [start, end];
   }

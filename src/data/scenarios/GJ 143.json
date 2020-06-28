@@ -1,5 +1,6 @@
 {
   "name": "GJ 143",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 143, which contains 2 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 143",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_143_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 143",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "GJ 143-c",
+      "texture": "GJ 143-c",
       "m": 0.000011108052,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 150.48079832470913,
       "a": 0.0695,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 304.7770394579962,
       "o": 0,
-      "orbitalPeriod": 7.78993
+      "orbitalPeriod": 7.78993,
+      "temperature": 701,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_21749_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#57DC4C",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 143-b",
+      "texture": "GJ 143-b",
       "m": 0.000068156106,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 322.3926782104677,
       "a": 0.1915,
       "e": 0.188,
       "w": 98,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 35.61253
+      "orbitalPeriod": 35.61253,
+      "temperature": 422,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_143_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E19F4E",
+      "clouds": false
     }
   ]
 }

@@ -3,6 +3,7 @@ import CustomizedOrbitControls from "./CustomizedOrbitControls";
 import H3 from "../physics/vectors";
 import { degreesToRadians } from "../physics/utils";
 import { Manifestation } from "./ManifestationsService";
+import StellarService from "../physics/stars";
 
 const TWEEN = require("@tweenjs/tween.js");
 
@@ -11,6 +12,7 @@ export default class extends PerspectiveCamera {
   rotatingReferenceFrame: H3;
   rotatedMasses: Vector[];
   rotatedBarycenter: Vector;
+  started: boolean;
 
   constructor(
     fov: number,
@@ -30,6 +32,8 @@ export default class extends PerspectiveCamera {
     this.rotatingReferenceFrame = new H3();
     this.rotatedMasses = [];
     this.rotatedBarycenter = { x: 0, y: 0, z: 0 };
+
+    this.started = false;
   }
 
   trackMovingObjectWithControls(movingObject: Object3D): void {
@@ -90,11 +94,17 @@ export default class extends PerspectiveCamera {
     for (let i = 0; i < massesLen; i++) {
       const mass = masses[i];
 
-      this.rotatedMasses[i] = vector
-        .set({ x: mass.x, y: mass.y, z: mass.z })
-        .subtractFrom(this.rotatingReferenceFrame)
-        .multiplyByScalar(scale)
-        .toObject();
+      this.rotatedMasses[i] = {
+        ...vector
+          .set({ x: mass.x, y: mass.y, z: mass.z })
+          .subtractFrom(this.rotatingReferenceFrame)
+          .multiplyByScalar(scale)
+          .toObject(),
+        m: mass.m,
+        massType: mass.massType,
+        scale,
+        radius: mass.radius
+      };
     }
 
     this.rotatedBarycenter = vector
@@ -122,16 +132,68 @@ export default class extends PerspectiveCamera {
           this.rotatedBarycenter.z
         );
 
-        this.position.set(
-          this.rotatedBarycenter.x,
-          this.rotatedBarycenter.y,
-          this.rotatedBarycenter.z + barycenterZ
+        this.tween(
+          {
+            x: this.rotatedBarycenter.x + barycenterZ,
+            y: this.rotatedBarycenter.y,
+            z: this.rotatedBarycenter.z
+          },
+          {
+            x: this.rotatedBarycenter.x,
+            y: this.rotatedBarycenter.y + barycenterZ / 3,
+            z: this.rotatedBarycenter.z + barycenterZ
+          },
+          {
+            x: this.rotatedBarycenter.x,
+            y: this.rotatedBarycenter.y,
+            z: this.rotatedBarycenter.z
+          },
+          5000
         );
+      }
 
-        this.lookAt(
+      return;
+    }
+
+    if (
+      previous.cameraFocus !== cameraFocus &&
+      cameraFocus === "Habitable Zone"
+    ) {
+      previous.cameraFocus = cameraFocus;
+
+      if (cameraFocus === "Habitable Zone") {
+        this.controls.target.set(
           this.rotatedBarycenter.x,
           this.rotatedBarycenter.y,
           this.rotatedBarycenter.z
+        );
+
+        const star = this.rotatedMasses.find(
+          ({ massType }) => massType === "star"
+        );
+
+        const [
+          habitableZoneStart,
+          habitableZoneEnd
+        ] = StellarService.getHabitableZoneBounds(star.m);
+
+        this.tween(
+          {
+            x: star.x,
+            y: star.y + star.radius * 3,
+            z: star.z
+          },
+          {
+            x: star.x,
+            y: star.y + star.radius * 3,
+            z: habitableZoneEnd * star.scale * 5
+          },
+          {
+            x: star.x,
+            y: star.y,
+            z: star.z
+          },
+          5000
         );
       }
 
@@ -178,21 +240,14 @@ export default class extends PerspectiveCamera {
     }
   }
 
-  tween(
-    from: Vector,
-    to: Vector,
-    lookAt: Vector,
-    duration: number,
-    callback: Function
-  ) {
+  tween(from: Vector, to: Vector, lookAt: Vector, duration: number) {
     const tween = new TWEEN.Tween(from)
       .to(to, duration)
-      .easing(TWEEN.Easing.Cubic.In)
+      .easing(TWEEN.Easing.Exponential.InOut)
       .onUpdate(() => {
         this.position.set(from.x, from.y, from.z);
         this.lookAt(new Vector3(lookAt.x, lookAt.y, lookAt.z));
       })
-      .onComplete(() => callback())
       .start();
   }
 }

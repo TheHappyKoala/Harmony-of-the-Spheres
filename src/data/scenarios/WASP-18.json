@@ -1,6 +1,7 @@
 {
   "name": "WASP-18",
-  "description": "3D visualisation and gravity simulation of the exoplanet system WASP-18, which contains 2 planets and was discovered by SuperWASP.",
+  "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+  "description": "3D visualisation and gravity simulation of the exoplanet system WASP-18, which contains 2 planets and was discovered by Transiting Exoplanet Survey Satellite (TESS).",
   "particlesFun": false,
   "type": "Exoplanets",
   "pl_pnum": 2,
@@ -15,7 +16,7 @@
   "primary": "WASP-18",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-18",
@@ -64,28 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "WASP-18-c",
+      "texture": "WASP-18-c",
       "m": 0.00016574282400000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
+      "potentiallyHabitableWorld": false,
+      "radius": 468.2478103813354,
       "a": 0.035,
       "e": 0.015,
       "w": 272,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2.1558
-    },
-    {
-      "name": "b",
-      "noTexture": true,
-      "m": 0.009952910022,
-      "radius": 97.67441860465118,
-      "a": 0.02,
-      "e": 0,
-      "w": 0,
-      "i": 0,
-      "o": 0,
-      "orbitalPeriod": 0.94124
+      "orbitalPeriod": 2.1558,
+      "temperature": 1492.7437954418976,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#654FE0",
+      "clouds": false
     }
   ]
 }

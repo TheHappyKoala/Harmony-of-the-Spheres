@@ -15,7 +15,7 @@
   "primary": "KOI-55",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-70__b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KOI-55",
@@ -64,28 +64,40 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "KOI-55-c",
+      "texture": "KOI-55-c",
       "m": 0.0000020040299999999998,
-      "radius": 97.67441860465118,
+      "radius": 73.30151294910377,
       "a": 0.0076,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 152.55090119712088,
       "o": 0,
-      "orbitalPeriod": 0.342887
+      "orbitalPeriod": 0.342887,
+      "temperature": 700,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-70_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#90981B",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KOI-55-b",
+      "texture": "KOI-55-b",
       "m": 0.0000013360200000000001,
-      "radius": 97.67441860465118,
+      "radius": 61.82364545214188,
       "a": 0.006,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 266.7485347574203,
       "o": 0,
-      "orbitalPeriod": 0.240104
+      "orbitalPeriod": 0.240104,
+      "temperature": 700,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-70__b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#50860C",
+      "clouds": false
     }
   ]
 }

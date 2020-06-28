@@ -1,5 +1,6 @@
 {
   "name": "HD 20782",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 20782, which contains 1 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 20782",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_20782_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 20782",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 20782-b",
+      "texture": "HD 20782-b",
       "m": 0.0014198075400000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1154.1162279501148,
       "a": 1.3649,
       "e": 0.95,
       "w": 143.58,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 597.0643
+      "orbitalPeriod": 597.0643,
+      "temperature": 216.63909874547085,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_20782_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#23B848",
+      "clouds": false
     }
   ]
 }

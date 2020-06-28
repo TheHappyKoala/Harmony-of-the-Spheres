@@ -119,6 +119,7 @@ export const pageQuery = graphql`
       }
       distMax
       distMin
+      discoveryFacility
       velMin
       velMax
       velStep

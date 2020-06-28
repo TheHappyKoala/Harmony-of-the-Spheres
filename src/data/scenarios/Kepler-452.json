@@ -1,5 +1,6 @@
 {
   "name": "Kepler-452",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-452, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-452",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-452_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-452",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-452-b",
+      "texture": "Kepler-452-b",
+      "m": 0.000009267618102368643,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": true,
+      "radius": 200,
       "a": 1.046,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 111.61474928991686,
       "o": 0,
-      "orbitalPeriod": 384.843
+      "orbitalPeriod": 384.843,
+      "temperature": 265,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-452_b/",
+      "exoplanet": true,
+      "bump": true,
+      "color": "#6470C6",
+      "clouds": true
     }
   ]
 }
