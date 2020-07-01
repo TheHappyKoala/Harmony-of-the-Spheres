@@ -105,7 +105,10 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
               borderRight: "none",
               borderTop: "none",
               fontWeight: "bold",
-              overflowX: "scroll"
+              overflowX: "scroll",
+              width: "100%",
+              padding: "15px",
+              justifyContent: "flex-start"
             }}
           >
             {discoveryFacilities?.map(discoveryFacility => (
