@@ -1,5 +1,6 @@
 {
   "name": "Kepler-428",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-428, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-428",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/koi-830_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-428",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-428-b",
+      "texture": "Kepler-428-b",
       "m": 0.0012119610000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1079.8872103133904,
       "a": 0.0433,
       "e": 0.22,
-      "w": 0,
-      "i": 0,
+      "w": 12.887460310765118,
       "o": 0,
-      "orbitalPeriod": 3.52563254
+      "orbitalPeriod": 3.52563254,
+      "temperature": 1070,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/koi-830_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#EB0951",
+      "clouds": false
     }
   ]
 }

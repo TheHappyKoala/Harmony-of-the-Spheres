@@ -1,5 +1,6 @@
 {
   "name": "HD 190647",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 190647, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 190647",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_190647_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 190647",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 190647-b",
+      "texture": "HD 190647-b",
       "m": 0.0018942855000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1302.6875108233767,
       "a": 2.231,
       "e": 0.224,
       "w": 219.541,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1176.45
+      "orbitalPeriod": 1176.45,
+      "temperature": 169.44839984523333,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_190647_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#AF9DEE",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "91 Aqr",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 91 Aqr, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "91 Aqr",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/91_aqr_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "91 Aqr",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "91 Aqr-b",
+      "texture": "91 Aqr-b",
       "m": 0.0030537600000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1592.0027944177655,
       "a": 0.7,
       "e": 0.027,
       "w": 177.3,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 181.4
+      "orbitalPeriod": 181.4,
+      "temperature": 370.08069467920484,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/91_aqr_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3AC088",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 86081",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 86081, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 86081",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_86081_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 86081",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 86081-b",
+      "texture": "HD 86081-b",
       "m": 0.0014123640000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1151.571094857115,
       "a": 0.0346,
       "e": 0.0119,
       "w": 3,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2.1378431
+      "orbitalPeriod": 2.1378431,
+      "temperature": 1492.1084925663718,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_86081_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B2D9EF",
+      "clouds": false
     }
   ]
 }

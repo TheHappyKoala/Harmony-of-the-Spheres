@@ -1,5 +1,6 @@
 {
   "name": "HD 177830",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 177830, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 177830",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_177830_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 177830",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 177830-c",
+      "texture": "HD 177830-c",
       "m": 0.000143145,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 440.29034659796497,
       "a": 0.5137,
       "e": 0.3,
       "w": 110,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 110.9
+      "orbitalPeriod": 110.9,
+      "temperature": 499.7252938813478,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_177830_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8F4CD1",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 177830-b",
+      "texture": "HD 177830-b",
       "m": 0.001612767,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1217.568070827767,
       "a": 1.14,
       "e": 0.1,
-      "w": 0,
-      "i": 0,
+      "w": 314.4361190895275,
       "o": 0,
-      "orbitalPeriod": 410.10001
+      "orbitalPeriod": 410.10001,
+      "temperature": 335.4545518311402,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_177830_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F09284",
+      "clouds": false
     }
   ]
 }

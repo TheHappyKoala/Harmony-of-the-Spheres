@@ -1,5 +1,6 @@
 {
   "name": "GJ 3470",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 3470, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 3470",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3470_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 3470",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 3470-b",
+      "texture": "GJ 3470-b",
       "m": 0.000041731539,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 262.3663994194809,
       "a": 0.0355,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 137.99730949882263,
       "o": 0,
-      "orbitalPeriod": 3.3366496
+      "orbitalPeriod": 3.3366496,
+      "temperature": 594,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3470_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B525AA",
+      "clouds": false
     }
   ]
 }

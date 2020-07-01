@@ -1,5 +1,6 @@
 {
   "name": "HD 180902",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 180902, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 180902",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_180902_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 180902",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 180902-b",
+      "texture": "HD 180902-b",
       "m": 0.0016079955,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1216.053816296709,
       "a": 1.4,
       "e": 0.107,
       "w": 181,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 510.9
+      "orbitalPeriod": 510.9,
+      "temperature": 263.08721314750375,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_180902_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9D4FC6",
+      "clouds": false
     }
   ]
 }

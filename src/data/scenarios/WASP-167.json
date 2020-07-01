@@ -1,5 +1,6 @@
 {
   "name": "WASP-167",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-167, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-167",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-167_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-167",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-167-b",
+      "texture": "WASP-167-b",
       "m": 0.0076344,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 2339.2607253020933,
       "a": 0.0365,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 341.206477503737,
       "o": 0,
-      "orbitalPeriod": 2.0219596
+      "orbitalPeriod": 2.0219596,
+      "temperature": 2329,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-167_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A1A46B",
+      "clouds": false
     }
   ]
 }

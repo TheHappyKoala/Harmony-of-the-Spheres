@@ -1,5 +1,6 @@
 {
   "name": "HATS-10",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-10, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-10",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-10_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-10",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-10-b",
+      "texture": "HATS-10-b",
       "m": 0.0005019618,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 745.7527222567815,
       "a": 0.04491,
       "e": 0.501,
-      "w": 0,
-      "i": 0,
+      "w": 13.97590374437856,
       "o": 0,
-      "orbitalPeriod": 3.312846
+      "orbitalPeriod": 3.312846,
+      "temperature": 1407,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-10_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4072DE",
+      "clouds": false
     }
   ]
 }

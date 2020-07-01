@@ -73,14 +73,14 @@
       "radius": 1437.6189799285153,
       "a": 0.07037,
       "e": 0.262,
-      "w": 272.18446732430294,
+      "w": 356.3824692913297,
       "o": 0,
       "orbitalPeriod": 5.857487,
       "temperature": 1405,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/toi-150_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#63B042",
+      "color": "#44959A",
       "clouds": false
     }
   ]

@@ -1,5 +1,6 @@
 {
   "name": "Kepler-421",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-421, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-421",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-421_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-421",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-421-b",
+      "texture": "Kepler-421-b",
+      "m": 0.00008834506750049217,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 1.219,
       "e": 0.041,
       "w": 160,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 704.1984
+      "orbitalPeriod": 704.1984,
+      "temperature": 185,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-421_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4FA1C1",
+      "clouds": false
     }
   ]
 }

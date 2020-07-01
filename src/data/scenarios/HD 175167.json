@@ -1,5 +1,6 @@
 {
   "name": "HD 175167",
+  "discoveryFacility": "Las Campanas Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 175167, which contains 1 planets and was discovered by Las Campanas Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 175167",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_175167_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 175167",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 175167-b",
+      "texture": "HD 175167-b",
       "m": 0.008560071,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Las Campanas Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2454.447012883703,
       "a": 2.4,
       "e": 0.54,
-      "w": 0,
-      "i": 0,
+      "w": 133.89057819477773,
       "o": 0,
-      "orbitalPeriod": 1290
+      "orbitalPeriod": 1290,
+      "temperature": 196.64559773949878,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_175167_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B08B5B",
+      "clouds": false
     }
   ]
 }

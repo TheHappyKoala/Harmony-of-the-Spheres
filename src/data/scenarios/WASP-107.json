@@ -1,5 +1,6 @@
 {
   "name": "WASP-107",
+  "discoveryFacility": "SuperWASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-107, which contains 1 planets and was discovered by SuperWASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-107",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-107_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-107",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-107-b",
+      "texture": "WASP-107-b",
       "m": 0.000114516,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 400.9008325576894,
       "a": 0.055,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 251.49562784125942,
       "o": 0,
-      "orbitalPeriod": 5.72149
+      "orbitalPeriod": 5.72149,
+      "temperature": 770,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-107_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#19BFFB",
+      "clouds": false
     }
   ]
 }

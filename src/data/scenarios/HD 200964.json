@@ -1,5 +1,6 @@
 {
   "name": "HD 200964",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 200964, which contains 2 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 200964",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_200964_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 200964",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 200964-c",
+      "texture": "HD 200964-c",
       "m": 0.0011585202,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1059.6261884241894,
       "a": 1.96,
       "e": 0.243,
       "w": 301,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 852.5
+      "orbitalPeriod": 852.5,
+      "temperature": 219.97964071979789,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_200964_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3B6373",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 200964-b",
+      "texture": "HD 200964-b",
       "m": 0.0015259257,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1189.5896845993423,
       "a": 1.565,
       "e": 0.087,
       "w": 133,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 606.3
+      "orbitalPeriod": 606.3,
+      "temperature": 246.18033205527644,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_200964_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BD70E7",
+      "clouds": false
     }
   ]
 }

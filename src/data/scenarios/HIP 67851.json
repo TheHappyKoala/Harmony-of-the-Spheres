@@ -1,5 +1,6 @@
 {
   "name": "HIP 67851",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 67851, which contains 2 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HIP 67851",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_67851_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HIP 67851",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HIP 67851-c",
+      "texture": "HIP 67851-c",
       "m": 0.005706714000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 2070.1190985096314,
       "a": 3.82,
       "e": 0.17,
       "w": 166.5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2131.8
+      "orbitalPeriod": 2131.8,
+      "temperature": 177.5654415854581,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_67851_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7494BC",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HIP 67851-b",
+      "texture": "HIP 67851-b",
       "m": 0.001316934,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1118.2271978961028,
       "a": 0.46,
       "e": 0.05,
       "w": 138.1,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 88.9
+      "orbitalPeriod": 88.9,
+      "temperature": 511.6950448256052,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_67851_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#75FD23",
+      "clouds": false
     }
   ]
 }

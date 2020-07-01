@@ -1,5 +1,6 @@
 {
   "name": "HD 12661",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 12661, which contains 2 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 12661",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_12661_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 12661",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 12661-c",
+      "texture": "HD 12661-c",
       "m": 0.0017291916000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1253.7394052260383,
       "a": 2.8145,
       "e": 0.031,
-      "w": 0,
-      "i": 0,
+      "w": 121.49907768952309,
       "o": 0,
-      "orbitalPeriod": 1708
+      "orbitalPeriod": 1708,
+      "temperature": 164.41246169044385,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_12661_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E33935",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 12661-b",
+      "texture": "HD 12661-b",
       "m": 0.0023189490000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1418.1934320332982,
       "a": 0.84,
       "e": 0.38,
-      "w": 0,
-      "i": 0,
+      "w": 141.7802064824256,
       "o": 0,
-      "orbitalPeriod": 262.70862
+      "orbitalPeriod": 262.70862,
+      "temperature": 300.9509477910529,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_12661_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E345A4",
+      "clouds": false
     }
   ]
 }

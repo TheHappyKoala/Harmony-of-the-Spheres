@@ -1,5 +1,6 @@
 {
   "name": "HD 43691",
+  "discoveryFacility": "Haute-Provence Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 43691, which contains 1 planets and was discovered by Haute-Provence Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 43691",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_43691_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 43691",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 43691-b",
+      "texture": "HD 43691-b",
       "m": 0.002433465,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Haute-Provence Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1447.1971900358467,
       "a": 0.238,
       "e": 0.0796,
       "w": 292.7,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 36.9987
+      "orbitalPeriod": 36.9987,
+      "temperature": 607.2833774257289,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_43691_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#240CCD",
+      "clouds": false
     }
   ]
 }

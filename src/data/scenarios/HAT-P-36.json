@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-36",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-36, which contains 1 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-36",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-36_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-36",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-36-b",
+      "texture": "HAT-P-36-b",
       "m": 0.00176373726,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 1264.1988778610562,
       "a": 0.0241,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 154.10636961066422,
       "o": 0,
-      "orbitalPeriod": 1.32734683
+      "orbitalPeriod": 1.32734683,
+      "temperature": 1781,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-36_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#061FBF",
+      "clouds": false
     }
   ]
 }

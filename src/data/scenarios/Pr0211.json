@@ -1,5 +1,6 @@
 {
   "name": "Pr0211",
+  "discoveryFacility": "Roque de los Muchachos Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system Pr0211, which contains 2 planets and was discovered by Roque de los Muchachos Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Pr0211",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/pr_0211_c/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Pr0211",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Pr0211-b",
+      "texture": "Pr0211-b",
       "m": 0.001794084,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Fred Lawrence Whipple Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1273.2894230796974,
       "a": 0.03176,
       "e": 0.011,
       "w": 17,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2.1461
+      "orbitalPeriod": 2.1461,
+      "temperature": 1288.7096103489207,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/pr_0211_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#67C6F9",
+      "clouds": false
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "Pr0211-c",
+      "texture": "Pr0211-c",
       "m": 0.007433997,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Roque de los Muchachos Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2313.2712856841395,
       "a": 5.5,
       "e": 0.71,
       "w": 111,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4850
+      "orbitalPeriod": 4850,
+      "temperature": 97.92959746065071,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/pr_0211_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#148CE0",
+      "clouds": false
     }
   ]
 }

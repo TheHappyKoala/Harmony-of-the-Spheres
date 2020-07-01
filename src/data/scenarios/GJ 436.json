@@ -1,5 +1,6 @@
 {
   "name": "GJ 436",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 436, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 436",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_436_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 436",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 436-b",
+      "texture": "GJ 436-b",
       "m": 0.00006680100000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 319.68481780570755,
       "a": 0.0291,
       "e": 0.13827,
       "w": 351,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2.64388312
+      "orbitalPeriod": 2.64388312,
+      "temperature": 800.527624057493,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_436_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BF1BD0",
+      "clouds": false
     }
   ]
 }

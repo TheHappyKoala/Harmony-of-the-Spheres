@@ -1,5 +1,6 @@
 {
   "name": "HD 330075",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 330075, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 330075",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_330075_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 330075",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 330075-b",
+      "texture": "HD 330075-b",
       "m": 0.000458064,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 717.6325921900583,
       "a": 0.04,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 178.9342483720922,
       "o": 0,
-      "orbitalPeriod": 3.38773
+      "orbitalPeriod": 3.38773,
+      "temperature": 682.7989139780252,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_330075_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#88B163",
+      "clouds": false
     }
   ]
 }

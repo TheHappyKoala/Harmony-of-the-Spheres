@@ -1,5 +1,6 @@
 {
   "name": "K2-8",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-8, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-8",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-8_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-8",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-8-c",
+      "texture": "K2-8-c",
+      "m": 0.000023852682513554846,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.0532,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 17.487863361976885,
       "o": 0,
-      "orbitalPeriod": 5.06416
+      "orbitalPeriod": 5.06416,
+      "temperature": 801,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#165FDD",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-8-b",
+      "texture": "K2-8-b",
+      "m": 0.00006148689511528222,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.0856,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 234.20525691430635,
       "o": 0,
-      "orbitalPeriod": 10.35239
+      "orbitalPeriod": 10.35239,
+      "temperature": 631,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-8_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#29C4B7",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 73526",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 73526, which contains 2 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 73526",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_73526_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 73526",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 73526-c",
+      "texture": "HD 73526-c",
       "m": 0.0021471750000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1373.085220106796,
       "a": 1.03,
       "e": 0.28,
       "w": 272,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 379.1
+      "orbitalPeriod": 379.1,
+      "temperature": 261.5227353617375,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_73526_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#023D6A",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 73526-b",
+      "texture": "HD 73526-b",
       "m": 0.002939244,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1566.6505508816515,
       "a": 0.65,
       "e": 0.19,
-      "w": 0,
-      "i": 0,
+      "w": 294.98727596280827,
       "o": 0,
-      "orbitalPeriod": 188.3
+      "orbitalPeriod": 188.3,
+      "temperature": 329.2087608527171,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_73526_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B7ED8E",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "Kepler-117",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-117, which contains 2 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-117",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-117_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-117",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "Kepler-117-c",
+      "texture": "Kepler-117-c",
       "m": 0.001755912,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1261.8400876644444,
       "a": 0.2804,
       "e": 0.0323,
       "w": 305,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 50.790391
+      "orbitalPeriod": 50.790391,
+      "temperature": 704,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-117_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#DF8549",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-117-b",
+      "texture": "Kepler-117-b",
       "m": 0.00008970420000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 361.82163628389816,
       "a": 0.1445,
       "e": 0.0493,
       "w": 254.3,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 18.7959228
+      "orbitalPeriod": 18.7959228,
+      "temperature": 984,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-117_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5B7F69",
+      "clouds": false
     }
   ]
 }

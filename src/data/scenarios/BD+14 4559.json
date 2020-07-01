@@ -1,5 +1,6 @@
 {
   "name": "BD+14 4559",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system BD+14 4559, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "BD+14 4559",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd%2B14_4559_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "BD+14 4559",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "BD+14 4559-b",
+      "texture": "BD+14 4559-b",
       "m": 0.000992472,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 992.9670498784847,
       "a": 0.78,
       "e": 0.29,
-      "w": 0,
-      "i": 0,
+      "w": 176.2276307351687,
       "o": 0,
-      "orbitalPeriod": 268.94
+      "orbitalPeriod": 268.94,
+      "temperature": 159.53250425456727,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd%2B14_4559_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9064A3",
+      "clouds": false
     }
   ]
 }

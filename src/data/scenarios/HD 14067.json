@@ -1,5 +1,6 @@
 {
   "name": "HD 14067",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 14067, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 14067",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_14067_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 14067",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 14067-b",
+      "texture": "HD 14067-b",
       "m": 0.00744354,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2314.5180282956967,
       "a": 3.4,
       "e": 0.533,
       "w": 109.9,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1455
+      "orbitalPeriod": 1455,
+      "temperature": 251.57553020407013,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_14067_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#832E27",
+      "clouds": false
     }
   ]
 }

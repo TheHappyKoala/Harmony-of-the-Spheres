@@ -1,5 +1,6 @@
 {
   "name": "11 UMi",
+  "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
   "description": "3D visualisation and gravity simulation of the exoplanet system 11 UMi, which contains 1 planets and was discovered by Thueringer Landessternwarte Tautenburg.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "11 UMi",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/11_umi_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "11 UMi",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "11 UMi-b",
+      "texture": "11 UMi-b",
       "m": 0.014066382,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
+      "potentiallyHabitableWorld": false,
+      "radius": 3023.7771294709974,
       "a": 1.53,
       "e": 0.08,
-      "w": 0,
-      "i": 0,
+      "w": 320.58131614837583,
       "o": 0,
-      "orbitalPeriod": 516.21997
+      "orbitalPeriod": 516.21997,
+      "temperature": 418.73311260823215,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/11_umi_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9403F9",
+      "clouds": false
     }
   ]
 }

@@ -73,14 +73,14 @@
       "radius": 200,
       "a": 0.432,
       "e": 0.04,
-      "w": 340.0373989249372,
+      "w": 272.07249340635286,
       "o": 0,
       "orbitalPeriod": 129.9441,
       "temperature": 230.57003757927563,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-186_f/",
       "exoplanet": true,
       "bump": true,
-      "color": "#BBDF90",
+      "color": "#0769F3",
       "clouds": true
     },
     {
@@ -92,7 +92,7 @@
       "radius": 200,
       "a": 0.11,
       "e": 0,
-      "w": 343.3378214055032,
+      "w": 201.1796376350768,
       "o": 0,
       "orbitalPeriod": 22.407704,
       "temperature": 456.9286620574904,
@@ -100,7 +100,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#E8FFC7",
+      "color": "#1609EB",
       "clouds": false
     },
     {
@@ -112,7 +112,7 @@
       "radius": 200,
       "a": 0.0781,
       "e": 0,
-      "w": 223.81687357802159,
+      "w": 98.86479708274209,
       "o": 0,
       "orbitalPeriod": 13.342996,
       "temperature": 542.2745552328872,
@@ -120,7 +120,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#8EB719",
+      "color": "#E0F185",
       "clouds": false
     },
     {
@@ -132,7 +132,7 @@
       "radius": 200,
       "a": 0.0451,
       "e": 0,
-      "w": 323.78578143088424,
+      "w": 91.57437172464475,
       "o": 0,
       "orbitalPeriod": 7.267302,
       "temperature": 713.6026806824585,
@@ -140,7 +140,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#6ABB1D",
+      "color": "#A1A9F4",
       "clouds": false
     },
     {
@@ -152,7 +152,7 @@
       "radius": 200,
       "a": 0.0343,
       "e": 0,
-      "w": 136.42209172810524,
+      "w": 359.19594151000047,
       "o": 0,
       "orbitalPeriod": 3.8867907,
       "temperature": 818.2719871700425,
@@ -160,7 +160,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#E424FD",
+      "color": "#39C595",
       "clouds": false
     }
   ]

@@ -1,5 +1,6 @@
 {
   "name": "HD 101930",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 101930, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 101930",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_101930_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 101930",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 101930-b",
+      "texture": "HD 101930-b",
       "m": 0.000238575,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 545.6518581282935,
       "a": 0.3,
       "e": 0.11,
-      "w": 0,
-      "i": 0,
+      "w": 43.81743889738268,
       "o": 0,
-      "orbitalPeriod": 70.46
+      "orbitalPeriod": 70.46,
+      "temperature": 288.13428525102216,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_101930_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F18A21",
+      "clouds": false
     }
   ]
 }

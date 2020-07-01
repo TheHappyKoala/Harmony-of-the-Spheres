@@ -1,5 +1,6 @@
 {
   "name": "HATS-69",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-69, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-69",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-69_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-69",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-69-b",
+      "texture": "HATS-69-b",
       "m": 0.0005506311,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 775.3087338873752,
       "a": 0.03211,
       "e": 0.519,
-      "w": 0,
-      "i": 0,
+      "w": 86.3942030321935,
       "o": 0,
-      "orbitalPeriod": 2.2252577
+      "orbitalPeriod": 2.2252577,
+      "temperature": 1296,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-69_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E80480",
+      "clouds": false
     }
   ]
 }

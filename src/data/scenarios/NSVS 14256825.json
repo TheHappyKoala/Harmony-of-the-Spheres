@@ -1,5 +1,6 @@
 {
   "name": "NSVS 14256825",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system NSVS 14256825, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "NSVS 14256825",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/nsvs_1425_(ab)_d/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "NSVS 14256825",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "NSVS 14256825-b",
+      "texture": "NSVS 14256825-b",
       "m": 0.013503345000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 2972.340366544131,
       "a": 3.12,
       "e": 0.12,
       "w": 133.3,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3225
+      "orbitalPeriod": 3225,
+      "temperature": 71.05736435314486,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/nsvs_1425_(ab)_d/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#69BE84",
+      "clouds": false
     }
   ]
 }

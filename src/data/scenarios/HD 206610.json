@@ -1,5 +1,6 @@
 {
   "name": "HD 206610",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 206610, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 206610",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_206610_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 206610",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 206610-b",
+      "texture": "HD 206610-b",
       "m": 0.0019429548,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1316.6413787382255,
       "a": 1.74,
       "e": 0.1,
       "w": 334,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 673.2
+      "orbitalPeriod": 673.2,
+      "temperature": 253.3515545134548,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_206610_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#86B74E",
+      "clouds": false
     }
   ]
 }

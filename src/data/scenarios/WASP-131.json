@@ -1,5 +1,6 @@
 {
   "name": "WASP-131",
+  "discoveryFacility": "SuperWASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-131, which contains 1 planets and was discovered by SuperWASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-131",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-131_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-131",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-131-b",
+      "texture": "WASP-131-b",
       "m": 0.000257661,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 563.577460482841,
       "a": 0.0607,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 357.41766553017834,
       "o": 0,
-      "orbitalPeriod": 5.322023
+      "orbitalPeriod": 5.322023,
+      "temperature": 1460,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-131_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0F7410",
+      "clouds": false
     }
   ]
 }

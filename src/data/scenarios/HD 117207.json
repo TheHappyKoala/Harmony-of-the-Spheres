@@ -1,5 +1,6 @@
 {
   "name": "HD 117207",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 117207, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 117207",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_117207_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 117207",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 117207-b",
+      "texture": "HD 117207-b",
       "m": 0.0018379818,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1286.282833290027,
       "a": 3.787,
       "e": 0.157,
       "w": 90.217,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2621.75
+      "orbitalPeriod": 2621.75,
+      "temperature": 128.2312115673641,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_117207_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7EE75B",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "WASP-84",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-84, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-84",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-84_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-84",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-84-b",
+      "texture": "WASP-84-b",
       "m": 0.0006622842,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 837.8221008685126,
       "a": 0.0771,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 115.44273750164129,
       "o": 0,
-      "orbitalPeriod": 8.5234865
+      "orbitalPeriod": 8.5234865,
+      "temperature": 797,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-84_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#91693A",
+      "clouds": false
     }
   ]
 }

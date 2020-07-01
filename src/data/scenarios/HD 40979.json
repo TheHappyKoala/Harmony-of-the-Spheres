@@ -1,5 +1,6 @@
 {
   "name": "HD 40979",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 40979, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 40979",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_40979_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 40979",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 40979-b",
+      "texture": "HD 40979-b",
       "m": 0.004456581,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1865.9238879172315,
       "a": 0.85,
       "e": 0.25,
-      "w": 0,
-      "i": 0,
+      "w": 19.629010332399073,
       "o": 0,
-      "orbitalPeriod": 264.14999
+      "orbitalPeriod": 264.14999,
+      "temperature": 344.7989723028254,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_40979_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A5EEDD",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 154345",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 154345, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 154345",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_154345_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 154345",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 154345-b",
+      "texture": "HD 154345-b",
       "m": 0.000782526,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 898.6335998859008,
       "a": 4.21,
       "e": 0.04,
-      "w": 0,
-      "i": 0,
+      "w": 221.50822122448193,
       "o": 0,
-      "orbitalPeriod": 3341.55884
+      "orbitalPeriod": 3341.55884,
+      "temperature": 90.68848305329027,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_154345_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#63663C",
+      "clouds": false
     }
   ]
 }

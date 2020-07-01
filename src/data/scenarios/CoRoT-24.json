@@ -1,5 +1,6 @@
 {
   "name": "CoRoT-24",
+  "discoveryFacility": "CoRoT",
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-24, which contains 2 planets and was discovered by CoRoT.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "CoRoT-24",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-24_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "CoRoT-24",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "CoRoT-24-c",
+      "texture": "CoRoT-24-c",
       "m": 0.0000839784,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "CoRoT",
+      "potentiallyHabitableWorld": false,
+      "radius": 351.93588934955915,
       "a": 0.098,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 157.06186039286624,
       "o": 0,
-      "orbitalPeriod": 11.759
+      "orbitalPeriod": 11.759,
+      "temperature": 850,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-24_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8F856B",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "CoRoT-24-b",
+      "texture": "CoRoT-24-b",
       "m": 0.0000171774,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "CoRoT",
+      "potentiallyHabitableWorld": false,
+      "radius": 180.71545143533868,
       "a": 0.056,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 101.01181229909697,
       "o": 0,
-      "orbitalPeriod": 5.1134
+      "orbitalPeriod": 5.1134,
+      "temperature": 1070,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-24_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#BE412D",
+      "clouds": false
     }
   ]
 }

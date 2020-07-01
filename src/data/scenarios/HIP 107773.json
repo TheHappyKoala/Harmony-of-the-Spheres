@@ -1,5 +1,6 @@
 {
   "name": "HIP 107773",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 107773, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HIP 107773",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_107773_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HIP 107773",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HIP 107773-b",
+      "texture": "HIP 107773-b",
       "m": 0.0018895140000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1301.30834469881,
       "a": 0.72,
       "e": 0.09,
       "w": 166,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 144.3
+      "orbitalPeriod": 144.3,
+      "temperature": 550.1038699025564,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_107773_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#CF0D68",
+      "clouds": false
     }
   ]
 }

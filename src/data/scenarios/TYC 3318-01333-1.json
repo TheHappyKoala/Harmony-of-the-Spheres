@@ -1,5 +1,6 @@
 {
   "name": "TYC 3318-01333-1",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system TYC 3318-01333-1, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "TYC 3318-01333-1",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/tyc_3318-01333-1_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "TYC 3318-01333-1",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "TYC 3318-01333-1-b",
+      "texture": "TYC 3318-01333-1-b",
       "m": 0.003263706,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1637.0871490821926,
       "a": 1.414,
       "e": 0.098,
       "w": 129,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 562
+      "orbitalPeriod": 562,
+      "temperature": 230.5074361237698,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/tyc_3318-01333-1_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6BBA13",
+      "clouds": false
     }
   ]
 }

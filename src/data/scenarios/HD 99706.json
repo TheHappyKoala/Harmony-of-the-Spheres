@@ -1,5 +1,6 @@
 {
   "name": "HD 99706",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 99706, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 99706",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_99706_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 99706",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 99706-b",
+      "texture": "HD 99706-b",
       "m": 0.001173789,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1065.4694005310228,
       "a": 1.98,
       "e": 0.25,
       "w": 50,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 841
+      "orbitalPeriod": 841,
+      "temperature": 227.08135164913477,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_99706_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#FC0951",
+      "clouds": false
     }
   ]
 }

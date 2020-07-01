@@ -1,5 +1,6 @@
 {
   "name": "HD 142415",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 142415, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 142415",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_142415_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 142415",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 142415-b",
+      "texture": "HD 142415-b",
       "m": 0.001593681,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1211.4953531981703,
       "a": 1.06,
       "e": 0.5,
-      "w": 0,
-      "i": 0,
+      "w": 38.63145438780394,
       "o": 0,
-      "orbitalPeriod": 386.29999
+      "orbitalPeriod": 386.29999,
+      "temperature": 245.82968492310286,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_142415_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#DCBC74",
+      "clouds": false
     }
   ]
 }

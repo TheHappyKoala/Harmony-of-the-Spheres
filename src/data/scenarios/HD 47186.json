@@ -1,5 +1,6 @@
 {
   "name": "HD 47186",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 47186, which contains 2 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 47186",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_47186_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 47186",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 47186-c",
+      "texture": "HD 47186-c",
       "m": 0.000334587123,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 628.9368486999751,
       "a": 2.395,
       "e": 0.249,
       "w": 26,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1353.6
+      "orbitalPeriod": 1353.6,
+      "temperature": 150.7648464738401,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_47186_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1BDC92",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 47186-b",
+      "texture": "HD 47186-b",
       "m": 0.00006680100000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 319.68481780570755,
       "a": 0.05,
       "e": 0.04,
-      "w": 0,
-      "i": 0,
+      "w": 11.629978147611713,
       "o": 0,
-      "orbitalPeriod": 4.0845
+      "orbitalPeriod": 4.0845,
+      "temperature": 1043.4408775087545,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_47186_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C200EC",
+      "clouds": false
     }
   ]
 }

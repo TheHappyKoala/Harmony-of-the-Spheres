@@ -1,5 +1,6 @@
 {
   "name": "HN Peg",
+  "discoveryFacility": "Spitzer Space Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HN Peg, which contains 1 planets and was discovered by Spitzer Space Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HN Peg",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hn_peg_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HN Peg",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HN Peg-b",
+      "texture": "HN Peg-b",
       "m": 0.02099335941,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Spitzer Space Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 3577.5654031531953,
       "a": 773,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 205.08524750989034,
       "o": 0,
-      "orbitalPeriod": null
+      "orbitalPeriod": null,
+      "temperature": 9.29403258527041,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hn_peg_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#DD59D4",
+      "clouds": false
     }
   ]
 }

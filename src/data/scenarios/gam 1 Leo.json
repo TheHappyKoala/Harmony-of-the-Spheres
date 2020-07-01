@@ -1,5 +1,6 @@
 {
   "name": "gam 1 Leo",
+  "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system gam 1 Leo, which contains 1 planets and was discovered by Bohyunsan Optical Astronomical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "gam 1 Leo",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gamma_1_leo_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "gam 1 Leo",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "gam 1 Leo-b",
+      "texture": "gam 1 Leo-b",
       "m": 0.008378754,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2432.4758179651953,
       "a": 1.19,
       "e": 0.144,
       "w": 206.7,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 428.5
+      "orbitalPeriod": 428.5,
+      "temperature": 257.5756335829887,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gamma_1_leo_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4BC21C",
+      "clouds": false
     }
   ]
 }

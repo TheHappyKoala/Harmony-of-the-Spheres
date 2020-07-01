@@ -1,5 +1,6 @@
 {
   "name": "HIP 97233",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 97233, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HIP 97233",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_97233_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HIP 97233",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HIP 97233-b",
+      "texture": "HIP 97233-b",
       "m": 0.019086000000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 3437.2683013676315,
       "a": 2.55,
       "e": 0.61,
       "w": 249.3,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1058.8
+      "orbitalPeriod": 1058.8,
+      "temperature": 246.68759752322492,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_97233_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#10CCFC",
+      "clouds": false
     }
   ]
 }

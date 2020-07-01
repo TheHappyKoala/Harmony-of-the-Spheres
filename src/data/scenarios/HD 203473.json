@@ -1,5 +1,6 @@
 {
   "name": "HD 203473",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 203473, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 203473",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_203473_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 203473",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 203473-b",
+      "texture": "HD 203473-b",
       "m": 0.00744354,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2314.5180282956967,
       "a": 2.73,
       "e": 0.289,
       "w": 18,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1552.9
+      "orbitalPeriod": 1552.9,
+      "temperature": 158.51910709283092,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_203473_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3D80A9",
+      "clouds": false
     }
   ]
 }

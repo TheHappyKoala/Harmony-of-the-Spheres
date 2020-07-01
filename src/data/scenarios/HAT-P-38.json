@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-38",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-38, which contains 1 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-38",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-38_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-38",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-38-b",
+      "texture": "HAT-P-38-b",
       "m": 0.0002547981,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 560.9389078487915,
       "a": 0.0523,
       "e": 0.067,
       "w": 240,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4.640382
+      "orbitalPeriod": 4.640382,
+      "temperature": 1082,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-38_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5E632E",
+      "clouds": false
     }
   ]
 }

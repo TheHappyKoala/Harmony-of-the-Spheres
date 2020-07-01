@@ -1,5 +1,6 @@
 {
   "name": "HD 60532",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 60532, which contains 2 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 60532",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_60532_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 60532",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 60532-c",
+      "texture": "HD 60532-c",
       "m": 0.0023952929999999997,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1437.6189799285153,
       "a": 1.6,
       "e": 0.03,
       "w": 179.8,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 600.1
+      "orbitalPeriod": 600.1,
+      "temperature": 257.7851388009706,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_60532_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#79CA38",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 60532-b",
+      "texture": "HD 60532-b",
       "m": 0.001011558,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1000.9428882417702,
       "a": 0.77,
       "e": 0.26,
       "w": -3.7,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 201.9
+      "orbitalPeriod": 201.9,
+      "temperature": 371.5972621951504,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_60532_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8C63DB",
+      "clouds": false
     }
   ]
 }

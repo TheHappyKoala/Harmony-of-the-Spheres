@@ -1,5 +1,6 @@
 {
   "name": "OGLE2-TR-L9",
+  "discoveryFacility": "OGLE",
   "description": "3D visualisation and gravity simulation of the exoplanet system OGLE2-TR-L9, which contains 1 planets and was discovered by OGLE.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "OGLE2-TR-L9",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ogle2-tr-l9_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "OGLE2-TR-L9",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "OGLE2-TR-L9-b",
+      "texture": "OGLE2-TR-L9-b",
       "m": 0.004294350000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "OGLE",
+      "potentiallyHabitableWorld": false,
+      "radius": 1837.088551050436,
       "a": 0.0308,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 23.50279736146886,
       "o": 0,
-      "orbitalPeriod": 2.4855335
+      "orbitalPeriod": 2.4855335,
+      "temperature": 1876.5353784035722,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ogle2-tr-l9_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F78553",
+      "clouds": false
     }
   ]
 }

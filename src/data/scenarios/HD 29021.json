@@ -1,5 +1,6 @@
 {
   "name": "HD 29021",
+  "discoveryFacility": "Haute-Provence Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 29021, which contains 1 planets and was discovered by Haute-Provence Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 29021",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_29021_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 29021",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 29021-b",
+      "texture": "HD 29021-b",
       "m": 0.00229032,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Haute-Provence Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1410.8133362124963,
       "a": 2.28,
       "e": 0.459,
       "w": 179.5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1362.3
+      "orbitalPeriod": 1362.3,
+      "temperature": 141.0412650576736,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_29021_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#63E93D",
+      "clouds": false
     }
   ]
 }

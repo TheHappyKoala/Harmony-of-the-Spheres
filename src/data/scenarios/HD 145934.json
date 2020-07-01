@@ -1,5 +1,6 @@
 {
   "name": "HD 145934",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 145934, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 145934",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_145934_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 145934",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 145934-b",
+      "texture": "HD 145934-b",
       "m": 0.002175804,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1380.744972472668,
       "a": 4.6,
       "e": 0.053,
       "w": 215,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2730
+      "orbitalPeriod": 2730,
+      "temperature": 170.66679961336203,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_145934_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BED4CF",
+      "clouds": false
     }
   ]
 }

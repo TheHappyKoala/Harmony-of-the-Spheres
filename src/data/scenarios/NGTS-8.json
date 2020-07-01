@@ -1,5 +1,6 @@
 {
   "name": "NGTS-8",
+  "discoveryFacility": "Paranal Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system NGTS-8, which contains 1 planets and was discovered by Paranal Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "NGTS-8",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ngts-8_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "NGTS-8",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "NGTS-8-b",
+      "texture": "NGTS-8-b",
       "m": 0.0008874990000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Paranal Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 947.4224537329161,
       "a": 0.035,
       "e": 0.01,
-      "w": 0,
-      "i": 0,
+      "w": 357.1775612218425,
       "o": 0,
-      "orbitalPeriod": 2.4997
+      "orbitalPeriod": 2.4997,
+      "temperature": 1345,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ngts-8_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5C987E",
+      "clouds": false
     }
   ]
 }

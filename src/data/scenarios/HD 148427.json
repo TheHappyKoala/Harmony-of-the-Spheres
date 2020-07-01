@@ -1,5 +1,6 @@
 {
   "name": "HD 148427",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 148427, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 148427",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_148427_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 148427",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 148427-b",
+      "texture": "HD 148427-b",
       "m": 0.0012405900000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1090.5285573046167,
       "a": 1.04,
       "e": 0.16,
-      "w": 0,
-      "i": 0,
+      "w": 240.50112369394472,
       "o": 0,
-      "orbitalPeriod": 331.5
+      "orbitalPeriod": 331.5,
+      "temperature": 341.87365909222757,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_148427_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3A06AD",
+      "clouds": false
     }
   ]
 }

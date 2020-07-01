@@ -1,5 +1,6 @@
 {
   "name": "K2-36",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-36, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-36",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-36",
@@ -64,28 +65,44 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "K2-36-c",
+      "texture": "K2-36-c",
       "m": 0.000023418522,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 205.83923035018287,
       "a": 0.054,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 59.61631637783552,
       "o": 0,
-      "orbitalPeriod": 5.340888
+      "orbitalPeriod": 5.340888,
+      "temperature": 788,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#8D980B",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "K2-36-b",
+      "texture": "K2-36-b",
       "m": 0.000011709261,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 153.84930941428246,
       "a": 0.0223,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 248.0644183996957,
       "o": 0,
-      "orbitalPeriod": 1.422614
+      "orbitalPeriod": 1.422614,
+      "temperature": 1224,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#A9E496",
+      "clouds": false
     }
   ]
 }

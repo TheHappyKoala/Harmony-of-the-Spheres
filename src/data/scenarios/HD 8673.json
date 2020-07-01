@@ -1,5 +1,6 @@
 {
   "name": "HD 8673",
+  "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 8673, which contains 1 planets and was discovered by Thueringer Landessternwarte Tautenburg.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 8673",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_8673_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 8673",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 8673-b",
+      "texture": "HD 8673-b",
       "m": 0.01355106,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
+      "potentiallyHabitableWorld": false,
+      "radius": 2976.747101765243,
       "a": 3.02,
       "e": 0.723,
       "w": 323.4,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1634
+      "orbitalPeriod": 1634,
+      "temperature": 173.37891418609067,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_8673_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#507205",
+      "clouds": false
     }
   ]
 }

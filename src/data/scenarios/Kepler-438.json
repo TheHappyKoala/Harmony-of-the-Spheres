@@ -1,5 +1,6 @@
 {
   "name": "Kepler-438",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-438, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-438",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-438_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-438",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-438-b",
+      "texture": "Kepler-438-b",
+      "m": 0.000003799136728592026,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.166,
       "e": 0.03,
-      "w": 0,
-      "i": 0,
+      "w": 215.51994774624413,
       "o": 0,
-      "orbitalPeriod": 35.23319
+      "orbitalPeriod": 35.23319,
+      "temperature": 371.95525578703445,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-438_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#124D73",
+      "clouds": false
     }
   ]
 }

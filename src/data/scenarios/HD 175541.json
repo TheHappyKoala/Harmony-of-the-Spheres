@@ -1,5 +1,6 @@
 {
   "name": "HD 175541",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 175541, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 175541",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_175541_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 175541",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 175541-b",
+      "texture": "HD 175541-b",
       "m": 0.0005706714,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 787.0373303740411,
       "a": 0.975,
       "e": 0.11,
       "w": 129,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 298.43
+      "orbitalPeriod": 298.43,
+      "temperature": 311.89485895940464,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_175541_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4A39FF",
+      "clouds": false
     }
   ]
 }

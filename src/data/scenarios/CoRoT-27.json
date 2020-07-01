@@ -1,5 +1,6 @@
 {
   "name": "CoRoT-27",
+  "discoveryFacility": "CoRoT",
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-27, which contains 1 planets and was discovered by CoRoT.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "CoRoT-27",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-27_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "CoRoT-27",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "CoRoT-27-b",
+      "texture": "CoRoT-27-b",
       "m": 0.009915177,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "CoRoT",
+      "potentiallyHabitableWorld": false,
+      "radius": 2610.714400992869,
       "a": 0.0476,
       "e": 0.065,
-      "w": 0,
-      "i": 0,
+      "w": 61.26230148524547,
       "o": 0,
-      "orbitalPeriod": 3.57532
+      "orbitalPeriod": 3.57532,
+      "temperature": 1500,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-27_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9B3EB4",
+      "clouds": false
     }
   ]
 }

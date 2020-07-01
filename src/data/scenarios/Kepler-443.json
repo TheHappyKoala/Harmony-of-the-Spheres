@@ -1,5 +1,6 @@
 {
   "name": "Kepler-443",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-443, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-443",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-443_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-443",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-443-b",
+      "texture": "Kepler-443-b",
+      "m": 0.000022542975092613934,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": true,
+      "radius": 200,
       "a": 0.495,
       "e": 0.11,
-      "w": 0,
-      "i": 0,
+      "w": 149.09383203013118,
       "o": 0,
-      "orbitalPeriod": 177.6693
+      "orbitalPeriod": 177.6693,
+      "temperature": 272.8164882031906,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-443_b/",
+      "exoplanet": true,
+      "bump": true,
+      "color": "#FC351B",
+      "clouds": true
     }
   ]
 }

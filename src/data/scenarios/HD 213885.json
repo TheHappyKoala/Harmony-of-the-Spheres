@@ -29,7 +29,7 @@
   "playing": false,
   "integrator": "PEFRL",
   "customCameraToBodyDistanceFactor": false,
-  "barycenterZ": 126756,
+  "barycenterZ": 357827.4,
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
@@ -65,6 +65,25 @@
       "massType": "star"
     },
     {
+      "name": "HD 213885-c",
+      "texture": "HD 213885-c",
+      "m": 0.00005990141100000001,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 305.377284457816,
+      "a": 0.056798,
+      "e": 0,
+      "w": 292.098361869921,
+      "o": 0,
+      "orbitalPeriod": 4.78503,
+      "temperature": 1265,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_213885_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B6A743",
+      "clouds": false
+    },
+    {
       "name": "HD 213885-b",
       "texture": "HD 213885-b",
       "m": 0.000026510454,
@@ -73,7 +92,7 @@
       "radius": 216.8444824943562,
       "a": 0.02012,
       "e": 0,
-      "w": 342.9392464046112,
+      "w": 304.0830608302789,
       "o": 0,
       "orbitalPeriod": 1.008035,
       "temperature": 2128,
@@ -81,7 +100,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 0.5,
-      "color": "#5ADE3C",
+      "color": "#F9BFB5",
       "clouds": false
     }
   ]

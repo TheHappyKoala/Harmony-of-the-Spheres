@@ -1,5 +1,6 @@
 {
   "name": "HD 106515 A",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 106515 A, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 106515 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_106515_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 106515 A",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 106515 A-b",
+      "texture": "HD 106515 A-b",
       "m": 0.009170823,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2526.5311531813786,
       "a": 4.59,
       "e": 0.572,
       "w": 123.8,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3630
+      "orbitalPeriod": 3630,
+      "temperature": 109.75438531859508,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_106515_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0207D3",
+      "clouds": false
     }
   ]
 }

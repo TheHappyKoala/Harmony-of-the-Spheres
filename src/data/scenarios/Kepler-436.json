@@ -1,5 +1,6 @@
 {
   "name": "Kepler-436",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-436, which contains 2 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-436",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-436_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-436",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-436-b",
+      "texture": "Kepler-436-b",
+      "m": 0.000031059317189631245,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.339,
       "e": 0.19,
-      "w": 0,
-      "i": 0,
+      "w": 169.47558141953974,
       "o": 0,
-      "orbitalPeriod": 64.00205
+      "orbitalPeriod": 64.00205,
+      "temperature": 326.3185179601813,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-436_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F0BF6E",
+      "clouds": false
     }
   ]
 }

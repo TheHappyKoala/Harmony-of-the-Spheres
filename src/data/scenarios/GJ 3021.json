@@ -1,5 +1,6 @@
 {
   "name": "GJ 3021",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 3021, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 3021",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3021_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 3021",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 3021-b",
+      "texture": "GJ 3021-b",
       "m": 0.003215991,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1626.991908926176,
       "a": 0.49,
       "e": 0.511,
       "w": 290.7,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 133.71
+      "orbitalPeriod": 133.71,
+      "temperature": 350,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3021_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5F2B18",
+      "clouds": false
     }
   ]
 }

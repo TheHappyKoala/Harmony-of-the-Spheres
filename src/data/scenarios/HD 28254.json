@@ -1,5 +1,6 @@
 {
   "name": "HD 28254",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 28254, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 28254",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_28254_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 28254",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 28254-b",
+      "texture": "HD 28254-b",
       "m": 0.001106988,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1039.5686887116076,
       "a": 2.15,
       "e": 0.81,
       "w": 301,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1116
+      "orbitalPeriod": 1116,
+      "temperature": 171.39951665458617,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_28254_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#772A3A",
+      "clouds": false
     }
   ]
 }

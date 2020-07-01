@@ -1,5 +1,6 @@
 {
   "name": "HD 87883",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 87883, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 87883",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_87883_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 87883",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 87883-b",
+      "texture": "HD 87883-b",
       "m": 0.001469622,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1170.9531994294746,
       "a": 3.58,
       "e": 0.53,
-      "w": 0,
-      "i": 0,
+      "w": 270.3824083142741,
       "o": 0,
-      "orbitalPeriod": 2754
+      "orbitalPeriod": 2754,
+      "temperature": 93.10346884875595,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_87883_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C724EA",
+      "clouds": false
     }
   ]
 }

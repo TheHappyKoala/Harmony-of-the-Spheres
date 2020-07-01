@@ -1,5 +1,6 @@
 {
   "name": "HD 285968",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 285968, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 285968",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_176_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 285968",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 285968-b",
+      "texture": "HD 285968-b",
       "m": 0.0000248118,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 210.89663045309845,
       "a": 0.066,
       "e": 0,
       "w": 0,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 8.7836
+      "orbitalPeriod": 8.7836,
+      "temperature": 450,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_176_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#2FE585",
+      "clouds": false
     }
   ]
 }

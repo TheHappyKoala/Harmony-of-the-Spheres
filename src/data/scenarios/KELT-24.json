@@ -1,5 +1,6 @@
 {
   "name": "KELT-24",
+  "discoveryFacility": "KELT-North",
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-24, which contains 1 planets and was discovered by KELT-North.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KELT-24",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/mascara-3_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KELT-24",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KELT-24-b",
+      "texture": "KELT-24-b",
       "m": 0.004943274,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "KELT-North",
+      "potentiallyHabitableWorld": false,
+      "radius": 1948.9438807140782,
       "a": 0.06969,
       "e": 0.077,
       "w": 55,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 5.5514926
+      "orbitalPeriod": 5.5514926,
+      "temperature": 1459,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/mascara-3_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#EEFCED",
+      "clouds": false
     }
   ]
 }

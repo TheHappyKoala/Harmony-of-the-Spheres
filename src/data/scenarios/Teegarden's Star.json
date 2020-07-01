@@ -1,5 +1,6 @@
 {
   "name": "Teegarden's Star",
+  "discoveryFacility": "Calar Alto Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system Teegarden's Star, which contains 2 planets and was discovered by Calar Alto Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Teegarden's Star",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/teegarden's_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Teegarden's Star",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "Teegarden's Star-c",
+      "texture": "Teegarden's Star-c",
       "m": 0.000003330507,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Calar Alto Observatory",
+      "potentiallyHabitableWorld": true,
+      "radius": 90.73346871303076,
       "a": 0.0443,
       "e": 0,
       "w": 286,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 11.409
+      "orbitalPeriod": 11.409,
+      "temperature": 187.8146403044177,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/teegarden's_c/",
+      "exoplanet": true,
+      "bump": true,
+      "color": "#73D75C",
+      "clouds": true
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Teegarden's Star-b",
+      "texture": "Teegarden's Star-b",
       "m": 0.00000314919,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Calar Alto Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 88.6250900701275,
       "a": 0.0252,
       "e": 0,
       "w": 77,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4.91
+      "orbitalPeriod": 4.91,
+      "temperature": 249.01816905500888,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/teegarden's_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#D827AC",
+      "clouds": false
     }
   ]
 }

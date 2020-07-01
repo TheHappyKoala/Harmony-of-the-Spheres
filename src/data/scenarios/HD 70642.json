@@ -1,5 +1,6 @@
 {
   "name": "HD 70642",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 70642, which contains 1 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 70642",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_70642_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 70642",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 70642-b",
+      "texture": "HD 70642-b",
       "m": 0.0019019199000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1304.889992004243,
       "a": 3.318,
       "e": 0.175,
       "w": 272.84,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2124.54
+      "orbitalPeriod": 2124.54,
+      "temperature": 139.91975939506474,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_70642_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#49F8F7",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HATS-59",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-59, which contains 2 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-59",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-59_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-59",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HATS-59-c",
+      "texture": "HATS-59-c",
       "m": 0.01211961,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 2840.392764144507,
       "a": 2.504,
       "e": 0.083,
-      "w": 0,
-      "i": 0,
+      "w": 226.87453470291535,
       "o": 0,
-      "orbitalPeriod": 1422
+      "orbitalPeriod": 1422,
+      "temperature": 176,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-59_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D8F496",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-59-b",
+      "texture": "HATS-59-b",
       "m": 0.0007691658000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 892.1575443866694,
       "a": 0.06112,
       "e": 0.129,
       "w": 227,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 5.416081
+      "orbitalPeriod": 5.416081,
+      "temperature": 1128,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-59_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3F4725",
+      "clouds": false
     }
   ]
 }

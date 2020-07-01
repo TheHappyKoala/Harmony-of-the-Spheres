@@ -1,5 +1,6 @@
 {
   "name": "K2-14",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-14, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-14",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-14_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-14",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-14-b",
+      "texture": "K2-14-b",
+      "m": 0.00012519368565057533,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.0627,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 352.334632694938,
       "o": 0,
-      "orbitalPeriod": 8.36802
+      "orbitalPeriod": 8.36802,
+      "temperature": 488,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-14_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#35DEBD",
+      "clouds": false
     }
   ]
 }

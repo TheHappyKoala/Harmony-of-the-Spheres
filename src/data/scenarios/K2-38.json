@@ -1,5 +1,6 @@
 {
   "name": "K2-38",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-38, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-38",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-38",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "K2-38-c",
+      "texture": "K2-38-c",
       "m": 0.000029726445000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 227.5271444182321,
       "a": 0.0964,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 134.670494815579,
       "o": 0,
-      "orbitalPeriod": 10.56103
+      "orbitalPeriod": 10.56103,
+      "temperature": 858,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#5BAC15",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 106270",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 106270, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 106270",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_106270_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 106270",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 106270-b",
+      "texture": "HD 106270-b",
       "m": 0.009667059,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2583.0737254140945,
       "a": 3.34,
       "e": 0.185,
       "w": 3.3,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1888
+      "orbitalPeriod": 1888,
+      "temperature": 168.51450564721492,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_106270_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8C9C92",
+      "clouds": false
     }
   ]
 }

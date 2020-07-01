@@ -73,7 +73,7 @@
       "radius": 108.13759337972856,
       "a": 0.02815,
       "e": 0,
-      "w": 325.13578667919256,
+      "w": 297.79169176579984,
       "o": 0,
       "orbitalPeriod": 3.149,
       "temperature": 595.7053420161023,
@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#49DC4A",
+      "color": "#10E75A",
       "clouds": false
     },
     {
@@ -93,7 +93,7 @@
       "radius": 177.72977788369099,
       "a": 0.0721,
       "e": 0,
-      "w": 239.56932228921067,
+      "w": 354.2687850195083,
       "o": 0,
       "orbitalPeriod": 12.914,
       "temperature": 372.2228772918898,
@@ -101,7 +101,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#0FDA4D",
+      "color": "#A7E4A2",
       "clouds": false
     },
     {
@@ -113,14 +113,14 @@
       "radius": 276.8538186276746,
       "a": 0.04061,
       "e": 0,
-      "w": 106.2517109553636,
+      "w": 340.0086247087995,
       "o": 0,
       "orbitalPeriod": 5.3686,
       "temperature": 495.96862003563166,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_581_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#B61B30",
+      "color": "#C0B0D2",
       "clouds": false
     }
   ]

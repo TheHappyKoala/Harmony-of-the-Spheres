@@ -1,5 +1,6 @@
 {
   "name": "HD 81040",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 81040, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 81040",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_81040_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 81040",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 81040-b",
+      "texture": "HD 81040-b",
       "m": 0.006937761,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 2247.1149411145025,
       "a": 1.94,
       "e": 0.53,
-      "w": 0,
-      "i": 0,
+      "w": 200.4602843447606,
       "o": 0,
-      "orbitalPeriod": 1001.70001
+      "orbitalPeriod": 1001.70001,
+      "temperature": 179.15978525930237,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_81040_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BB70DF",
+      "clouds": false
     }
   ]
 }

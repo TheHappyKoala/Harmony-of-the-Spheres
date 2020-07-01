@@ -1,5 +1,6 @@
 {
   "name": "bet UMi",
+  "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system bet UMi, which contains 1 planets and was discovered by Bohyunsan Optical Astronomical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "bet UMi",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/beta_umi_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "bet UMi",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "bet UMi-b",
+      "texture": "bet UMi-b",
       "m": 0.00582123,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2087.465783529819,
       "a": 1.4,
       "e": 0.19,
       "w": 307.4,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 522.3
+      "orbitalPeriod": 522.3,
+      "temperature": 261.68656879389397,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/beta_umi_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9D34D7",
+      "clouds": false
     }
   ]
 }

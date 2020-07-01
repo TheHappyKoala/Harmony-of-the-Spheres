@@ -1,5 +1,6 @@
 {
   "name": "K2-188",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-188, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-188",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-188",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
-      "a": 0.0785,
-      "e": 0,
-      "w": 0,
-      "i": 0,
-      "o": 0,
-      "orbitalPeriod": 7.810253
-    },
-    {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-188-b",
+      "texture": "K2-188-b",
+      "m": 0.000005884640201103158,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.0289,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 64.20664611778191,
       "o": 0,
-      "orbitalPeriod": 1.742169
+      "orbitalPeriod": 1.742169,
+      "temperature": 1692,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#258632",
+      "clouds": false
+    },
+    {
+      "name": "K2-188-c",
+      "texture": "K2-188-c",
+      "m": 0.00003491774762516285,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
+      "a": 0.0785,
+      "e": 0,
+      "w": 19.30183326651953,
+      "o": 0,
+      "orbitalPeriod": 7.810253,
+      "temperature": 1026,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#07D6A3",
+      "clouds": false
     }
   ]
 }

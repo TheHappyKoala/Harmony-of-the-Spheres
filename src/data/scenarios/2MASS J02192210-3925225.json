@@ -1,5 +1,6 @@
 {
   "name": "2MASS J02192210-3925225",
+  "discoveryFacility": "Cerro Tololo Inter-American Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 2MASS J02192210-3925225, which contains 1 planets and was discovered by Cerro Tololo Inter-American Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "2MASS J02192210-3925225",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/2m_0219-39_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "2MASS J02192210-3925225",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "2MASS J02192210-3925225-b",
+      "texture": "2MASS J02192210-3925225-b",
       "m": 0.01326477,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Cerro Tololo Inter-American Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2950.1700579330886,
       "a": 156,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 179.59213854643414,
       "o": 0,
-      "orbitalPeriod": null
+      "orbitalPeriod": null,
+      "temperature": 3.679015678135683,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/2m_0219-39_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#CB1B19",
+      "clouds": false
     }
   ]
 }

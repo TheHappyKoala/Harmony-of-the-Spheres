@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-11",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-11, which contains 2 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-11",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-11_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-11",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HAT-P-11-c",
+      "texture": "HAT-P-11-c",
       "m": 0.0015222898170000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1188.3983785139503,
       "a": 4.13,
       "e": 0.601,
       "w": 143.7,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3407
+      "orbitalPeriod": 3407,
+      "temperature": 101.07369954219658,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-11_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8BD15C",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-11-b",
+      "texture": "HAT-P-11-b",
       "m": 0.00007025556600000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 326.5269835393536,
       "a": 0.05254,
       "e": 0.218,
       "w": 19,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4.88780244
+      "orbitalPeriod": 4.88780244,
+      "temperature": 896.124092991296,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-11_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A43839",
+      "clouds": false
     }
   ]
 }

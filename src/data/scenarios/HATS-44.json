@@ -1,5 +1,6 @@
 {
   "name": "HATS-44",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-44, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-44",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-44_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-44",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-44-b",
+      "texture": "HATS-44-b",
       "m": 0.0005344080000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 765.6315230246338,
       "a": 0.03649,
       "e": 0.279,
-      "w": 0,
-      "i": 0,
+      "w": 320.69526753492045,
       "o": 0,
-      "orbitalPeriod": 2.7439004
+      "orbitalPeriod": 2.7439004,
+      "temperature": 1161,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-44_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A943F5",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "CoRoT-10",
+  "discoveryFacility": "CoRoT",
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-10, which contains 1 planets and was discovered by CoRoT.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "CoRoT-10",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-10_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "CoRoT-10",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "CoRoT-10-b",
+      "texture": "CoRoT-10-b",
       "m": 0.0026243250000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "CoRoT",
+      "potentiallyHabitableWorld": false,
+      "radius": 1493.8278992968035,
       "a": 0.1055,
       "e": 0.53,
       "w": 218.9,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 13.2406
+      "orbitalPeriod": 13.2406,
+      "temperature": 600,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-10_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#275AA7",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "Kepler-447",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-447, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-447",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-447_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-447",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-447-b",
+      "texture": "Kepler-447-b",
       "m": 0.0013073910000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1114.8167184431359,
       "a": 0.0769,
       "e": 0.123,
       "w": 98.3,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 7.79430132
+      "orbitalPeriod": 7.79430132,
+      "temperature": 867.5334996501751,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-447_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#20E281",
+      "clouds": false
     }
   ]
 }

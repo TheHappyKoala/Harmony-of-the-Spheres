@@ -1,5 +1,6 @@
 {
   "name": "HD 211810",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 211810, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 211810",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_211810_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 211810",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 211810-b",
+      "texture": "HD 211810-b",
       "m": 0.0006393810000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 825.5288436728183,
       "a": 2.656,
       "e": 0.68,
       "w": 98,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1558
+      "orbitalPeriod": 1558,
+      "temperature": 150.9257376240705,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_211810_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0C392A",
+      "clouds": false
     }
   ]
 }

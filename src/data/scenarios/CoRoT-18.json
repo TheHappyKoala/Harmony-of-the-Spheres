@@ -1,5 +1,6 @@
 {
   "name": "CoRoT-18",
+  "discoveryFacility": "CoRoT",
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-18, which contains 1 planets and was discovered by CoRoT.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "CoRoT-18",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-18_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "CoRoT-18",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "CoRoT-18-b",
+      "texture": "CoRoT-18-b",
       "m": 0.003311421,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "CoRoT",
+      "potentiallyHabitableWorld": false,
+      "radius": 1647.0971443362546,
       "a": 0.0295,
       "e": 0.08,
-      "w": 0,
-      "i": 0,
+      "w": 91.15931109364637,
       "o": 0,
-      "orbitalPeriod": 1.9000693
+      "orbitalPeriod": 1.9000693,
+      "temperature": 1550,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-18_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#07F175",
+      "clouds": false
     }
   ]
 }

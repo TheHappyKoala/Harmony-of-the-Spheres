@@ -1,5 +1,6 @@
 {
   "name": "K2-232",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-232, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-232",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-232",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "K2-232-b",
+      "texture": "K2-232-b",
       "m": 0.00037981140000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 663.3331857871087,
       "a": 0.10356,
       "e": 0.258,
       "w": 207,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 11.168454
+      "orbitalPeriod": 11.168454,
+      "temperature": 1030,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F4A7EA",
+      "clouds": false
     }
   ]
 }

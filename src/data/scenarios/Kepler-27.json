@@ -1,5 +1,6 @@
 {
   "name": "Kepler-27",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-27, which contains 2 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-27",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-27_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-27",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "Kepler-27-c",
+      "texture": "Kepler-27-c",
       "m": 0.013169340000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 2941.2372062929817,
       "a": 0.191,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 306.6178608538062,
       "o": 0,
-      "orbitalPeriod": 31.3309
+      "orbitalPeriod": 31.3309,
+      "temperature": 398.49030314639634,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-27_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9F4720",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-27-b",
+      "texture": "Kepler-27-b",
       "m": 0.008693673,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 2470.4641335915608,
       "a": 0.118,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 289.66268028278574,
       "o": 0,
-      "orbitalPeriod": 15.3348
+      "orbitalPeriod": 15.3348,
+      "temperature": 506.98304759732144,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-27_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#420849",
+      "clouds": false
     }
   ]
 }

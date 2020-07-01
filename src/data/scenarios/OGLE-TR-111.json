@@ -1,5 +1,6 @@
 {
   "name": "OGLE-TR-111",
+  "discoveryFacility": "OGLE",
   "description": "3D visualisation and gravity simulation of the exoplanet system OGLE-TR-111, which contains 1 planets and was discovered by OGLE.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "OGLE-TR-111",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ogle-tr-111_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "OGLE-TR-111",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "OGLE-TR-111-b",
+      "texture": "OGLE-TR-111-b",
+      "m": 0.0009983963059123128,
+      "discoveryFacility": "OGLE",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.0473,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 296.85655617163667,
       "o": 0,
-      "orbitalPeriod": 4.0144463
+      "orbitalPeriod": 4.0144463,
+      "temperature": 979.2262517367609,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ogle-tr-111_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3FA009",
+      "clouds": false
     }
   ]
 }

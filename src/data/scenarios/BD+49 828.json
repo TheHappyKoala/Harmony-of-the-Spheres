@@ -1,5 +1,6 @@
 {
   "name": "BD+49 828",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system BD+49 828, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "BD+49 828",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd%2B49_828_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "BD+49 828",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "BD+49 828-b",
+      "texture": "BD+49 828-b",
       "m": 0.0015268800000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1189.9020905300597,
       "a": 4.2,
       "e": 0.35,
       "w": 170,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2590
+      "orbitalPeriod": 2590,
+      "temperature": 160.69688918458175,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd%2B49_828_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6AE604",
+      "clouds": false
     }
   ]
 }

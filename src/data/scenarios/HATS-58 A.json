@@ -1,5 +1,6 @@
 {
   "name": "HATS-58 A",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-58 A, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-58 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-58a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-58 A",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-58 A-b",
+      "texture": "HATS-58 A-b",
       "m": 0.000982929,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 988.9457517627379,
       "a": 0.05798,
       "e": 0.168,
-      "w": 0,
-      "i": 0,
+      "w": 176.0985029473036,
       "o": 0,
-      "orbitalPeriod": 4.2180896
+      "orbitalPeriod": 4.2180896,
+      "temperature": 1721,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-58a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B92C6F",
+      "clouds": false
     }
   ]
 }

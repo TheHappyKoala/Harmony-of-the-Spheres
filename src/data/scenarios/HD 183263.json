@@ -1,5 +1,6 @@
 {
   "name": "HD 183263",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 183263, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 183263",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_183263_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 183263",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 0.0037694850000000004,
-      "radius": 97.67441860465118,
-      "a": 1.49,
-      "e": 0.36,
-      "w": 0,
-      "i": 0,
-      "o": 0,
-      "orbitalPeriod": 626.51599
-    },
-    {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 183263-c",
+      "texture": "HD 183263-c",
       "m": 0.0034068510000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1666.869060715119,
       "a": 4.35,
       "e": 0.239,
       "w": 345,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3070
+      "orbitalPeriod": 3070,
+      "temperature": 141.24018155720302,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_183263_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6A7E4D",
+      "clouds": false
+    },
+    {
+      "name": "HD 183263-b",
+      "texture": "HD 183263-b",
+      "m": 0.0037694850000000004,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1739.2083626997658,
+      "a": 1.49,
+      "e": 0.36,
+      "w": 271.4059846546107,
+      "o": 0,
+      "orbitalPeriod": 626.51599,
+      "temperature": 241.32913787791244,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_183263_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1BFDC8",
+      "clouds": false
     }
   ]
 }

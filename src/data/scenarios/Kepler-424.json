@@ -1,5 +1,6 @@
 {
   "name": "Kepler-424",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-424, which contains 2 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-424",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-424_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-424",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "Kepler-424-c",
+      "texture": "Kepler-424-c",
       "m": 0.006651471,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2207.6925984237437,
       "a": 0.73,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 192.14621256914737,
       "o": 0,
-      "orbitalPeriod": 223.3
+      "orbitalPeriod": 223.3,
+      "temperature": 283.6801998201274,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-424_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8EE71C",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-424-b",
+      "texture": "Kepler-424-b",
       "m": 0.000982929,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 988.9457517627379,
       "a": 0.044,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 124.10042031772404,
       "o": 0,
-      "orbitalPeriod": 3.3118644
+      "orbitalPeriod": 3.3118644,
+      "temperature": 1155.4844783986698,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-424_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#84501D",
+      "clouds": false
     }
   ]
 }

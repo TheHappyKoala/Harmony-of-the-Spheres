@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-44",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-44, which contains 2 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-44",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-44_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-44",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HAT-P-44-c",
+      "texture": "HAT-P-44-c",
       "m": 0.0038172,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1748.4210687895277,
       "a": 1.752,
       "e": 0.494,
-      "w": 0,
-      "i": 0,
+      "w": 28.829355885388335,
       "o": 0,
-      "orbitalPeriod": 872.2
+      "orbitalPeriod": 872.2,
+      "temperature": 173.51149956532754,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-44_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#FC5D58",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-44-b",
+      "texture": "HAT-P-44-b",
       "m": 0.0003359136,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 629.9828886543764,
       "a": 0.0507,
       "e": 0.044,
       "w": 113,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4.301219
+      "orbitalPeriod": 4.301219,
+      "temperature": 1108,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-44_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#28C51A",
+      "clouds": false
     }
   ]
 }

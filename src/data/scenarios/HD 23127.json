@@ -1,5 +1,6 @@
 {
   "name": "HD 23127",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 23127, which contains 1 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 23127",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_23127_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 23127",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 23127-b",
+      "texture": "HD 23127-b",
       "m": 0.0014572161,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1166.791429416079,
       "a": 2.37,
       "e": 0.406,
       "w": 181.829,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1211.17
+      "orbitalPeriod": 1211.17,
+      "temperature": 180.2869446026639,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_23127_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F02DFC",
+      "clouds": false
     }
   ]
 }

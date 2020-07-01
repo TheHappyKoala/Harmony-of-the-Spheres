@@ -1,5 +1,6 @@
 {
   "name": "HD 111232",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 111232, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 111232",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_111232_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 111232",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 111232-b",
+      "texture": "HD 111232-b",
       "m": 0.0068137020000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2230.1500465512026,
       "a": 1.97,
       "e": 0.2,
-      "w": 0,
-      "i": 0,
+      "w": 70.98316620791698,
       "o": 0,
-      "orbitalPeriod": 1143
+      "orbitalPeriod": 1143,
+      "temperature": 150.39236031054818,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_111232_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F80B16",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 68402",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 68402, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 68402",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_68402_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 68402",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 68402-b",
+      "texture": "HD 68402-b",
       "m": 0.002929701,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1564.5121942840526,
       "a": 2.18,
       "e": 0.03,
       "w": 17.19,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1103
+      "orbitalPeriod": 1103,
+      "temperature": 177.3922711795977,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_68402_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BD5BFC",
+      "clouds": false
     }
   ]
 }

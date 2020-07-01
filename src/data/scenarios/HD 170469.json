@@ -1,5 +1,6 @@
 {
   "name": "HD 170469",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 170469, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 170469",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_170469_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 170469",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 170469-b",
+      "texture": "HD 170469-b",
       "m": 0.0006298380000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 820.3313098894037,
       "a": 2.24,
       "e": 0.11,
-      "w": 0,
-      "i": 0,
+      "w": 53.8054173222138,
       "o": 0,
-      "orbitalPeriod": 1145
+      "orbitalPeriod": 1145,
+      "temperature": 172.65133014135935,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_170469_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#65F889",
+      "clouds": false
     }
   ]
 }

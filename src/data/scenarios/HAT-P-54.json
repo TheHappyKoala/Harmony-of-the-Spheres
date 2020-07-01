@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-54",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-54, which contains 1 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-54",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-54_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-54",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-54-b",
+      "texture": "HAT-P-54-b",
       "m": 0.000725268,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 870.4073377427469,
       "a": 0.04117,
       "e": 0.074,
-      "w": 0,
-      "i": 0,
+      "w": 5.837907113783798,
       "o": 0,
-      "orbitalPeriod": 3.799847
+      "orbitalPeriod": 3.799847,
+      "temperature": 818,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-54_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3800AB",
+      "clouds": false
     }
   ]
 }

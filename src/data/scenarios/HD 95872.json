@@ -1,5 +1,6 @@
 {
   "name": "HD 95872",
+  "discoveryFacility": "Multiple Facilities",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 95872, which contains 1 planets and was discovered by Multiple Facilities.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 95872",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_95872_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 95872",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 95872-b",
+      "texture": "HD 95872-b",
       "m": 0.0035690820000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Facilities",
+      "potentiallyHabitableWorld": false,
+      "radius": 1699.757271485677,
       "a": 5.15,
       "e": 0.06,
-      "w": 0,
-      "i": 0,
+      "w": 263.62092916390776,
       "o": 0,
-      "orbitalPeriod": 4375
+      "orbitalPeriod": 4375,
+      "temperature": 81.1277328094307,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_95872_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6FF2F4",
+      "clouds": false
     }
   ]
 }

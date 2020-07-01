@@ -1,5 +1,6 @@
 {
   "name": "HD 176986",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 176986, which contains 2 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 176986",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_176986_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 176986",
@@ -64,28 +65,44 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 176986-c",
+      "texture": "HD 176986-c",
       "m": 0.000027560184,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 220.41018249723956,
       "a": 0.11878,
       "e": 0.111,
       "w": 270,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 16.8191
+      "orbitalPeriod": 16.8191,
+      "temperature": 584.9221691589759,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_176986_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#453704",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 176986-b",
+      "texture": "HD 176986-b",
       "m": 0.000017234658,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 180.9682089275361,
       "a": 0.06296,
       "e": 0.066,
       "w": 249,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 6.4898
+      "orbitalPeriod": 6.4898,
+      "temperature": 803.4102767745874,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_176986_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#742190",
+      "clouds": false
     }
   ]
 }

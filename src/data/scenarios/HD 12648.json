@@ -1,5 +1,6 @@
 {
   "name": "HD 12648",
+  "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 12648, which contains 1 planets and was discovered by Bohyunsan Optical Astronomical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 12648",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_12648_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 12648",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 12648-b",
+      "texture": "HD 12648-b",
       "m": 0.0018704280000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1295.7713842807127,
       "a": 0.54,
       "e": 0.04,
-      "w": 0,
-      "i": 0,
+      "w": 312.5788371511153,
       "o": 0,
-      "orbitalPeriod": 133.60001
+      "orbitalPeriod": 133.60001,
+      "temperature": 242.44243988784694,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_12648_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F4EEB2",
+      "clouds": false
     }
   ]
 }

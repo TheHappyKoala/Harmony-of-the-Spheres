@@ -1,5 +1,6 @@
 {
   "name": "Qatar-10",
+  "discoveryFacility": "Qatar",
   "description": "3D visualisation and gravity simulation of the exoplanet system Qatar-10, which contains 1 planets and was discovered by Qatar.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Qatar-10",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/qatar-10_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Qatar-10",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Qatar-10-b",
+      "texture": "Qatar-10-b",
       "m": 0.0007023648,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Qatar",
+      "potentiallyHabitableWorld": false,
+      "radius": 858.7554708809678,
       "a": 0.0286,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 101.98724640080923,
       "o": 0,
-      "orbitalPeriod": 1.645321
+      "orbitalPeriod": 1.645321,
+      "temperature": 1955,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/qatar-10_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E193ED",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 73534",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 73534, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 73534",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_73534_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 73534",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 73534-b",
+      "texture": "HD 73534-b",
       "m": 0.0010611816000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1021.2800432125226,
       "a": 2.99,
       "e": 0.126,
       "w": 168,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1750
+      "orbitalPeriod": 1750,
+      "temperature": 155.50964202506273,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_73534_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8F6CE2",
+      "clouds": false
     }
   ]
 }

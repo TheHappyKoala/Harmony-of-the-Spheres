@@ -1,5 +1,6 @@
 {
   "name": "BD-13 2130",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system BD-13 2130, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "BD-13 2130",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ngc_2423_3_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "BD-13 2130",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "BD-13 2130-b",
+      "texture": "BD-13 2130-b",
       "m": 0.009333054,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2545.2072627714733,
       "a": 1.66,
       "e": 0.21,
-      "w": 0,
-      "i": 0,
+      "w": 22.943540661158668,
       "o": 0,
-      "orbitalPeriod": 714.29999
+      "orbitalPeriod": 714.29999,
+      "temperature": 328.05546394441825,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ngc_2423_3_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#483AF3",
+      "clouds": false
     }
   ]
 }

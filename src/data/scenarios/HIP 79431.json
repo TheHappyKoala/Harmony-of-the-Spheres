@@ -1,5 +1,6 @@
 {
   "name": "HIP 79431",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 79431, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HIP 79431",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_79431_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HIP 79431",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HIP 79431-b",
+      "texture": "HIP 79431-b",
       "m": 0.0020040300000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1333.8682605089493,
       "a": 0.36,
       "e": 0.29,
       "w": 287.4,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 111.7
+      "orbitalPeriod": 111.7,
+      "temperature": 209.18721658616806,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_79431_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#ABFC54",
+      "clouds": false
     }
   ]
 }

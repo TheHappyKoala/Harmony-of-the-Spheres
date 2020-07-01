@@ -1,5 +1,6 @@
 {
   "name": "HD 2039",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 2039, which contains 1 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 2039",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_2039_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 2039",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 2039-b",
+      "texture": "HD 2039-b",
       "m": 0.0060025470000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 2114.53124061201,
       "a": 2.2,
       "e": 0.71,
-      "w": 0,
-      "i": 0,
+      "w": 271.61383059806184,
       "o": 0,
-      "orbitalPeriod": 1120
+      "orbitalPeriod": 1120,
+      "temperature": 189.4379202087741,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_2039_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#315EFB",
+      "clouds": false
     }
   ]
 }

@@ -73,14 +73,14 @@
       "radius": 390.9073003053724,
       "a": 0.849,
       "e": 0,
-      "w": 312.4407527390675,
+      "w": 274.76777459829606,
       "o": 0,
       "orbitalPeriod": 289.8623,
       "temperature": 262,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-22_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#65A0F7",
+      "color": "#4084D2",
       "clouds": false
     }
   ]

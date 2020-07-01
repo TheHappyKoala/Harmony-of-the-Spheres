@@ -1,5 +1,6 @@
 {
   "name": "HD 103720",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 103720, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 103720",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_103720_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 103720",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 103720-b",
+      "texture": "HD 103720-b",
       "m": 0.000591666,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 799.0709538785617,
       "a": 0.0498,
       "e": 0.086,
       "w": 262,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4.5557
+      "orbitalPeriod": 4.5557,
+      "temperature": 903.3479658989429,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_103720_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3FF16E",
+      "clouds": false
     }
   ]
 }

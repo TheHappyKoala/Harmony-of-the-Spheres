@@ -1,5 +1,6 @@
 {
   "name": "HD 48265",
+  "discoveryFacility": "Las Campanas Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 48265, which contains 1 planets and was discovered by Las Campanas Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 48265",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_48265_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 48265",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 48265-b",
+      "texture": "HD 48265-b",
       "m": 0.0014553075,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Las Campanas Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1166.1493355518576,
       "a": 1.814,
       "e": 0.211,
       "w": 308.313,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 778.51
+      "orbitalPeriod": 778.51,
+      "temperature": 218.7178631683732,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_48265_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A9FC97",
+      "clouds": false
     }
   ]
 }

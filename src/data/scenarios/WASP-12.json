@@ -1,5 +1,6 @@
 {
   "name": "WASP-12",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-12, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-12",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-12_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-12",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-12-b",
+      "texture": "WASP-12-b",
       "m": 0.0013980495000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 1146.6546516232918,
       "a": 0.0232,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 122.27497591990458,
       "o": 0,
-      "orbitalPeriod": 1.09142
+      "orbitalPeriod": 1.09142,
+      "temperature": 2593,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-12_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8B6B07",
+      "clouds": false
     }
   ]
 }

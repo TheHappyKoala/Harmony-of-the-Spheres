@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-50",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-50, which contains 1 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-50",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-50_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-50",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-50-b",
+      "texture": "HAT-P-50-b",
       "m": 0.0012883050000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 1107.9521831798127,
       "a": 0.0453,
       "e": 0.115,
-      "w": 0,
-      "i": 0,
+      "w": 162.5069834198037,
       "o": 0,
-      "orbitalPeriod": 3.1220109
+      "orbitalPeriod": 3.1220109,
+      "temperature": 1862,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-50_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#FC6524",
+      "clouds": false
     }
   ]
 }

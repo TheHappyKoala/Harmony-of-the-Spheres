@@ -1,5 +1,6 @@
 {
   "name": "BD-17 63",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system BD-17 63, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "BD-17 63",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd-17_63_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "BD-17 63",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "BD-17 63-b",
+      "texture": "BD-17 63-b",
       "m": 0.00486693,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1936.2449977579925,
       "a": 1.34,
       "e": 0.54,
       "w": 112.2,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 655.6
+      "orbitalPeriod": 655.6,
+      "temperature": 165.81385430968137,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd-17_63_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D7880F",
+      "clouds": false
     }
   ]
 }

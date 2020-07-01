@@ -1,5 +1,6 @@
 {
   "name": "HD 20868",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 20868, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 20868",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_20868_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 20868",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 20868-b",
+      "texture": "HD 20868-b",
       "m": 0.0011928750000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1072.7117563420916,
       "a": 0.95,
       "e": 0.75,
-      "w": 0,
-      "i": 0,
+      "w": 56.605178437110055,
       "o": 0,
-      "orbitalPeriod": 380.85001
+      "orbitalPeriod": 380.85001,
+      "temperature": 121.8108788306094,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_20868_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0A9495",
+      "clouds": false
     }
   ]
 }

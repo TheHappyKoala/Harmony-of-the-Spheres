@@ -1,5 +1,6 @@
 {
   "name": "WASP-170",
+  "discoveryFacility": "SuperWASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-170, which contains 1 planets and was discovered by SuperWASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-170",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-170_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-170",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-170-b",
+      "texture": "WASP-170-b",
       "m": 0.0015268800000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 1189.9020905300597,
       "a": 0.0337,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 80.16193991216407,
       "o": 0,
-      "orbitalPeriod": 2.34478022
+      "orbitalPeriod": 2.34478022,
+      "temperature": 1422,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-170_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#08ABA7",
+      "clouds": false
     }
   ]
 }

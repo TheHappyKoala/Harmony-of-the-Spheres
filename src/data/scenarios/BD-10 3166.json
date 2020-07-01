@@ -1,5 +1,6 @@
 {
   "name": "BD-10 3166",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system BD-10 3166, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "BD-10 3166",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd-10_3166_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "BD-10 3166",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "BD-10 3166-b",
+      "texture": "BD-10 3166-b",
       "m": 0.000563037,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 782.5979027295319,
       "a": 0.04,
       "e": 0.02,
-      "w": 0,
-      "i": 0,
+      "w": 177.43265508175432,
       "o": 0,
-      "orbitalPeriod": 3.48777
+      "orbitalPeriod": 3.48777,
+      "temperature": 1605.8590711269078,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd-10_3166_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5C1247",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 66428",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 66428, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 66428",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_66428_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 66428",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 66428-b",
+      "texture": "HD 66428-b",
       "m": 0.0030575772,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1592.8382931061028,
       "a": 3.467,
       "e": 0.493,
       "w": 187.03,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2263.12
+      "orbitalPeriod": 2263.12,
+      "temperature": 136.88010184810824,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_66428_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#2E3CD3",
+      "clouds": false
     }
   ]
 }

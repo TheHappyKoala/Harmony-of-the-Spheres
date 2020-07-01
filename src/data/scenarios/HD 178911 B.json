@@ -1,5 +1,6 @@
 {
   "name": "HD 178911 B",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 178911 B, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 178911 B",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_178911_b_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 178911 B",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 178911 B-b",
+      "texture": "HD 178911 B-b",
       "m": 0.007663029,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2342.941062123606,
       "a": 0.34,
       "e": 0.11,
-      "w": 0,
-      "i": 0,
+      "w": 108.49915463134701,
       "o": 0,
-      "orbitalPeriod": 71.484
+      "orbitalPeriod": 71.484,
+      "temperature": 484.8152020126378,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_178911_b_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#EB0E0F",
+      "clouds": false
     }
   ]
 }

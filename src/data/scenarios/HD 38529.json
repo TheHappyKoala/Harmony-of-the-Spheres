@@ -1,5 +1,6 @@
 {
   "name": "HD 38529",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 38529, which contains 2 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 38529",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_38529_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 38529",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 38529-c",
+      "texture": "HD 38529-c",
       "m": 0.012396357,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 2867.4554435685873,
       "a": 3.64,
       "e": 0.3407,
       "w": 18.4,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2136.1
+      "orbitalPeriod": 2136.1,
+      "temperature": 163.15976328282574,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_38529_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F91A2E",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 38529-b",
+      "texture": "HD 38529-b",
       "m": 0.0007605771,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 887.9598513188972,
       "a": 0.1294,
       "e": 0.28,
       "w": 89.8,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 14.30944
+      "orbitalPeriod": 14.30944,
+      "temperature": 865.3596084937334,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_38529_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1F0CAF",
+      "clouds": false
     }
   ]
 }

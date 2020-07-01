@@ -1,5 +1,6 @@
 {
   "name": "WASP-85 A",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-85 A, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-85 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-85_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-85 A",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-85 A-b",
+      "texture": "WASP-85 A-b",
       "m": 0.0012071895,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 1078.0995270831877,
       "a": 0.039,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 174.49022307935493,
       "o": 0,
-      "orbitalPeriod": 2.6556777
+      "orbitalPeriod": 2.6556777,
+      "temperature": 1452,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-85_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#74474E",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "8 UMi",
+  "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 8 UMi, which contains 1 planets and was discovered by Bohyunsan Optical Astronomical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "8 UMi",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/8_umi_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "8 UMi",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "8 UMi-b",
+      "texture": "8 UMi-b",
       "m": 0.001250133,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1094.0439755479545,
       "a": 0.49,
       "e": 0.06,
-      "w": 0,
-      "i": 0,
+      "w": 62.9481071647924,
       "o": 0,
-      "orbitalPeriod": 93.4
+      "orbitalPeriod": 93.4,
+      "temperature": 451.7761009756756,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/8_umi_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8D86A8",
+      "clouds": false
     }
   ]
 }

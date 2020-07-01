@@ -1,5 +1,6 @@
 {
   "name": "HD 38283",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 38283, which contains 1 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 38283",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_38283_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 38283",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 38283-b",
+      "texture": "HD 38283-b",
       "m": 0.00038172000000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 664.7311506572408,
       "a": 1.02,
       "e": 0.41,
-      "w": 0,
-      "i": 0,
+      "w": 322.4258482048728,
       "o": 0,
-      "orbitalPeriod": 363.20001
+      "orbitalPeriod": 363.20001,
+      "temperature": 301.6405773543184,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_38283_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#964FB0",
+      "clouds": false
     }
   ]
 }

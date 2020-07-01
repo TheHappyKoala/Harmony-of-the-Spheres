@@ -1,5 +1,6 @@
 {
   "name": "Kepler-1652",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1652, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-1652",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-1652_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-1652",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-1652-b",
+      "texture": "Kepler-1652-b",
+      "m": 0.000008963784638463832,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": true,
+      "radius": 200,
       "a": 0.1654,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 287.5599634988407,
       "o": 0,
-      "orbitalPeriod": 38.09722
+      "orbitalPeriod": 38.09722,
+      "temperature": 268,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-1652_b/",
+      "exoplanet": true,
+      "bump": true,
+      "color": "#8617BD",
+      "clouds": true
     }
   ]
 }

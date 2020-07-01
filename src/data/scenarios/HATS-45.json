@@ -1,5 +1,6 @@
 {
   "name": "HATS-45",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-45, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-45",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-45_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-45",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-45-b",
+      "texture": "HATS-45-b",
       "m": 0.00066801,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 840.8567437692593,
       "a": 0.05511,
       "e": 0.24,
-      "w": 0,
-      "i": 0,
+      "w": 305.7930904008709,
       "o": 0,
-      "orbitalPeriod": 4.1876244
+      "orbitalPeriod": 4.1876244,
+      "temperature": 1518,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-45_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#FB4E54",
+      "clouds": false
     }
   ]
 }

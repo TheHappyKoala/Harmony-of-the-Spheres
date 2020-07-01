@@ -1,5 +1,6 @@
 {
   "name": "HD 149143",
+  "discoveryFacility": "Haute-Provence Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 149143, which contains 1 planets and was discovered by Haute-Provence Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 149143",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_149143_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 149143",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 149143-b",
+      "texture": "HD 149143-b",
       "m": 0.001269219,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Haute-Provence Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1101.0284068131834,
       "a": 0.053,
       "e": 0.0167,
       "w": 217,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4.07182
+      "orbitalPeriod": 4.07182,
+      "temperature": 1198.1120155849587,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_149143_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8C9E8D",
+      "clouds": false
     }
   ]
 }

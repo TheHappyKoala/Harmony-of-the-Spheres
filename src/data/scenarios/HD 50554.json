@@ -1,5 +1,6 @@
 {
   "name": "HD 50554",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 50554, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 50554",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_50554_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 50554",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 50554-b",
+      "texture": "HD 50554-b",
       "m": 0.0047276022,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1912.7682563451683,
       "a": 2.353,
       "e": 0.501,
-      "w": 0,
-      "i": 0,
+      "w": 174.92237805683112,
       "o": 0,
-      "orbitalPeriod": 1293
+      "orbitalPeriod": 1293,
+      "temperature": 161.51522426975413,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_50554_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#74FBA9",
+      "clouds": false
     }
   ]
 }

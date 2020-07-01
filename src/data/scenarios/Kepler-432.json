@@ -1,5 +1,6 @@
 {
   "name": "Kepler-432",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-432, which contains 2 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-432",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-432_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-432",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-432-b",
+      "texture": "Kepler-432-b",
       "m": 0.005162763000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1984.8316939262356,
       "a": 0.301,
       "e": 0.5134,
       "w": 64.1,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 52.501129
+      "orbitalPeriod": 52.501129,
+      "temperature": 540.0035619373999,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-432_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#05A3BF",
+      "clouds": false
     }
   ]
 }

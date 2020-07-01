@@ -1,5 +1,6 @@
 {
   "name": "HD 76700",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 76700, which contains 1 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 76700",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_76700_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 76700",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 76700-b",
+      "texture": "HD 76700-b",
       "m": 0.000200403,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 507.1225687340544,
       "a": 0.05,
       "e": 0.09,
-      "w": 0,
-      "i": 0,
+      "w": 289.1064100073372,
       "o": 0,
-      "orbitalPeriod": 3.97097
+      "orbitalPeriod": 3.97097,
+      "temperature": 1067.802215657805,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_76700_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#18AAC9",
+      "clouds": false
     }
   ]
 }

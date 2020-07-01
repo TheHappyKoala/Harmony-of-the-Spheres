@@ -1,5 +1,6 @@
 {
   "name": "30 Ari B",
+  "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
   "description": "3D visualisation and gravity simulation of the exoplanet system 30 Ari B, which contains 1 planets and was discovered by Thueringer Landessternwarte Tautenburg.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "30 Ari B",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/30_ari_b_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "30 Ari B",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "30 Ari B-b",
+      "texture": "30 Ari B-b",
       "m": 0.013188426000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
+      "potentiallyHabitableWorld": false,
+      "radius": 2943.0267727136456,
       "a": 0.99,
       "e": 0.29,
-      "w": 0,
-      "i": 0,
+      "w": 146.38290501616584,
       "o": 0,
-      "orbitalPeriod": 335.10001
+      "orbitalPeriod": 335.10001,
+      "temperature": 395.9130420135267,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/30_ari_b_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#04AC21",
+      "clouds": false
     }
   ]
 }

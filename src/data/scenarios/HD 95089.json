@@ -1,5 +1,6 @@
 {
   "name": "HD 95089",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 95089, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 95089",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_95089_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 95089",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 95089-c",
+      "texture": "HD 95089-c",
       "m": 0.0032923350000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1643.1032503053088,
       "a": 3.33,
       "e": 0.284,
       "w": 66,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1785
+      "orbitalPeriod": 1785,
+      "temperature": 182.25013041555962,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_95089_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D74347",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 95089-b",
+      "texture": "HD 95089-b",
       "m": 0.001202418,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1076.3077408918612,
       "a": 1.36,
       "e": 0.119,
       "w": 301,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 464.4
+      "orbitalPeriod": 464.4,
+      "temperature": 285.1809492924503,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_95089_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#481FFA",
+      "clouds": false
     }
   ]
 }

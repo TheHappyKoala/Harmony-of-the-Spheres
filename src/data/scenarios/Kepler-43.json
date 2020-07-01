@@ -1,5 +1,6 @@
 {
   "name": "Kepler-43",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-43, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-43",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-43_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-43",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-43-b",
+      "texture": "Kepler-43-b",
       "m": 0.003082389,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1598.2543465484725,
       "a": 0.046,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 109.43850517640463,
       "o": 0,
-      "orbitalPeriod": 3.0240949
+      "orbitalPeriod": 3.0240949,
+      "temperature": 1620,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-43_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#2D9F20",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "LSPM J2116+0234",
+  "discoveryFacility": "Calar Alto Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system LSPM J2116+0234, which contains 1 planets and was discovered by Calar Alto Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "LSPM J2116+0234",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/lspm_j2116+0234_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "LSPM J2116+0234",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "LSPM J2116+0234-b",
+      "texture": "LSPM J2116+0234-b",
       "m": 0.000039937455,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Calar Alto Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 257.5686068827007,
       "a": 0.0876,
       "e": 0.183,
-      "w": 0,
-      "i": 0,
+      "w": 204.9868277127911,
       "o": 0,
-      "orbitalPeriod": 14.4399
+      "orbitalPeriod": 14.4399,
+      "temperature": 431.6171696340575,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/lspm_j2116+0234_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3F16B7",
+      "clouds": false
     }
   ]
 }

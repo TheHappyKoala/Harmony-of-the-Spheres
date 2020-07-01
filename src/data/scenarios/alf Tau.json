@@ -1,5 +1,6 @@
 {
   "name": "alf Tau",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system alf Tau, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "alf Tau",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/aldebaran_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "alf Tau",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "alf Tau-b",
+      "texture": "alf Tau-b",
       "m": 0.006174321,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 2139.7381637608323,
       "a": 1.46,
       "e": 0.1,
       "w": 287,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 628.96
+      "orbitalPeriod": 628.96,
+      "temperature": 218.21360725313332,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/aldebaran_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E8CD61",
+      "clouds": false
     }
   ]
 }

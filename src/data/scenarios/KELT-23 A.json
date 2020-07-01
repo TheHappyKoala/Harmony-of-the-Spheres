@@ -1,5 +1,6 @@
 {
   "name": "KELT-23 A",
+  "discoveryFacility": "KELT-North",
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-23 A, which contains 1 planets and was discovered by KELT-North.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KELT-23 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KELT-23 A",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KELT-23 A-b",
+      "texture": "KELT-23 A-b",
       "m": 0.0008951334,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "KELT-North",
+      "potentiallyHabitableWorld": false,
+      "radius": 950.8368988831887,
       "a": 0.03302,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 355.16103363852193,
       "o": 0,
-      "orbitalPeriod": 2.255251
+      "orbitalPeriod": 2.255251,
+      "temperature": 1561,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6989A9",
+      "clouds": false
     }
   ]
 }

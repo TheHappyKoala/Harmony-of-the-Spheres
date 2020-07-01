@@ -1,5 +1,6 @@
 {
   "name": "HD 1666",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 1666, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 1666",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_1666_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 1666",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 1666-b",
+      "texture": "HD 1666-b",
       "m": 0.0061361490000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 2134.1721263653476,
       "a": 0.94,
       "e": 0.63,
       "w": 294,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 270
+      "orbitalPeriod": 270,
+      "temperature": 336.3209657117026,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_1666_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4163A2",
+      "clouds": false
     }
   ]
 }

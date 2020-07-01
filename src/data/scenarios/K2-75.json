@@ -1,5 +1,6 @@
 {
   "name": "K2-75",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-75, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-75",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-75",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-75-c",
+      "texture": "K2-75-c",
+      "m": 0.000033278030209113526,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.1429,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 186.1454711609578,
       "o": 0,
-      "orbitalPeriod": 18.311
+      "orbitalPeriod": 18.311,
+      "temperature": 711.3392970488661,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#449C73",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-75-b",
+      "texture": "K2-75-b",
+      "m": 0.00003044175040159006,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.081,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 214.72247657409895,
       "o": 0,
-      "orbitalPeriod": 7.8142
+      "orbitalPeriod": 7.8142,
+      "temperature": 944.8228901944169,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#967CFA",
+      "clouds": false
     }
   ]
 }

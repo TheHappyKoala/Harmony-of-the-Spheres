@@ -1,5 +1,6 @@
 {
   "name": "GJ 1148",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 1148, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 1148",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_57050_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 1148",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "GJ 1148-c",
+      "texture": "GJ 1148-c",
       "m": 0.00020435380200000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Calar Alto Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 511.29778359095945,
       "a": 0.912,
       "e": 0.342,
       "w": 210.4,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 532.58
+      "orbitalPeriod": 532.58,
+      "temperature": 114.63125258084055,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0D99AA",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 1148-b",
+      "texture": "GJ 1148-b",
       "m": 0.00029034577500000006,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 592.5672992457413,
       "a": 0.166,
       "e": 0.38,
       "w": 258.1,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 41.38
+      "orbitalPeriod": 41.38,
+      "temperature": 268.6868508071509,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_57050_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D2656F",
+      "clouds": false
     }
   ]
 }

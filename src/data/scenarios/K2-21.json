@@ -1,5 +1,6 @@
 {
   "name": "K2-21",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-21, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-21",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic-206011691_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-21",
@@ -64,28 +65,44 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-21-c",
+      "texture": "K2-21-c",
+      "m": 0.00002575918169825623,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.107,
       "e": 0.21,
       "w": 59.96,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 15.50192
+      "orbitalPeriod": 15.50192,
+      "temperature": 550.7306151088942,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic-206011691_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#4822F5",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-21-b",
+      "texture": "K2-21-b",
+      "m": 0.000012454037215022377,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.076,
       "e": 0.1,
       "w": 34.48,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 9.325038
+      "orbitalPeriod": 9.325038,
+      "temperature": 653.4679804778989,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic-206011691_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#43ED9A",
+      "clouds": false
     }
   ]
 }

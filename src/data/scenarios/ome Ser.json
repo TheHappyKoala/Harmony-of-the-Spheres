@@ -1,5 +1,6 @@
 {
   "name": "ome Ser",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system ome Ser, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "ome Ser",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ome_ser_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "ome Ser",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "ome Ser-b",
+      "texture": "ome Ser-b",
       "m": 0.00162231,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1220.5888033748436,
       "a": 1.1,
       "e": 0.106,
       "w": 132,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 277.02
+      "orbitalPeriod": 277.02,
+      "temperature": 410.1076605409341,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ome_ser_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#CE4069",
+      "clouds": false
     }
   ]
 }

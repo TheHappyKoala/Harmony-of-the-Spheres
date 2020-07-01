@@ -1,5 +1,6 @@
 {
   "name": "4 UMa",
+  "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
   "description": "3D visualisation and gravity simulation of the exoplanet system 4 UMa, which contains 1 planets and was discovered by Thueringer Landessternwarte Tautenburg.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "4 UMa",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/4_uma_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "4 UMa",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "4 UMa-b",
+      "texture": "4 UMa-b",
       "m": 0.00677553,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
+      "potentiallyHabitableWorld": false,
+      "radius": 2224.8940842250017,
       "a": 0.87,
       "e": 0.432,
       "w": 23.81,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 269.3
+      "orbitalPeriod": 269.3,
+      "temperature": 301.2441564247602,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/4_uma_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A7D329",
+      "clouds": false
     }
   ]
 }

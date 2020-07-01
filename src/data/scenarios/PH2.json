@@ -1,5 +1,6 @@
 {
   "name": "PH2",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system PH2, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "PH2",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-86_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "PH2",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "PH2-b",
+      "texture": "PH2-b",
+      "m": 0.0007470256680587049,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.828,
       "e": 0.41,
       "w": 3.44,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 282.5255
+      "orbitalPeriod": 282.5255,
+      "temperature": 281,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-86_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#495548",
+      "clouds": false
     }
   ]
 }

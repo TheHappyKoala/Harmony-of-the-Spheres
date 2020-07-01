@@ -1,5 +1,6 @@
 {
   "name": "11 Com",
+  "discoveryFacility": "Xinglong Station",
   "description": "3D visualisation and gravity simulation of the exoplanet system 11 Com, which contains 1 planets and was discovered by Xinglong Station.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "11 Com",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/11_com_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "11 Com",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "11 Com-b",
+      "texture": "11 Com-b",
       "m": 0.01851342,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Xinglong Station",
+      "potentiallyHabitableWorld": false,
+      "radius": 3393.575856354737,
       "a": 1.29,
       "e": 0.231,
       "w": 94.8,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 326.03
+      "orbitalPeriod": 326.03,
+      "temperature": 446.14639885964533,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/11_com_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0D03A5",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-45",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-45, which contains 1 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-45",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-45_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-45",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-45-b",
+      "texture": "HAT-P-45-b",
       "m": 0.0008512356000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 930.9665430735472,
       "a": 0.0452,
       "e": 0.049,
       "w": 146,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3.128992
+      "orbitalPeriod": 3.128992,
+      "temperature": 1652,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-45_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#24FA4A",
+      "clouds": false
     }
   ]
 }

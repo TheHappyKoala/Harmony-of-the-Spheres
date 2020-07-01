@@ -1,5 +1,6 @@
 {
   "name": "HIP 65426",
+  "discoveryFacility": "Paranal Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 65426, which contains 1 planets and was discovered by Paranal Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HIP 65426",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_65426_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HIP 65426",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HIP 65426-b",
+      "texture": "HIP 65426-b",
       "m": 0.008588700000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Paranal Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2457.8913930324716,
       "a": 92,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 91.78344786742875,
       "o": 0,
-      "orbitalPeriod": null
+      "orbitalPeriod": null,
+      "temperature": 1500,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_65426_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#854292",
+      "clouds": false
     }
   ]
 }

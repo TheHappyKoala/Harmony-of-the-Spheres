@@ -1,5 +1,6 @@
 {
   "name": "HD 99109",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 99109, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 99109",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_99109_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 99109",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 99109-b",
+      "texture": "HD 99109-b",
       "m": 0.000419892,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 691.8802902623268,
       "a": 1.11,
       "e": 0.09,
-      "w": 0,
-      "i": 0,
+      "w": 187.7087168995378,
       "o": 0,
-      "orbitalPeriod": 439.29999
+      "orbitalPeriod": 439.29999,
+      "temperature": 185.86521940941054,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_99109_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D3B65C",
+      "clouds": false
     }
   ]
 }

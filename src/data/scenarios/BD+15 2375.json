@@ -1,5 +1,6 @@
 {
   "name": "BD+15 2375",
+  "discoveryFacility": "Roque de los Muchachos Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system BD+15 2375, which contains 1 planets and was discovered by Roque de los Muchachos Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "BD+15 2375",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd%2B15_2375_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "BD+15 2375",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "BD+15 2375-b",
+      "texture": "BD+15 2375-b",
       "m": 0.0010125123,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Roque de los Muchachos Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1001.3393798041934,
       "a": 0.576,
       "e": 0.001,
       "w": 55,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 153.22
+      "orbitalPeriod": 153.22,
+      "temperature": 335.81956814096003,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd%2B15_2375_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8DFF4A",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 130322",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 130322, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 130322",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_130322_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 130322",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 130322-b",
+      "texture": "HD 130322-b",
       "m": 0.001097445,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1035.7952802634654,
       "a": 0.0925,
       "e": 0.029,
       "w": 193,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 10.70871
+      "orbitalPeriod": 10.70871,
+      "temperature": 743.0523773734103,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_130322_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9EE710",
+      "clouds": false
     }
   ]
 }

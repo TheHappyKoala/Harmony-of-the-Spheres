@@ -1,5 +1,6 @@
 {
   "name": "HD 216536",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 216536, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 216536",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_216536_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 216536",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 216536-b",
+      "texture": "HD 216536-b",
       "m": 0.0010020150000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 996.9659834998974,
       "a": 0.61,
       "e": 0.38,
-      "w": 0,
-      "i": 0,
+      "w": 270.2736731179016,
       "o": 0,
-      "orbitalPeriod": 148.60001
+      "orbitalPeriod": 148.60001,
+      "temperature": 262.99547154573554,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_216536_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#98A5AC",
+      "clouds": false
     }
   ]
 }

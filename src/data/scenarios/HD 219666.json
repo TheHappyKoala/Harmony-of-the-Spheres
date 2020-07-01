@@ -73,14 +73,14 @@
       "radius": 282.6879169614387,
       "a": 0.06356,
       "e": 0,
-      "w": 352.0018801034999,
+      "w": 47.62467343335588,
       "o": 0,
       "orbitalPeriod": 6.03607,
       "temperature": 1073,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_219666_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#D46E56",
+      "color": "#13112B",
       "clouds": false
     }
   ]

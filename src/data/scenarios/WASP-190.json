@@ -1,5 +1,6 @@
 {
   "name": "WASP-190",
+  "discoveryFacility": "WASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-190, which contains 1 planets and was discovered by WASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-190",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-190",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-190-b",
+      "texture": "WASP-190-b",
       "m": 0.0009543,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "WASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 976.7441860465117,
       "a": 0.0663,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 23.837709847155022,
       "o": 0,
-      "orbitalPeriod": 5.367753
+      "orbitalPeriod": 5.367753,
+      "temperature": 1500,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B09E64",
+      "clouds": false
     }
   ]
 }

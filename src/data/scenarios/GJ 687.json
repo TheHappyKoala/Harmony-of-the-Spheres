@@ -1,5 +1,6 @@
 {
   "name": "GJ 687",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 687, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 687",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_687_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 687",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 687-b",
+      "texture": "GJ 687-b",
       "m": 0.000057258,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 299.6431541629916,
       "a": 0.17,
       "e": 0.04,
-      "w": 0,
-      "i": 0,
+      "w": 118.49748559943079,
       "o": 0,
-      "orbitalPeriod": 38.14
+      "orbitalPeriod": 38.14,
+      "temperature": 320.57846755319173,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_687_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D9D921",
+      "clouds": false
     }
   ]
 }

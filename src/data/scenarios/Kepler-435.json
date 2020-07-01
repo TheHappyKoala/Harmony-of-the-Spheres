@@ -1,5 +1,6 @@
 {
   "name": "Kepler-435",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-435, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-435",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-435_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-435",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-435-b",
+      "texture": "Kepler-435-b",
       "m": 0.000801612,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 907.7748261007454,
       "a": 0.0948,
       "e": 0.114,
       "w": 104,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 8.6001536
+      "orbitalPeriod": 8.6001536,
+      "temperature": 1729,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-435_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D7068B",
+      "clouds": false
     }
   ]
 }

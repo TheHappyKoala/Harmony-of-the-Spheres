@@ -1,5 +1,6 @@
 {
   "name": "GJ 1132",
+  "discoveryFacility": "Cerro Tololo Inter-American Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 1132, which contains 2 planets and was discovered by Cerro Tololo Inter-American Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 1132",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_1132_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 1132",
@@ -64,28 +65,44 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "GJ 1132-c",
+      "texture": "GJ 1132-c",
       "m": 0.000007930233,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 130.62107835735293,
       "a": 0.0476,
       "e": 0.27,
-      "w": 0,
-      "i": 0,
+      "w": 325.66073413765,
       "o": 0,
-      "orbitalPeriod": 8.929
+      "orbitalPeriod": 8.929,
+      "temperature": 300,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_1132_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#1AAE40",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 1132-b",
+      "texture": "GJ 1132-b",
       "m": 0.000004981446,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Cerro Tololo Inter-American Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 107.44901684845591,
       "a": 0.0153,
       "e": 0.22,
-      "w": 0,
-      "i": 0,
+      "w": 108.49295217312927,
       "o": 0,
-      "orbitalPeriod": 1.628931
+      "orbitalPeriod": 1.628931,
+      "temperature": 529,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_1132_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#4D7A78",
+      "clouds": false
     }
   ]
 }

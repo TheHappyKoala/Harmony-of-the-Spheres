@@ -1,5 +1,6 @@
 {
   "name": "K2-270",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-270, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-270",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-270",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-270-c",
+      "texture": "K2-270-c",
+      "m": 0.00003868821745271804,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.0497,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 280.33619289629263,
       "o": 0,
-      "orbitalPeriod": 4.400028
+      "orbitalPeriod": 4.400028,
+      "temperature": 848,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#06344B",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-270-b",
+      "texture": "K2-270-b",
+      "m": 0.000006243918004996584,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.0247,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 213.4031109560257,
       "o": 0,
-      "orbitalPeriod": 1.543069
+      "orbitalPeriod": 1.543069,
+      "temperature": 1203,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#A684CC",
+      "clouds": false
     }
   ]
 }

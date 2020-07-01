@@ -1,5 +1,6 @@
 {
   "name": "WTS-2",
+  "discoveryFacility": "United Kingdom Infrared Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system WTS-2, which contains 1 planets and was discovered by United Kingdom Infrared Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WTS-2",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wts-2_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WTS-2",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WTS-2-b",
+      "texture": "WTS-2-b",
       "m": 0.0010688160000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "United Kingdom Infrared Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1024.359511467515,
       "a": 0.01855,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 85.89914082287439,
       "o": 0,
-      "orbitalPeriod": 1.0187068
+      "orbitalPeriod": 1.0187068,
+      "temperature": 2000,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wts-2_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#67C1CE",
+      "clouds": false
     }
   ]
 }

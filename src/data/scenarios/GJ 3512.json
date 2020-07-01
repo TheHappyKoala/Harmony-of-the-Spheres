@@ -1,5 +1,6 @@
 {
   "name": "GJ 3512",
+  "discoveryFacility": "Calar Alto Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 3512, which contains 1 planets and was discovered by Calar Alto Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 3512",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3512_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 3512",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 3512-b",
+      "texture": "GJ 3512-b",
       "m": 0.0004418409,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Calar Alto Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 706.8460754401784,
       "a": 0.338,
       "e": 0.4356,
       "w": 125.49,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 203.59
+      "orbitalPeriod": 203.59,
+      "temperature": 84.36785513714443,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3512_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#20975B",
+      "clouds": false
     }
   ]
 }

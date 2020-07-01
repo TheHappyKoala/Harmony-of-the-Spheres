@@ -1,5 +1,6 @@
 {
   "name": "Kepler-413",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-413, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-413",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-413_%28ab%29_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-413",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-413-b",
+      "texture": "Kepler-413-b",
       "m": 0.0002013573,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 508.1354167492095,
       "a": 0.3553,
       "e": 0.1181,
       "w": 94.6,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 66.262
+      "orbitalPeriod": 66.262,
+      "temperature": 347.7860911182964,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-413_%28ab%29_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4AAC8D",
+      "clouds": false
     }
   ]
 }

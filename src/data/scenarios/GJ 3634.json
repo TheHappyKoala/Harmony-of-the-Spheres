@@ -1,5 +1,6 @@
 {
   "name": "GJ 3634",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 3634, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 3634",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3634_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 3634",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 3634-b",
+      "texture": "GJ 3634-b",
       "m": 0.0000248118,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 210.89663045309845,
       "a": 0.0287,
       "e": 0.08,
       "w": 84,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2.64561
+      "orbitalPeriod": 2.64561,
+      "temperature": 780.2214050993414,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3634_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#F47978",
+      "clouds": false
     }
   ]
 }

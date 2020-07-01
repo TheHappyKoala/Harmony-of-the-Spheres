@@ -1,5 +1,6 @@
 {
   "name": "K2-90",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-90, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-90",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-90",
@@ -64,28 +65,44 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-90-c",
+      "texture": "K2-90-c",
+      "m": 0.000005424804579259293,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.035,
       "e": 0.19,
       "w": 56.76,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2.900706
+      "orbitalPeriod": 2.900706,
+      "temperature": 909.3285228866055,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#CB0785",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-90-b",
+      "texture": "K2-90-b",
+      "m": 0.000028632290226918635,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.096,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 309.8728220002509,
       "o": 0,
-      "orbitalPeriod": 13.733314
+      "orbitalPeriod": 13.733314,
+      "temperature": 502,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#25C9FD",
+      "clouds": false
     }
   ]
 }

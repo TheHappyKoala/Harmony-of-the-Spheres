@@ -1,5 +1,6 @@
 {
   "name": "HD 82886",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 82886, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 82886",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_82886_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 82886",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 82886-b",
+      "texture": "HD 82886-b",
       "m": 0.002223519,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1393.3824033620733,
       "a": 1.58,
       "e": 0.07,
-      "w": 0,
-      "i": 0,
+      "w": 267.53036524934186,
       "o": 0,
-      "orbitalPeriod": 705
+      "orbitalPeriod": 705,
+      "temperature": 383.93815298708955,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_82886_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#ACAFAB",
+      "clouds": false
     }
   ]
 }

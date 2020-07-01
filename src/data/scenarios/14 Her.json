@@ -1,5 +1,6 @@
 {
   "name": "14 Her",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 14 Her, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "14 Her",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/14_her_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "14 Her",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "14 Her-b",
+      "texture": "14 Her-b",
       "m": 0.004447038,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1864.2447118122147,
       "a": 2.93,
       "e": 0.37,
-      "w": 0,
-      "i": 0,
+      "w": 316.00724235724863,
       "o": 0,
-      "orbitalPeriod": 1773.40002
+      "orbitalPeriod": 1773.40002,
+      "temperature": 129.8666075505251,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/14_her_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#32E2BB",
+      "clouds": false
     }
   ]
 }

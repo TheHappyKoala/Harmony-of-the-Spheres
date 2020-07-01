@@ -1,5 +1,6 @@
 {
   "name": "K2-183",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-183, which contains 3 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-183",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-183",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "d",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-183-d",
+      "texture": "K2-183-d",
+      "m": 0.00003592372447969686,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.1527,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 134.45895362693298,
       "o": 0,
-      "orbitalPeriod": 22.631964
+      "orbitalPeriod": 22.631964,
+      "temperature": 615,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9DE0E4",
+      "clouds": false
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-183-c",
+      "texture": "K2-183-c",
+      "m": 0.00003626275874000732,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.0932,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 177.27776553068435,
       "o": 0,
-      "orbitalPeriod": 10.792635
+      "orbitalPeriod": 10.792635,
+      "temperature": 787,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A6FC97",
+      "clouds": false
     }
   ]
 }

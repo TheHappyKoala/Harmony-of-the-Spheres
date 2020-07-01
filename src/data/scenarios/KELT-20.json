@@ -1,5 +1,6 @@
 {
   "name": "KELT-20",
+  "discoveryFacility": "KELT-North",
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-20, which contains 1 planets and was discovered by KELT-North.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KELT-20",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-20_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KELT-20",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KELT-20-b",
+      "texture": "KELT-20-b",
       "m": 0.0032274426000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "KELT-North",
+      "potentiallyHabitableWorld": false,
+      "radius": 1629.4226470176868,
       "a": 0.0542,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 36.845938291781366,
       "o": 0,
-      "orbitalPeriod": 3.4741085
+      "orbitalPeriod": 3.4741085,
+      "temperature": 2262,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-20_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F3BAF4",
+      "clouds": false
     }
   ]
 }

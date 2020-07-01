@@ -1,5 +1,6 @@
 {
   "name": "HD 113538",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 113538, which contains 2 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 113538",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_113538_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 113538",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 113538-c",
+      "texture": "HD 113538-c",
       "m": 0.0008874990000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 947.4224537329161,
       "a": 2.44,
       "e": 0.2,
       "w": 280,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1818
+      "orbitalPeriod": 1818,
+      "temperature": 102.35887544095507,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_113538_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9AB06F",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 113538-b",
+      "texture": "HD 113538-b",
       "m": 0.000343548,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 635.9571949952224,
       "a": 1.24,
       "e": 0.14,
       "w": 74,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 663.2
+      "orbitalPeriod": 663.2,
+      "temperature": 143.58516662018715,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_113538_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#22DB17",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 11977",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 11977, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 11977",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_11977_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 11977",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 11977-b",
+      "texture": "HD 11977-b",
       "m": 0.006241122,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2149.4309057181113,
       "a": 1.93,
       "e": 0.4,
       "w": 351.5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 711
+      "orbitalPeriod": 711,
+      "temperature": 281.34927140511445,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_11977_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BD0CED",
+      "clouds": false
     }
   ]
 }

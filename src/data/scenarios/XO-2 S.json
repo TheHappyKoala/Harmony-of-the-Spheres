@@ -1,5 +1,6 @@
 {
   "name": "XO-2 S",
+  "discoveryFacility": "Roque de los Muchachos Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system XO-2 S, which contains 2 planets and was discovered by Roque de los Muchachos Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "XO-2 S",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/xo-2s_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "XO-2 S",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "XO-2 S-c",
+      "texture": "XO-2 S-c",
       "m": 0.0013073910000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Roque de los Muchachos Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1114.8167184431359,
       "a": 0.4756,
       "e": 0.1528,
       "w": 264.5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 120.8
+      "orbitalPeriod": 120.8,
+      "temperature": 343.5959670654357,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/xo-2s_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#2C892C",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "XO-2 S-b",
+      "texture": "XO-2 S-b",
       "m": 0.000248118,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Roque de los Muchachos Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 554.7146566793737,
       "a": 0.13,
       "e": 0.18,
-      "w": 0,
-      "i": 0,
+      "w": 158.3145418285158,
       "o": 0,
-      "orbitalPeriod": 18.157
+      "orbitalPeriod": 18.157,
+      "temperature": 657.1996212975602,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/xo-2s_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5F93B8",
+      "clouds": false
     }
   ]
 }

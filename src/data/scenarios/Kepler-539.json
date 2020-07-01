@@ -1,5 +1,6 @@
 {
   "name": "Kepler-539",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-539, which contains 2 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-539",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-539_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-539",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "Kepler-539-c",
+      "texture": "Kepler-539-c",
       "m": 0.00229032,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1410.8133362124963,
       "a": 2.42,
       "e": 0.5,
       "w": 254.91,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1000
+      "orbitalPeriod": 1000,
+      "temperature": 253,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-539_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B4A8AA",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-539-b",
+      "texture": "Kepler-539-b",
       "m": 0.000925671,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 964.3284134332649,
       "a": 0.4988,
       "e": 0.39,
-      "w": 0,
-      "i": 0,
+      "w": 281.2175923005362,
       "o": 0,
-      "orbitalPeriod": 125.63243
+      "orbitalPeriod": 125.63243,
+      "temperature": 388,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-539_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#54079A",
+      "clouds": false
     }
   ]
 }

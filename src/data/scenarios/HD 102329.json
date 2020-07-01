@@ -1,5 +1,6 @@
 {
   "name": "HD 102329",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 102329, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 102329",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_102329_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 102329",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 102329-b",
+      "texture": "HD 102329-b",
       "m": 0.007787088,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2358.79773181562,
       "a": 1.81,
       "e": 0.21,
-      "w": 0,
-      "i": 0,
+      "w": 262.9267613806959,
       "o": 0,
-      "orbitalPeriod": 778.09998
+      "orbitalPeriod": 778.09998,
+      "temperature": 428.83370355194916,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_102329_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4AACC3",
+      "clouds": false
     }
   ]
 }

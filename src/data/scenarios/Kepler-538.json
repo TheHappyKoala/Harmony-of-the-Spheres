@@ -1,5 +1,6 @@
 {
   "name": "Kepler-538",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-538, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-538",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-538_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-538",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-538-b",
+      "texture": "Kepler-538-b",
       "m": 0.000031825905,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 234.14295058994915,
       "a": 0.4669,
       "e": 0.041,
       "w": 140,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 81.73778
+      "orbitalPeriod": 81.73778,
+      "temperature": 380,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-538_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#AE31AB",
+      "clouds": false
     }
   ]
 }

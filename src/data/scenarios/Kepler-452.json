@@ -73,14 +73,14 @@
       "radius": 200,
       "a": 1.046,
       "e": 0,
-      "w": 111.61474928991686,
+      "w": 4.414237226024724,
       "o": 0,
       "orbitalPeriod": 384.843,
       "temperature": 265,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-452_b/",
       "exoplanet": true,
       "bump": true,
-      "color": "#6470C6",
+      "color": "#1A8E72",
       "clouds": true
     }
   ]

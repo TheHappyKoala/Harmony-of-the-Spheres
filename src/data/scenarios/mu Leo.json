@@ -1,5 +1,6 @@
 {
   "name": "mu Leo",
+  "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system mu Leo, which contains 1 planets and was discovered by Bohyunsan Optical Astronomical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "mu Leo",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/mu_leo_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "mu Leo",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "mu Leo-b",
+      "texture": "mu Leo-b",
       "m": 0.00229032,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1410.8133362124963,
       "a": 1.1,
       "e": 0.09,
       "w": 227.1,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 357.8
+      "orbitalPeriod": 357.8,
+      "temperature": 310.90057524818434,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/mu_leo_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BFE587",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "Kepler-434",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-434, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-434",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-434_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-434",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-434-b",
+      "texture": "Kepler-434-b",
       "m": 0.0027292980000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1518.6390698621333,
       "a": 0.1143,
       "e": 0.131,
       "w": 82,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 12.8747099
+      "orbitalPeriod": 12.8747099,
+      "temperature": 1000,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-434_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#40A961",
+      "clouds": false
     }
   ]
 }

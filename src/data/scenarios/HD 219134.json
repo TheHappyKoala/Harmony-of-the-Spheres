@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_219134_d/",
       "exoplanet": true,
       "bump": false,
-      "color": "#3AF55B",
+      "color": "#E1B0FC",
       "clouds": false
     },
     {
@@ -100,7 +100,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#E70F64",
+      "color": "#8614B4",
       "clouds": false
     },
     {
@@ -120,7 +120,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 0.5,
-      "color": "#9CD63B",
+      "color": "#DE47F9",
       "clouds": false
     },
     {
@@ -139,7 +139,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_219134_h/",
       "exoplanet": true,
       "bump": false,
-      "color": "#FB4463",
+      "color": "#9B9F4C",
       "clouds": false
     },
     {
@@ -158,7 +158,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_219134_g/",
       "exoplanet": true,
       "bump": false,
-      "color": "#ED8A98",
+      "color": "#4925A2",
       "clouds": false
     },
     {
@@ -178,7 +178,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#78B620",
+      "color": "#B624B2",
       "clouds": false
     }
   ]

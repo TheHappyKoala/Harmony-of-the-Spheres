@@ -1,5 +1,6 @@
 {
   "name": "HD 108874",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 108874, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 108874",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_108874_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 108874",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 108874-c",
+      "texture": "HD 108874-c",
       "m": 0.0009447570000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 972.629900657696,
       "a": 2.659,
       "e": 0.239,
       "w": 27,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1624
+      "orbitalPeriod": 1624,
+      "temperature": 158.46551598359213,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_108874_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#637F22",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 108874-b",
+      "texture": "HD 108874-b",
       "m": 0.001355106,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1131.727683619108,
       "a": 1.04,
       "e": 0.13,
-      "w": 0,
-      "i": 0,
+      "w": 117.5159991263196,
       "o": 0,
-      "orbitalPeriod": 394.48123
+      "orbitalPeriod": 394.48123,
+      "temperature": 253.38287999787966,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_108874_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#FA43C4",
+      "clouds": false
     }
   ]
 }

@@ -73,7 +73,7 @@
       "radius": 195.62747142763865,
       "a": 0.03845,
       "e": 0.15,
-      "w": 168.55244777090928,
+      "w": 346.6644873109831,
       "o": 0,
       "orbitalPeriod": 3.444729,
       "temperature": 754,
@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#E13A08",
+      "color": "#8E9FCE",
       "clouds": false
     }
   ]

@@ -1,5 +1,6 @@
 {
   "name": "WASP-180 A",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-180 A, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-180 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-180_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-180 A",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-180 A-b",
+      "texture": "WASP-180 A-b",
       "m": 0.0008588700000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 934.4642449385185,
       "a": 0.048,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 207.42291995521876,
       "o": 0,
-      "orbitalPeriod": 3.409264
+      "orbitalPeriod": 3.409264,
+      "temperature": 1540,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-180_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7E252C",
+      "clouds": false
     }
   ]
 }

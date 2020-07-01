@@ -1,5 +1,6 @@
 {
   "name": "WASP-87",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-87, which contains 1 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-87",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-87_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-87",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-87-b",
+      "texture": "WASP-87-b",
       "m": 0.0020803740000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1354.9789929400715,
       "a": 0.02946,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 338.13267267119403,
       "o": 0,
-      "orbitalPeriod": 1.682795
+      "orbitalPeriod": 1.682795,
+      "temperature": 1607.0115093484987,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-87_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6A5494",
+      "clouds": false
     }
   ]
 }

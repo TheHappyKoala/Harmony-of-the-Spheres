@@ -1,5 +1,6 @@
 {
   "name": "tau Gem",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system tau Gem, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "tau Gem",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/tau_gem_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "tau Gem",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "tau Gem-b",
+      "texture": "tau Gem-b",
       "m": 0.019658580000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 3480.2069291706757,
       "a": 1.17,
       "e": 0.031,
       "w": 137.4,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 305.5
+      "orbitalPeriod": 305.5,
+      "temperature": 415.3864924526423,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/tau_gem_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8F8472",
+      "clouds": false
     }
   ]
 }

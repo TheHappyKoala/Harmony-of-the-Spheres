@@ -1,5 +1,6 @@
 {
   "name": "51 Peg",
+  "discoveryFacility": "Haute-Provence Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 51 Peg, which contains 1 planets and was discovered by Haute-Provence Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "51 Peg",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/51_peg_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "51 Peg",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "51 Peg-b",
+      "texture": "51 Peg-b",
       "m": 0.0004504296,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Haute-Provence Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 712.5846686996638,
       "a": 0.0527,
       "e": 0.013,
       "w": 58,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4.230785
+      "orbitalPeriod": 4.230785,
+      "temperature": 1140.9264101406006,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/51_peg_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#415D58",
+      "clouds": false
     }
   ]
 }

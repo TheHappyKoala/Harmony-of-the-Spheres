@@ -1,5 +1,6 @@
 {
   "name": "WASP-81",
+  "discoveryFacility": "Multiple Facilities",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-81, which contains 1 planets and was discovered by Multiple Facilities.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-81",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-81_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-81",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-81-b",
+      "texture": "WASP-81-b",
       "m": 0.0006956847,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Facilities",
+      "potentiallyHabitableWorld": false,
+      "radius": 855.3156070207448,
       "a": 0.03908,
       "e": 0.066,
-      "w": 0,
-      "i": 0,
+      "w": 294.3297874138769,
       "o": 0,
-      "orbitalPeriod": 2.7164762
+      "orbitalPeriod": 2.7164762,
+      "temperature": 1623,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-81_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#96A545",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HATS-68",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-68, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-68",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-68_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-68",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-68-b",
+      "texture": "HATS-68-b",
       "m": 0.001231047,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 1086.9974196472845,
       "a": 0.05071,
       "e": 0.036,
-      "w": 0,
-      "i": 0,
+      "w": 59.19756621800501,
       "o": 0,
-      "orbitalPeriod": 3.5862202
+      "orbitalPeriod": 3.5862202,
+      "temperature": 1741,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-68_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#AC51D3",
+      "clouds": false
     }
   ]
 }

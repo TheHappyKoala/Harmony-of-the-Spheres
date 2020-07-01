@@ -1,5 +1,6 @@
 {
   "name": "14 And",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 14 And, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "14 And",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/14_and_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "14 And",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "14 And-b",
+      "texture": "14 And-b",
       "m": 0.00458064,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1887.5660371784222,
       "a": 0.83,
       "e": 0,
       "w": 0,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 185.84
+      "orbitalPeriod": 185.84,
+      "temperature": 477.0098952921979,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/14_and_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9997D4",
+      "clouds": false
     }
   ]
 }

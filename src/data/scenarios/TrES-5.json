@@ -1,5 +1,6 @@
 {
   "name": "TrES-5",
+  "discoveryFacility": "TrES",
   "description": "3D visualisation and gravity simulation of the exoplanet system TrES-5, which contains 1 planets and was discovered by TrES.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "TrES-5",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/tres-5_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "TrES-5",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "TrES-5-b",
+      "texture": "TrES-5-b",
       "m": 0.001708197,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "TrES",
+      "potentiallyHabitableWorld": false,
+      "radius": 1247.3235090555422,
       "a": 0.02459,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 342.96658194259203,
       "o": 0,
-      "orbitalPeriod": 1.48224686
+      "orbitalPeriod": 1.48224686,
+      "temperature": 1480,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/tres-5_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6338E1",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 180314",
+  "discoveryFacility": "Subaru Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 180314, which contains 1 planets and was discovered by Subaru Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 180314",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_180314_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 180314",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 180314-b",
+      "texture": "HD 180314-b",
       "m": 0.019210059,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Subaru Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 3446.6344157762633,
       "a": 1.46,
       "e": 0.26,
-      "w": 0,
-      "i": 0,
+      "w": 9.025915899782149,
       "o": 0,
-      "orbitalPeriod": 396.03
+      "orbitalPeriod": 396.03,
+      "temperature": 359.6582332924227,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_180314_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F11C56",
+      "clouds": false
     }
   ]
 }

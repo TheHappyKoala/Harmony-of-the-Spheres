@@ -1,5 +1,6 @@
 {
   "name": "HD 96127",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 96127, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 96127",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_96127_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 96127",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 96127-b",
+      "texture": "HD 96127-b",
       "m": 0.020002128,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 3505.6226942794533,
       "a": 1.42,
       "e": 0.3,
-      "w": 0,
-      "i": 0,
+      "w": 34.11328921207867,
       "o": 0,
-      "orbitalPeriod": 647.29999
+      "orbitalPeriod": 647.29999,
+      "temperature": 1214.4181328870666,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_96127_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5A46F3",
+      "clouds": false
     }
   ]
 }

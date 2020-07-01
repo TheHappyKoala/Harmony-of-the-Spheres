@@ -1,5 +1,6 @@
 {
   "name": "HD 81688",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 81688, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 81688",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_81688_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 81688",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 81688-b",
+      "texture": "HD 81688-b",
       "m": 0.0025766100000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1482.3597552617014,
       "a": 0.81,
       "e": 0,
       "w": 0,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 184.02
+      "orbitalPeriod": 184.02,
+      "temperature": 466.3064100566762,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_81688_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9D0E4E",
+      "clouds": false
     }
   ]
 }

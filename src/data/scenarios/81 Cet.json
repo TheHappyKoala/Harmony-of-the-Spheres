@@ -1,5 +1,6 @@
 {
   "name": "81 Cet",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 81 Cet, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "81 Cet",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/81_cet_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "81 Cet",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "81 Cet-b",
+      "texture": "81 Cet-b",
       "m": 0.00505779,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1967.7807152110931,
       "a": 2.5,
       "e": 0.206,
       "w": 175,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 952.7
+      "orbitalPeriod": 952.7,
+      "temperature": 293.38496290802686,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/81_cet_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F00E05",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "OGLE-TR-132",
+  "discoveryFacility": "OGLE",
   "description": "3D visualisation and gravity simulation of the exoplanet system OGLE-TR-132, which contains 1 planets and was discovered by OGLE.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "OGLE-TR-132",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ogle-tr-132_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "OGLE-TR-132",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "OGLE-TR-132-b",
+      "texture": "OGLE-TR-132-b",
       "m": 0.001126074,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "OGLE",
+      "potentiallyHabitableWorld": false,
+      "radius": 1047.0592983796623,
       "a": 0.03035,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 318.31441927712785,
       "o": 0,
-      "orbitalPeriod": 1.689868
+      "orbitalPeriod": 1.689868,
+      "temperature": 2013,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ogle-tr-132_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#FA5A98",
+      "clouds": false
     }
   ]
 }

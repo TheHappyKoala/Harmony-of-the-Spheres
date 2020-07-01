@@ -1,5 +1,6 @@
 {
   "name": "OGLE-TR-10",
+  "discoveryFacility": "OGLE",
   "description": "3D visualisation and gravity simulation of the exoplanet system OGLE-TR-10, which contains 1 planets and was discovered by OGLE.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "OGLE-TR-10",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ogle-tr-10_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "OGLE-TR-10",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "OGLE-TR-10-b",
+      "texture": "OGLE-TR-10-b",
       "m": 0.000591666,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "OGLE",
+      "potentiallyHabitableWorld": false,
+      "radius": 799.0709538785617,
       "a": 0.0434,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 293.59271660412384,
       "o": 0,
-      "orbitalPeriod": 3.101278
+      "orbitalPeriod": 3.101278,
+      "temperature": 1274.04039378137,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ogle-tr-10_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#11B084",
+      "clouds": false
     }
   ]
 }

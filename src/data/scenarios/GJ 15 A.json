@@ -1,5 +1,6 @@
 {
   "name": "GJ 15 A",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 15 A, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 15 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_15a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 15 A",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "GJ 15 A-c",
+      "texture": "GJ 15 A-c",
       "m": 0.000108093561,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Roque de los Muchachos Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 391.29931986342734,
       "a": 5.4,
       "e": 0.27,
       "w": -58.4,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 7600
+      "orbitalPeriod": 7600,
+      "temperature": 50.10605853742365,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F6B698",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 15 A-b",
+      "texture": "GJ 15 A-b",
       "m": 0.000009094479,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 138.35659109375868,
       "a": 0.072,
       "e": 0.094,
       "w": 55,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 11.4407
+      "orbitalPeriod": 11.4407,
+      "temperature": 433.9311957691905,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_15a_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#ABDDF2",
+      "clouds": false
     }
   ]
 }

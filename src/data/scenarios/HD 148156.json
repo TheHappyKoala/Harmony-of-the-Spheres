@@ -1,5 +1,6 @@
 {
   "name": "HD 148156",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 148156, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 148156",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_148156_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 148156",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 148156-b",
+      "texture": "HD 148156-b",
       "m": 0.000811155,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 912.2981278085518,
       "a": 2.45,
       "e": 0.52,
       "w": 35,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1027
+      "orbitalPeriod": 1027,
+      "temperature": 178.4170090718564,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_148156_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#FA0449",
+      "clouds": false
     }
   ]
 }

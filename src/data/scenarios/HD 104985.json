@@ -1,5 +1,6 @@
 {
   "name": "HD 104985",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 104985, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 104985",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_104985_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 104985",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 104985-b",
+      "texture": "HD 104985-b",
       "m": 0.007920690000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2375.7111370809166,
       "a": 0.95,
       "e": 0.09,
       "w": 203.5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 199.505
+      "orbitalPeriod": 199.505,
+      "temperature": 460.981501616722,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_104985_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#89E2BB",
+      "clouds": false
     }
   ]
 }

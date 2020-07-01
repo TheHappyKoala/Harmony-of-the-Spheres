@@ -1,5 +1,6 @@
 {
   "name": "eps Tau",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system eps Tau, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "eps Tau",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/eps_tau_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "eps Tau",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "eps Tau-b",
+      "texture": "eps Tau-b",
       "m": 0.00725268,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2289.4045603756203,
       "a": 1.93,
       "e": 0.151,
       "w": 94.4,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 594.9
+      "orbitalPeriod": 594.9,
+      "temperature": 364.7485654585848,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/eps_tau_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4D0E2F",
+      "clouds": false
     }
   ]
 }

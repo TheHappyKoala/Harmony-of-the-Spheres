@@ -1,5 +1,6 @@
 {
   "name": "7 CMa",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system 7 CMa, which contains 2 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "7 CMa",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/7_cma_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "7 CMa",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "7 CMa-c",
+      "texture": "7 CMa-c",
       "m": 0.000830241,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 921.2530122974177,
       "a": 2.153,
       "e": 0.08,
       "w": 233.5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 996
+      "orbitalPeriod": 996,
+      "temperature": 204.20012695159443,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/7_cma_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#61BD0D",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "7 CMa-b",
+      "texture": "7 CMa-b",
       "m": 0.0017654550000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1264.7158481864128,
       "a": 1.758,
       "e": 0.06,
       "w": 165.3,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 735.1
+      "orbitalPeriod": 735.1,
+      "temperature": 225.9792626761712,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/7_cma_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4F9DC2",
+      "clouds": false
     }
   ]
 }

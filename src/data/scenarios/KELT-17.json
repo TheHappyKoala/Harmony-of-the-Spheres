@@ -1,5 +1,6 @@
 {
   "name": "KELT-17",
+  "discoveryFacility": "KELT",
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-17, which contains 1 planets and was discovered by KELT.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KELT-17",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-17_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KELT-17",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KELT-17-b",
+      "texture": "KELT-17-b",
       "m": 0.001250133,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "KELT",
+      "potentiallyHabitableWorld": false,
+      "radius": 1094.0439755479545,
       "a": 0.04881,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 127.9213388289735,
       "o": 0,
-      "orbitalPeriod": 3.0801716
+      "orbitalPeriod": 3.0801716,
+      "temperature": 2087,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-17_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C82980",
+      "clouds": false
     }
   ]
 }

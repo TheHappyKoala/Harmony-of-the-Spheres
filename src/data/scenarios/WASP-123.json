@@ -1,5 +1,6 @@
 {
   "name": "WASP-123",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-123, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-123",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-123_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-123",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-123-b",
+      "texture": "WASP-123-b",
       "m": 0.0008579157,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 934.0280210261926,
       "a": 0.04263,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 4.792998767021386,
       "o": 0,
-      "orbitalPeriod": 2.9776412
+      "orbitalPeriod": 2.9776412,
+      "temperature": 1520,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-123_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BA84A5",
+      "clouds": false
     }
   ]
 }

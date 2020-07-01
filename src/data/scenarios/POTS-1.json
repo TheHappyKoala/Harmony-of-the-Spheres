@@ -1,5 +1,6 @@
 {
   "name": "POTS-1",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system POTS-1, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "POTS-1",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/pots-1_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "POTS-1",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "POTS-1-b",
+      "texture": "POTS-1-b",
       "m": 0.002204433,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1388.3464891635642,
       "a": 0.03734,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 3.042558495418497,
       "o": 0,
-      "orbitalPeriod": 3.1606296
+      "orbitalPeriod": 3.1606296,
+      "temperature": 942.5384700729982,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/pots-1_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#DE214F",
+      "clouds": false
     }
   ]
 }

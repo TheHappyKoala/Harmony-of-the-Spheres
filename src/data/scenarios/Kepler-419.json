@@ -1,5 +1,6 @@
 {
   "name": "Kepler-419",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-419, which contains 2 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-419",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-419_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-419",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "Kepler-419-c",
+      "texture": "Kepler-419-c",
       "m": 0.00696639,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 2251.0048776747553,
       "a": 1.68,
       "e": 0.184,
       "w": 275.3,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 675.47
+      "orbitalPeriod": 675.47,
+      "temperature": 237.60516840565552,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-419_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#EAF64E",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-419-b",
+      "texture": "Kepler-419-b",
       "m": 0.0023857500000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1435.2106171530902,
       "a": 0.37,
       "e": 0.833,
       "w": 95.2,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 69.7546
+      "orbitalPeriod": 69.7546,
+      "temperature": 506.30202226983556,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-419_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#01A038",
+      "clouds": false
     }
   ]
 }

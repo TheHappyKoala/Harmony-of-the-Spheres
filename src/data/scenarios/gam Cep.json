@@ -1,5 +1,6 @@
 {
   "name": "gam Cep",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system gam Cep, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "gam Cep",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gamma_cephei_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "gam Cep",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "gam Cep-b",
+      "texture": "gam Cep-b",
       "m": 0.0017654550000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1264.7158481864128,
       "a": 2.05,
       "e": 0.049,
       "w": 94.6,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 903.3
+      "orbitalPeriod": 903.3,
+      "temperature": 216.25617645426806,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gamma_cephei_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9673AB",
+      "clouds": false
     }
   ]
 }

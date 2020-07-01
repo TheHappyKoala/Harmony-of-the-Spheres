@@ -1,5 +1,6 @@
 {
   "name": "HD 4732",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 4732, which contains 2 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 4732",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_4732_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 4732",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 4732-c",
+      "texture": "HD 4732-c",
       "m": 0.002261691,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1403.3795384585944,
       "a": 4.6,
       "e": 0.23,
       "w": 118,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2732
+      "orbitalPeriod": 2732,
+      "temperature": 169.93484677483494,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_4732_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#133E95",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 4732-b",
+      "texture": "HD 4732-b",
       "m": 0.002261691,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1403.3795384585944,
       "a": 1.19,
       "e": 0.13,
       "w": 85,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 360.2
+      "orbitalPeriod": 360.2,
+      "temperature": 334.10877296209094,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_4732_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1F8113",
+      "clouds": false
     }
   ]
 }

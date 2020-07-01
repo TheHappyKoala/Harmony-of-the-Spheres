@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#FFBF43",
+      "color": "#3D996F",
       "clouds": false
     },
     {
@@ -93,7 +93,7 @@
       "radius": 130.15781930925107,
       "a": 0.01211,
       "e": 0,
-      "w": 69.54768840439739,
+      "w": 317.7178147741132,
       "o": 0,
       "orbitalPeriod": 0.768448,
       "temperature": 892,
@@ -101,7 +101,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#1059D3",
+      "color": "#0EFD07",
       "clouds": false
     }
   ]

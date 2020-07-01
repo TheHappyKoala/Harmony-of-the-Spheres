@@ -1,5 +1,6 @@
 {
   "name": "Kepler-730",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-730, which contains 2 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-730",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-730_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-730",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-730-c",
+      "texture": "Kepler-730-c",
+      "m": 0.000008519070444479047,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.03997,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 292.78976831493236,
       "o": 0,
-      "orbitalPeriod": 2.85188338
+      "orbitalPeriod": 2.85188338,
+      "temperature": 1607,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-730_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#A53B70",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-730-b",
+      "texture": "Kepler-730-b",
+      "m": 0.0011995748951283466,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.0694,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 78.16669088995238,
       "o": 0,
-      "orbitalPeriod": 6.49168281
+      "orbitalPeriod": 6.49168281,
+      "temperature": 1219,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-730_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C6F31D",
+      "clouds": false
     }
   ]
 }

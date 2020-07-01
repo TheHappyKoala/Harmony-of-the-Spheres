@@ -1,5 +1,6 @@
 {
   "name": "rho CrB",
+  "discoveryFacility": "Fred Lawrence Whipple Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system rho CrB, which contains 2 planets and was discovered by Fred Lawrence Whipple Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "rho CrB",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_143761_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "rho CrB",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "rho CrB-c",
+      "texture": "rho CrB-c",
       "m": 0.000075065238,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 335.73567423509587,
       "a": 0.4123,
       "e": 0.052,
       "w": 190,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 102.54
+      "orbitalPeriod": 102.54,
+      "temperature": 448,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_143761_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#2B6D03",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "rho CrB-b",
+      "texture": "rho CrB-b",
       "m": 0.00099714807,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Fred Lawrence Whipple Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 994.9293007746596,
       "a": 0.2196,
       "e": 0.0373,
       "w": 270.6,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 39.8458
+      "orbitalPeriod": 39.8458,
+      "temperature": 614,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_143761_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C26221",
+      "clouds": false
     }
   ]
 }

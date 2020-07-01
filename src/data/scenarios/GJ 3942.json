@@ -1,5 +1,6 @@
 {
   "name": "GJ 3942",
+  "discoveryFacility": "Roque de los Muchachos Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 3942, which contains 1 planets and was discovered by Roque de los Muchachos Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 3942",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3942_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 3942",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 3942-b",
+      "texture": "GJ 3942-b",
       "m": 0.000021433578,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Roque de los Muchachos Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 198.32293027557182,
       "a": 0.0608,
       "e": 0.121,
       "w": 112.7,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 6.905
+      "orbitalPeriod": 6.905,
+      "temperature": 590,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3942_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#CA7DD6",
+      "clouds": false
     }
   ]
 }

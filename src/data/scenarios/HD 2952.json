@@ -1,5 +1,6 @@
 {
   "name": "HD 2952",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 2952, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 2952",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_2952_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 2952",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 2952-b",
+      "texture": "HD 2952-b",
       "m": 0.0013073910000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1114.8167184431359,
       "a": 1.23,
       "e": 0.13,
-      "w": 0,
-      "i": 0,
+      "w": 37.46649649387286,
       "o": 0,
-      "orbitalPeriod": 311.60001
+      "orbitalPeriod": 311.60001,
+      "temperature": 360.7003284580285,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_2952_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#2DE9E3",
+      "clouds": false
     }
   ]
 }

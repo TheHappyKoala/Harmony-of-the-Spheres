@@ -1,5 +1,6 @@
 {
   "name": "WASP-175",
+  "discoveryFacility": "WASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-175, which contains 1 planets and was discovered by WASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-175",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-175_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-175",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-175-b",
+      "texture": "WASP-175-b",
       "m": 0.0009447570000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "WASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 972.629900657696,
       "a": 0.04403,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 86.16477087021292,
       "o": 0,
-      "orbitalPeriod": 3.0652907
+      "orbitalPeriod": 3.0652907,
+      "temperature": 1571,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-175_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#2185FB",
+      "clouds": false
     }
   ]
 }

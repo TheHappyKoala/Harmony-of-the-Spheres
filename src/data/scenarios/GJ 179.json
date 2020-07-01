@@ -1,5 +1,6 @@
 {
   "name": "GJ 179",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 179, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 179",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_179_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 179",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 179-b",
+      "texture": "GJ 179-b",
       "m": 0.000782526,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 898.6335998859008,
       "a": 2.41,
       "e": 0.21,
       "w": 153,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2288
+      "orbitalPeriod": 2288,
+      "temperature": 72.02243133041253,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_179_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E6ACDB",
+      "clouds": false
     }
   ]
 }

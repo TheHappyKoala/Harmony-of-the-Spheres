@@ -1,5 +1,6 @@
 {
   "name": "HATS-64",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-64, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-64",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-64_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-64",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-64-b",
+      "texture": "HATS-64-b",
       "m": 0.000916128,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 960.1404193036637,
       "a": 0.06562,
       "e": 0.151,
-      "w": 0,
-      "i": 0,
+      "w": 93.93184016272956,
       "o": 0,
-      "orbitalPeriod": 4.908897
+      "orbitalPeriod": 4.908897,
+      "temperature": 1793,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-64_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#CFFF6B",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 98649",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 98649, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 98649",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_98649_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 98649",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 98649-b",
+      "texture": "HD 98649-b",
       "m": 0.006479697,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2183.565078235205,
       "a": 6.57,
       "e": 0.86,
       "w": 252.61,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 6022.9725
+      "orbitalPeriod": 6022.9725,
+      "temperature": 95.96097626486959,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_98649_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A62F23",
+      "clouds": false
     }
   ]
 }

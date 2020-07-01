@@ -1,5 +1,6 @@
 {
   "name": "Kepler-1655",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1655, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-1655",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-1655_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-1655",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-1655-b",
+      "texture": "Kepler-1655-b",
       "m": 0.000015011139000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 170.76815973600335,
       "a": 0.103,
       "e": 0,
       "w": -71,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 11.8728787
+      "orbitalPeriod": 11.8728787,
+      "temperature": 766.4057070589728,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-1655_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#71ABB1",
+      "clouds": false
     }
   ]
 }

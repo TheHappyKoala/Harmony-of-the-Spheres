@@ -1,5 +1,6 @@
 {
   "name": "Kepler-45",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-45, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-45",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-45_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-45",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-45-b",
+      "texture": "Kepler-45-b",
       "m": 0.0004819215,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 733.099990077899,
       "a": 0.03,
       "e": 0.11,
       "w": 230,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2.455239
+      "orbitalPeriod": 2.455239,
+      "temperature": 1000,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-45_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#20ADB9",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 32518",
+  "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 32518, which contains 1 planets and was discovered by Thueringer Landessternwarte Tautenburg.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 32518",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_32518_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 32518",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 32518-b",
+      "texture": "HD 32518-b",
       "m": 0.002901072,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
+      "potentiallyHabitableWorld": false,
+      "radius": 1558.0727783988593,
       "a": 0.59,
       "e": 0.01,
       "w": 306.11,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 157.54
+      "orbitalPeriod": 157.54,
+      "temperature": 343.267155064094,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_32518_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9EA214",
+      "clouds": false
     }
   ]
 }

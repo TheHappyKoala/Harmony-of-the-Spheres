@@ -1,5 +1,6 @@
 {
   "name": "K2-265",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-265, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-265",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-265",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "K2-265-b",
+      "texture": "K2-265-b",
       "m": 0.000019639494,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 191.1735876501295,
       "a": 0.03376,
       "e": 0.084,
-      "w": 0,
-      "i": 0,
+      "w": 232.6176619018467,
       "o": 0,
-      "orbitalPeriod": 2.369172
+      "orbitalPeriod": 2.369172,
+      "temperature": 1229.954583959365,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#87BC77",
+      "clouds": false
     }
   ]
 }

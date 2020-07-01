@@ -1,5 +1,6 @@
 {
   "name": "HD 145457",
+  "discoveryFacility": "Subaru Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 145457, which contains 1 planets and was discovered by Subaru Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 145457",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_145457_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 145457",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 145457-b",
+      "texture": "HD 145457-b",
       "m": 0.002128089,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Subaru Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1367.945758900928,
       "a": 0.76,
       "e": 0.11,
-      "w": 0,
-      "i": 0,
+      "w": 348.5954266941827,
       "o": 0,
-      "orbitalPeriod": 176.3
+      "orbitalPeriod": 176.3,
+      "temperature": 322.30827909712235,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_145457_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#2EF8BB",
+      "clouds": false
     }
   ]
 }

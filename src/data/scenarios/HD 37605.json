@@ -1,5 +1,6 @@
 {
   "name": "HD 37605",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 37605, which contains 2 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 37605",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_37605_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 37605",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 37605-c",
+      "texture": "HD 37605-c",
       "m": 0.003044217,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1589.9113940145264,
       "a": 3.74,
       "e": 0.03,
       "w": 227,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2720
+      "orbitalPeriod": 2720,
+      "temperature": 118.75708064837706,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_37605_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#97B5B9",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 37605-b",
+      "texture": "HD 37605-b",
       "m": 0.002567067,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1480.0513807665689,
       "a": 0.277,
       "e": 0.6745,
       "w": 220.78,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 55.01292
+      "orbitalPeriod": 55.01292,
+      "temperature": 436.37054652576086,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_37605_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#142F08",
+      "clouds": false
     }
   ]
 }

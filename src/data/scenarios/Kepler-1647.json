@@ -1,5 +1,6 @@
 {
   "name": "Kepler-1647",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1647, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-1647",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-1647_%28ab%29_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-1647",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-1647-b",
+      "texture": "Kepler-1647-b",
       "m": 0.001450230624,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1164.4389847407247,
       "a": 2.7205,
       "e": 0.0581,
       "w": 155.0464,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1107.5923
+      "orbitalPeriod": 1107.5923,
+      "temperature": 169.31480383278466,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-1647_%28ab%29_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6F1055",
+      "clouds": false
     }
   ]
 }

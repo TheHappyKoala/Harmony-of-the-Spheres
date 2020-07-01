@@ -1,5 +1,6 @@
 {
   "name": "nu Oph",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system nu Oph, which contains 2 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "nu Oph",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/nu_oph_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "nu Oph",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "nu Oph-c",
+      "texture": "nu Oph-c",
       "m": 0.0235349466,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 3753.468003377539,
       "a": 5.931,
       "e": 0.18,
       "w": 8.27,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3184.83
+      "orbitalPeriod": 3184.83,
+      "temperature": 208.06943362060701,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/nu_oph_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9D2F69",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "nu Oph-b",
+      "texture": "nu Oph-b",
       "m": 0.0211911858,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 3591.686114781078,
       "a": 1.79,
       "e": 0.124,
       "w": 9.93,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 530.21
+      "orbitalPeriod": 530.21,
+      "temperature": 378.7439738170627,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/nu_oph_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F6F9C3",
+      "clouds": false
     }
   ]
 }

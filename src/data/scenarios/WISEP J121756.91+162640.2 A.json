@@ -1,5 +1,6 @@
 {
   "name": "WISEP J121756.91+162640.2 A",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system WISEP J121756.91+162640.2 A, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WISEP J121756.91+162640.2 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wise_1217%2B16_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WISEP J121756.91+162640.2 A",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WISEP J121756.91+162640.2 A-b",
+      "texture": "WISEP J121756.91+162640.2 A-b",
       "m": 0.020994600000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 3577.654195547103,
       "a": 8,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 162.23465165108462,
       "o": 0,
-      "orbitalPeriod": null
+      "orbitalPeriod": null,
+      "temperature": 450,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wise_1217%2B16_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#EB11CB",
+      "clouds": false
     }
   ]
 }

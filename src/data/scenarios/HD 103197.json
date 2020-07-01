@@ -1,5 +1,6 @@
 {
   "name": "HD 103197",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 103197, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 103197",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_103197_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 103197",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 103197-b",
+      "texture": "HD 103197-b",
       "m": 0.000085887,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 355.2733971663244,
       "a": 0.25,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 286.96683910207713,
       "o": 0,
-      "orbitalPeriod": 47.84
+      "orbitalPeriod": 47.84,
+      "temperature": 407.00234342454485,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_103197_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F5A2BE",
+      "clouds": false
     }
   ]
 }

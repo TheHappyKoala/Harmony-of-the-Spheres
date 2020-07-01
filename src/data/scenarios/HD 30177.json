@@ -1,5 +1,6 @@
 {
   "name": "HD 30177",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 30177, which contains 2 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 30177",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_30177_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 30177",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 30177-c",
+      "texture": "HD 30177-c",
       "m": 0.00725268,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 2289.4045603756203,
       "a": 9.89,
       "e": 0.22,
       "w": 19,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 11613
+      "orbitalPeriod": 11613,
+      "temperature": 79.34932786779412,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_30177_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A52FF9",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 30177-b",
+      "texture": "HD 30177-b",
       "m": 0.0082279746,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 2413.9940904650875,
       "a": 3.704,
       "e": 0.162,
       "w": 32.422,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2527.83
+      "orbitalPeriod": 2527.83,
+      "temperature": 129.6599677327974,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_30177_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D15241",
+      "clouds": false
     }
   ]
 }

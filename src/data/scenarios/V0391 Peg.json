@@ -1,5 +1,6 @@
 {
   "name": "V0391 Peg",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system V0391 Peg, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "V0391 Peg",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/v391_peg_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "V0391 Peg",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "V0391 Peg-b",
+      "texture": "V0391 Peg-b",
       "m": 0.0030537600000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1592.0027944177655,
       "a": 1.7,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 169.46250634113056,
       "o": 0,
-      "orbitalPeriod": 1170
+      "orbitalPeriod": 1170,
+      "temperature": 109.71157921782493,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/v391_peg_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0F952F",
+      "clouds": false
     }
   ]
 }

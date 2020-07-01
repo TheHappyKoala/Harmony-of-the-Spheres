@@ -1,5 +1,6 @@
 {
   "name": "HD 72892",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 72892, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 72892",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_72892_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 72892",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 72892-b",
+      "texture": "HD 72892-b",
       "m": 0.005200935,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1990.9821470843021,
       "a": 0.228,
       "e": 0.423,
       "w": 344.35,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 39.475
+      "orbitalPeriod": 39.475,
+      "temperature": 511.36632990879576,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_72892_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#29D7A0",
+      "clouds": false
     }
   ]
 }

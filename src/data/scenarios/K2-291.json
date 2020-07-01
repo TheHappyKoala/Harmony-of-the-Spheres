@@ -1,6 +1,7 @@
 {
   "name": "K2-291",
-  "description": "3D visualisation and gravity simulation of the exoplanet system K2-291, which contains 1 planets and was discovered by Kepler.",
+  "discoveryFacility": "K2",
+  "description": "3D visualisation and gravity simulation of the exoplanet system K2-291, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
   "pl_pnum": 1,
@@ -15,7 +16,7 @@
   "primary": "K2-291",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic_247418783_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-291",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "K2-291-b",
+      "texture": "K2-291-b",
       "m": 0.000019486806,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 190.5479341498282,
       "a": 0.03261,
       "e": 0,
       "w": 0,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2.225177
+      "orbitalPeriod": 2.225177,
+      "temperature": 1261.642283821864,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic_247418783_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#B6A617",
+      "clouds": false
     }
   ]
 }

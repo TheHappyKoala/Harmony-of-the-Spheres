@@ -1,5 +1,6 @@
 {
   "name": "HD 8535",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 8535, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 8535",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_8535_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 8535",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 8535-b",
+      "texture": "HD 8535-b",
       "m": 0.000648924,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 830.68157593115,
       "a": 2.45,
       "e": 0.15,
       "w": 61,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1313
+      "orbitalPeriod": 1313,
+      "temperature": 168.45162867746288,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_8535_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6C76B1",
+      "clouds": false
     }
   ]
 }

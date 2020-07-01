@@ -1,5 +1,6 @@
 {
   "name": "Kepler-87",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-87, which contains 2 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-87",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-87_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-87",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "Kepler-87-c",
+      "texture": "Kepler-87-c",
       "m": 0.000019086,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 188.89194260166812,
       "a": 0.676,
       "e": 0.039,
       "w": 223.2,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 191.2318
+      "orbitalPeriod": 191.2318,
+      "temperature": 403,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-87_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#03E2DA",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-87-b",
+      "texture": "Kepler-87-b",
       "m": 0.000973386,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 984.9017451071315,
       "a": 0.481,
       "e": 0.036,
       "w": 238.6,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 114.73635
+      "orbitalPeriod": 114.73635,
+      "temperature": 478,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-87_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BB31BF",
+      "clouds": false
     }
   ]
 }

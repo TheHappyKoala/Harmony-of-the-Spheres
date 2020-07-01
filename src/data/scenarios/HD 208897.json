@@ -1,5 +1,6 @@
 {
   "name": "HD 208897",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 208897, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 208897",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_208897_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 208897",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 208897-b",
+      "texture": "HD 208897-b",
       "m": 0.00133602,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1125.0054071166173,
       "a": 1.05,
       "e": 0.07,
       "w": 167,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 352.7
+      "orbitalPeriod": 352.7,
+      "temperature": 277.5474771975281,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_208897_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9C114C",
+      "clouds": false
     }
   ]
 }

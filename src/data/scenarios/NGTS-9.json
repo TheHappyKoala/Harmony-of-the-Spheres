@@ -1,5 +1,6 @@
 {
   "name": "NGTS-9",
+  "discoveryFacility": "Paranal Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system NGTS-9, which contains 1 planets and was discovered by Paranal Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "NGTS-9",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ngts-9_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "NGTS-9",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "NGTS-9-b",
+      "texture": "NGTS-9-b",
       "m": 0.00276747,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Paranal Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1527.52382928212,
       "a": 0.058,
       "e": 0.06,
-      "w": 0,
-      "i": 0,
+      "w": 144.7886451305685,
       "o": 0,
-      "orbitalPeriod": 4.43527
+      "orbitalPeriod": 4.43527,
+      "temperature": 1448,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ngts-9_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#38A969",
+      "clouds": false
     }
   ]
 }

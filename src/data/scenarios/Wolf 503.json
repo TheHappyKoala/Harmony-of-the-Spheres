@@ -1,5 +1,6 @@
 {
   "name": "Wolf 503",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system Wolf 503, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Wolf 503",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wolf_503_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Wolf 503",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Wolf 503-b",
+      "texture": "Wolf 503-b",
+      "m": 0.00001578023634650427,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.0571,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 254.00889014339558,
       "o": 0,
-      "orbitalPeriod": 6.00118
+      "orbitalPeriod": 6.00118,
+      "temperature": 805,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wolf_503_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#9FF86F",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "Kepler-53",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-53, which contains 3 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-53",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-53_d/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-53",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "d",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-53-d",
+      "texture": "Kepler-53-d",
+      "m": 0.000017506255146539592,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.091,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 50.521899005044446,
       "o": 0,
-      "orbitalPeriod": 9.751962
+      "orbitalPeriod": 9.751962,
+      "temperature": 785.5037894185731,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-53_d/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#86F537",
+      "clouds": false
     }
   ]
 }

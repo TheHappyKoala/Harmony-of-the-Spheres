@@ -1,5 +1,6 @@
 {
   "name": "HD 62509",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 62509, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 62509",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_62509_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 62509",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 62509-b",
+      "texture": "HD 62509-b",
       "m": 0.00219489,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1385.8190465818939,
       "a": 1.64,
       "e": 0.02,
       "w": 354.58,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 589.64
+      "orbitalPeriod": 589.64,
+      "temperature": 327.7117181309493,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_62509_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#80DD7B",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "WASP-20",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-20, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-20",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-20_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-20",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-20-b",
+      "texture": "WASP-20-b",
       "m": 0.0002967873,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 598.05372288435,
       "a": 0.06,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 103.87296337797011,
       "o": 0,
-      "orbitalPeriod": 4.8996284
+      "orbitalPeriod": 4.8996284,
+      "temperature": 1379,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-20_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A19F0D",
+      "clouds": false
     }
   ]
 }

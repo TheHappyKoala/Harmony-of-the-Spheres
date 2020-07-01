@@ -1,5 +1,6 @@
 {
   "name": "WASP-178",
+  "discoveryFacility": "WASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-178, which contains 1 planets and was discovered by WASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-178",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-178",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-178-b",
+      "texture": "WASP-178-b",
       "m": 0.001584138,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "WASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 1208.4431709266034,
       "a": 0.0558,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 138.4408773949069,
       "o": 0,
-      "orbitalPeriod": 3.3448285
+      "orbitalPeriod": 3.3448285,
+      "temperature": 2470,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#98BCC1",
+      "clouds": false
     }
   ]
 }

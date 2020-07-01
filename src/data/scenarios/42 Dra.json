@@ -1,5 +1,6 @@
 {
   "name": "42 Dra",
+  "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
   "description": "3D visualisation and gravity simulation of the exoplanet system 42 Dra, which contains 1 planets and was discovered by Thueringer Landessternwarte Tautenburg.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "42 Dra",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/42_dra_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "42 Dra",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "42 Dra-b",
+      "texture": "42 Dra-b",
       "m": 0.003702684,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
+      "potentiallyHabitableWorld": false,
+      "radius": 1726.1962132619342,
       "a": 1.19,
       "e": 0.38,
       "w": 218.7,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 479.1
+      "orbitalPeriod": 479.1,
+      "temperature": 217.21784459090551,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/42_dra_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B04C6D",
+      "clouds": false
     }
   ]
 }

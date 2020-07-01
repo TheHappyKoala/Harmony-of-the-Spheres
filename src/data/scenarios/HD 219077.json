@@ -1,5 +1,6 @@
 {
   "name": "HD 219077",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 219077, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 219077",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_219077_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 219077",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 219077-b",
+      "texture": "HD 219077-b",
       "m": 0.009915177,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2610.714400992869,
       "a": 6.22,
       "e": 0.77,
       "w": 57.61,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 5501
+      "orbitalPeriod": 5501,
+      "temperature": 100.05670706388307,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_219077_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#199CB8",
+      "clouds": false
     }
   ]
 }

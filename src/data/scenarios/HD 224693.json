@@ -1,5 +1,6 @@
 {
   "name": "HD 224693",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 224693, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 224693",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_224693_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 224693",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 224693-b",
+      "texture": "HD 224693-b",
       "m": 0.00066801,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 840.8567437692593,
       "a": 0.191,
       "e": 0.104,
       "w": 358,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 26.6904
+      "orbitalPeriod": 26.6904,
+      "temperature": 674.0408413350978,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_224693_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C41748",
+      "clouds": false
     }
   ]
 }

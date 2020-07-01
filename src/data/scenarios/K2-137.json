@@ -1,5 +1,6 @@
 {
   "name": "K2-137",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-137, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-137",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-137_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-137",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "K2-137-b",
+      "texture": "K2-137-b",
       "m": 0.00047715,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 730.0426563100862,
       "a": 0.0058,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 306.57095803463875,
       "o": 0,
-      "orbitalPeriod": 0.179715
+      "orbitalPeriod": 0.179715,
+      "temperature": 1471,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-137_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4D8A08",
+      "clouds": false
     }
   ]
 }

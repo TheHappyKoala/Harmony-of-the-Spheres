@@ -1,5 +1,6 @@
 {
   "name": "WASP-89",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-89, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-89",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-89_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-89",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-89-b",
+      "texture": "WASP-89-b",
       "m": 0.005630370000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 2058.4422140739434,
       "a": 0.0427,
       "e": 0.193,
       "w": 28,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3.3564227
+      "orbitalPeriod": 3.3564227,
+      "temperature": 1120,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-89_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D782BA",
+      "clouds": false
     }
   ]
 }

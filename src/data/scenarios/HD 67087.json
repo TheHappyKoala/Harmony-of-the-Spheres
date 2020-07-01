@@ -1,5 +1,6 @@
 {
   "name": "HD 67087",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 67087, which contains 2 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 67087",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_67087_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 67087",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 67087-c",
+      "texture": "HD 67087-c",
       "m": 0.004628355,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1895.7993281887836,
       "a": 3.86,
       "e": 0.76,
       "w": 256,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2374
+      "orbitalPeriod": 2374,
+      "temperature": 154.20908235370794,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_67087_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7957F1",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 67087-b",
+      "texture": "HD 67087-b",
       "m": 0.0029201580000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1562.3697939666881,
       "a": 1.08,
       "e": 0.17,
       "w": 285,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 352.2
+      "orbitalPeriod": 352.2,
+      "temperature": 291.5356889566114,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_67087_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A1CE7C",
+      "clouds": false
     }
   ]
 }

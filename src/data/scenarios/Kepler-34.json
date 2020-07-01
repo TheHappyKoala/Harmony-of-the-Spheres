@@ -1,5 +1,6 @@
 {
   "name": "Kepler-34",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-34, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-34",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-34_%28ab%29__b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-34",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-34-b",
+      "texture": "Kepler-34-b",
       "m": 0.000209946,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 517.128366021981,
       "a": 1.0896,
       "e": 0.182,
-      "w": 0,
-      "i": 0,
+      "w": 175.11513774225804,
       "o": 0,
-      "orbitalPeriod": 288.822
+      "orbitalPeriod": 288.822,
+      "temperature": 239.06051508455695,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-34_%28ab%29__b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7616E5",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 147873",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 147873, which contains 2 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 147873",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_147873_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 147873",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 147873-c",
+      "texture": "HD 147873-c",
       "m": 0.00219489,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1385.8190465818939,
       "a": 1.36,
       "e": 0.23,
       "w": 41.83,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 491.54
+      "orbitalPeriod": 491.54,
+      "temperature": 262.6571844305474,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_147873_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7B1D2B",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 147873-b",
+      "texture": "HD 147873-b",
       "m": 0.004905102,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1942.6087688771133,
       "a": 0.522,
       "e": 0.207,
       "w": 80.21,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 116.596
+      "orbitalPeriod": 116.596,
+      "temperature": 423.9586369365035,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_147873_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#77078D",
+      "clouds": false
     }
   ]
 }

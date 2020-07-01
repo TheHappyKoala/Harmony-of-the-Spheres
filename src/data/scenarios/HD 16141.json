@@ -1,5 +1,6 @@
 {
   "name": "HD 16141",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 16141, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 16141",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_16141_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 16141",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 16141-b",
+      "texture": "HD 16141-b",
       "m": 0.000248118,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 554.7146566793737,
       "a": 0.36,
       "e": 0.25,
-      "w": 0,
-      "i": 0,
+      "w": 173.46180148860972,
       "o": 0,
-      "orbitalPeriod": 75.523
+      "orbitalPeriod": 75.523,
+      "temperature": 433.60113225479824,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_16141_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8EE4B6",
+      "clouds": false
     }
   ]
 }

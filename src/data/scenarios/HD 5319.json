@@ -1,5 +1,6 @@
 {
   "name": "HD 5319",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 5319, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 5319",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_5319_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 5319",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 5319-c",
+      "texture": "HD 5319-c",
       "m": 0.0010048779,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 998.161352899943,
       "a": 1.93,
       "e": 0.183,
       "w": 244,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 872.2
+      "orbitalPeriod": 872.2,
+      "temperature": 207.16842298409938,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_5319_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A81AA8",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 5319-b",
+      "texture": "HD 5319-b",
       "m": 0.0014848908,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1176.047501870166,
       "a": 1.57,
       "e": 0.092,
       "w": 158,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 637.1
+      "orbitalPeriod": 637.1,
+      "temperature": 229.69544788020917,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_5319_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D26264",
+      "clouds": false
     }
   ]
 }

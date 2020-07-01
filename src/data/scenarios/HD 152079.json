@@ -1,5 +1,6 @@
 {
   "name": "HD 152079",
+  "discoveryFacility": "Las Campanas Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 152079, which contains 1 planets and was discovered by Las Campanas Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 152079",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_152079_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 152079",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 152079-b",
+      "texture": "HD 152079-b",
       "m": 0.0025393923000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Las Campanas Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1473.3288128684242,
       "a": 4.187,
       "e": 0.532,
       "w": 332.905,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2918.92
+      "orbitalPeriod": 2918.92,
+      "temperature": 130.56336172809662,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_152079_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#EEBC38",
+      "clouds": false
     }
   ]
 }

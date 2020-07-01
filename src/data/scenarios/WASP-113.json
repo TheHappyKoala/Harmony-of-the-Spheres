@@ -1,5 +1,6 @@
 {
   "name": "WASP-113",
+  "discoveryFacility": "SuperWASP-North",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-113, which contains 1 planets and was discovered by SuperWASP-North.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-113",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-113_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-113",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-113-b",
+      "texture": "WASP-113-b",
       "m": 0.0004532925,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP-North",
+      "potentiallyHabitableWorld": false,
+      "radius": 714.483412877888,
       "a": 0.05885,
       "e": 0,
       "w": 0,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4.54216875
+      "orbitalPeriod": 4.54216875,
+      "temperature": 1496,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-113_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#EC69B9",
+      "clouds": false
     }
   ]
 }

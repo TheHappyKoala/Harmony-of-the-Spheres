@@ -1,5 +1,6 @@
 {
   "name": "HIP 8541",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 8541, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HIP 8541",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_8541_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HIP 8541",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HIP 8541-b",
+      "texture": "HIP 8541-b",
       "m": 0.0052486500000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1998.6335085774467,
       "a": 2.8,
       "e": 0.16,
       "w": 293.9,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1560.2
+      "orbitalPeriod": 1560.2,
+      "temperature": 161.7371568784942,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_8541_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A09BD7",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "OGLE-TR-182",
+  "discoveryFacility": "OGLE",
   "description": "3D visualisation and gravity simulation of the exoplanet system OGLE-TR-182, which contains 1 planets and was discovered by OGLE.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "OGLE-TR-182",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ogle-tr-182_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "OGLE-TR-182",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "OGLE-TR-182-b",
+      "texture": "OGLE-TR-182-b",
       "m": 0.000963843,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "OGLE",
+      "potentiallyHabitableWorld": false,
+      "radius": 980.8346771386463,
       "a": 0.051,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 23.684251084384805,
       "o": 0,
-      "orbitalPeriod": 3.9791
+      "orbitalPeriod": 3.9791,
+      "temperature": 1175.284407335451,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ogle-tr-182_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#26683F",
+      "clouds": false
     }
   ]
 }

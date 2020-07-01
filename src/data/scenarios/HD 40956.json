@@ -1,5 +1,6 @@
 {
   "name": "HD 40956",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 40956, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 40956",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_40956_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 40956",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 40956-b",
+      "texture": "HD 40956-b",
       "m": 0.0025766100000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1482.3597552617014,
       "a": 1.4,
       "e": 0.24,
       "w": 338.62,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 578.6
+      "orbitalPeriod": 578.6,
+      "temperature": 341.9462952369437,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_40956_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#41D954",
+      "clouds": false
     }
   ]
 }

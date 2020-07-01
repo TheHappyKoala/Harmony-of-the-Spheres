@@ -1,5 +1,6 @@
 {
   "name": "HD 190360",
+  "discoveryFacility": "Haute-Provence Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 190360, which contains 2 planets and was discovered by Haute-Provence Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 190360",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_190360_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 190360",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 190360-c",
+      "texture": "HD 190360-c",
       "m": 0.000057258,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 299.6431541629916,
       "a": 0.1304,
       "e": 0.237,
       "w": 5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 17.111
+      "orbitalPeriod": 17.111,
+      "temperature": 661.2063627974851,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_190360_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#265127",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 190360-b",
+      "texture": "HD 190360-b",
       "m": 0.001469622,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Haute-Provence Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1170.9531994294746,
       "a": 3.97,
       "e": 0.31,
-      "w": 0,
-      "i": 0,
+      "w": 323.0776083052405,
       "o": 0,
-      "orbitalPeriod": 2915.03687
+      "orbitalPeriod": 2915.03687,
+      "temperature": 119.83414082325548,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_190360_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#06293A",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 5891",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 5891, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 5891",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_5891_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 5891",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 5891-b",
+      "texture": "HD 5891-b",
       "m": 0.0072813090000000006,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2293.195816203028,
       "a": 0.64,
       "e": 0.07,
-      "w": 0,
-      "i": 0,
+      "w": 246.4201902380452,
       "o": 0,
-      "orbitalPeriod": 177.11
+      "orbitalPeriod": 177.11,
+      "temperature": 492.4106287376556,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_5891_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5E09F9",
+      "clouds": false
     }
   ]
 }

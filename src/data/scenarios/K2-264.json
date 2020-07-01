@@ -1,5 +1,6 @@
 {
   "name": "K2-264",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-264, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-264",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-264_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-264",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-264-c",
+      "texture": "K2-264-c",
+      "m": 0.00003044175040159006,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.11283,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 306.6720921948728,
       "o": 0,
-      "orbitalPeriod": 19.660302
+      "orbitalPeriod": 19.660302,
+      "temperature": 331,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-264_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#07E12E",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-264-b",
+      "texture": "K2-264-b",
+      "m": 0.000019812181924106628,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.05023,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 30.180109797566992,
       "o": 0,
-      "orbitalPeriod": 5.840002
+      "orbitalPeriod": 5.840002,
+      "temperature": 496,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-264_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#588070",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 217786",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 217786, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 217786",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_217786_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 217786",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 217786-b",
+      "texture": "HD 217786-b",
       "m": 0.012405900000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2868.382358526182,
       "a": 2.38,
       "e": 0.4,
       "w": 100,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1319
+      "orbitalPeriod": 1319,
+      "temperature": 158.2745451739923,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_217786_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#35FF74",
+      "clouds": false
     }
   ]
 }

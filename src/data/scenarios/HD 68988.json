@@ -1,5 +1,6 @@
 {
   "name": "HD 68988",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 68988, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 68988",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_68988_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 68988",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 68988-b",
+      "texture": "HD 68988-b",
       "m": 0.001879971,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1298.5439399371144,
       "a": 0.07,
       "e": 0.12,
-      "w": 0,
-      "i": 0,
+      "w": 190.15075390891545,
       "o": 0,
-      "orbitalPeriod": 6.27711
+      "orbitalPeriod": 6.27711,
+      "temperature": 1094.2281447582197,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_68988_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0A3232",
+      "clouds": false
     }
   ]
 }

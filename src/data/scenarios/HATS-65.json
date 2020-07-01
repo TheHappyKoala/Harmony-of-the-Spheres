@@ -1,5 +1,6 @@
 {
   "name": "HATS-65",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-65, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-65",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-65_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-65",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-65-b",
+      "texture": "HATS-65-b",
       "m": 0.0007834803,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 899.0937129562049,
       "a": 0.04497,
       "e": 0.062,
-      "w": 0,
-      "i": 0,
+      "w": 32.91357133378967,
       "o": 0,
-      "orbitalPeriod": 3.105161
+      "orbitalPeriod": 3.105161,
+      "temperature": 1634,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-65_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#78F9B5",
+      "clouds": false
     }
   ]
 }

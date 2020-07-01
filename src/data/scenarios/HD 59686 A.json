@@ -1,5 +1,6 @@
 {
   "name": "HD 59686 A",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 59686 A, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 59686 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_59686_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 59686 A",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 59686 A-b",
+      "texture": "HD 59686 A-b",
       "m": 0.0066037560000000006,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2201.0271237282054,
       "a": 1.086,
       "e": 0.05,
       "w": 121,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 299.36
+      "orbitalPeriod": 299.36,
+      "temperature": 373.59384449394616,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_59686_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#AA37E0",
+      "clouds": false
     }
   ]
 }

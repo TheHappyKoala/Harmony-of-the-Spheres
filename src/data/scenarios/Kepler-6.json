@@ -1,5 +1,6 @@
 {
   "name": "Kepler-6",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-6, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-6",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-6_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-6",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-6-b",
+      "texture": "Kepler-6-b",
       "m": 0.0006374724000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 824.4929549127327,
       "a": 0.04852,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 253.20975609577965,
       "o": 0,
-      "orbitalPeriod": 3.2346996
+      "orbitalPeriod": 3.2346996,
+      "temperature": 1460,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-6_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#22E5A5",
+      "clouds": false
     }
   ]
 }

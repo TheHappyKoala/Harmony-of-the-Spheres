@@ -1,5 +1,6 @@
 {
   "name": "HD 158038",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 158038, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 158038",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_158038_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 158038",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 158038-b",
+      "texture": "HD 158038-b",
       "m": 0.0014600790000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1167.7536563005137,
       "a": 1.5,
       "e": 0.29,
-      "w": 0,
-      "i": 0,
+      "w": 218.16077675213248,
       "o": 0,
-      "orbitalPeriod": 521
+      "orbitalPeriod": 521,
+      "temperature": 239.1450018941942,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_158038_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A0E8FE",
+      "clouds": false
     }
   ]
 }

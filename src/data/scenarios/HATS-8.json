@@ -1,5 +1,6 @@
 {
   "name": "HATS-8",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-8, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-8",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-8_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-8",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-8-b",
+      "texture": "HATS-8-b",
       "m": 0.00013169340000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 425.1381233173521,
       "a": 0.04667,
       "e": 0.376,
-      "w": 0,
-      "i": 0,
+      "w": 298.84602398435277,
       "o": 0,
-      "orbitalPeriod": 3.583893
+      "orbitalPeriod": 3.583893,
+      "temperature": 1324,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-8_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B330E3",
+      "clouds": false
     }
   ]
 }

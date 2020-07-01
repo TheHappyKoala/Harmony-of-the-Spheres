@@ -1,5 +1,6 @@
 {
   "name": "HD 220074",
+  "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 220074, which contains 1 planets and was discovered by Bohyunsan Optical Astronomical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 220074",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_220074_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 220074",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 220074-b",
+      "texture": "HD 220074-b",
       "m": 0.015879552,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 3181.7439723867437,
       "a": 1.6,
       "e": 0.14,
-      "w": 0,
-      "i": 0,
+      "w": 81.11633584080772,
       "o": 0,
-      "orbitalPeriod": 672.09998
+      "orbitalPeriod": 672.09998,
+      "temperature": 343.5630449527596,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_220074_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#263A9A",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 222582",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 222582, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 222582",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_222582_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 222582",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 222582-b",
+      "texture": "HD 222582-b",
       "m": 0.007987491,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2384.10581589574,
       "a": 1.34,
       "e": 0.73,
-      "w": 0,
-      "i": 0,
+      "w": 195.61843710839972,
       "o": 0,
-      "orbitalPeriod": 572.38
+      "orbitalPeriod": 572.38,
+      "temperature": 226.26143735563346,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_222582_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#05A1CA",
+      "clouds": false
     }
   ]
 }

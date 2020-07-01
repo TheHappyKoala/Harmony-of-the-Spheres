@@ -1,5 +1,6 @@
 {
   "name": "HD 33283",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 33283, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 33283",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_33283_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 33283",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 33283-b",
+      "texture": "HD 33283-b",
       "m": 0.00031396470000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 612.3547795656981,
       "a": 0.1508,
       "e": 0.399,
       "w": 155.5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 18.1991
+      "orbitalPeriod": 18.1991,
+      "temperature": 788.7839551383272,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_33283_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E2A62D",
+      "clouds": false
     }
   ]
 }

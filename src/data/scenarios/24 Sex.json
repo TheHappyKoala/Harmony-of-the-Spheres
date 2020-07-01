@@ -1,5 +1,6 @@
 {
   "name": "24 Sex",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 24 Sex, which contains 2 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "24 Sex",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/24_sex_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "24 Sex",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "24 Sex-c",
+      "texture": "24 Sex-c",
       "m": 0.000820698,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 916.7906687864408,
       "a": 2.08,
       "e": 0.29,
       "w": 220.5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 883
+      "orbitalPeriod": 883,
+      "temperature": 230.59946588009672,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/24_sex_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7E66BE",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "24 Sex-b",
+      "texture": "24 Sex-b",
       "m": 0.001899057,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1304.0646635136748,
       "a": 1.333,
       "e": 0.09,
       "w": 9.2,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 452.8
+      "orbitalPeriod": 452.8,
+      "temperature": 288.05464965250366,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/24_sex_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#87CA87",
+      "clouds": false
     }
   ]
 }

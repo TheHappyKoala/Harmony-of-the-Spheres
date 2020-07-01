@@ -1,5 +1,6 @@
 {
   "name": "HD 222076",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 222076, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 222076",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_222076_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 222076",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 222076-b",
+      "texture": "HD 222076-b",
       "m": 0.001488708,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1177.3163250466241,
       "a": 1.83,
       "e": 0.08,
       "w": 241,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 871
+      "orbitalPeriod": 871,
+      "temperature": 187.09479790654677,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_222076_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#02F40D",
+      "clouds": false
     }
   ]
 }

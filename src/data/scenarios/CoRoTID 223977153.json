@@ -1,5 +1,6 @@
 {
   "name": "CoRoTID 223977153",
+  "discoveryFacility": "CoRoT",
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoTID 223977153, which contains 1 planets and was discovered by CoRoT.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "CoRoTID 223977153",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-32_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "CoRoTID 223977153",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "CoRoTID 223977153-b",
+      "texture": "CoRoTID 223977153-b",
       "m": 0.000143145,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "CoRoT",
+      "potentiallyHabitableWorld": false,
+      "radius": 440.29034659796497,
       "a": 0.071,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 242.12290051263847,
       "o": 0,
-      "orbitalPeriod": 6.71837
+      "orbitalPeriod": 6.71837,
+      "temperature": 938,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-32_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#CFCE26",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "KOI-3680",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system KOI-3680, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KOI-3680",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KOI-3680",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KOI-3680-b",
+      "texture": "KOI-3680-b",
       "m": 0.001841799,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1287.4041495266638,
       "a": 0.534,
       "e": 0.496,
       "w": 154.7,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 141.241671
+      "orbitalPeriod": 141.241671,
+      "temperature": 347,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F4442F",
+      "clouds": false
     }
   ]
 }

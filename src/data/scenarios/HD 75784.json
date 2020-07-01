@@ -1,5 +1,6 @@
 {
   "name": "HD 75784",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 75784, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 75784",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_75784_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 75784",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 75784-c",
+      "texture": "HD 75784-c",
       "m": 0.005382252,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2019.845069297345,
       "a": 8.4,
       "e": 0.489,
       "w": 325,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 7900
+      "orbitalPeriod": 7900,
+      "temperature": 98.71603191013968,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_75784_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#CC822E",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 75784-b",
+      "texture": "HD 75784-b",
       "m": 0.0009543,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 976.7441860465117,
       "a": 1.032,
       "e": 0.097,
       "w": 350,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 341.2
+      "orbitalPeriod": 341.2,
+      "temperature": 281.635556796091,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_75784_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D7D99D",
+      "clouds": false
     }
   ]
 }

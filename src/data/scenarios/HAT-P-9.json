@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-9",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-9, which contains 1 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-9",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-9_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-9",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-9-b",
+      "texture": "HAT-P-9-b",
       "m": 0.0007147707,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 865.093797506416,
       "a": 0.05287,
       "e": 0.084,
       "w": 152,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3.92281072
+      "orbitalPeriod": 3.92281072,
+      "temperature": 1540,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-9_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C0E00F",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "Kepler-39",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-39, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-39",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-39_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-39",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-39-b",
+      "texture": "Kepler-39-b",
       "m": 0.019181430000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 3444.476125791692,
       "a": 0.164,
       "e": 0.112,
       "w": 99,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 21.08721
+      "orbitalPeriod": 21.08721,
+      "temperature": 897,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-39_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#854B0D",
+      "clouds": false
     }
   ]
 }

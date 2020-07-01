@@ -1,5 +1,6 @@
 {
   "name": "Kepler-16",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-16, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-16",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-16_(ab)_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-16",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-16-b",
+      "texture": "Kepler-16-b",
       "m": 0.00031778190000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 615.4707426362047,
       "a": 0.7048,
       "e": 0.0069,
       "w": 318,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 228.776
+      "orbitalPeriod": 228.776,
+      "temperature": 216.94682280010323,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-16_(ab)_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E5C02B",
+      "clouds": false
     }
   ]
 }

@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_23472_c/",
       "exoplanet": true,
       "bump": false,
-      "color": "#314FBD",
+      "color": "#16A29B",
       "clouds": false
     },
     {
@@ -99,7 +99,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_23472_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#493683",
+      "color": "#D1D35D",
       "clouds": false
     }
   ]

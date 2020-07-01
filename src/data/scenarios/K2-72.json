@@ -80,7 +80,7 @@
       "scenarioWikiUrl": null,
       "exoplanet": true,
       "bump": true,
-      "color": "#ACD04F",
+      "color": "#9482FF",
       "clouds": true
     },
     {
@@ -100,7 +100,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#CBE365",
+      "color": "#B80F0C",
       "clouds": false
     },
     {
@@ -120,7 +120,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#1B2446",
+      "color": "#30AE03",
       "clouds": false
     },
     {
@@ -140,7 +140,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#8E3AF2",
+      "color": "#A79B03",
       "clouds": false
     }
   ]

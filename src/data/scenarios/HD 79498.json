@@ -1,5 +1,6 @@
 {
   "name": "HD 79498",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 79498, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 79498",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_79498_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 79498",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 79498-b",
+      "texture": "HD 79498-b",
       "m": 0.0012787620000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1104.4977872205804,
       "a": 2.98,
       "e": 0.575,
       "w": 226.8,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1807
+      "orbitalPeriod": 1807,
+      "temperature": 147.64172423609745,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_79498_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#62403F",
+      "clouds": false
     }
   ]
 }

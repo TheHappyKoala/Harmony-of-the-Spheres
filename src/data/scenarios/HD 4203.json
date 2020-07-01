@@ -1,5 +1,6 @@
 {
   "name": "HD 4203",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 4203, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 4203",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_4203_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 4203",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 4203-c",
+      "texture": "HD 4203-c",
       "m": 0.002070831,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Gemini Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1352.3650018423023,
       "a": 6.95,
       "e": 0.24,
       "w": 224,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 6700
+      "orbitalPeriod": 6700,
+      "temperature": 107.87965063953271,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_4203_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#397215",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 4203-b",
+      "texture": "HD 4203-b",
       "m": 0.002128089,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1367.945758900928,
       "a": 1.17,
       "e": 0.52,
-      "w": 0,
-      "i": 0,
+      "w": 189.5471108706683,
       "o": 0,
-      "orbitalPeriod": 431.88
+      "orbitalPeriod": 431.88,
+      "temperature": 262.9293106450485,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_4203_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4AE97F",
+      "clouds": false
     }
   ]
 }

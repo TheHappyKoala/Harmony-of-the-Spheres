@@ -65,26 +65,6 @@
       "massType": "star"
     },
     {
-      "name": "Kepler-10-c",
-      "texture": "Kepler-10-c",
-      "m": 0.000022130217,
-      "discoveryFacility": "Kepler",
-      "potentiallyHabitableWorld": false,
-      "radius": 201.00513357996684,
-      "a": null,
-      "e": 0,
-      "w": 247.1236892727549,
-      "o": 0,
-      "orbitalPeriod": 45.2946,
-      "temperature": null,
-      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-10_c/",
-      "exoplanet": true,
-      "bump": true,
-      "bumpScale": 0.5,
-      "color": "#417F05",
-      "clouds": false
-    },
-    {
       "name": "Kepler-10-b",
       "texture": "Kepler-10-b",
       "m": 0.00001383735,
@@ -93,7 +73,7 @@
       "radius": 165.02714857079556,
       "a": 0.0172,
       "e": 0,
-      "w": 118.80872099762703,
+      "w": 287.4405916967155,
       "o": 0,
       "orbitalPeriod": 0.837491,
       "temperature": 2130,
@@ -101,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 0.5,
-      "color": "#2B8FC9",
+      "color": "#5FD529",
       "clouds": false
     }
   ]

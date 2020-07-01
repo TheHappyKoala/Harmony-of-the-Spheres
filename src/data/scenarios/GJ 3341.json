@@ -1,5 +1,6 @@
 {
   "name": "GJ 3341",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 3341, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 3341",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3341_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 3341",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 3341-b",
+      "texture": "GJ 3341-b",
       "m": 0.00001984944,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 192.02927201458954,
       "a": 0.089,
       "e": 0.31,
       "w": 42.32,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 14.207
+      "orbitalPeriod": 14.207,
+      "temperature": 457.74943193875896,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3341_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#26958B",
+      "clouds": false
     }
   ]
 }

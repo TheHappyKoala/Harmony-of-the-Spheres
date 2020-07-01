@@ -1,5 +1,6 @@
 {
   "name": "HD 38801",
+  "discoveryFacility": "Subaru Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 38801, which contains 1 planets and was discovered by Subaru Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 38801",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_38801_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 38801",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 38801-b",
+      "texture": "HD 38801-b",
       "m": 0.0092548014,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Subaru Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 2536.2224957323588,
       "a": 1.623,
       "e": 0.017,
       "w": 97.115,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 685.25
+      "orbitalPeriod": 685.25,
+      "temperature": 217.8608489884702,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_38801_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C33E16",
+      "clouds": false
     }
   ]
 }

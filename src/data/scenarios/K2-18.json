@@ -1,5 +1,6 @@
 {
   "name": "K2-18",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-18, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-18",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-18_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-18",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "K2-18-c",
+      "texture": "K2-18-c",
       "m": 0.000022550109000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 202.59820717791527,
       "a": 0.06,
       "e": 0.47,
-      "w": 0,
-      "i": 0,
+      "w": 258.4396357151942,
       "o": 0,
-      "orbitalPeriod": 8.962
+      "orbitalPeriod": 8.962,
+      "temperature": 363,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-18_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#EE9DCA",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "K2-18-b",
+      "texture": "K2-18-b",
       "m": 0.000026787201000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": true,
+      "radius": 217.79236359925548,
       "a": 0.1429,
       "e": 0.2,
       "w": -5.7,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 32.939623
+      "orbitalPeriod": 32.939623,
+      "temperature": 284,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-18_b/",
+      "exoplanet": true,
+      "bump": true,
+      "color": "#63188C",
+      "clouds": true
     }
   ]
 }

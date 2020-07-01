@@ -1,5 +1,6 @@
 {
   "name": "HD 76920",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 76920, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 76920",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_76920_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 76920",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 76920-b",
+      "texture": "HD 76920-b",
       "m": 0.003750399,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1735.5043476762514,
       "a": 1.149,
       "e": 0.856,
       "w": 352.9,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 415.4
+      "orbitalPeriod": 415.4,
+      "temperature": 252.48106058689058,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_76920_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#FD764B",
+      "clouds": false
     }
   ]
 }

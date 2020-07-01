@@ -1,5 +1,6 @@
 {
   "name": "HATS-67",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-67, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-67",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-67_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-67",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-67-b",
+      "texture": "HATS-67-b",
       "m": 0.001383735,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 1141.7089242371705,
       "a": 0.03032,
       "e": 0.057,
-      "w": 0,
-      "i": 0,
+      "w": 307.88230989417406,
       "o": 0,
-      "orbitalPeriod": 1.6091788
+      "orbitalPeriod": 1.6091788,
+      "temperature": 2193,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-67_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1D74AC",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 168443",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 168443, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 168443",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_168443_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 168443",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 168443-c",
+      "texture": "HD 168443-c",
       "m": 0.016407279900000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 3225.7338629673663,
       "a": 2.8373,
       "e": 0.2113,
       "w": 64.87,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1749.83
+      "orbitalPeriod": 1749.83,
+      "temperature": 141.7500402261997,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_168443_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#037ABA",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 168443-b",
+      "texture": "HD 168443-b",
       "m": 0.0073089837000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2296.852487244707,
       "a": 0.2931,
       "e": 0.52883,
       "w": 172.923,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 58.11247
+      "orbitalPeriod": 58.11247,
+      "temperature": 441.0297748763513,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_168443_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#25FC54",
+      "clouds": false
     }
   ]
 }

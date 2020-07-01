@@ -1,5 +1,6 @@
 {
   "name": "KOI-1599",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system KOI-1599, which contains 2 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KOI-1599",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KOI-1599",
@@ -64,28 +65,44 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "KOI-1599-c",
+      "texture": "KOI-1599-c",
       "m": 0.000013808721000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 164.88365953365684,
       "a": 0.14728,
       "e": 0.014,
       "w": 230.175,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 20.4415
+      "orbitalPeriod": 20.4415,
+      "temperature": 636.2498089899242,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#5BA35E",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KOI-1599-b",
+      "texture": "KOI-1599-b",
       "m": 0.000027025776000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 218.60495387396142,
       "a": 0.112293,
       "e": 0.0114,
       "w": 49.951,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 13.6088
+      "orbitalPeriod": 13.6088,
+      "temperature": 728.6571158503351,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#78E681",
+      "clouds": false
     }
   ]
 }

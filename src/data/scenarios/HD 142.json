@@ -1,5 +1,6 @@
 {
   "name": "HD 142",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 142, which contains 2 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 142",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_142_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 142",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 142-c",
+      "texture": "HD 142-c",
       "m": 0.00505779,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1967.7807152110931,
       "a": 6.8,
       "e": 0.21,
       "w": 250,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 6005
+      "orbitalPeriod": 6005,
+      "temperature": 107.75161821403734,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_142_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#897DF6",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 142-b",
+      "texture": "HD 142-b",
       "m": 0.0011928750000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1072.7117563420916,
       "a": 1.02,
       "e": 0.17,
       "w": 327,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 349.7
+      "orbitalPeriod": 349.7,
+      "temperature": 278.2134819132442,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_142_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3C9B02",
+      "clouds": false
     }
   ]
 }

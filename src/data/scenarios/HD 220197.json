@@ -1,5 +1,6 @@
 {
   "name": "HD 220197",
+  "discoveryFacility": "Roque de los Muchachos Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 220197, which contains 1 planets and was discovered by Roque de los Muchachos Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 220197",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_220197_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 220197",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 220197-b",
+      "texture": "HD 220197-b",
       "m": 0.00019086000000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Roque de los Muchachos Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 496.83643055210734,
       "a": 2.729,
       "e": 0.187,
       "w": 159.011,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1728
+      "orbitalPeriod": 1728,
+      "temperature": 135.68401939520905,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_220197_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#77CAA8",
+      "clouds": false
     }
   ]
 }

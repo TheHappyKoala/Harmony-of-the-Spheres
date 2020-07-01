@@ -1,5 +1,6 @@
 {
   "name": "HD 33844",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 33844, which contains 2 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 33844",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_33844_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 33844",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 33844-c",
+      "texture": "HD 33844-c",
       "m": 0.0016700250000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1235.5400148805695,
       "a": 2.24,
       "e": 0.13,
       "w": 71,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 916
+      "orbitalPeriod": 916,
+      "temperature": 253.94448291657667,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_33844_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9BF43D",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 33844-b",
+      "texture": "HD 33844-b",
       "m": 0.001918143,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1309.5532989053288,
       "a": 1.6,
       "e": 0.15,
-      "w": 0,
-      "i": 0,
+      "w": 238.00332088831908,
       "o": 0,
-      "orbitalPeriod": 551.40002
+      "orbitalPeriod": 551.40002,
+      "temperature": 300.471164282489,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_33844_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0A3F87",
+      "clouds": false
     }
   ]
 }

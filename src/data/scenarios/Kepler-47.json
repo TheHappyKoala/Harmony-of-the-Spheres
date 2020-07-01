@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-47_(ab)_d/",
       "exoplanet": true,
       "bump": false,
-      "color": "#F541AC",
+      "color": "#CC4399",
       "clouds": false
     },
     {
@@ -99,7 +99,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-47_%28ab%29_c/",
       "exoplanet": true,
       "bump": true,
-      "color": "#B20558",
+      "color": "#69F7AE",
       "clouds": true
     },
     {
@@ -119,7 +119,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#8890FD",
+      "color": "#AF509F",
       "clouds": false
     }
   ]

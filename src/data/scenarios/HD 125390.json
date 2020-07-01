@@ -1,5 +1,6 @@
 {
   "name": "HD 125390",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 125390, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 125390",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_125390_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 125390",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 125390-b",
+      "texture": "HD 125390-b",
       "m": 0.021147288,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 3588.5593424064277,
       "a": 3.16,
       "e": 0.591,
       "w": 342.4,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1756.2
+      "orbitalPeriod": 1756.2,
+      "temperature": 170.43550189745537,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_125390_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#50DD55",
+      "clouds": false
     }
   ]
 }

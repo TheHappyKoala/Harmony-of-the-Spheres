@@ -1,5 +1,6 @@
 {
   "name": "HD 28185",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 28185, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 28185",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_28185_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 28185",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 28185-b",
+      "texture": "HD 28185-b",
       "m": 0.005630370000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2058.4422140739434,
       "a": 1.02,
       "e": 0.05,
-      "w": 0,
-      "i": 0,
+      "w": 146.9119444040712,
       "o": 0,
-      "orbitalPeriod": 379
+      "orbitalPeriod": 379,
+      "temperature": 241.76836128150913,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_28185_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4A1340",
+      "clouds": false
     }
   ]
 }

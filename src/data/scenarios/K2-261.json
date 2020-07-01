@@ -1,5 +1,6 @@
 {
   "name": "K2-261",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-261, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-261",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-261_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-261",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "K2-261-b",
+      "texture": "K2-261-b",
       "m": 0.00021280890000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 520.0784722758158,
       "a": 0.102,
       "e": 0.39,
       "w": 143,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 11.63344
+      "orbitalPeriod": 11.63344,
+      "temperature": 1080,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-261_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#78135E",
+      "clouds": false
     }
   ]
 }

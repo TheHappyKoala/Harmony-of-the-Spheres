@@ -1,5 +1,6 @@
 {
   "name": "BD+48 738",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system BD+48 738, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "BD+48 738",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd%2B48_738_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "BD+48 738",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "BD+48 738-b",
+      "texture": "BD+48 738-b",
       "m": 0.0008684130000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 938.8111081511804,
       "a": 1,
       "e": 0.2,
       "w": 358.9,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 392.6
+      "orbitalPeriod": 392.6,
+      "temperature": 191.94341337118922,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd%2B48_738_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7542B5",
+      "clouds": false
     }
   ]
 }

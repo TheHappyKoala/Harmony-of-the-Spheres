@@ -1,5 +1,6 @@
 {
   "name": "HATS-17",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-17, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-17",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-17_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-17",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-17-b",
+      "texture": "HATS-17-b",
       "m": 0.0012768534000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 1103.8051155542748,
       "a": 0.1308,
       "e": 0.029,
-      "w": 0,
-      "i": 0,
+      "w": 190.4168744327892,
       "o": 0,
-      "orbitalPeriod": 16.254611
+      "orbitalPeriod": 16.254611,
+      "temperature": 814,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-17_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#407319",
+      "clouds": false
     }
   ]
 }

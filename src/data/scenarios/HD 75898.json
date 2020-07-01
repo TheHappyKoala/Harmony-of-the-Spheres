@@ -1,5 +1,6 @@
 {
   "name": "HD 75898",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 75898, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 75898",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_75898_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 75898",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 75898-b",
+      "texture": "HD 75898-b",
       "m": 0.002586153,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1484.6631763340758,
       "a": 1.191,
       "e": 0.11,
       "w": 241.1,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 422.9
+      "orbitalPeriod": 422.9,
+      "temperature": 262.16303250011896,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_75898_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F71AAF",
+      "clouds": false
     }
   ]
 }

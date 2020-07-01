@@ -1,5 +1,6 @@
 {
   "name": "Kepler-1654",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1654, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-1654",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-1654",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-1654-b",
+      "texture": "Kepler-1654-b",
       "m": 0.00047715,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 730.0426563100862,
       "a": 2.026,
       "e": 0.26,
       "w": 81,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1047.8356
+      "orbitalPeriod": 1047.8356,
+      "temperature": 206,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#46E969",
+      "clouds": false
     }
   ]
 }

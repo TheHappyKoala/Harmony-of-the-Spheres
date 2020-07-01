@@ -1,5 +1,6 @@
 {
   "name": "KOI-1257",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system KOI-1257, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KOI-1257",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-420_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KOI-1257",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KOI-1257-b",
+      "texture": "KOI-1257-b",
       "m": 0.001383735,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1141.7089242371705,
       "a": 0.382,
       "e": 0.772,
       "w": 141.3,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 86.647661
+      "orbitalPeriod": 86.647661,
+      "temperature": 511,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-420_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1C6538",
+      "clouds": false
     }
   ]
 }

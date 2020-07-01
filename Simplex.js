@@ -65,7 +65,7 @@ module.exports = class {
 
     this.oRng = Math;
     this.iOctaves = 1;
-    this.fPersistence = 0.7;
+    this.fPersistence = 0.5;
     this.fFreq;
     this.fPers;
     this.aOctavesFreq;
@@ -269,6 +269,7 @@ module.exports = class {
 
   noiseDetail(octaves, falloff) {
     this.iOctaves = octaves;
+    this.fPersistence = falloff || this.fPersistence;
 
     this.octavesFreqPers();
   }

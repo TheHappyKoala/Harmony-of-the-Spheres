@@ -1,5 +1,6 @@
 {
   "name": "KELT-10",
+  "discoveryFacility": "KELT-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-10, which contains 1 planets and was discovered by KELT-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KELT-10",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-10_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KELT-10",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KELT-10-b",
+      "texture": "KELT-10-b",
       "m": 0.0006479697000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "KELT-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 830.1682889209015,
       "a": 0.0525,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 350.71768063832315,
       "o": 0,
-      "orbitalPeriod": 4.1662739
+      "orbitalPeriod": 4.1662739,
+      "temperature": 1377,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-10_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#02837D",
+      "clouds": false
     }
   ]
 }

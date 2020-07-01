@@ -1,5 +1,6 @@
 {
   "name": "GJ 676 A",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 676 A, which contains 4 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 676 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_676_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 676 A",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "GJ 676 A-c",
+      "texture": "GJ 676 A-c",
       "m": 0.00648924,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Paranal Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2184.915160628917,
       "a": 6.6,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 156.1764473351854,
       "o": 0,
-      "orbitalPeriod": 7337
+      "orbitalPeriod": 7337,
+      "temperature": 73.95535076069208,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_676_a_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1B995F",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 676 A-b",
+      "texture": "GJ 676 A-b",
       "m": 0.004733328,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1913.7409014982236,
       "a": 1.82,
       "e": 0.33,
-      "w": 0,
-      "i": 0,
+      "w": 27.928115106702876,
       "o": 0,
-      "orbitalPeriod": 1056.80005
+      "orbitalPeriod": 1056.80005,
+      "temperature": 140.83346837120726,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_676_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E613E7",
+      "clouds": false
     }
   ]
 }

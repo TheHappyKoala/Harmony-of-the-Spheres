@@ -1,5 +1,6 @@
 {
   "name": "KPS-1",
+  "discoveryFacility": "Acton Sky Portal Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system KPS-1, which contains 1 planets and was discovered by Acton Sky Portal Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KPS-1",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kps-1_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KPS-1",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KPS-1-b",
+      "texture": "KPS-1-b",
       "m": 0.0010401870000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Acton Sky Portal Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1012.7446647562958,
       "a": 0.0269,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 167.55587564854665,
       "o": 0,
-      "orbitalPeriod": 1.706291
+      "orbitalPeriod": 1.706291,
+      "temperature": 1459,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kps-1_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F32F88",
+      "clouds": false
     }
   ]
 }

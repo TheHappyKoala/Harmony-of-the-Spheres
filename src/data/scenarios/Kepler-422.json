@@ -1,5 +1,6 @@
 {
   "name": "Kepler-422",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-422, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-422",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-422_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-422",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-422-b",
+      "texture": "Kepler-422-b",
       "m": 0.000410349,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 685.231921195467,
       "a": 0.082,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 168.5977636789214,
       "o": 0,
-      "orbitalPeriod": 7.8914483
+      "orbitalPeriod": 7.8914483,
+      "temperature": 932.9661307970415,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-422_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D4C3B8",
+      "clouds": false
     }
   ]
 }

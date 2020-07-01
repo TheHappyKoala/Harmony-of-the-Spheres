@@ -1,5 +1,6 @@
 {
   "name": "WASP-127",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-127, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-127",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-127_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-127",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-127-b",
+      "texture": "WASP-127-b",
       "m": 0.000171774,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 475.33006755129566,
       "a": 0.052,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 347.8900626565623,
       "o": 0,
-      "orbitalPeriod": 4.178062
+      "orbitalPeriod": 4.178062,
+      "temperature": 1400,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-127_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C058DA",
+      "clouds": false
     }
   ]
 }

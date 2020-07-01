@@ -1,5 +1,6 @@
 {
   "name": "Kepler-26",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-26, which contains 4 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-26",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-26_d/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-26",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "e",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-26-e",
+      "texture": "Kepler-26-e",
+      "m": 0.000023852682513554846,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": true,
+      "radius": 200,
       "a": 0.22,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 337.97817372624206,
       "o": 0,
-      "orbitalPeriod": 46.827915
+      "orbitalPeriod": 46.827915,
+      "temperature": 323.09735545934774,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-26_e/",
+      "exoplanet": true,
+      "bump": true,
+      "color": "#E015AC",
+      "clouds": true
     },
     {
-      "name": "d",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-26-d",
+      "texture": "Kepler-26-d",
+      "m": 0.000003359089508724956,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.039,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 212.44710791144675,
       "o": 0,
-      "orbitalPeriod": 3.543919
+      "orbitalPeriod": 3.543919,
+      "temperature": 767.383470533296,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-26_d/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#A9345E",
+      "clouds": false
     }
   ]
 }

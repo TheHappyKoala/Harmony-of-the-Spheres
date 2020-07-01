@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/toi-216_c/",
       "exoplanet": true,
       "bump": false,
-      "color": "#6E378C",
+      "color": "#29BBEC",
       "clouds": false
     },
     {
@@ -99,7 +99,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/toi-216_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#1D315E",
+      "color": "#E02712",
       "clouds": false
     }
   ]

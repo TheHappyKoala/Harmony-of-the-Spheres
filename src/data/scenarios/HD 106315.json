@@ -1,5 +1,6 @@
 {
   "name": "HD 106315",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 106315, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 106315",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_106315_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 106315",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 106315-c",
+      "texture": "HD 106315-c",
       "m": 0.000045634626,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 272.4061165864215,
       "a": 0.1536,
       "e": 0.22,
       "w": 96,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 21.05704
+      "orbitalPeriod": 21.05704,
+      "temperature": 886,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_106315_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#DB5DC5",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 106315-b",
+      "texture": "HD 106315-b",
       "m": 0.000037828452,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 251.7659339567678,
       "a": 0.0907,
       "e": 0.093,
       "w": 239,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 9.55237
+      "orbitalPeriod": 9.55237,
+      "temperature": 1153,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_106315_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6FEAE3",
+      "clouds": false
     }
   ]
 }

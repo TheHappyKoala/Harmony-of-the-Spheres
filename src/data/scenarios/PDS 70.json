@@ -1,5 +1,6 @@
 {
   "name": "PDS 70",
+  "discoveryFacility": "Paranal Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system PDS 70, which contains 2 planets and was discovered by Paranal Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "PDS 70",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/pds_70_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "PDS 70",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "PDS 70-c",
+      "texture": "PDS 70-c",
       "m": 0.010010120307000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "European Southern Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2621.1849854806137,
       "a": 34.5,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 134.85328759501684,
       "o": 0,
-      "orbitalPeriod": null
+      "orbitalPeriod": null,
+      "temperature": 33.3388082007846,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/pds_70_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#94408F",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "PDS 70-b",
+      "texture": "PDS 70-b",
       "m": 0.0076344,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Paranal Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2339.2607253020933,
       "a": 22,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 66.23843351746781,
       "o": 0,
-      "orbitalPeriod": 43500
+      "orbitalPeriod": 43500,
+      "temperature": 1200,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/pds_70_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D74B33",
+      "clouds": false
     }
   ]
 }

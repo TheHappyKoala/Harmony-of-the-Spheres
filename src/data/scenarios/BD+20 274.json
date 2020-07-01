@@ -1,5 +1,6 @@
 {
   "name": "BD+20 274",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system BD+20 274, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "BD+20 274",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd+20_274_c/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "BD+20 274",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "BD+20 274-b",
+      "texture": "BD+20 274-b",
       "m": 0.004008060000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1784.6191001895431,
       "a": 1.3,
       "e": 0.21,
       "w": 108.5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 578.2
+      "orbitalPeriod": 578.2,
+      "temperature": 178.4823345886253,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd+20_274_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C40F1B",
+      "clouds": false
     }
   ]
 }

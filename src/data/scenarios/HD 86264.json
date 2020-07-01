@@ -1,5 +1,6 @@
 {
   "name": "HD 86264",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 86264, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 86264",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_86264_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 86264",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 86264-b",
+      "texture": "HD 86264-b",
       "m": 0.0066801000000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2211.6785789056594,
       "a": 2.86,
       "e": 0.7,
       "w": 306,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1475
+      "orbitalPeriod": 1475,
+      "temperature": 185.04726287415758,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_86264_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#181400",
+      "clouds": false
     }
   ]
 }

@@ -1,6 +1,7 @@
 {
   "name": "K2-290",
-  "description": "3D visualisation and gravity simulation of the exoplanet system K2-290, which contains 2 planets and was discovered by Kepler.",
+  "discoveryFacility": "K2",
+  "description": "3D visualisation and gravity simulation of the exoplanet system K2-290, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
   "pl_pnum": 2,
@@ -15,7 +16,7 @@
   "primary": "K2-290",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic_249624646_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-290",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "K2-290-c",
+      "texture": "K2-290-c",
       "m": 0.0007386282,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 877.1059119807295,
       "a": 0.305,
       "e": 0,
       "w": 90,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 48.36685
+      "orbitalPeriod": 48.36685,
+      "temperature": 676,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic_249624646_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#DD6AB5",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "K2-290-b",
+      "texture": "K2-290-b",
       "m": 0.00003273249,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 236.9214408909039,
       "a": 0.0923,
       "e": 0,
       "w": 90,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 9.21165
+      "orbitalPeriod": 9.21165,
+      "temperature": 1230,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic_249624646_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#CE6F71",
+      "clouds": false
     }
   ]
 }

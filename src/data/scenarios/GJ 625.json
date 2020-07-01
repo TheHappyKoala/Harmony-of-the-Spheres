@@ -1,5 +1,6 @@
 {
   "name": "GJ 625",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 625, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 625",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_625_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 625",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 625-b",
+      "texture": "GJ 625-b",
       "m": 0.000008464640999999999,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 134.2482877146626,
       "a": 0.078361,
       "e": 0.13,
       "w": 343.1,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 14.628
+      "orbitalPeriod": 14.628,
+      "temperature": 348.3697044936366,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_625_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#14D557",
+      "clouds": false
     }
   ]
 }

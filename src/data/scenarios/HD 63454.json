@@ -1,5 +1,6 @@
 {
   "name": "HD 63454",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 63454, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 63454",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_63454_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 63454",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 63454-b",
+      "texture": "HD 63454-b",
       "m": 0.000238575,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 545.6518581282935,
       "a": 0.04,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 342.3491859730646,
       "o": 0,
-      "orbitalPeriod": 2.81805
+      "orbitalPeriod": 2.81805,
+      "temperature": 627.5616497585041,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_63454_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1FC9C7",
+      "clouds": false
     }
   ]
 }

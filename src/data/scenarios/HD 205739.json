@@ -1,5 +1,6 @@
 {
   "name": "HD 205739",
+  "discoveryFacility": "Las Campanas Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 205739, which contains 1 planets and was discovered by Las Campanas Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 205739",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_205739_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 205739",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 205739-b",
+      "texture": "HD 205739-b",
       "m": 0.0013073910000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Las Campanas Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1114.8167184431359,
       "a": 0.896,
       "e": 0.27,
       "w": 301,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 279.8
+      "orbitalPeriod": 279.8,
+      "temperature": 295.02939729255434,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_205739_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E22FE7",
+      "clouds": false
     }
   ]
 }

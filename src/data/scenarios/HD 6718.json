@@ -1,5 +1,6 @@
 {
   "name": "HD 6718",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 6718, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 6718",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_6718_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 6718",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 6718-b",
+      "texture": "HD 6718-b",
       "m": 0.001603224,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1214.5369533813582,
       "a": 3.55,
       "e": 0.1,
-      "w": 0,
-      "i": 0,
+      "w": 323.7411278987718,
       "o": 0,
-      "orbitalPeriod": 2496
+      "orbitalPeriod": 2496,
+      "temperature": 135.27049024086642,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_6718_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#36625B",
+      "clouds": false
     }
   ]
 }

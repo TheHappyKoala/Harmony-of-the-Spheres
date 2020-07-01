@@ -1,5 +1,6 @@
 {
   "name": "WASP-136",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-136, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-136",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-136_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-136",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-136-b",
+      "texture": "WASP-136-b",
       "m": 0.001440993,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 1161.3179871288667,
       "a": 0.0661,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 4.230064425930484,
       "o": 0,
-      "orbitalPeriod": 5.215357
+      "orbitalPeriod": 5.215357,
+      "temperature": 1742,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-136_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C2A15C",
+      "clouds": false
     }
   ]
 }

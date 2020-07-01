@@ -1,5 +1,6 @@
 {
   "name": "HD 125595",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 125595, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 125595",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_125595_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 125595",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 125595-b",
+      "texture": "HD 125595-b",
       "m": 0.000019086,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 188.89194260166812,
       "a": 0.08,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 148.1584875760239,
       "o": 0,
-      "orbitalPeriod": 9.6737
+      "orbitalPeriod": 9.6737,
+      "temperature": 336.12663582872165,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_125595_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#91CB06",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 102195",
+  "discoveryFacility": "Kitt Peak National Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 102195, which contains 1 planets and was discovered by Kitt Peak National Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 102195",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_102195_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 102195",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 102195-b",
+      "texture": "HD 102195-b",
       "m": 0.000391263,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kitt Peak National Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 671.6608807937743,
       "a": 0.05,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 236.61380097058864,
       "o": 0,
-      "orbitalPeriod": 4.11377
+      "orbitalPeriod": 4.11377,
+      "temperature": 875.7388487737679,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_102195_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5DAD6E",
+      "clouds": false
     }
   ]
 }

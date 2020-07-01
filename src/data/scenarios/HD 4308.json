@@ -1,5 +1,6 @@
 {
   "name": "HD 4308",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 4308, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 4308",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_4308_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 4308",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 4308-b",
+      "texture": "HD 4308-b",
       "m": 0.000047715000000000006,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 277.55447679079066,
       "a": 0.12,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 354.9522983052802,
       "o": 0,
-      "orbitalPeriod": 15.56
+      "orbitalPeriod": 15.56,
+      "temperature": 657.6896573004094,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_4308_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0DBAC6",
+      "clouds": false
     }
   ]
 }

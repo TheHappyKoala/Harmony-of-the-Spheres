@@ -1,5 +1,6 @@
 {
   "name": "HD 43197",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 43197, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 43197",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_43197_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 43197",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 43197-b",
+      "texture": "HD 43197-b",
       "m": 0.00057258,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 788.1417973854902,
       "a": 0.92,
       "e": 0.83,
       "w": 251,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 327.8
+      "orbitalPeriod": 327.8,
+      "temperature": 243.25340884785146,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_43197_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5C79DC",
+      "clouds": false
     }
   ]
 }

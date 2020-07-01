@@ -1,5 +1,6 @@
 {
   "name": "K2-4",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-4, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-4",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-4_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-4",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-4-b",
+      "texture": "K2-4-b",
+      "m": 0.000017064940544933957,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.078,
       "e": 0.08,
       "w": -41.44,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 10.003417
+      "orbitalPeriod": 10.003417,
+      "temperature": 616.3637702319667,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-4_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#C11DDD",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "KOI-13",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system KOI-13, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KOI-13",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-13_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KOI-13",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KOI-13-b",
+      "texture": "KOI-13-b",
       "m": 0.008855904,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 2489.722733441548,
       "a": 0.03641,
       "e": 0.00064,
       "w": 5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1.763588
+      "orbitalPeriod": 1.763588,
+      "temperature": 2550,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-13_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F38F99",
+      "clouds": false
     }
   ]
 }

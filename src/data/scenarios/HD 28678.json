@@ -1,5 +1,6 @@
 {
   "name": "HD 28678",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 28678, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 28678",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_28678_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 28678",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 28678-b",
+      "texture": "HD 28678-b",
       "m": 0.0014715306000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1171.5916607890044,
       "a": 1.18,
       "e": 0.149,
       "w": 128,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 380.2
+      "orbitalPeriod": 380.2,
+      "temperature": 304.66810642725,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_28678_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#59D5B9",
+      "clouds": false
     }
   ]
 }

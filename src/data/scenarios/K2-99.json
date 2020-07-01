@@ -1,5 +1,6 @@
 {
   "name": "K2-99",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-99, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-99",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-99_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-99",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-99-b",
+      "texture": "K2-99-b",
+      "m": 0.0010630678073436932,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.1597,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 281.0058503001049,
       "o": 0,
-      "orbitalPeriod": 18.251985
+      "orbitalPeriod": 18.251985,
+      "temperature": 1113,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-99_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6BE88C",
+      "clouds": false
     }
   ]
 }

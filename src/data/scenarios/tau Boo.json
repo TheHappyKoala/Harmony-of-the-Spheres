@@ -1,5 +1,6 @@
 {
   "name": "tau Boo",
+  "discoveryFacility": "Roque de los Muchachos Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system tau Boo, which contains 1 planets and was discovered by Roque de los Muchachos Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "tau Boo",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/tau_boo_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "tau Boo",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "tau Boo-b",
+      "texture": "tau Boo-b",
       "m": 0.004122576,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Roque de los Muchachos Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1805.8597091250383,
       "a": 0.049,
       "e": 0.011,
       "w": 113.4,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3.3124568
+      "orbitalPeriod": 3.3124568,
+      "temperature": 1353.567701063038,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/tau_boo_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#AB2C85",
+      "clouds": false
     }
   ]
 }

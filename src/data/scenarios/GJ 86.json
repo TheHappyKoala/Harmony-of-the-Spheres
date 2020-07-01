@@ -1,5 +1,6 @@
 {
   "name": "GJ 86",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 86, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 86",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_86_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 86",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 86-b",
+      "texture": "GJ 86-b",
       "m": 0.004218006,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1823.300234994976,
       "a": 0.11,
       "e": 0.04,
-      "w": 0,
-      "i": 0,
+      "w": 101.05046833424416,
       "o": 0,
-      "orbitalPeriod": 15.76491
+      "orbitalPeriod": 15.76491,
+      "temperature": 686.9344433349688,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_86_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#537FE9",
+      "clouds": false
     }
   ]
 }

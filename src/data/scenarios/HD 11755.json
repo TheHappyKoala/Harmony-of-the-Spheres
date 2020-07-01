@@ -1,5 +1,6 @@
 {
   "name": "HD 11755",
+  "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 11755, which contains 1 planets and was discovered by Bohyunsan Optical Astronomical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 11755",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_11755_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 11755",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 11755-b",
+      "texture": "HD 11755-b",
       "m": 0.005372709,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2018.340155223795,
       "a": 1.09,
       "e": 0.19,
-      "w": 0,
-      "i": 0,
+      "w": 348.75305159271693,
       "o": 0,
-      "orbitalPeriod": 433.70001
+      "orbitalPeriod": 433.70001,
+      "temperature": 180.10905486680332,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_11755_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0E7714",
+      "clouds": false
     }
   ]
 }

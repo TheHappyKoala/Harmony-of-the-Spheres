@@ -1,5 +1,6 @@
 {
   "name": "HD 152581",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 152581, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 152581",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_152581_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 152581",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 152581-b",
+      "texture": "HD 152581-b",
       "m": 0.0017835867,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1270.155056244001,
       "a": 1.66,
       "e": 0.04,
       "w": 181,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 686.5
+      "orbitalPeriod": 686.5,
+      "temperature": 227.32798063810958,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_152581_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D01286",
+      "clouds": false
     }
   ]
 }

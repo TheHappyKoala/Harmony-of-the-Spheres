@@ -73,14 +73,14 @@
       "radius": 200,
       "a": 0.64,
       "e": 0.14,
-      "w": 193.90254434372645,
+      "w": 90.29174099986673,
       "o": 0,
       "orbitalPeriod": 242.4613,
       "temperature": 299,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-69_c/",
       "exoplanet": true,
       "bump": true,
-      "color": "#4EB986",
+      "color": "#9ED970",
       "clouds": true
     },
     {
@@ -92,7 +92,7 @@
       "radius": 200,
       "a": 0.094,
       "e": 0.16,
-      "w": 156.94377403371595,
+      "w": 355.6799372933198,
       "o": 0,
       "orbitalPeriod": 13.722341,
       "temperature": 779,
@@ -100,7 +100,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#F872D9",
+      "color": "#CA1EAE",
       "clouds": false
     }
   ]

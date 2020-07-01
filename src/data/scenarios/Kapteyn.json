@@ -1,5 +1,6 @@
 {
   "name": "Kapteyn",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kapteyn, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -67,18 +68,20 @@
       "name": "Kapteyn-c",
       "texture": "Kapteyn-c",
       "m": 0.0000209946,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
       "radius": 196.6067212981352,
       "a": 0.311,
       "e": 0.23,
       "w": 3.9,
       "o": 0,
       "orbitalPeriod": 121.54,
-      "temperature": 700,
+      "temperature": 166.04956907932652,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kapteyn%27s_c/",
       "exoplanet": true,
       "bump": true,
       "bumpScale": 2,
-      "color": "#791E2A",
+      "color": "#CB56B5",
       "clouds": false
     }
   ]

@@ -1,5 +1,6 @@
 {
   "name": "HATS-56",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-56, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-56",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-56_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-56",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-56-b",
+      "texture": "HATS-56-b",
       "m": 0.0005744886,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 789.244131151756,
       "a": 0.06043,
       "e": 0.019,
-      "w": 0,
-      "i": 0,
+      "w": 22.24315615151827,
       "o": 0,
-      "orbitalPeriod": 4.324799
+      "orbitalPeriod": 4.324799,
+      "temperature": 1902,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-56_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9A79FA",
+      "clouds": false
     }
   ]
 }

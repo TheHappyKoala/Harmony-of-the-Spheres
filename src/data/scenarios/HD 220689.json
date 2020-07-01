@@ -1,5 +1,6 @@
 {
   "name": "HD 220689",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 220689, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 220689",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_220689_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 220689",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 220689-b",
+      "texture": "HD 220689-b",
       "m": 0.0010669074,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1023.5908436053935,
       "a": 3.396,
       "e": 0.054,
       "w": 112.834,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2266.4
+      "orbitalPeriod": 2266.4,
+      "temperature": 132.4999492489194,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_220689_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#2BA718",
+      "clouds": false
     }
   ]
 }

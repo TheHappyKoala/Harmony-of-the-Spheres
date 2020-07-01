@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_1061_d/",
       "exoplanet": true,
       "bump": true,
-      "color": "#E14751",
+      "color": "#A1A473",
       "clouds": true
     },
     {
@@ -100,7 +100,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#D1011F",
+      "color": "#2F17D3",
       "clouds": false
     },
     {
@@ -120,7 +120,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#765469",
+      "color": "#93149B",
       "clouds": false
     }
   ]

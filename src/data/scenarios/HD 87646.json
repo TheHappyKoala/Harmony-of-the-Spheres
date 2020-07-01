@@ -1,5 +1,6 @@
 {
   "name": "HD 87646",
+  "discoveryFacility": "Apache Point Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 87646, which contains 1 planets and was discovered by Apache Point Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 87646",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_87646_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 87646",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 87646-b",
+      "texture": "HD 87646-b",
       "m": 0.011833320000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Apache Point Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2812.0170046034814,
       "a": 0.117,
       "e": 0.05,
       "w": 298,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 13.481
+      "orbitalPeriod": 13.481,
+      "temperature": 765.7200341172544,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_87646_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#770A44",
+      "clouds": false
     }
   ]
 }

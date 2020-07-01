@@ -1,5 +1,6 @@
 {
   "name": "HD 155358",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 155358, which contains 2 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 155358",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_155358_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 155358",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 155358-c",
+      "texture": "HD 155358-c",
       "m": 0.000782526,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 898.6335998859008,
       "a": 1.02,
       "e": 0.16,
       "w": 180,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 391.9
+      "orbitalPeriod": 391.9,
+      "temperature": 264.52865165915165,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_155358_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E99F62",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 155358-b",
+      "texture": "HD 155358-b",
       "m": 0.0009447570000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 972.629900657696,
       "a": 0.63,
       "e": 0.17,
-      "w": 0,
-      "i": 0,
+      "w": 226.38886395464252,
       "o": 0,
-      "orbitalPeriod": 194.3
+      "orbitalPeriod": 194.3,
+      "temperature": 336.5910233257297,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_155358_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D80388",
+      "clouds": false
     }
   ]
 }

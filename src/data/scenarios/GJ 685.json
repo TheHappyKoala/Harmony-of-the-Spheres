@@ -1,5 +1,6 @@
 {
   "name": "GJ 685",
+  "discoveryFacility": "Qatar",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 685, which contains 1 planets and was discovered by Qatar.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 685",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_685_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 685",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 685-b",
+      "texture": "GJ 685-b",
       "m": 0.000027025776000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Qatar",
+      "potentiallyHabitableWorld": false,
+      "radius": 218.60495387396142,
       "a": 0.1344,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 170.67453122135257,
       "o": 0,
-      "orbitalPeriod": 24.16
+      "orbitalPeriod": 24.16,
+      "temperature": 419.1040007897729,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_685_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#F949B6",
+      "clouds": false
     }
   ]
 }

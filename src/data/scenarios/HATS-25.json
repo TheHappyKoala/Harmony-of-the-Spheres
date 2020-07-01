@@ -1,5 +1,6 @@
 {
   "name": "HATS-25",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-25, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-25",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-25_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-25",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-25-b",
+      "texture": "HATS-25-b",
       "m": 0.0005849859,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 795.2693302680476,
       "a": 0.05163,
       "e": 0.176,
-      "w": 0,
-      "i": 0,
+      "w": 139.6710668368031,
       "o": 0,
-      "orbitalPeriod": 4.2986432
+      "orbitalPeriod": 4.2986432,
+      "temperature": 1277,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-25_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#186C70",
+      "clouds": false
     }
   ]
 }

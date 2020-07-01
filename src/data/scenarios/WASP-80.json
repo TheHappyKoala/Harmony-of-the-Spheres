@@ -1,5 +1,6 @@
 {
   "name": "WASP-80",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-80, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-80",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-80_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-80",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-80-b",
+      "texture": "WASP-80-b",
       "m": 0.0005134134,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 752.8516223169652,
       "a": 0.0344,
       "e": 0.002,
       "w": 94,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3.06785234
+      "orbitalPeriod": 3.06785234,
+      "temperature": 825,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-80_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C6AF2D",
+      "clouds": false
     }
   ]
 }

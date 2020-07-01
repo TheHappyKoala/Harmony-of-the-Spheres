@@ -1,5 +1,6 @@
 {
   "name": "WASP-37",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-37, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-37",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-37_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-37",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-37-b",
+      "texture": "WASP-37-b",
       "m": 0.0017177400000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 1250.2454622656426,
       "a": 0.0446,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 68.63546127790043,
       "o": 0,
-      "orbitalPeriod": 3.577469
+      "orbitalPeriod": 3.577469,
+      "temperature": 1078.8081182572503,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-37_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#98B920",
+      "clouds": false
     }
   ]
 }

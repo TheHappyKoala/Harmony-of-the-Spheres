@@ -1,5 +1,6 @@
 {
   "name": "HD 207832",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 207832, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 207832",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_207832_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 207832",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 207832-c",
+      "texture": "HD 207832-c",
       "m": 0.000696639,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 855.8081855578039,
       "a": 2.112,
       "e": 0.27,
       "w": 121.6,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1155.7
+      "orbitalPeriod": 1155.7,
+      "temperature": 171.70954651980335,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_207832_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#89A6A4",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 207832-b",
+      "texture": "HD 207832-b",
       "m": 0.0005344080000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 765.6315230246338,
       "a": 0.586,
       "e": 0.197,
       "w": 1,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 160.07
+      "orbitalPeriod": 160.07,
+      "temperature": 325.9812270528825,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_207832_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7B9A05",
+      "clouds": false
     }
   ]
 }

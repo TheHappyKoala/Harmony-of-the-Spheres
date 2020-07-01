@@ -1,5 +1,6 @@
 {
   "name": "HD 5583",
+  "discoveryFacility": "Roque de los Muchachos Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 5583, which contains 1 planets and was discovered by Roque de los Muchachos Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 5583",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_5583_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 5583",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 5583-b",
+      "texture": "HD 5583-b",
       "m": 0.005515854000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Roque de los Muchachos Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2040.7533916637651,
       "a": 0.53,
       "e": 0.076,
       "w": 12,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 139.35
+      "orbitalPeriod": 139.35,
+      "temperature": 332.9296846610005,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_5583_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#ACC12F",
+      "clouds": false
     }
   ]
 }

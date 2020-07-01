@@ -1,5 +1,6 @@
 {
   "name": "XO-2 N",
+  "discoveryFacility": "XO",
   "description": "3D visualisation and gravity simulation of the exoplanet system XO-2 N, which contains 1 planets and was discovered by XO.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "XO-2 N",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/xo-2n_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "XO-2 N",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "XO-2 N-b",
+      "texture": "XO-2 N-b",
       "m": 0.0005401338,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "XO",
+      "potentiallyHabitableWorld": false,
+      "radius": 769.0662197023709,
       "a": 0.0368,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 313.4907964599204,
       "o": 0,
-      "orbitalPeriod": 2.61586178
+      "orbitalPeriod": 2.61586178,
+      "temperature": 1225.7568114017831,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/xo-2n_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E4B5D9",
+      "clouds": false
     }
   ]
 }

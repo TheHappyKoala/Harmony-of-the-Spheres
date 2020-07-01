@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/toi-125_d/",
       "exoplanet": true,
       "bump": false,
-      "color": "#6D33CF",
+      "color": "#B950E6",
       "clouds": false
     },
     {
@@ -100,7 +100,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#5694FA",
+      "color": "#E1AA51",
       "clouds": false
     },
     {
@@ -120,7 +120,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 0.5,
-      "color": "#5A0180",
+      "color": "#5E2669",
       "clouds": false
     }
   ]

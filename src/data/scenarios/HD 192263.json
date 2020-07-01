@@ -1,5 +1,6 @@
 {
   "name": "HD 192263",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 192263, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 192263",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_192263_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 192263",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 192263-b",
+      "texture": "HD 192263-b",
       "m": 0.0005344080000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 765.6315230246338,
       "a": 0.15,
       "e": 0.05,
-      "w": 0,
-      "i": 0,
+      "w": 15.76045617725602,
       "o": 0,
-      "orbitalPeriod": 24.3556
+      "orbitalPeriod": 24.3556,
+      "temperature": 454.84324159563033,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_192263_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0E946C",
+      "clouds": false
     }
   ]
 }

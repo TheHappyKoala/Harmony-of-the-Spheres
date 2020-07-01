@@ -1,5 +1,6 @@
 {
   "name": "HD 196067",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 196067, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 196067",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_196067_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 196067",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 196067-b",
+      "texture": "HD 196067-b",
       "m": 0.006584670000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2198.3531139420948,
       "a": 5.02,
       "e": 0.66,
       "w": 148.2,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3638
+      "orbitalPeriod": 3638,
+      "temperature": 129.96902113287203,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_196067_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#666CB7",
+      "clouds": false
     }
   ]
 }

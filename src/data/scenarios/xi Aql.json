@@ -1,5 +1,6 @@
 {
   "name": "xi Aql",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system xi Aql, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "xi Aql",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ksi_aql_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "xi Aql",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "xi Aql-b",
+      "texture": "xi Aql-b",
       "m": 0.00267204,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1505.1757334646907,
       "a": 0.68,
       "e": 0,
       "w": 0,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 136.75
+      "orbitalPeriod": 136.75,
+      "temperature": 527.0016538811238,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ksi_aql_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E90C58",
+      "clouds": false
     }
   ]
 }

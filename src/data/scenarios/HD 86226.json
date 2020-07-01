@@ -1,5 +1,6 @@
 {
   "name": "HD 86226",
+  "discoveryFacility": "Las Campanas Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 86226, which contains 1 planets and was discovered by Las Campanas Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 86226",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_86226_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 86226",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 86226-b",
+      "texture": "HD 86226-b",
       "m": 0.000877956,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Las Campanas Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 943.1303534713197,
       "a": 2.84,
       "e": 0.15,
       "w": 193,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1695
+      "orbitalPeriod": 1695,
+      "temperature": 149.13159158101882,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_86226_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3590A1",
+      "clouds": false
     }
   ]
 }

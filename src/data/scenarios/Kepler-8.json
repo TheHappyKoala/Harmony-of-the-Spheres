@@ -1,5 +1,6 @@
 {
   "name": "Kepler-8",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-8, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-8",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-8_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-8",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-8-b",
+      "texture": "Kepler-8-b",
       "m": 0.000563037,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 782.5979027295319,
       "a": 0.0474,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 233.7733980568304,
       "o": 0,
-      "orbitalPeriod": 3.5224991
+      "orbitalPeriod": 3.5224991,
+      "temperature": 1680,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-8_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#37816D",
+      "clouds": false
     }
   ]
 }

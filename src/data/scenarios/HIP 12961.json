@@ -1,5 +1,6 @@
 {
   "name": "HIP 12961",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 12961, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HIP 12961",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_12961_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HIP 12961",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HIP 12961-b",
+      "texture": "HIP 12961-b",
       "m": 0.000343548,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 635.9571949952224,
       "a": 0.25,
       "e": 0.17,
-      "w": 0,
-      "i": 0,
+      "w": 189.49139083549906,
       "o": 0,
-      "orbitalPeriod": 57.435
+      "orbitalPeriod": 57.435,
+      "temperature": 364.26398768460353,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_12961_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9A034B",
+      "clouds": false
     }
   ]
 }

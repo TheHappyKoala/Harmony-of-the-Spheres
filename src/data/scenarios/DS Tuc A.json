@@ -73,14 +73,14 @@
       "radius": 200,
       "a": null,
       "e": 0,
-      "w": 249.78508759188185,
+      "w": 64.51980899824653,
       "o": 0,
       "orbitalPeriod": 8.138268,
       "temperature": 850,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/ds_tuc_a_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#C9A0AC",
+      "color": "#1AA867",
       "clouds": false
     }
   ]

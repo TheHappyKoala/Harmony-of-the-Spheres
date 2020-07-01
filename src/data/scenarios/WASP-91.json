@@ -1,5 +1,6 @@
 {
   "name": "WASP-91",
+  "discoveryFacility": "SuperWASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-91, which contains 1 planets and was discovered by SuperWASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-91",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-91_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-91",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-91-b",
+      "texture": "WASP-91-b",
       "m": 0.0012787620000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 1104.4977872205804,
       "a": 0.037,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 58.73062961500991,
       "o": 0,
-      "orbitalPeriod": 2.798581
+      "orbitalPeriod": 2.798581,
+      "temperature": 1160,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-91_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#CC9DC2",
+      "clouds": false
     }
   ]
 }

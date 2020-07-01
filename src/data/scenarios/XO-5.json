@@ -1,5 +1,6 @@
 {
   "name": "XO-5",
+  "discoveryFacility": "XO",
   "description": "3D visualisation and gravity simulation of the exoplanet system XO-5, which contains 1 planets and was discovered by XO.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "XO-5",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/xo-5_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "XO-5",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "XO-5-b",
+      "texture": "XO-5-b",
       "m": 0.001135617,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "XO",
+      "potentiallyHabitableWorld": false,
+      "radius": 1050.7770011319162,
       "a": 0.0515,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 123.4809947744875,
       "o": 0,
-      "orbitalPeriod": 4.1877558
+      "orbitalPeriod": 4.1877558,
+      "temperature": 1230,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/xo-5_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#934049",
+      "clouds": false
     }
   ]
 }

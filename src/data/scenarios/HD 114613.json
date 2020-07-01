@@ -1,5 +1,6 @@
 {
   "name": "HD 114613",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 114613, which contains 1 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 114613",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_114613_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 114613",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 114613-b",
+      "texture": "HD 114613-b",
       "m": 0.0003406851,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 633.725941938702,
       "a": 5.34,
       "e": 0.458,
       "w": 196,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4000
+      "orbitalPeriod": 4000,
+      "temperature": 124.5465167974961,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_114613_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#55AB92",
+      "clouds": false
     }
   ]
 }

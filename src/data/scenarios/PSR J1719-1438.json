@@ -1,5 +1,6 @@
 {
   "name": "PSR J1719-1438",
+  "discoveryFacility": "Parkes Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system PSR J1719-1438, which contains 1 planets and was discovered by Parkes Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "PSR J1719-1438",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/psr_1719-14_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "PSR J1719-1438",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "PSR J1719-1438-b",
+      "texture": "PSR J1719-1438-b",
       "m": 0.00114516,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Parkes Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1054.4766278007005,
       "a": 0.0044,
       "e": 0.06,
-      "w": 0,
-      "i": 0,
+      "w": 181.18200241591035,
       "o": 0,
-      "orbitalPeriod": 0.09070629
+      "orbitalPeriod": 0.09070629,
+      "temperature": 4667.873868796497,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/psr_1719-14_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A31C46",
+      "clouds": false
     }
   ]
 }

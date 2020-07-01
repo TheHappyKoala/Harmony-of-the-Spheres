@@ -1,5 +1,6 @@
 {
   "name": "SWEEPS-4",
+  "discoveryFacility": "Hubble Space Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system SWEEPS-4, which contains 1 planets and was discovered by Hubble Space Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "SWEEPS-4",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/sweeps-04_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "SWEEPS-4",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "SWEEPS-4-b",
+      "texture": "SWEEPS-4-b",
       "m": 0.00362634,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Hubble Space Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1711.1573434494487,
       "a": 0.055,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 106.3092598038608,
       "o": 0,
-      "orbitalPeriod": 4.2
+      "orbitalPeriod": 4.2,
+      "temperature": 1205.4087593001852,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/sweeps-04_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#77B2DB",
+      "clouds": false
     }
   ]
 }

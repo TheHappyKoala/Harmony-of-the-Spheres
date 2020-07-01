@@ -1,5 +1,6 @@
 {
   "name": "TYC 3667-1280-1",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system TYC 3667-1280-1, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "TYC 3667-1280-1",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/tyc-3667-1280-1_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "TYC 3667-1280-1",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "TYC 3667-1280-1-b",
+      "texture": "TYC 3667-1280-1-b",
       "m": 0.005153220000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1983.2899626706276,
       "a": 0.21,
       "e": 0.036,
       "w": 240,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 26.468
+      "orbitalPeriod": 26.468,
+      "temperature": 1350,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/tyc-3667-1280-1_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#047290",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 102272",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 102272, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 102272",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_102272_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 102272",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 102272-b",
+      "texture": "HD 102272-b",
       "m": 0.004714242,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1910.4960907177265,
       "a": 0.51,
       "e": 0.05,
-      "w": 0,
-      "i": 0,
+      "w": 148.44627501933212,
       "o": 0,
-      "orbitalPeriod": 127.58
+      "orbitalPeriod": 127.58,
+      "temperature": 445.1335591727584,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_102272_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#069CFD",
+      "clouds": false
     }
   ]
 }

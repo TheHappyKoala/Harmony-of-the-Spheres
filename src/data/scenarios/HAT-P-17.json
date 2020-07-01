@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-17",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-17, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-17",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-17_c/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-17",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HAT-P-17-c",
+      "texture": "HAT-P-17-c",
       "m": 0.00324462,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1633.059393098611,
       "a": 5.6,
       "e": 0.39,
       "w": 181.5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 5584
+      "orbitalPeriod": 5584,
+      "temperature": 100.89782542979685,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-17_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0531E4",
+      "clouds": false
     }
   ]
 }

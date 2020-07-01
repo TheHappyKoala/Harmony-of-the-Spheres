@@ -1,5 +1,6 @@
 {
   "name": "24 Boo",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 24 Boo, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "24 Boo",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/24_boo_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "24 Boo",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "24 Boo-b",
+      "texture": "24 Boo-b",
       "m": 0.0008684130000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 938.8111081511804,
       "a": 0.19,
       "e": 0.042,
       "w": 210,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 30.3506
+      "orbitalPeriod": 30.3506,
+      "temperature": 547.7709787867354,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/24_boo_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#20AB6A",
+      "clouds": false
     }
   ]
 }

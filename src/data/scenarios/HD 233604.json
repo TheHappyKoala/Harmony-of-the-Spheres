@@ -1,5 +1,6 @@
 {
   "name": "HD 233604",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 233604, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 233604",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_233604_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 233604",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 233604-b",
+      "texture": "HD 233604-b",
       "m": 0.006274522500000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2154.2547183272627,
       "a": 0.747,
       "e": 0.05,
       "w": 281,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 192
+      "orbitalPeriod": 192,
+      "temperature": 377.27459995770874,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_233604_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1D3544",
+      "clouds": false
     }
   ]
 }

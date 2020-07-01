@@ -1,5 +1,6 @@
 {
   "name": "WASP-44",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-44, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-44",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-44_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-44",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-44-b",
+      "texture": "WASP-44-b",
       "m": 0.000830241,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 921.2530122974177,
       "a": 0.03453,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 335.4189401842357,
       "o": 0,
-      "orbitalPeriod": 2.423804
+      "orbitalPeriod": 2.423804,
+      "temperature": 1337,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-44_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A264D6",
+      "clouds": false
     }
   ]
 }

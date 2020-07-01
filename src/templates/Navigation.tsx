@@ -14,6 +14,7 @@ interface IndexProps {
       edges: {
         node: {
           type: string;
+          discoveryFacility: string;
           name: string;
           fields: {
             scenarioImage: {
@@ -37,6 +38,7 @@ interface IndexProps {
   pageContext: {
     limit: number;
     skip: number;
+    discoveryFacility: string;
     numPages: number;
     currentPage: number;
     currentPageName: string;
@@ -47,6 +49,7 @@ interface IndexProps {
 
 export default ({ data, pageContext, location }: IndexProps): ReactElement => {
   const categories = data.categories.group;
+  const discoveryFacilities = data.discoveryFacilities.discoveryFacilities;
   const scenarios = data.scenarios.edges;
 
   return (
@@ -75,7 +78,13 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
             </NavItem>
           </Link>
           {categories.map(category => (
-            <Link to={`/${kebabCase(category.fieldValue)}`}>
+            <Link
+              to={
+                category.fieldValue !== "Exoplanets"
+                  ? `/${kebabCase(category.fieldValue)}`
+                  : `/${kebabCase(category.fieldValue)}/all`
+              }
+            >
               <NavItem
                 active={
                   kebabCase(pageContext.currentPageName) ===
@@ -87,6 +96,34 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
             </Link>
           ))}
         </Nav>
+
+        {pageContext.type === "Exoplanets" && (
+          <Nav
+            css={{
+              borderLeft: "none",
+              borderRight: "none",
+              borderTop: "none",
+              fontWeight: "bold",
+              overflowX: "scroll"
+            }}
+          >
+            {discoveryFacilities?.map(discoveryFacility => (
+              <Link
+                to={`/exoplanets/${kebabCase(discoveryFacility.fieldValue)}`}
+              >
+                <NavItem
+                  active={
+                    kebabCase(pageContext.currentPageName) ===
+                    kebabCase(discoveryFacility.fieldValue)
+                  }
+                >
+                  {discoveryFacility.fieldValue}
+                </NavItem>
+              </Link>
+            ))}
+          </Nav>
+        )}
+
         {pageContext.numPages > 1 && (
           <Pagination
             pagination={{
@@ -125,6 +162,7 @@ export const pageQuery = graphql`
       edges {
         node {
           type
+          discoveryFacility
           name
           pl_pnum
           fields {
@@ -141,6 +179,11 @@ export const pageQuery = graphql`
     }
     categories: allScenariosJson {
       group(field: type) {
+        fieldValue
+      }
+    }
+    discoveryFacilities: allScenariosJson {
+      discoveryFacilities: group(field: discoveryFacility) {
         fieldValue
       }
     }

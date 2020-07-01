@@ -1,5 +1,6 @@
 {
   "name": "HD 128356",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 128356, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 128356",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_128356_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 128356",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 128356-b",
+      "texture": "HD 128356-b",
       "m": 0.0008493270000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 930.089277400258,
       "a": 0.87,
       "e": 0.57,
       "w": 84.22,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 298.2
+      "orbitalPeriod": 298.2,
+      "temperature": 186.71311094532294,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_128356_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7E7C5B",
+      "clouds": false
     }
   ]
 }

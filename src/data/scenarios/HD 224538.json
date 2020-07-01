@@ -1,5 +1,6 @@
 {
   "name": "HD 224538",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 224538, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 224538",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_224538_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 224538",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 224538-b",
+      "texture": "HD 224538-b",
       "m": 0.005697171,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 2068.664463003342,
       "a": 2.28,
       "e": 0.464,
       "w": 22.92,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1189.1
+      "orbitalPeriod": 1189.1,
+      "temperature": 198.4314926046806,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_224538_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#940311",
+      "clouds": false
     }
   ]
 }

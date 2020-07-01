@@ -1,5 +1,6 @@
 {
   "name": "HD 143361",
+  "discoveryFacility": "Las Campanas Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 143361, which contains 1 planets and was discovered by Las Campanas Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 143361",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_143361_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 143361",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 143361-b",
+      "texture": "HD 143361-b",
       "m": 0.0033705876,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Las Campanas Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1659.3940429194777,
       "a": 1.988,
       "e": 0.197,
       "w": 241.889,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1039.15
+      "orbitalPeriod": 1039.15,
+      "temperature": 166.77080863423265,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_143361_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#42BEA1",
+      "clouds": false
     }
   ]
 }

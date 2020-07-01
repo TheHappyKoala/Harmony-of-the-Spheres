@@ -1,5 +1,6 @@
 {
   "name": "WASP-130",
+  "discoveryFacility": "SuperWASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-130, which contains 1 planets and was discovered by SuperWASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-130",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-130_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-130",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-130-b",
+      "texture": "WASP-130-b",
       "m": 0.001173789,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 1065.4694005310228,
       "a": 0.1012,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 288.4041862339474,
       "o": 0,
-      "orbitalPeriod": 11.55098
+      "orbitalPeriod": 11.55098,
+      "temperature": 833,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-130_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#56F5B7",
+      "clouds": false
     }
   ]
 }

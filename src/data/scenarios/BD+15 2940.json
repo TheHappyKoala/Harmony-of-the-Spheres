@@ -1,5 +1,6 @@
 {
   "name": "BD+15 2940",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system BD+15 2940, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "BD+15 2940",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd+15_2940_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "BD+15 2940",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "BD+15 2940-b",
+      "texture": "BD+15 2940-b",
       "m": 0.0010592730000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1020.5081699089723,
       "a": 0.539,
       "e": 0.26,
       "w": 302,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 137.48
+      "orbitalPeriod": 137.48,
+      "temperature": 351.9650620180563,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/bd+15_2940_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C6C2A8",
+      "clouds": false
     }
   ]
 }

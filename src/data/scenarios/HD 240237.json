@@ -1,5 +1,6 @@
 {
   "name": "HD 240237",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 240237, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 240237",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_240237_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 240237",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 240237-b",
+      "texture": "HD 240237-b",
       "m": 0.015163827000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 3120.706112799409,
       "a": 1.92,
       "e": 0.4,
-      "w": 0,
-      "i": 0,
+      "w": 61.741650722219234,
       "o": 0,
-      "orbitalPeriod": 745.70001
+      "orbitalPeriod": 745.70001,
+      "temperature": 884.0501235184817,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_240237_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#660811",
+      "clouds": false
     }
   ]
 }

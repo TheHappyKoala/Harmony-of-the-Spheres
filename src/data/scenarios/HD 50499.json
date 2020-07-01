@@ -1,5 +1,6 @@
 {
   "name": "HD 50499",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 50499, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 50499",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_50499_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 50499",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 50499-c",
+      "texture": "HD 50499-c",
       "m": 0.0027960990000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1534.1408542304719,
       "a": 9.02,
       "e": 0,
       "w": 23,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 8619.9
+      "orbitalPeriod": 8619.9,
+      "temperature": 94.69535246607907,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_50499_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9C6628",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 50499-b",
+      "texture": "HD 50499-b",
       "m": 0.0015612348,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1201.0741514618935,
       "a": 3.833,
       "e": 0.266,
       "w": 288.31,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2447.1
+      "orbitalPeriod": 2447.1,
+      "temperature": 145.26551363096848,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_50499_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8CEEB6",
+      "clouds": false
     }
   ]
 }

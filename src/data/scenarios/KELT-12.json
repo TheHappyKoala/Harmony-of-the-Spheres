@@ -1,5 +1,6 @@
 {
   "name": "KELT-12",
+  "discoveryFacility": "KELT-North",
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-12, which contains 1 planets and was discovered by KELT-North.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KELT-12",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-86_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KELT-12",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KELT-12-b",
+      "texture": "KELT-12-b",
       "m": 0.000906585,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "KELT-North",
+      "potentiallyHabitableWorld": false,
+      "radius": 955.9270455269487,
       "a": 0.06708,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 119.29877720446687,
       "o": 0,
-      "orbitalPeriod": 5.031623
+      "orbitalPeriod": 5.031623,
+      "temperature": 1800,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-86_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#355D14",
+      "clouds": false
     }
   ]
 }

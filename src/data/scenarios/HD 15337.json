@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#7907B5",
+      "color": "#0AE6A2",
       "clouds": false
     },
     {
@@ -101,7 +101,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 0.5,
-      "color": "#898AE1",
+      "color": "#748B37",
       "clouds": false
     }
   ]

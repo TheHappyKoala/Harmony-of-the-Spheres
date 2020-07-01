@@ -73,7 +73,7 @@
       "radius": 200,
       "a": 0.029392,
       "e": 0,
-      "w": 67.73581566161187,
+      "w": 8.723458096898167,
       "o": 0,
       "orbitalPeriod": 4.989963,
       "temperature": 370,
@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#244BAE",
+      "color": "#ACEC85",
       "clouds": false
     },
     {
@@ -93,7 +93,7 @@
       "radius": 200,
       "a": 0.00969,
       "e": 0,
-      "w": 141.64446280813883,
+      "w": 90.87315240018444,
       "o": 0,
       "orbitalPeriod": 0.948005,
       "temperature": 650,
@@ -101,7 +101,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#C0F4C9",
+      "color": "#BF1137",
       "clouds": false
     }
   ]

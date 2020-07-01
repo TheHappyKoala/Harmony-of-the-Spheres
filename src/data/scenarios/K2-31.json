@@ -1,5 +1,6 @@
 {
   "name": "K2-31",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-31, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-31",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-31",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "K2-31-b",
+      "texture": "K2-31-b",
       "m": 0.0016929282,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 1242.6286238381963,
       "a": 0.022,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 185.53128109830385,
       "o": 0,
-      "orbitalPeriod": 1.25785
+      "orbitalPeriod": 1.25785,
+      "temperature": 1511.190197138493,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#AFB966",
+      "clouds": false
     }
   ]
 }

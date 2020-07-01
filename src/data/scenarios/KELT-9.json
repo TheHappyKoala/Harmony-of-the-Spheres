@@ -1,5 +1,6 @@
 {
   "name": "KELT-9",
+  "discoveryFacility": "KELT-North",
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-9, which contains 1 planets and was discovered by KELT-North.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KELT-9",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_195689_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KELT-9",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KELT-9-b",
+      "texture": "KELT-9-b",
       "m": 0.002748384,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "KELT-North",
+      "potentiallyHabitableWorld": false,
+      "radius": 1523.0903961119327,
       "a": 0.03462,
       "e": 0,
       "w": 90,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1.4811235
+      "orbitalPeriod": 1.4811235,
+      "temperature": 4050,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_195689_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D0ABF0",
+      "clouds": false
     }
   ]
 }

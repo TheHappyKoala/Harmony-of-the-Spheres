@@ -1,5 +1,6 @@
 {
   "name": "Kepler-5",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-5, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-5",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-5_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-5",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-5-b",
+      "texture": "Kepler-5-b",
       "m": 0.0020145273000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1336.7983252774677,
       "a": 0.0538,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 214.20677247330158,
       "o": 0,
-      "orbitalPeriod": 3.5484657
+      "orbitalPeriod": 3.5484657,
+      "temperature": 1750,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-5_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#682924",
+      "clouds": false
     }
   ]
 }

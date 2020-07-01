@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-18",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-18, which contains 1 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-18",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-18_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-18",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-18-b",
+      "texture": "HAT-P-18-b",
       "m": 0.00018799710000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 493.69263662041465,
       "a": 0.0559,
       "e": 0.084,
       "w": 120,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 5.508023
+      "orbitalPeriod": 5.508023,
+      "temperature": 852,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-18_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4C7AD9",
+      "clouds": false
     }
   ]
 }

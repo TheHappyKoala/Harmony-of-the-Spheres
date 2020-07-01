@@ -1,5 +1,6 @@
 {
   "name": "WASP-75",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-75, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-75",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-75_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-75",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-75-b",
+      "texture": "WASP-75-b",
       "m": 0.0010211010000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 1004.898091572137,
       "a": 0.0375,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 143.37834644931473,
       "o": 0,
-      "orbitalPeriod": 2.484193
+      "orbitalPeriod": 2.484193,
+      "temperature": 1710,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-75_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7B28DC",
+      "clouds": false
     }
   ]
 }

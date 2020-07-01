@@ -1,5 +1,6 @@
 {
   "name": "Kepler-440",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-440, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-440",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-440_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-440",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-440-b",
+      "texture": "Kepler-440-b",
+      "m": 0.000013575703216336556,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": true,
+      "radius": 200,
       "a": 0.242,
       "e": 0.34,
-      "w": 0,
-      "i": 0,
+      "w": 106.69396174272698,
       "o": 0,
-      "orbitalPeriod": 101.11141
+      "orbitalPeriod": 101.11141,
+      "temperature": 320.80998921206424,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-440_b/",
+      "exoplanet": true,
+      "bump": true,
+      "color": "#06B762",
+      "clouds": true
     }
   ]
 }

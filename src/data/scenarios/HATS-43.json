@@ -1,5 +1,6 @@
 {
   "name": "HATS-43",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-43, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-43",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-43_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-43",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-43-b",
+      "texture": "HATS-43-b",
       "m": 0.0002490723,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 555.6097367501802,
       "a": 0.04944,
       "e": 0.173,
       "w": 330,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4.3888497
+      "orbitalPeriod": 4.3888497,
+      "temperature": 1003,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-43_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A1681A",
+      "clouds": false
     }
   ]
 }

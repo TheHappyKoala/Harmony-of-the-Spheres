@@ -1,5 +1,6 @@
 {
   "name": "HD 218566",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 218566, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 218566",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_218566_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 218566",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 218566-b",
+      "texture": "HD 218566-b",
       "m": 0.00019086000000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 496.83643055210734,
       "a": 0.69,
       "e": 0.3,
-      "w": 0,
-      "i": 0,
+      "w": 270.7149428296982,
       "o": 0,
-      "orbitalPeriod": 225.7
+      "orbitalPeriod": 225.7,
+      "temperature": 235.74097355452471,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_218566_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C0986D",
+      "clouds": false
     }
   ]
 }

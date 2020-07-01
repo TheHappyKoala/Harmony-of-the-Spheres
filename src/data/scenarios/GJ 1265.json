@@ -1,5 +1,6 @@
 {
   "name": "GJ 1265",
+  "discoveryFacility": "Calar Alto Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 1265, which contains 1 planets and was discovered by Calar Alto Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 1265",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_1265_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 1265",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 1265-b",
+      "texture": "GJ 1265-b",
       "m": 0.000022216104,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Calar Alto Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 201.33240654484015,
       "a": 0.026,
       "e": 0.04,
       "w": 282,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3.6511
+      "orbitalPeriod": 3.6511,
+      "temperature": 412.3036018067383,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_1265_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#791753",
+      "clouds": false
     }
   ]
 }

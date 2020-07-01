@@ -1,5 +1,6 @@
 {
   "name": "K2-7",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-7, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-7",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-7_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-7",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-7-b",
+      "texture": "K2-7-b",
+      "m": 0.00003044175040159006,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.1814,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 188.55227698287334,
       "o": 0,
-      "orbitalPeriod": 28.67992
+      "orbitalPeriod": 28.67992,
+      "temperature": 651,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-7_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BAEFCB",
+      "clouds": false
     }
   ]
 }

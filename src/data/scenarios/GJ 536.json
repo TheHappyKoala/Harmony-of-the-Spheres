@@ -1,5 +1,6 @@
 {
   "name": "GJ 536",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 536, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 536",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_536_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 536",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 536-b",
+      "texture": "GJ 536-b",
       "m": 0.000016089498,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 175.81706032426263,
       "a": 0.06661,
       "e": 0.08,
       "w": 288.7,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 8.7076
+      "orbitalPeriod": 8.7076,
+      "temperature": 570.7977004069412,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_536_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#430A0C",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "gam Lib",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system gam Lib, which contains 2 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "gam Lib",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gamma_lib_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "gam Lib",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "gam Lib-c",
+      "texture": "gam Lib-c",
       "m": 0.0043706940000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1850.7354151511995,
       "a": 2.17,
       "e": 0.057,
       "w": 146,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 964.6
+      "orbitalPeriod": 964.6,
+      "temperature": 218.02563398608348,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gamma_lib_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B3E1FB",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "gam Lib-b",
+      "texture": "gam Lib-b",
       "m": 0.000973386,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 984.9017451071315,
       "a": 1.24,
       "e": 0.21,
       "w": 187,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 415.2
+      "orbitalPeriod": 415.2,
+      "temperature": 288.42080348218445,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gamma_lib_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3B3CB8",
+      "clouds": false
     }
   ]
 }

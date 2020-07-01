@@ -1,5 +1,6 @@
 {
   "name": "HD 142245",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 142245, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 142245",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_142245_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 142245",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 142245-b",
+      "texture": "HD 142245-b",
       "m": 0.002929701,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1564.5121942840526,
       "a": 2.78,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 147.3388435566276,
       "o": 0,
-      "orbitalPeriod": 1299
+      "orbitalPeriod": 1299,
+      "temperature": 369.2139139493108,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_142245_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#750221",
+      "clouds": false
     }
   ]
 }

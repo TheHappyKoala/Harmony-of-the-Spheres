@@ -1,5 +1,6 @@
 {
   "name": "Gl 686",
+  "discoveryFacility": "Roque de los Muchachos Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system Gl 686, which contains 1 planets and was discovered by Roque de los Muchachos Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Gl 686",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gl_686_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Gl 686",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Gl 686-b",
+      "texture": "Gl 686-b",
       "m": 0.000019935327,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Roque de los Muchachos Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 192.37781138478388,
       "a": 0.0917,
       "e": 0.077,
-      "w": 0,
-      "i": 0,
+      "w": 276.8147854700314,
       "o": 0,
-      "orbitalPeriod": 15.5314
+      "orbitalPeriod": 15.5314,
+      "temperature": 414.4782292318121,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gl_686_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#58B3BC",
+      "clouds": false
     }
   ]
 }

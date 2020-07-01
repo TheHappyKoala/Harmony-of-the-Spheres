@@ -1,5 +1,6 @@
 {
   "name": "Lupus-TR-3",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system Lupus-TR-3, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Lupus-TR-3",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Lupus-TR-3",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Lupus-TR-3-b",
+      "texture": "Lupus-TR-3-b",
       "m": 0.0007729830000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 894.0144589987183,
       "a": 0.0464,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 62.710162474639134,
       "o": 0,
-      "orbitalPeriod": 3.91405
+      "orbitalPeriod": 3.91405,
+      "temperature": 1006.0738781885287,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D7FED7",
+      "clouds": false
     }
   ]
 }

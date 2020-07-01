@@ -1,5 +1,6 @@
 {
   "name": "TYC 1422-614-1",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system TYC 1422-614-1, which contains 2 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "TYC 1422-614-1",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "TYC 1422-614-1",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "TYC 1422-614-1-c",
+      "texture": "TYC 1422-614-1-c",
       "m": 0.009543000000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 2569.0989688280474,
       "a": 1.37,
       "e": 0.048,
       "w": 130,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 559.3
+      "orbitalPeriod": 559.3,
+      "temperature": 228.25091152683888,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#673488",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "TYC 1422-614-1-b",
+      "texture": "TYC 1422-614-1-b",
       "m": 0.0023857500000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1435.2106171530902,
       "a": 0.69,
       "e": 0.06,
       "w": 50,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 198.4
+      "orbitalPeriod": 198.4,
+      "temperature": 321.62385920666236,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#877755",
+      "clouds": false
     }
   ]
 }

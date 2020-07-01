@@ -1,5 +1,6 @@
 {
   "name": "GJ 3779",
+  "discoveryFacility": "Calar Alto Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 3779, which contains 1 planets and was discovered by Calar Alto Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 3779",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3779_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 3779",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 3779-b",
+      "texture": "GJ 3779-b",
       "m": 0.000024019731,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Calar Alto Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 208.0423665384464,
       "a": 0.026,
       "e": 0.07,
       "w": 225,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 3.0232
+      "orbitalPeriod": 3.0232,
+      "temperature": 558.8375410321867,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3779_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#5F50F4",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HATS-32",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-32, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-32",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-32_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-32",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-32-b",
+      "texture": "HATS-32-b",
       "m": 0.000877956,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 943.1303534713197,
       "a": 0.04024,
       "e": 0.471,
-      "w": 0,
-      "i": 0,
+      "w": 53.145288961319395,
       "o": 0,
-      "orbitalPeriod": 2.8126548
+      "orbitalPeriod": 2.8126548,
+      "temperature": 1437,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-32_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#83E312",
+      "clouds": false
     }
   ]
 }

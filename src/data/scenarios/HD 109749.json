@@ -1,5 +1,6 @@
 {
   "name": "HD 109749",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 109749, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 109749",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_109749_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 109749",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 109749-b",
+      "texture": "HD 109749-b",
       "m": 0.000257661,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 563.577460482841,
       "a": 0.0615,
       "e": 0,
       "w": 109.8,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 5.239891
+      "orbitalPeriod": 5.239891,
+      "temperature": 1063.2140294211933,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_109749_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A8C88C",
+      "clouds": false
     }
   ]
 }

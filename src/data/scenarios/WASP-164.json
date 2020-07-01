@@ -1,5 +1,6 @@
 {
   "name": "WASP-164",
+  "discoveryFacility": "SuperWASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-164, which contains 1 planets and was discovered by SuperWASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-164",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-164_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-164",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-164-b",
+      "texture": "WASP-164-b",
       "m": 0.002032659,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 1341.8385611033423,
       "a": 0.02818,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 32.70520137857952,
       "o": 0,
-      "orbitalPeriod": 1.7771255
+      "orbitalPeriod": 1.7771255,
+      "temperature": 1610,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-164_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#EE37C3",
+      "clouds": false
     }
   ]
 }

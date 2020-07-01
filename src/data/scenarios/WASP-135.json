@@ -1,5 +1,6 @@
 {
   "name": "WASP-135",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-135, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-135",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-135_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-135",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-135-b",
+      "texture": "WASP-135-b",
       "m": 0.00181317,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 1278.961134575783,
       "a": 0.0243,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 297.9395035854431,
       "o": 0,
-      "orbitalPeriod": 1.4013794
+      "orbitalPeriod": 1.4013794,
+      "temperature": 1520.0778961301662,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-135_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#FD494E",
+      "clouds": false
     }
   ]
 }

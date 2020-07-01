@@ -1,5 +1,6 @@
 {
   "name": "KELT-14",
+  "discoveryFacility": "KELT-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-14, which contains 1 planets and was discovered by KELT-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KELT-14",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-122_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KELT-14",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KELT-14-b",
+      "texture": "KELT-14-b",
       "m": 0.0012253212,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "KELT-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 1084.871111619688,
       "a": 0.03005,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 49.001533948974306,
       "o": 0,
-      "orbitalPeriod": 1.7100566
+      "orbitalPeriod": 1.7100566,
+      "temperature": 1970,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-122_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8462D5",
+      "clouds": false
     }
   ]
 }

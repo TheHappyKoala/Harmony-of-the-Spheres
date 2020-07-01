@@ -1,5 +1,6 @@
 {
   "name": "HD 13908",
+  "discoveryFacility": "Haute-Provence Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 13908, which contains 2 planets and was discovered by Haute-Provence Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 13908",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_13908_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 13908",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 13908-c",
+      "texture": "HD 13908-c",
       "m": 0.004895559,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Haute-Provence Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1941.0205266875325,
       "a": 2.03,
       "e": 0.12,
       "w": 185,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 931
+      "orbitalPeriod": 931,
+      "temperature": 204.38249083937964,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_13908_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E1AF2A",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 13908-b",
+      "texture": "HD 13908-b",
       "m": 0.0008254695000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Haute-Provence Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 919.0255806797976,
       "a": 0.154,
       "e": 0.02,
       "w": 185,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 19.382
+      "orbitalPeriod": 19.382,
+      "temperature": 742.046884787295,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_13908_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B3138F",
+      "clouds": false
     }
   ]
 }

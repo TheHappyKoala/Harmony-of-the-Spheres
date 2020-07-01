@@ -1,5 +1,6 @@
 {
   "name": "alf Ari",
+  "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system alf Ari, which contains 1 planets and was discovered by Bohyunsan Optical Astronomical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "alf Ari",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/alf_ari_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "alf Ari",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "alf Ari-b",
+      "texture": "alf Ari-b",
       "m": 0.0017177400000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1250.2454622656426,
       "a": 1.2,
       "e": 0.25,
       "w": 89.16,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 380.8
+      "orbitalPeriod": 380.8,
+      "temperature": 297.6646385596509,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/alf_ari_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#81F291",
+      "clouds": false
     }
   ]
 }

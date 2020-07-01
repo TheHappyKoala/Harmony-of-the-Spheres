@@ -1,5 +1,6 @@
 {
   "name": "WASP-151",
+  "discoveryFacility": "SuperWASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-151, which contains 1 planets and was discovered by SuperWASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-151",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-151_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-151",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-151-b",
+      "texture": "WASP-151-b",
       "m": 0.000295833,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 597.2453075056858,
       "a": 0.055,
       "e": 0.003,
       "w": -50,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4.533471
+      "orbitalPeriod": 4.533471,
+      "temperature": 1290,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-151_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0A55BC",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "omi CrB",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system omi CrB, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "omi CrB",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/omi_crb_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "omi CrB",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "omi CrB-b",
+      "texture": "omi CrB-b",
       "m": 0.0014314500000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1158.081605797151,
       "a": 0.83,
       "e": 0.191,
       "w": 79,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 187.83
+      "orbitalPeriod": 187.83,
+      "temperature": 465.58081936108005,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/omi_crb_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F0686B",
+      "clouds": false
     }
   ]
 }

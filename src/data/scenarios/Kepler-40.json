@@ -1,5 +1,6 @@
 {
   "name": "Kepler-40",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-40, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-40",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-40_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-40",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-40-b",
+      "texture": "Kepler-40-b",
       "m": 0.0020994600000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1360.1861888487763,
       "a": 0.08,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 340.84097320591525,
       "o": 0,
-      "orbitalPeriod": 6.87349
+      "orbitalPeriod": 6.87349,
+      "temperature": 1620,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-40_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1BEC5E",
+      "clouds": false
     }
   ]
 }

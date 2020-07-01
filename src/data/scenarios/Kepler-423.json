@@ -1,5 +1,6 @@
 {
   "name": "Kepler-423",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-423, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-423",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-423_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-423",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-423-b",
+      "texture": "Kepler-423-b",
       "m": 0.0005678085,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 785.3766053124592,
       "a": 0.03585,
       "e": 0.019,
       "w": 120.26,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2.6843285
+      "orbitalPeriod": 2.6843285,
+      "temperature": 1605,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-423_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#93EDB8",
+      "clouds": false
     }
   ]
 }

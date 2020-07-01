@@ -73,7 +73,7 @@
       "radius": 150.48079832470913,
       "a": 0.0695,
       "e": 0,
-      "w": 304.7770394579962,
+      "w": 49.16411573589953,
       "o": 0,
       "orbitalPeriod": 7.78993,
       "temperature": 701,
@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#57DC4C",
+      "color": "#CC3884",
       "clouds": false
     },
     {
@@ -100,7 +100,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_143_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#E19F4E",
+      "color": "#7B8AD1",
       "clouds": false
     }
   ]

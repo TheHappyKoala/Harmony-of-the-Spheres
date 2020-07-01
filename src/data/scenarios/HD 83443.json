@@ -1,5 +1,6 @@
 {
   "name": "HD 83443",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 83443, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 83443",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_83443_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 83443",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 83443-b",
+      "texture": "HD 83443-b",
       "m": 0.000324462,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 620.871864817783,
       "a": 0.04,
       "e": 0.01,
-      "w": 0,
-      "i": 0,
+      "w": 332.55417614706425,
       "o": 0,
-      "orbitalPeriod": 2.9857
+      "orbitalPeriod": 2.9857,
+      "temperature": 1007.9517580865307,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_83443_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1EBA54",
+      "clouds": false
     }
   ]
 }

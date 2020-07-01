@@ -73,14 +73,14 @@
       "radius": 386.51447469788593,
       "a": 0.718,
       "e": 0,
-      "w": 196.25883121341428,
+      "w": 67.74542647197646,
       "o": 0,
       "orbitalPeriod": 267.291,
       "temperature": 208,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-62_f/",
       "exoplanet": true,
       "bump": false,
-      "color": "#B4FE66",
+      "color": "#5E8855",
       "clouds": false
     },
     {
@@ -92,14 +92,14 @@
       "radius": 390.9073003053724,
       "a": 0.427,
       "e": 0,
-      "w": 58.76960646188786,
+      "w": 294.924894890659,
       "o": 0,
       "orbitalPeriod": 122.3874,
       "temperature": 270,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-62_e/",
       "exoplanet": true,
       "bump": false,
-      "color": "#1C5547",
+      "color": "#2339A4",
       "clouds": false
     },
     {
@@ -111,14 +111,14 @@
       "radius": 263.0455498809286,
       "a": 0.12,
       "e": 0,
-      "w": 191.4301899304137,
+      "w": 304.79890451019395,
       "o": 0,
       "orbitalPeriod": 18.16406,
       "temperature": 510,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-62_d/",
       "exoplanet": true,
       "bump": false,
-      "color": "#5F5026",
+      "color": "#DD8A3C",
       "clouds": false
     },
     {
@@ -130,7 +130,7 @@
       "radius": 157.62933478622725,
       "a": 0.0929,
       "e": 0,
-      "w": 151.4814517478284,
+      "w": 357.79181298389364,
       "o": 0,
       "orbitalPeriod": 12.4417,
       "temperature": 578,
@@ -138,7 +138,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#BADBF0",
+      "color": "#ED08D3",
       "clouds": false
     },
     {
@@ -150,7 +150,7 @@
       "radius": 223.96067192957554,
       "a": 0.0553,
       "e": 0,
-      "w": 286.166184087681,
+      "w": 23.933797182149526,
       "o": 0,
       "orbitalPeriod": 5.714932,
       "temperature": 750,
@@ -158,7 +158,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#86E399",
+      "color": "#9BAADA",
       "clouds": false
     }
   ]

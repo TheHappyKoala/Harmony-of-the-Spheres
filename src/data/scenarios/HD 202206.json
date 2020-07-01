@@ -1,5 +1,6 @@
 {
   "name": "HD 202206",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 202206, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 202206",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_202206_(ab)_c/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 202206",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 202206-c",
+      "texture": "HD 202206-c",
       "m": 0.01708197,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 3280.795101407422,
       "a": 2.41,
       "e": 0.22,
       "w": 280,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1260
+      "orbitalPeriod": 1260,
+      "temperature": 185.3931541612072,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_202206_(ab)_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B4BE58",
+      "clouds": false
     }
   ]
 }

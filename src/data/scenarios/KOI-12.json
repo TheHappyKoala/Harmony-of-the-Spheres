@@ -1,5 +1,6 @@
 {
   "name": "KOI-12",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system KOI-12, which contains 2 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KOI-12",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-448_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KOI-12",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "KOI-12-c",
+      "texture": "KOI-12-c",
       "m": 0.020994600000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 3577.654195547103,
       "a": 4.2,
       "e": 0.65,
       "w": -89,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2500
+      "orbitalPeriod": 2500,
+      "temperature": 159.10844194973046,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6523E5",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KOI-12-b",
+      "texture": "KOI-12-b",
       "m": 0.0010497300000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1016.6366512021068,
       "a": 0.154,
       "e": 0.34,
-      "w": 0,
-      "i": 0,
+      "w": 301.5742479901751,
       "o": 0,
-      "orbitalPeriod": 17.855182
+      "orbitalPeriod": 17.855182,
+      "temperature": 830.916738521169,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-448_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5EF8D5",
+      "clouds": false
     }
   ]
 }

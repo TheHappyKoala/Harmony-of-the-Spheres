@@ -1,5 +1,6 @@
 {
   "name": "16 Cyg B",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system 16 Cyg B, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "16 Cyg B",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/16_cyg_b_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "16 Cyg B",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "16 Cyg B-b",
+      "texture": "16 Cyg B-b",
       "m": 0.0016986540000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1244.392072644909,
       "a": 1.66,
       "e": 0.68,
-      "w": 0,
-      "i": 0,
+      "w": 329.7534766957191,
       "o": 0,
-      "orbitalPeriod": 798.5
+      "orbitalPeriod": 798.5,
+      "temperature": 197.81681106993094,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/16_cyg_b_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#96FC95",
+      "clouds": false
     }
   ]
 }

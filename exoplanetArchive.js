@@ -45,54 +45,47 @@ const chunkScenarios = (data, scenarios, i, currentScenarioName) => {
   }
 };
 
-const determineWorldType = (mass, temperature) => {
-  const outerEdgeHabitableZoneTemperature = 200;
-  const innerEdgeHabitableZoneTemperature = 300;
-
-  if (mass < 3.213e-7 && temperature > outerEdgeHabitableZoneTemperature) {
-    return "MercuryLikeWorld";
-  }
-
-  if (mass < 3.213e-7 && temperature <= outerEdgeHabitableZoneTemperature) {
-    return "GanymedeLikeWorld";
+const determineWorldType = (mass, temperature, hz, distance) => {
+  if (mass < 0.00003003 && temperature > 1000) {
+    return "torturedWorld";
   }
 
   if (
-    mass < 0.000002447 * 0.8 &&
-    temperature > outerEdgeHabitableZoneTemperature
+    (mass < 3.213e-7 && hz[0] > distance) ||
+    (mass < 0.0000016065 && temperature > 700)
   ) {
-    return "MarsLikeWorld";
+    return "deadWorld";
   }
 
-  if (mass < 3.213e-7 && temperature <= outerEdgeHabitableZoneTemperature) {
-    return "RockyIceWorld";
+  if (hz[0] < distance && hz[1] > distance && mass < 0.00003003) {
+    return "habitableWorld";
+  } else if (mass < 0.00003003 && distance > hz[1]) {
+    return "icyWorld";
   }
 
-  if (
-    mass < 0.000009009 &&
-    temperature > outerEdgeHabitableZoneTemperature &&
-    temperature < innerEdgeHabitableZoneTemperature
-  ) {
-    return "EarthLikeWorld";
+  if (mass > 0.00003003) {
+    if (temperature < 80) {
+      return "sudarskyClassZero";
+    } else if (temperature < 150) {
+      return "sudarskyClassOne";
+    } else if (temperature < 250) {
+      return "sudarskyClassTwo";
+    } else if (temperature < 800) {
+      return "sudarskyClassThree";
+    } else if (temperature < 1400) {
+      return "sudarskyClassFour";
+    } else {
+      return "sudarskyClassFive";
+    }
   }
 
-  if (mass < 0.000009009 && temperature >= innerEdgeHabitableZoneTemperature) {
-    return "VenusLikeWorld";
-  }
-
-  if (mass < 0.000009009 && temperature <= outerEdgeHabitableZoneTemperature) {
-    return "RockyIceWorld";
-  }
-  if (mass < 0.00020596) {
-    return "IceGiant";
-  }
-
-  return "GasGiant";
+  return "desertWorld";
 };
 
+//https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>6 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json
+
 const createExoplanetScenarios = async () => {
-  const url =
-    "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>6 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json";
+  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_hostname like 'Kepler-1649'&format=json`;
 
   const response = await fetch(url);
 
@@ -116,6 +109,7 @@ const createExoplanetScenarios = async () => {
 
     return {
       name: scenario[0].pl_hostname,
+      discoveryFacility: scenario[0].pl_facility,
       description: `3D visualisation and gravity simulation of the exoplanet system ${scenario[0].pl_hostname}, which contains ${scenario[0].pl_pnum} planets and was discovered by ${scenario[0].pl_facility}.`,
       particlesFun: false,
       type: "Exoplanets",
@@ -187,43 +181,112 @@ const createExoplanetScenarios = async () => {
                 : inferMassFromRadius(planet.pl_radj) * JUPITER_MASS
               : planet.pl_bmassj * JUPITER_MASS;
 
-          const resolution = 2500;
+          const resolution = 3500;
 
-          const terrain = new Terrain(
-            {
-              worldType: determineWorldType(
-                mass,
-                planet.pl_eqt == null ? 700 : planet.pl_eqt,
-                scenario[0].pl_hostname,
-                planet.pl_letter
-              )
-            },
-            resolution,
-            20
+          const isGasGiant = mass > 0.00003003;
+
+          var pi = Math.PI;
+          var sigma = 5.6703 * Math.pow(10, -5);
+          var L = 3.846 * Math.pow(10, 33) * Math.pow(scenario[0].st_mass, 3);
+          var D = planet.pl_orbsmax * 1.496 * Math.pow(10, 13);
+          var A = 50 / 100;
+          var T = 0;
+          var X = Math.sqrt(((1 - A) * L) / (16 * pi * sigma));
+          var T_eff = Math.sqrt(X) * (1 / Math.sqrt(D));
+          var T_eq = Math.pow(T_eff, 4) * (1 + (3 * T) / 4);
+          var T_sur = T_eq / 0.9;
+          var temp = Math.sqrt(Math.sqrt(T_sur));
+
+          let lum;
+
+          const m = scenario[0].st_mass;
+
+          if (m < 0.2) lum = 0.23 * Math.pow(m / 1, 2.3);
+          else if (m < 0.85)
+            lum = Math.pow(
+              m / 1,
+              -141.7 * Math.pow(m, 4) +
+                232.4 * Math.pow(m, 3) -
+                129.1 * Math.pow(m, 2) +
+                33.29 * m +
+                0.215
+            );
+          else if (m < 2) lum = Math.pow(m / 1, 4);
+          else if (m < 55) lum = 1.4 * Math.pow(m / 1, 3.5);
+          else lum = 32000 * (m / 1);
+
+          //Once we have the luminosity of the star, we can calculate the bounds of the habitable zone
+          //https://www.planetarybiology.com/calculating_habitable_zone.html
+
+          let start;
+          let end;
+
+          if (m < 0.43) {
+            start = Math.sqrt(lum / 1.1);
+            end = Math.sqrt(lum / 0.28);
+          } else if (m < 0.845) {
+            start = Math.sqrt(lum / 1.1);
+            end = Math.sqrt(lum / 0.18);
+          } else {
+            start = Math.sqrt(lum / 1.1);
+            end = Math.sqrt(lum / 0.53);
+          }
+
+          const worldType = determineWorldType(
+            mass,
+            planet.pl_eqt == null ? temp : planet.pl_eqt,
+            [start, end],
+            planet.pl_orbsmax
           );
 
-          const frameData = Buffer.from(terrain.data);
+          let bumpScale;
 
-          const rawImageData = {
-            data: frameData,
-            width: resolution,
-            height: resolution
-          };
+          switch (worldType) {
+            case "deadWorld":
+              bumpScale = 7;
+              break;
+            case "icyWorld":
+              bumpScale = 2;
+              break;
+            case "desertWorld":
+              bumpScale = 3;
+              break;
+            case "torturedWorld":
+              bumpScale = 0.5;
+              break;
+          }
 
-          const jpegImageData = jpeg.encode(rawImageData, 65);
+          const filePath = `./static/textures/${planet.pl_hostname}-${planet.pl_letter}.jpg`;
 
-          fs.writeFileSync(
-            `./static/textures/${planet.pl_hostname}-${planet.pl_letter}.jpg`,
-            jpegImageData.data
-          );
+          if (!fs.existsSync(filePath)) {
+            const terrain = new Terrain(
+              {
+                worldType
+              },
+              isGasGiant,
+              resolution,
+              20
+            );
 
-          const isGasGiant = mass < 0.00020596;
+            const frameData = Buffer.from(terrain.data);
+
+            const rawImageData = {
+              data: frameData,
+              width: resolution,
+              height: resolution
+            };
+
+            const jpegImageData = jpeg.encode(rawImageData, 50);
+
+            fs.writeFileSync(filePath, jpegImageData.data);
+          }
 
           return {
             name: `${planet.pl_hostname}-${planet.pl_letter}`,
             texture: `${planet.pl_hostname}-${planet.pl_letter}`,
-            noTexture: true,
             m: mass,
+            discoveryFacility: planet.pl_facility,
+            potentiallyHabitableWorld: worldType === "habitableWorld",
             radius:
               null === null
                 ? planet.pl_bmassj === null
@@ -239,11 +302,13 @@ const createExoplanetScenarios = async () => {
             i: planet.pl_orbinc === null ? 0 : planet.pl_orbinc,
             o: 0,
             orbitalPeriod: planet.pl_orbper,
-            temperature: planet.pl_eqt === null ? 700 : planet.pl_eqt,
+            temperature: planet.pl_eqt === null ? temp : planet.pl_eqt,
             scenarioWikiUrl: planet.pl_pelink,
             exoplanet: true,
-            bump: isGasGiant,
-            color: getRandomColor()
+            bump: isGasGiant ? false : true,
+            bumpScale: bumpScale,
+            color: getRandomColor(),
+            clouds: worldType === "habitableWorld" ? true : false
           };
         })
       ]

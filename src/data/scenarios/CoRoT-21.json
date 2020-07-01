@@ -1,5 +1,6 @@
 {
   "name": "CoRoT-21",
+  "discoveryFacility": "CoRoT",
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-21, which contains 1 planets and was discovered by CoRoT.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "CoRoT-21",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-21_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "CoRoT-21",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "CoRoT-21-b",
+      "texture": "CoRoT-21-b",
       "m": 0.0021567179999999997,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "CoRoT",
+      "potentiallyHabitableWorld": false,
+      "radius": 1375.6450166869693,
       "a": 0.0417,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 338.32480236222335,
       "o": 0,
-      "orbitalPeriod": 2.72474
+      "orbitalPeriod": 2.72474,
+      "temperature": 1426.0136383951435,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-21_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#48C7D2",
+      "clouds": false
     }
   ]
 }

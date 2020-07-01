@@ -1,5 +1,6 @@
 {
   "name": "CoRoT-29",
+  "discoveryFacility": "CoRoT",
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-29, which contains 1 planets and was discovered by CoRoT.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "CoRoT-29",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-29_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "CoRoT-29",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "CoRoT-29-b",
+      "texture": "CoRoT-29-b",
       "m": 0.000811155,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "CoRoT",
+      "potentiallyHabitableWorld": false,
+      "radius": 912.2981278085518,
       "a": 0.0386,
       "e": 0.082,
       "w": 87,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2.85057
+      "orbitalPeriod": 2.85057,
+      "temperature": 1196.8358022970997,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-29_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4ADE1E",
+      "clouds": false
     }
   ]
 }

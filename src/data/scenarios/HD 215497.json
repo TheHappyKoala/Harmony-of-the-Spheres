@@ -1,5 +1,6 @@
 {
   "name": "HD 215497",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 215497, which contains 2 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 215497",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_215497_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 215497",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 0.000019086,
-      "radius": 97.67441860465118,
-      "a": 0.05,
-      "e": 0.16,
-      "w": 0,
-      "i": 0,
-      "o": 0,
-      "orbitalPeriod": 3.93404
-    },
-    {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 215497-c",
+      "texture": "HD 215497-c",
       "m": 0.00031491900000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 613.1358211099449,
       "a": 1.282,
       "e": 0.49,
       "w": 45,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 567.94
+      "orbitalPeriod": 567.94,
+      "temperature": 157.3481036991053,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_215497_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#FFC713",
+      "clouds": false
+    },
+    {
+      "name": "HD 215497-b",
+      "texture": "HD 215497-b",
+      "m": 0.000019086,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 188.89194260166812,
+      "a": 0.05,
+      "e": 0.16,
+      "w": 18.406990809347885,
+      "o": 0,
+      "orbitalPeriod": 3.93404,
+      "temperature": 796.7471593389841,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_215497_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#AE32AE",
+      "clouds": false
     }
   ]
 }

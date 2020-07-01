@@ -1,5 +1,6 @@
 {
   "name": "kap CrB",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system kap CrB, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "kap CrB",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kappa_crb_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "kap CrB",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "kap CrB-b",
+      "texture": "kap CrB-b",
       "m": 0.0017282373,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1253.448756854496,
       "a": 2.65,
       "e": 0.167,
       "w": 194,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1285
+      "orbitalPeriod": 1285,
+      "temperature": 200.30644867455027,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kappa_crb_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A41BB9",
+      "clouds": false
     }
   ]
 }

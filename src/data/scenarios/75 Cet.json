@@ -1,5 +1,6 @@
 {
   "name": "75 Cet",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 75 Cet, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "75 Cet",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/75_cet_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "75 Cet",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "75 Cet-b",
+      "texture": "75 Cet-b",
       "m": 0.0028629000000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1549.4292910869565,
       "a": 2.1,
       "e": 0.117,
       "w": 165,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 691.9
+      "orbitalPeriod": 691.9,
+      "temperature": 329.0707544112859,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/75_cet_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A4A0BA",
+      "clouds": false
     }
   ]
 }

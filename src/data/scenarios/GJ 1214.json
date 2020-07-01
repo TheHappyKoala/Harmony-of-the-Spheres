@@ -1,5 +1,6 @@
 {
   "name": "GJ 1214",
+  "discoveryFacility": "MEarth Project",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 1214, which contains 1 planets and was discovered by MEarth Project.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 1214",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_1214_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 1214",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 1214-b",
+      "texture": "GJ 1214-b",
       "m": 0.00001879971,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "MEarth Project",
+      "potentiallyHabitableWorld": false,
+      "radius": 187.69670548462162,
       "a": 0.01411,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 181.24027516393346,
       "o": 0,
-      "orbitalPeriod": 1.58040456
+      "orbitalPeriod": 1.58040456,
+      "temperature": 488.1512000568463,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_1214_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#F9DD6B",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "K2-35",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-35, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-35",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-35_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-35",
@@ -64,28 +65,44 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-35-c",
+      "texture": "K2-35-c",
+      "m": 0.000005651994640557938,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.031,
       "e": 0.13,
       "w": -74.55,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2.399964
+      "orbitalPeriod": 2.399964,
+      "temperature": 1045.6638809343558,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-35_c/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#035C50",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-35-b",
+      "texture": "K2-35-b",
+      "m": 0.000013962178835798051,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.055,
       "e": 0.12,
       "w": 41.16,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 5.608352
+      "orbitalPeriod": 5.608352,
+      "temperature": 785.0396806254926,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-35_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#60A74D",
+      "clouds": false
     }
   ]
 }

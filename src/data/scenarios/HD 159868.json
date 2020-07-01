@@ -1,5 +1,6 @@
 {
   "name": "HD 159868",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 159868, which contains 2 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 159868",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_159868_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 159868",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 159868-c",
+      "texture": "HD 159868-c",
       "m": 0.0007329024,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 874.2437721956335,
       "a": 1.032,
       "e": 0.184,
       "w": 272,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 351
+      "orbitalPeriod": 351,
+      "temperature": 269.81730261048205,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_159868_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C2D457",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 159868-b",
+      "texture": "HD 159868-b",
       "m": 0.0021166374,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 1364.8492403942637,
       "a": 2.32,
       "e": 0.024,
       "w": 63,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1184.1
+      "orbitalPeriod": 1184.1,
+      "temperature": 179.95571874531586,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_159868_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3A2166",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 11506",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 11506, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 11506",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_11506_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 11506",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 11506-c",
+      "texture": "HD 11506-c",
       "m": 0.0003893544,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 670.2828434119926,
       "a": 0.774,
       "e": 0.193,
       "w": 259,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 223.41
+      "orbitalPeriod": 223.41,
+      "temperature": 321.32551140981013,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_11506_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F88113",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 11506-b",
+      "texture": "HD 11506-b",
       "m": 0.004609269,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1892.511946783513,
       "a": 2.9,
       "e": 0.3743,
       "w": 220.16,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1622.1
+      "orbitalPeriod": 1622.1,
+      "temperature": 166.00328749846955,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_11506_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E279B2",
+      "clouds": false
     }
   ]
 }

@@ -1,6 +1,7 @@
 {
   "name": "K2-288 B",
-  "description": "3D visualisation and gravity simulation of the exoplanet system K2-288 B, which contains 1 planets and was discovered by Kepler.",
+  "discoveryFacility": "K2",
+  "description": "3D visualisation and gravity simulation of the exoplanet system K2-288 B, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
   "pl_pnum": 1,
@@ -15,7 +16,7 @@
   "primary": "K2-288 B",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-288b_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-288 B",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "K2-288 B-b",
+      "texture": "K2-288 B-b",
+      "m": 0.000013575703216336556,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": true,
+      "radius": 200,
       "a": 0.164,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 65.88130276100885,
       "o": 0,
-      "orbitalPeriod": 31.393463
+      "orbitalPeriod": 31.393463,
+      "temperature": 226,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-288b_b/",
+      "exoplanet": true,
+      "bump": true,
+      "color": "#798ECA",
+      "clouds": true
     }
   ]
 }

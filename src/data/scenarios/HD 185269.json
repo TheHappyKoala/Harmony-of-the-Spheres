@@ -1,5 +1,6 @@
 {
   "name": "HD 185269",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 185269, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 185269",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_185269_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 185269",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 185269-b",
+      "texture": "HD 185269-b",
       "m": 0.000963843,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 980.8346771386463,
       "a": 0.077,
       "e": 0.229,
       "w": 176.2,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 6.83776
+      "orbitalPeriod": 6.83776,
+      "temperature": 1055.5081123699224,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_185269_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F83E2B",
+      "clouds": false
     }
   ]
 }

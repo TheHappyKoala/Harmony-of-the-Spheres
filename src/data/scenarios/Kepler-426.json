@@ -1,5 +1,6 @@
 {
   "name": "Kepler-426",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-426, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-426",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/koi-195_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-426",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-426-b",
+      "texture": "Kepler-426-b",
       "m": 0.000324462,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 620.871864817783,
       "a": 0.0414,
       "e": 0.18,
-      "w": 0,
-      "i": 0,
+      "w": 106.4876182343295,
       "o": 0,
-      "orbitalPeriod": 3.21751883
+      "orbitalPeriod": 3.21751883,
+      "temperature": 1300,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/koi-195_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9CF1A0",
+      "clouds": false
     }
   ]
 }

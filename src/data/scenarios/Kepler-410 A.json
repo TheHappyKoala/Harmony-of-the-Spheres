@@ -1,5 +1,6 @@
 {
   "name": "Kepler-410 A",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-410 A, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-410 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-410_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-410 A",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "Kepler-410 A-b",
+      "texture": "Kepler-410 A-b",
+      "m": 0.00003525122184094855,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.1226,
       "e": 0.17,
-      "w": 0,
-      "i": 0,
+      "w": 231.46816955174873,
       "o": 0,
-      "orbitalPeriod": 17.833648
+      "orbitalPeriod": 17.833648,
+      "temperature": 792.671450436704,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-410_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D8DEBD",
+      "clouds": false
     }
   ]
 }

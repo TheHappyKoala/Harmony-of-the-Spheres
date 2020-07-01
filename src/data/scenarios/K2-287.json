@@ -1,6 +1,7 @@
 {
   "name": "K2-287",
-  "description": "3D visualisation and gravity simulation of the exoplanet system K2-287, which contains 1 planets and was discovered by Kepler.",
+  "discoveryFacility": "K2",
+  "description": "3D visualisation and gravity simulation of the exoplanet system K2-287, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
   "pl_pnum": 1,
@@ -15,7 +16,7 @@
   "primary": "K2-287",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-287_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-287",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "K2-287-b",
+      "texture": "K2-287-b",
       "m": 0.0003006045,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 601.272397753022,
       "a": 0.1206,
       "e": 0.478,
       "w": 10.1,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 14.893291
+      "orbitalPeriod": 14.893291,
+      "temperature": 804,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-287_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#255D0B",
+      "clouds": false
     }
   ]
 }

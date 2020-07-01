@@ -1,5 +1,6 @@
 {
   "name": "WASP-39",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-39, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-39",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-39_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-39",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-39-b",
+      "texture": "WASP-39-b",
       "m": 0.00026720400000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 572.2518534622988,
       "a": 0.0486,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 3.861270887671928,
       "o": 0,
-      "orbitalPeriod": 4.055259
+      "orbitalPeriod": 4.055259,
+      "temperature": 1033.4595924297244,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-39_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#41FD33",
+      "clouds": false
     }
   ]
 }

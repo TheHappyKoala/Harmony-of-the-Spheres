@@ -1,5 +1,6 @@
 {
   "name": "HD 24064",
+  "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 24064, which contains 1 planets and was discovered by Bohyunsan Optical Astronomical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 24064",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_24064_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 24064",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 24064-b",
+      "texture": "HD 24064-b",
       "m": 0.012300927000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2858.1634428374387,
       "a": 1.29,
       "e": 0.35,
-      "w": 0,
-      "i": 0,
+      "w": 194.90958185337195,
       "o": 0,
-      "orbitalPeriod": 535.59998
+      "orbitalPeriod": 535.59998,
+      "temperature": 302.74290628091416,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_24064_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#DCCA47",
+      "clouds": false
     }
   ]
 }

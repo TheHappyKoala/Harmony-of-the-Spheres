@@ -1,5 +1,6 @@
 {
   "name": "HD 212771",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 212771, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 212771",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_212771_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 212771",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 212771-b",
+      "texture": "HD 212771-b",
       "m": 0.0022807770000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1408.3414230274632,
       "a": 1.19,
       "e": 0.076,
       "w": 29,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 380.7
+      "orbitalPeriod": 380.7,
+      "temperature": 307.8359891968136,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_212771_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C7A229",
+      "clouds": false
     }
   ]
 }

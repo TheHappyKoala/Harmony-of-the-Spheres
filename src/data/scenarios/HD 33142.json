@@ -1,5 +1,6 @@
 {
   "name": "HD 33142",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 33142, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 33142",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_33142_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 33142",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 33142-b",
+      "texture": "HD 33142-b",
       "m": 0.0013217055,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1119.927063418056,
       "a": 1.07,
       "e": 0.066,
       "w": 146,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 326
+      "orbitalPeriod": 326,
+      "temperature": 300.93442389723833,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_33142_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B6BE9E",
+      "clouds": false
     }
   ]
 }

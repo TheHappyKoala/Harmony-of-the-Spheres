@@ -1,5 +1,6 @@
 {
   "name": "HD 25171",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 25171, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 25171",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_25171_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 25171",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 25171-b",
+      "texture": "HD 25171-b",
       "m": 0.0008731845000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 940.9741531832062,
       "a": 2.971,
       "e": 0.042,
       "w": 159.543,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1802.29
+      "orbitalPeriod": 1802.29,
+      "temperature": 147.86517942461109,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_25171_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#ACD2EF",
+      "clouds": false
     }
   ]
 }

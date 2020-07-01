@@ -1,5 +1,6 @@
 {
   "name": "HIP 65891",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 65891, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HIP 65891",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_65891_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HIP 65891",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HIP 65891-b",
+      "texture": "HIP 65891-b",
       "m": 0.0057258000000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 2073.02414273795,
       "a": 2.81,
       "e": 0.13,
       "w": 355.5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1084.5
+      "orbitalPeriod": 1084.5,
+      "temperature": 285.3325189676967,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_65891_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#54B600",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 111591",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 111591, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 111591",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_111591_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 111591",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 111591-b",
+      "texture": "HD 111591-b",
       "m": 0.004198920000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1819.830581700284,
       "a": 2.5,
       "e": 0.26,
       "w": 78.72,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1056.4
+      "orbitalPeriod": 1056.4,
+      "temperature": 250.10980464673708,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_111591_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#2ADEED",
+      "clouds": false
     }
   ]
 }

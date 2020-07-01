@@ -1,5 +1,6 @@
 {
   "name": "HD 9174",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 9174, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 9174",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_9174_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 9174",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 9174-b",
+      "texture": "HD 9174-b",
       "m": 0.0010592730000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1020.5081699089723,
       "a": 2.2,
       "e": 0.12,
       "w": 101.99,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1179
+      "orbitalPeriod": 1179,
+      "temperature": 165.83110781851363,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_9174_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#FB37EA",
+      "clouds": false
     }
   ]
 }

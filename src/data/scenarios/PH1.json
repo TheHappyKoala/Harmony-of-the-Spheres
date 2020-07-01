@@ -1,5 +1,6 @@
 {
   "name": "PH1",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system PH1, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "PH1",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-64_%28ab%29_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "PH1",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "PH1-b",
+      "texture": "PH1-b",
       "m": 0.0005067333000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 748.7218953661588,
       "a": 0.652,
       "e": 0.0702,
       "w": 341.88,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 138.317
+      "orbitalPeriod": 138.317,
+      "temperature": 481,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-64_%28ab%29_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5F1184",
+      "clouds": false
     }
   ]
 }

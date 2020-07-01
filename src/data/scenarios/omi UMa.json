@@ -1,5 +1,6 @@
 {
   "name": "omi UMa",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system omi UMa, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "omi UMa",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/omi_uma_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "omi UMa",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "omi UMa-b",
+      "texture": "omi UMa-b",
       "m": 0.00391263,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1766.6481161601243,
       "a": 3.9,
       "e": 0.13,
       "w": 58,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1630
+      "orbitalPeriod": 1630,
+      "temperature": 283.91345839610085,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/omi_uma_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C21016",
+      "clouds": false
     }
   ]
 }

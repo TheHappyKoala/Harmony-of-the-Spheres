@@ -1,5 +1,6 @@
 {
   "name": "Ross 128",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system Ross 128, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Ross 128",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ross_128_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Ross 128",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Ross 128-b",
+      "texture": "Ross 128-b",
       "m": 0.00000419892,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 100.00712881404034,
       "a": 0.0496,
       "e": 0.116,
-      "w": 0,
-      "i": 0,
+      "w": 193.3400519668211,
       "o": 0,
-      "orbitalPeriod": 9.8658
+      "orbitalPeriod": 9.8658,
+      "temperature": 301,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ross_128_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#6C2195",
+      "clouds": false
     }
   ]
 }

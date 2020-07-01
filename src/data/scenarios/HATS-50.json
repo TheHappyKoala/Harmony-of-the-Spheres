@@ -1,5 +1,6 @@
 {
   "name": "HATS-50",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-50, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-50",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-50_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-50",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-50-b",
+      "texture": "HATS-50-b",
       "m": 0.000372177,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 657.700193708523,
       "a": 0.05046,
       "e": 0.516,
-      "w": 0,
-      "i": 0,
+      "w": 6.740868707794849,
       "o": 0,
-      "orbitalPeriod": 3.8297015
+      "orbitalPeriod": 3.8297015,
+      "temperature": 1204.8006609508438,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-50_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3DB6E2",
+      "clouds": false
     }
   ]
 }

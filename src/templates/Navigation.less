@@ -1,11 +1,22 @@
 
 
 .scenarios-wrapper {
-    width: 100%;
+      width: 100%;
       position: relative;
       margin-top: 60px;
       background-color: rgba(0, 0, 0, 0.5);
       min-height: calc(100vh - 40px);
+}
+
+.scenarios-wrapper > .nav:nth-of-type(2) {
+  width: 100%;
+  padding: 15px;
+  justify-content: flex-start;
+}
+
+.scenarios-wrapper > .nav:nth-of-type(2) > a, .nav-item {
+  padding: 5px 15px;
+  white-space:nowrap;
 }
 
 .scenarios-gallery {

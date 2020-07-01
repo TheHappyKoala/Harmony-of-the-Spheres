@@ -1,5 +1,6 @@
 {
   "name": "Kepler-77",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-77, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-77",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-77_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-77",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-77-b",
+      "texture": "Kepler-77-b",
       "m": 0.000410349,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 685.231921195467,
       "a": 0.04501,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 265.59925223860364,
       "o": 0,
-      "orbitalPeriod": 3.57878087
+      "orbitalPeriod": 3.57878087,
+      "temperature": 1440,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-77_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D086A8",
+      "clouds": false
     }
   ]
 }

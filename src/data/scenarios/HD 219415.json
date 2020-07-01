@@ -1,5 +1,6 @@
 {
   "name": "HD 219415",
+  "discoveryFacility": "McDonald Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 219415, which contains 1 planets and was discovered by McDonald Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 219415",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_219415_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 219415",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 219415-b",
+      "texture": "HD 219415-b",
       "m": 0.0009543,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "McDonald Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 976.7441860465117,
       "a": 3.2,
       "e": 0.4,
       "w": 207,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2093.3
+      "orbitalPeriod": 2093.3,
+      "temperature": 134.48518190315042,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_219415_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A419B2",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 86950",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 86950, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 86950",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_86950_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 86950",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 86950-b",
+      "texture": "HD 86950-b",
       "m": 0.0034354800000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1672.7378542115036,
       "a": 2.72,
       "e": 0.17,
       "w": 243,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1270
+      "orbitalPeriod": 1270,
+      "temperature": 213.32710410979985,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_86950_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B9F9C6",
+      "clouds": false
     }
   ]
 }

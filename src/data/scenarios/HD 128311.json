@@ -1,5 +1,6 @@
 {
   "name": "HD 128311",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 128311, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 128311",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_128311_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 128311",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 128311-c",
+      "texture": "HD 128311-c",
       "m": 0.0036158427000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1709.0751872489172,
       "a": 1.74,
       "e": 0.159,
       "w": 15.445,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 921.538
+      "orbitalPeriod": 921.538,
+      "temperature": 158.5927643087291,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_128311_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B0C1AB",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 128311-b",
+      "texture": "HD 128311-b",
       "m": 0.0016881567,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1241.1564388301656,
       "a": 1.084,
       "e": 0.303,
       "w": 57.864,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 453.019
+      "orbitalPeriod": 453.019,
+      "temperature": 200.9293373947914,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_128311_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9F34A7",
+      "clouds": false
     }
   ]
 }

@@ -9,12 +9,16 @@ exports.createPages = async ({ actions, graphql }) => {
         group(field: type) {
           fieldValue
         }
+        discoveryFacilities: group(field: discoveryFacility) {
+          fieldValue
+        }
         edges {
           node {
             sortOrder
             id
             name
             type
+            discoveryFacility
           }
         }
       }
@@ -49,23 +53,74 @@ exports.createPages = async ({ actions, graphql }) => {
     ).length;
     const numPages = Math.ceil(numberOfScenariosPerCategory / scenariosPerPage);
 
-    [...new Array(numPages)].forEach((scenario, i) => {
-      const pagePath = `/${_.kebabCase(fieldValue)}`;
-      createPage({
-        path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
-        component: require.resolve(`./src/templates/Navigation.tsx`),
-        context: {
-          pagePath,
-          type: fieldValue,
-          limit: scenariosPerPage,
-          skip: i * scenariosPerPage,
-          numPages,
-          currentPage: i + 1,
-          currentPageName: fieldValue
-        }
+    if (fieldValue !== "Exoplanets") {
+      [...new Array(numPages)].forEach((scenario, i) => {
+        const pagePath = `/${_.kebabCase(fieldValue)}`;
+        createPage({
+          path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
+          component: require.resolve(`./src/templates/Navigation.tsx`),
+          context: {
+            pagePath,
+            type: fieldValue,
+            limit: scenariosPerPage,
+            skip: i * scenariosPerPage,
+            numPages,
+            currentPage: i + 1,
+            currentPageName: fieldValue
+          }
+        });
       });
-    });
+    } else {
+      [...new Array(numPages)].forEach((scenario, i) => {
+        const pagePath = `/${_.kebabCase(fieldValue)}/all`;
+        createPage({
+          path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
+          component: require.resolve(`./src/templates/Navigation.tsx`),
+          context: {
+            pagePath,
+            type: fieldValue,
+            limit: scenariosPerPage,
+            skip: i * scenariosPerPage,
+            numPages,
+            currentPage: i + 1,
+            currentPageName: fieldValue
+          }
+        });
+      });
+    }
   });
+
+  results.data.allScenariosJson.discoveryFacilities.forEach(
+    ({ fieldValue }, i) => {
+      const numberOfScenariosPerCategory = results.data.allScenariosJson.edges.filter(
+        ({ node }) =>
+          node.discoveryFacility !== null &&
+          node.discoveryFacility.indexOf(fieldValue) !== -1
+      ).length;
+
+      const numPages = Math.ceil(
+        numberOfScenariosPerCategory / scenariosPerPage
+      );
+
+      [...new Array(numPages)].forEach((scenario, i) => {
+        const pagePath = `/exoplanets/${_.kebabCase(fieldValue)}`;
+        createPage({
+          path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
+          component: require.resolve(`./src/templates/ExoplanetNavigation.tsx`),
+          context: {
+            pagePath,
+            type: "Exoplanets",
+            discoveryFacility: fieldValue,
+            limit: scenariosPerPage,
+            skip: i * scenariosPerPage,
+            numPages,
+            currentPage: i + 1,
+            currentPageName: fieldValue
+          }
+        });
+      });
+    }
+  );
 
   results.data.allScenariosJson.edges.forEach(({ node }, i) =>
     createPage({

@@ -1,5 +1,6 @@
 {
   "name": "HD 114729",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 114729, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 114729",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_114729_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 114729",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 114729-b",
+      "texture": "HD 114729-b",
       "m": 0.0007872975,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 900.9309221237248,
       "a": 2.067,
       "e": 0.079,
       "w": 77.059,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1121.79
+      "orbitalPeriod": 1121.79,
+      "temperature": 159.74419155655116,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_114729_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#9C4652",
+      "clouds": false
     }
   ]
 }

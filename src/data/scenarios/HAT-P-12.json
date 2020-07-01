@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-12",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-12, which contains 1 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-12",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-12_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-12",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-12-b",
+      "texture": "HAT-P-12-b",
       "m": 0.0002013573,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 508.1354167492095,
       "a": 0.0384,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 154.52751125332523,
       "o": 0,
-      "orbitalPeriod": 3.2130598
+      "orbitalPeriod": 3.2130598,
+      "temperature": 963,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-12_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#947FAF",
+      "clouds": false
     }
   ]
 }

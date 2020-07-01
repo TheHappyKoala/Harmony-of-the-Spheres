@@ -1,5 +1,6 @@
 {
   "name": "HD 213240",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 213240, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 213240",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_213240_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 213240",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 213240-b",
+      "texture": "HD 213240-b",
       "m": 0.005324994,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2010.79222995942,
       "a": 1.89,
       "e": 0.42,
-      "w": 0,
-      "i": 0,
+      "w": 48.51595129207376,
       "o": 0,
-      "orbitalPeriod": 882.70001
+      "orbitalPeriod": 882.70001,
+      "temperature": 245.43882384380657,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_213240_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D5FA8B",
+      "clouds": false
     }
   ]
 }

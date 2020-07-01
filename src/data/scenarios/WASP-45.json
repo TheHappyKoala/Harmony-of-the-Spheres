@@ -1,5 +1,6 @@
 {
   "name": "WASP-45",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-45, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-45",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-45_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-45",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-45-b",
+      "texture": "WASP-45-b",
       "m": 0.0009199452,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 961.8186391839525,
       "a": 0.03963,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 235.57674713641367,
       "o": 0,
-      "orbitalPeriod": 3.126089
+      "orbitalPeriod": 3.126089,
+      "temperature": 1153,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-45_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BA3B56",
+      "clouds": false
     }
   ]
 }

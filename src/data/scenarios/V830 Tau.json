@@ -1,5 +1,6 @@
 {
   "name": "V830 Tau",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system V830 Tau, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "V830 Tau",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/v830_tau_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "V830 Tau",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "V830 Tau-b",
+      "texture": "V830 Tau-b",
       "m": 0.00066801,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 840.8567437692593,
       "a": 0.057,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 135.14740489821136,
       "o": 0,
-      "orbitalPeriod": 4.927
+      "orbitalPeriod": 4.927,
+      "temperature": 1007.6553059077909,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/v830_tau_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E178E6",
+      "clouds": false
     }
   ]
 }

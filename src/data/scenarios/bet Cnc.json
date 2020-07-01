@@ -1,5 +1,6 @@
 {
   "name": "bet Cnc",
+  "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system bet Cnc, which contains 1 planets and was discovered by Bohyunsan Optical Astronomical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "bet Cnc",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/beta_cnc_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "bet Cnc",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "bet Cnc-b",
+      "texture": "bet Cnc-b",
       "m": 0.00744354,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2314.5180282956967,
       "a": 1.7,
       "e": 0.08,
       "w": 58.9,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 605.2
+      "orbitalPeriod": 605.2,
+      "temperature": 274.70189428716174,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/beta_cnc_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4F1106",
+      "clouds": false
     }
   ]
 }

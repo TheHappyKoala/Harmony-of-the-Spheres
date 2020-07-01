@@ -1,5 +1,6 @@
 {
   "name": "HATS-62",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-62, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-62",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-62_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-62",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-62-b",
+      "texture": "HATS-62-b",
       "m": 0.0001708197,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 474.21917192427065,
       "a": 0.04163,
       "e": 0.298,
-      "w": 0,
-      "i": 0,
+      "w": 356.9346758527542,
       "o": 0,
-      "orbitalPeriod": 3.2768837
+      "orbitalPeriod": 3.2768837,
+      "temperature": 1237,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-62_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#8419D1",
+      "clouds": false
     }
   ]
 }

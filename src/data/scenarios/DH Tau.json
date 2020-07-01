@@ -1,5 +1,6 @@
 {
   "name": "DH Tau",
+  "discoveryFacility": "Subaru Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system DH Tau, which contains 1 planets and was discovered by Subaru Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "DH Tau",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/dh_tau_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "DH Tau",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "DH Tau-b",
+      "texture": "DH Tau-b",
       "m": 0.010497300000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Subaru Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 2674.0268430446113,
       "a": 330,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 103.61416554838554,
       "o": 0,
-      "orbitalPeriod": null
+      "orbitalPeriod": null,
+      "temperature": 5.766043425719552,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/dh_tau_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#023E4D",
+      "clouds": false
     }
   ]
 }

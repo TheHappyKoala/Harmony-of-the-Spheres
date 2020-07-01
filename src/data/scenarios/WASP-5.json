@@ -1,5 +1,6 @@
 {
   "name": "WASP-5",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-5, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-5",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-5_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-5",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-5-b",
+      "texture": "WASP-5-b",
       "m": 0.0015077940000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 1183.6323089360665,
       "a": 0.0267,
       "e": 0.038,
       "w": 34.38,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1.6284279
+      "orbitalPeriod": 1.6284279,
+      "temperature": 1706,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-5_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1AE223",
+      "clouds": false
     }
   ]
 }

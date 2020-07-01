@@ -1,5 +1,6 @@
 {
   "name": "HD 154672",
+  "discoveryFacility": "Las Campanas Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 154672, which contains 1 planets and was discovered by Las Campanas Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 154672",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_154672_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 154672",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 154672-b",
+      "texture": "HD 154672-b",
       "m": 0.005124591,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Las Campanas Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1978.6548084965955,
       "a": 0.6,
       "e": 0.61,
-      "w": 0,
-      "i": 0,
+      "w": 133.00343449281928,
       "o": 0,
-      "orbitalPeriod": 163.94
+      "orbitalPeriod": 163.94,
+      "temperature": 351.6295008579025,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_154672_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#DB9790",
+      "clouds": false
     }
   ]
 }

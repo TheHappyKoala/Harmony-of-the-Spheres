@@ -73,14 +73,14 @@
       "radius": 1061.8225975692944,
       "a": 0.058,
       "e": 0,
-      "w": 200.2734345387287,
+      "w": 84.45881405316318,
       "o": 0,
       "orbitalPeriod": 4.231306,
       "temperature": 1669,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/toi-163_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#016E8C",
+      "color": "#30A8CD",
       "clouds": false
     }
   ]

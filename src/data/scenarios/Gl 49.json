@@ -1,5 +1,6 @@
 {
   "name": "Gl 49",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system Gl 49, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Gl 49",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gliese_49_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Gl 49",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Gl 49-b",
+      "texture": "Gl 49-b",
       "m": 0.000016900653,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 179.48684783923034,
       "a": 0.0905,
       "e": 0.363,
       "w": 43,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 13.8508
+      "orbitalPeriod": 13.8508,
+      "temperature": 489.69722391152334,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gliese_49_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#2D5284",
+      "clouds": false
     }
   ]
 }

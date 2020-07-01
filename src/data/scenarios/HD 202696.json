@@ -1,5 +1,6 @@
 {
   "name": "HD 202696",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 202696, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 202696",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_202696_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 202696",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 202696-c",
+      "texture": "HD 202696-c",
       "m": 0.0017788152000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1268.7268069703148,
       "a": 2.342,
       "e": 0.028,
       "w": 136.8,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 946.6
+      "orbitalPeriod": 946.6,
+      "temperature": 255.4059461666922,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_202696_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D6D7B7",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 202696-b",
+      "texture": "HD 202696-b",
       "m": 0.0019047828,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1305.7146002511738,
       "a": 1.566,
       "e": 0.011,
       "w": 201.6,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 517.8
+      "orbitalPeriod": 517.8,
+      "temperature": 312.34069366152585,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_202696_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#EF3E3B",
+      "clouds": false
     }
   ]
 }

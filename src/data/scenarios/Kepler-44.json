@@ -1,5 +1,6 @@
 {
   "name": "Kepler-44",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-44, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-44",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-44_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-44",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-44-b",
+      "texture": "Kepler-44-b",
       "m": 0.0009543,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 976.7441860465117,
       "a": 0.0446,
       "e": 0.066,
-      "w": 0,
-      "i": 0,
+      "w": 358.79756163078173,
       "o": 0,
-      "orbitalPeriod": 3.2467293
+      "orbitalPeriod": 3.2467293,
+      "temperature": 1544,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-44_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#14456A",
+      "clouds": false
     }
   ]
 }

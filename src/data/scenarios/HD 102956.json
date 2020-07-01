@@ -1,5 +1,6 @@
 {
   "name": "HD 102956",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 102956, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 102956",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_102956_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 102956",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 102956-b",
+      "texture": "HD 102956-b",
       "m": 0.000916128,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 960.1404193036637,
       "a": 0.0807,
       "e": 0.037,
       "w": 301,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 6.4947
+      "orbitalPeriod": 6.4947,
+      "temperature": 1238.4934741769453,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_102956_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D20F6A",
+      "clouds": false
     }
   ]
 }

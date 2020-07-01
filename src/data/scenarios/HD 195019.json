@@ -1,5 +1,6 @@
 {
   "name": "HD 195019",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 195019, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 195019",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_195019_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 195019",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 195019-b",
+      "texture": "HD 195019-b",
       "m": 0.003798114,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1744.7440465378247,
       "a": 0.14,
       "e": 0.01,
-      "w": 0,
-      "i": 0,
+      "w": 226.0807519289071,
       "o": 0,
-      "orbitalPeriod": 18.20132
+      "orbitalPeriod": 18.20132,
+      "temperature": 741.7788285801747,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_195019_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#38BBF7",
+      "clouds": false
     }
   ]
 }

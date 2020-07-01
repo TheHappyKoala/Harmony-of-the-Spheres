@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-70",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-70, which contains 1 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-70",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-70",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-70-b",
+      "texture": "HAT-P-70-b",
       "m": 0.0064701540000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 2182.2138421114664,
       "a": 0.04739,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 13.943095407541364,
       "o": 0,
-      "orbitalPeriod": 2.74432452
+      "orbitalPeriod": 2.74432452,
+      "temperature": 2562,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BDD5EC",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HR 810",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HR 810, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HR 810",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hr_810_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HR 810",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HR 810-b",
+      "texture": "HR 810-b",
       "m": 0.002166261,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1378.1982522726476,
       "a": 0.92,
       "e": 0.14,
-      "w": 0,
-      "i": 0,
+      "w": 349.93086192529233,
       "o": 0,
-      "orbitalPeriod": 302.79999
+      "orbitalPeriod": 302.79999,
+      "temperature": 312.3806390250676,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hr_810_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#29853B",
+      "clouds": false
     }
   ]
 }

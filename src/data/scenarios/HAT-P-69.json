@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-69",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-69, which contains 1 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-69",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-69",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-69-b",
+      "texture": "HAT-P-69-b",
       "m": 0.003416394,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 1668.8284924979143,
       "a": 0.06555,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 43.49047780143779,
       "o": 0,
-      "orbitalPeriod": 4.7869491
+      "orbitalPeriod": 4.7869491,
+      "temperature": 1930,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#6367E4",
+      "clouds": false
     }
   ]
 }

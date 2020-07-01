@@ -1,5 +1,6 @@
 {
   "name": "HD 192699",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 192699, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 192699",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_192699_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 192699",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 192699-b",
+      "texture": "HD 192699-b",
       "m": 0.0020002128,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1332.8005758657648,
       "a": 1.063,
       "e": 0.082,
       "w": 87,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 340.94
+      "orbitalPeriod": 340.94,
+      "temperature": 297.092786018271,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_192699_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#C85FB4",
+      "clouds": false
     }
   ]
 }

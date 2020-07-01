@@ -1,5 +1,6 @@
 {
   "name": "HD 72659",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 72659, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 72659",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_72659_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 72659",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 72659-b",
+      "texture": "HD 72659-b",
       "m": 0.0036740550000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1720.5779036298609,
       "a": 4.75,
       "e": 0.22,
-      "w": 0,
-      "i": 0,
+      "w": 326.25605868780127,
       "o": 0,
-      "orbitalPeriod": 3658
+      "orbitalPeriod": 3658,
+      "temperature": 144.34596464003053,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_72659_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#13ED7D",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "KELT-6",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-6, which contains 2 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KELT-6",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-6_c/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KELT-6",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "KELT-6-c",
+      "texture": "KELT-6-c",
       "m": 0.0035404530000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1694.0174390406378,
       "a": 2.39,
       "e": 0.21,
       "w": 268.7,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1276
+      "orbitalPeriod": 1276,
+      "temperature": 202.4262042941944,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-6_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#901E93",
+      "clouds": false
     }
   ]
 }

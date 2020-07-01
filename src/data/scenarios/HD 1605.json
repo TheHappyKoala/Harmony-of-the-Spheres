@@ -1,5 +1,6 @@
 {
   "name": "HD 1605",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 1605, which contains 2 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 1605",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_1605_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 1605",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 1605-c",
+      "texture": "HD 1605-c",
       "m": 0.003454566,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1676.6346392826977,
       "a": 3.584,
       "e": 0.099,
       "w": 233,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2149
+      "orbitalPeriod": 2149,
+      "temperature": 157.3816717249959,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_1605_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#B418E7",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 1605-b",
+      "texture": "HD 1605-b",
       "m": 0.0008913162000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 949.1317966345816,
       "a": 1.492,
       "e": 0.095,
       "w": 216,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 577.2
+      "orbitalPeriod": 577.2,
+      "temperature": 243.92355619806105,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_1605_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#17C491",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "GJ 411",
+  "discoveryFacility": "Haute-Provence Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 411, which contains 1 planets and was discovered by Haute-Provence Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "GJ 411",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "GJ 411",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "GJ 411-b",
+      "texture": "GJ 411-b",
       "m": 0.000008979963000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Haute-Provence Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 137.62219383661864,
       "a": 0.0785,
       "e": 0.22,
-      "w": 0,
-      "i": 0,
+      "w": 204.73289325761777,
       "o": 0,
-      "orbitalPeriod": 12.9532
+      "orbitalPeriod": 12.9532,
+      "temperature": 350,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#EE26DE",
+      "clouds": false
     }
   ]
 }

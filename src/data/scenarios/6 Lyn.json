@@ -1,5 +1,6 @@
 {
   "name": "6 Lyn",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 6 Lyn, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "6 Lyn",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/6_lyn_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "6 Lyn",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "6 Lyn-b",
+      "texture": "6 Lyn-b",
       "m": 0.001918143,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1309.5532989053288,
       "a": 2.11,
       "e": 0.073,
       "w": 130,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 934.3
+      "orbitalPeriod": 934.3,
+      "temperature": 217.7108459444116,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/6_lyn_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#D947CE",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "WASP-173 A",
+  "discoveryFacility": "SuperWASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-173 A, which contains 1 planets and was discovered by SuperWASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-173 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-173a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-173 A",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-173 A-b",
+      "texture": "WASP-173 A-b",
       "m": 0.003521367,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 1690.1759145572369,
       "a": 0.0248,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 267.98259565719985,
       "o": 0,
-      "orbitalPeriod": 1.38665318
+      "orbitalPeriod": 1.38665318,
+      "temperature": 1880,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-173a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#FF695E",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "HD 217107",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 217107, which contains 2 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 217107",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_217107_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 217107",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 217107-c",
+      "texture": "HD 217107-c",
       "m": 0.0024811800000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1459.0482060989923,
       "a": 5.32,
       "e": 0.517,
       "w": 198.6,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 4270
+      "orbitalPeriod": 4270,
+      "temperature": 104.30223334433263,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_217107_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#680A9B",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 217107-b",
+      "texture": "HD 217107-b",
       "m": 0.0012405900000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1090.5285573046167,
       "a": 0.08,
       "e": 0.13,
-      "w": 0,
-      "i": 0,
+      "w": 286.34409940543475,
       "o": 0,
-      "orbitalPeriod": 7.12682
+      "orbitalPeriod": 7.12682,
+      "temperature": 850.5589727120267,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_217107_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#5C4D00",
+      "clouds": false
     }
   ]
 }

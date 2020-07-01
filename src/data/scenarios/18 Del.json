@@ -1,5 +1,6 @@
 {
   "name": "18 Del",
+  "discoveryFacility": "Okayama Astrophysical Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 18 Del, which contains 1 planets and was discovered by Okayama Astrophysical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "18 Del",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/18_del_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "18 Del",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "18 Del-b",
+      "texture": "18 Del-b",
       "m": 0.009829290000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Okayama Astrophysical Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2601.1923565824454,
       "a": 2.6,
       "e": 0.08,
       "w": 166.1,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 993.3
+      "orbitalPeriod": 993.3,
+      "temperature": 278.64973021779343,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/18_del_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#39A945",
+      "clouds": false
     }
   ]
 }

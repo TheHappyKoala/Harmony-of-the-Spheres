@@ -1,5 +1,6 @@
 {
   "name": "WASP-41",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-41, which contains 2 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-41",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-41_c/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-41",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "WASP-41-c",
+      "texture": "WASP-41-c",
       "m": 0.0030346740000000002,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1587.816187598095,
       "a": 1.07,
       "e": 0.294,
       "w": 353,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 421
+      "orbitalPeriod": 421,
+      "temperature": 241,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-41_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#2F9EA3",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "WASP-53",
+  "discoveryFacility": "Multiple Facilities",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-53, which contains 2 planets and was discovered by Multiple Facilities.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-53",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-53_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-53",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "WASP-53-c",
+      "texture": "WASP-53-c",
       "m": 0.015602805000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Facilities",
+      "potentiallyHabitableWorld": false,
+      "radius": 3158.3357247408453,
       "a": 3.73,
       "e": 0.8369,
       "w": 198.6,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2840
+      "orbitalPeriod": 2840,
+      "temperature": 109.29605147576746,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-53_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#72588A",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-53-b",
+      "texture": "WASP-53-b",
       "m": 0.0020345676000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Facilities",
+      "potentiallyHabitableWorld": false,
+      "radius": 1342.3675928503224,
       "a": 0.04101,
       "e": 0.03,
-      "w": 0,
-      "i": 0,
+      "w": 303.22104876852495,
       "o": 0,
-      "orbitalPeriod": 3.3098443
+      "orbitalPeriod": 3.3098443,
+      "temperature": 1053,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-53_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#0C0866",
+      "clouds": false
     }
   ]
 }

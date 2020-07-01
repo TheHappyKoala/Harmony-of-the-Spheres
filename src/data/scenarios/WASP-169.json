@@ -1,5 +1,6 @@
 {
   "name": "WASP-169",
+  "discoveryFacility": "WASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-169, which contains 1 planets and was discovered by WASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-169",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-169_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-169",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-169-b",
+      "texture": "WASP-169-b",
       "m": 0.0005353623,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "WASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 766.2054495804313,
       "a": 0.0681,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 236.21904048923537,
       "o": 0,
-      "orbitalPeriod": 5.6114118
+      "orbitalPeriod": 5.6114118,
+      "temperature": 1604,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-169_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#51CE93",
+      "clouds": false
     }
   ]
 }

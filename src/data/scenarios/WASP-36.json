@@ -1,5 +1,6 @@
 {
   "name": "WASP-36",
+  "discoveryFacility": "SuperWASP",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-36, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-36",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-36_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-36",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-36-b",
+      "texture": "WASP-36-b",
       "m": 0.0022531023000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP",
+      "potentiallyHabitableWorld": false,
+      "radius": 1401.1387670092151,
       "a": 0.02677,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 292.6906745406912,
       "o": 0,
-      "orbitalPeriod": 1.53736596
+      "orbitalPeriod": 1.53736596,
+      "temperature": 1733,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-36_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#784A45",
+      "clouds": false
     }
   ]
 }

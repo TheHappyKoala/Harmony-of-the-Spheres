@@ -1,5 +1,6 @@
 {
   "name": "K2-216",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-216, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "K2-216",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "K2-216",
@@ -64,16 +65,24 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "K2-216-b",
+      "texture": "K2-216-b",
       "m": 0.000024019731,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 208.0423665384464,
       "a": 0.028,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 311.49824416747333,
       "o": 0,
-      "orbitalPeriod": 2.1748
+      "orbitalPeriod": 2.1748,
+      "temperature": 1103,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 0.5,
+      "color": "#3BB72C",
+      "clouds": false
     }
   ]
 }

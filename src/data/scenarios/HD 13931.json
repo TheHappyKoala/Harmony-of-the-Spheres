@@ -1,5 +1,6 @@
 {
   "name": "HD 13931",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 13931, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 13931",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_13931_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 13931",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 13931-b",
+      "texture": "HD 13931-b",
       "m": 0.0020994600000000005,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1360.1861888487763,
       "a": 5.15,
       "e": 0.02,
-      "w": 0,
-      "i": 0,
+      "w": 33.84877443813946,
       "o": 0,
-      "orbitalPeriod": 4218
+      "orbitalPeriod": 4218,
+      "temperature": 129.0634659085311,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_13931_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#3464A6",
+      "clouds": false
     }
   ]
 }

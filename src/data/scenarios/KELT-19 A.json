@@ -1,5 +1,6 @@
 {
   "name": "KELT-19 A",
+  "discoveryFacility": "KELT",
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-19 A, which contains 1 planets and was discovered by KELT.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "KELT-19 A",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-19_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "KELT-19 A",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "KELT-19 A-b",
+      "texture": "KELT-19 A-b",
       "m": 0.0038840010000000006,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "KELT",
+      "potentiallyHabitableWorld": false,
+      "radius": 1761.2073397480226,
       "a": 0.0637,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 28.867031522723856,
       "o": 0,
-      "orbitalPeriod": 4.6117093
+      "orbitalPeriod": 4.6117093,
+      "temperature": 1935,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-19_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#2ADB08",
+      "clouds": false
     }
   ]
 }

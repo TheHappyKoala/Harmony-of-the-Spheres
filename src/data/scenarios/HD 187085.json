@@ -1,5 +1,6 @@
 {
   "name": "HD 187085",
+  "discoveryFacility": "Anglo-Australian Telescope",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 187085, which contains 1 planets and was discovered by Anglo-Australian Telescope.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 187085",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_187085_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 187085",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 187085-b",
+      "texture": "HD 187085-b",
       "m": 0.0007977948000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Anglo-Australian Telescope",
+      "potentiallyHabitableWorld": false,
+      "radius": 905.9567629536828,
       "a": 2.1,
       "e": 0.251,
       "w": 98.315,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1019.74
+      "orbitalPeriod": 1019.74,
+      "temperature": 189.14723522419837,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_187085_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#E57937",
+      "clouds": false
     }
   ]
 }

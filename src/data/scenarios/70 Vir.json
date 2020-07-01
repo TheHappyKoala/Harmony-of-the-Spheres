@@ -1,5 +1,6 @@
 {
   "name": "70 Vir",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system 70 Vir, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "70 Vir",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/70_vir_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "70 Vir",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "70 Vir-b",
+      "texture": "70 Vir-b",
       "m": 0.007077088800000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2265.9593661230415,
       "a": 0.481,
       "e": 0.3988,
       "w": 359.83,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 116.688
+      "orbitalPeriod": 116.688,
+      "temperature": 370.03836992834323,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/70_vir_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#A3BA29",
+      "clouds": false
     }
   ]
 }

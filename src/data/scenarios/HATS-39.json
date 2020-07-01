@@ -1,5 +1,6 @@
 {
   "name": "HATS-39",
+  "discoveryFacility": "HATSouth",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-39, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HATS-39",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-39_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HATS-39",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HATS-39-b",
+      "texture": "HATS-39-b",
       "m": 0.000601209,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATSouth",
+      "potentiallyHabitableWorld": false,
+      "radius": 804.4589088860833,
       "a": 0.06007,
       "e": 0.275,
-      "w": 0,
-      "i": 0,
+      "w": 121.20492212450478,
       "o": 0,
-      "orbitalPeriod": 4.5776348
+      "orbitalPeriod": 4.5776348,
+      "temperature": 1645,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-39_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#EC8952",
+      "clouds": false
     }
   ]
 }

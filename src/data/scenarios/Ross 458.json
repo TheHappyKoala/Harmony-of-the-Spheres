@@ -1,5 +1,6 @@
 {
   "name": "Ross 458",
+  "discoveryFacility": "Las Campanas Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system Ross 458, which contains 1 planets and was discovered by Las Campanas Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Ross 458",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/ross_458_%28ab%29_c/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Ross 458",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "Ross 458-c",
+      "texture": "Ross 458-c",
       "m": 0.005998119048,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Las Campanas Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2113.8759655128256,
       "a": 1168,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 62.72798007298891,
       "o": 0,
-      "orbitalPeriod": null
+      "orbitalPeriod": null,
+      "temperature": 4.122636675911257,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/ross_458_%28ab%29_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#60A583",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "WASP-160 B",
+  "discoveryFacility": "SuperWASP-South",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-160 B, which contains 1 planets and was discovered by SuperWASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "WASP-160 B",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-160_b_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "WASP-160 B",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "WASP-160 B-b",
+      "texture": "WASP-160 B-b",
       "m": 0.00026529540000000006,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "SuperWASP-South",
+      "potentiallyHabitableWorld": false,
+      "radius": 570.5315283255964,
       "a": 0.0452,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 248.20925245753256,
       "o": 0,
-      "orbitalPeriod": 3.7684952
+      "orbitalPeriod": 3.7684952,
+      "temperature": 1119,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-160_b_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#1BB68D",
+      "clouds": false
     }
   ]
 }

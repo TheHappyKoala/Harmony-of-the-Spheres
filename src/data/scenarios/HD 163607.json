@@ -1,5 +1,6 @@
 {
   "name": "HD 163607",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 163607, which contains 2 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 163607",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_163607_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 163607",
@@ -64,28 +65,42 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
+      "name": "HD 163607-c",
+      "texture": "HD 163607-c",
       "m": 0.0021004143,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1360.4458265362696,
       "a": 2.39,
       "e": 0.08,
       "w": 274,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 1272
+      "orbitalPeriod": 1272,
+      "temperature": 169.41973200432574,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_163607_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#4DA56B",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 163607-b",
+      "texture": "HD 163607-b",
       "m": 0.00074778948,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 881.6586937246758,
       "a": 0.362,
       "e": 0.7441,
       "w": 79.6,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 75.2203
+      "orbitalPeriod": 75.2203,
+      "temperature": 435.32003520962763,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_163607_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#998512",
+      "clouds": false
     }
   ]
 }

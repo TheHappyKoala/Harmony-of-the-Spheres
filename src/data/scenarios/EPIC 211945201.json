@@ -1,5 +1,6 @@
 {
   "name": "EPIC 211945201",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system EPIC 211945201, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "EPIC 211945201",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic__211945201_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "EPIC 211945201",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "EPIC 211945201-b",
+      "texture": "EPIC 211945201-b",
+      "m": 0.00019319523442916318,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.1493,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 299.29382386497934,
       "o": 0,
-      "orbitalPeriod": 19.49221
+      "orbitalPeriod": 19.49221,
+      "temperature": 817,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic__211945201_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#CEA99A",
+      "clouds": false
     }
   ]
 }

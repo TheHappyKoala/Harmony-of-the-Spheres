@@ -1,5 +1,6 @@
 {
   "name": "Kepler-75",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-75, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-75",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-75_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-75",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-75-b",
+      "texture": "Kepler-75-b",
       "m": 0.00963843,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 2579.8580566188225,
       "a": 0.0818,
       "e": 0.57,
       "w": 63.5,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 8.8849116
+      "orbitalPeriod": 8.8849116,
+      "temperature": 767,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-75_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#71D72E",
+      "clouds": false
     }
   ]
 }

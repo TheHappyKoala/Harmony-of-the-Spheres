@@ -1,5 +1,6 @@
 {
   "name": "HD 13167",
+  "discoveryFacility": "W. M. Keck Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 13167, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 13167",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_13167_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 13167",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 13167-b",
+      "texture": "HD 13167-b",
       "m": 0.0031587330000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "W. M. Keck Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 1614.762266014944,
       "a": 4.1,
       "e": 0.563,
       "w": 265,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 2613
+      "orbitalPeriod": 2613,
+      "temperature": 148.8016756812368,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_13167_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#09D633",
+      "clouds": false
     }
   ]
 }

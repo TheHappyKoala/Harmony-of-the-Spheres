@@ -1,5 +1,6 @@
 {
   "name": "HD 180617",
+  "discoveryFacility": "Calar Alto Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 180617, which contains 1 planets and was discovered by Calar Alto Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 180617",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_752_a_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 180617",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 180617-b",
+      "texture": "HD 180617-b",
       "m": 0.000036635577,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Calar Alto Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 248.40048639884012,
       "a": 0.3357,
       "e": 0.16,
       "w": 269,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 105.9
+      "orbitalPeriod": 105.9,
+      "temperature": 228.13038772587015,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_752_a_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7D0849",
+      "clouds": false
     }
   ]
 }

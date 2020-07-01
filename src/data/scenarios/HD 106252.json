@@ -1,5 +1,6 @@
 {
   "name": "HD 106252",
+  "discoveryFacility": "Lick Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 106252, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 106252",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_106252_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 106252",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 106252-b",
+      "texture": "HD 106252-b",
       "m": 0.0066132990000000004,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Lick Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 2202.3624478327124,
       "a": 2.61,
       "e": 0.48,
-      "w": 0,
-      "i": 0,
+      "w": 204.4917689110295,
       "o": 0,
-      "orbitalPeriod": 1531
+      "orbitalPeriod": 1531,
+      "temperature": 150.02726790734948,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_106252_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BA003B",
+      "clouds": false
     }
   ]
 }

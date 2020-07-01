@@ -1,5 +1,6 @@
 {
   "name": "EPIC 212737443",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system EPIC 212737443, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "EPIC 212737443",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic_212737443_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "EPIC 212737443",
@@ -64,28 +65,43 @@
       "massType": "star"
     },
     {
-      "name": "c",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "EPIC 212737443-c",
+      "texture": "EPIC 212737443-c",
+      "m": 0.000031059317189631245,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.28,
       "e": 0.2,
-      "w": 0,
-      "i": 0,
+      "w": 289.1865153924473,
       "o": 0,
-      "orbitalPeriod": 65.55
+      "orbitalPeriod": 65.55,
+      "temperature": 316,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic_212737443_c/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#69B09B",
+      "clouds": false
     },
     {
-      "name": "b",
-      "noTexture": true,
-      "m": 1e-13,
-      "radius": 97.67441860465118,
+      "name": "EPIC 212737443-b",
+      "texture": "EPIC 212737443-b",
+      "m": 0.000028336987302319284,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 200,
       "a": 0.098,
       "e": 0.2,
-      "w": 0,
-      "i": 0,
+      "w": 253.28960280786072,
       "o": 0,
-      "orbitalPeriod": 13.603
+      "orbitalPeriod": 13.603,
+      "temperature": 536,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic_212737443_b/",
+      "exoplanet": true,
+      "bump": true,
+      "bumpScale": 3,
+      "color": "#534E87",
+      "clouds": false
     }
   ]
 }

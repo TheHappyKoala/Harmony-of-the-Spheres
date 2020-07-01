@@ -1,5 +1,6 @@
 {
   "name": "EPIC 248847494",
+  "discoveryFacility": "K2",
   "description": "3D visualisation and gravity simulation of the exoplanet system EPIC 248847494, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "EPIC 248847494",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": null,
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "EPIC 248847494",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "EPIC 248847494-b",
+      "texture": "EPIC 248847494-b",
       "m": 0.012405900000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "K2",
+      "potentiallyHabitableWorld": false,
+      "radius": 2868.382358526182,
       "a": 4.5,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 336.5967786618102,
       "o": 0,
-      "orbitalPeriod": 3650
+      "orbitalPeriod": 3650,
+      "temperature": 183,
+      "scenarioWikiUrl": null,
+      "exoplanet": true,
+      "bump": false,
+      "color": "#BC67A1",
+      "clouds": false
     }
   ]
 }

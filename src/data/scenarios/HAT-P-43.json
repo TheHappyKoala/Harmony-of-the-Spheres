@@ -1,5 +1,6 @@
 {
   "name": "HAT-P-43",
+  "discoveryFacility": "HATNet",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-43, which contains 1 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HAT-P-43",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-43_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HAT-P-43",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HAT-P-43-b",
+      "texture": "HAT-P-43-b",
       "m": 0.0006317466000000001,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "HATNet",
+      "potentiallyHabitableWorld": false,
+      "radius": 821.3744518760756,
       "a": 0.0443,
       "e": 0,
-      "w": 0,
-      "i": 0,
+      "w": 302.4279868199912,
       "o": 0,
-      "orbitalPeriod": 3.332687
+      "orbitalPeriod": 3.332687,
+      "temperature": 1361,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-43_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#94D7BA",
+      "clouds": false
     }
   ]
 }

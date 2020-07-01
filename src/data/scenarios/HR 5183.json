@@ -1,5 +1,6 @@
 {
   "name": "HR 5183",
+  "discoveryFacility": "Multiple Observatories",
   "description": "3D visualisation and gravity simulation of the exoplanet system HR 5183, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HR 5183",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hr_5183_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HR 5183",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HR 5183-b",
+      "texture": "HR 5183-b",
       "m": 0.003082389,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Multiple Observatories",
+      "potentiallyHabitableWorld": false,
+      "radius": 1598.2543465484725,
       "a": 18,
       "e": 0.84,
       "w": -20,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 27000
+      "orbitalPeriod": 27000,
+      "temperature": 171,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hr_5183_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#AA8786",
+      "clouds": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "Kepler-433",
+  "discoveryFacility": "Kepler",
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-433, which contains 1 planets and was discovered by Kepler.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "Kepler-433",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-433_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "Kepler-433",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "Kepler-433-b",
+      "texture": "Kepler-433-b",
       "m": 0.002691126,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "Kepler",
+      "potentiallyHabitableWorld": false,
+      "radius": 1509.6819420990607,
       "a": 0.0679,
       "e": 0.119,
       "w": 68,
-      "i": 0,
       "o": 0,
-      "orbitalPeriod": 5.33408384
+      "orbitalPeriod": 5.33408384,
+      "temperature": 1776,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-433_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#7AFEAF",
+      "clouds": false
     }
   ]
 }

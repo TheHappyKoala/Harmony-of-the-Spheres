@@ -1,5 +1,6 @@
 {
   "name": "HD 137388",
+  "discoveryFacility": "La Silla Observatory",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 137388, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -15,7 +16,7 @@
   "primary": "HD 137388",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
   "distanceStep": { "name": "Phobos to Mars / 10", "value": 0.00000626747 },
-  "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Mars",
+  "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_137388_b/",
   "systemBarycenter": true,
   "barycenter": true,
   "barycenterMassOne": "HD 137388",
@@ -64,16 +65,23 @@
       "massType": "star"
     },
     {
-      "name": "b",
-      "noTexture": true,
+      "name": "HD 137388-b",
+      "texture": "HD 137388-b",
       "m": 0.00019086000000000003,
-      "radius": 97.67441860465118,
+      "discoveryFacility": "La Silla Observatory",
+      "potentiallyHabitableWorld": false,
+      "radius": 496.83643055210734,
       "a": 0.89,
       "e": 0.36,
-      "w": 0,
-      "i": 0,
+      "w": 319.4660846441993,
       "o": 0,
-      "orbitalPeriod": 330
+      "orbitalPeriod": 330,
+      "temperature": 190.9572295036737,
+      "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_137388_b/",
+      "exoplanet": true,
+      "bump": false,
+      "color": "#F2F169",
+      "clouds": false
     }
   ]
 }
