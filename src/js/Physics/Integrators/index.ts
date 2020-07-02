@@ -10,6 +10,7 @@ import RKN64 from './RKN64';
 import RKN12 from './RKN12';
 import Yoshida6 from './Yoshida6';
 import KahanLi8 from './KahanLi8';
+import OrbitalElements from './OrbitalElementsIntegrator';
 
 export const integrators = [
   'RK4',
@@ -23,7 +24,8 @@ export const integrators = [
   'RKN64',
   'RKN12',
   'Yoshida6',
-  'KahanLi8'
+  'KahanLi8',
+  'OrbitalElements'
 ];
 
 export default function(integrator: string, config: IntegratorType) {
@@ -52,6 +54,8 @@ export default function(integrator: string, config: IntegratorType) {
       return new Yoshida6(config);
     case 'KahanLi8':
       return new KahanLi8(config);
+    case 'OrbitalElements':
+      return new OrbitalElements(config);
     default:
       return new RK4(config);
   }
