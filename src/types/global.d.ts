@@ -179,3 +179,14 @@ interface Shape {
 interface Window {
   PREVIOUS_PATH: string | null;
 }
+
+interface OrbitalElements {
+  a: number; // semi-major axis
+  e: number; // eccentricity
+  i: number; // inclination
+  argP: number; // argument of periapsis
+  lAn: number; // longitude of ascending node
+  trueAnom: number; // true anomaly
+  eccAnom: number; // eccentric anomaly
+  meanAnom: number; // mean anomaly
+}
