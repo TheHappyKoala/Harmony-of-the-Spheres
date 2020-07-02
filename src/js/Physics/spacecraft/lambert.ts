@@ -535,6 +535,7 @@ function recursiveTree(tree: SOITree): SOITree {
   return tree;
 }
 
+// remove position as it may change
 function simplifyTree(tree: SOITree): SOITree {
   let newTree = {
     name: tree.name,
