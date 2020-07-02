@@ -70,7 +70,7 @@
       "m": 0.00963843,
       "discoveryFacility": "Kepler",
       "potentiallyHabitableWorld": false,
-      "radius": 2579.8580566188225,
+      "radius": 1025.5813953488373,
       "a": 0.0818,
       "e": 0.57,
       "w": 63.5,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-75_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#71D72E",
+      "color": "#041FEA",
       "clouds": false
     }
   ]

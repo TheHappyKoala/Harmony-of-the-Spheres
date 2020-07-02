@@ -70,17 +70,17 @@
       "m": 0.000200403,
       "discoveryFacility": "Anglo-Australian Telescope",
       "potentiallyHabitableWorld": false,
-      "radius": 507.1225687340544,
+      "radius": 27.326285824821127,
       "a": 0.05,
       "e": 0.09,
-      "w": 289.1064100073372,
+      "w": 46.0293800709465,
       "o": 0,
       "orbitalPeriod": 3.97097,
       "temperature": 1067.802215657805,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_76700_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#18AAC9",
+      "color": "#2203D4",
       "clouds": false
     }
   ]

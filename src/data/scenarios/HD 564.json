@@ -70,7 +70,7 @@
       "m": 0.00031491900000000004,
       "discoveryFacility": "La Silla Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 613.1358211099449,
+      "radius": 33.03880704602061,
       "a": 1.2,
       "e": 0.096,
       "w": 314,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_564_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#5E0D47",
+      "color": "#29AAB1",
       "clouds": false
     }
   ]

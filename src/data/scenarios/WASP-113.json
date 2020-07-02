@@ -70,7 +70,7 @@
       "m": 0.0004532925,
       "discoveryFacility": "SuperWASP-North",
       "potentiallyHabitableWorld": false,
-      "radius": 714.483412877888,
+      "radius": 1376.232558139535,
       "a": 0.05885,
       "e": 0,
       "w": 0,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-113_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#EC69B9",
+      "color": "#2D3846",
       "clouds": false
     }
   ]

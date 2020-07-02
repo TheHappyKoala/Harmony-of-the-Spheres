@@ -70,17 +70,17 @@
       "m": 0.002128089,
       "discoveryFacility": "Subaru Telescope",
       "potentiallyHabitableWorld": false,
-      "radius": 1367.945758900928,
+      "radius": 73.71172001651126,
       "a": 0.76,
       "e": 0.11,
-      "w": 348.5954266941827,
+      "w": 347.10894046794715,
       "o": 0,
       "orbitalPeriod": 176.3,
       "temperature": 322.30827909712235,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_145457_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#2EF8BB",
+      "color": "#0C540A",
       "clouds": false
     }
   ]

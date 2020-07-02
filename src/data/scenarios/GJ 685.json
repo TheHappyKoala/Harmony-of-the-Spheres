@@ -70,10 +70,10 @@
       "m": 0.000027025776000000002,
       "discoveryFacility": "Qatar",
       "potentiallyHabitableWorld": false,
-      "radius": 218.60495387396142,
+      "radius": 11.77952199444395,
       "a": 0.1344,
       "e": 0,
-      "w": 170.67453122135257,
+      "w": 322.92538876595313,
       "o": 0,
       "orbitalPeriod": 24.16,
       "temperature": 419.1040007897729,
@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#F949B6",
+      "color": "#1B1F46",
       "clouds": false
     }
   ]

@@ -70,7 +70,7 @@
       "m": 0.00031396470000000004,
       "discoveryFacility": "W. M. Keck Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 612.3547795656981,
+      "radius": 32.99672064364963,
       "a": 0.1508,
       "e": 0.399,
       "w": 155.5,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_33283_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#E2A62D",
+      "color": "#5F9E27",
       "clouds": false
     }
   ]

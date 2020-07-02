@@ -70,10 +70,10 @@
       "m": 0.000017729380719027257,
       "discoveryFacility": "Kepler",
       "potentiallyHabitableWorld": false,
-      "radius": 200,
+      "radius": 185.58139534883722,
       "a": 0.288,
       "e": 0.02,
-      "w": 298.93714478832095,
+      "w": 197.8942850858942,
       "o": 0,
       "orbitalPeriod": 66.65062,
       "temperature": 346.7344086222458,
@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#E5EE41",
+      "color": "#393675",
       "clouds": false
     }
   ]

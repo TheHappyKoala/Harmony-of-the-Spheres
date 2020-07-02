@@ -70,17 +70,17 @@
       "m": 0.00015112213383185828,
       "discoveryFacility": "K2",
       "potentiallyHabitableWorld": false,
-      "radius": 200,
+      "radius": 453.20930232558146,
       "a": 0.0974,
       "e": 0,
-      "w": 207.22844352628766,
+      "w": 344.05360218611617,
       "o": 0,
       "orbitalPeriod": 10.136448,
       "temperature": 1092,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic_211391664_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#C521DF",
+      "color": "#49699C",
       "clouds": false
     }
   ]

@@ -70,17 +70,17 @@
       "m": 0.0010020150000000002,
       "discoveryFacility": "McDonald Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 996.9659834998974,
+      "radius": 53.72148490797911,
       "a": 0.61,
       "e": 0.38,
-      "w": 270.2736731179016,
+      "w": 29.85373498697813,
       "o": 0,
       "orbitalPeriod": 148.60001,
       "temperature": 262.99547154573554,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_216536_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#98A5AC",
+      "color": "#AFF6F4",
       "clouds": false
     }
   ]

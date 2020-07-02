@@ -70,7 +70,7 @@
       "m": 0.019658580000000002,
       "discoveryFacility": "Lick Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 3480.2069291706757,
+      "radius": 187.53085573265798,
       "a": 1.17,
       "e": 0.031,
       "w": 137.4,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/tau_gem_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#8F8472",
+      "color": "#33B923",
       "clouds": false
     }
   ]

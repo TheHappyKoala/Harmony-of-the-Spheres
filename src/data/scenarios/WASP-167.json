@@ -70,17 +70,17 @@
       "m": 0.0076344,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 2339.2607253020933,
+      "radius": 1543.2558139534885,
       "a": 0.0365,
       "e": 0,
-      "w": 341.206477503737,
+      "w": 302.0147643966896,
       "o": 0,
       "orbitalPeriod": 2.0219596,
       "temperature": 2329,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-167_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#A1A46B",
+      "color": "#58574D",
       "clouds": false
     }
   ]

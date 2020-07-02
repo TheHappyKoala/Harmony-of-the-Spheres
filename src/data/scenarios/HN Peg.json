@@ -70,17 +70,17 @@
       "m": 0.02099335941,
       "discoveryFacility": "Spitzer Space Telescope",
       "potentiallyHabitableWorld": false,
-      "radius": 3577.5654031531953,
+      "radius": 1026.5581395348838,
       "a": 773,
       "e": 0,
-      "w": 205.08524750989034,
+      "w": 308.0034565446775,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 9.29403258527041,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hn_peg_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#DD59D4",
+      "color": "#1541A4",
       "clouds": false
     }
   ]

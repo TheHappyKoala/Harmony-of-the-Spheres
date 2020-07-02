@@ -70,17 +70,17 @@
       "m": 0.00026243250000000006,
       "discoveryFacility": "SuperWASP-South",
       "potentiallyHabitableWorld": false,
-      "radius": 567.9375272404639,
+      "radius": 1089.0697674418604,
       "a": 0.0549,
       "e": 0,
-      "w": 112.38607232665416,
+      "w": 145.86181713152573,
       "o": 0,
       "orbitalPeriod": 4.60273,
       "temperature": 1404,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-147_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#1BDF10",
+      "color": "#728D3D",
       "clouds": false
     }
   ]

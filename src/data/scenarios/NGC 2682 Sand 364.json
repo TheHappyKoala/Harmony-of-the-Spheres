@@ -70,17 +70,17 @@
       "m": 0.006384267000000001,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 2170.0003519225897,
+      "radius": 116.93040994926857,
       "a": 0.53,
       "e": 0.35,
-      "w": 221.46971512272086,
+      "w": 121.82580086945605,
       "o": 0,
       "orbitalPeriod": 121.71,
       "temperature": 1725.6695557404496,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/sand_364_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#DCA8D5",
+      "color": "#E63BA0",
       "clouds": false
     }
   ]

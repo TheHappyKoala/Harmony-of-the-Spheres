@@ -70,7 +70,7 @@
       "m": 0.004122576,
       "discoveryFacility": "Roque de los Muchachos Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 1805.8597091250383,
+      "radius": 97.30870131508178,
       "a": 0.049,
       "e": 0.011,
       "w": 113.4,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/tau_boo_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#AB2C85",
+      "color": "#5BFDC2",
       "clouds": false
     }
   ]

@@ -70,17 +70,17 @@
       "m": 0.00362634,
       "discoveryFacility": "Hubble Space Telescope",
       "potentiallyHabitableWorld": false,
-      "radius": 1711.1573434494487,
+      "radius": 791.1627906976745,
       "a": 0.055,
       "e": 0,
-      "w": 106.3092598038608,
+      "w": 110.08376615996075,
       "o": 0,
       "orbitalPeriod": 4.2,
       "temperature": 1205.4087593001852,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/sweeps-04_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#77B2DB",
+      "color": "#38058C",
       "clouds": false
     }
   ]

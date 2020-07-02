@@ -70,17 +70,17 @@
       "m": 0.004198920000000001,
       "discoveryFacility": "XO",
       "potentiallyHabitableWorld": false,
-      "radius": 1819.830581700284,
+      "radius": 2021.860465116279,
       "a": 0.0815,
       "e": 0,
-      "w": 182.74981506720528,
+      "w": 28.016394292015924,
       "o": 0,
       "orbitalPeriod": 3.7650007,
       "temperature": 1577,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/xo-6_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#99F735",
+      "color": "#1194F2",
       "clouds": false
     }
   ]

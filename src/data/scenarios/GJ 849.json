@@ -70,17 +70,17 @@
       "m": 0.0009543,
       "discoveryFacility": "W. M. Keck Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 976.7441860465117,
+      "radius": 52.63183390214377,
       "a": 2.35,
       "e": 0.04,
-      "w": 266.6382479820075,
+      "w": 219.4298360956534,
       "o": 0,
       "orbitalPeriod": 1882,
       "temperature": 113.60580155440822,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_849_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#2E476B",
+      "color": "#4DB41D",
       "clouds": false
     }
   ]

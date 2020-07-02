@@ -70,7 +70,7 @@
       "m": 0.0017177400000000002,
       "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 1250.2454622656426,
+      "radius": 67.3694427332284,
       "a": 1.2,
       "e": 0.25,
       "w": 89.16,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/alf_ari_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#81F291",
+      "color": "#53402A",
       "clouds": false
     }
   ]

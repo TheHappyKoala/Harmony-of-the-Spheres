@@ -70,17 +70,17 @@
       "m": 0.000391263,
       "discoveryFacility": "Kitt Peak National Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 671.6608807937743,
+      "radius": 36.19242829546993,
       "a": 0.05,
       "e": 0,
-      "w": 236.61380097058864,
+      "w": 123.67761324423955,
       "o": 0,
       "orbitalPeriod": 4.11377,
       "temperature": 875.7388487737679,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_102195_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#5DAD6E",
+      "color": "#FBF996",
       "clouds": false
     }
   ]

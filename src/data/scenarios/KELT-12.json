@@ -70,17 +70,17 @@
       "m": 0.000906585,
       "discoveryFacility": "KELT-North",
       "potentiallyHabitableWorld": false,
-      "radius": 955.9270455269487,
+      "radius": 1738.6046511627908,
       "a": 0.06708,
       "e": 0,
-      "w": 119.29877720446687,
+      "w": 331.8609561148459,
       "o": 0,
       "orbitalPeriod": 5.031623,
       "temperature": 1800,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-86_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#355D14",
+      "color": "#B80ECD",
       "clouds": false
     }
   ]

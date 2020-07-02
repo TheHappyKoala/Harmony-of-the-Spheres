@@ -70,7 +70,7 @@
       "m": 0.0004905102000000001,
       "discoveryFacility": "SuperWASP",
       "potentiallyHabitableWorld": false,
-      "radius": 738.5592551264184,
+      "radius": 1406.5116279069769,
       "a": 0.05453,
       "e": 0,
       "w": 0,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-92_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#354982",
+      "color": "#11845B",
       "clouds": false
     }
   ]

@@ -70,17 +70,17 @@
       "m": 0.00114516,
       "discoveryFacility": "Parkes Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 1054.4766278007005,
+      "radius": 56.8204444121015,
       "a": 0.0044,
       "e": 0.06,
-      "w": 181.18200241591035,
+      "w": 141.82506798280613,
       "o": 0,
       "orbitalPeriod": 0.09070629,
       "temperature": 4667.873868796497,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/psr_1719-14_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#A31C46",
+      "color": "#49EA0B",
       "clouds": false
     }
   ]

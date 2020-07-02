@@ -70,17 +70,17 @@
       "m": 0.0015268800000000002,
       "discoveryFacility": "Haute-Provence Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 1189.9020905300597,
+      "radius": 64.1178417883201,
       "a": 1.67,
       "e": 0.2,
-      "w": 127.93503460101645,
+      "w": 164.80257653946197,
       "o": 0,
       "orbitalPeriod": 857.5,
       "temperature": 161.88244590969214,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_42012_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#85D540",
+      "color": "#E29B6A",
       "clouds": false
     }
   ]

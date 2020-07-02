@@ -70,17 +70,17 @@
       "m": 0.001584138,
       "discoveryFacility": "Multiple Facilities",
       "potentiallyHabitableWorld": false,
-      "radius": 1208.4431709266034,
+      "radius": 65.11692740125531,
       "a": 0.0968,
       "e": 0,
-      "w": 257.6567668908436,
+      "w": 229.2410202478856,
       "o": 0,
       "orbitalPeriod": 10.79,
       "temperature": 796.318398009721,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/tap_26_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#FACA44",
+      "color": "#D96965",
       "clouds": false
     }
   ]

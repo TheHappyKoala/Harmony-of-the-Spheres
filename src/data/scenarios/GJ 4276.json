@@ -70,7 +70,7 @@
       "m": 0.000049747659000000006,
       "discoveryFacility": "Calar Alto Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 282.460471213196,
+      "radius": 15.220374809690721,
       "a": 0.082,
       "e": 0.37,
       "w": 216.83,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": null,
       "exoplanet": true,
       "bump": false,
-      "color": "#9BEEC9",
+      "color": "#78F441",
       "clouds": false
     }
   ]

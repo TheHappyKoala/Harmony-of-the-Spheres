@@ -70,17 +70,17 @@
       "m": 0.010201467,
       "discoveryFacility": "Oak Ridge Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 2642.113505413856,
+      "radius": 142.37021438582795,
       "a": 0.36,
       "e": 0.34,
-      "w": 145.2713190107745,
+      "w": 25.994827902470206,
       "o": 0,
       "orbitalPeriod": 83.9151,
       "temperature": 339.1686195204541,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_114762_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#08A663",
+      "color": "#C6531F",
       "clouds": false
     }
   ]

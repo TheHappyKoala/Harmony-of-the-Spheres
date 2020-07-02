@@ -70,7 +70,7 @@
       "m": 0.00019086000000000003,
       "discoveryFacility": "Roque de los Muchachos Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 496.83643055210734,
+      "radius": 26.7720175486228,
       "a": 2.729,
       "e": 0.187,
       "w": 159.011,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_220197_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#77CAA8",
+      "color": "#C9EA90",
       "clouds": false
     }
   ]

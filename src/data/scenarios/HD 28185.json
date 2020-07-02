@@ -70,17 +70,17 @@
       "m": 0.005630370000000001,
       "discoveryFacility": "La Silla Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 2058.4422140739434,
+      "radius": 110.91910272516516,
       "a": 1.02,
       "e": 0.05,
-      "w": 146.9119444040712,
+      "w": 138.73480276364765,
       "o": 0,
       "orbitalPeriod": 379,
       "temperature": 241.76836128150913,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_28185_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#4A1340",
+      "color": "#4EB986",
       "clouds": false
     }
   ]

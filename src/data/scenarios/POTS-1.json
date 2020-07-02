@@ -70,17 +70,17 @@
       "m": 0.002204433,
       "discoveryFacility": "La Silla Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 1388.3464891635642,
+      "radius": 919.1162790697674,
       "a": 0.03734,
       "e": 0,
-      "w": 3.042558495418497,
+      "w": 156.1894636633201,
       "o": 0,
       "orbitalPeriod": 3.1606296,
       "temperature": 942.5384700729982,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/pots-1_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#DE214F",
+      "color": "#D3DFEE",
       "clouds": false
     }
   ]

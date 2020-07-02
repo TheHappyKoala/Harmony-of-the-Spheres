@@ -70,7 +70,7 @@
       "m": 0.007920690000000001,
       "discoveryFacility": "Okayama Astrophysical Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 2375.7111370809166,
+      "radius": 128.01513001313296,
       "a": 0.95,
       "e": 0.09,
       "w": 203.5,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_104985_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#89E2BB",
+      "color": "#5788DD",
       "clouds": false
     }
   ]

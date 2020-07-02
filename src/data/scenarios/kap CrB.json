@@ -70,7 +70,7 @@
       "m": 0.0017282373,
       "discoveryFacility": "Lick Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 1253.448756854496,
+      "radius": 67.5420521750338,
       "a": 2.65,
       "e": 0.167,
       "w": 194,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kappa_crb_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#A41BB9",
+      "color": "#0C9637",
       "clouds": false
     }
   ]

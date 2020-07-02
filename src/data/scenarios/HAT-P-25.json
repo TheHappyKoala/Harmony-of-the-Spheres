@@ -70,7 +70,7 @@
       "m": 0.0005429966999999999,
       "discoveryFacility": "HATNet",
       "potentiallyHabitableWorld": false,
-      "radius": 770.7756509608123,
+      "radius": 1108.6046511627908,
       "a": 0.0466,
       "e": 0.023,
       "w": 287,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-25_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#6EACED",
+      "color": "#9AD405",
       "clouds": false
     }
   ]

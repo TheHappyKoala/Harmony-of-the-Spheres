@@ -70,17 +70,17 @@
       "m": 0.00188903685,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 1301.1703170384094,
+      "radius": 1298.093023255814,
       "a": 0.0174,
       "e": 0,
-      "w": 181.85673415938993,
+      "w": 198.1130722462283,
       "o": 0,
       "orbitalPeriod": 0.83784,
       "temperature": 2069,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-18_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#9B74FD",
+      "color": "#49D205",
       "clouds": false
     }
   ]

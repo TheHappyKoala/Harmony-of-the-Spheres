@@ -70,7 +70,7 @@
       "m": 0.0066037560000000006,
       "discoveryFacility": "Lick Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 2201.0271237282054,
+      "radius": 118.60228670422796,
       "a": 1.086,
       "e": 0.05,
       "w": 121,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_59686_a_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#AA37E0",
+      "color": "#B4B723",
       "clouds": false
     }
   ]

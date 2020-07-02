@@ -70,7 +70,7 @@
       "m": 0.0040013799,
       "discoveryFacility": "HATNet",
       "potentiallyHabitableWorld": false,
-      "radius": 1783.369262492712,
+      "radius": 1259.0232558139535,
       "a": 0.0413,
       "e": 0.036,
       "w": 214,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-16_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#6E3FE4",
+      "color": "#A9D8D6",
       "clouds": false
     }
   ]

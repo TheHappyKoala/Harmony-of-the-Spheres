@@ -70,7 +70,7 @@
       "m": 0.0092548014,
       "discoveryFacility": "Subaru Telescope",
       "potentiallyHabitableWorld": false,
-      "radius": 2536.2224957323588,
+      "radius": 136.6642802088914,
       "a": 1.623,
       "e": 0.017,
       "w": 97.115,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_38801_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#C33E16",
+      "color": "#A760A3",
       "clouds": false
     }
   ]

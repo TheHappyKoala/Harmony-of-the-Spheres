@@ -70,7 +70,7 @@
       "m": 0.005153220000000001,
       "discoveryFacility": "McDonald Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 1983.2899626706276,
+      "radius": 106.86952570209483,
       "a": 0.21,
       "e": 0.036,
       "w": 240,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/tyc-3667-1280-1_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#047290",
+      "color": "#AE65C3",
       "clouds": false
     }
   ]

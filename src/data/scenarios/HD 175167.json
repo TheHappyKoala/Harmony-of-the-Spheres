@@ -70,17 +70,17 @@
       "m": 0.008560071,
       "discoveryFacility": "Las Campanas Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 2454.447012883703,
+      "radius": 132.25781053951056,
       "a": 2.4,
       "e": 0.54,
-      "w": 133.89057819477773,
+      "w": 8.363057157319869,
       "o": 0,
       "orbitalPeriod": 1290,
       "temperature": 196.64559773949878,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_175167_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#B08B5B",
+      "color": "#D5D2F9",
       "clouds": false
     }
   ]

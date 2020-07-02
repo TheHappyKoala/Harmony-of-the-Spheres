@@ -70,7 +70,7 @@
       "m": 0.000004986641858540852,
       "discoveryFacility": "K2",
       "potentiallyHabitableWorld": false,
-      "radius": 200,
+      "radius": 109.39534883720931,
       "a": 0.032,
       "e": 0.17,
       "w": 49.8,
@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 0.5,
-      "color": "#0D6010",
+      "color": "#3459D4",
       "clouds": false
     }
   ]

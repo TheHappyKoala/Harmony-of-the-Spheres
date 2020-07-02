@@ -70,17 +70,17 @@
       "m": 0.000830241,
       "discoveryFacility": "Haute-Provence Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 921.2530122974177,
+      "radius": 49.64169351377985,
       "a": 1.42,
       "e": 0.13,
-      "w": 197.1933261528627,
+      "w": 138.1944156638573,
       "o": 0,
       "orbitalPeriod": 623.8,
       "temperature": 198.84963972452698,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_17674_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#A60DE9",
+      "color": "#318CDB",
       "clouds": false
     }
   ]

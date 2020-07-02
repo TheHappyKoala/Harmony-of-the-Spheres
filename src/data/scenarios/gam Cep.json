@@ -70,7 +70,7 @@
       "m": 0.0017654550000000002,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 1264.7158481864128,
+      "radius": 68.14917908504081,
       "a": 2.05,
       "e": 0.049,
       "w": 94.6,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/gamma_cephei_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#9673AB",
+      "color": "#AF1B81",
       "clouds": false
     }
   ]

@@ -70,7 +70,7 @@
       "m": 0.001383735,
       "discoveryFacility": "Kepler",
       "potentiallyHabitableWorld": false,
-      "radius": 1141.7089242371705,
+      "radius": 918.1395348837209,
       "a": 0.382,
       "e": 0.772,
       "w": 141.3,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-420_a_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#1C6538",
+      "color": "#66AC7D",
       "clouds": false
     }
   ]

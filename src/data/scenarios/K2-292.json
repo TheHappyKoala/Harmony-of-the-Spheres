@@ -70,7 +70,7 @@
       "m": 0.000073566987,
       "discoveryFacility": "K2",
       "potentiallyHabitableWorld": false,
-      "radius": 332.90476696783554,
+      "radius": 229.53488372093022,
       "a": 0.13,
       "e": 0.04,
       "w": 104,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_119130_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#D44C88",
+      "color": "#056AFB",
       "clouds": false
     }
   ]

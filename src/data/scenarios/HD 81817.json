@@ -70,7 +70,7 @@
       "m": 0.025861530000000004,
       "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 3905.062031457249,
+      "radius": 210.42416136525523,
       "a": 3.3,
       "e": 0.17,
       "w": 320,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_81817_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#F379E0",
+      "color": "#6DDEB0",
       "clouds": false
     }
   ]

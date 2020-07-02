@@ -70,7 +70,7 @@
       "m": 0.001355106,
       "discoveryFacility": "K2",
       "potentiallyHabitableWorld": false,
-      "radius": 1131.727683619108,
+      "radius": 1515.9069767441863,
       "a": 0.0404,
       "e": 0,
       "w": 90,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-260_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#309B2B",
+      "color": "#18231A",
       "clouds": false
     }
   ]

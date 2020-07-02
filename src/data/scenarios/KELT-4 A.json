@@ -70,17 +70,17 @@
       "m": 0.0008607786000000001,
       "discoveryFacility": "KELT",
       "potentiallyHabitableWorld": false,
-      "radius": 935.3358501610699,
+      "radius": 1659.4883720930234,
       "a": 0.04317,
       "e": 0,
-      "w": 195.74416868658665,
+      "w": 181.4020008361593,
       "o": 0,
       "orbitalPeriod": 2.9895932,
       "temperature": 1823,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-4_a_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#7B7789",
+      "color": "#2CD6E2",
       "clouds": false
     }
   ]

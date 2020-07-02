@@ -70,17 +70,17 @@
       "m": 0.000324462,
       "discoveryFacility": "Kepler",
       "potentiallyHabitableWorld": false,
-      "radius": 620.871864817783,
+      "radius": 1064.6511627906978,
       "a": 0.0414,
       "e": 0.18,
-      "w": 106.4876182343295,
+      "w": 185.15285476183158,
       "o": 0,
       "orbitalPeriod": 3.21751883,
       "temperature": 1300,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/koi-195_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#9CF1A0",
+      "color": "#3DDDE7",
       "clouds": false
     }
   ]

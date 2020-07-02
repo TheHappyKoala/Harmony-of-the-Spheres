@@ -70,17 +70,17 @@
       "m": 0.0023857500000000003,
       "discoveryFacility": "Atacama Large Millimeter Array (ALMA)",
       "potentiallyHabitableWorld": false,
-      "radius": 1435.2106171530902,
+      "radius": 77.33628507413268,
       "a": 130,
       "e": 0,
-      "w": 112.02787090853722,
+      "w": 148.83120816330407,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 40.68517412365351,
       "scenarioWikiUrl": null,
       "exoplanet": true,
       "bump": false,
-      "color": "#740988",
+      "color": "#A3CB51",
       "clouds": false
     }
   ]

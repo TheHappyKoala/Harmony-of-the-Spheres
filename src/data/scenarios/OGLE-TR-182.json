@@ -70,17 +70,17 @@
       "m": 0.000963843,
       "discoveryFacility": "OGLE",
       "potentiallyHabitableWorld": false,
-      "radius": 980.8346771386463,
+      "radius": 1103.7209302325582,
       "a": 0.051,
       "e": 0,
-      "w": 23.684251084384805,
+      "w": 16.282384592605077,
       "o": 0,
       "orbitalPeriod": 3.9791,
       "temperature": 1175.284407335451,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/ogle-tr-182_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#26683F",
+      "color": "#51F0F4",
       "clouds": false
     }
   ]

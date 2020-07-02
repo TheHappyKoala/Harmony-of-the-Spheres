@@ -70,7 +70,7 @@
       "m": 0.0005678085,
       "discoveryFacility": "Kepler",
       "potentiallyHabitableWorld": false,
-      "radius": 785.3766053124592,
+      "radius": 1164.2790697674418,
       "a": 0.03585,
       "e": 0.019,
       "w": 120.26,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-423_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#93EDB8",
+      "color": "#828391",
       "clouds": false
     }
   ]

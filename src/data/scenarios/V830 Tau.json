@@ -70,17 +70,17 @@
       "m": 0.00066801,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 840.8567437692593,
+      "radius": 45.30954277055067,
       "a": 0.057,
       "e": 0,
-      "w": 135.14740489821136,
+      "w": 311.01672277913707,
       "o": 0,
       "orbitalPeriod": 4.927,
       "temperature": 1007.6553059077909,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/v830_tau_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#E178E6",
+      "color": "#DDF2DC",
       "clouds": false
     }
   ]

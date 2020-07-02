@@ -70,17 +70,17 @@
       "m": 0.001794084,
       "discoveryFacility": "Qatar",
       "potentiallyHabitableWorld": false,
-      "radius": 1273.2894230796974,
+      "radius": 1660.46511627907,
       "a": 0.0352,
       "e": 0,
-      "w": 271.92895035813984,
+      "w": 353.32509312344297,
       "o": 0,
       "orbitalPeriod": 2.032046,
       "temperature": 2053,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/qatar-7_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#434519",
+      "color": "#B55903",
       "clouds": false
     }
   ]

@@ -70,7 +70,7 @@
       "m": 0.025985589000000003,
       "discoveryFacility": "KELT",
       "potentiallyHabitableWorld": false,
-      "radius": 3912.9188771882123,
+      "radius": 1084.186046511628,
       "a": 0.02466,
       "e": 0.0099,
       "w": 61,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-1_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#51DAD6",
+      "color": "#D5CF92",
       "clouds": false
     }
   ]

@@ -70,17 +70,17 @@
       "m": 0.0035309100000000004,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 1692.098182263291,
+      "radius": 1465.1162790697676,
       "a": 0.043,
       "e": 0,
-      "w": 21.457786270367336,
+      "w": 233.9387108577771,
       "o": 0,
       "orbitalPeriod": 2.14878,
       "temperature": 2570,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/mascara-1_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#6BAE91",
+      "color": "#F5722F",
       "clouds": false
     }
   ]

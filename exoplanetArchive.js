@@ -85,7 +85,7 @@ const determineWorldType = (mass, temperature, hz, distance) => {
 //https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>6 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json
 
 const createExoplanetScenarios = async () => {
-  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_hostname like 'Kepler-1649'&format=json`;
+  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_hostname like 'Kapteyn'&format=json`;
 
   const response = await fetch(url);
 
@@ -181,7 +181,7 @@ const createExoplanetScenarios = async () => {
                 : inferMassFromRadius(planet.pl_radj) * JUPITER_MASS
               : planet.pl_bmassj * JUPITER_MASS;
 
-          const resolution = 3500;
+          const resolution = 2048;
 
           const isGasGiant = mass > 0.00003003;
 
@@ -265,7 +265,7 @@ const createExoplanetScenarios = async () => {
               },
               isGasGiant,
               resolution,
-              20
+              10
             );
 
             const frameData = Buffer.from(terrain.data);
@@ -288,10 +288,8 @@ const createExoplanetScenarios = async () => {
             discoveryFacility: planet.pl_facility,
             potentiallyHabitableWorld: worldType === "habitableWorld",
             radius:
-              null === null
-                ? planet.pl_bmassj === null
-                  ? 200
-                  : inferRadiusFromMass(planet.pl_bmassj) * JUPITER_RADIUS
+              planet.pl_radj === null
+                ? inferRadiusFromMass(mass) * JUPITER_RADIUS
                 : planet.pl_radj * JUPITER_RADIUS,
             a: planet.pl_orbsmax,
             e: planet.pl_orbeccen === null ? 0 : planet.pl_orbeccen,

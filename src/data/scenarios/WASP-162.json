@@ -70,7 +70,7 @@
       "m": 0.004962360000000001,
       "discoveryFacility": "SuperWASP-South",
       "potentiallyHabitableWorld": false,
-      "radius": 1952.1007987010883,
+      "radius": 976.7441860465117,
       "a": 0.0871,
       "e": 0.434,
       "w": -1.9,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-162_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#9DF3F4",
+      "color": "#171BD5",
       "clouds": false
     }
   ]

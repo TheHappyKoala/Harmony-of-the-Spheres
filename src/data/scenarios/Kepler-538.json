@@ -70,7 +70,7 @@
       "m": 0.000031825905,
       "discoveryFacility": "Kepler",
       "potentiallyHabitableWorld": false,
-      "radius": 234.14295058994915,
+      "radius": 193.39534883720933,
       "a": 0.4669,
       "e": 0.041,
       "w": 140,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-538_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#AE31AB",
+      "color": "#07FF64",
       "clouds": false
     }
   ]

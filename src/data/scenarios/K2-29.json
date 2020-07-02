@@ -70,7 +70,7 @@
       "m": 0.000696639,
       "discoveryFacility": "K2",
       "potentiallyHabitableWorld": false,
-      "radius": 855.8081855578039,
+      "radius": 1162.3255813953488,
       "a": 0.04217,
       "e": 0.066,
       "w": 132,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-29_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#64F7E7",
+      "color": "#19A3DD",
       "clouds": false
     }
   ]

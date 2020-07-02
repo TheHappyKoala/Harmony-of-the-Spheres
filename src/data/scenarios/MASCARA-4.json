@@ -70,17 +70,17 @@
       "m": 0.0029583300000000003,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 1570.91521564192,
+      "radius": 1494.418604651163,
       "a": 0.047,
       "e": 0,
-      "w": 172.6722468586135,
+      "w": 256.45726433855987,
       "o": 0,
       "orbitalPeriod": 2.82406,
       "temperature": 2100,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_85628_a_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#CED916",
+      "color": "#171FAE",
       "clouds": false
     }
   ]

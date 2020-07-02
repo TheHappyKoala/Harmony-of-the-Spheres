@@ -70,17 +70,17 @@
       "m": 0.001918143,
       "discoveryFacility": "Kepler",
       "potentiallyHabitableWorld": false,
-      "radius": 1309.5532989053288,
+      "radius": 1328.372093023256,
       "a": 0.0274,
       "e": 0,
-      "w": 333.2272450186905,
+      "w": 268.8362330802437,
       "o": 0,
       "orbitalPeriod": 1.5449298,
       "temperature": 2140,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-76_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#B9ADE7",
+      "color": "#C96514",
       "clouds": false
     }
   ]

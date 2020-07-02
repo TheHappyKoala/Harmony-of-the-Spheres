@@ -70,17 +70,17 @@
       "m": 0.0002853357,
       "discoveryFacility": "SuperWASP",
       "potentiallyHabitableWorld": false,
-      "radius": 588.2510809786415,
+      "radius": 1156.46511627907,
       "a": 0.05427,
       "e": 0,
-      "w": 286.75763211431126,
+      "w": 278.8780098961241,
       "o": 0,
       "orbitalPeriod": 4.5195064,
       "temperature": 1186,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-181_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#E83ACD",
+      "color": "#AF9087",
       "clouds": false
     }
   ]

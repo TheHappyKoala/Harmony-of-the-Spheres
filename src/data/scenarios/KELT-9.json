@@ -70,7 +70,7 @@
       "m": 0.002748384,
       "discoveryFacility": "KELT-North",
       "potentiallyHabitableWorld": false,
-      "radius": 1523.0903961119327,
+      "radius": 1847.0232558139537,
       "a": 0.03462,
       "e": 0,
       "w": 90,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_195689_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#D0ABF0",
+      "color": "#96EA20",
       "clouds": false
     }
   ]

@@ -70,17 +70,17 @@
       "m": 0.007663029,
       "discoveryFacility": "W. M. Keck Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 2342.941062123606,
+      "radius": 126.24931541525437,
       "a": 0.34,
       "e": 0.11,
-      "w": 108.49915463134701,
+      "w": 256.8819883506666,
       "o": 0,
       "orbitalPeriod": 71.484,
       "temperature": 484.8152020126378,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_178911_b_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#EB0E0F",
+      "color": "#FB46FE",
       "clouds": false
     }
   ]

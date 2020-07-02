@@ -70,17 +70,17 @@
       "m": 0.0004170291,
       "discoveryFacility": "Multiple Facilities",
       "potentiallyHabitableWorld": false,
-      "radius": 689.8950650163677,
+      "radius": 37.174976816417995,
       "a": 0.0664,
       "e": 0.078,
-      "w": 313.1647567305055,
+      "w": 48.87461894201368,
       "o": 0,
       "orbitalPeriod": 5.2072,
       "temperature": 1000,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_11231_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#CA1AFC",
+      "color": "#CDF4B9",
       "clouds": false
     }
   ]

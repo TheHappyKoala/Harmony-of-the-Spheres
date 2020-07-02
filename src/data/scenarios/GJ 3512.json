@@ -70,7 +70,7 @@
       "m": 0.0004418409,
       "discoveryFacility": "Calar Alto Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 706.8460754401784,
+      "radius": 38.08838155211513,
       "a": 0.338,
       "e": 0.4356,
       "w": 125.49,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_3512_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#20975B",
+      "color": "#2CCEF4",
       "clouds": false
     }
   ]

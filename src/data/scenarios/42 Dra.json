@@ -70,7 +70,7 @@
       "m": 0.003702684,
       "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
       "potentiallyHabitableWorld": false,
-      "radius": 1726.1962132619342,
+      "radius": 93.01603600698098,
       "a": 1.19,
       "e": 0.38,
       "w": 218.7,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/42_dra_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#B04C6D",
+      "color": "#7F12A5",
       "clouds": false
     }
   ]

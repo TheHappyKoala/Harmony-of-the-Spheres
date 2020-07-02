@@ -70,17 +70,17 @@
       "m": 0.0066132990000000004,
       "discoveryFacility": "Lick Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 2202.3624478327124,
+      "radius": 118.67424060728462,
       "a": 2.61,
       "e": 0.48,
-      "w": 204.4917689110295,
+      "w": 150.49503139427068,
       "o": 0,
       "orbitalPeriod": 1531,
       "temperature": 150.02726790734948,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_106252_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#BA003B",
+      "color": "#48A5F2",
       "clouds": false
     }
   ]

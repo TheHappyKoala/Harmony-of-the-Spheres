@@ -70,7 +70,7 @@
       "m": 0.002462094,
       "discoveryFacility": "Haute-Provence Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 1454.3237997275046,
+      "radius": 78.36619839736387,
       "a": 2.37,
       "e": 0.48,
       "w": 78,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_196885_a_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#DA4933",
+      "color": "#62B4F1",
       "clouds": false
     }
   ]

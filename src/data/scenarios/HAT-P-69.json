@@ -70,17 +70,17 @@
       "m": 0.003416394,
       "discoveryFacility": "HATNet",
       "potentiallyHabitableWorld": false,
-      "radius": 1668.8284924979143,
+      "radius": 1637.0232558139535,
       "a": 0.06555,
       "e": 0,
-      "w": 43.49047780143779,
+      "w": 177.3479749418848,
       "o": 0,
       "orbitalPeriod": 4.7869491,
       "temperature": 1930,
       "scenarioWikiUrl": null,
       "exoplanet": true,
       "bump": false,
-      "color": "#6367E4",
+      "color": "#F1AE46",
       "clouds": false
     }
   ]

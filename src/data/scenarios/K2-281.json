@@ -70,17 +70,17 @@
       "m": 0.0004483939953408948,
       "discoveryFacility": "K2",
       "potentiallyHabitableWorld": false,
-      "radius": 200,
+      "radius": 713.0232558139535,
       "a": 0.0773,
       "e": 0,
-      "w": 222.52086007703207,
+      "w": 298.78293708575376,
       "o": 0,
       "orbitalPeriod": 8.687721,
       "temperature": 665,
       "scenarioWikiUrl": null,
       "exoplanet": true,
       "bump": false,
-      "color": "#1A7FA4",
+      "color": "#CCFD9D",
       "clouds": false
     }
   ]

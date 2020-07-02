@@ -70,17 +70,17 @@
       "m": 0.0007729830000000001,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 894.0144589987183,
+      "radius": 869.3023255813954,
       "a": 0.0464,
       "e": 0,
-      "w": 62.710162474639134,
+      "w": 95.65462197198458,
       "o": 0,
       "orbitalPeriod": 3.91405,
       "temperature": 1006.0738781885287,
       "scenarioWikiUrl": null,
       "exoplanet": true,
       "bump": false,
-      "color": "#D7FED7",
+      "color": "#A0A3A0",
       "clouds": false
     }
   ]

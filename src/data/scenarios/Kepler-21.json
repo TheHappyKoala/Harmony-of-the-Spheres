@@ -70,7 +70,7 @@
       "m": 0.000015249714000000002,
       "discoveryFacility": "Kepler",
       "potentiallyHabitableWorld": false,
-      "radius": 171.90285132080885,
+      "radius": 142.6046511627907,
       "a": 0.042717,
       "e": 0.02,
       "w": -15,
@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 0.5,
-      "color": "#CF462D",
+      "color": "#D0359B",
       "clouds": false
     }
   ]

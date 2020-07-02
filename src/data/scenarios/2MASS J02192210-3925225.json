@@ -70,17 +70,17 @@
       "m": 0.01326477,
       "discoveryFacility": "Cerro Tololo Inter-American Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 2950.1700579330886,
+      "radius": 1406.5116279069769,
       "a": 156,
       "e": 0,
-      "w": 179.59213854643414,
+      "w": 83.93502481098022,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 3.679015678135683,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/2m_0219-39_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#CB1B19",
+      "color": "#657ECE",
       "clouds": false
     }
   ]

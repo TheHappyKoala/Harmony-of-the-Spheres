@@ -70,7 +70,7 @@
       "m": 0.005200935,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 1990.9821470843021,
+      "radius": 107.28401885003348,
       "a": 0.228,
       "e": 0.423,
       "w": 344.35,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_72892_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#29D7A0",
+      "color": "#C496AC",
       "clouds": false
     }
   ]

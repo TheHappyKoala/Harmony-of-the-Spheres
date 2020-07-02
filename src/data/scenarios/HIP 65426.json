@@ -70,17 +70,17 @@
       "m": 0.008588700000000001,
       "discoveryFacility": "Paranal Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 2457.8913930324716,
+      "radius": 1465.1162790697676,
       "a": 92,
       "e": 0,
-      "w": 91.78344786742875,
+      "w": 288.1163290933755,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 1500,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_65426_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#854292",
+      "color": "#15F5DD",
       "clouds": false
     }
   ]

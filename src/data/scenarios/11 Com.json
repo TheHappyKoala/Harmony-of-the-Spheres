@@ -70,7 +70,7 @@
       "m": 0.01851342,
       "discoveryFacility": "Xinglong Station",
       "potentiallyHabitableWorld": false,
-      "radius": 3393.575856354737,
+      "radius": 182.8627427299399,
       "a": 1.29,
       "e": 0.231,
       "w": 94.8,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/11_com_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#0D03A5",
+      "color": "#79FA1E",
       "clouds": false
     }
   ]

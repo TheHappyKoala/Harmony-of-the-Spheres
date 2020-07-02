@@ -70,7 +70,7 @@
       "m": 0.0021567179999999997,
       "discoveryFacility": "HATSouth",
       "potentiallyHabitableWorld": false,
-      "radius": 1375.6450166869693,
+      "radius": 1362.5581395348838,
       "a": 0.0238,
       "e": 0,
       "w": 90,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-24_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#EC8085",
+      "color": "#914CD9",
       "clouds": false
     }
   ]

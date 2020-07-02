@@ -70,17 +70,17 @@
       "m": 0.00007472528170142266,
       "discoveryFacility": "K2",
       "potentiallyHabitableWorld": false,
-      "radius": 200,
+      "radius": 337.95348837209303,
       "a": 0.0696,
       "e": 0,
-      "w": 110.65670412252827,
+      "w": 295.921514406859,
       "o": 0,
       "orbitalPeriod": 10.134016,
       "temperature": 383,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-95_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#80855C",
+      "color": "#13033F",
       "clouds": false
     }
   ]

@@ -70,17 +70,17 @@
       "m": 0.0016986540000000002,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 1244.392072644909,
+      "radius": 67.0540329927006,
       "a": 1.66,
       "e": 0.68,
-      "w": 329.7534766957191,
+      "w": 297.2398218626475,
       "o": 0,
       "orbitalPeriod": 798.5,
       "temperature": 197.81681106993094,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/16_cyg_b_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#96FC95",
+      "color": "#B4028D",
       "clouds": false
     }
   ]

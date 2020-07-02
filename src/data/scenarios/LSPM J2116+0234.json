@@ -70,17 +70,17 @@
       "m": 0.000039937455,
       "discoveryFacility": "Calar Alto Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 257.5686068827007,
+      "radius": 13.879077377186793,
       "a": 0.0876,
       "e": 0.183,
-      "w": 204.9868277127911,
+      "w": 175.35373726929603,
       "o": 0,
       "orbitalPeriod": 14.4399,
       "temperature": 431.6171696340575,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/lspm_j2116+0234_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#3F16B7",
+      "color": "#EF7A1C",
       "clouds": false
     }
   ]

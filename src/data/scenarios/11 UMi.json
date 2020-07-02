@@ -70,17 +70,17 @@
       "m": 0.014066382,
       "discoveryFacility": "Thueringer Landessternwarte Tautenburg",
       "potentiallyHabitableWorld": false,
-      "radius": 3023.7771294709974,
+      "radius": 162.93614838864286,
       "a": 1.53,
       "e": 0.08,
-      "w": 320.58131614837583,
+      "w": 92.76811247005654,
       "o": 0,
       "orbitalPeriod": 516.21997,
       "temperature": 418.73311260823215,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/11_umi_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#9403F9",
+      "color": "#EBFDEA",
       "clouds": false
     }
   ]

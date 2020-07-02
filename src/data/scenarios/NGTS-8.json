@@ -70,17 +70,17 @@
       "m": 0.0008874990000000001,
       "discoveryFacility": "Paranal Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 947.4224537329161,
+      "radius": 1064.6511627906978,
       "a": 0.035,
       "e": 0.01,
-      "w": 357.1775612218425,
+      "w": 52.47266776943298,
       "o": 0,
       "orbitalPeriod": 2.4997,
       "temperature": 1345,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/ngts-8_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#5C987E",
+      "color": "#A3A723",
       "clouds": false
     }
   ]

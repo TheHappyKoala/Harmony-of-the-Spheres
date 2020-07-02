@@ -70,17 +70,17 @@
       "m": 0.0009352140000000001,
       "discoveryFacility": "Fred Lawrence Whipple Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 968.4914400973387,
+      "radius": 52.18713491110951,
       "a": 0.06,
       "e": 0.09,
-      "w": 247.76496652595046,
+      "w": 195.21655289988837,
       "o": 0,
       "orbitalPeriod": 6.0881,
       "temperature": 846.3191890652105,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_285507_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#613D00",
+      "color": "#93FE49",
       "clouds": false
     }
   ]

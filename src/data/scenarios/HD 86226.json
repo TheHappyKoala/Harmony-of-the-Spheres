@@ -70,7 +70,7 @@
       "m": 0.000877956,
       "discoveryFacility": "Las Campanas Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 943.1303534713197,
+      "radius": 50.82055344797199,
       "a": 2.84,
       "e": 0.15,
       "w": 193,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_86226_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#3590A1",
+      "color": "#DD17CD",
       "clouds": false
     }
   ]

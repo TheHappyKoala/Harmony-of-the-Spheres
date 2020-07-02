@@ -70,7 +70,7 @@
       "m": 0.0016881567,
       "discoveryFacility": "SuperWASP-North",
       "potentiallyHabitableWorld": false,
-      "radius": 1241.1564388301656,
+      "radius": 1307.860465116279,
       "a": 0.02851,
       "e": 0.012,
       "w": -71,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-114_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#B55823",
+      "color": "#79FA1A",
       "clouds": false
     }
   ]

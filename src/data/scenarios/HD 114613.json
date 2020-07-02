@@ -70,7 +70,7 @@
       "m": 0.0003406851,
       "discoveryFacility": "Anglo-Australian Telescope",
       "potentiallyHabitableWorld": false,
-      "radius": 633.725941938702,
+      "radius": 34.14830514692112,
       "a": 5.34,
       "e": 0.458,
       "w": 196,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_114613_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#55AB92",
+      "color": "#322DF7",
       "clouds": false
     }
   ]

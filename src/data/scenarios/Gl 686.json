@@ -70,10 +70,10 @@
       "m": 0.000019935327,
       "discoveryFacility": "Roque de los Muchachos Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 192.37781138478388,
+      "radius": 10.366273134672884,
       "a": 0.0917,
       "e": 0.077,
-      "w": 276.8147854700314,
+      "w": 305.9998441264526,
       "o": 0,
       "orbitalPeriod": 15.5314,
       "temperature": 414.4782292318121,
@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#58B3BC",
+      "color": "#A78D58",
       "clouds": false
     }
   ]

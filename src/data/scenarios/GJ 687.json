@@ -70,17 +70,17 @@
       "m": 0.000057258,
       "discoveryFacility": "Lick Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 299.6431541629916,
+      "radius": 16.146263213150107,
       "a": 0.17,
       "e": 0.04,
-      "w": 118.49748559943079,
+      "w": 100.08550858742814,
       "o": 0,
       "orbitalPeriod": 38.14,
       "temperature": 320.57846755319173,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/gj_687_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#D9D921",
+      "color": "#8D9EFA",
       "clouds": false
     }
   ]

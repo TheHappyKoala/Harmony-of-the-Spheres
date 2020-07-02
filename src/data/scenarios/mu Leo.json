@@ -70,7 +70,7 @@
       "m": 0.00229032,
       "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 1410.8133362124963,
+      "radius": 76.02163825414317,
       "a": 1.1,
       "e": 0.09,
       "w": 227.1,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/mu_leo_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#BFE587",
+      "color": "#3E89E5",
       "clouds": false
     }
   ]

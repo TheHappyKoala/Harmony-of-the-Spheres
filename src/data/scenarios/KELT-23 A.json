@@ -70,17 +70,17 @@
       "m": 0.0008951334,
       "discoveryFacility": "KELT-North",
       "potentiallyHabitableWorld": false,
-      "radius": 950.8368988831887,
+      "radius": 1292.2325581395348,
       "a": 0.03302,
       "e": 0,
-      "w": 355.16103363852193,
+      "w": 165.98612443022776,
       "o": 0,
       "orbitalPeriod": 2.255251,
       "temperature": 1561,
       "scenarioWikiUrl": null,
       "exoplanet": true,
       "bump": false,
-      "color": "#6989A9",
+      "color": "#431C51",
       "clouds": false
     }
   ]

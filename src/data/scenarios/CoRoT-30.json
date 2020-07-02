@@ -70,7 +70,7 @@
       "m": 0.00276747,
       "discoveryFacility": "CoRoT",
       "potentiallyHabitableWorld": false,
-      "radius": 1527.52382928212,
+      "radius": 985.5348837209302,
       "a": 0.0844,
       "e": 0.007,
       "w": 178.1,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-30_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#F11894",
+      "color": "#DC411D",
       "clouds": false
     }
   ]

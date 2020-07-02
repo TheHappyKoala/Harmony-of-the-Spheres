@@ -70,17 +70,17 @@
       "m": 0.0010401870000000001,
       "discoveryFacility": "Acton Sky Portal Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 1012.7446647562958,
+      "radius": 1006.0465116279071,
       "a": 0.0269,
       "e": 0,
-      "w": 167.55587564854665,
+      "w": 112.51774824365634,
       "o": 0,
       "orbitalPeriod": 1.706291,
       "temperature": 1459,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kps-1_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#F32F88",
+      "color": "#8E0A61",
       "clouds": false
     }
   ]

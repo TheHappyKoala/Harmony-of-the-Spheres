@@ -70,17 +70,17 @@
       "m": 0.0012119610000000001,
       "discoveryFacility": "Kepler",
       "potentiallyHabitableWorld": false,
-      "radius": 1079.8872103133904,
+      "radius": 1054.8837209302326,
       "a": 0.0433,
       "e": 0.22,
-      "w": 12.887460310765118,
+      "w": 100.03608465940106,
       "o": 0,
       "orbitalPeriod": 3.52563254,
       "temperature": 1070,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/koi-830_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#EB0951",
+      "color": "#C4A3A1",
       "clouds": false
     }
   ]

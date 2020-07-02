@@ -70,7 +70,7 @@
       "m": 0.000006603756000000001,
       "discoveryFacility": "Transiting Exoplanet Survey Satellite (TESS)",
       "potentiallyHabitableWorld": false,
-      "radius": 120.95543689579321,
+      "radius": 120.13953488372094,
       "a": 0.03807,
       "e": 0.19,
       "w": -139,
@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#BEBB64",
+      "color": "#1A4765",
       "clouds": false
     }
   ]

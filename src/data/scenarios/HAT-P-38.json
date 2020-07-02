@@ -70,7 +70,7 @@
       "m": 0.0002547981,
       "discoveryFacility": "HATNet",
       "potentiallyHabitableWorld": false,
-      "radius": 560.9389078487915,
+      "radius": 805.8139534883721,
       "a": 0.0523,
       "e": 0.067,
       "w": 240,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-38_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#5E632E",
+      "color": "#408705",
       "clouds": false
     }
   ]

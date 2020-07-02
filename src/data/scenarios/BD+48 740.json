@@ -70,7 +70,7 @@
       "m": 0.00162231,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 1220.5888033748436,
+      "radius": 65.77139447542312,
       "a": 1.7,
       "e": 0.76,
       "w": 100,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": null,
       "exoplanet": true,
       "bump": false,
-      "color": "#88CB48",
+      "color": "#4DD2D2",
       "clouds": false
     }
   ]

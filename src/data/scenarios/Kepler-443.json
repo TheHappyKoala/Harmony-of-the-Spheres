@@ -70,17 +70,17 @@
       "m": 0.000022542975092613934,
       "discoveryFacility": "Kepler",
       "potentiallyHabitableWorld": true,
-      "radius": 200,
+      "radius": 205.11627906976744,
       "a": 0.495,
       "e": 0.11,
-      "w": 149.09383203013118,
+      "w": 306.4707776535382,
       "o": 0,
       "orbitalPeriod": 177.6693,
       "temperature": 272.8164882031906,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kepler-443_b/",
       "exoplanet": true,
       "bump": true,
-      "color": "#FC351B",
+      "color": "#73FA97",
       "clouds": true
     }
   ]

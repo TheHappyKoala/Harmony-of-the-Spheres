@@ -70,17 +70,17 @@
       "m": 0.0018227130000000001,
       "discoveryFacility": "TrES",
       "potentiallyHabitableWorld": false,
-      "radius": 1281.7840085762484,
+      "radius": 1304.9302325581398,
       "a": 0.02282,
       "e": 0,
-      "w": 329.29696369421106,
+      "w": 268.03472721532705,
       "o": 0,
       "orbitalPeriod": 1.30618581,
       "temperature": 1508.182215457251,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/tres-3_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#2D7F9F",
+      "color": "#0B5131",
       "clouds": false
     }
   ]

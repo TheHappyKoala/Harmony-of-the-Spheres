@@ -70,17 +70,17 @@
       "m": 0.0002318949,
       "discoveryFacility": "HATSouth",
       "potentiallyHabitableWorld": false,
-      "radius": 539.1821047905246,
+      "radius": 781.3953488372094,
       "a": 0.03769,
       "e": 0.162,
-      "w": 13.043568397546546,
+      "w": 53.91438217294309,
       "o": 0,
       "orbitalPeriod": 3.1316666,
       "temperature": 955,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-48a_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#FBE9DA",
+      "color": "#994490",
       "clouds": false
     }
   ]

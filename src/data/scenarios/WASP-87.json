@@ -70,17 +70,17 @@
       "m": 0.0020803740000000003,
       "discoveryFacility": "Anglo-Australian Telescope",
       "potentiallyHabitableWorld": false,
-      "radius": 1354.9789929400715,
+      "radius": 1352.7906976744187,
       "a": 0.02946,
       "e": 0,
-      "w": 338.13267267119403,
+      "w": 317.1387081540471,
       "o": 0,
       "orbitalPeriod": 1.682795,
       "temperature": 1607.0115093484987,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-87_a_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#6A5494",
+      "color": "#3625A6",
       "clouds": false
     }
   ]

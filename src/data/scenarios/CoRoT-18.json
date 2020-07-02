@@ -70,17 +70,17 @@
       "m": 0.003311421,
       "discoveryFacility": "CoRoT",
       "potentiallyHabitableWorld": false,
-      "radius": 1647.0971443362546,
+      "radius": 1279.5348837209303,
       "a": 0.0295,
       "e": 0.08,
-      "w": 91.15931109364637,
+      "w": 8.05445382578112,
       "o": 0,
       "orbitalPeriod": 1.9000693,
       "temperature": 1550,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-18_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#07F175",
+      "color": "#C1F608",
       "clouds": false
     }
   ]

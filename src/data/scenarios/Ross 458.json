@@ -70,17 +70,17 @@
       "m": 0.005998119048,
       "discoveryFacility": "Las Campanas Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 2113.8759655128256,
+      "radius": 1191.6279069767443,
       "a": 1168,
       "e": 0,
-      "w": 62.72798007298891,
+      "w": 90.34069258332828,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 4.122636675911257,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/ross_458_%28ab%29_c/",
       "exoplanet": true,
       "bump": false,
-      "color": "#60A583",
+      "color": "#C8774F",
       "clouds": false
     }
   ]

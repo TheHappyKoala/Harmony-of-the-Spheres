@@ -70,17 +70,17 @@
       "m": 0.000053486541059046046,
       "discoveryFacility": "K2",
       "potentiallyHabitableWorld": false,
-      "radius": 200,
+      "radius": 294,
       "a": 0.0796,
       "e": 0,
-      "w": 48.44607304103845,
+      "w": 55.18397235655955,
       "o": 0,
       "orbitalPeriod": 8.267704,
       "temperature": 814,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-105_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#1E62F5",
+      "color": "#20D1EC",
       "clouds": false
     }
   ]

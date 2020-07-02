@@ -70,7 +70,7 @@
       "m": 0.008378754,
       "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 2432.4758179651953,
+      "radius": 131.07389329884273,
       "a": 1.19,
       "e": 0.144,
       "w": 206.7,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/gamma_1_leo_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#4BC21C",
+      "color": "#F942BC",
       "clouds": false
     }
   ]

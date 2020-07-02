@@ -70,10 +70,10 @@
       "m": 0.00001879971,
       "discoveryFacility": "MEarth Project",
       "potentiallyHabitableWorld": false,
-      "radius": 187.69670548462162,
+      "radius": 248.09302325581396,
       "a": 0.01411,
       "e": 0,
-      "w": 181.24027516393346,
+      "w": 46.34535446036108,
       "o": 0,
       "orbitalPeriod": 1.58040456,
       "temperature": 488.1512000568463,
@@ -81,7 +81,7 @@
       "exoplanet": true,
       "bump": true,
       "bumpScale": 3,
-      "color": "#F9DD6B",
+      "color": "#D42D20",
       "clouds": false
     }
   ]

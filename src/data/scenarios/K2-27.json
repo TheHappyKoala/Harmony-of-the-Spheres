@@ -70,17 +70,17 @@
       "m": 0.000092777046,
       "discoveryFacility": "K2",
       "potentiallyHabitableWorld": false,
-      "radius": 366.976448906553,
+      "radius": 390.6976744186047,
       "a": 0.06702,
       "e": 0.251,
-      "w": 256.15949507320744,
+      "w": 177.40158398461563,
       "o": 0,
       "orbitalPeriod": 6.771315,
       "temperature": 902,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-27_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#5A7370",
+      "color": "#2E9FE6",
       "clouds": false
     }
   ]

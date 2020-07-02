@@ -70,17 +70,17 @@
       "m": 0.0005554026,
       "discoveryFacility": "HATNet",
       "potentiallyHabitableWorld": false,
-      "radius": 778.1234225816008,
+      "radius": 1154.5116279069769,
       "a": 0.04604,
       "e": 0.139,
-      "w": 152.1849114593146,
+      "w": 60.01658016634206,
       "o": 0,
       "orbitalPeriod": 3.5852467,
       "temperature": 1313,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-55_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#E1BB24",
+      "color": "#63963C",
       "clouds": false
     }
   ]

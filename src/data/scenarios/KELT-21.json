@@ -70,17 +70,17 @@
       "m": 0.0037313130000000004,
       "discoveryFacility": "KELT-North",
       "potentiallyHabitableWorld": false,
-      "radius": 1731.789383470067,
+      "radius": 1549.1162790697676,
       "a": 0.05224,
       "e": 0,
-      "w": 141.67779198871526,
+      "w": 64.7824102509868,
       "o": 0,
       "orbitalPeriod": 3.6127647,
       "temperature": 2051,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/kelt-21_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#CC03AB",
+      "color": "#A6C58F",
       "clouds": false
     }
   ]

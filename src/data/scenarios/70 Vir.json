@@ -70,7 +70,7 @@
       "m": 0.007077088800000001,
       "discoveryFacility": "Lick Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 2265.9593661230415,
+      "radius": 122.10115881981382,
       "a": 0.481,
       "e": 0.3988,
       "w": 359.83,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/70_vir_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#A3BA29",
+      "color": "#39F9C5",
       "clouds": false
     }
   ]

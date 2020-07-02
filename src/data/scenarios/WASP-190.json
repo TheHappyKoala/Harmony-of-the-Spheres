@@ -70,17 +70,17 @@
       "m": 0.0009543,
       "discoveryFacility": "WASP-South",
       "potentiallyHabitableWorld": false,
-      "radius": 976.7441860465117,
+      "radius": 1123.2558139534883,
       "a": 0.0663,
       "e": 0,
-      "w": 23.837709847155022,
+      "w": 23.08085705498734,
       "o": 0,
       "orbitalPeriod": 5.367753,
       "temperature": 1500,
       "scenarioWikiUrl": null,
       "exoplanet": true,
       "bump": false,
-      "color": "#B09E64",
+      "color": "#C1482B",
       "clouds": false
     }
   ]

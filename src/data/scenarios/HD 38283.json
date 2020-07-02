@@ -70,17 +70,17 @@
       "m": 0.00038172000000000005,
       "discoveryFacility": "Anglo-Australian Telescope",
       "potentiallyHabitableWorld": false,
-      "radius": 664.7311506572408,
+      "radius": 35.81901997551978,
       "a": 1.02,
       "e": 0.41,
-      "w": 322.4258482048728,
+      "w": 116.8008931414079,
       "o": 0,
       "orbitalPeriod": 363.20001,
       "temperature": 301.6405773543184,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_38283_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#964FB0",
+      "color": "#FD8679",
       "clouds": false
     }
   ]

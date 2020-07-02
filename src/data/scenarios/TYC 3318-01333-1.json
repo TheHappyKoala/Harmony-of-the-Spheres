@@ -70,7 +70,7 @@
       "m": 0.003263706,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 1637.0871490821926,
+      "radius": 88.2143965070144,
       "a": 1.414,
       "e": 0.098,
       "w": 129,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/tyc_3318-01333-1_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#6BBA13",
+      "color": "#783E5C",
       "clouds": false
     }
   ]

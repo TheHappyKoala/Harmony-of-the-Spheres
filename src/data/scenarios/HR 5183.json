@@ -70,7 +70,7 @@
       "m": 0.003082389,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 1598.2543465484725,
+      "radius": 86.12189199855945,
       "a": 18,
       "e": 0.84,
       "w": -20,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hr_5183_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#AA8786",
+      "color": "#BFBEF2",
       "clouds": false
     }
   ]

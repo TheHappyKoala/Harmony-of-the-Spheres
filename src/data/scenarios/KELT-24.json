@@ -70,7 +70,7 @@
       "m": 0.004943274,
       "discoveryFacility": "KELT-North",
       "potentiallyHabitableWorld": false,
-      "radius": 1948.9438807140782,
+      "radius": 1242.418604651163,
       "a": 0.06969,
       "e": 0.077,
       "w": 55,
@@ -80,7 +80,7 @@
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/mascara-3_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#EEFCED",
+      "color": "#109D25",
       "clouds": false
     }
   ]

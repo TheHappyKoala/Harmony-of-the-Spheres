@@ -70,17 +70,17 @@
       "m": 0.009915177,
       "discoveryFacility": "CoRoT",
       "potentiallyHabitableWorld": false,
-      "radius": 2610.714400992869,
+      "radius": 983.5813953488372,
       "a": 0.0476,
       "e": 0.065,
-      "w": 61.26230148524547,
+      "w": 132.94077195799554,
       "o": 0,
       "orbitalPeriod": 3.57532,
       "temperature": 1500,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/corot-27_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#9B3EB4",
+      "color": "#F5C5E9",
       "clouds": false
     }
   ]

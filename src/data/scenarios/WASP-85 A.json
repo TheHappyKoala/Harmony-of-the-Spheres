@@ -70,17 +70,17 @@
       "m": 0.0012071895,
       "discoveryFacility": "K2",
       "potentiallyHabitableWorld": false,
-      "radius": 1078.0995270831877,
+      "radius": 1211.1627906976744,
       "a": 0.039,
       "e": 0,
-      "w": 174.49022307935493,
+      "w": 170.87811379577332,
       "o": 0,
       "orbitalPeriod": 2.6556777,
       "temperature": 1452,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-85_a_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#74474E",
+      "color": "#B83FDB",
       "clouds": false
     }
   ]

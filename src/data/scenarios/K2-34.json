@@ -70,17 +70,17 @@
       "m": 0.001614698222758241,
       "discoveryFacility": "K2",
       "potentiallyHabitableWorld": false,
-      "radius": 200,
+      "radius": 1216.0465116279072,
       "a": 0.0426,
       "e": 0,
-      "w": 97.09589706137498,
+      "w": 224.65763177067194,
       "o": 0,
       "orbitalPeriod": 2.995633,
       "temperature": 1559,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/k2-34_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#D501FB",
+      "color": "#18E59B",
       "clouds": false
     }
   ]

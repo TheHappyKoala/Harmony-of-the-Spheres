@@ -70,17 +70,17 @@
       "m": 0.0006956847,
       "discoveryFacility": "Multiple Facilities",
       "potentiallyHabitableWorld": false,
-      "radius": 855.3156070207448,
+      "radius": 1395.7674418604652,
       "a": 0.03908,
       "e": 0.066,
-      "w": 294.3297874138769,
+      "w": 160.28189642825865,
       "o": 0,
       "orbitalPeriod": 2.7164762,
       "temperature": 1623,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-81_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#96A545",
+      "color": "#3EE604",
       "clouds": false
     }
   ]

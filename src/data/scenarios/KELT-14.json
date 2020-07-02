@@ -70,17 +70,17 @@
       "m": 0.0012253212,
       "discoveryFacility": "KELT-South",
       "potentiallyHabitableWorld": false,
-      "radius": 1084.871111619688,
+      "radius": 1702.46511627907,
       "a": 0.03005,
       "e": 0,
-      "w": 49.001533948974306,
+      "w": 185.8818302489687,
       "o": 0,
       "orbitalPeriod": 1.7100566,
       "temperature": 1970,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-122_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#8462D5",
+      "color": "#8BAFA5",
       "clouds": false
     }
   ]
