@@ -389,8 +389,15 @@ export function stateToKepler(
     trueAnom = 2 * Math.PI - trueAnom;
   }
 
-  const eccAnom = 2 * Math.atan(Math.tan(trueAnom / 2) / Math.sqrt((1+e)/(1-e)))
-  const meanAnom = eccAnom - e * Math.sin(eccAnom)
+  let eccAnom = 0;
+  let meanAnom = 0;
+  if (e > 1) {
+    eccAnom = 2 * Math.atanh(Math.sqrt((e - 1) / (e + 1)) * Math.tan(trueAnom / 2));
+    meanAnom = e * Math.sinh(eccAnom) - eccAnom;
+  } else if (e < 1) {
+    eccAnom = 2 * Math.atan2(Math.tan(trueAnom / 2) , Math.sqrt((1+e)/(1-e)));
+    meanAnom = eccAnom - e * Math.sin(eccAnom);
+  }
 
   //const convFactor = 180 / Math.PI;
 
@@ -444,11 +451,23 @@ export function keplerToState(orb: OrbitalElements, gm: number): { posRel: Vecto
   const trueAnom = orb.trueAnom;
   const eccAnom = orb.eccAnom;
 
-  const r_c = a * (1 - e * Math.cos(eccAnom)); // distance to central body
-  //vectors in orbital plane
-  const o = {x: r_c * Math.cos(trueAnom), y: r_c * Math.sin(trueAnom), z: 0}; // position in orbital plane
-  const o_dot_factor = Math.sqrt(gm*a) / r_c;
-  const o_dot =  {x: -Math.sin(eccAnom) * o_dot_factor, y: Math.sqrt(1-e*e) * Math.cos(eccAnom) * o_dot_factor, z: 0}; // velocity in orbital plane
+  let o = {x: 0, y: 0, z: 0};
+  let o_dot = {x: 0, y: 0, z: 0};
+  if (e < 1) {
+    const r_c = a * (1 - e * Math.cos(eccAnom)); // distance to central body
+    //vectors in orbital plane
+    //o = {x: r_c * Math.cos(trueAnom), y: r_c * Math.sin(trueAnom), z: 0}; // position in orbital plane
+    const o_dot_factor = Math.sqrt(gm*a) / r_c;
+    o.x = a * (Math.cos(eccAnom) - e);
+    o.y = a * Math.sin(eccAnom) * Math.sqrt(1 - Math.pow(e, 2));
+    o_dot =  {x: -Math.sin(eccAnom) * o_dot_factor, y: Math.sqrt(1-e*e) * Math.cos(eccAnom) * o_dot_factor, z: 0}; // velocity in orbital plane
+  } else if (e > 1) {
+    o = {x: -a * (e - Math.cosh(eccAnom)), y: -a * Math.sqrt(e*e - 1) * Math.sinh(eccAnom), z: 0};
+    const mean_motion = Math.sqrt(gm / Math.pow(Math.abs(a), 3));
+    const o_dot_factor = a * mean_motion / (e * Math.cosh(eccAnom) - 1);
+    o_dot.x = o_dot_factor * Math.sinh(eccAnom);
+    o_dot.y = -o_dot_factor * Math.sqrt(e*e - 1) * Math.cosh(eccAnom);
+  }
   const X = o.x * (Math.cos(argP)*Math.cos(lAn) - Math.sin(argP)*Math.cos(i)*Math.sin(lAn)) - o.y * (Math.sin(argP)*Math.cos(lAn) + Math.cos(argP)*Math.cos(i)*Math.sin(lAn)); // x-coordinate of position in inertial reference frame
   const Y = o.x * (Math.cos(argP)*Math.sin(lAn) + Math.sin(argP)*Math.cos(i)*Math.cos(lAn)) + o.y * (Math.cos(argP)*Math.cos(i)*Math.cos(lAn) - Math.sin(argP)*Math.sin(lAn));
   const Z = o.x * (Math.sin(argP)*Math.sin(i)) + o.y * (Math.cos(argP) * Math.sin(i));
@@ -464,16 +483,30 @@ function solveKeplerEq(meanAnom: number, e: number, tol=1e-14): number {
   let E_last = E + 1e3*tol; // make sure we enter the while loop
   while (Math.abs(E - E_last) > tol) {
     E_last = E;
-    E = E - (E - e * Math.sin(E) - meanAnom) / (1 - e * Math.cos(E));
+    if (e < 1) {
+      E = E - (E - e * Math.sin(E) - meanAnom) / (1 - e * Math.cos(E));
+    } else if (e > 1) {
+      E = E + (meanAnom - e * Math.sinh(E) + E) / (e * Math.cosh(E) - 1);
+    }
   }
   return E
 }
 
 export function propagateOrbitalElements(orb: OrbitalElements, dt: number, gm: number): OrbitalElements {
-  const mean_motion = Math.sqrt(gm / Math.pow(orb.a, 3));
-  const meanAnomNew = (orb.meanAnom + dt * mean_motion) % (2 * Math.PI); // calculate new mean anomaly and normalize it to [0, 2pi)
+  const mean_motion = Math.sqrt(gm / Math.pow(Math.abs(orb.a), 3));
+  let meanAnomNew = 0;
+  if (orb.e < 1) {
+    meanAnomNew = (orb.meanAnom + dt * mean_motion) % (2 * Math.PI); // calculate new mean anomaly and normalize it to [0, 2pi)
+  } else if (orb.e > 1) {
+    meanAnomNew = (orb.meanAnom + dt * mean_motion)
+  }
   const eccAnomNew = solveKeplerEq(meanAnomNew, orb.e);
-  const trueAnomNew = 2 * Math.atan2(Math.sqrt(1+orb.e) * Math.sin(eccAnomNew / 2), Math.sqrt(1 - orb.e) * Math.cos(eccAnomNew / 2));
+  let trueAnomNew = 0;
+  if (orb.e < 1) {
+    trueAnomNew = 2 * Math.atan2(Math.sqrt(1+orb.e) * Math.sin(eccAnomNew / 2), Math.sqrt(1 - orb.e) * Math.cos(eccAnomNew / 2));
+  } else if (orb.e > 1) {
+    trueAnomNew = 2 * Math.atan2(Math.sqrt(1+orb.e) * Math.tanh(eccAnomNew / 2), Math.sqrt(orb.e - 1));
+  }
   return {
     a: orb.a, // semi-major axis
     e: orb.e, // eccentricity
