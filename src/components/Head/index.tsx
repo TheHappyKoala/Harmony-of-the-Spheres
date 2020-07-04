@@ -7,7 +7,11 @@ interface HeadProps {
   pageDescription: string;
 }
 
-export default ({ pageTitle, pageDescription }: HeadProps): ReactElement => {
+export default ({
+  pageTitle,
+  pageDescription,
+  pathName
+}: HeadProps): ReactElement => {
   const siteMeta = useSiteMeta();
 
   return (
@@ -45,6 +49,10 @@ export default ({ pageTitle, pageDescription }: HeadProps): ReactElement => {
       />
       <meta name="twitter:site" content="@veryhappykoala" />
       <meta name="twitter:creator" content="@veryhappykoala" />
+      <link
+        property="og:url"
+        href={`https://gravitysimulator.org${pathName}`}
+      ></link>
       <link
         rel="stylesheet"
         type="text/css"

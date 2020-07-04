@@ -30,7 +30,8 @@ const Scenario = ({
   deleteMass,
   getTrajectory,
   data,
-  scenario
+  scenario,
+  location
 }: ScenarioProps): ReactElement => {
   const scenarioFromData = data.scenariosJson;
 
@@ -40,7 +41,11 @@ const Scenario = ({
 
   return (
     <Fragment>
-      <Head pageTitle={scenarioFromData.name} pageDescription={scenarioFromData.description} />
+      <Head
+        pageTitle={scenarioFromData.name}
+        pageDescription={scenarioFromData.description}
+        pathName={location.pathName}
+      />
       <Simulator
         resetScenario={resetScenario}
         modifyScenarioProperty={modifyScenarioProperty}
