@@ -33,9 +33,10 @@ export default ({
   deleteMass,
   addMass,
   scenario,
-  app
+  app,
+  description
 }: SimulatorProps): ReactElement => {
-  const [displayWiki, setDisplayWiki] = useState(false);
+  const [displayWiki, setDisplayWiki] = useState(true);
 
   const setWikiState = useCallback(() => setDisplayWiki(!displayWiki), [
     displayWiki
@@ -170,8 +171,16 @@ export default ({
         transitionLeaveTimeout={250}
       >
         {displayWiki && (
-          <Modal callback={setWikiState}>
-            <Iframe url={scenario.scenarioWikiUrl} />
+          <Modal callback={setWikiState} css={{ top: "50%", right: "50%" }}>
+            {description ? (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: description
+                }}
+              />
+            ) : (
+              <Iframe url={scenario.scenarioWikiUrl} />
+            )}
           </Modal>
         )}
       </ReactCSSTransitionGroup>

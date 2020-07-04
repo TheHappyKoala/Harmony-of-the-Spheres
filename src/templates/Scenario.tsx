@@ -40,7 +40,7 @@ const Scenario = ({
 
   return (
     <Fragment>
-      <Head pageTitle={scenario.name} pageDescription={scenario.description} />
+      <Head pageTitle={scenarioFromData.name} pageDescription={scenarioFromData.description} />
       <Simulator
         resetScenario={resetScenario}
         modifyScenarioProperty={modifyScenarioProperty}
@@ -49,6 +49,7 @@ const Scenario = ({
         deleteMass={deleteMass}
         getTrajectory={getTrajectory}
         scenario={scenario}
+        description={scenarioFromData.scenarioDescription}
       />
       {scenario.forAllMankind && (
         <Spaceship
@@ -82,6 +83,7 @@ export const pageQuery = graphql`
     scenariosJson(id: { eq: $id }) {
       name
       description
+      scenarioDescription
       type
       forAllMankind
       scenarioWikiUrl

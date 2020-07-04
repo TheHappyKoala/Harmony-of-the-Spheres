@@ -11,8 +11,8 @@ interface ModalProps {
   callback: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-export default ({ children, callback }: ModalProps): ReactElement => (
-  <div className="modal-wrapper">
+export default ({ children, callback, css }: ModalProps): ReactElement => (
+  <div className="modal-wrapper" style={css}>
     <section className="modal">
       {children}
       <i
