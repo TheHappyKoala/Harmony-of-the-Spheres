@@ -376,14 +376,26 @@ export function stateToKepler(
   const rvDot = v1.set(r).dot(v2.set(v));
 
   const i = Math.acos(h.z / hNorm);
-  let lAn = Math.acos(n.x / nNorm);
+  if (i == 0) {
+    var lAn = 0;
+  } else {
+    var lAn = Math.acos(n.x / nNorm);
+  }
   if (n.y < 0) {
     lAn = 2 * Math.PI - lAn;
   }
-  let argP = Math.acos(neDot / (nNorm * e));
-  if (eVec.z < 0) {
-    argP = 2 * Math.PI - argP;
+  if (i == 0) {
+    var argP = Math.atan2(eVec.y, eVec.x);
+    if (h.z < 0) {
+      argP = 2 * Math.PI - argP;
+    }
+  } else {
+    var argP = Math.acos(neDot / (nNorm * e));
+    if (eVec.z < 0) {
+      argP = 2 * Math.PI - argP;
+    }
   }
+  
   let trueAnom = Math.acos(reDot / (e * rNorm));
   if (rvDot < 0) {
     trueAnom = 2 * Math.PI - trueAnom;
@@ -586,18 +598,26 @@ function simplifyTree(tree: SOITree): SOITree {
 
 // masses is scenario.masses
 export function constructSOITree(masses: Array<MassType>): SOITree {
-  const sun: MassType = getObjFromArrByKeyValuePair(masses, 'name', 'Sun');
+  //const sun: MassType = getObjFromArrByKeyValuePair(masses, 'name', 'Sun');
+  let sun = masses[0];
+  // Search for the first star, otherwise use the first mass as root
+  for (let i = 0; i < masses.length; i++) {
+    if (masses[i].massType == 'star') {
+      sun = masses[i];
+      break;
+    }
+  }
   let tree: SOITree = {
     SOIradius: 1e100,
     children: [],
-    name: 'Sun',
+    name: sun.name,
     m: sun.m,
     x: sun.x,
     y: sun.y,
     z: sun.z
   };
   masses.forEach(val => {
-    if (val.name != 'Sun') {
+    if (val.name != sun.name) {
       let newVal: SOITree = {
         SOIradius: 0,
         children: [],
