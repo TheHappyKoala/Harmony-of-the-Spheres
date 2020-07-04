@@ -75,6 +75,7 @@
       "temperature": 45000,
       "tilt": 0,
       "spacecraft": false,
+      "i": 0,
       "orbitalPeriod": 10
     },
     {

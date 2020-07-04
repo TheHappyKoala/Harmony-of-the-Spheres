@@ -85,7 +85,7 @@ const determineWorldType = (mass, temperature, hz, distance) => {
 //https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>6 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json
 
 const createExoplanetScenarios = async () => {
-  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_hostname like 'Kapteyn'&format=json`;
+  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,pl_rade,st_mass,st_age,pl_discmethod,st_teff,st_rad,st_dist,pl_letter,pl_bmassj,pl_name,pl_publ_date,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_masse,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>0 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json`;
 
   const response = await fetch(url);
 
@@ -107,8 +107,76 @@ const createExoplanetScenarios = async () => {
   const processedPlanets = map(scenarios, 0, scenario => {
     const widestOrbit = Math.max(...scenario.map(mass => mass.pl_orbsmax));
 
+    const age =
+      scenario[0].st_age !== null
+        ? ` and is estimated to be ${scenario[0].st_age} billion years old, as compared to the Sun which is roughly 4.6 billion years old`
+        : "";
+
+    const scenarioDescription = `
+    <section>
+      <h1>The ${scenario[0].pl_hostname} Exoplanetary System</h1>
+      <br/>
+      <h1>Overview</h1>
+      <p>${scenario[0].pl_hostname} is a star with ${
+      scenario[0].st_mass
+    } times the mass of the Sun, and ${
+      scenario[0].st_rad
+    } times its radius. It is located ${scenario[0].st_dist *
+      3.26156} light years away from the solar system${age}.</p>
+      <p>${scenario[0].pl_hostname} is known to have ${
+      scenario[0].pl_pnum
+    } exoplanets in orbit around it.</p>
+
+    <br/>
+        <h1>Exoplanets in the ${scenario[0].pl_hostname} system</h1>
+        ${scenario
+          .map(planet => {
+            const mass =
+              planet.pl_masse !== null
+                ? `The mass of ${planet.pl_hostname} ${planet.pl_letter} is ${planet.pl_masse} times the mass of Earth.`
+                : "";
+
+            const radius =
+              planet.pl_rade !== null
+                ? `The radius of ${planet.pl_hostname} ${planet.pl_letter} is ${planet.pl_rade} that of Earth.`
+                : "";
+
+            const isRegularRockyPlanet =
+              planet.pl_masse !== null && planet.pl_masse < 1.5
+                ? `At less than 1.5 Earth masses, ${planet.pl_hostname} ${planet.pl_letter} is a regular terrestrial planet, much like the terrestrial planets we find in our solar system, namely Mercury, Venus, Earth and Mars.`
+                : "";
+
+            const superEarth =
+              planet.pl_masse !== null &&
+              planet.pl_masse > 1.5 &&
+              planet.pl_masse < 10
+                ? `At ${planet.pl_masse} Earth masses, ${planet.pl_hostname} ${planet.pl_letter} is a so called Super Earth. Super Earths could be terrestrial worlds like Earth, but they could also be ocean worlds or terrestrial worlds wrapped in a substantial atmosphere, in which case some refer to them as Mini Neptunes. No Super Earths are known to exist in our solar system, but if it exists, the so-called Planet Nine could very well be a super Earth, as it is hypothesized to have a mass between five and ten Earth masses.`
+                : "";
+
+            const iceGiant =
+              planet.pl_masse !== null && planet.pl_masse > 10
+                ? `At more than 10 Earth masses, ${planet.pl_hostname} ${planet.pl_letter} is an ice giant, a planet that is made up mostly of volatiles like water, amonia and methane, and enveloped by a dense hydrogen and helium atmosphere, much like Uranus and Neptune in our solar system.`
+                : "";
+
+            const gasGiant =
+              planet.pl_masse !== null && planet.pl_masse > 50
+                ? `At more than 50 Earth masses, ${planet.pl_hostname} ${planet.pl_letter} is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.`
+                : "";
+
+            return `
+          <article>
+            <h1>${planet.pl_hostname} ${planet.pl_letter}</h1>
+            <p>${planet.pl_hostname} ${planet.pl_letter} was discovered by the ${planet.pl_facility} observatory using the ${planet.pl_discmethod} method. ${mass} ${radius} ${isRegularRockyPlanet} ${superEarth} ${iceGiant} ${gasGiant}</p>
+            <br/>
+          </article>`;
+          })
+          .join(" ")}
+      </section>
+    `;
+
     return {
       name: scenario[0].pl_hostname,
+      scenarioDescription,
       discoveryFacility: scenario[0].pl_facility,
       description: `3D visualisation and gravity simulation of the exoplanet system ${scenario[0].pl_hostname}, which contains ${scenario[0].pl_pnum} planets and was discovered by ${scenario[0].pl_facility}.`,
       particlesFun: false,
@@ -259,6 +327,7 @@ const createExoplanetScenarios = async () => {
           const filePath = `./static/textures/${planet.pl_hostname}-${planet.pl_letter}.jpg`;
 
           if (!fs.existsSync(filePath)) {
+            /*
             const terrain = new Terrain(
               {
                 worldType
@@ -279,6 +348,7 @@ const createExoplanetScenarios = async () => {
             const jpegImageData = jpeg.encode(rawImageData, 50);
 
             fs.writeFileSync(filePath, jpegImageData.data);
+            */
           }
 
           return {

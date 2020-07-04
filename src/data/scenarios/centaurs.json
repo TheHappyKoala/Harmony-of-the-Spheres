@@ -64,6 +64,7 @@
       "bump": false,
       "luminosity": 1,
       "name": "Sun",
+      "i": 0,
       "color": "#ffffff",
       "temperature": 5778,
       "tilt": 0,

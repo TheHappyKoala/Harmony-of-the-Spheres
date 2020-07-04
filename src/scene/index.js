@@ -15,7 +15,6 @@ import CollisionsService from "../physics/collisions/";
 import CustomEllipseCurve from "./CustomEllipseCurve";
 import ManifestationsService from "./ManifestationsService";
 import drawManifestation from "./drawManifestation";
-import { AmbientLight } from "three";
 
 const TWEEN = require("@tweenjs/tween.js");
 

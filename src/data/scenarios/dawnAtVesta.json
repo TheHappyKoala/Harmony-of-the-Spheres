@@ -65,6 +65,7 @@
       "massType": "star",
       "bump": false,
       "luminosity": 1,
+      "i": 0,
       "name": "Sun",
       "color": "#ffffff",
       "temperature": 5000,
