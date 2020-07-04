@@ -44,7 +44,7 @@ export default ({
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDescription} />
       <meta
-        name="twitter:image"
+        name="twitter:image:src"
         content={`https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png}`}
       />
       <meta name="twitter:site" content="@veryhappykoala" />
