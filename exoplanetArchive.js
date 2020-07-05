@@ -107,6 +107,8 @@ const createExoplanetScenarios = async () => {
   const processedPlanets = map(scenarios, 0, scenario => {
     const widestOrbit = Math.max(...scenario.map(mass => mass.pl_orbsmax));
 
+    let hasHabitableWorld = false;
+
     let lum;
 
     const m = scenario[0].st_mass;
@@ -155,8 +157,9 @@ const createExoplanetScenarios = async () => {
       scenario[0].st_mass
     } times the mass of the Sun, and ${
       scenario[0].st_rad
-    } times its radius. It is located ${(scenario[0].st_dist *
-      3.26156).toFixed(2)} light years away from the solar system${age}.</p>
+    } times its radius. It is located ${(scenario[0].st_dist * 3.26156).toFixed(
+      2
+    )} light years away from the solar system${age}.</p>
       <p>${scenario[0].pl_hostname} is known to have ${
       scenario[0].pl_pnum
     } exoplanets in orbit around it.</p>
@@ -199,7 +202,17 @@ const createExoplanetScenarios = async () => {
                 ? `At more than 50 Earth masses, ${planet.pl_hostname} ${planet.pl_letter} is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.`
                 : "";
 
-            const habitable = masso !== null && start < planet.pl_orbsmax && end > planet.pl_orbsmax && masso < 10 ? `With a mass of ${masso} Earth masses and a semi-major axis of ${planet.pl_orbsmax} astronomical units, ${planet.pl_hostname} ${planet.pl_letter} could, potentially, be a habitable planet with stable bodies of liquid water on its surface, like Earth.` : "";
+            const habitable =
+              masso !== null &&
+              start < planet.pl_orbsmax &&
+              end > planet.pl_orbsmax &&
+              masso < 10
+                ? `With a mass of ${masso} Earth masses and a semi-major axis of ${planet.pl_orbsmax} astronomical units, ${planet.pl_hostname} ${planet.pl_letter} could, potentially, be a habitable planet with stable bodies of liquid water on its surface, like Earth.`
+                : "";
+
+            if (habitable) {
+              hasHabitableWorld = true;
+            }
 
             return `
             <h1>${planet.pl_hostname} ${planet.pl_letter}</h1>
@@ -207,7 +220,9 @@ const createExoplanetScenarios = async () => {
               planet.pl_letter
             } was discovered by the ${
               planet.pl_facility
-            } observatory using the ${planet.pl_discmethod.toLowerCase()} method. Its semi-major axis is ${planet.pl_orbsmax.toFixed(2)} astronomical units, as compared to Earth's which is 1 astronomical unit. ${mass} ${radius} ${isRegularRockyPlanet} ${superEarth} ${iceGiant} ${gasGiant} ${habitable}</p>
+            } observatory using the ${planet.pl_discmethod.toLowerCase()} method. Its semi-major axis is ${planet.pl_orbsmax.toFixed(
+              2
+            )} astronomical units, as compared to Earth's which is 1 astronomical unit. ${mass} ${radius} ${isRegularRockyPlanet} ${superEarth} ${iceGiant} ${gasGiant} ${habitable}</p>
             <br/>
 `;
           })
@@ -217,6 +232,7 @@ const createExoplanetScenarios = async () => {
     return {
       name: scenario[0].pl_hostname,
       scenarioDescription,
+      hasHabitableWorld,
       discoveryFacility: scenario[0].pl_facility,
       description: `3D visualisation and gravity simulation of the exoplanet system ${scenario[0].pl_hostname}, which contains ${scenario[0].pl_pnum} planets and was discovered by ${scenario[0].pl_facility}.`,
       particlesFun: false,
