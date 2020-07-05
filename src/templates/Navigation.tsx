@@ -110,6 +110,11 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
               justifyContent: "flex-start"
             }}
           >
+            <Link to={`/exoplanets/all`}>
+              <NavItem active={pageContext.currentPageName === "Exoplanets"}>
+                All
+              </NavItem>
+            </Link>
             {discoveryFacilities?.map(discoveryFacility => (
               <Link
                 to={`/exoplanets/${kebabCase(discoveryFacility.fieldValue)}`}
