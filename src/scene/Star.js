@@ -44,7 +44,7 @@ export default class extends MassManifestation {
         `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
       ),
       blending: THREE.AdditiveBlending,
-      opacity: 0.3
+      opacity: 0.2
     });
 
     const halo1 = new THREE.Sprite(halo1Material);
@@ -56,7 +56,7 @@ export default class extends MassManifestation {
         `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
       ),
       blending: THREE.AdditiveBlending,
-      opacity: 0.3,
+      opacity: 0.2,
       rotation: Math.PI / 4
     });
 
@@ -69,7 +69,7 @@ export default class extends MassManifestation {
         `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
       ),
       blending: THREE.AdditiveBlending,
-      opacity: 0.3,
+      opacity: 0.2,
       rotation: Math.PI / 2
     });
 
@@ -100,7 +100,7 @@ export default class extends MassManifestation {
     if (habitableZone)
       habitableZone.position.set(position.x, position.y, position.z);
 
-    main.material.uniforms.time.value += 0.003 * delta;
+    main.material.uniforms.time.value += 0.007 * delta;
   }
 
   dispose() {

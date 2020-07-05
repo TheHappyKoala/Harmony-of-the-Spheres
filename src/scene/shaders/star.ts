@@ -134,7 +134,7 @@ float snoise( vec3 v ) {
 
 }
 
-const int octaves = 2;
+const int octaves = 3;
 
  float noise(vec3 position, float frequency, float persistence) {
     float total = 0.0; // Total value so far
