@@ -55,6 +55,7 @@ const Scenario = ({
         getTrajectory={getTrajectory}
         scenario={scenario}
         description={scenarioFromData.scenarioDescription}
+        scenarioWikiUrl={scenarioFromData.scenarioWikiUrl}
       />
       {scenario.forAllMankind && (
         <Spaceship

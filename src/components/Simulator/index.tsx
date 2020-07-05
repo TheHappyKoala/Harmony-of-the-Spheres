@@ -34,7 +34,8 @@ export default ({
   addMass,
   scenario,
   app,
-  description
+  description,
+  scenarioWikiUrl
 }: SimulatorProps): ReactElement => {
   const [displayWiki, setDisplayWiki] = useState(true);
 
@@ -180,7 +181,7 @@ export default ({
                 className="iframe-scroll-wrapper"
               />
             ) : (
-              <Iframe url={scenario.scenarioWikiUrl} />
+              <Iframe url={scenarioWikiUrl} />
             )}
           </Modal>
         )}
