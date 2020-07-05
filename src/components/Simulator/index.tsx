@@ -177,6 +177,7 @@ export default ({
                 dangerouslySetInnerHTML={{
                   __html: description
                 }}
+                className="iframe-scroll-wrapper"
               />
             ) : (
               <Iframe url={scenario.scenarioWikiUrl} />
