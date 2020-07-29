@@ -10,6 +10,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "Jupiter",
+  "cameraPosition": "Free",
   "cameraFocus": "Jupiter",
   "barycenterZ": 10000000,
   "massBeingModified": "Sun",

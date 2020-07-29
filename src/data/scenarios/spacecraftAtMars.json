@@ -10,6 +10,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "Mars",
+  "cameraPosition": "Free",
   "cameraFocus": "Mars",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",

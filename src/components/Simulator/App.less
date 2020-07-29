@@ -1,7 +1,6 @@
 @primary: rgba(0, 0, 0, 0.6);
 @secondary: #545454;
 @input: #191919;
-@font: tahoma, arial, sans;
 @font-color: #fff;
 @fat-padding: 10px;
 @skinny-padding: 5px;
@@ -77,27 +76,23 @@ input {
 
 body {
   margin: 0;
-  font-family: @font;
-  font-size: 11px;
+  font-family: Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif; 
+  font-size: 14px;
   color: @font-color;
   background-color: #000;
-  overflow: hidden;
   i {
     font-family: FontAwesome;
     font-style: normal;
     color: #fff;
-    font-size: 2em !important;
+    font-size: 1.5em !important;
   }
   @media screen and (max-width: 700px) {
     overflow: auto;
   }
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+.body-with-overflow-hidden {
+  overflow: hidden;
 }
 
 .button {
@@ -376,5 +371,3 @@ h4 {
     transform: scale(1);
   }
 }
-
-

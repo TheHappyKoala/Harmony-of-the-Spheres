@@ -1,8 +1,8 @@
 {
   "name": "HATS-39",
-  "scenarioDescription": "\n      <h1>The HATS-39 Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>HATS-39 is a star with 1.38 times the mass of the Sun, and 1.62 times its radius. It is located 2521.19 light years away from the solar system and is estimated to be 2.06 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n      <p>HATS-39 is known to have 1 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the HATS-39 system</h1>\n        <br/>\n        \n            <h1>HATS-39 b</h1>\n            <p>HATS-39 b was discovered by the HATSouth observatory using the transit method. Its semi-major axis is 0.06 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of HATS-39 b is 200.34 times the mass of Earth. The radius of HATS-39 b is 17.598 that of Earth.    At more than 50 Earth masses, HATS-39 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system. </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The HATS-39 Exoplanetary System</h1>\n      <p>HATS-39 is a star with 1.38 times the mass of the Sun, and 1.62 times its radius. It is located 2521.19 light years away from the solar system and is estimated to be 2.06 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n        <p>HATS-39 is known to have 1 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">HATS-39 b</h2>\n            <p>HATS-39 b was discovered by the HATSouth observatory using the transit method.  Its semi-major axis is 0.06 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 4.58 Earth days to complete an orbit around its host star, HATS-39.</p>\n            <p>Its eccentricity, the extent to which the shape of the exoplanet's orbit departs from a perfect circle (Earth's is 0.0167, which is why the shape of Earth's orbit is circular rather than oval in appearance), is 0.275, which means that when HATS-39 b is at is at its closest point to its host star, 0.04 astronomical units separates the two, and when it is at its farthest point, this number is 0.08. In the case of Earth, these numbers are 0.9832899 and 1.0167103 respectively.</p>\n            <p>The mass of HATS-39 b is 200.22 times the mass of Earth. The radius of HATS-39 b is 17.598 that of Earth.    At more than 50 Earth masses, HATS-39 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.</p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "HATSouth",
+  "discoveryFacility": "Transit",
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-39, which contains 1 planets and was discovered by HATSouth.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "HATS-39",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -75,15 +76,18 @@
       "radius": 1533.4883720930234,
       "a": 0.06007,
       "e": 0.275,
-      "w": 319.7641701312252,
+      "w": 101.68027475252907,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 4.5776348,
       "temperature": 1645,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hats-39_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#493493",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#20165E",
+      "clouds": false,
+      "publishingDate": null
     }
   ]
 }

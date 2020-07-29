@@ -1,8 +1,8 @@
 {
   "name": "HIP 12961",
-  "scenarioDescription": "\n      <h1>The HIP 12961 Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>HIP 12961 is a star with 0.69 times the mass of the Sun, and 0.65 times its radius. It is located 76.29 light years away from the solar system.</p>\n      <p>HIP 12961 is known to have 1 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the HIP 12961 system</h1>\n        <br/>\n        \n            <h1>HIP 12961 b</h1>\n            <p>HIP 12961 b was discovered by the La Silla Observatory observatory using the radial velocity method. Its semi-major axis is 0.25 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of HIP 12961 b is 114.47999999999999 times the mass of Earth.     At more than 50 Earth masses, HIP 12961 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system. </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The HIP 12961 Exoplanetary System</h1>\n      <p>HIP 12961 is a star with 0.69 times the mass of the Sun, and 0.65 times its radius. It is located 76.29 light years away from the solar system.</p>\n        <p>HIP 12961 is known to have 1 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">HIP 12961 b</h2>\n            <p>HIP 12961 b was discovered by the La Silla Observatory observatory using the radial velocity method. Its discovery was announced in 2011-02. Its semi-major axis is 0.25 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 57.44 Earth days to complete an orbit around its host star, HIP 12961.</p>\n            <p>Its eccentricity, the extent to which the shape of the exoplanet's orbit departs from a perfect circle (Earth's is 0.0167, which is why the shape of Earth's orbit is circular rather than oval in appearance), is 0.17, which means that when HIP 12961 b is at is at its closest point to its host star, 0.21 astronomical units separates the two, and when it is at its farthest point, this number is 0.29. In the case of Earth, these numbers are 0.9832899 and 1.0167103 respectively.</p>\n            <p>The mass of HIP 12961 b is 114.41 times the mass of Earth.     At more than 50 Earth masses, HIP 12961 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.</p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "La Silla Observatory",
+  "discoveryFacility": "Radial Velocity",
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 12961, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "HIP 12961",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -72,18 +73,21 @@
       "m": 0.000343548,
       "discoveryFacility": "La Silla Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 34.26853615719184,
+      "radius": 635.9571949952224,
       "a": 0.25,
       "e": 0.17,
-      "w": 309.5329462795796,
+      "w": 211.86621637181955,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 57.435,
       "temperature": 364.26398768460353,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_12961_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#A8D906",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#D8EC5C",
+      "clouds": false,
+      "publishingDate": "2011-02"
     }
   ]
 }

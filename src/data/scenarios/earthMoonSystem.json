@@ -9,6 +9,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "Earth",
+  "cameraPosition": "Free",
   "cameraFocus": "Earth",
   "massBeingModified": "Sun",
   "primary": "Earth",

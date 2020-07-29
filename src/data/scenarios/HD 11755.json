@@ -1,8 +1,8 @@
 {
   "name": "HD 11755",
-  "scenarioDescription": "\n      <h1>The HD 11755 Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>HD 11755 is a star with 0.72 times the mass of the Sun, and 20.58 times its radius. It is located 771.82 light years away from the solar system.</p>\n      <p>HD 11755 is known to have 1 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the HD 11755 system</h1>\n        <br/>\n        \n            <h1>HD 11755 b</h1>\n            <p>HD 11755 b was discovered by the Bohyunsan Optical Astronomical Observatory observatory using the radial velocity method. Its semi-major axis is 1.09 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of HD 11755 b is 1790.34 times the mass of Earth.     At more than 50 Earth masses, HD 11755 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system. </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The HD 11755 Exoplanetary System</h1>\n      <p>HD 11755 is a star with 0.72 times the mass of the Sun, and 20.58 times its radius. It is located 771.82 light years away from the solar system.</p>\n        <p>HD 11755 is known to have 1 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">HD 11755 b</h2>\n            <p>HD 11755 b was discovered by the Bohyunsan Optical Astronomical Observatory observatory using the radial velocity method.  Its semi-major axis is 1.09 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 433.70 Earth days to complete an orbit around its host star, HD 11755.</p>\n            <p>Its eccentricity, the extent to which the shape of the exoplanet's orbit departs from a perfect circle (Earth's is 0.0167, which is why the shape of Earth's orbit is circular rather than oval in appearance), is 0.19, which means that when HD 11755 b is at is at its closest point to its host star, 0.88 astronomical units separates the two, and when it is at its farthest point, this number is 1.30. In the case of Earth, these numbers are 0.9832899 and 1.0167103 respectively.</p>\n            <p>The mass of HD 11755 b is 1789.27 times the mass of Earth.     At more than 50 Earth masses, HD 11755 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.</p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
+  "discoveryFacility": "Radial Velocity",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 11755, which contains 1 planets and was discovered by Bohyunsan Optical Astronomical Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "HD 11755",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -72,18 +73,21 @@
       "m": 0.005372709,
       "discoveryFacility": "Bohyunsan Optical Astronomical Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 108.75820437461742,
+      "radius": 2018.340155223795,
       "a": 1.09,
       "e": 0.19,
-      "w": 58.54133462033494,
+      "w": 326.9966122562318,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 433.70001,
       "temperature": 180.10905486680332,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_11755_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#BA6E6C",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#CE8E11",
+      "clouds": false,
+      "publishingDate": null
     }
   ]
 }

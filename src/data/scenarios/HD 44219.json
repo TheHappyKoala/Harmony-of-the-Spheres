@@ -1,8 +1,8 @@
 {
   "name": "HD 44219",
-  "scenarioDescription": "\n      <h1>The HD 44219 Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>HD 44219 is a star with 1 times the mass of the Sun, and 1.32 times its radius. It is located 164.38 light years away from the solar system.</p>\n      <p>HD 44219 is known to have 1 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the HD 44219 system</h1>\n        <br/>\n        \n            <h1>HD 44219 b</h1>\n            <p>HD 44219 b was discovered by the La Silla Observatory observatory using the radial velocity method. Its semi-major axis is 1.19 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of HD 44219 b is 184.44 times the mass of Earth.     At more than 50 Earth masses, HD 44219 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system. </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The HD 44219 Exoplanetary System</h1>\n      <p>HD 44219 is a star with 1 times the mass of the Sun, and 1.32 times its radius. It is located 164.38 light years away from the solar system.</p>\n        <p>HD 44219 is known to have 1 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">HD 44219 b</h2>\n            <p>HD 44219 b was discovered by the La Silla Observatory observatory using the radial velocity method. Its discovery was announced in 2010-11. Its semi-major axis is 1.19 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 472.30 Earth days to complete an orbit around its host star, HD 44219.</p>\n            <p>Its eccentricity, the extent to which the shape of the exoplanet's orbit departs from a perfect circle (Earth's is 0.0167, which is why the shape of Earth's orbit is circular rather than oval in appearance), is 0.61, which means that when HD 44219 b is at is at its closest point to its host star, 0.46 astronomical units separates the two, and when it is at its farthest point, this number is 1.92. In the case of Earth, these numbers are 0.9832899 and 1.0167103 respectively.</p>\n            <p>The mass of HD 44219 b is 184.33 times the mass of Earth.     At more than 50 Earth masses, HD 44219 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.</p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "La Silla Observatory",
+  "discoveryFacility": "Radial Velocity",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 44219, which contains 1 planets and was discovered by La Silla Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "HD 44219",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -72,18 +73,21 @@
       "m": 0.000553494,
       "discoveryFacility": "La Silla Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 41.86858273403947,
+      "radius": 776.9992366124774,
       "a": 1.19,
       "e": 0.61,
       "w": 147.4,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 472.3,
       "temperature": 220.5341972850558,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_44219_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#0341EA",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#31E04F",
+      "clouds": false,
+      "publishingDate": "2010-11"
     }
   ]
 }

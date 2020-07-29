@@ -13,6 +13,7 @@ interface GraphicsProps {
   masses: MassType[];
   rotatingReferenceFrame: string;
   cameraFocus: string;
+  cameraPosition: string;
 }
 
 export default ({
@@ -23,7 +24,8 @@ export default ({
   habitableZone,
   masses,
   rotatingReferenceFrame,
-  cameraFocus
+  cameraFocus,
+  cameraPosition
 }: GraphicsProps): ReactElement => (
   <Fragment>
     <h2>Graphics</h2>
@@ -67,6 +69,60 @@ export default ({
         </div>
       ))}
     </Dropdown>
+
+    <label className="top">
+      Camera Position{" "}
+      <Tooltip
+        position="left"
+        content="Select the position of the camera. If the position is set to free, you can zoom in on and orbit around the focus of the camera with your mouse or touch screen."
+      />
+    </label>
+    <Dropdown
+      selectedOption={cameraPosition}
+      dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+      selectedOptionCssClassName="selected-option"
+      optionsWrapperCssClass="options"
+    >
+      <div
+        data-name="Free"
+        key="Free"
+        onClick={() =>
+          modifyScenarioProperty({
+            key: "cameraPosition",
+            value: "Free"
+          })
+        }
+      >
+        Free
+      </div>
+      <div
+        data-name="Chase"
+        key="Chase"
+        onClick={() =>
+          modifyScenarioProperty({
+            key: "cameraPosition",
+            value: "Chase"
+          })
+        }
+      >
+        Chase
+      </div>
+      {masses?.map(mass => (
+        <div
+          data-name={mass.name}
+          key={mass.name}
+          onClick={() =>
+            modifyScenarioProperty({
+              key: "cameraPosition",
+              value: mass.name
+            })
+          }
+        >
+          {mass.name}
+        </div>
+      ))}
+    </Dropdown>
+
     <label className="top">
       Camera Focus{" "}
       <Tooltip

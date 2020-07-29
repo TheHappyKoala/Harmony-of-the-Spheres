@@ -1,8 +1,8 @@
 {
   "name": "HAT-P-36",
-  "scenarioDescription": "\n      <h1>The HAT-P-36 Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>HAT-P-36 is a star with 1.03 times the mass of the Sun, and 1.04 times its radius. It is located 968.46 light years away from the solar system.</p>\n      <p>HAT-P-36 is known to have 1 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the HAT-P-36 system</h1>\n        <br/>\n        \n            <h1>HAT-P-36 b</h1>\n            <p>HAT-P-36 b was discovered by the HATNet observatory using the transit method. Its semi-major axis is 0.02 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of HAT-P-36 b is 587.7276 times the mass of Earth. The radius of HAT-P-36 b is 14.314 that of Earth.    At more than 50 Earth masses, HAT-P-36 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system. </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The HAT-P-36 Exoplanetary System</h1>\n      <p>HAT-P-36 is a star with 1.03 times the mass of the Sun, and 1.04 times its radius. It is located 968.46 light years away from the solar system.</p>\n        <p>HAT-P-36 is known to have 1 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">HAT-P-36 b</h2>\n            <p>HAT-P-36 b was discovered by the HATNet observatory using the transit method. Its discovery was announced in 2012-07. Its semi-major axis is 0.02 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 1.33 Earth days to complete an orbit around its host star, HAT-P-36.</p>\n            \n            <p>The mass of HAT-P-36 b is 587.38 times the mass of Earth. The radius of HAT-P-36 b is 14.314 that of Earth.    At more than 50 Earth masses, HAT-P-36 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.</p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "HATNet",
+  "discoveryFacility": "Transit",
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-36, which contains 1 planets and was discovered by HATNet.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "HAT-P-36",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -75,15 +76,18 @@
       "radius": 1247.3023255813953,
       "a": 0.0241,
       "e": 0,
-      "w": 271.30057089957756,
+      "w": 55.30540590437903,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 1.32734683,
       "temperature": 1781,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hat-p-36_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#D22269",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#6E9872",
+      "clouds": false,
+      "publishingDate": "2012-07"
     }
   ]
 }

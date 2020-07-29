@@ -1,8 +1,8 @@
 {
   "name": "Wolf 503",
-  "scenarioDescription": "\n      <h1>The Wolf 503 Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>Wolf 503 is a star with 0.69 times the mass of the Sun, and 0.69 times its radius. It is located 145.40 light years away from the solar system and is estimated to be 11 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n      <p>Wolf 503 is known to have 1 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the Wolf 503 system</h1>\n        <br/>\n        \n            <h1>Wolf 503 b</h1>\n            <p>Wolf 503 b was discovered by the K2 observatory using the transit method. Its semi-major axis is 0.06 astronomical units, as compared to Earth's which is 1 astronomical unit.  The radius of Wolf 503 b is 2.03 that of Earth.     </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The Wolf 503 Exoplanetary System</h1>\n      <p>Wolf 503 is a star with 0.69 times the mass of the Sun, and 0.69 times its radius. It is located 145.40 light years away from the solar system and is estimated to be 11 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n        <p>Wolf 503 is known to have 1 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">Wolf 503 b</h2>\n            <p>Wolf 503 b was discovered by the K2 observatory using the transit method.  Its semi-major axis is 0.06 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 6.00 Earth days to complete an orbit around its host star, Wolf 503.</p>\n            \n            <p>The mass of Wolf 503 b is 5.26 times the mass of Earth. The radius of Wolf 503 b is 2.03 that of Earth.  At 5.26 Earth masses, Wolf 503 b is a so called Super Earth. Super Earths could be terrestrial worlds like Earth, but they could also be ocean worlds or terrestrial worlds wrapped in a substantial atmosphere, in which case some refer to them as Mini Neptunes. No Super Earths are known to exist in our solar system, but if it exists, the so-called Planet Nine could very well be a super Earth, as it is hypothesized to have a mass between five and ten Earth masses.  </p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "K2",
+  "discoveryFacility": "Transit",
   "description": "3D visualisation and gravity simulation of the exoplanet system Wolf 503, which contains 1 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "Wolf 503",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -75,16 +76,18 @@
       "radius": 176.7906976744186,
       "a": 0.0571,
       "e": 0,
-      "w": 278.30857709910276,
+      "w": 35.291209472333506,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 6.00118,
       "temperature": 805,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wolf_503_b/",
       "exoplanet": true,
       "bump": true,
-      "bumpScale": 3,
-      "color": "#E83AED",
-      "clouds": false
+      "bumpScale": 2,
+      "color": "#076E38",
+      "clouds": false,
+      "publishingDate": null
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "name": "WASP-184",
-  "scenarioDescription": "\n      <h1>The WASP-184 Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>WASP-184 is a star with 1.23 times the mass of the Sun, and 1.65 times its radius. It is located 2087.40 light years away from the solar system and is estimated to be 4.7 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n      <p>WASP-184 is known to have 1 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the WASP-184 system</h1>\n        <br/>\n        \n            <h1>WASP-184 b</h1>\n            <p>WASP-184 b was discovered by the WASP-South observatory using the transit method. Its semi-major axis is 0.06 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of WASP-184 b is 181.26 times the mass of Earth. The radius of WASP-184 b is 14.908 that of Earth.    At more than 50 Earth masses, WASP-184 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system. </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The WASP-184 Exoplanetary System</h1>\n      <p>WASP-184 is a star with 1.23 times the mass of the Sun, and 1.65 times its radius. It is located 2087.40 light years away from the solar system and is estimated to be 4.7 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n        <p>WASP-184 is known to have 1 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">WASP-184 b</h2>\n            <p>WASP-184 b was discovered by the WASP-South observatory using the transit method. Its discovery was announced in 2019-09. Its semi-major axis is 0.06 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 5.18 Earth days to complete an orbit around its host star, WASP-184.</p>\n            <p>Its eccentricity, the extent to which the shape of the exoplanet's orbit departs from a perfect circle (Earth's is 0.0167, which is why the shape of Earth's orbit is circular rather than oval in appearance), is 0, which means that when WASP-184 b is at is at its closest point to its host star, 0.06 astronomical units separates the two, and when it is at its farthest point, this number is 0.06. In the case of Earth, these numbers are 0.9832899 and 1.0167103 respectively.</p>\n            <p>The mass of WASP-184 b is 181.15 times the mass of Earth. The radius of WASP-184 b is 14.908 that of Earth.    At more than 50 Earth masses, WASP-184 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.</p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "WASP-South",
+  "discoveryFacility": "Transit",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-184, which contains 1 planets and was discovered by WASP-South.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "WASP-184",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -75,15 +76,18 @@
       "radius": 1299.0697674418607,
       "a": 0.0627,
       "e": 0,
-      "w": 205.36116886881481,
+      "w": 103.97686122870263,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 5.1817,
       "temperature": 1480,
       "scenarioWikiUrl": null,
       "exoplanet": true,
       "bump": false,
-      "color": "#39D320",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#114956",
+      "clouds": false,
+      "publishingDate": "2019-09"
     }
   ]
 }

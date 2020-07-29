@@ -133,6 +133,7 @@ export default ({
             habitableZone={scenario.habitableZone}
             rotatingReferenceFrame={scenario.rotatingReferenceFrame}
             cameraFocus={scenario.cameraFocus}
+            cameraPosition={scenario.cameraPosition}
             masses={scenario.masses}
           />
         </div>
@@ -172,7 +173,7 @@ export default ({
         transitionLeaveTimeout={250}
       >
         {displayWiki && (
-          <Modal callback={setWikiState} css={{ top: "50%", right: "50%" }}>
+          <Modal callback={setWikiState} css={{ top: "55%", left: "10px", right: "260px" }}>
             {description ? (
               <div
                 dangerouslySetInnerHTML={{

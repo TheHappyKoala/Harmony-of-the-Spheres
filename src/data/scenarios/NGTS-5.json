@@ -1,8 +1,8 @@
 {
   "name": "NGTS-5",
-  "scenarioDescription": "\n      <h1>The NGTS-5 Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>NGTS-5 is a star with 0.66 times the mass of the Sun, and 0.74 times its radius. It is located 1009.45 light years away from the solar system.</p>\n      <p>NGTS-5 is known to have 1 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the NGTS-5 system</h1>\n        <br/>\n        \n            <h1>NGTS-5 b</h1>\n            <p>NGTS-5 b was discovered by the Paranal Observatory observatory using the transit method. Its semi-major axis is 0.04 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of NGTS-5 b is 72.822 times the mass of Earth. The radius of NGTS-5 b is 12.733 that of Earth.    At more than 50 Earth masses, NGTS-5 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system. </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The NGTS-5 Exoplanetary System</h1>\n      <p>NGTS-5 is a star with 0.66 times the mass of the Sun, and 0.74 times its radius. It is located 1009.45 light years away from the solar system.</p>\n        <p>NGTS-5 is known to have 1 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">NGTS-5 b</h2>\n            <p>NGTS-5 b was discovered by the Paranal Observatory observatory using the transit method. Its discovery was announced in 2019-05. Its semi-major axis is 0.04 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 3.36 Earth days to complete an orbit around its host star, NGTS-5.</p>\n            <p>Its eccentricity, the extent to which the shape of the exoplanet's orbit departs from a perfect circle (Earth's is 0.0167, which is why the shape of Earth's orbit is circular rather than oval in appearance), is 0, which means that when NGTS-5 b is at is at its closest point to its host star, 0.04 astronomical units separates the two, and when it is at its farthest point, this number is 0.04. In the case of Earth, these numbers are 0.9832899 and 1.0167103 respectively.</p>\n            <p>The mass of NGTS-5 b is 72.78 times the mass of Earth. The radius of NGTS-5 b is 12.733 that of Earth.    At more than 50 Earth masses, NGTS-5 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.</p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "Paranal Observatory",
+  "discoveryFacility": "Transit",
   "description": "3D visualisation and gravity simulation of the exoplanet system NGTS-5, which contains 1 planets and was discovered by Paranal Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "NGTS-5",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -75,15 +76,18 @@
       "radius": 1109.581395348837,
       "a": 0.0382,
       "e": 0,
-      "w": 150.33797155804243,
+      "w": 291.6843063792248,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 3.3569866,
       "temperature": 952,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/ngts-5_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#A3DFBE",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#15E3A3",
+      "clouds": false,
+      "publishingDate": "2019-05"
     }
   ]
 }

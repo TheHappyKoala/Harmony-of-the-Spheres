@@ -1,8 +1,8 @@
 {
   "name": "HIP 79431",
-  "scenarioDescription": "\n      <h1>The HIP 79431 Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>HIP 79431 is a star with 0.42 times the mass of the Sun, and 0.54 times its radius. It is located 47.42 light years away from the solar system.</p>\n      <p>HIP 79431 is known to have 1 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the HIP 79431 system</h1>\n        <br/>\n        \n            <h1>HIP 79431 b</h1>\n            <p>HIP 79431 b was discovered by the W. M. Keck Observatory observatory using the radial velocity method. Its semi-major axis is 0.36 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of HIP 79431 b is 667.8000000000001 times the mass of Earth.     At more than 50 Earth masses, HIP 79431 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system. </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The HIP 79431 Exoplanetary System</h1>\n      <p>HIP 79431 is a star with 0.42 times the mass of the Sun, and 0.54 times its radius. It is located 47.42 light years away from the solar system.</p>\n        <p>HIP 79431 is known to have 1 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">HIP 79431 b</h2>\n            <p>HIP 79431 b was discovered by the W. M. Keck Observatory observatory using the radial velocity method. Its discovery was announced in 2010-02. Its semi-major axis is 0.36 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 111.70 Earth days to complete an orbit around its host star, HIP 79431.</p>\n            <p>Its eccentricity, the extent to which the shape of the exoplanet's orbit departs from a perfect circle (Earth's is 0.0167, which is why the shape of Earth's orbit is circular rather than oval in appearance), is 0.29, which means that when HIP 79431 b is at is at its closest point to its host star, 0.26 astronomical units separates the two, and when it is at its farthest point, this number is 0.46. In the case of Earth, these numbers are 0.9832899 and 1.0167103 respectively.</p>\n            <p>The mass of HIP 79431 b is 667.40 times the mass of Earth.     At more than 50 Earth masses, HIP 79431 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.</p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "W. M. Keck Observatory",
+  "discoveryFacility": "Radial Velocity",
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 79431, which contains 1 planets and was discovered by W. M. Keck Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "HIP 79431",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -72,18 +73,21 @@
       "m": 0.0020040300000000004,
       "discoveryFacility": "W. M. Keck Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 71.87545494241151,
+      "radius": 1333.8682605089493,
       "a": 0.36,
       "e": 0.29,
       "w": 287.4,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 111.7,
       "temperature": 209.18721658616806,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hip_79431_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#37235A",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#9A79E3",
+      "clouds": false,
+      "publishingDate": "2010-02"
     }
   ]
 }

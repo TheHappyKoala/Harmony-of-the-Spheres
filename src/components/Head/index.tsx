@@ -5,12 +5,15 @@ import useSiteMeta from "../../hooks/useSiteMeta";
 interface HeadProps {
   pageTitle: string;
   pageDescription: string;
+  pathName: string;
+  bodyCssClass: string;
 }
 
 export default ({
   pageTitle,
   pageDescription,
-  pathName
+  pathName,
+  bodyCssClass
 }: HeadProps): ReactElement => {
   const siteMeta = useSiteMeta();
 
@@ -40,15 +43,6 @@ export default ({
       />
       <meta property="og:image:width" content="400" />
       <meta property="og:image:height" content="250" />
-      <meta property="og:image:type" content="image/png" />
-      <meta name="twitter:title" content={pageTitle} />
-      <meta name="twitter:description" content={pageDescription} />
-      <meta
-        name="twitter:image:src"
-        content={`https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png}`}
-      />
-      <meta name="twitter:site" content="@veryhappykoala" />
-      <meta name="twitter:creator" content="@veryhappykoala" />
       <link
         property="og:url"
         href={`https://gravitysimulator.org${pathName}`}
@@ -58,6 +52,7 @@ export default ({
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
+      <body className={bodyCssClass ? bodyCssClass : ""} />
     </Helmet>
   );
 };

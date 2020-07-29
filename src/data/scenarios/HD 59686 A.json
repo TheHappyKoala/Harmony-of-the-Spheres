@@ -1,8 +1,8 @@
 {
   "name": "HD 59686 A",
-  "scenarioDescription": "\n      <h1>The HD 59686 A Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>HD 59686 A is a star with 1.9 times the mass of the Sun, and 13.2 times its radius. It is located 315.72 light years away from the solar system and is estimated to be 1.73 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n      <p>HD 59686 A is known to have 1 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the HD 59686 A system</h1>\n        <br/>\n        \n            <h1>HD 59686 A b</h1>\n            <p>HD 59686 A b was discovered by the Lick Observatory observatory using the radial velocity method. Its semi-major axis is 1.09 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of HD 59686 A b is 2200.56 times the mass of Earth.     At more than 50 Earth masses, HD 59686 A b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system. </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The HD 59686 A Exoplanetary System</h1>\n      <p>HD 59686 A is a star with 1.9 times the mass of the Sun, and 13.2 times its radius. It is located 315.72 light years away from the solar system and is estimated to be 1.73 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n        <p>HD 59686 A is known to have 1 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">HD 59686 A b</h2>\n            <p>HD 59686 A b was discovered by the Lick Observatory observatory using the radial velocity method.  Its semi-major axis is 1.09 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 299.36 Earth days to complete an orbit around its host star, HD 59686 A.</p>\n            <p>Its eccentricity, the extent to which the shape of the exoplanet's orbit departs from a perfect circle (Earth's is 0.0167, which is why the shape of Earth's orbit is circular rather than oval in appearance), is 0.05, which means that when HD 59686 A b is at is at its closest point to its host star, 1.03 astronomical units separates the two, and when it is at its farthest point, this number is 1.14. In the case of Earth, these numbers are 0.9832899 and 1.0167103 respectively.</p>\n            <p>The mass of HD 59686 A b is 2199.25 times the mass of Earth.     At more than 50 Earth masses, HD 59686 A b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.</p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "Lick Observatory",
+  "discoveryFacility": "Radial Velocity",
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 59686 A, which contains 1 planets and was discovered by Lick Observatory.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "HD 59686 A",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -72,18 +73,21 @@
       "m": 0.0066037560000000006,
       "discoveryFacility": "Lick Observatory",
       "potentiallyHabitableWorld": false,
-      "radius": 118.60228670422796,
+      "radius": 2201.0271237282054,
       "a": 1.086,
       "e": 0.05,
       "w": 121,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 299.36,
       "temperature": 373.59384449394616,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/hd_59686_a_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#FCF104",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#2DBB97",
+      "clouds": false,
+      "publishingDate": null
     }
   ]
 }

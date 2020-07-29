@@ -1,8 +1,8 @@
 {
   "name": "WASP-89",
-  "scenarioDescription": "\n      <h1>The WASP-89 Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>WASP-89 is a star with 0.92 times the mass of the Sun, and 0.88 times its radius. It is located 956.88 light years away from the solar system and is estimated to be 1.3 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n      <p>WASP-89 is known to have 1 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the WASP-89 system</h1>\n        <br/>\n        \n            <h1>WASP-89 b</h1>\n            <p>WASP-89 b was discovered by the SuperWASP observatory using the transit method. Its semi-major axis is 0.04 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of WASP-89 b is 1876.2 times the mass of Earth. The radius of WASP-89 b is 11.657 that of Earth.    At more than 50 Earth masses, WASP-89 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system. </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The WASP-89 Exoplanetary System</h1>\n      <p>WASP-89 is a star with 0.92 times the mass of the Sun, and 0.88 times its radius. It is located 956.88 light years away from the solar system and is estimated to be 1.3 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n        <p>WASP-89 is known to have 1 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">WASP-89 b</h2>\n            <p>WASP-89 b was discovered by the SuperWASP observatory using the transit method. Its discovery was announced in 2015-07. Its semi-major axis is 0.04 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 3.36 Earth days to complete an orbit around its host star, WASP-89.</p>\n            <p>Its eccentricity, the extent to which the shape of the exoplanet's orbit departs from a perfect circle (Earth's is 0.0167, which is why the shape of Earth's orbit is circular rather than oval in appearance), is 0.193, which means that when WASP-89 b is at is at its closest point to its host star, 0.03 astronomical units separates the two, and when it is at its farthest point, this number is 0.05. In the case of Earth, these numbers are 0.9832899 and 1.0167103 respectively.</p>\n            <p>The mass of WASP-89 b is 1875.08 times the mass of Earth. The radius of WASP-89 b is 11.657 that of Earth.    At more than 50 Earth masses, WASP-89 b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.</p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "SuperWASP",
+  "discoveryFacility": "Transit",
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-89, which contains 1 planets and was discovered by SuperWASP.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "WASP-89",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -76,14 +77,17 @@
       "a": 0.0427,
       "e": 0.193,
       "w": 28,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 3.3564227,
       "temperature": 1120,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/wasp-89_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#C4916A",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#91ABA2",
+      "clouds": false,
+      "publishingDate": "2015-07"
     }
   ]
 }

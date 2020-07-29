@@ -1,8 +1,8 @@
 {
   "name": "alf Tau",
-  "scenarioDescription": "\n      <h1>The alf Tau Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>alf Tau is a star with 1.13 times the mass of the Sun, and 45.1 times its radius. It is located 66.63 light years away from the solar system and is estimated to be 6.6 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n      <p>alf Tau is known to have 1 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the alf Tau system</h1>\n        <br/>\n        \n            <h1>alf Tau b</h1>\n            <p>alf Tau b was discovered by the Multiple Observatories observatory using the radial velocity method. Its semi-major axis is 1.46 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of alf Tau b is 2057.46 times the mass of Earth.     At more than 50 Earth masses, alf Tau b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system. </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The alf Tau Exoplanetary System</h1>\n      <p>alf Tau is a star with 1.13 times the mass of the Sun, and 45.1 times its radius. It is located 66.63 light years away from the solar system and is estimated to be 6.6 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n        <p>alf Tau is known to have 1 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">alf Tau b</h2>\n            <p>alf Tau b was discovered by the Multiple Observatories observatory using the radial velocity method. Its discovery was announced in 2015-08. Its semi-major axis is 1.46 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 628.96 Earth days to complete an orbit around its host star, alf Tau.</p>\n            <p>Its eccentricity, the extent to which the shape of the exoplanet's orbit departs from a perfect circle (Earth's is 0.0167, which is why the shape of Earth's orbit is circular rather than oval in appearance), is 0.1, which means that when alf Tau b is at is at its closest point to its host star, 1.31 astronomical units separates the two, and when it is at its farthest point, this number is 1.61. In the case of Earth, these numbers are 0.9832899 and 1.0167103 respectively.</p>\n            <p>The mass of alf Tau b is 2056.23 times the mass of Earth.     At more than 50 Earth masses, alf Tau b is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.</p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "Multiple Observatories",
+  "discoveryFacility": "Radial Velocity",
   "description": "3D visualisation and gravity simulation of the exoplanet system alf Tau, which contains 1 planets and was discovered by Multiple Observatories.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "alf Tau",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -72,18 +73,21 @@
       "m": 0.006174321,
       "discoveryFacility": "Multiple Observatories",
       "potentiallyHabitableWorld": false,
-      "radius": 115.29973276316534,
+      "radius": 2139.7381637608323,
       "a": 1.46,
       "e": 0.1,
       "w": 287,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 628.96,
       "temperature": 218.21360725313332,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/aldebaran_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#D76C75",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#C7611F",
+      "clouds": false,
+      "publishingDate": "2015-08"
     }
   ]
 }

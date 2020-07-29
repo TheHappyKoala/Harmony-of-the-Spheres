@@ -1,8 +1,8 @@
 {
   "name": "K2-290",
-  "scenarioDescription": "\n      <h1>The K2-290 Exoplanetary System</h1>\n      <br/>\n      <h1>Overview</h1>\n      <p>K2-290 is a star with 1.19 times the mass of the Sun, and 1.51 times its radius. It is located 896.90 light years away from the solar system and is estimated to be 4 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n      <p>K2-290 is known to have 2 exoplanets in orbit around it.</p>\n\n    <br/>\n        <h1>Exoplanets in the K2-290 system</h1>\n        <br/>\n        \n            <h1>K2-290 b</h1>\n            <p>K2-290 b was discovered by the K2 observatory using the transit method. Its semi-major axis is 0.09 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of K2-290 b is 10.907399999999999 times the mass of Earth. The radius of K2-290 b is 3.06 that of Earth.   At more than 10 Earth masses, K2-290 b is an ice giant, a planet that is made up mostly of volatiles like water, amonia and methane, and enveloped by a dense hydrogen and helium atmosphere, much like Uranus and Neptune in our solar system.  </p>\n            <br/>\n \n            <h1>K2-290 c</h1>\n            <p>K2-290 c was discovered by the K2 observatory using the transit method. Its semi-major axis is 0.30 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of K2-290 c is 246.132 times the mass of Earth. The radius of K2-290 c is 11.276 that of Earth.    At more than 50 Earth masses, K2-290 c is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system. </p>\n            <br/>\n\n    ",
+  "scenarioDescription": "\n      <main>\n      <section style=\"padding: 10px; font-size: 14px;\">\n      <h1 style=\"font-size: 25px;\">The K2-290 Exoplanetary System</h1>\n      <p>K2-290 is a star with 1.19 times the mass of the Sun, and 1.51 times its radius. It is located 896.90 light years away from the solar system and is estimated to be 4 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n        <p>K2-290 is known to have 2 exoplanets in orbit around it.</p>\n      </section>\n\n        \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">K2-290 b</h2>\n            <p>K2-290 b was discovered by the K2 observatory using the transit method.  Its semi-major axis is 0.09 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 9.21 Earth days to complete an orbit around its host star, K2-290.</p>\n            <p>Its eccentricity, the extent to which the shape of the exoplanet's orbit departs from a perfect circle (Earth's is 0.0167, which is why the shape of Earth's orbit is circular rather than oval in appearance), is 0, which means that when K2-290 b is at is at its closest point to its host star, 0.09 astronomical units separates the two, and when it is at its farthest point, this number is 0.09. In the case of Earth, these numbers are 0.9832899 and 1.0167103 respectively.</p>\n            <p>The mass of K2-290 b is 10.90 times the mass of Earth. The radius of K2-290 b is 3.06 that of Earth.   At more than 10 Earth masses, K2-290 b is an ice giant, a planet that is made up mostly of volatiles like water, amonia and methane, and enveloped by a dense hydrogen and helium atmosphere, much like Uranus and Neptune in our solar system. </p>\n            \n            <p></p>            </section>\n\n            </main>\n \n            <section style=\"padding: 10px; font-size: 14px;\">\n            <h2 style=\"font-size: 18px;\">K2-290 c</h2>\n            <p>K2-290 c was discovered by the K2 observatory using the transit method.  Its semi-major axis is 0.30 astronomical units, as compared to Earth's which is 1 astronomical unit. It takes 48.37 Earth days to complete an orbit around its host star, K2-290.</p>\n            <p>Its eccentricity, the extent to which the shape of the exoplanet's orbit departs from a perfect circle (Earth's is 0.0167, which is why the shape of Earth's orbit is circular rather than oval in appearance), is 0, which means that when K2-290 c is at is at its closest point to its host star, 0.30 astronomical units separates the two, and when it is at its farthest point, this number is 0.30. In the case of Earth, these numbers are 0.9832899 and 1.0167103 respectively.</p>\n            <p>The mass of K2-290 c is 245.99 times the mass of Earth. The radius of K2-290 c is 11.276 that of Earth.    At more than 50 Earth masses, K2-290 c is a gas giant, a planet whose mass is mostly made up of hydrogen and helium, like Jupiter and Saturn in our solar system.</p>\n            \n            <p></p>            </section>\n\n            </main>\n\n    ",
   "hasHabitableWorld": false,
-  "discoveryFacility": "K2",
+  "discoveryFacility": "Transit",
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-290, which contains 2 planets and was discovered by K2.",
   "particlesFun": false,
   "type": "Exoplanets",
@@ -12,6 +12,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "K2-290",
+  "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "Mars",
@@ -35,7 +36,7 @@
   "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
-  "collisions": true,
+  "collisions": false,
   "habitableZone": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
@@ -76,14 +77,17 @@
       "a": 0.305,
       "e": 0,
       "w": 90,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 48.36685,
       "temperature": 676,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic_249624646_c/",
       "exoplanet": true,
       "bump": false,
-      "color": "#2F917A",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#973AD1",
+      "clouds": false,
+      "publishingDate": null
     },
     {
       "name": "K2-290-b",
@@ -95,14 +99,17 @@
       "a": 0.0923,
       "e": 0,
       "w": 90,
+      "i": 0,
       "o": 0,
       "orbitalPeriod": 9.21165,
       "temperature": 1230,
       "scenarioWikiUrl": "http://exoplanet.eu/catalog/epic_249624646_b/",
       "exoplanet": true,
       "bump": false,
-      "color": "#08735C",
-      "clouds": false
+      "bumpScale": 1.75,
+      "color": "#9396CB",
+      "clouds": false,
+      "publishingDate": null
     }
   ]
 }
