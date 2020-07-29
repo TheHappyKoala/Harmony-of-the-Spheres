@@ -108,29 +108,39 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
               overflowX: "scroll",
               width: "100%",
               padding: "15px",
-              justifyContent: "flex-start"
+              justifyContent: "flex-center"
             }}
           >
-            <Link to={`/exoplanets/all`}>
-              <NavItem active={pageContext.currentPageName === "Exoplanets"}>
-                All
+            <Link to={`/exoplanets/hall-of-fame`}>
+              <NavItem active={pageContext.currentPageName === "Hall of Fame"}>
+                Hall of Fame
               </NavItem>
             </Link>
 
-            {discoveryFacilities?.map(discoveryFacility => (
-              <Link
-                to={`/exoplanets/${kebabCase(discoveryFacility.fieldValue)}`}
+            <Link to={`/exoplanets/potentially-habitable-worlds`}>
+              <NavItem
+                active={
+                  pageContext.currentPageName === "Potentially Habitable Worlds"
+                }
               >
-                <NavItem
-                  active={
-                    kebabCase(pageContext.currentPageName) ===
-                    kebabCase(discoveryFacility.fieldValue)
-                  }
-                >
-                  {discoveryFacility.fieldValue}
-                </NavItem>
-              </Link>
-            ))}
+                Potentially Habitable Worlds
+              </NavItem>
+            </Link>
+
+            {["Transit", "Radial Velocity", "Imaging", "Microlensing"].map(
+              discoveryFacility => (
+                <Link to={`/exoplanets/${kebabCase(discoveryFacility)}`}>
+                  <NavItem
+                    active={
+                      kebabCase(pageContext.currentPageName) ===
+                      kebabCase(discoveryFacility)
+                    }
+                  >
+                    {discoveryFacility}
+                  </NavItem>
+                </Link>
+              )
+            )}
           </Nav>
         )}
 
@@ -146,6 +156,9 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
             itemsPerPage={pageContext.limit}
           />
         )}
+        <section className="navigation-scenarios-title">
+          <h2>{`Exoplanets - Detected Using the ${pageContext.currentPageName} Method`}</h2>
+        </section>
         <div className="scenarios-gallery">
           {scenarios.map(({ node }) => (
             <Link to={`/${kebabCase(node.type)}/${kebabCase(node.name)}`}>
@@ -162,10 +175,14 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
 };
 
 export const pageQuery = graphql`
-  query($discoveryFacility: String, $limit: Int, $skip: Int) {
+  query(
+    $discoveryFacility: String
+    $limit: Int
+    $skip: Int
+    $background: String
+  ) {
     scenarios: allScenariosJson(
       filter: { discoveryFacility: { eq: $discoveryFacility } }
-      sort: { order: ASC, fields: [sortOrder] }
       limit: $limit
       skip: $skip
     ) {
@@ -197,7 +214,7 @@ export const pageQuery = graphql`
         fieldValue
       }
     }
-    file(relativePath: { eq: "background.jpg" }) {
+    file(relativePath: { eq: $background }) {
       childImageSharp {
         fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid

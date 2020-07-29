@@ -45,6 +45,7 @@ const Scenario = ({
         pageTitle={scenarioFromData.name}
         pageDescription={scenarioFromData.description}
         pathName={location.pathName}
+        bodyCssClass="body-with-overflow-hidden"
       />
       <Simulator
         resetScenario={resetScenario}
@@ -139,6 +140,7 @@ export const pageQuery = graphql`
       logarithmicDepthBuffer
       rotatingReferenceFrame
       cameraFocus
+      cameraPosition
       isMassBeingAdded
       primary
       a

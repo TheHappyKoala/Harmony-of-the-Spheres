@@ -120,8 +120,35 @@ export default class extends PerspectiveCamera {
     barycenterZ: number,
     customCameraToBodyDistanceFactor: number,
     masses: MassType[],
-    manifestations: Manifestation[]
+    manifestations: Manifestation[],
+    cameraPosition: string
   ): void {
+    const massesLen = masses.length;
+
+    if (cameraPosition && cameraPosition !== "Free") {
+      for (let i = 0; i < massesLen; i++) {
+        const mass = masses[i];
+
+        if (cameraPosition === mass.name) {
+          this.position.set(
+            this.rotatedMasses[i].x,
+            this.rotatedMasses[i].y,
+            this.rotatedMasses[i].z
+          );
+        }
+
+        if (cameraFocus === mass.name) {
+          this.lookAt(
+            this.rotatedMasses[i].x,
+            this.rotatedMasses[i].y,
+            this.rotatedMasses[i].z
+          );
+        }
+      }
+
+      return;
+    }
+
     if (previous.cameraFocus !== cameraFocus && cameraFocus === "Barycenter") {
       previous.cameraFocus = cameraFocus;
 
@@ -199,8 +226,6 @@ export default class extends PerspectiveCamera {
 
       return;
     }
-
-    const massesLen = masses.length;
 
     if (previous.cameraFocus !== cameraFocus) {
       previous.cameraFocus = cameraFocus;

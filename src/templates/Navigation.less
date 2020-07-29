@@ -4,8 +4,6 @@
       width: 100%;
       position: relative;
       margin-top: 60px;
-      background-color: rgba(0, 0, 0, 0.5);
-      min-height: calc(100vh - 40px);
 }
 
 .scenarios-wrapper > .nav:nth-of-type(2) > a, .nav-item {
@@ -14,20 +12,21 @@
 
 .scenarios-gallery {
     margin-top: 10px;
-    padding: 15px;
     width: 100%;
     display: grid;
     justify-content: space-evenly;
     display:grid;
     grid-template-columns:repeat(auto-fill, 200px);
     grid-gap:2rem;
+    padding: 0 10px;
 }
 
 .scenario-link {
+    width: fit-content;
+    height: 120px;
     overflow: hidden;
     position: relative;
     border: 1px solid #545454;
-    padding: 0 5px;
     &:hover {
         box-shadow: 0 0 5px 2px skyblue;
       }
@@ -40,4 +39,10 @@
     font-weight: bold;
     width: 100%;
     text-align: center;
+    text-shadow: 2px 2px #000000;
+    padding: 0 15px;
+  }
+
+  .navigation-scenarios-title {
+    padding-left: 15px;
   }

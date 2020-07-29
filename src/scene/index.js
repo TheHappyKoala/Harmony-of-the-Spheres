@@ -15,6 +15,7 @@ import CollisionsService from "../physics/collisions/";
 import CustomEllipseCurve from "./CustomEllipseCurve";
 import ManifestationsService from "./ManifestationsService";
 import drawManifestation from "./drawManifestation";
+import { AmbientLight } from "three";
 
 const TWEEN = require("@tweenjs/tween.js");
 
@@ -384,7 +385,8 @@ const scene = {
       this.scenario.barycenterZ,
       this.scenario.customCameraToBodyDistanceFactor,
       this.scenario.masses,
-      this.manifestationsService.manifestations
+      this.manifestationsService.manifestations,
+      this.scenario.cameraPosition
     );
 
     if (

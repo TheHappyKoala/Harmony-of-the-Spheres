@@ -82,13 +82,14 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
               to={
                 category.fieldValue !== "Exoplanets"
                   ? `/${kebabCase(category.fieldValue)}`
-                  : `/${kebabCase(category.fieldValue)}/hall-of-fame`
+                  : `/${kebabCase(category.fieldValue)}/all`
               }
             >
               <NavItem
                 active={
                   kebabCase(pageContext.currentPageName) ===
-                  kebabCase(category.fieldValue)
+                    kebabCase(category.fieldValue) ||
+                  category.fieldValue === "Exoplanets"
                 }
               >
                 {category.fieldValue}
@@ -125,6 +126,7 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
                 Potentially Habitable Worlds
               </NavItem>
             </Link>
+
             {["Transit", "Radial Velocity", "Imaging", "Microlensing"].map(
               discoveryFacility => (
                 <Link to={`/exoplanets/${kebabCase(discoveryFacility)}`}>
@@ -155,7 +157,7 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
           />
         )}
         <section className="navigation-scenarios-title">
-          <h2>{`${pageContext.currentPageName} Scenarios`}</h2>
+          <h2>{`Exoplanets - ${pageContext.currentPageName}`}</h2>
         </section>
         <div className="scenarios-gallery">
           {scenarios.map(({ node }) => (
@@ -173,10 +175,9 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
 };
 
 export const pageQuery = graphql`
-  query($type: String, $limit: Int, $skip: Int, $background: String) {
+  query($limit: Int, $skip: Int, $background: String) {
     scenarios: allScenariosJson(
-      filter: { type: { eq: $type } }
-      sort: { order: ASC, fields: [sortOrder] }
+      filter: { hasHabitableWorld: { eq: true } }
       limit: $limit
       skip: $skip
     ) {
