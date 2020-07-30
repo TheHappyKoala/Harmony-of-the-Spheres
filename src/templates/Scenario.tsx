@@ -44,7 +44,7 @@ const Scenario = ({
       <Head
         pageTitle={scenarioFromData.name}
         pageDescription={scenarioFromData.description}
-        pathName={location.pathName}
+        pathName={location.pathname}
         bodyCssClass="body-with-overflow-hidden"
       />
       <Simulator
