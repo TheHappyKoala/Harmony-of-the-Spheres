@@ -23,6 +23,7 @@ export default ({
       pageTitle={pageTitle}
       pageDescription={pageDescription}
       image={image}
+      pathName={location.pathname}
     />
     <header>
       <Link to="/">
