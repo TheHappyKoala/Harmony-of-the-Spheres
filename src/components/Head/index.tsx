@@ -52,17 +52,17 @@ export default ({
       />
 
       <meta name="twitter:card" content="summary" />
-      <meta property="twitter:title" content={`${siteMeta.title} | ${pageTitle}`} />
-      <meta property="twitter:description" content={pageDescription} />
+      <meta name="twitter:title" content={`${siteMeta.title} | ${pageTitle}`} />
+      <meta name="twitter:description" content={pageDescription} />
       <meta
-        property="twitter:image:src"
+        name="twitter:image:src"
         content={
           image
             ? image
             : `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`
         }
       />
-      
+
       <link
         rel="stylesheet"
         type="text/css"
