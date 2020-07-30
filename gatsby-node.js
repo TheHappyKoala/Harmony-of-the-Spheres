@@ -173,6 +173,8 @@ exports.createPages = async ({ actions, graphql }) => {
           "Microlensing"
         ];
 
+        if (images.find(image => fieldValue === image))
+
         createPage({
           path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
           component: require.resolve(`./src/templates/ExoplanetNavigation.tsx`),
