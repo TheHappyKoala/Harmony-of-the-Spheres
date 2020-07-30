@@ -33,8 +33,9 @@ export default ({
       <html lang={siteMeta.lang} />
       <title>{`${siteMeta.title} | ${pageTitle}`}</title>
       <meta name="description" content={pageDescription} />
+
       <meta name="author" content={siteMeta.author} />
-      <meta property="og:title" content={pageTitle} />
+      <meta property="og:title" content={`${siteMeta.title} | ${pageTitle}`} />
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
@@ -49,6 +50,19 @@ export default ({
             : `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`
         }
       />
+
+      <meta name="twitter:card" content="summary" />
+      <meta property="twitter:title" content={`${siteMeta.title} | ${pageTitle}`} />
+      <meta property="twitter:description" content={pageDescription} />
+      <meta
+        property="twitter:image:src"
+        content={
+          image
+            ? image
+            : `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`
+        }
+      />
+      
       <link
         rel="stylesheet"
         type="text/css"
