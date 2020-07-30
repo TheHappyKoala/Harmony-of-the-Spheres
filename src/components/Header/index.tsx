@@ -15,10 +15,15 @@ interface HeaderProps {
 export default ({
   pageTitle,
   pageDescription,
-  location
+  location,
+  image
 }: HeaderProps): ReactElement => (
   <Fragment>
-    <Head pageTitle={pageTitle} pageDescription={pageDescription} />
+    <Head
+      pageTitle={pageTitle}
+      pageDescription={pageDescription}
+      image={image}
+    />
     <header>
       <Link to="/">
         <h1>Gravity Simulator</h1>

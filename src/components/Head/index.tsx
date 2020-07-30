@@ -13,7 +13,8 @@ export default ({
   pageTitle,
   pageDescription,
   pathName,
-  bodyCssClass
+  bodyCssClass,
+  image
 }: HeadProps): ReactElement => {
   const siteMeta = useSiteMeta();
 
@@ -33,16 +34,21 @@ export default ({
       <title>{`${siteMeta.title} | ${pageTitle}`}</title>
       <meta name="description" content={pageDescription} />
       <meta name="author" content={siteMeta.author} />
-      <meta property="og:site_name" content={siteMeta.title} />
       <meta property="og:title" content={pageTitle} />
-      <meta property="og:type" content="game" />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:url"
+        content={`https://gravitysimulator.org${pathName}`}
+      />
       <meta property="og:description" content={pageDescription} />
       <meta
         property="og:image"
-        content={`https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`}
+        content={
+          image
+            ? image
+            : `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`
+        }
       />
-      <meta property="og:image:width" content="400" />
-      <meta property="og:image:height" content="250" />
       <link
         property="og:url"
         href={`https://gravitysimulator.org${pathName}`}

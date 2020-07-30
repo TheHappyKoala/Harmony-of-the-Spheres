@@ -173,7 +173,10 @@ export default ({
         transitionLeaveTimeout={250}
       >
         {displayWiki && (
-          <Modal callback={setWikiState} css={{ top: "55%", left: "10px", right: "260px" }}>
+          <Modal
+            callback={setWikiState}
+            css={{ top: "55%", left: "10px", right: "260px" }}
+          >
             {description ? (
               <div
                 dangerouslySetInnerHTML={{

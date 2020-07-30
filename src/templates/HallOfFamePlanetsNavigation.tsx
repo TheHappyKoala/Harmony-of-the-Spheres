@@ -60,8 +60,9 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
       />
       <Header
         pageTitle={pageContext.currentPageName}
-        pageDescription="3D Gravity Simulator. Simulate the solar system, exoplanets and even colliding galaxies. You can add, delete and modify any mass in a simulation."
+        pageDescription={pageContext.categoryDescription}
         location={location}
+        image={`https://www.gravitysimulator.org/images/${pageContext.currentPageName}.jpg`}
       />
       <section className="scenarios-wrapper">
         <Nav
