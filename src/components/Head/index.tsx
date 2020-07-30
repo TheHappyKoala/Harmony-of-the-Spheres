@@ -55,13 +55,18 @@ export default ({
       <meta name="twitter:title" content={`${siteMeta.title} | ${pageTitle}`} />
       <meta name="twitter:description" content={pageDescription} />
       <meta
-        name="twitter:image:src"
+        name="twitter:image"
         content={
           image
             ? image
             : `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`
         }
       />
+
+      <script type="application/ld+json">
+        {JSON.stringify()}
+      </script>
+
 
       <link
         rel="stylesheet"
