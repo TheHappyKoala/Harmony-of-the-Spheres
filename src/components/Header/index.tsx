@@ -29,7 +29,15 @@ export default ({
       <Link to="/">
         <h1>Gravity Simulator</h1>
       </Link>
-      <Nav css={{ border: "none", padding: 0, backgroundColor: "transparent" }}>
+      <Nav
+        css={{
+          border: "none",
+          padding: 0,
+          backgroundColor: "transparent",
+          minWidth: "initial",
+          overflow: "hidden"
+        }}
+      >
         <NavItem active={location.pathname === "/credits"}>
           <Link to="/credits">
             {" "}

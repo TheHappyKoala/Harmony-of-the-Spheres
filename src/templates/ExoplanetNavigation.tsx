@@ -65,98 +65,99 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
         image={`https://www.gravitysimulator.org/images/${pageContext.currentPageName}.jpg`}
       />
       <section className="scenarios-wrapper">
-        <Nav
-          css={{
-            borderLeft: "none",
-            borderRight: "none",
-            borderTop: "none",
-            fontWeight: "bold"
-          }}
-        >
-          <Link to={`/`}>
-            <NavItem active={pageContext.currentPageName === "All"}>
-              All
-            </NavItem>
-          </Link>
-          {categories.map(category => (
-            <Link
-              to={
-                category.fieldValue !== "Exoplanets"
-                  ? `/${kebabCase(category.fieldValue)}`
-                  : `/${kebabCase(category.fieldValue)}/all`
-              }
-            >
-              <NavItem
-                active={
-                  kebabCase(pageContext.currentPageName) ===
-                    kebabCase(category.fieldValue) ||
-                  category.fieldValue === "Exoplanets"
-                }
-              >
-                {category.fieldValue}
-              </NavItem>
-            </Link>
-          ))}
-        </Nav>
-
-        {pageContext.type === "Exoplanets" && (
+        <nav>
           <Nav
             css={{
               borderLeft: "none",
               borderRight: "none",
               borderTop: "none",
-              fontWeight: "bold",
-              overflowX: "scroll",
-              width: "100%",
-              padding: "15px",
-              justifyContent: "flex-center"
+              fontWeight: "bold"
             }}
           >
-            <Link to={`/exoplanets/hall-of-fame`}>
-              <NavItem active={pageContext.currentPageName === "Hall of Fame"}>
-                Hall of Fame
+            <Link to={`/`}>
+              <NavItem active={pageContext.currentPageName === "All"}>
+                All
               </NavItem>
             </Link>
-
-            <Link to={`/exoplanets/potentially-habitable-worlds`}>
-              <NavItem
-                active={
-                  pageContext.currentPageName === "Potentially Habitable Worlds"
+            {categories.map(category => (
+              <Link
+                to={
+                  category.fieldValue !== "Exoplanets"
+                    ? `/${kebabCase(category.fieldValue)}`
+                    : `/${kebabCase(category.fieldValue)}/all`
                 }
               >
-                Potentially Habitable Worlds
-              </NavItem>
-            </Link>
-
-            {["Transit", "Radial Velocity", "Imaging", "Microlensing"].map(
-              discoveryFacility => (
-                <Link to={`/exoplanets/${kebabCase(discoveryFacility)}`}>
-                  <NavItem
-                    active={
-                      kebabCase(pageContext.currentPageName) ===
-                      kebabCase(discoveryFacility)
-                    }
-                  >
-                    {discoveryFacility}
-                  </NavItem>
-                </Link>
-              )
-            )}
+                <NavItem
+                  active={
+                    kebabCase(pageContext.currentPageName) ===
+                      kebabCase(category.fieldValue) ||
+                    category.fieldValue === "Exoplanets"
+                  }
+                >
+                  {category.fieldValue}
+                </NavItem>
+              </Link>
+            ))}
           </Nav>
-        )}
 
-        {pageContext.numPages > 1 && (
-          <Pagination
-            pagination={{
-              start: pageContext.skip,
-              end: pageContext.currentPage * pageContext.limit,
-              count: pageContext.numPages,
-              page: pageContext.currentPage,
-              path: pageContext.pagePath
-            }}
-            itemsPerPage={pageContext.limit}
-          />
-        )}
+          {pageContext.type === "Exoplanets" && (
+            <Nav
+              css={{
+                borderLeft: "none",
+                borderRight: "none",
+                borderTop: "none",
+                fontWeight: "bold"
+              }}
+            >
+              <Link to={`/exoplanets/hall-of-fame`}>
+                <NavItem
+                  active={pageContext.currentPageName === "Hall of Fame"}
+                >
+                  Hall of Fame
+                </NavItem>
+              </Link>
+
+              <Link to={`/exoplanets/potentially-habitable-worlds`}>
+                <NavItem
+                  active={
+                    pageContext.currentPageName ===
+                    "Potentially Habitable Worlds"
+                  }
+                >
+                  Potentially Habitable Worlds
+                </NavItem>
+              </Link>
+
+              {["Transit", "Radial Velocity", "Imaging", "Microlensing"].map(
+                discoveryFacility => (
+                  <Link to={`/exoplanets/${kebabCase(discoveryFacility)}`}>
+                    <NavItem
+                      active={
+                        kebabCase(pageContext.currentPageName) ===
+                        kebabCase(discoveryFacility)
+                      }
+                    >
+                      {discoveryFacility}
+                    </NavItem>
+                  </Link>
+                )
+              )}
+            </Nav>
+          )}
+
+          {pageContext.numPages > 1 && (
+            <Pagination
+              pagination={{
+                start: pageContext.skip,
+                end: pageContext.currentPage * pageContext.limit,
+                count: pageContext.numPages,
+                page: pageContext.currentPage,
+                path: pageContext.pagePath
+              }}
+              itemsPerPage={pageContext.limit}
+            />
+          )}
+        </nav>
         <section className="navigation-scenarios-title">
           <h2>{`Exoplanets - Detected Using the ${pageContext.currentPageName} Method`}</h2>
         </section>
@@ -196,7 +197,7 @@ export const pageQuery = graphql`
           fields {
             scenarioImage {
               childImageSharp {
-                fixed(width: 200, height: 120) {
+                fixed(width: 250, height: 150) {
                   ...GatsbyImageSharpFixed
                 }
               }

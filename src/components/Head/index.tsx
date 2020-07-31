@@ -63,10 +63,7 @@ export default ({
         }
       />
 
-      <script type="application/ld+json">
-        {JSON.stringify()}
-      </script>
-
+      <script type="application/ld+json">{JSON.stringify()}</script>
 
       <link
         rel="stylesheet"
