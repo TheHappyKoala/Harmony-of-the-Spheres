@@ -71,6 +71,7 @@ export default ({
             "@type": "SoftwareApplication",
             browserRequirements: "Requires HTML5 support",
             "applicationCategory": "GameApplication",
+            "applicationSubCategory": "Science",
             name: pageTitle,
             image: `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`,
             description: pageDescription,
