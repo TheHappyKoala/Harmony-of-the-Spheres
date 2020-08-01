@@ -64,7 +64,31 @@ export default ({
         }
       />
 
-      <script type="application/ld+json">{JSON.stringify()}</script>
+      {!image && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "WebApplication",
+            browserRequirements: "Requires HTML5 support",
+            applicationCategory: "Game",
+            applicationSubCategory: "Science",
+            name: pageTitle,
+            image: `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`,
+            description: pageDescription,
+            about: {
+              "@type": "Thing",
+              description: "gravity, simulation, space"
+            },
+            creator: {
+              "@type": "Person",
+              name: "Darrell Huffman & contributors",
+              url: "https://github.com/TheHappyKoala/Harmony-of-the-Spheres"
+            },
+            url: `https://gravitysimulator.org${pathName}`,
+            operatingSystem: "All"
+          })}
+        </script>
+      )}
 
       <link
         rel="stylesheet"
