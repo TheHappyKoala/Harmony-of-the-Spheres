@@ -68,10 +68,9 @@ export default ({
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
-            "@type": "WebApplication",
+            "@type": "SoftwareApplication",
             browserRequirements: "Requires HTML5 support",
-            applicationCategory: "Game",
-            applicationSubCategory: "Science",
+            "applicationCategory": "GameApplication",
             name: pageTitle,
             image: `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`,
             description: pageDescription,
