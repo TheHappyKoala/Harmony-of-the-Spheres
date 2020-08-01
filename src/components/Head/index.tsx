@@ -52,6 +52,7 @@ export default ({
       />
 
       <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@SpaceGravitySim" />
       <meta name="twitter:title" content={`${siteMeta.title} | ${pageTitle}`} />
       <meta name="twitter:description" content={pageDescription} />
       <meta
