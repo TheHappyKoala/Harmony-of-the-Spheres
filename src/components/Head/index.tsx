@@ -71,7 +71,7 @@ export default ({
             "@type": "WebSite",
             name: "Gravity Simulator",
             url: "https://gravitysimulator.org",
-            image: `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`,
+            image,
             description: pageDescription
           })}
         </script>
