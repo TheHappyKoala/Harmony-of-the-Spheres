@@ -64,14 +64,27 @@ export default ({
         }
       />
 
+      {pathName === "/" && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            name: "Gravity Simulator",
+            url: "https://gravitysimulator.org",
+            image: `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`,
+            description: pageDescription
+          })}
+        </script>
+      )}
+
       {!image && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
             "@type": "SoftwareApplication",
             browserRequirements: "Requires HTML5 support",
-            "applicationCategory": "GameApplication",
-            "applicationSubCategory": "Science",
+            applicationCategory: "GameApplication",
+            applicationSubCategory: "Science",
             name: pageTitle,
             image: `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`,
             description: pageDescription,
