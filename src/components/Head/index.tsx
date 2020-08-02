@@ -31,7 +31,9 @@ export default ({
         gtag('config', 'UA-153406767-1');
       `}</script>
       <html lang={siteMeta.lang} />
-      <title>{`${siteMeta.title} | ${pageTitle}`}</title>
+      <title>{`${siteMeta.title} | ${
+        image ? `${pageTitle} Scenarios` : pageTitle
+      }`}</title>
       <meta name="description" content={pageDescription} />
 
       <meta name="author" content={siteMeta.author} />
@@ -64,13 +66,23 @@ export default ({
         }
       />
 
-      {pathName === "/" && (
+      {pathName === "/" && image ? (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
             "@type": "WebSite",
             name: "Gravity Simulator",
             url: "https://gravitysimulator.org",
+            image,
+            description: pageDescription
+          })}
+        </script>
+      ) : (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "WebPage",
+            name: `${pageTitle} Scenarios`,
             image,
             description: pageDescription
           })}
