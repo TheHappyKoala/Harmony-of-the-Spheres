@@ -140,51 +140,27 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     ];
 
-    if (fieldValue !== "Exoplanets") {
-      [...new Array(numPages)].forEach((scenario, i) => {
-        const pagePath = `/${_.kebabCase(fieldValue)}`;
-        createPage({
-          path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
-          component: require.resolve(`./src/templates/Navigation.tsx`),
-          context: {
-            pagePath,
-            type: fieldValue,
-            limit: scenariosPerPage,
-            background: `${
-              images.find(image => fieldValue === image.name).name
-            }.jpg`,
-            categoryDescription: images.find(image => fieldValue === image.name)
-              .description,
-            skip: i * scenariosPerPage,
-            numPages,
-            currentPage: i + 1,
-            currentPageName: fieldValue
-          }
-        });
+    [...new Array(numPages)].forEach((scenario, i) => {
+      const pagePath = `/${_.kebabCase(fieldValue)}`;
+      createPage({
+        path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
+        component: require.resolve(`./src/templates/Navigation.tsx`),
+        context: {
+          pagePath,
+          type: fieldValue,
+          limit: scenariosPerPage,
+          background: `${
+            images.find(image => fieldValue === image.name).name
+          }.jpg`,
+          categoryDescription: images.find(image => fieldValue === image.name)
+            .description,
+          skip: i * scenariosPerPage,
+          numPages,
+          currentPage: i + 1,
+          currentPageName: fieldValue
+        }
       });
-    } else {
-      [...new Array(numPages)].forEach((scenario, i) => {
-        const pagePath = `/${_.kebabCase(fieldValue)}/all`;
-        createPage({
-          path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
-          component: require.resolve(`./src/templates/Navigation.tsx`),
-          context: {
-            pagePath,
-            type: fieldValue,
-            limit: scenariosPerPage,
-            background: `${
-              images.find(image => fieldValue === image.name).name
-            }.jpg`,
-            categoryDescription: images.find(image => fieldValue === image.name)
-              .description,
-            skip: i * scenariosPerPage,
-            numPages,
-            currentPage: i + 1,
-            currentPageName: fieldValue
-          }
-        });
-      });
-    }
+    });
   });
 
   results.data.allScenariosJson.discoveryFacilities.forEach(
