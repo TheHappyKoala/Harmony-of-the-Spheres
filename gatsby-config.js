@@ -2,7 +2,7 @@ const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.gravitysimulator.org",
+    siteUrl: "https://gravitysimulator.org",
     title: `Gravity Simulator`,
     author: `Darrell Huffman`,
     lang: `en`
@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://www.gravitysimulator.org`
+        siteUrl: `https://gravitysimulator.org`
       }
     },
     {
