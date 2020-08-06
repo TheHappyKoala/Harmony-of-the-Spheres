@@ -184,7 +184,12 @@ export const getTrajectory = (
             scenario.elapsedTime +
             (scenario.trajectoryTargetArrival - scenario.elapsedTime),
           target: scenario.trajectoryTarget,
-          primary: referenceMass.name
+          primary: referenceMass.name,
+          a: scenario.a,
+          e: scenario.e,
+          i: scenario.i,
+          w: scenario.w,
+          o: scenario.o
         });
       }
     );

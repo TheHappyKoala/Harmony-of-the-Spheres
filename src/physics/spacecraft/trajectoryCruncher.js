@@ -1,6 +1,7 @@
 import getIntegrator from "../integrators";
 import { planFlight } from "./lambert";
 import { getObjFromArrByKeyValuePair } from "../../utils";
+import { getOrbit } from "../../physics/utils";
 
 /*
 
@@ -55,7 +56,12 @@ export default function worker(self) {
       departure,
       arrival,
       target,
-      primary
+      primary,
+      a,
+      e,
+      i,
+      w,
+      o
     }
   }) => {
     const system = getIntegrator("RKN12", {
@@ -103,7 +109,7 @@ export default function worker(self) {
               planFlight(
                 system.elapsedTime - departure,
                 spacecraft,
-                targetMass,
+                getOrbit(targetMass, { ...spacecraft, a, e, i, w, o }, g),
                 g * primaryM
               )
             );
