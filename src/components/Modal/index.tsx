@@ -9,11 +9,18 @@ import "./Modal.less";
 interface ModalProps {
   children: ReactChildren | ReactChild;
   callback: (event: MouseEvent<HTMLButtonElement>) => void;
+  modalWrapperCssClass: string;
+  modalCssClass: string;
 }
 
-export default ({ children, callback, css }: ModalProps): ReactElement => (
-  <div className="modal-wrapper" style={css}>
-    <section className="modal">
+export default ({
+  children,
+  callback,
+  modalWrapperCssClass,
+  modalCssClass
+}: ModalProps): ReactElement => (
+  <div className={modalWrapperCssClass}>
+    <section className={modalCssClass}>
       {children}
       <i
         className="fa fa-window-close-o fa-2x close-button"
