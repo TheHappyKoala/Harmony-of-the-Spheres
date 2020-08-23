@@ -137,6 +137,11 @@ exports.createPages = async ({ actions, graphql }) => {
         name: "Spaceflight",
         description:
           "3D gravity simulations of spacecraft and their trajectories and orbits. Discover spacecraft exploring the Moon, Mars, Jupiter, various asteroids and beyond."
+      },
+      {
+        name: "Starship",
+        description:
+          "3D gravity simulations of spacecraft and their trajectories and orbits. Discover spacecraft exploring the Moon, Mars, Jupiter, various asteroids and beyond."
       }
     ];
 
@@ -230,7 +235,10 @@ exports.createPages = async ({ actions, graphql }) => {
   results.data.allScenariosJson.edges.forEach(({ node }, i) =>
     createPage({
       path: `/${_.kebabCase(node.type)}/${_.kebabCase(node.name)}`,
-      component: require.resolve(`./src/templates/Scenario.tsx`),
+      component:
+        node.type !== "Starship"
+          ? require.resolve(`./src/templates/Scenario.tsx`)
+          : require.resolve(`./src/templates/StarshipScenario.tsx`),
       context: {
         id: node.id
       }
