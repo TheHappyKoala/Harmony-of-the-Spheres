@@ -1,13 +1,13 @@
-import H3 from '../vectors';
-import { getDistanceParams } from '../utils';
-import { getObjFromArrByKeyValuePair } from '../../utils';
+import H3 from "../vectors";
+import { getDistanceParams } from "../utils";
+import { getObjFromArrByKeyValuePair } from "../../utils";
 function hyp2f1b(x: number): number {
   let res = 1.0;
   let resOld = 1.0;
   let term = 1.0;
   let ii = 0;
   while (true) {
-    term = term * (3 + ii) * (1 + ii) / (5 / 2 + ii) * x / (ii + 1);
+    term = (((term * (3 + ii) * (1 + ii)) / (5 / 2 + ii)) * x) / (ii + 1);
     resOld = res;
     res += term;
     if (resOld == res) {
@@ -20,12 +20,12 @@ function hyp2f1b(x: number): number {
 function initial_guess(T: number, ll: number, M: number): Array<number> {
   if (M == 0) {
     const T0 = Math.acos(ll) + ll * Math.sqrt(1 - ll * ll) + M * Math.PI;
-    const T1 = 2 * (1 - ll * ll * ll) / 3;
+    const T1 = (2 * (1 - ll * ll * ll)) / 3;
     let x0 = 0;
     if (T >= T0) {
       x0 = Math.pow(T0 / T, 2 / 3) - 1;
     } else if (T < T1) {
-      x0 = 5 / 2 * T1 / T * (T1 - T) / (1 - Math.pow(ll, 5)) + 1;
+      x0 = ((((5 / 2) * T1) / T) * (T1 - T)) / (1 - Math.pow(ll, 5)) + 1;
     } else {
       x0 = Math.pow(T0 / T, Math.log2(T1 / T0)) - 1;
     }
@@ -36,7 +36,8 @@ function initial_guess(T: number, ll: number, M: number): Array<number> {
       (((M * pi + pi) / (8 * T)) ** (2 / 3) - 1) /
       (((M * pi + pi) / (8 * T)) ** (2 / 3) + 1);
     const x_0r =
-      ((8 * T / (M * pi)) ** (2 / 3) - 1) / ((8 * T / (M * pi)) ** (2 / 3) + 1);
+      (((8 * T) / (M * pi)) ** (2 / 3) - 1) /
+      (((8 * T) / (M * pi)) ** (2 / 3) + 1);
 
     return [x_0l, x_0r];
   }
@@ -83,10 +84,10 @@ function computePsi(x: number, y: number, ll: number): number {
 
 function tofEqY(x: number, y: number, T0: number, ll: number, M: number) {
   let T = 0;
-  if (M == 0 && (Math.sqrt(0.6) < x && x < Math.sqrt(1.4))) {
+  if (M == 0 && Math.sqrt(0.6) < x && x < Math.sqrt(1.4)) {
     const eta = y - ll * x;
     const S1 = (1 - ll - x * eta) * 0.5;
-    const Q = 4 / 3 * hyp2f1b(S1);
+    const Q = (4 / 3) * hyp2f1b(S1);
     T = (eta * eta * eta * Q + 4 * ll * eta) * 0.5;
   } else {
     const psi = computePsi(x, y, ll);
@@ -98,7 +99,7 @@ function tofEqY(x: number, y: number, T0: number, ll: number, M: number) {
 }
 
 function tofEqP(x: number, y: number, T: number, ll: number): number {
-  return (3 * T * x - 2 + 2 * ll * ll * ll * x / y) / (1 - x * x);
+  return (3 * T * x - 2 + (2 * ll * ll * ll * x) / y) / (1 - x * x);
 }
 
 function tofEqP2(
@@ -109,7 +110,7 @@ function tofEqP2(
   ll: number
 ): number {
   return (
-    (3 * T + 5 * x * dT + 2 * (1 - ll * ll) * ll * ll * ll / (y * y * y)) /
+    (3 * T + 5 * x * dT + (2 * (1 - ll * ll) * ll * ll * ll) / (y * y * y)) /
     (1 - x * x)
   );
 }
@@ -123,7 +124,7 @@ function tofEqP3(
   ll: number
 ): number {
   return (
-    (7 * x * ddT + 8 * dT - 6 * (1 - ll * ll) * ll ** 5 * x / y ** 5) /
+    (7 * x * ddT + 8 * dT - (6 * (1 - ll * ll) * ll ** 5 * x) / y ** 5) /
     (1 - x ** 2)
   );
 }
@@ -145,16 +146,16 @@ function halley(
     fder = tofEqP(p0, y, T0, ll);
     fder2 = tofEqP2(p0, y, T0, fder, ll);
     if (fder2 == 0) {
-      console.log('fder2 was 0');
+      console.log("fder2 was 0");
     }
     fder3 = tofEqP3(p0, y, T0, fder, fder2, ll);
-    p = p0 - 2 * fder * fder2 / (2 * fder2 ** 2 - fder * fder3);
+    p = p0 - (2 * fder * fder2) / (2 * fder2 ** 2 - fder * fder3);
     if (Math.abs(p - p0) < tol) {
       return p;
     }
     p0 = p;
   }
-  console.log('halley failed :(');
+  console.log("halley failed :(");
 }
 
 function householder(
@@ -182,14 +183,14 @@ function householder(
     p =
       p0 -
       fval *
-        ((fder * fder - fval * fder2 / 2) /
-          (fder * (fder * fder - fval * fder2) + fder3 * fval * fval / 6));
+        ((fder * fder - (fval * fder2) / 2) /
+          (fder * (fder * fder - fval * fder2) + (fder3 * fval * fval) / 6));
     if (Math.abs(p - p0) < tol) {
       return p;
     }
     p0 = p;
   }
-  console.log('householder failed');
+  console.log("householder failed");
 }
 
 export function findXY(
@@ -210,7 +211,7 @@ export function findXY(
     }
   }
   if (M > Mmax) {
-    console.log('M > Mmax error');
+    console.log("M > Mmax error");
   }
 
   const initGuesses = initial_guess(T, ll, M);
@@ -233,10 +234,10 @@ export function reconstruct(
   rho: number,
   sigma: number
 ): { Vr1: number; Vr2: number; Vt1: number; Vt2: number } {
-  const Vr1 = gamma * (ll * y - x - rho * (ll * y + x)) / r1;
-  const Vr2 = -gamma * (ll * y - x + rho * (ll * y + x)) / r2;
-  const Vt1 = gamma * sigma * (y + ll * x) / r1;
-  const Vt2 = gamma * sigma * (y + ll * x) / r2;
+  const Vr1 = (gamma * (ll * y - x - rho * (ll * y + x))) / r1;
+  const Vr2 = (-gamma * (ll * y - x + rho * (ll * y + x))) / r2;
+  const Vt1 = (gamma * sigma * (y + ll * x)) / r1;
+  const Vt2 = (gamma * sigma * (y + ll * x)) / r2;
   return { Vr1, Vr2, Vt1, Vt2 };
 }
 
@@ -295,11 +296,11 @@ export function planFlight(
     .cross(ir2)
     .toObject();
 
-  const T = Math.sqrt(2 * mu / s ** 3) * tof;
+  const T = Math.sqrt((2 * mu) / s ** 3) * tof;
 
   const xy = findXY(ll, T, M, maxiter, rtol);
 
-  const gamma = Math.sqrt(mu * s / 2);
+  const gamma = Math.sqrt((mu * s) / 2);
   const rho = (r1Norm - r2Norm) / cNorm;
   const sigma = Math.sqrt(1 - rho ** 2);
 
@@ -395,7 +396,7 @@ export function stateToKepler(
       argP = 2 * Math.PI - argP;
     }
   }
-  
+
   let trueAnom = Math.acos(reDot / (e * rNorm));
   if (rvDot < 0) {
     trueAnom = 2 * Math.PI - trueAnom;
@@ -404,10 +405,12 @@ export function stateToKepler(
   let eccAnom = 0;
   let meanAnom = 0;
   if (e > 1) {
-    eccAnom = 2 * Math.atanh(Math.sqrt((e - 1) / (e + 1)) * Math.tan(trueAnom / 2));
+    eccAnom =
+      2 * Math.atanh(Math.sqrt((e - 1) / (e + 1)) * Math.tan(trueAnom / 2));
     meanAnom = e * Math.sinh(eccAnom) - eccAnom;
   } else if (e < 1) {
-    eccAnom = 2 * Math.atan2(Math.tan(trueAnom / 2) , Math.sqrt((1+e)/(1-e)));
+    eccAnom =
+      2 * Math.atan2(Math.tan(trueAnom / 2), Math.sqrt((1 + e) / (1 - e)));
     meanAnom = eccAnom - e * Math.sin(eccAnom);
   }
 
@@ -434,12 +437,25 @@ export function stateToKepler2(
   let v2 = new H3();
   const rNorm = v1.set(r).getLength();
   const vNorm = v1.set(v).getLength();
-  const hVec = v1.set(r).cross(v2.set(v)).toObject();
-  const eVec1 = v1.set(v).cross(v2.set(hVec)).divideByScalar(mu).toObject();
-  const rHat = v1.set(r).divideByScalar(rNorm).toObject();
-  const eVec = v1.set(eVec1).subtract(v2.set(rHat)).toObject();
+  const hVec = v1
+    .set(r)
+    .cross(v2.set(v))
+    .toObject();
+  const eVec1 = v1
+    .set(v)
+    .cross(v2.set(hVec))
+    .divideByScalar(mu)
+    .toObject();
+  const rHat = v1
+    .set(r)
+    .divideByScalar(rNorm)
+    .toObject();
+  const eVec = v1
+    .set(eVec1)
+    .subtract(v2.set(rHat))
+    .toObject();
   const e = v1.set(eVec).getLength();
-  console.log("e: ", e)
+
   return {
     a: 1, // semi-major axis
     e: 0, // eccentricity
@@ -452,8 +468,10 @@ export function stateToKepler2(
   };
 }
 
-
-export function keplerToState(orb: OrbitalElements, gm: number): { posRel: Vector; velRel: Vector } {
+export function keplerToState(
+  orb: OrbitalElements,
+  gm: number
+): { posRel: Vector; velRel: Vector } {
   // returns the position and velocity of the orbiting body RELATIVE to the primary body.
   const a = orb.a;
   const e = orb.e;
@@ -463,36 +481,71 @@ export function keplerToState(orb: OrbitalElements, gm: number): { posRel: Vecto
   const trueAnom = orb.trueAnom;
   const eccAnom = orb.eccAnom;
 
-  let o = {x: 0, y: 0, z: 0};
-  let o_dot = {x: 0, y: 0, z: 0};
+  let o = { x: 0, y: 0, z: 0 };
+  let o_dot = { x: 0, y: 0, z: 0 };
   if (e < 1) {
     const r_c = a * (1 - e * Math.cos(eccAnom)); // distance to central body
     //vectors in orbital plane
     //o = {x: r_c * Math.cos(trueAnom), y: r_c * Math.sin(trueAnom), z: 0}; // position in orbital plane
-    const o_dot_factor = Math.sqrt(gm*a) / r_c;
+    const o_dot_factor = Math.sqrt(gm * a) / r_c;
     o.x = a * (Math.cos(eccAnom) - e);
     o.y = a * Math.sin(eccAnom) * Math.sqrt(1 - Math.pow(e, 2));
-    o_dot =  {x: -Math.sin(eccAnom) * o_dot_factor, y: Math.sqrt(1-e*e) * Math.cos(eccAnom) * o_dot_factor, z: 0}; // velocity in orbital plane
+    o_dot = {
+      x: -Math.sin(eccAnom) * o_dot_factor,
+      y: Math.sqrt(1 - e * e) * Math.cos(eccAnom) * o_dot_factor,
+      z: 0
+    }; // velocity in orbital plane
   } else if (e > 1) {
-    o = {x: -a * (e - Math.cosh(eccAnom)), y: -a * Math.sqrt(e*e - 1) * Math.sinh(eccAnom), z: 0};
+    o = {
+      x: -a * (e - Math.cosh(eccAnom)),
+      y: -a * Math.sqrt(e * e - 1) * Math.sinh(eccAnom),
+      z: 0
+    };
     const mean_motion = Math.sqrt(gm / Math.pow(Math.abs(a), 3));
-    const o_dot_factor = a * mean_motion / (e * Math.cosh(eccAnom) - 1);
+    const o_dot_factor = (a * mean_motion) / (e * Math.cosh(eccAnom) - 1);
     o_dot.x = o_dot_factor * Math.sinh(eccAnom);
-    o_dot.y = -o_dot_factor * Math.sqrt(e*e - 1) * Math.cosh(eccAnom);
+    o_dot.y = -o_dot_factor * Math.sqrt(e * e - 1) * Math.cosh(eccAnom);
   }
-  const X = o.x * (Math.cos(argP)*Math.cos(lAn) - Math.sin(argP)*Math.cos(i)*Math.sin(lAn)) - o.y * (Math.sin(argP)*Math.cos(lAn) + Math.cos(argP)*Math.cos(i)*Math.sin(lAn)); // x-coordinate of position in inertial reference frame
-  const Y = o.x * (Math.cos(argP)*Math.sin(lAn) + Math.sin(argP)*Math.cos(i)*Math.cos(lAn)) + o.y * (Math.cos(argP)*Math.cos(i)*Math.cos(lAn) - Math.sin(argP)*Math.sin(lAn));
-  const Z = o.x * (Math.sin(argP)*Math.sin(i)) + o.y * (Math.cos(argP) * Math.sin(i));
-  const VX = o_dot.x * (Math.cos(argP)*Math.cos(lAn) - Math.sin(argP)*Math.cos(i)*Math.sin(lAn)) - o_dot.y * (Math.sin(argP)*Math.cos(lAn) + Math.cos(argP)*Math.cos(i)*Math.sin(lAn));
-  const VY = o_dot.x * (Math.cos(argP)*Math.sin(lAn) + Math.sin(argP)*Math.cos(i)*Math.cos(lAn)) + o_dot.y * (Math.cos(argP)*Math.cos(i)*Math.cos(lAn) - Math.sin(argP)*Math.sin(lAn));
-  const VZ = o_dot.x * (Math.sin(argP)*Math.sin(i)) + o_dot.y * (Math.cos(argP) * Math.sin(i));
-  return {posRel: {x: X, y: Y, z: Z}, velRel: {x: VX, y: VY, z: VZ}}
+  const X =
+    o.x *
+      (Math.cos(argP) * Math.cos(lAn) -
+        Math.sin(argP) * Math.cos(i) * Math.sin(lAn)) -
+    o.y *
+      (Math.sin(argP) * Math.cos(lAn) +
+        Math.cos(argP) * Math.cos(i) * Math.sin(lAn)); // x-coordinate of position in inertial reference frame
+  const Y =
+    o.x *
+      (Math.cos(argP) * Math.sin(lAn) +
+        Math.sin(argP) * Math.cos(i) * Math.cos(lAn)) +
+    o.y *
+      (Math.cos(argP) * Math.cos(i) * Math.cos(lAn) -
+        Math.sin(argP) * Math.sin(lAn));
+  const Z =
+    o.x * (Math.sin(argP) * Math.sin(i)) + o.y * (Math.cos(argP) * Math.sin(i));
+  const VX =
+    o_dot.x *
+      (Math.cos(argP) * Math.cos(lAn) -
+        Math.sin(argP) * Math.cos(i) * Math.sin(lAn)) -
+    o_dot.y *
+      (Math.sin(argP) * Math.cos(lAn) +
+        Math.cos(argP) * Math.cos(i) * Math.sin(lAn));
+  const VY =
+    o_dot.x *
+      (Math.cos(argP) * Math.sin(lAn) +
+        Math.sin(argP) * Math.cos(i) * Math.cos(lAn)) +
+    o_dot.y *
+      (Math.cos(argP) * Math.cos(i) * Math.cos(lAn) -
+        Math.sin(argP) * Math.sin(lAn));
+  const VZ =
+    o_dot.x * (Math.sin(argP) * Math.sin(i)) +
+    o_dot.y * (Math.cos(argP) * Math.sin(i));
+  return { posRel: { x: X, y: Y, z: Z }, velRel: { x: VX, y: VY, z: VZ } };
 }
 
-function solveKeplerEq(meanAnom: number, e: number, tol=1e-14): number {
+function solveKeplerEq(meanAnom: number, e: number, tol = 1e-14): number {
   // Solves Keplers third law M = E - e*sin(E) for E using Newton-Raphson
   let E = meanAnom;
-  let E_last = E + 1e3*tol; // make sure we enter the while loop
+  let E_last = E + 1e3 * tol; // make sure we enter the while loop
   while (Math.abs(E - E_last) > tol) {
     E_last = E;
     if (e < 1) {
@@ -501,23 +554,37 @@ function solveKeplerEq(meanAnom: number, e: number, tol=1e-14): number {
       E = E + (meanAnom - e * Math.sinh(E) + E) / (e * Math.cosh(E) - 1);
     }
   }
-  return E
+  return E;
 }
 
-export function propagateOrbitalElements(orb: OrbitalElements, dt: number, gm: number): OrbitalElements {
+export function propagateOrbitalElements(
+  orb: OrbitalElements,
+  dt: number,
+  gm: number
+): OrbitalElements {
   const mean_motion = Math.sqrt(gm / Math.pow(Math.abs(orb.a), 3));
   let meanAnomNew = 0;
   if (orb.e < 1) {
     meanAnomNew = (orb.meanAnom + dt * mean_motion) % (2 * Math.PI); // calculate new mean anomaly and normalize it to [0, 2pi)
   } else if (orb.e > 1) {
-    meanAnomNew = (orb.meanAnom + dt * mean_motion)
+    meanAnomNew = orb.meanAnom + dt * mean_motion;
   }
   const eccAnomNew = solveKeplerEq(meanAnomNew, orb.e);
   let trueAnomNew = 0;
   if (orb.e < 1) {
-    trueAnomNew = 2 * Math.atan2(Math.sqrt(1+orb.e) * Math.sin(eccAnomNew / 2), Math.sqrt(1 - orb.e) * Math.cos(eccAnomNew / 2));
+    trueAnomNew =
+      2 *
+      Math.atan2(
+        Math.sqrt(1 + orb.e) * Math.sin(eccAnomNew / 2),
+        Math.sqrt(1 - orb.e) * Math.cos(eccAnomNew / 2)
+      );
   } else if (orb.e > 1) {
-    trueAnomNew = 2 * Math.atan2(Math.sqrt(1+orb.e) * Math.tanh(eccAnomNew / 2), Math.sqrt(orb.e - 1));
+    trueAnomNew =
+      2 *
+      Math.atan2(
+        Math.sqrt(1 + orb.e) * Math.tanh(eccAnomNew / 2),
+        Math.sqrt(orb.e - 1)
+      );
   }
   return {
     a: orb.a, // semi-major axis
@@ -529,10 +596,9 @@ export function propagateOrbitalElements(orb: OrbitalElements, dt: number, gm: n
     eccAnom: eccAnomNew, // eccentric anomly
     meanAnom: meanAnomNew // mean anomaly
   };
-
 }
 
-function radiusSOI(largerMass: SOITree, smallerMass: SOITree): number {
+export function radiusSOI(largerMass: SOITree, smallerMass: SOITree): number {
   const d = Math.sqrt(getDistanceParams(largerMass, smallerMass).dSquared);
   return d * Math.pow(smallerMass.m / largerMass.m, 2 / 5);
 }
@@ -602,7 +668,7 @@ export function constructSOITree(masses: Array<MassType>): SOITree {
   let sun = masses[0];
   // Search for the first star, otherwise use the first mass as root
   for (let i = 0; i < masses.length; i++) {
-    if (masses[i].massType == 'star') {
+    if (masses[i].massType == "star") {
       sun = masses[i];
       break;
     }
@@ -643,7 +709,7 @@ export function findCurrentSOI(
   masses: Array<MassType>
 ): MassType {
   if (tree.children.length == 0) {
-    return getObjFromArrByKeyValuePair(masses, 'name', tree.name);
+    return getObjFromArrByKeyValuePair(masses, "name", tree.name);
   }
   for (let i = 0; i < tree.children.length; i++) {
     if (tree.children[i].name == pos.name) {
@@ -651,7 +717,7 @@ export function findCurrentSOI(
     }
     const currentBody: MassType = getObjFromArrByKeyValuePair(
       masses,
-      'name',
+      "name",
       tree.children[i].name
     );
     const d = Math.sqrt(getDistanceParams(currentBody, pos).dSquared);
@@ -660,7 +726,7 @@ export function findCurrentSOI(
     }
   }
   return {
-    ...getObjFromArrByKeyValuePair(masses, 'name', tree.name),
+    ...getObjFromArrByKeyValuePair(masses, "name", tree.name),
     soi: tree.SOIradius
   };
 }
@@ -676,7 +742,7 @@ export function reverseAcceleration(
     z: pos.z - primary.z
   });
   const r = rVec.getLength();
-  const reverseAcc = rVec.multiplyByScalar(g * primary.m / r ** 3).toObject();
+  const reverseAcc = rVec.multiplyByScalar((g * primary.m) / r ** 3).toObject();
   return reverseAcc;
 }
 /*
