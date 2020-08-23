@@ -1,17 +1,16 @@
 @import '../Simulator/App.less';
 
 .range-wrapper {
-  width: 80%;
-  height: 65px;
-  float: left;
+  width: 100%;
+  position: relative;
+  margin: 7px 0;
 }
 
 input.slider[type='range'] {
   -webkit-appearance: none;
   width: 100%;
-  background: @input;
-  border: @border;
-  height: 30px;
+  background: #585858;
+  height: 5px;
   margin-left: 0;
   margin-top: 0;
 }
@@ -29,29 +28,33 @@ input.slider[type='range']:focus {
   outline: none;
 }
 
-.slider-value {
-  padding: @skinny-padding;
-  height: 30px;
-  border: @border;
-  border-bottom: none;
-  line-height: 20px;
-  width: 100%;
-  text-align: center;
-  overflow: hidden;
-  background-color: @input;
+.slider-value{
+  position: absolute;
+  top: -180%;
 }
-
-.slider-button {
-  background-color: #000;
-  height: 30px;
-  display: block;
-  width: 20%;
-  cursor: pointer;
-  border: @border;
-  border-left: none;
-  color: #fff;
+.slider-value span{
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+  background: #585858;
+  padding: 0 10px;
+	color: #fff;
+	display: block;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	border-radius: 6px;
 }
-
-.slider-increment-button {
-  border-bottom: none;
+.slider-value span:before{
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-top: 10px solid #585858;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	margin-top: -1px;
 }
