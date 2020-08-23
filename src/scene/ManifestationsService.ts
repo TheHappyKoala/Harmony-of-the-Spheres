@@ -9,18 +9,22 @@ export default class {
   masses: MassType[];
   textureLoader: THREE.TextureLoader;
   scene: THREE.Scene;
+  forAllMankind: boolean;
   manifestations: Manifestation[];
 
   constructor(
     masses: MassType[],
     textureLoader: THREE.TextureLoader,
-    scene: THREE.Scene
+    scene: THREE.Scene,
+    forAllMankind: boolean
   ) {
     this.masses = masses;
 
     this.textureLoader = textureLoader;
 
     this.scene = scene;
+
+    this.forAllMankind = forAllMankind;
 
     this.manifestations = [];
 
@@ -41,7 +45,12 @@ export default class {
         return new Spacecraft(mass);
 
       default:
-        return new MassManifestation(mass, this.textureLoader, segments);
+        return new MassManifestation(
+          mass,
+          this.textureLoader,
+          segments,
+          this.forAllMankind
+        );
     }
   }
 

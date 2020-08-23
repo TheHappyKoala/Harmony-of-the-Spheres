@@ -8,7 +8,7 @@ import { setBarycenter, getEllipse, radiansToDegrees } from "../physics/utils";
 import ParticleService from "../physics/particles/ParticleService";
 import arena from "./arena";
 import Camera from "./Camera";
-import Graphics2D, { drawBaryCenterLabel, drawMassLabel } from "./Graphics2D";
+import Graphics2D, { drawMarkerLabel, drawMassLabel } from "./Graphics2D";
 import ParticlePhysics from "../physics/particles";
 import ParticlesManifestation from "./ParticlesManifestation";
 import CollisionsService from "../physics/collisions/";
@@ -108,7 +108,8 @@ const scene = {
     this.manifestationsService = new ManifestationsService(
       this.scenario.masses,
       this.textureLoader,
-      this.scene
+      this.scene,
+      this.scenario.forAllMankind
     );
 
     this.particles = new ParticlesManifestation({
@@ -349,7 +350,7 @@ const scene = {
         cameraFocus === "Barycenter" ? true : false,
         "left",
         "limegreen",
-        drawBaryCenterLabel
+        drawMarkerLabel
       );
 
     const massesLen = this.system.masses.length;
@@ -360,7 +361,7 @@ const scene = {
 
       const rotatedPosition = this.camera.rotatedMasses[i];
 
-      this.drawManifestation(massManifestation, rotatedPosition, delta);
+      this.drawManifestation(massManifestation, rotatedPosition, delta, mass);
 
       if (this.scenario.labels)
         this.graphics2D.drawLabel(

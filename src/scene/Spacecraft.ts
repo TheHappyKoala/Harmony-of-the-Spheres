@@ -21,7 +21,7 @@ export default class extends MassManifestation {
       false,
       0,
       500,
-      "pink"
+      "limegreen"
     );
 
     trajectory.name = "trajectory";
@@ -52,9 +52,9 @@ export default class extends MassManifestation {
 
     const a = spacecraftOrbitalElements.a;
     const e = spacecraftOrbitalElements.e;
-    const w = spacecraftOrbitalElements.argp;
-    const i = spacecraftOrbitalElements.i;
-    const o = spacecraftOrbitalElements.omega;
+    const w = spacecraftOrbitalElements.argP * (180 / Math.PI);
+    const i = spacecraftOrbitalElements.i * (180 / Math.PI);
+    const o = spacecraftOrbitalElements.lAn * (180 / Math.PI);
 
     const ellipse = getEllipse(a, e);
 

@@ -1,15 +1,20 @@
 import * as THREE from "three";
 import { degreesToRadians, calculateOrbitalVertices } from "../physics/utils";
+import CustomEllipseCurve from "./CustomEllipseCurve";
+import { stateToKepler } from "../physics/spacecraft/lambert";
+import { getEllipse } from "../physics/utils";
 
 function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 export default class extends THREE.Object3D {
-  constructor(mass, textureLoader, segments) {
+  constructor(mass, textureLoader, segments, forAllMankind) {
     super();
 
     this.mass = mass;
+
+    this.forAllMankind = forAllMankind;
 
     this.name = this.mass.name;
     this.textureLoader = textureLoader;
@@ -19,6 +24,72 @@ export default class extends THREE.Object3D {
     this.trailVertices = 0;
 
     this.getMain();
+  }
+
+  addTrajectory() {
+    const trajectory = new CustomEllipseCurve(
+      0,
+      0,
+      200,
+      200,
+      0,
+      2 * Math.PI,
+      false,
+      0,
+      500,
+      this.mass.color
+    );
+
+    trajectory.name = "trajectory";
+
+    this.add(trajectory);
+  }
+
+  removeTrajectory() {
+    const trajectory = this.getObjectByName("trajectory");
+    trajectory && (trajectory.dispose() && this.remove(trajectory));
+  }
+
+  updateTrajectory(primary, mass, g, scale, rotatingReferenceFrame) {
+    const massOrbitalElements = stateToKepler(
+      {
+        x: primary.x - mass.x,
+        y: primary.y - mass.y,
+        z: primary.z - mass.z
+      },
+      {
+        x: primary.vx - mass.vx,
+        y: primary.vy - mass.vy,
+        z: primary.vz - mass.vz
+      },
+      g * primary.m
+    );
+
+    const a = massOrbitalElements.a;
+    const e = massOrbitalElements.e;
+    const w = massOrbitalElements.argP * (180 / Math.PI);
+    const i = massOrbitalElements.i * (180 / Math.PI);
+    const o = massOrbitalElements.lAn * (180 / Math.PI);
+
+    const ellipse = getEllipse(a, e);
+
+    const trajectory = this.getObjectByName("trajectory");
+
+    trajectory.position.z = (rotatingReferenceFrame.z - primary.z) * scale;
+
+    trajectory.update(
+      (rotatingReferenceFrame.x - primary.x + ellipse.focus) * scale,
+      (rotatingReferenceFrame.y - primary.y) * scale,
+      ellipse.xRadius * scale,
+      ellipse.yRadius * scale,
+      0,
+      2 * Math.PI,
+      false,
+      0,
+      { x: i, y: o, z: w - 180 }
+    );
+
+    return this;
   }
 
   getMain() {
@@ -148,6 +219,8 @@ export default class extends THREE.Object3D {
 
     this.add(mesh);
 
+    this.forAllMankind && this.addTrajectory();
+
     this.mass.clouds && this.getClouds();
   }
 
@@ -267,6 +340,9 @@ export default class extends THREE.Object3D {
       main.material.dispose();
       this.remove(main);
     }
+
+    const trajectory = this.getObjectByName("trajectory");
+    trajectory && trajectory.dispose();
 
     this.removeTrail();
   }

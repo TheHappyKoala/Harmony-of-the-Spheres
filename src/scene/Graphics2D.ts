@@ -82,7 +82,7 @@ export default class {
   }
 }
 
-export const drawBaryCenterLabel = (
+export const drawMarkerLabel = (
   ctx: CanvasRenderingContext2D,
   x: number,
   y: number,
