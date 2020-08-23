@@ -1,5 +1,10 @@
 import getIntegrator from "../integrators";
-import { planFlight } from "./lambert";
+import {
+  planFlight,
+  propagateOrbitalElements,
+  keplerToState,
+  stateToKepler
+} from "./lambert";
 import { getObjFromArrByKeyValuePair } from "../../utils";
 import { getOrbit } from "../../physics/utils";
 
@@ -77,6 +82,32 @@ export default function worker(self) {
     const [spacecraft] = system.masses;
     let targetMass = getObjFromArrByKeyValuePair(system.masses, "name", target);
 
+    let primaryM = getObjFromArrByKeyValuePair(system.masses, "name", primary)
+      .m;
+
+    const pm = getObjFromArrByKeyValuePair(system.masses, "name", primary);
+
+    const orbElem1 = stateToKepler(
+      {
+        x: targetMass.x,
+        y: targetMass.y,
+        z: targetMass.z
+      },
+      {
+        x: targetMass.vx,
+        y: targetMass.vy,
+        z: targetMass.vz
+      },
+      39.5 * primaryM
+    );
+
+    const orbElem2 = propagateOrbitalElements(
+      orbElem1,
+      arrival,
+      39.5 * primaryM
+    );
+    const newStateVectors = keplerToState(orbElem2, 39.5 * primaryM);
+
     //To speed things up, don't include masses that don't significantly perturb our target
 
     for (let i = 0; i < system.masses.length; i++) {
@@ -87,9 +118,6 @@ export default function worker(self) {
         i--;
       }
     }
-
-    let primaryM = getObjFromArrByKeyValuePair(system.masses, "name", primary)
-      .m;
 
     const trajectoryGenerator = () => {
       return new Promise(resolve => {
@@ -104,6 +132,15 @@ export default function worker(self) {
             );
 
             clearInterval(interval);
+
+            console.log(
+              JSON.stringify(targetMass),
+              JSON.stringify(newStateVectors.posRel)
+            );
+
+            targetMass.x = newStateVectors.posRel.x;
+            targetMass.y = newStateVectors.posRel.y;
+            targetMass.z = newStateVectors.posRel.z;
 
             resolve(
               planFlight(
