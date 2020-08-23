@@ -1,7 +1,7 @@
 import React, { ReactElement, memo } from "react";
 
 interface FacebookShareProps {
-  shareUrl: string;
+  shareUrl: string | boolean;
   callToAction?: string;
   cssClassName: string;
 }

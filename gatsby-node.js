@@ -237,7 +237,7 @@ exports.createPages = async ({ actions, graphql }) => {
       path: `/${_.kebabCase(node.type)}/${_.kebabCase(node.name)}`,
       component:
         node.type !== "Starship"
-          ? require.resolve(`./src/templates/Scenario.tsx`)
+          ? require.resolve(`./src/templates/SimulatorContainer.tsx`)
           : require.resolve(`./src/templates/StarshipScenario.tsx`),
       context: {
         id: node.id

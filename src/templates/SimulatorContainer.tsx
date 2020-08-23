@@ -3,7 +3,7 @@ import { AppState } from "../state/reducers";
 import { graphql } from "gatsby";
 import { connect } from "react-redux";
 import * as scenarioActionCreators from "../state/creators/scenario";
-import Simulator from "../components/Simulator";
+import Simulator from "../components/Simulator/Simulator";
 import Head from "../components/Head";
 
 interface ScenarioProps {
@@ -17,11 +17,13 @@ interface ScenarioProps {
   deleteMass: typeof scenarioActionCreators.deleteMass;
   addMass: typeof scenarioActionCreators.addMass;
   resetScenario: typeof scenarioActionCreators.resetScenario;
+  location: {
+    pathname: string;
+  }
 }
 
 const Scenario = ({
   setScenario,
-  resetScenario,
   modifyScenarioProperty,
   modifyMassProperty,
   addMass,
@@ -45,7 +47,6 @@ const Scenario = ({
         bodyCssClass="body-with-overflow-hidden"
       />
       <Simulator
-        resetScenario={resetScenario}
         modifyScenarioProperty={modifyScenarioProperty}
         modifyMassProperty={modifyMassProperty}
         addMass={addMass}
@@ -64,7 +65,6 @@ const mapStateToProps = (state: AppState) => ({
 
 const mapDispatchToProps = {
   setScenario: scenarioActionCreators.setScenario,
-  resetScenario: scenarioActionCreators.resetScenario,
   modifyScenarioProperty: scenarioActionCreators.modifyScenarioProperty,
   modifyMassProperty: scenarioActionCreators.modifyMassProperty,
   addMass: scenarioActionCreators.addMass,

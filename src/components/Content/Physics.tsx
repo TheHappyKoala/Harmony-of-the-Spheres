@@ -10,7 +10,7 @@ interface PhysicsProps {
   modifyScenarioProperty: typeof modifyScenarioProperty;
   masses: MassType[];
   integrator: string;
-  useBarnesHut: boolean;
+  useBarnesHut?: boolean;
   systemBarycenter: boolean;
   collisions: boolean;
   dt: number;

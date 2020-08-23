@@ -141,6 +141,7 @@ interface ScenarioState {
   referenceOrbits: boolean;
   logarithmicDepthBuffer: boolean;
   rotatingReferenceFrame: string;
+  cameraPosition: string;
   cameraFocus: string;
   isMassBeingAdded: boolean;
   primary: string;
@@ -161,6 +162,8 @@ interface ScenarioState {
     p: { x: number; y: number; z: number; t: number };
   };
   soi?: string;
+  scenarioDescription?: string;
+  scenarioWikiUrl?: string;
 }
 
 interface Shape {
