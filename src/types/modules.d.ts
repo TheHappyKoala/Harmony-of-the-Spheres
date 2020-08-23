@@ -1,7 +1,8 @@
 declare module "react-redux";
 declare module "react-addons-css-transition-group";
 declare module "colladaloader2asmodule";
-declare module 'lodash/kebabCase';
+declare module "lodash/kebabCase";
+declare module "webworkify-webpack";
 declare const DEFAULT_SCENARIO: {
   name: string;
   fileName: string;

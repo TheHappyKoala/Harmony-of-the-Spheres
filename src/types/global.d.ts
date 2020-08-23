@@ -7,10 +7,10 @@ interface Vector {
 interface MassType extends Vector {
   name?: string;
   color?: string;
-  m?: number;
-  vx?: number;
-  vy?: number;
-  vz?: number;
+  m: number;
+  vx: number;
+  vy: number;
+  vz: number;
   [key: string]: any;
 }
 
@@ -64,10 +64,10 @@ interface SOITree {
   name: string;
   SOIradius: number;
   children: SOITree[];
-  m?: number;
-  x?: number;
-  y?: number;
-  z?: number;
+  m: number;
+  x: number;
+  y: number;
+  z: number;
 }
 
 interface ScenarioSeed {
