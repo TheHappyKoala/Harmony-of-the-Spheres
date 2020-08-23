@@ -89,7 +89,7 @@
       "color": "#834B9F",
       "clouds": true,
       "publishingDate": null,
-      "customCameraPosition": { "x": -5, "y": 0, "z": 0}
+      "customCameraPosition": { "x": -5, "y": 0, "z": 0 }
     },
     {
       "name": "GJ 357-c",

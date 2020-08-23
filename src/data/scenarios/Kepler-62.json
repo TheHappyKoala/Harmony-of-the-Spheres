@@ -32,7 +32,7 @@
   "isLoaded": false,
   "playing": false,
   "integrator": "PEFRL",
-  "customCameraToBodyDistanceFactor": false, 
+  "customCameraToBodyDistanceFactor": false,
   "barycenterZ": 4523400,
   "elapsedTime": 0,
   "useBarnesHut": false,

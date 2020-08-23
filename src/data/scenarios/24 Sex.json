@@ -8,7 +8,7 @@
   "particlesFun": false,
   "type": "Exoplanets",
   "pl_pnum": 2,
-  "g": 39.5, 
+  "g": 39.5,
   "dt": 0.0008,
   "distMax": 50,
   "distMin": -50,
