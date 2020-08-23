@@ -90,6 +90,7 @@ interface ExoplanetScenarioSeed {
 
 interface ScenarioState {
   name: string;
+  description: string;
   type: string;
   exoPlanetArchive?: boolean;
   forAllMankind?: boolean;
@@ -115,6 +116,7 @@ interface ScenarioState {
   collisions: boolean;
   particles: {
     max: number;
+    number: number;
     size: number;
     rings: {
       primary: string;
@@ -124,7 +126,8 @@ interface ScenarioState {
       maxD: number;
     }[];
   };
-  maximumDistance: number;
+  maximumDistance: { name: string; value: number };
+  distanceStep: { name: string; value: number };
   distMax: number;
   distMin: number;
   velMin: number;
@@ -146,12 +149,17 @@ interface ScenarioState {
   w: number;
   i: number;
   o: number;
-  trajectoryTarget?: string;
-  trajectoryTargetArrival?: number;
-  trajectoryDepartureVelocity?: number;
-  trajectoryArrivalVelocity?: number;
-  trajectoryRelativeTo?: string;
-  trajectoryRendevouz?: any;
+  trajectoryTarget: string;
+  trajectoryTargetArrival: number;
+  trajectoryDepartureVelocity: number;
+  trajectoryArrivalVelocity: number;
+  trajectoryRelativeTo: string;
+  trajectoryRendevouz: {
+    x: number;
+    y: number;
+    z: number;
+    p: { x: number; y: number; z: number; t: number };
+  };
   soi?: string;
 }
 
@@ -166,4 +174,19 @@ interface Shape {
   verticalDispersion: number;
   customPrimaryData?: MassType;
   hsl?: [number, number, number];
+}
+
+interface Window {
+  PREVIOUS_PATH: string | null;
+}
+
+interface OrbitalElements {
+  a: number; // semi-major axis
+  e: number; // eccentricity
+  i: number; // inclination
+  argP: number; // argument of periapsis
+  lAn: number; // longitude of ascending node
+  trueAnom: number; // true anomaly
+  eccAnom: number; // eccentric anomaly
+  meanAnom: number; // mean anomaly
 }

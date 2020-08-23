@@ -1,0 +1,42 @@
+@import '../Simulator/App.less';
+
+.toggle {
+  display: block;
+  background-color: @primary;
+  padding: 10px 16px 10px 12px;
+  width: 100%;
+  position: relative;
+  border: @border;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.toggle span {
+  width: 30px;
+  height: 100%;
+  background-color: @primary;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 14px;
+  z-index: 1;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  border-left: @border;
+}
+
+.toggle span:before {
+  content: '';
+  line-height: 35px;
+}
+
+.toggle input[type='checkbox'] {
+  opacity: 0;
+  position: absolute;
+}
+
+.toggle input[type='checkbox']:checked + span:before {
+  content: '\2713';
+}
