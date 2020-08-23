@@ -1,12 +1,16 @@
-.cockpit-dashboard {
-    position: absolute;
-    z-index: 400;
-    bottom: 0;
-    left: 100px;
-    width: 500px;
-    color: #eee;
-    padding-bottom: 20px;
-  }
+.button.trajectory {
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  right: 5px;
+}
+
+.button.trajectory-planner {
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  left: 5px;
+}
   
   .spaceflight-disclaimer {
     font-weight: bold;
@@ -14,67 +18,61 @@
     color: red;
   }
   
-  .cockpit-dashboard-grid {
-    display: grid;
-    grid-template-columns: 240px 240px;
-    justify-content: space-evenly;
-  }
-  
-  .cockpit-dashboard-tabs {
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  
-  .cockpit-dashboard-tabs ul {
-    font-family: 'Orbitron', sans-serif;
-  }
-  
-  .cockpit-dashboard-tabs ul .button {
-    border: none;
-    padding: 5px;
-  }
-  
-  .cockpit-dashboard-tabs i {
-    margin-bottom: 12px;
-  }
-  
-  .box.cockpit-dashboard-tabs-pane {
-    height: 320px;
-    border-top: none;
-  }
-  
-  .trajectory-table {
-    border-collapse: collapse;
-    width: 90%;
-  }
-  
-  .toggle-cockpit {
-    grid-column: 1 / span 2;
-    margin-top: 7px;
-  }
-  
   .trajectory-table > tbody > tr > td {
-    width: 20%;
-    padding: 10px;
+    width: fit-content;
+    padding: 0 15px;
+    padding-right: 0;
     overflow: hidden;
+  }
+
+  .trajectory-table > tbody > tr > td:first-child {
+    padding-left: 0;
+  }
+
+  .trajectory-table > tbody > tr > td > i {
+    font-style: italic; 
   }
   
   .trajectory-table > tr:nth-child(even) {
     background: transparent;
   }
-  .trajectory-table > tr:nth-child(odd) {
-    background: #191919;
-  }
   
   .spacecraft-stats {
-    background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid #545454;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .cockpit-dashboard .button {
     padding: 10px;
     border: 1px solid #545454;
+  }
+
+  .trajectory-modal-wrapper {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #545454;
+    border-left: none;
+    overflow-x: hidden;
+  }
+
+  .statistics-modal-wrapper {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 160px;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #545454;
+    border-right: none;
   }
