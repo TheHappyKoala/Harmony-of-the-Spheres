@@ -153,6 +153,8 @@ export default class extends Object3D {
   rotateAroundFocus(axisRotations: Vector): void {
     const ellipse = this.getObjectByName("CustomEllipse");
 
+    if (!ellipse) return;
+
     ellipse.rotation.z = degreesToRadians(axisRotations.z);
     ellipse.rotation.x = degreesToRadians(axisRotations.x);
 
