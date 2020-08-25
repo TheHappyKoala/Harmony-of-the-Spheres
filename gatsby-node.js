@@ -59,7 +59,8 @@ exports.createPages = async ({ actions, graphql }) => {
         categoryDescription:
           "Dozens of potentially habitable exoplanets have been discovered. Simulate and learn about all systems that potentially contain at least one habitable planet.",
         currentPageName: "Potentially Habitable Worlds",
-        type: "Exoplanets"
+        type: "Exoplanets",
+        pageType: "navigation"
       }
     });
   });
@@ -87,7 +88,8 @@ exports.createPages = async ({ actions, graphql }) => {
           "Thousands of stars with exoplanets orbiting around them have been discovered. Simulate and discover the most remarkable of these exoplanetary systems.",
         currentPage: i + 1,
         currentPageName: "Hall of Fame",
-        type: "Exoplanets"
+        type: "Exoplanets",
+        pageType: "navigation"
       }
     });
   });
@@ -106,7 +108,8 @@ exports.createPages = async ({ actions, graphql }) => {
           "3D Gravity Simulator. Simulate the solar system, exoplanets and even colliding galaxies. Add, delete and modify planets, and change the laws of physics.",
         numPages,
         currentPage: i + 1,
-        currentPageName: "All"
+        currentPageName: "All",
+        pageType: "main"
       }
     });
   });
@@ -162,7 +165,8 @@ exports.createPages = async ({ actions, graphql }) => {
           skip: i * scenariosPerPage,
           numPages,
           currentPage: i + 1,
-          currentPageName: fieldValue
+          currentPageName: fieldValue,
+          pageType: "navigation"
         }
       });
     });
@@ -225,7 +229,8 @@ exports.createPages = async ({ actions, graphql }) => {
               ).description,
               numPages,
               currentPage: i + 1,
-              currentPageName: fieldValue
+              currentPageName: fieldValue,
+              pageType: "navigation"
             }
           });
       });
@@ -240,7 +245,8 @@ exports.createPages = async ({ actions, graphql }) => {
           ? require.resolve(`./src/templates/SimulatorContainer.tsx`)
           : require.resolve(`./src/templates/StarshipScenario.tsx`),
       context: {
-        id: node.id
+        id: node.id,
+        pageType: "simulator"
       }
     })
   );

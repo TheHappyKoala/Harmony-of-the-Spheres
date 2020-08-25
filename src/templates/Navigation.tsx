@@ -45,6 +45,7 @@ interface IndexProps {
     pagePath: string;
     categoryDescription: string;
     type: string;
+    pageType: string;
   };
   location: any;
 }
@@ -63,6 +64,7 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
         pageTitle={pageContext.currentPageName}
         pageDescription={pageContext.categoryDescription}
         location={location}
+        pageType={pageContext.pageType}
         image={`https://www.gravitysimulator.org/images/${pageContext.currentPageName}.jpg`}
       />
       <section className="scenarios-wrapper">

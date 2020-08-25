@@ -17,9 +17,12 @@ interface ScenarioProps {
   deleteMass: typeof scenarioActionCreators.deleteMass;
   addMass: typeof scenarioActionCreators.addMass;
   resetScenario: typeof scenarioActionCreators.resetScenario;
+  pageContext: {
+    pageType: string;
+  };
   location: {
     pathname: string;
-  }
+  };
 }
 
 const Scenario = ({
@@ -30,6 +33,7 @@ const Scenario = ({
   deleteMass,
   data,
   scenario,
+  pageContext,
   location
 }: ScenarioProps): ReactElement => {
   const scenarioFromData = data.scenariosJson;
@@ -44,6 +48,7 @@ const Scenario = ({
         pageTitle={scenarioFromData.name}
         pageDescription={scenarioFromData.description}
         pathName={location.pathname}
+        pageType={pageContext.pageType}
         bodyCssClass="body-with-overflow-hidden"
       />
       <Simulator

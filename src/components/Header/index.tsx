@@ -9,12 +9,15 @@ import "./Header.less";
 interface HeaderProps {
   pageTitle: string;
   pageDescription: string;
+  pageType: string;
+  image?: string;
   location: any;
 }
 
 export default ({
   pageTitle,
   pageDescription,
+  pageType,
   location,
   image
 }: HeaderProps): ReactElement => (
@@ -22,6 +25,7 @@ export default ({
     <Head
       pageTitle={pageTitle}
       pageDescription={pageDescription}
+      pageType={pageType}
       image={image}
       pathName={location.pathname}
     />
