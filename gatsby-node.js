@@ -144,7 +144,7 @@ exports.createPages = async ({ actions, graphql }) => {
       {
         name: "Starship",
         description:
-          "3D gravity simulations of spacecraft and their trajectories and orbits. Discover spacecraft exploring the Moon, Mars, Jupiter, various asteroids and beyond."
+          "Take control of a spacecraft and visit whichever planet, moon, asteroid or comet you like."
       }
     ];
 
