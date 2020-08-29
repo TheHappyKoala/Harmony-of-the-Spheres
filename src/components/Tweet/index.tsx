@@ -2,7 +2,7 @@ import React, { ReactElement, memo } from "react";
 
 interface TweetProps {
   shareText: string;
-  shareUrl: string;
+  shareUrl: string | boolean;
   callToAction?: string;
   cssClassName: string;
   hashtags: string;

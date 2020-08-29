@@ -7,10 +7,10 @@ interface Vector {
 interface MassType extends Vector {
   name?: string;
   color?: string;
-  m?: number;
-  vx?: number;
-  vy?: number;
-  vz?: number;
+  m: number;
+  vx: number;
+  vy: number;
+  vz: number;
   [key: string]: any;
 }
 
@@ -64,10 +64,10 @@ interface SOITree {
   name: string;
   SOIradius: number;
   children: SOITree[];
-  m?: number;
-  x?: number;
-  y?: number;
-  z?: number;
+  m: number;
+  x: number;
+  y: number;
+  z: number;
 }
 
 interface ScenarioSeed {
@@ -141,6 +141,7 @@ interface ScenarioState {
   referenceOrbits: boolean;
   logarithmicDepthBuffer: boolean;
   rotatingReferenceFrame: string;
+  cameraPosition: string;
   cameraFocus: string;
   isMassBeingAdded: boolean;
   primary: string;
@@ -161,6 +162,8 @@ interface ScenarioState {
     p: { x: number; y: number; z: number; t: number };
   };
   soi?: string;
+  scenarioDescription?: string;
+  scenarioWikiUrl?: string;
 }
 
 interface Shape {

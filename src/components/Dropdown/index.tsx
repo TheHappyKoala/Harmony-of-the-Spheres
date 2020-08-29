@@ -1,4 +1,5 @@
 import React, { memo, ReactElement, useState, useRef, ReactNode } from "react";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import "./Dropdown.less";
 
 interface DropdownProps {
@@ -44,13 +45,21 @@ export default memo(
           className={selectedOptionCssClassName}
         >
           {selectedOption}
-          <i className={"fa fa-chevron-down"} />
+          <i
+            className={`fa fa-chevron-down ${options ? "rotated-chevron" : ""}`}
+          />
         </div>
-        {options && (
-          <div ref={optionsWrapper} className={optionsWrapperCssClass}>
-            {children}
-          </div>
-        )}
+        <ReactCSSTransitionGroup
+          transitionName="fall"
+          transitionEnterTimeout={150}
+          transitionLeaveTimeout={150}
+        >
+          {options && (
+            <div ref={optionsWrapper} className={optionsWrapperCssClass}>
+              {children}
+            </div>
+          )}
+        </ReactCSSTransitionGroup>
       </div>
     );
   },

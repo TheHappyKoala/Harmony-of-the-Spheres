@@ -43,13 +43,15 @@ interface IndexProps {
     currentPage: number;
     currentPageName: string;
     pagePath: string;
+    type: string;
+    categoryDescription: string;
+    pageType: string;
   };
   location: any;
 }
 
 export default ({ data, pageContext, location }: IndexProps): ReactElement => {
   const categories = data.categories.group;
-  const discoveryFacilities = data.discoveryFacilities.discoveryFacilities;
   const scenarios = data.scenarios.edges;
 
   return (
@@ -62,6 +64,7 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
         pageTitle={pageContext.currentPageName}
         pageDescription={pageContext.categoryDescription}
         location={location}
+        pageType={pageContext.pageType}
         image={`https://www.gravitysimulator.org/images/${pageContext.currentPageName}.jpg`}
       />
       <section className="scenarios-wrapper">
@@ -208,11 +211,6 @@ export const pageQuery = graphql`
     }
     categories: allScenariosJson {
       group(field: type) {
-        fieldValue
-      }
-    }
-    discoveryFacilities: allScenariosJson {
-      discoveryFacilities: group(field: discoveryFacility) {
         fieldValue
       }
     }

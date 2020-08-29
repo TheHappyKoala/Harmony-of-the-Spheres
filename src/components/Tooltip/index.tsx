@@ -22,48 +22,42 @@ export default memo(
       top: number;
       left: number;
     }>({ top: 0, left: 0 });
-    const tooltipElement = useRef(null);
-    const tooltipTrigger = useRef(null);
+    const tooltipElement = useRef<HTMLDivElement>(null);
+    const tooltipTrigger = useRef<HTMLDivElement>(null);
 
     const handleMouseLeave = (): void => setDisplayTooltip(!displayTooltip);
 
     useEffect(() => {
-      if (
-        tooltipTrigger != null &&
-        tooltipElement != null &&
-        tooltipTrigger.current &&
-        tooltipElement.current
-      ) {
-        const trigger = tooltipTrigger.current;
+      const trigger = tooltipTrigger.current;
+      const tip = tooltipElement.current;
 
-        let left;
+      if (tip === null || trigger === null) return;
 
-        const leftOffset = trigger.offsetLeft;
-        const targetOffsetWidth = trigger.offsetWidth;
-        const targetOffsetWidthHalf = targetOffsetWidth / 2;
+      let left;
 
-        switch (position) {
-          case "right":
-            left = leftOffset + targetOffsetWidth + targetOffsetWidthHalf;
+      const leftOffset = trigger.offsetLeft;
+      const targetOffsetWidth = trigger.offsetWidth;
+      const targetOffsetWidthHalf = targetOffsetWidth / 2;
 
-            break;
-          case "left":
-            left =
-              leftOffset -
-              tooltipElement.current.clientWidth -
-              targetOffsetWidthHalf;
+      switch (position) {
+        case "right":
+          left = leftOffset + targetOffsetWidth + targetOffsetWidthHalf;
 
-            break;
-        }
+          break;
+        case "left":
+          left = leftOffset - tip.clientWidth - targetOffsetWidthHalf;
 
-        setTooltipPosition({
-          top:
-            trigger.offsetTop -
-            tooltipElement.current.clientHeight / 2 +
-            trigger.clientHeight / 2,
-          left
-        });
+          break;
+
+        default:
+          left = 0;
       }
+
+      setTooltipPosition({
+        top:
+          trigger.offsetTop - tip.clientHeight / 2 + trigger.clientHeight / 2,
+        left
+      });
     }, [displayTooltip]);
 
     return (

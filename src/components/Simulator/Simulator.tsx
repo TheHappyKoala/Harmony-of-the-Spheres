@@ -22,9 +22,8 @@ interface SimulatorProps {
   modifyMassProperty: typeof scenarioActionCreators.modifyMassProperty;
   deleteMass: typeof scenarioActionCreators.deleteMass;
   addMass: typeof scenarioActionCreators.addMass;
-  resetScenario: typeof scenarioActionCreators.resetScenario;
-  getTrajectory: typeof scenarioActionCreators.getTrajectory;
-  app: any;
+  description?: string;
+  scenarioWikiUrl?: string;
 }
 
 export default ({
@@ -33,7 +32,6 @@ export default ({
   deleteMass,
   addMass,
   scenario,
-  app,
   description,
   scenarioWikiUrl
 }: SimulatorProps): ReactElement => {

@@ -6,17 +6,21 @@ interface HeadProps {
   pageTitle: string;
   pageDescription: string;
   pathName: string;
-  bodyCssClass: string;
+  bodyCssClass?: string;
+  pageType: string;
+  image?: string;
 }
 
 export default ({
   pageTitle,
   pageDescription,
+  pageType,
   pathName,
   bodyCssClass,
   image
 }: HeadProps): ReactElement => {
   const siteMeta = useSiteMeta();
+  const imageMetaContent = image ? image : `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`;
 
   return (
     <Helmet>
@@ -31,11 +35,12 @@ export default ({
         gtag('config', 'UA-153406767-1');
       `}</script>
       <html lang={siteMeta.lang} />
-      <title>{`${siteMeta.title} | ${
-        image ? `${pageTitle} Scenarios` : pageTitle
-      }`}</title>
-      <meta name="description" content={pageDescription} />
 
+      <title>{`${siteMeta.title} | ${
+        pageType !== "simulator" ? `${pageTitle} Scenarios` : pageTitle
+      }`}</title>
+
+      <meta name="description" content={pageDescription} />
       <meta name="author" content={siteMeta.author} />
       <meta property="og:title" content={`${siteMeta.title} | ${pageTitle}`} />
       <meta property="og:type" content="website" />
@@ -46,11 +51,7 @@ export default ({
       <meta property="og:description" content={pageDescription} />
       <meta
         property="og:image"
-        content={
-          image
-            ? image
-            : `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`
-        }
+        content={imageMetaContent}
       />
 
       <meta name="twitter:card" content="summary" />
@@ -59,14 +60,10 @@ export default ({
       <meta name="twitter:description" content={pageDescription} />
       <meta
         name="twitter:image"
-        content={
-          image
-            ? image
-            : `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`
-        }
+        content={imageMetaContent}
       />
 
-      {pathName === "/" && image ? (
+      {pageType === "main" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
@@ -77,7 +74,9 @@ export default ({
             description: pageDescription
           })}
         </script>
-      ) : (
+      )}
+      
+      {pageType === "category" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
@@ -89,12 +88,11 @@ export default ({
         </script>
       )}
 
-      {!image && (
+      {pageType === "simulator" && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
             "@type": "SoftwareApplication",
-            browserRequirements: "Requires HTML5 support",
             applicationCategory: "GameApplication",
             applicationSubCategory: "Science",
             name: pageTitle,
@@ -120,6 +118,7 @@ export default ({
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
+      
       <body className={bodyCssClass ? bodyCssClass : ""} />
     </Helmet>
   );

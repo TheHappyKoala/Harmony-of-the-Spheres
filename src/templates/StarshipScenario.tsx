@@ -11,6 +11,9 @@ interface ScenarioProps {
     scenariosJson: ScenarioState;
   };
   scenario: ScenarioState;
+  pageContext: {
+    pageType: string;
+  };
   setScenario: typeof scenarioActionCreators.setScenario;
   getTrajectory: typeof scenarioActionCreators.getTrajectory;
   modifyScenarioProperty: typeof scenarioActionCreators.modifyScenarioProperty;
@@ -24,6 +27,7 @@ const Scenario = ({
   getTrajectory,
   data,
   scenario,
+  pageContext,
   location
 }: ScenarioProps): ReactElement => {
   const scenarioFromData = data.scenariosJson;
@@ -38,6 +42,7 @@ const Scenario = ({
         pageTitle={scenarioFromData.name}
         pageDescription={scenarioFromData.description}
         pathName={location.pathname}
+        pageType={pageContext.pageType}
         bodyCssClass="body-with-overflow-hidden"
       />
       <StarshipSimulator
