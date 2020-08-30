@@ -69,7 +69,7 @@
   "o": 0,
   "masses": [
     {
-      "name": "Apollo",
+      "name": "Starship",
       "x": 0.4240447232851519,
       "y": -0.9247715402118077,
       "z": -0.0001129301018611092,
@@ -83,7 +83,7 @@
       "tilt": 0,
       "bump": false,
       "color": "pink",
-      "texture": "Apollo",
+      "texture": "Starship",
       "spacecraft": true,
       "luminosity": 0,
       "temperature": 0

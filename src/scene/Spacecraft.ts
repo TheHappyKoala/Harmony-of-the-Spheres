@@ -4,6 +4,7 @@ import { stateToKepler } from "../physics/spacecraft/lambert";
 import { getEllipse } from "../physics/utils";
 import { Object3D, Vector3 } from "three";
 import ColladaLoader from "colladaloader2asmodule";
+import { degreesToRadians } from "../physics/utils";
 
 export default class extends MassManifestation {
   constructor(mass: MassType) {
@@ -113,6 +114,8 @@ export default class extends MassManifestation {
           this.mass.radius
         );
 
+        collada.scene.rotateY(degreesToRadians(90));
+
         container.add(collada.scene);
       }
     );
@@ -125,3 +128,4 @@ export default class extends MassManifestation {
     trajectory.dispose();
   }
 }
+ 
