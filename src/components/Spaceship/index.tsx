@@ -17,6 +17,7 @@ import {
 import { getObjFromArrByKeyValuePair } from "../../utils";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import Modal from "../Modal";
+import Tabs from "../Tabs";
 
 import AttitudeControls from "./AttitudeControls";
 
@@ -222,63 +223,78 @@ export default ({
             callback={() => setGUI({ ...gui, trajectory: false })}
             modalWrapperCssClass="trajectory-modal-wrapper"
           >
-            <h3 className="cockpit-dashboard-header">Trajectory Planner</h3>
-            <label>
-              Target{" "}
-              <Tooltip
-                position="left"
-                content="The celestial object that you want to travel to."
-              />
-            </label>
-            <Dropdown
-              selectedOption={scenario.trajectoryTarget}
-              dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-              selectedOptionCssClassName="selected-option cockpit-element"
-              optionsWrapperCssClass="options"
+            <Tabs
+              initTab={}
+              tabsWrapperClassName=""
+              tabsContentClassName=""
+              transition={{
+                name: "slide",
+                enterTimeout: 250,
+                leaveTimeout: 250
+              }}
             >
-              {scenario.masses.map((mass: MassType) => (
-                <div
-                  data-name={mass.name}
-                  key={mass.name}
-                  onClick={() =>
-                    modifyScenarioProperty({
-                      key: "trajectoryTarget",
-                      value: mass.name
-                    })
+              <div data-label="Trajectory">
+                <h3 className="cockpit-dashboard-header">Trajectory Planner</h3>
+                <label>
+                  Target{" "}
+                  <Tooltip
+                    position="left"
+                    content="The celestial object that you want to travel to."
+                  />
+                </label>
+                <Dropdown
+                  selectedOption={scenario.trajectoryTarget}
+                  dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+                  selectedOptionCssClassName="selected-option cockpit-element"
+                  optionsWrapperCssClass="options"
+                >
+                  {scenario.masses.map((mass: MassType) => (
+                    <div
+                      data-name={mass.name}
+                      key={mass.name}
+                      onClick={() =>
+                        modifyScenarioProperty({
+                          key: "trajectoryTarget",
+                          value: mass.name
+                        })
+                      }
+                    >
+                      {mass.name}
+                    </div>
+                  ))}
+                </Dropdown>
+                <label className="top">
+                  Time of Flight
+                  <Tooltip
+                    position="left"
+                    content="The time when your spacecraft will rendevouz with its target. This quantity always has a minimum value of the time that has elapsed in the simulation, so if one year has passed and you want to get to Mars in half a year, you set a value of 1.5."
+                  />
+                </label>
+                <Slider
+                  payload={{ key: "trajectoryTargetArrival" }}
+                  value={scenario.trajectoryTargetArrival}
+                  callback={modifyScenarioProperty}
+                  max={scenario.maxTOF}
+                  min={scenario.minTOF}
+                  step={(scenario.maxTOF - scenario.minTOF) / 100}
+                />
+                <Button
+                  cssClassName="button box top"
+                  callback={() =>
+                    spacecraftMass.spacecraft &&
+                    getTrajectory(spacecraft.tree, spacecraft.currentSOI)
                   }
                 >
-                  {mass.name}
-                </div>
-              ))}
-            </Dropdown>
-            <label className="top">
-              Time of Flight
-              <Tooltip
-                position="left"
-                content="The time when your spacecraft will rendevouz with its target. This quantity always has a minimum value of the time that has elapsed in the simulation, so if one year has passed and you want to get to Mars in half a year, you set a value of 1.5."
-              />
-            </label>
-            <Slider
-              payload={{ key: "trajectoryTargetArrival" }}
-              value={scenario.trajectoryTargetArrival}
-              callback={modifyScenarioProperty}
-              max={scenario.maxTOF}
-              min={scenario.minTOF}
-              step={(scenario.maxTOF - scenario.minTOF) / 100}
-            />
-            <Button
-              cssClassName="button box top"
-              callback={() =>
-                spacecraftMass.spacecraft &&
-                getTrajectory(spacecraft.tree, spacecraft.currentSOI)
-              }
-            >
-              Set Trajectory
-            </Button>
-            <AttitudeControls
-              spacecraftDirections={scenario.spacecraftDirections}
-              modifyScenarioProperty={modifyScenarioProperty}
-            />
+                  Set Trajectory
+                </Button>
+              </div>
+              <div data-label="Attitude">
+                <AttitudeControls
+                  spacecraftDirections={scenario.spacecraftDirections}
+                  modifyScenarioProperty={modifyScenarioProperty}
+                />
+              </div>
+            </Tabs>
           </Modal>
         )}
       </ReactCSSTransitionGroup>
