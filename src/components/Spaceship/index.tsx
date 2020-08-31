@@ -224,7 +224,7 @@ export default ({
             modalWrapperCssClass="trajectory-modal-wrapper"
           >
             <Tabs
-              initTab={}
+              initTab={0}
               tabsWrapperClassName=""
               tabsContentClassName=""
               transition={{
