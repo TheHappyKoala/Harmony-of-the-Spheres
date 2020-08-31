@@ -18,6 +18,8 @@ import { getObjFromArrByKeyValuePair } from "../../utils";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import Modal from "../Modal";
 
+import AttitudeControls from "./AttitudeControls";
+
 //We could do this with the H3 class
 //But seems a bit excessive importing it just to get the magnitude of the velocity vector.
 
@@ -273,6 +275,10 @@ export default ({
             >
               Set Trajectory
             </Button>
+            <AttitudeControls
+              spacecraftDirections={scenario.spacecraftDirections}
+              modifyScenarioProperty={modifyScenarioProperty}
+            />
           </Modal>
         )}
       </ReactCSSTransitionGroup>

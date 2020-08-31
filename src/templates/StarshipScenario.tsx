@@ -163,6 +163,12 @@ export const pageQuery = graphql`
           maxD
         }
       }
+      spacecraftDirections {
+        up
+        down
+        right
+        left
+      }
       masses {
         name
         m
