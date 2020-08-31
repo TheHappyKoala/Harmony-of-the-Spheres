@@ -1,6 +1,7 @@
 import React, { ReactElement, useCallback } from "react";
 import IncrementButton from "../IncrementButton";
 import { modifyScenarioProperty } from "../../state/creators/scenario";
+import "./AttitudeControls.less";
 
 interface AttitudeControlsProps {
   modifyScenarioProperty: typeof modifyScenarioProperty;
@@ -61,7 +62,7 @@ export default ({
   return (
     <div className="attitude-controls-wrapper">
       <IncrementButton
-        cssClassName="attitude-controls-up"
+        cssClassName="attitude-controls up"
         timeout={50}
         value={spacecraftDirections.up}
         withValue={false}
@@ -71,7 +72,7 @@ export default ({
       </IncrementButton>
 
       <IncrementButton
-        cssClassName="attitude-controls-down"
+        cssClassName="attitude-controls down"
         timeout={50}
         value={spacecraftDirections.down}
         withValue={false}
@@ -81,7 +82,7 @@ export default ({
       </IncrementButton>
 
       <IncrementButton
-        cssClassName="attitude-controls-right"
+        cssClassName="attitude-controls right"
         timeout={50}
         value={spacecraftDirections.right}
         withValue={false}
@@ -91,7 +92,7 @@ export default ({
       </IncrementButton>
 
       <IncrementButton
-        cssClassName="attitude-controls-left"
+        cssClassName="attitude-controls left"
         timeout={50}
         value={spacecraftDirections.left}
         withValue={false}
