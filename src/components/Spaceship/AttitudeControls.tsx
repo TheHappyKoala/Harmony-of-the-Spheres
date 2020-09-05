@@ -6,10 +6,9 @@ import "./AttitudeControls.less";
 interface AttitudeControlsProps {
   modifyScenarioProperty: typeof modifyScenarioProperty;
   spacecraftDirections: {
-    up: number;
-    down: number;
-    right: number;
-    left: number;
+    x: number;
+    y: number;
+    z: number;
   };
 }
 
@@ -17,88 +16,128 @@ export default ({
   modifyScenarioProperty,
   spacecraftDirections
 }: AttitudeControlsProps): ReactElement => {
-  const incrementBy = 0.00001;
+  const incrementBy = 0.01;
 
-  const setUpDirection = useCallback(() => {
+  const incrementX = useCallback(() => {
     modifyScenarioProperty({
       key: "spacecraftDirections",
       value: {
         ...spacecraftDirections,
-        up: spacecraftDirections.up + incrementBy
+        x: spacecraftDirections.x + incrementBy
       }
     });
-  }, [spacecraftDirections.up]);
+  }, [spacecraftDirections.x, spacecraftDirections.y, spacecraftDirections.z]);
 
-  const setDownDirection = useCallback(() => {
+  const decrementX = useCallback(() => {
     modifyScenarioProperty({
       key: "spacecraftDirections",
       value: {
         ...spacecraftDirections,
-        down: spacecraftDirections.down + incrementBy
+        x: spacecraftDirections.x - incrementBy
       }
     });
-  }, [spacecraftDirections.down]);
+  }, [spacecraftDirections.x, spacecraftDirections.y, spacecraftDirections.z]);
 
-  const setRightDirection = useCallback(() => {
+  const incrementY = useCallback(() => {
     modifyScenarioProperty({
       key: "spacecraftDirections",
       value: {
         ...spacecraftDirections,
-        right: spacecraftDirections.right + incrementBy
+        y: spacecraftDirections.y + incrementBy
       }
     });
-  }, [spacecraftDirections.right]);
+  }, [spacecraftDirections.x, spacecraftDirections.y, spacecraftDirections.z]);
 
-  const setLeftDirection = useCallback(() => {
+  const decrementY = useCallback(() => {
     modifyScenarioProperty({
       key: "spacecraftDirections",
       value: {
         ...spacecraftDirections,
-        left: spacecraftDirections.left + incrementBy
+        y: spacecraftDirections.y - incrementBy
       }
     });
-  }, [spacecraftDirections.left]);
+  }, [spacecraftDirections.x, spacecraftDirections.y, spacecraftDirections.z]);
+
+  const incrementZ = useCallback(() => {
+    modifyScenarioProperty({
+      key: "spacecraftDirections",
+      value: {
+        ...spacecraftDirections,
+        z: spacecraftDirections.z + incrementBy
+      }
+    });
+  }, [spacecraftDirections.x, spacecraftDirections.y, spacecraftDirections.z]);
+
+  const decrementZ = useCallback(() => {
+    modifyScenarioProperty({
+      key: "spacecraftDirections",
+      value: {
+        ...spacecraftDirections,
+        z: spacecraftDirections.z - incrementBy
+      }
+    });
+  }, [spacecraftDirections.x, spacecraftDirections.y, spacecraftDirections.z]);
 
   return (
     <div className="attitude-controls-wrapper">
       <IncrementButton
-        cssClassName="attitude-controls up"
-        timeout={50}
-        value={spacecraftDirections.up}
+        cssClassName="attitude-controls x-increment"
+        timeout={16}
+        value={spacecraftDirections.x}
         withValue={false}
-        callback={setUpDirection}
+        callback={incrementX}
       >
         <i className="fas fa-caret-up" />
       </IncrementButton>
 
       <IncrementButton
-        cssClassName="attitude-controls down"
-        timeout={50}
-        value={spacecraftDirections.down}
+        cssClassName="attitude-controls x-decrement"
+        timeout={16}
+        value={spacecraftDirections.x}
         withValue={false}
-        callback={setDownDirection}
+        callback={decrementX}
       >
         <i className="fas fa-caret-down" />
       </IncrementButton>
 
       <IncrementButton
-        cssClassName="attitude-controls right"
-        timeout={50}
-        value={spacecraftDirections.right}
+        cssClassName="attitude-controls y-increment"
+        timeout={16}
+        value={spacecraftDirections.y}
         withValue={false}
-        callback={setRightDirection}
+        callback={incrementY}
       >
         <i className="fas fa-caret-right" />
       </IncrementButton>
 
       <IncrementButton
-        cssClassName="attitude-controls left"
-        timeout={50}
-        value={spacecraftDirections.left}
+        cssClassName="attitude-controls y-decrement"
+        timeout={16}
+        value={spacecraftDirections.y}
         withValue={false}
-        callback={setLeftDirection}
+        callback={decrementY}
       >
         <i className="fas fa-caret-left" />
+      </IncrementButton>
+
+      <IncrementButton
+        cssClassName="attitude-controls z-decrement"
+        timeout={16}
+        value={spacecraftDirections.z}
+        withValue={false}
+        callback={decrementZ}
+      >
+        <i className="fas fa-rotate-right" />
+      </IncrementButton>
+
+      <IncrementButton
+        cssClassName="attitude-controls z-increment"
+        timeout={16}
+        value={spacecraftDirections.z}
+        withValue={false}
+        callback={incrementZ}
+      >
+        <i className="fas fa-rotate-left" />
       </IncrementButton>
     </div>
   );

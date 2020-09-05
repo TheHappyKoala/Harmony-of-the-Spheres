@@ -164,10 +164,9 @@ export const pageQuery = graphql`
         }
       }
       spacecraftDirections {
-        up
-        down
-        right
-        left
+        x
+        y
+        z
       }
       masses {
         name

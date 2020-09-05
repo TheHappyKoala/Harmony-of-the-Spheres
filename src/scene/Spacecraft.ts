@@ -78,11 +78,22 @@ export default class extends MassManifestation {
     return this;
   }
 
-  draw(position: MassType, dt?: number, scale?: number, playing?: boolean) {
+  draw(
+    position: MassType,
+    spacecraftDirections: {
+      x: number;
+      y: number;
+      z: number;
+    },
+    dt?: number,
+    scale?: number,
+    playing?: boolean
+  ) {
     const main = this.getObjectByName("main");
 
     main.position.set(position.x, position.y, position.z);
 
+    /*
     if (playing) {
       const directionOfVelocity = new Vector3(
         (this.mass.x + this.mass.vx * dt) * scale,
@@ -93,6 +104,11 @@ export default class extends MassManifestation {
 
       main.lookAt(directionOfVelocity);
     }
+    */
+
+    main.rotation.x = spacecraftDirections.x;
+    main.rotation.y = spacecraftDirections.y;
+    main.rotation.z = spacecraftDirections.z;
   }
 
   getMain() {
@@ -128,4 +144,3 @@ export default class extends MassManifestation {
     trajectory.dispose();
   }
 }
- 

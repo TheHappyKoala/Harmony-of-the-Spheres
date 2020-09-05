@@ -18,7 +18,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "Earth",
-  "cameraFocus": "Earth",
+  "cameraFocus": "Starship",
   "soi": "Earth",
   "minTOF": 0.00547945,
   "maxTOF": 0.0109589,
@@ -68,10 +68,9 @@
   "i": 0,
   "o": 0,
   "spacecraftDirections": {
-    "up": 0,
-    "down": 0,
-    "right": 0,
-    "left": 0
+    "x": 0,
+    "y": 0,
+    "z": 0
   },
   "masses": [
     {
