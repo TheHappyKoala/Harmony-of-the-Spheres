@@ -7,14 +7,15 @@ import React, {
   useCallback
 } from "react";
 
-interface IncrementButtonProps {
+interface MousePressButtonProps {
   callback: () => void;
   children: ReactChildren | ReactChild;
   cssClassName: string;
   timeout: number;
-  value: number;
+  value: any;
   withValue: boolean;
   valueCssClass?: string;
+  onMouseUpCallback?: () => void;
 }
 
 export default ({
@@ -24,8 +25,9 @@ export default ({
   timeout,
   value,
   withValue,
-  valueCssClass
-}: IncrementButtonProps): ReactElement => {
+  valueCssClass,
+  onMouseUpCallback
+}: MousePressButtonProps): ReactElement => {
   const [mouseDown, setMouseDown] = useState(false);
 
   useEffect(() => {
@@ -47,8 +49,10 @@ export default ({
   }, [mouseDown]);
 
   const handleMouseUp = useCallback(() => {
+    onMouseUpCallback && onMouseUpCallback();
+
     setMouseDown(false);
-  }, [mouseDown]);
+  }, [mouseDown, onMouseUpCallback]);
 
   return (
     <div

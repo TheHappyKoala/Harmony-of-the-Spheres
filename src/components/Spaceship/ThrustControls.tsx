@@ -1,7 +1,7 @@
 import React, { ReactElement, useCallback } from "react";
-import IncrementButton from "../IncrementButton";
+import MousePressButton from "../MousePressButton";
 import { modifyScenarioProperty } from "../../state/creators/scenario";
-import "./AttitudeControls.less";
+import "./ThrustControls.less";
 
 interface AttitudeControlsProps {
   modifyScenarioProperty: typeof modifyScenarioProperty;
@@ -10,11 +10,13 @@ interface AttitudeControlsProps {
     y: number;
     z: number;
   };
+  thrustOn: boolean;
 }
 
 export default ({
   modifyScenarioProperty,
-  spacecraftDirections
+  spacecraftDirections,
+  thrustOn
 }: AttitudeControlsProps): ReactElement => {
   const incrementBy = 0.01;
 
@@ -58,87 +60,72 @@ export default ({
     });
   }, [spacecraftDirections.x, spacecraftDirections.y, spacecraftDirections.z]);
 
-  const incrementZ = useCallback(() => {
+  const thrust = useCallback(() => {
     modifyScenarioProperty({
-      key: "spacecraftDirections",
-      value: {
-        ...spacecraftDirections,
-        z: spacecraftDirections.z + incrementBy
-      }
+      key: "thrustOn",
+      value: true
     });
-  }, [spacecraftDirections.x, spacecraftDirections.y, spacecraftDirections.z]);
+  }, [thrustOn]);
 
-  const decrementZ = useCallback(() => {
+  const ceaseThrust = useCallback(() => {
     modifyScenarioProperty({
-      key: "spacecraftDirections",
-      value: {
-        ...spacecraftDirections,
-        z: spacecraftDirections.z - incrementBy
-      }
+      key: "thrustOn",
+      value: false
     });
-  }, [spacecraftDirections.x, spacecraftDirections.y, spacecraftDirections.z]);
+  }, [thrustOn]);
 
   return (
-    <div className="attitude-controls-wrapper">
-      <IncrementButton
+    <div className="thrust-controls-wrapper">
+      <MousePressButton
         cssClassName="attitude-controls x-increment"
         timeout={16}
         value={spacecraftDirections.x}
         withValue={false}
         callback={incrementX}
       >
-        <i className="fas fa-caret-up" />
-      </IncrementButton>
+        <i className="fas fa-caret-left" />
+      </MousePressButton>
 
-      <IncrementButton
+      <MousePressButton
         cssClassName="attitude-controls x-decrement"
         timeout={16}
         value={spacecraftDirections.x}
         withValue={false}
         callback={decrementX}
       >
-        <i className="fas fa-caret-down" />
-      </IncrementButton>
+        <i className="fas fa-caret-right" />
+      </MousePressButton>
 
-      <IncrementButton
+      <MousePressButton
         cssClassName="attitude-controls y-increment"
         timeout={16}
         value={spacecraftDirections.y}
         withValue={false}
         callback={incrementY}
       >
-        <i className="fas fa-caret-right" />
-      </IncrementButton>
+        <i className="fas fa-caret-up" />
+      </MousePressButton>
 
-      <IncrementButton
+      <MousePressButton
         cssClassName="attitude-controls y-decrement"
         timeout={16}
         value={spacecraftDirections.y}
         withValue={false}
         callback={decrementY}
       >
-        <i className="fas fa-caret-left" />
-      </IncrementButton>
+        <i className="fas fa-caret-down" />
+      </MousePressButton>
 
-      <IncrementButton
-        cssClassName="attitude-controls z-decrement"
+      <MousePressButton
+        cssClassName="thrust-button"
         timeout={16}
-        value={spacecraftDirections.z}
+        value={thrustOn}
         withValue={false}
-        callback={decrementZ}
+        callback={thrust}
+        onMouseUpCallback={ceaseThrust}
       >
-        <i className="fas fa-rotate-right" />
-      </IncrementButton>
-
-      <IncrementButton
-        cssClassName="attitude-controls z-increment"
-        timeout={16}
-        value={spacecraftDirections.z}
-        withValue={false}
-        callback={incrementZ}
-      >
-        <i className="fas fa-rotate-left" />
-      </IncrementButton>
+        <i className="fas fa-dot-circle-o" />
+      </MousePressButton>
     </div>
   );
 };

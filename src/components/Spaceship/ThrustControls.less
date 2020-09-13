@@ -1,0 +1,46 @@
+.thrust-controls-wrapper {
+    position: absolute;
+    bottom: 3.2em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+}
+
+.attitude-controls, .thrust-button {
+    position: absolute;
+    font-size: 2em;
+    cursor: pointer;
+    &:hover {
+        text-shadow: 2px 2px 8px #d8d8d8;
+    }
+}
+
+.attitude-controls.x-increment {
+    top: calc(1.25em + 10px);
+    left: 15%;
+    transform: translateX(-50%);
+}
+
+.attitude-controls.x-decrement {
+    top: calc(1.25em + 10px);
+    left: 85%;
+    transform: translateX(-50%);
+}
+
+.attitude-controls.y-increment {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.attitude-controls.y-decrement {
+    top: calc(2.5em + 10px);
+    left: 50%;
+    transform: translateX(-50%);}
+
+.thrust-button {
+    top: calc(1.25em + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+}

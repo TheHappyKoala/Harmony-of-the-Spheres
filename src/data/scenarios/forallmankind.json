@@ -7,7 +7,7 @@
   "type": "Starship",
   "logarithmicDepthBuffer": true,
   "forAllMankind": true,
-  "trails": false,
+  "trails": true,
   "trajectoryTarget": "Moon",
   "trajectoryTargetArrival": 0.00821918,
   "trajectoryDepartureVelocity": 0,
@@ -72,15 +72,16 @@
     "y": 0,
     "z": 0
   },
+  "thrustOn": false,
   "masses": [
     {
       "name": "Starship",
       "x": 0.4240447232851519,
       "y": -0.9247715402118077,
       "z": -0.0001129301018611092,
-      "vx": 4.395253850175561,
-      "vy": 3.8323649107803948,
-      "vz": 0.15792573886687206,
+      "vx": 6.922675894714279,
+      "vy": 2.5745894556521574,
+      "vz": 0.00038057228235271535,
       "m": 1.005570862e-29,
       "radius": 0.0001,
       "orbitalPeriod": 2,

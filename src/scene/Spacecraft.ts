@@ -106,9 +106,9 @@ export default class extends MassManifestation {
     }
     */
 
-    main.rotation.x = spacecraftDirections.x;
+    main.rotation.x = spacecraftDirections.z;
     main.rotation.y = spacecraftDirections.y;
-    main.rotation.z = spacecraftDirections.z;
+    main.rotation.z = spacecraftDirections.x;
   }
 
   getMain() {
@@ -130,7 +130,8 @@ export default class extends MassManifestation {
           this.mass.radius
         );
 
-        collada.scene.rotateY(degreesToRadians(90));
+        collada.scene.rotateX(degreesToRadians(90));
+        collada.scene.rotateZ(degreesToRadians(90));
 
         container.add(collada.scene);
       }
