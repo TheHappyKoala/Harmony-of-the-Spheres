@@ -2,7 +2,6 @@ import React, { ReactElement, useState, useEffect, Fragment } from "react";
 import Dropdown from "../Dropdown";
 import Slider from "../Slider";
 import Button from "../Button";
-import Tooltip from "../Tooltip";
 import {
   modifyScenarioProperty,
   getTrajectory
@@ -223,13 +222,7 @@ export default ({
             modalWrapperCssClass="trajectory-modal-wrapper"
           >
             <h3 className="cockpit-dashboard-header">Trajectory Planner</h3>
-            <label>
-              Target{" "}
-              <Tooltip
-                position="left"
-                content="The celestial object that you want to travel to."
-              />
-            </label>
+            <label>Target{" "}</label>
             <Dropdown
               selectedOption={scenario.trajectoryTarget}
               dropdownWrapperCssClassName="tabs-dropdown-wrapper"
@@ -251,13 +244,7 @@ export default ({
                 </div>
               ))}
             </Dropdown>
-            <label className="top">
-              Time of Flight
-              <Tooltip
-                position="left"
-                content="The time when your spacecraft will rendevouz with its target. This quantity always has a minimum value of the time that has elapsed in the simulation, so if one year has passed and you want to get to Mars in half a year, you set a value of 1.5."
-              />
-            </label>
+            <label className="top">Time of Flight</label>
             <Slider
               payload={{ key: "trajectoryTargetArrival" }}
               value={scenario.trajectoryTargetArrival}
