@@ -1,11 +1,10 @@
-import React, { ReactElement, Fragment, useState, useCallback } from "react";
+import React, { ReactElement, Fragment, useCallback } from "react";
 import { navigate } from "gatsby";
 import * as scenarioActionCreators from "../../state/creators/scenario";
 import kebabCase from "lodash/kebabCase";
 import Button from "../Button";
 import ForAllMankindRenderer from "../Renderer/ForAllMankindRenderer";
 import Spaceship from "../../components/Spaceship";
-import Dropdown from "../Dropdown";
 import "./StarshipSimulator.less";
 
 interface SimulatorProps {
@@ -38,58 +37,58 @@ export default ({
     else window.history.back();
   }, []);
 
+  const showMapCameraView = useCallback(() => {
+    modifyScenarioProperty({
+      key: "cameraFocus",
+      value: scenario.rotatingReferenceFrame
+    });
+  }, [scenario.cameraFocus]);
+
+  const showSpacecraftCameraView = useCallback(() => {
+    modifyScenarioProperty({
+      key: "cameraFocus",
+      value: scenario.masses[0].name
+    });
+  }, [scenario.cameraFocus]);
+
   return (
     <div className="starship-simulation-wrapper">
       <ForAllMankindRenderer scenarioName={scenario.name} />
-      <Button cssClassName="button simulation-state" callback={setPlayState}>
-        <Fragment>
-          <i className={`fas fa-${scenario.playing ? "pause" : "play"}`} />
-          {scenario.playing ? "Pause" : "Play"}
-        </Fragment>
-      </Button>
-      <Button
-        cssClassName="button navigation"
-        callback={navigateToScenariosMenu}
-      >
-        <Fragment>
-          <i className={`fas fa-align-justify`} />
-          Scenarios
-        </Fragment>
-      </Button>
-      <div className="camera-focus-menu-wrapper">
-        <Dropdown
-          selectedOption={scenario.cameraFocus}
-          dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-          selectedOptionCssClassName="selected-option"
-          optionsWrapperCssClass="options"
+      <div className="starship-scenario-controls-wrapper">
+        <Button cssClassName="button" callback={setPlayState}>
+          <Fragment>
+            <i className={`fas fa-${scenario.playing ? "pause" : "play"}`} />
+            {scenario.playing ? "Pause" : "Play"}
+          </Fragment>
+        </Button>
+
+        <Button cssClassName="button" callback={navigateToScenariosMenu}>
+          <Fragment>
+            <i className={`fas fa-align-justify`} />
+            Scenarios
+          </Fragment>
+        </Button>
+
+        <Button
+          cssClassName="button"
+          callback={showMapCameraView}
         >
-          <div
-            data-name="Barycenter"
-            key="Barycenter"
-            onClick={() =>
-              modifyScenarioProperty({
-                key: "cameraFocus",
-                value: "Barycenter"
-              })
-            }
-          >
-            Barycenter
-          </div>
-          {scenario.masses?.map(mass => (
-            <div
-              data-name={mass.name}
-              key={mass.name}
-              onClick={() =>
-                modifyScenarioProperty({
-                  key: "cameraFocus",
-                  value: mass.name
-                })
-              }
-            >
-              {mass.name}
-            </div>
-          ))}
-        </Dropdown>
+          <Fragment>
+            <i className={`fas fa-map-marker`} />
+            Map
+          </Fragment>
+        </Button>
+
+        <Button
+          cssClassName="button"
+          callback={showSpacecraftCameraView}
+        >
+          <Fragment>
+            <i className={`fas fa-rocket`} />
+            Spacecraft
+          </Fragment>
+        </Button>
+
       </div>
       {scenario.masses && (
         <Spaceship
