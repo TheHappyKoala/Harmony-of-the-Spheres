@@ -42,14 +42,14 @@ export default ({
       key: "cameraFocus",
       value: scenario.rotatingReferenceFrame
     });
-  }, [scenario.cameraFocus]);
+  }, [scenario.cameraFocus, scenario.rotatingReferenceFrame]);
 
   const showSpacecraftCameraView = useCallback(() => {
     modifyScenarioProperty({
       key: "cameraFocus",
       value: scenario.masses[0].name
     });
-  }, [scenario.cameraFocus]);
+  }, [scenario.cameraFocus, scenario.rotatingReferenceFrame]);
 
   return (
     <div className="starship-simulation-wrapper">
