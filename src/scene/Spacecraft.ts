@@ -85,10 +85,7 @@ export default class extends MassManifestation {
       y: number;
       z: number;
     },
-    dt?: number,
-    scale?: number,
-    playing?: boolean,
-    thrustOn?: boolean
+    thrustOn: boolean
   ) {
     const main = this.getObjectByName("main");
 
@@ -101,17 +98,6 @@ export default class extends MassManifestation {
     }
 
     main.position.set(position.x, position.y, position.z);
-
-    if (playing) {
-      const directionOfVelocity = new Vector3(
-        (this.mass.x + this.mass.vx * dt) * scale,
-        (this.mass.y + this.mass.vy * dt) * scale,
-        (this.mass.z + this.mass.vz * dt) * scale
-      );
-      directionOfVelocity.setFromMatrixPosition(main.matrixWorld);
-
-      main.lookAt(directionOfVelocity);
-    }
 
     main.rotation.x = spacecraftDirections.z;
     main.rotation.y = spacecraftDirections.y;

@@ -43,9 +43,6 @@ export default function(
         manifestation.draw(
           rotatedPosition,
           scenario.spacecraftDirections,
-          scenario.dt,
-          scenario.scale,
-          scenario.playing,
           scenario.thrustOn
         );
         break;
