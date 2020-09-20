@@ -127,19 +127,21 @@ const scene = {
 
     this.graphics2D.clear();
 
-    this.graphics2D.drawLabel(
-      "Rendevouz",
-      this.utilityVector.set(
-        -this.scenario.trajectoryRendevouz.p.x * this.scenario.scale,
-        -this.scenario.trajectoryRendevouz.p.y * this.scenario.scale,
-        -this.scenario.trajectoryRendevouz.p.z * this.scenario.scale
-      ),
-      this.camera,
-      cameraFocus === "Barycenter" ? true : false,
-      "left",
-      "skyblue",
-      drawMarkerLabel
-    );
+    if (this.scenario.cameraFocus === this.scenario.rotatingReferenceFrame) {
+      this.graphics2D.drawLabel(
+        "Rendevouz",
+        this.utilityVector.set(
+          -this.scenario.trajectoryRendevouz.p.x * this.scenario.scale,
+          -this.scenario.trajectoryRendevouz.p.y * this.scenario.scale,
+          -this.scenario.trajectoryRendevouz.p.z * this.scenario.scale
+        ),
+        this.camera,
+        cameraFocus === "Barycenter" ? true : false,
+        "left",
+        "skyblue",
+        drawMarkerLabel
+      );
+    }
 
     const massesLen = this.system.masses.length;
 
