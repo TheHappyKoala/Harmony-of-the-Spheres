@@ -163,6 +163,12 @@ export const pageQuery = graphql`
           maxD
         }
       }
+      spacecraftDirections {
+        x
+        y
+        z
+      }
+      thrustOn
       masses {
         name
         m

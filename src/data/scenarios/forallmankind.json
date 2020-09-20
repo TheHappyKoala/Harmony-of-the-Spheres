@@ -18,7 +18,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "Earth",
-  "cameraFocus": "Earth",
+  "cameraFocus": "Starship",
   "soi": "Earth",
   "minTOF": 0.00547945,
   "maxTOF": 0.0109589,
@@ -67,15 +67,21 @@
   "w": 0,
   "i": 0,
   "o": 0,
+  "spacecraftDirections": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "thrustOn": false,
   "masses": [
     {
-      "name": "Apollo",
+      "name": "Starship",
       "x": 0.4240447232851519,
       "y": -0.9247715402118077,
       "z": -0.0001129301018611092,
-      "vx": 4.395253850175561,
-      "vy": 3.8323649107803948,
-      "vz": 0.15792573886687206,
+      "vx": 5.622675894714279,
+      "vy": 2.5745894556521574,
+      "vz": 0.00038057228235271535,
       "m": 1.005570862e-29,
       "radius": 0.0001,
       "orbitalPeriod": 2,
@@ -83,7 +89,7 @@
       "tilt": 0,
       "bump": false,
       "color": "pink",
-      "texture": "Apollo",
+      "texture": "Starship",
       "spacecraft": true,
       "luminosity": 0,
       "temperature": 0

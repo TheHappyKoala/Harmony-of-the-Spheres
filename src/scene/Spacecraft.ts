@@ -2,8 +2,9 @@ import MassManifestation from "./MassManifestation";
 import CustomEllipseCurve from "./CustomEllipseCurve";
 import { stateToKepler } from "../physics/spacecraft/lambert";
 import { getEllipse } from "../physics/utils";
-import { Object3D, Vector3 } from "three";
+import { Object3D, TextureLoader, SpriteMaterial, Sprite, AdditiveBlending, Vector3 } from "three";
 import ColladaLoader from "colladaloader2asmodule";
+import { degreesToRadians } from "../physics/utils";
 
 export default class extends MassManifestation {
   constructor(mass: MassType) {
@@ -77,8 +78,27 @@ export default class extends MassManifestation {
     return this;
   }
 
-  draw(position: MassType, dt?: number, scale?: number, playing?: boolean) {
+  draw(
+    position: MassType,
+    spacecraftDirections: {
+      x: number;
+      y: number;
+      z: number;
+    },
+    dt?: number,
+    scale?: number,
+    playing?: boolean,
+    thrustOn?: boolean
+  ) {
     const main = this.getObjectByName("main");
+
+    const flame = main.getObjectByName('flame');
+
+    if (thrustOn && flame) {
+      flame.visible = true;
+    } else if (flame && !thrustOn) {
+      flame.visible = false;
+    }
 
     main.position.set(position.x, position.y, position.z);
 
@@ -92,6 +112,53 @@ export default class extends MassManifestation {
 
       main.lookAt(directionOfVelocity);
     }
+
+    main.rotation.x = spacecraftDirections.z;
+    main.rotation.y = spacecraftDirections.y;
+    main.rotation.z = spacecraftDirections.x;
+  }
+
+  getRocketBurn() {
+    const spriteMap = new TextureLoader().load("/textures/particle.png");
+
+    const flameMaterial = new SpriteMaterial({
+      map: spriteMap,
+      blending: AdditiveBlending,
+      opacity: 0.8
+    });
+
+    const flameSprite1 = new Sprite(flameMaterial);
+    flameSprite1.scale.set(0.002, 0.002, 0.002);
+
+    flameSprite1.position.set(0 + 0.0025, 0, 0);
+
+    const flameSprite2 = new Sprite(flameMaterial);
+    flameSprite2.scale.set(0.001, 0.001, 0.001);
+
+    flameSprite2.position.set(0 + 0.0028, 0, 0);
+
+    const flameSprite3 = new Sprite(flameMaterial);
+    flameSprite3.scale.set(0.0005, 0.0005, 0.0005);
+
+    flameSprite3.position.set(0 + 0.003, 0, 0);
+
+    const flameSprite4 = new Sprite(flameMaterial);
+    flameSprite4.scale.set(0.0005, 0.0005, 0.0005);
+
+    flameSprite4.position.set(0 + 0.0031, 0, 0);
+
+    const flameSprite5 = new Sprite(flameMaterial);
+    flameSprite5.scale.set(0.0005, 0.0005, 0.0005);
+
+    flameSprite5.position.set(0 + 0.0032, 0, 0);
+
+    const container = new Object3D();
+
+    container.add(flameSprite1, flameSprite2, flameSprite3, flameSprite4, flameSprite5);
+
+    container.name = 'flame';
+
+    return container;
   }
 
   getMain() {
@@ -113,7 +180,10 @@ export default class extends MassManifestation {
           this.mass.radius
         );
 
-        container.add(collada.scene);
+        collada.scene.rotateX(degreesToRadians(90));
+        collada.scene.rotateZ(degreesToRadians(90));
+
+        container.add(collada.scene, this.getRocketBurn());
       }
     );
 

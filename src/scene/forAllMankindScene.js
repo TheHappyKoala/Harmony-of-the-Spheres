@@ -12,7 +12,9 @@ import drawManifestation from "./drawManifestation";
 const TWEEN = require("@tweenjs/tween.js");
 
 const scene = {
-  init(webGlCanvas, graphics2DCanvas, audio) {
+  init(webGlCanvas, graphics2DCanvas) {
+    this.rocketThrustAudio = new Audio('/audio/rocket.mp3');
+
     this.w = window.innerWidth;
     this.h = window.innerHeight;
 
@@ -42,8 +44,6 @@ const scene = {
       this.w,
       this.h
     );
-
-    this.audio = audio;
 
     this.utilityVector = new THREE.Vector3();
     this.barycenterPosition = new H3();
@@ -143,6 +143,12 @@ const scene = {
 
     const massesLen = this.system.masses.length;
 
+    if (this.scenario.thrustOn && this.rocketThrustAudio.paused) {
+      this.rocketThrustAudio.play();
+    } else if (!this.scenario.thrustOn && !this.rocketThrustAudio.paused) {
+      this.rocketThrustAudio.pause();
+    }
+
     for (let i = 0; i < massesLen; i++) {
       const mass = this.system.masses[i];
       const massManifestation = this.manifestationsService.manifestations[i];
@@ -165,6 +171,18 @@ const scene = {
           "white",
           drawMassLabel
         );
+
+        if (mass.spacecraft && this.scenario.thrustOn) {
+          const main = massManifestation.getObjectByName("main");
+  
+          const velocity = new THREE.Vector3(1, 0, 0)
+            .applyQuaternion(main.quaternion)
+            .multiplyScalar(0.0001);
+  
+          mass.vx += velocity.x;
+          mass.vy += velocity.y;
+          mass.vz += velocity.z;
+        }
     }
 
     this.camera.setCamera(
