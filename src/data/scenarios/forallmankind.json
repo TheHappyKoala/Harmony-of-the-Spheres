@@ -155,7 +155,6 @@
       "radius": 22.93577981651376,
       "tilt": -1.54,
       "orbitalPeriod": 0.0739726,
-      "bump": true,
       "name": "Moon",
       "color": "grey",
       "texture": "MoonHighRes",
