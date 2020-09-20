@@ -58,7 +58,9 @@ export default ({
     <div
       className={cssClassName}
       onMouseDown={handleMouseDown}
+      onTouchStart={handleMouseDown}
       onMouseUp={handleMouseUp}
+      onTouchEnd={handleMouseUp}
     >
       {children}
       {withValue && <div className={valueCssClass}>{value}</div>}
