@@ -174,7 +174,7 @@ const scene = {
           drawMassLabel
         );
 
-      if (mass.spacecraft && this.scenario.thrustOn) {
+      if (mass.spacecraft && this.scenario.thrustOn && this.scenario.playing) {
         const main = massManifestation.getObjectByName("main");
 
         const velocity = new THREE.Vector3(1, 0, 0)
