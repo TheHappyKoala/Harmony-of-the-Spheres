@@ -133,11 +133,6 @@ export default function worker(self) {
 
             clearInterval(interval);
 
-            console.log(
-              JSON.stringify(targetMass),
-              JSON.stringify(newStateVectors.posRel)
-            );
-
             targetMass.x = newStateVectors.posRel.x;
             targetMass.y = newStateVectors.posRel.y;
             targetMass.z = newStateVectors.posRel.z;

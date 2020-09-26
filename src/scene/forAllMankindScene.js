@@ -13,7 +13,7 @@ const TWEEN = require("@tweenjs/tween.js");
 
 const scene = {
   init(webGlCanvas, graphics2DCanvas) {
-    this.rocketThrustAudio = new Audio('/audio/rocket.mp3');
+    this.rocketThrustAudio = new Audio("/audio/rocket.mp3");
 
     this.w = window.innerWidth;
     this.h = window.innerHeight;
@@ -174,17 +174,17 @@ const scene = {
           drawMassLabel
         );
 
-        if (mass.spacecraft && this.scenario.thrustOn) {
-          const main = massManifestation.getObjectByName("main");
-  
-          const velocity = new THREE.Vector3(1, 0, 0)
-            .applyQuaternion(main.quaternion)
-            .multiplyScalar(0.0001);
-  
-          mass.vx += velocity.x;
-          mass.vy += velocity.y;
-          mass.vz += velocity.z;
-        }
+      if (mass.spacecraft && this.scenario.thrustOn) {
+        const main = massManifestation.getObjectByName("main");
+
+        const velocity = new THREE.Vector3(1, 0, 0)
+          .applyQuaternion(main.quaternion)
+          .multiplyScalar(0.001);
+
+        mass.vx += velocity.x;
+        mass.vy += velocity.y;
+        mass.vz += velocity.z;
+      }
     }
 
     this.camera.setCamera(

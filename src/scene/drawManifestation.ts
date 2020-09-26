@@ -1,4 +1,3 @@
-import { getObjFromArrByKeyValuePair } from "../utils";
 import { Manifestation } from "./ManifestationsService";
 
 export default function(
@@ -30,42 +29,31 @@ export default function(
         break;
 
       case "spacecraft":
-        if (scenario.cameraFocus !== manifestation.mass.name) {
-          manifestation.updateTrajectory(
-            getObjFromArrByKeyValuePair(scenario.masses, "name", scenario.soi),
-            scenario.masses[0],
-            scenario.g,
-            scenario.scale,
-            this.camera.rotatingReferenceFrame
-          );
-        }
-
         manifestation.draw(
           rotatedPosition,
           scenario.spacecraftDirections,
           scenario.thrustOn
         );
+
+        manifestation.handleTrajectoryUpdate(scenario.mapMode, {
+          mass,
+          scenario,
+          rotatingReferenceFrame: this.camera.rotatingReferenceFrame
+        });
+
         break;
 
       default:
         manifestation.draw(rotatedPosition);
 
-        if (
-          scenario.cameraFocus !== manifestation.mass.name &&
-          scenario.forAllMankind &&
-          (manifestation.mass.name === scenario.masses[0].name ||
-            manifestation.mass.name === scenario.trajectoryTarget)
-        ) {
-          manifestation.updateTrajectory(
-            getObjFromArrByKeyValuePair(scenario.masses, "name", scenario.soi),
+        manifestation.handleTrajectoryUpdate(
+          scenario.rotatingReferenceFrame !== mass.name && scenario.mapMode,
+          {
             mass,
-            scenario.g,
-            scenario.scale,
-            this.camera.rotatingReferenceFrame
-          );
-        } else {
-          manifestation.removeTrajectory();
-        }
+            scenario,
+            rotatingReferenceFrame: this.camera.rotatingReferenceFrame
+          }
+        );
     }
   }
 }
