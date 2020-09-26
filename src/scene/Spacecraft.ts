@@ -35,9 +35,11 @@ export default class extends MassManifestation {
 
     main.position.set(position.x, position.y, position.z);
 
-    main.rotation.x = spacecraftDirections.z;
-    main.rotation.y = spacecraftDirections.y;
-    main.rotation.z = spacecraftDirections.x;
+    if (spacecraftDirections) {
+      main.rotation.x = spacecraftDirections.z;
+      main.rotation.y = spacecraftDirections.y;
+      main.rotation.z = spacecraftDirections.x;
+    }
   }
 
   getRocketBurn() {
