@@ -179,7 +179,7 @@ const scene = {
 
         const velocity = new THREE.Vector3(1, 0, 0)
           .applyQuaternion(main.quaternion)
-          .multiplyScalar(0.001);
+          .multiplyScalar(0.00001);
 
         mass.vx += velocity.x;
         mass.vy += velocity.y;
