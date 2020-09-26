@@ -9,12 +9,10 @@ function getRandomInteger(min, max) {
 }
 
 export default class extends THREE.Object3D {
-  constructor(mass, textureLoader, segments, forAllMankind) {
+  constructor(mass, textureLoader, segments) {
     super();
 
     this.mass = mass;
-
-    this.forAllMankind = forAllMankind;
 
     this.name = this.mass.name;
     this.textureLoader = textureLoader;
@@ -47,7 +45,7 @@ export default class extends THREE.Object3D {
 
   removeTrajectory() {
     const trajectory = this.getObjectByName("trajectory");
-    trajectory && (trajectory.dispose() && this.remove(trajectory));
+    this.remove(trajectory);
   }
 
   updateTrajectory(primary, mass, g, scale, rotatingReferenceFrame) {
@@ -90,6 +88,30 @@ export default class extends THREE.Object3D {
     );
 
     return this;
+  }
+
+  handleTrajectoryUpdate(condition, trajectoryData) {
+    const trajectoryManifestation = this.getObjectByName("trajectory");
+
+    if (condition) {
+      if (!trajectoryManifestation) {
+        this.addTrajectory();
+      }
+
+      this.updateTrajectory(
+        trajectoryData.scenario.masses.find(
+          mass => mass.name === trajectoryData.scenario.soi
+        ),
+        trajectoryData.mass,
+        trajectoryData.scenario.g,
+        trajectoryData.scenario.scale,
+        trajectoryData.rotatingReferenceFrame
+      );
+    } else {
+      if (trajectoryManifestation) {
+        this.removeTrajectory();
+      }
+    }
   }
 
   getMain() {
@@ -219,8 +241,6 @@ export default class extends THREE.Object3D {
 
     this.add(mesh);
 
-    this.forAllMankind && this.addTrajectory();
-
     this.mass.clouds && this.getClouds();
   }
 
@@ -328,6 +348,8 @@ export default class extends THREE.Object3D {
     const main = this.getObjectByName("main");
 
     main.position.set(position.x, position.y, position.z);
+
+    return this;
   }
 
   dispose() {

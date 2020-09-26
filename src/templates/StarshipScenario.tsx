@@ -169,6 +169,7 @@ export const pageQuery = graphql`
         z
       }
       thrustOn
+      mapMode
       masses {
         name
         m

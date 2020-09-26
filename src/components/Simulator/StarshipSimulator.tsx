@@ -38,18 +38,30 @@ export default ({
   }, []);
 
   const showMapCameraView = useCallback(() => {
-    modifyScenarioProperty({
-      key: "cameraFocus",
-      value: scenario.rotatingReferenceFrame
-    });
-  }, [scenario.cameraFocus]);
+    modifyScenarioProperty(
+      {
+        key: "cameraFocus",
+        value: scenario.rotatingReferenceFrame
+      },
+      {
+        key: "mapMode",
+        value: true
+      }
+    );
+  }, [scenario.cameraFocus, scenario.rotatingReferenceFrame, scenario.mapMode]);
 
   const showSpacecraftCameraView = useCallback(() => {
-    modifyScenarioProperty({
-      key: "cameraFocus",
-      value: scenario.masses[0].name
-    });
-  }, [scenario.cameraFocus]);
+    modifyScenarioProperty(
+      {
+        key: "cameraFocus",
+        value: scenario.masses[0].name
+      },
+      {
+        key: "mapMode",
+        value: false
+      }
+    );
+  }, [scenario.cameraFocus, scenario.rotatingReferenceFrame, scenario.mapMode]);
 
   return (
     <div className="starship-simulation-wrapper">
@@ -69,26 +81,19 @@ export default ({
           </Fragment>
         </Button>
 
-        <Button
-          cssClassName="button"
-          callback={showMapCameraView}
-        >
+        <Button cssClassName="button" callback={showMapCameraView}>
           <Fragment>
             <i className={`fas fa-map-marker`} />
             Map
           </Fragment>
         </Button>
 
-        <Button
-          cssClassName="button"
-          callback={showSpacecraftCameraView}
-        >
+        <Button cssClassName="button" callback={showSpacecraftCameraView}>
           <Fragment>
             <i className={`fas fa-rocket`} />
             Spacecraft
           </Fragment>
         </Button>
-
       </div>
       {scenario.masses && (
         <Spaceship

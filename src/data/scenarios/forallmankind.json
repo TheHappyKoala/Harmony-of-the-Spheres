@@ -14,7 +14,7 @@
   "trajectoryArrivalVelocity": 0,
   "trajectoryRelativeTo": "Earth",
   "g": 39.5,
-  "dt": 0.000001,
+  "dt": 5.28496533062743064e-10,
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "Earth",
@@ -73,15 +73,16 @@
     "z": 0
   },
   "thrustOn": false,
+  "mapMode": false,
   "masses": [
     {
       "name": "Starship",
-      "x": 0.4240447232851519,
-      "y": -0.9247715402118077,
-      "z": -0.0001129301018611092,
       "vx": 5.622675894714279,
-      "vy": 2.5745894556521574,
+      "vy": 0.9432785410402238,
       "vz": 0.00038057228235271535,
+      "x": 0.42399175147512225,
+      "y": -0.9248449798862485,
+      "z": -0.0001232690294681233,
       "m": 1.005570862e-29,
       "radius": 0.0001,
       "orbitalPeriod": 2,
@@ -92,7 +93,12 @@
       "texture": "Starship",
       "spacecraft": true,
       "luminosity": 0,
-      "temperature": 0
+      "temperature": 0,
+      "customCameraPosition": {
+        "x": 50,
+        "y": 100,
+        "z": -30
+      }
     },
     {
       "m": 0.000003003,
@@ -114,7 +120,12 @@
       "vx": 5.622675894714279,
       "vy": 2.5745894556521574,
       "vz": 0.00038057228235271535,
-      "atmosphere": "skyblue"
+      "atmosphere": "skyblue",
+      "customCameraPosition": {
+        "x": 50,
+        "y": 100,
+        "z": -30
+      }
     },
     {
       "m": 1,
@@ -133,14 +144,18 @@
       "z": -0.00006127893755128986,
       "vx": -0.00017443876658803292,
       "vy": 0.002043973630637931,
-      "vz": -0.000004697196039923407
+      "vz": -0.000004697196039923407,
+      "customCameraPosition": {
+        "x": 50,
+        "y": 500,
+        "z": -700
+      }
     },
     {
       "m": 3.69396868e-8,
       "radius": 22.93577981651376,
       "tilt": -1.54,
       "orbitalPeriod": 0.0739726,
-      "bump": true,
       "name": "Moon",
       "color": "grey",
       "texture": "MoonHighRes",
@@ -154,7 +169,12 @@
       "vx": 5.486589374929882,
       "vy": 2.420601498441581,
       "vz": -0.014677846271227611,
-      "bumpScale": 0.2
+      "bumpScale": 0.2,
+      "customCameraPosition": {
+        "x": 50,
+        "y": 50,
+        "z": -60
+      }
     }
   ]
 }

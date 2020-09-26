@@ -13,7 +13,7 @@ const TWEEN = require("@tweenjs/tween.js");
 
 const scene = {
   init(webGlCanvas, graphics2DCanvas) {
-    this.rocketThrustAudio = new Audio('/audio/rocket.mp3');
+    this.rocketThrustAudio = new Audio("/audio/rocket.mp3");
 
     this.w = window.innerWidth;
     this.h = window.innerHeight;
@@ -127,19 +127,21 @@ const scene = {
 
     this.graphics2D.clear();
 
-    this.graphics2D.drawLabel(
-      "Rendevouz",
-      this.utilityVector.set(
-        -this.scenario.trajectoryRendevouz.p.x * this.scenario.scale,
-        -this.scenario.trajectoryRendevouz.p.y * this.scenario.scale,
-        -this.scenario.trajectoryRendevouz.p.z * this.scenario.scale
-      ),
-      this.camera,
-      cameraFocus === "Barycenter" ? true : false,
-      "left",
-      "skyblue",
-      drawMarkerLabel
-    );
+    if (this.scenario.mapMode) {
+      this.graphics2D.drawLabel(
+        "Rendevouz",
+        this.utilityVector.set(
+          -this.scenario.trajectoryRendevouz.p.x * this.scenario.scale,
+          -this.scenario.trajectoryRendevouz.p.y * this.scenario.scale,
+          -this.scenario.trajectoryRendevouz.p.z * this.scenario.scale
+        ),
+        this.camera,
+        cameraFocus === "Barycenter" ? true : false,
+        "left",
+        "skyblue",
+        drawMarkerLabel
+      );
+    }
 
     const massesLen = this.system.masses.length;
 
@@ -172,17 +174,17 @@ const scene = {
           drawMassLabel
         );
 
-        if (mass.spacecraft && this.scenario.thrustOn) {
-          const main = massManifestation.getObjectByName("main");
-  
-          const velocity = new THREE.Vector3(1, 0, 0)
-            .applyQuaternion(main.quaternion)
-            .multiplyScalar(0.0001);
-  
-          mass.vx += velocity.x;
-          mass.vy += velocity.y;
-          mass.vz += velocity.z;
-        }
+      if (mass.spacecraft && this.scenario.thrustOn && this.scenario.playing) {
+        const main = massManifestation.getObjectByName("main");
+
+        const velocity = new THREE.Vector3(1, 0, 0)
+          .applyQuaternion(main.quaternion)
+          .multiplyScalar(0.00001);
+
+        mass.vx += velocity.x;
+        mass.vy += velocity.y;
+        mass.vz += velocity.z;
+      }
     }
 
     this.camera.setCamera(

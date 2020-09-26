@@ -222,7 +222,7 @@ export default ({
             modalWrapperCssClass="trajectory-modal-wrapper"
           >
             <h3 className="cockpit-dashboard-header">Trajectory Planner</h3>
-            <label>Target{" "}</label>
+            <label>Target </label>
             <Dropdown
               selectedOption={scenario.trajectoryTarget}
               dropdownWrapperCssClassName="tabs-dropdown-wrapper"
