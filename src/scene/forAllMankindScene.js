@@ -127,7 +127,7 @@ const scene = {
 
     this.graphics2D.clear();
 
-    if (this.scenario.cameraFocus === this.scenario.rotatingReferenceFrame) {
+    if (this.scenario.mapMode) {
       this.graphics2D.drawLabel(
         "Rendevouz",
         this.utilityVector.set(
