@@ -5,7 +5,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "exoplanets": "node ./exoplanetArchive.js",
+    "exoplanets": "node ./exoplanet-archive/exoplanetArchive.js",
     "clean": "rm -rf .cache",
     "format": "prettier --write \"**/*.{js,jsx,tsx,ts,json,md}\"",
     "start": "npm run develop",

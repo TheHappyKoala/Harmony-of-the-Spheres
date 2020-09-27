@@ -2,7 +2,9 @@ const fetch = require("node-fetch");
 const jpeg = require("jpeg-js");
 const fs = require("fs");
 
-const Terrain = require("./Terrain");
+const utils = require("./utils");
+const determineWorldType = require("./determineWorldType");
+const PlanetTextureGenerator = require("./PlanetTextureGenerator");
 
 const SUN_RADIUS = 9767.441860465116;
 const JUPITER_MASS = 9.543e-4;
@@ -11,81 +13,10 @@ const G = 39.5;
 const DT = 0.00005;
 const SCALE = 2100000;
 
-const inferRadiusFromMass = mass => Math.pow(mass, 0.42);
-
-const inferMassFromRadius = radius => Math.pow(radius, 2.4);
-
-const getRandomColor = () => {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
-
-  for (let i = 0; i < 6; i++) color += letters[Math.floor(Math.random() * 16)];
-
-  return color;
-};
-
-const map = (array, index, callback, output = []) =>
-  index === array.length
-    ? output
-    : map(array, index + 1, callback, [callback(array[index]), ...output]);
-
-const chunkScenarios = (data, scenarios, i, currentScenarioName) => {
-  if (i === data.length) {
-    return scenarios;
-  } else {
-    if (data[i]["pl_hostname"] === currentScenarioName) {
-      scenarios[scenarios.length - 1].push(data[i]);
-    } else {
-      scenarios.push([data[i]]);
-    }
-
-    i += 1;
-
-    return chunkScenarios(data, scenarios, i, data[i - 1]["pl_hostname"]);
-  }
-};
-
-const determineWorldType = (mass, temperature, hz, distance) => {
-  if (mass < 0.00003003 && temperature > 1000) {
-    return "torturedWorld";
-  }
-
-  if (
-    (mass < 3.213e-7 && hz[0] > distance) ||
-    (mass < 0.0000016065 && temperature > 700)
-  ) {
-    return "deadWorld";
-  }
-
-  if (hz[0] < distance && hz[1] > distance && mass < 0.00003003) {
-    return "habitableWorld";
-  } else if (mass < 0.00003003 && distance > hz[1]) {
-    return "icyWorld";
-  }
-
-  if (mass > 0.00003003) {
-    if (temperature < 80) {
-      return "sudarskyClassZero";
-    } else if (temperature < 150) {
-      return "sudarskyClassOne";
-    } else if (temperature < 250) {
-      return "sudarskyClassTwo";
-    } else if (temperature < 800) {
-      return "sudarskyClassThree";
-    } else if (temperature < 1400) {
-      return "sudarskyClassFour";
-    } else {
-      return "sudarskyClassFive";
-    }
-  }
-
-  return "desertWorld";
-};
-
 //https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>6 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json
 
 const createExoplanetScenarios = async () => {
-  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,pl_rade,st_mass,st_age,pl_discmethod,st_teff,st_rad,st_dist,pl_letter,pl_bmassj,pl_name,pl_publ_date,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_masse,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>0 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json`;
+  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,pl_rade,st_mass,st_age,pl_discmethod,st_teff,st_rad,st_dist,pl_letter,pl_bmassj,pl_name,pl_publ_date,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_masse,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>6 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json`;
 
   const response = await fetch(url);
 
@@ -97,14 +28,14 @@ const createExoplanetScenarios = async () => {
     return textA < textB ? -1 : textA > textB ? 1 : 0;
   });
 
-  const scenarios = chunkScenarios(
+  const scenarios = utils.chunkScenarios(
     sortedScenarios,
     [[]],
     0,
     sortedScenarios[0]["pl_hostname"]
   );
 
-  const processedPlanets = map(scenarios, 0, scenario => {
+  const processedPlanets = utils.map(scenarios, 0, scenario => {
     const widestOrbit = Math.max(...scenario.map(mass => mass.pl_orbsmax));
 
     let hasHabitableWorld = false;
@@ -297,12 +228,12 @@ const createExoplanetScenarios = async () => {
           temperature: scenario[0].st_teff,
           massType: "star"
         },
-        ...map(scenario, 0, planet => {
+        ...utils.map(scenario, 0, planet => {
           const mass =
             planet.pl_bmassj === null
               ? planet.pl_radj === null
                 ? 0.00000000001
-                : inferMassFromRadius(planet.pl_radj) * JUPITER_MASS
+                : utils.inferMassFromRadius(planet.pl_radj) * JUPITER_MASS
               : planet.pl_bmassj * JUPITER_MASS;
 
           const resolution = 2048;
@@ -383,8 +314,7 @@ const createExoplanetScenarios = async () => {
           const filePath = `./static/textures/${planet.pl_hostname}-${planet.pl_letter}.jpg`;
 
           if (!fs.existsSync(filePath)) {
-            /*
-            const terrain = new Terrain(
+            const planetTexture = new PlanetTextureGenerator(
               {
                 worldType
               },
@@ -393,7 +323,7 @@ const createExoplanetScenarios = async () => {
               10
             );
 
-            const frameData = Buffer.from(terrain.data);
+            const frameData = Buffer.from(planetTexture.data);
 
             const rawImageData = {
               data: frameData,
@@ -404,7 +334,6 @@ const createExoplanetScenarios = async () => {
             const jpegImageData = jpeg.encode(rawImageData, 50);
 
             fs.writeFileSync(filePath, jpegImageData.data);
-            */
           }
 
           return {
@@ -415,7 +344,7 @@ const createExoplanetScenarios = async () => {
             potentiallyHabitableWorld: worldType === "habitableWorld",
             radius:
               planet.pl_radj === null
-                ? inferRadiusFromMass(mass) * JUPITER_RADIUS
+                ? utils.inferRadiusFromMass(mass) * JUPITER_RADIUS
                 : planet.pl_radj * JUPITER_RADIUS,
             a: planet.pl_orbsmax,
             e: planet.pl_orbeccen === null ? 0 : planet.pl_orbeccen,
@@ -431,7 +360,7 @@ const createExoplanetScenarios = async () => {
             exoplanet: true,
             bump: isGasGiant ? false : true,
             bumpScale: bumpScale,
-            color: getRandomColor(),
+            color: utils.getRandomColor(),
             clouds: worldType === "habitableWorld" ? true : false
           };
         })
@@ -439,7 +368,7 @@ const createExoplanetScenarios = async () => {
     };
   });
 
-  map(processedPlanets, 0, scenario => {
+  utils.map(processedPlanets, 0, scenario => {
     fs.writeFileSync(
       `./src/data/scenarios/${scenario.name}.json`,
       JSON.stringify(scenario)

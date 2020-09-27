@@ -1,39 +1,23 @@
 const THREE = require("three");
+
+const utils = require("./utils");
 const Simplex = require("./Simplex");
-const worlds = require("./worlds");
-
-function getRandomNumberInRange(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-function getRandomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-const clamp = (x, min, max) => {
-  if (x < min) {
-    return min;
-  }
-  if (x > max) {
-    return max;
-  }
-
-  return x;
-};
+const worldTemplates = require("./worldTemplates");
 
 module.exports = class {
   constructor(mass, isGasGiant, resolution, noiseDetail) {
     this.mass = mass;
-    (this.isGasGiant = isGasGiant), (this.resolution = resolution);
+    this.isGasGiant = isGasGiant;
+    this.resolution = resolution;
 
-    this.noiseScale = getRandomNumberInRange(0.0007, 0.007);
+    this.noiseScale = utils.getRandomFloatInRange(0.0007, 0.007);
 
-    const randomInteger = getRandomInteger(
+    const randomInteger = utils.getRandomInteger(
       0,
-      worlds[mass.worldType].length - 1
+      worldTemplates[mass.worldType].length - 1
     );
 
-    this.colors = worlds[mass.worldType][randomInteger].data;
+    this.colors = worldTemplates[mass.worldType][randomInteger].data;
 
     this.size = this.resolution * this.resolution;
 
@@ -54,7 +38,7 @@ module.exports = class {
         elevation = colors[i][4] ? colors[i][4] : elevation;
 
         elevation = colors[i][5]
-          ? clamp(elevation, colors[i][5], 1)
+          ? utils.clamp(elevation, colors[i][5], 1)
           : elevation;
 
         return [
