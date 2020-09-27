@@ -67,6 +67,8 @@ const getHabitableZoneBounds = stellarMass => {
     start = Math.sqrt(lum / 1.1);
     end = Math.sqrt(lum / 0.53);
   }
+
+  return [start, end];
 };
 
 const getRandomFloatInRange = (min, max) => Math.random() * (max - min) + min;
@@ -85,6 +87,21 @@ const clamp = (x, min, max) => {
   return x;
 };
 
+const calculatePlanetTemperature = (stellarMass, a) => {
+  const pi = Math.PI;
+  const sigma = 5.6703 * Math.pow(10, -5);
+  const L = 3.846 * Math.pow(10, 33) * Math.pow(stellarMass, 3);
+  const D = a * 1.496 * Math.pow(10, 13);
+  const A = 50 / 100;
+  const T = 0;
+  const X = Math.sqrt(((1 - A) * L) / (16 * pi * sigma));
+  const T_eff = Math.sqrt(X) * (1 / Math.sqrt(D));
+  const T_eq = Math.pow(T_eff, 4) * (1 + (3 * T) / 4);
+  const T_sur = T_eq / 0.9;
+
+  return Math.sqrt(Math.sqrt(T_sur));
+};
+
 module.exports = {
   inferRadiusFromMass,
   inferMassFromRadius,
@@ -94,5 +111,6 @@ module.exports = {
   getHabitableZoneBounds,
   getRandomFloatInRange,
   getRandomInteger,
-  clamp
+  clamp,
+  calculatePlanetTemperature
 };
