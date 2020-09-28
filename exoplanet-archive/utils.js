@@ -39,11 +39,11 @@ const getHabitableZoneBounds = stellarMass => {
     lum = 0.23 * Math.pow(stellarMass / 1, 2.3);
   } else if (stellarMass < 0.85)
     lum = Math.pow(
-      m / 1,
+      stellarMass / 1,
       -141.7 * Math.pow(stellarMass, 4) +
         232.4 * Math.pow(stellarMass, 3) -
         129.1 * Math.pow(stellarMass, 2) +
-        33.29 * m +
+        33.29 * stellarMass +
         0.215
     );
   else if (stellarMass < 2) {
