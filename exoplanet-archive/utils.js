@@ -1,6 +1,46 @@
-const inferRadiusFromMass = mass => Math.pow(mass, 0.42);
+const massRadiusData = require("./massRadiusData");
 
-const inferMassFromRadius = radius => Math.pow(radius, 2.4);
+const inferPlanetProperty = (value, inputKey, outputKey) => {
+    const sortedByMass = massRadiusData.sort((a, b) => a[inputKey] - b[inputKey]);
+
+    for (let i = 0; i < sortedByMass.length; i++) {
+      if (value < sortedByMass[i][inputKey]) {
+        return sortedByMass[i][outputKey];
+      }
+  
+      if (i === sortedByMass.length - 1) {
+        return sortedByMass[i][outputKey];
+      }
+    }
+};
+
+const inferRadiusFromMass = mass => {
+  const sortedByMass = massRadiusData.sort((a, b) => a.mass - b.mass);
+
+  for (let i = 0; i < sortedByMass.length; i++) {
+    if (mass < sortedByMass[i].mass) {
+      return sortedByMass[i].radius;
+    }
+
+    if (i === sortedByMass.length - 1) {
+      return sortedByMass[i].radius;
+    }
+  }
+};
+
+const inferMassFromRadius = radius => {
+  const sortedByRadius = massRadiusData.sort((a, b) => a.radius - b.radius);
+
+  for (let i = 0; i < sortedByRadius.length; i++) {
+    if (radius < sortedByRadius[i].radius) {
+      return sortedByRadius[i].mass;
+    }
+
+    if (i === sortedByRadius.length - 1) {
+      return sortedByRadius[i].mass;
+    }
+  }
+};
 
 const getRandomColor = () => {
   const letters = "0123456789ABCDEF";
@@ -103,8 +143,7 @@ const calculatePlanetTemperature = (stellarMass, a) => {
 };
 
 module.exports = {
-  inferRadiusFromMass,
-  inferMassFromRadius,
+  inferPlanetProperty,
   getRandomColor,
   map,
   chunkScenarios,

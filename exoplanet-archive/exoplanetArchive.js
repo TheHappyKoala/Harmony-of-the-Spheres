@@ -17,7 +17,7 @@ const SCALE = 2100000;
 //https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>6 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json
 
 const createExoplanetScenarios = async () => {
-  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,pl_rade,st_mass,st_age,pl_discmethod,st_teff,st_rad,st_dist,pl_letter,pl_bmassj,pl_name,pl_publ_date,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_masse,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>6 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json`;
+  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,pl_rade,st_mass,st_age,pl_discmethod,st_teff,st_rad,st_dist,pl_letter,pl_bmassj,pl_name,pl_publ_date,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_masse,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>0 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json`;
 
   const response = await fetch(url);
 
@@ -121,7 +121,7 @@ const createExoplanetScenarios = async () => {
             planet.pl_bmassj === null
               ? planet.pl_radj === null
                 ? 0.00000000001
-                : utils.inferMassFromRadius(planet.pl_radj) * JUPITER_MASS
+                : utils.inferPlanetProperty(planet.pl_radj, 'radius', 'mass')
               : planet.pl_bmassj * JUPITER_MASS;
 
           const resolution = 2048;
@@ -163,6 +163,7 @@ const createExoplanetScenarios = async () => {
           const filePath = `./static/textures/${planet.pl_hostname}-${planet.pl_letter}.jpg`;
 
           if (!fs.existsSync(filePath)) {
+            /*
             fs.writeFileSync(
               filePath,
               jpeg.encode(
@@ -183,6 +184,7 @@ const createExoplanetScenarios = async () => {
                 50
               )
             );
+            */
           }
 
           return {
@@ -193,7 +195,7 @@ const createExoplanetScenarios = async () => {
             potentiallyHabitableWorld: worldType === "habitableWorld",
             radius:
               planet.pl_radj === null
-                ? utils.inferRadiusFromMass(mass) * JUPITER_RADIUS
+                ? utils.inferPlanetProperty(mass, 'mass', 'radius') * JUPITER_RADIUS
                 : planet.pl_radj * JUPITER_RADIUS,
             a: planet.pl_orbsmax,
             e: planet.pl_orbeccen === null ? 0 : planet.pl_orbeccen,
@@ -218,10 +220,11 @@ const createExoplanetScenarios = async () => {
   });
 
   utils.map(processedPlanets, 0, scenario => {
-    fs.writeFileSync(
-      `./src/data/scenarios/${scenario.name}.json`,
-      JSON.stringify(scenario)
-    );
+    const filePath = `./src/data/scenarios/${scenario.name}.json`;
+
+    if (!fs.existsSync(filePath)) {
+      fs.writeFileSync(filePath, JSON.stringify(scenario));
+    }
   });
 };
 
