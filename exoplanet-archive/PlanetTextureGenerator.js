@@ -35,11 +35,7 @@ module.exports = class {
 
     for (let i = 0; i < colorsLen; i++) {
       if (colors[i] && elevation < colors[i][3]) {
-        elevation = colors[i][4] ? colors[i][4] : elevation;
-
-        elevation = colors[i][5]
-          ? utils.clamp(elevation, colors[i][5], 1)
-          : elevation;
+        elevation = utils.clamp(elevation, colors[i][4], 1);
 
         return [
           colors[i][0] * elevation,
