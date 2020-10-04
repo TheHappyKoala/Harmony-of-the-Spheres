@@ -125,7 +125,7 @@ export default class extends THREE.Object3D {
 
     let material;
 
-    if (this.mass.bump) {
+    if (true) {
       material = new THREE.MeshStandardMaterial({
         map: this.textureLoader.load(`/textures/${this.mass.texture}.jpg`),
         bumpMap: this.textureLoader.load(
@@ -133,7 +133,7 @@ export default class extends THREE.Object3D {
             ? `/textures/${this.mass.texture}.jpg`
             : `/textures/${this.mass.texture}Bump.jpg`
         ),
-        bumpScale: this.mass.bumpScale ? this.mass.bumpScale : 1,
+        bumpScale: 0.5,
         roughness: 0.7
       });
     } else
