@@ -6,18 +6,16 @@ const utils = require("./utils");
 const determineWorldType = require("./determineWorldType");
 const generateScenarioDescription = require("./generateScenarioDescription");
 const PlanetTextureGenerator = require("./PlanetTextureGenerator");
+const { graphicalQuantities, physicalQuantities, worldTypes } = require("./constants");
 
 const SUN_RADIUS = 9767.441860465116;
 const JUPITER_MASS = 9.543e-4;
 const JUPITER_RADIUS = 976.7441860465117;
-const G = 39.5;
-const DT = 0.00005;
-const SCALE = 2100000;
 
 //https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>6 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json
 
 const createExoplanetScenarios = async () => {
-  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,pl_rade,st_mass,st_age,pl_discmethod,st_teff,st_rad,st_dist,pl_letter,pl_bmassj,pl_name,pl_publ_date,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_masse,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>7 and st_teff>0 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json`;
+  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,pl_rade,st_mass,st_age,pl_discmethod,st_teff,st_rad,st_dist,pl_letter,pl_bmassj,pl_name,pl_publ_date,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_masse,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>1 and st_teff>0 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json`;
 
   const response = await fetch(url);
 
@@ -57,8 +55,8 @@ const createExoplanetScenarios = async () => {
       particlesFun: false,
       type: "Exoplanets",
       pl_pnum: scenario[0].pl_pnum,
-      g: G,
-      dt: DT,
+      g: physicalQuantities.G,
+      dt: physicalQuantities.DEFAULT_DT,
       distMax: 50,
       distMin: -50,
       rotatingReferenceFrame: scenario[0].pl_hostname,
@@ -70,7 +68,7 @@ const createExoplanetScenarios = async () => {
       distanceStep: { name: "Phobos to Mars / 10", value: 0.00000626747 },
       scenarioWikiUrl: scenario[0].pl_pelink,
       systemBarycenter: true,
-      barycenter: true,
+      barycenter: false,
       barycenterMassOne: scenario[0].pl_hostname,
       barycenterMassTwo: scenario[0].pl_hostname,
       tol: 1e-4,
@@ -81,16 +79,16 @@ const createExoplanetScenarios = async () => {
       playing: false,
       integrator: "PEFRL",
       customCameraToBodyDistanceFactor: false,
-      barycenterZ: widestOrbit * SCALE * 3,
+      barycenterZ: widestOrbit * graphicalQuantities.SCALE * 3,
       elapsedTime: 0,
       useBarnesHut: false,
       theta: 0.5,
       collisions: true,
-      habitableZone: true,
+      habitableZone: false,
       referenceOrbits: false,
       softeningConstant: 0,
       logarithmicDepthBuffer: false,
-      scale: 2100000,
+      scale: graphicalQuantities.SCALE,
       trails: true,
       labels: true,
       trajectoryRendevouz: {
@@ -121,12 +119,10 @@ const createExoplanetScenarios = async () => {
             planet.pl_bmassj === null
               ? planet.pl_radj === null
                 ? 0.00000000001
-                : utils.inferPlanetProperty(planet.pl_radj, "radius", "mass")
+                : utils.inferPlanetProperty(planet.pl_radj, "radius", "mass") * JUPITER_MASS
               : planet.pl_bmassj * JUPITER_MASS;
 
-          const resolution = 3000;
-
-          const isGasGiant = false //mass > 0.000015015;
+          const isGasGiant = mass > 0.000015015;
 
           const planetTemperature =
             planet.pl_eqt == null
@@ -151,19 +147,19 @@ const createExoplanetScenarios = async () => {
                 worldType
               },
               isGasGiant,
-              resolution,
-              10
+              graphicalQuantities.TEXTURE_RESOLUTION,
+              graphicalQuantities.OCTAVES
             );
 
             const frameData = Buffer.from(planetTexture.data);
 
             const rawImageData = {
               data: frameData,
-              width: resolution,
-              height: resolution
+              width: graphicalQuantities.TEXTURE_RESOLUTION,
+              height: graphicalQuantities.TEXTURE_RESOLUTION
             };
 
-            const jpegImageData = jpeg.encode(rawImageData, 50);
+            const jpegImageData = jpeg.encode(rawImageData, graphicalQuantities.JPG_IMAGE_QUALITY);
 
             fs.writeFileSync(filePath, jpegImageData.data);
           }

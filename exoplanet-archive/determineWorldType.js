@@ -1,36 +1,38 @@
+const { worldTypes } = require("./constants");
+
 module.exports = (mass, temperature, hz, distance) => {
-  if (mass < 0.00003003 && temperature > 1000) {
-    return "torturedWorld";
+  if (mass < 0.000015015 && temperature > 1500) {
+    return worldTypes.LAVA_WORLD;
   }
 
   if (
     (mass < 3.213e-7 && hz[0] > distance) ||
     (mass < 0.0000016065 && temperature > 700)
   ) {
-    return "deadWorld";
+    return worldTypes.DEAD_WORLD;
   }
 
-  if (hz[0] < distance && hz[1] > distance && mass < 0.00003003) {
-    return "habitableWorld";
-  } else if (mass < 0.00003003 && distance > hz[1]) {
-    return "icyWorld";
+  if (hz[0] < distance && hz[1] > distance && mass < 0.000015015) {
+    return worldTypes.HABITABLE_WORLD;
+  } else if (mass < 0.000015015 && distance > hz[1]) {
+    return worldTypes.ICY_WORLD;
   }
 
-  if (mass > 0.00003003) {
+  if (mass > 0.000015015) {
     if (temperature < 80) {
-      return "sudarskyClassZero";
+      return worldTypes.SUDARSKY_CLASS_ZERO;
     } else if (temperature < 150) {
-      return "sudarskyClassOne";
+      return worldTypes.SUDARSKY_CLASS_ONE;
     } else if (temperature < 250) {
-      return "sudarskyClassTwo";
+      return worldTypes.SUDARSKY_CLASS_TWO;
     } else if (temperature < 800) {
-      return "sudarskyClassThree";
+      return worldTypes.SUDARSKY_CLASS_THREE;
     } else if (temperature < 1400) {
-      return "sudarskyClassFour";
+      return worldTypes.SUDARSKY_CLASS_FOUR;
     } else {
-      return "sudarskyClassFive";
+      return worldTypes.SUDARSKY_CLASS_FIVE;
     }
   }
 
-  return "desertWorld";
+  return worldTypes.DESERT_WORLD;
 };

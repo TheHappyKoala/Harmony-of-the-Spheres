@@ -1,5 +1,7 @@
+const { worldTypes } = require("./constants");
+
 module.exports = {
-  deadWorld: [
+  [worldTypes.DEAD_WORLD]: [
     {
       name: "Mercury",
       data: [
@@ -27,7 +29,7 @@ module.exports = {
       ]
     }
   ],
-  desertWorld: [
+  [worldTypes.DESERT_WORLD]: [
     {
       name: "Desert",
       data: [
@@ -159,7 +161,7 @@ module.exports = {
       ]
     }
   ],
-  icyWorld: [
+  [worldTypes.ICY_WORLD]: [
     {
       name: "Ganymede",
       data: [
@@ -253,7 +255,7 @@ module.exports = {
       ]
     }
   ],
-  habitableWorld: [
+  [worldTypes.HABITABLE_WORLD]: [
     {
       name: "Earth",
       data: [
@@ -316,7 +318,13 @@ module.exports = {
       data: [[0, 0, 0.7, 1]]
     }
   ],
-  sudarskyClassOne: [
+  [worldTypes.SUDARSKY_CLASS_ZERO]: [
+    {
+      name: "Neptune",
+      data: [[0.49, 0.73, 0.91, 1]]
+    }
+  ],
+  [worldTypes.SUDARSKY_CLASS_ONE]: [
     {
       name: "Saturn",
       data: [
@@ -338,25 +346,19 @@ module.exports = {
       ]
     }
   ],
-  sudarskyClassZero: [
-    {
-      name: "Neptune",
-      data: [[0.49, 0.73, 0.91, 1]]
-    }
-  ],
-  sudarskyClassTwo: [
+  [worldTypes.SUDARSKY_CLASS_TWO]: [
     {
       name: "Water Clouds",
       data: [[0.99, 0.99, 0.99, 1, 0.5]]
     }
   ],
-  sudarskyClassThree: [
+  [worldTypes.SUDARSKY_CLASS_THREE]: [
     {
       name: "Feature less",
       data: [[0, 0.2, 0.99, 1, 0.5]]
     }
   ],
-  sudarskyClassFour: [
+  [worldTypes.SUDARSKY_CLASS_FOUR]: [
     {
       name: "Alkali Metals",
       data: [
@@ -364,13 +366,13 @@ module.exports = {
       ]
     }
   ],
-  sudarskyClassFive: [
+  [worldTypes.SUDARSKY_CLASS_FIVE]: [
     {
       name: "Silicate Clouds",
       data: [[0.23, 0.48, 0.34, 1, 0.5]]
     }
   ],
-  torturedWorld: [
+  [worldTypes.LAVA_WORLD]: [
     {
       name: "Lava Rift Zones",
       data: [
