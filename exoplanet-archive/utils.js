@@ -1,3 +1,5 @@
+const { physicalQuantities, worldTypes } = require("./constants");
+
 const massRadiusData = require("./massRadiusData");
 
 const inferPlanetProperty = (value, inputKey, outputKey) => {
@@ -12,6 +14,23 @@ const inferPlanetProperty = (value, inputKey, outputKey) => {
       return sortedByMass[i][outputKey];
     }
   }
+};
+
+const getPlanetProperties = (mass, radius) => {
+  const { JUPITER_MASS, JUPITER_RADIUS } = physicalQuantities;
+  let properties = [];
+
+  if (mass === null) {
+    properties.push(inferPlanetProperty(radius, "radius", "mass") * JUPITER_MASS);
+  } else {
+    properties.push(mass * JUPITER_MASS);
+  }
+
+  if (radius === null) {
+    return properties.push(inferPlanetProperty(mass, "mass", "radius") * JUPITER_RADIUS);
+  }
+
+  return properties.push(radius * JUPITER_RADIUS);
 };
 
 const getRandomColor = () => {
@@ -114,8 +133,13 @@ const calculatePlanetTemperature = (stellarMass, a) => {
   return Math.sqrt(Math.sqrt(T_sur));
 };
 
+const getWidestOrbit = masses => Math.max(...masses.map(mass => mass.pl_orbsmax));
+
+const isGasGiant = worldType => worldType.includes("sudarsky");
+
+const isHabitableWorld = worldType => worldType === worldTypes.HABITABLE_WORLD;
+
 module.exports = {
-  inferPlanetProperty,
   getRandomColor,
   map,
   chunkScenarios,
@@ -123,5 +147,9 @@ module.exports = {
   getRandomFloatInRange,
   getRandomInteger,
   clamp,
-  calculatePlanetTemperature
+  calculatePlanetTemperature,
+  getWidestOrbit,
+  isGasGiant,
+  isHabitableWorld,
+  getPlanetProperties
 };
