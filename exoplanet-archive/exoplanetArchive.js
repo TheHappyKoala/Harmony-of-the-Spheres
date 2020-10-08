@@ -13,7 +13,7 @@ const SUN_RADIUS = 9767.441860465116;
 //https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_teff,st_rad,pl_letter,pl_bmassj,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>6 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json
 
 const createExoplanetScenarios = async () => {
-  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,pl_rade,st_mass,st_age,pl_discmethod,st_teff,st_rad,st_dist,pl_letter,pl_bmassj,pl_name,pl_publ_date,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_masse,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>1 and st_teff>0 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json`;
+  const url = `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,pl_rade,st_mass,st_age,pl_discmethod,st_teff,st_rad,st_dist,pl_letter,pl_bmassj,pl_name,pl_publ_date,pl_radj,pl_orbper,pl_orbsmax,pl_pnum,pl_orbeccen,pl_orblper,pl_masse,pl_facility,pl_orbincl,pl_pelink,pl_facility,pl_eqt&where=pl_pnum>0 and st_teff>0 and pl_orbsmax>0 and st_mass>0 and st_rad>0&format=json`;
 
   const response = await fetch(url);
 
@@ -76,7 +76,7 @@ const createExoplanetScenarios = async () => {
       playing: false,
       integrator: "PEFRL",
       customCameraToBodyDistanceFactor: false,
-      barycenterZ: getWidestOrbit(scenario) * graphicalQuantities.SCALE * 3,
+      barycenterZ: utils.getWidestOrbit(scenario) * graphicalQuantities.SCALE * 3,
       elapsedTime: 0,
       useBarnesHut: false,
       theta: 0.5,
@@ -131,7 +131,7 @@ const createExoplanetScenarios = async () => {
 
           const filePath = `./static/textures/${planet.pl_hostname}-${planet.pl_letter}.jpg`;
 
-          const isGasGiant = utils.isGasGiant();
+          const isGasGiant = utils.isGasGiant(worldType);
 
           if (!fs.existsSync(filePath)) {
             const planetTexture = new PlanetTextureGenerator(

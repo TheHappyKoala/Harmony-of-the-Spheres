@@ -1,7 +1,8 @@
-export default {
+module.exports = {
     physicalQuantities: {
         SOLAR_RADIUS: 9.543e-4,
         JUPITER_RADIUS: 976.7441860465117,
+        JUPITER_MASS: 9.543e-4,
         G: 39.5,
         DEFAULT_DT: 0.00005,
     },

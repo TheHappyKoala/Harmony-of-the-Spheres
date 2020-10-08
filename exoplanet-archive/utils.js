@@ -18,19 +18,19 @@ const inferPlanetProperty = (value, inputKey, outputKey) => {
 
 const getPlanetProperties = (mass, radius) => {
   const { JUPITER_MASS, JUPITER_RADIUS } = physicalQuantities;
-  let properties = [];
+  const properties = [];
 
   if (mass === null) {
-    properties.push(inferPlanetProperty(radius, "radius", "mass") * JUPITER_MASS);
+    properties.push((inferPlanetProperty(radius, "radius", "mass") * JUPITER_MASS));
   } else {
     properties.push(mass * JUPITER_MASS);
   }
 
   if (radius === null) {
-    return properties.push(inferPlanetProperty(mass, "mass", "radius") * JUPITER_RADIUS);
+    return [...properties, inferPlanetProperty(mass, "mass", "radius") * JUPITER_RADIUS];
   }
 
-  return properties.push(radius * JUPITER_RADIUS);
+  return [...properties, radius * JUPITER_RADIUS];
 };
 
 const getRandomColor = () => {
