@@ -99,46 +99,57 @@ One way of finding a good balance between efficency and accuracy is to vary the 
 There exist general integrators that's suited for a variety of different problems (Runge Kutta for example) and then there are integrators that are specifically tailored for certain kinds of problems. Symplectic integrators are one such type of integrators. They are not necessarily more accurate but they do have properties that make them more suitable for long-time simulations. Mostly they preserve a quantity of the system (for example angular momentum and energy) so that the simulation is qualitatively accurate (the planets stay in their orbit and doesn't spiral into the Sun). But for simulations over a few thousand years this should not be a problem for the higher order non-symplectic integrators either, they are in fact often more efficient the symplectic integrators. The symplectic integrators are mainly useful for observing the general behavior of a system over long time periods.
 
 ## List of Integrators
+
 | Integrator | Order | Symplectic | Adaptive `dt` |
 | ---------- | ----- | ---------- | ------------- |
-| Euler | 1 | False | False |
-| Verlet | 2 | True | False |
-| RK4 | 4 | False | False |
-| PEFRL | 4 | True | False |
-| Nystrom3 | 4 | False | False |
-| Nystrom4 | 5 | False | False |
-| Nystrom5 | 6 | False | False |
-| RKN64 | 6 | False | True |
-| Yoshida6 | 6 | True | False |
-| Nystrom6 | 7 | False | False |
-| KahanLi8 | 8 | True | False |
-| Sofspa10 | 10 | True | False |
-| RKN12 | 12 | False | True |
+| Euler      | 1     | False      | False         |
+| Verlet     | 2     | True       | False         |
+| RK4        | 4     | False      | False         |
+| PEFRL      | 4     | True       | False         |
+| Nystrom3   | 4     | False      | False         |
+| Nystrom4   | 5     | False      | False         |
+| Nystrom5   | 6     | False      | False         |
+| RKN64      | 6     | False      | True          |
+| Yoshida6   | 6     | True       | False         |
+| Nystrom6   | 7     | False      | False         |
+| KahanLi8   | 8     | True       | False         |
+| Sofspa10   | 10    | True       | False         |
+| RKN12      | 12    | False      | True          |
 
 ## Integrator Credits
+
 ### RK4
+
 Runge, C. (1895). Ueber die numerische Auflösung von Differentialgleichungen. Mathematische Annalen, 46(2), pp.167-178.
+
 ### Verlet
+
 Swope, W., Andersen, H., Berens, P. and Wilson, K. (1982). A computer simulation method for the calculation of equilibrium constants for the formation of physical clusters of molecules: Application to small water clusters. The Journal of Chemical Physics, 76(1), pp.637-649.
 
 ### PEFRL
+
 Omelyan, I., Mryglod, I. and Folk, R. (2002). Optimized Forest–Ruth- and Suzuki-like algorithms for integration of motion in many-body systems. Computer Physics Communications, [online] 146(2), pp.188-202. Available at: https://arxiv.org/pdf/cond-mat/0110585.pdf [Accessed 19 Jan. 2020].
 
 ### Nystrom3, Nystrom4, Nystrom5, Nystrom6
+
 Lear, W. (1978). Some new nystrom integrators. [online] Ntrs.nasa.gov. Available at: https://ntrs.nasa.gov/search.jsp?R=19780009826 [Accessed 19 Jan. 2020].
 
 ### RKN12, RKN64
+
 DORMAND, J., EL-MIKKAWY, M. and PRINCE, P. (1987). High-Order Embedded Runge-Kutta-Nystrom Formulae. IMA Journal of Numerical Analysis, 7(4), pp.423-430.
 
 ### Yoshida6
+
 Yoshida, H. (1990). Construction of higher order symplectic integrators. Physics Letters A, 150(5-7), pp.262-268.
 
 ### KahanLi8
-The method called *s15odr8* in:
+
+The method called _s15odr8_ in:
 
 Kahan, W. and Li, R. (1997). Composition constants for raising the orders of unconventionalschemes for ordinary differential equations. Mathematics of Computation, 66(219), pp.1089-1100.
 
 ### Sofspa10
+
 Sofroniou, M. and Spaletta, G. (2005). Derivation of symmetric composition constants for symmetric integrators. Optimization Methods and Software, 20(4-5), pp.597-613.
 
 ## License

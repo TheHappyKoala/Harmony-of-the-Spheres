@@ -20,7 +20,6 @@ exports.createPages = async ({ actions, graphql }) => {
             name
             type
             discoveryFacility
-            hasHabitableWorld
             hallOfFame
           }
         }
@@ -33,37 +32,6 @@ exports.createPages = async ({ actions, graphql }) => {
   const numPages = Math.ceil(
     results.data.allScenariosJson.edges.length / scenariosPerPage
   );
-
-  const habitableSystems = results.data.allScenariosJson.edges.filter(
-    ({ node }) => node.hasHabitableWorld
-  );
-  const numberOfHabitableSystems = habitableSystems.length;
-  const numPagesHabitableSystems = Math.ceil(
-    numberOfHabitableSystems / scenariosPerPage
-  );
-
-  [...new Array(numPagesHabitableSystems)].forEach((page, i) => {
-    const pagePath = `/exoplanets/potentially-habitable-worlds`;
-    createPage({
-      path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
-      component: require.resolve(
-        `./src/templates/HabitablePlanetsNavigation.tsx`
-      ),
-      context: {
-        pagePath,
-        limit: scenariosPerPage,
-        skip: i * scenariosPerPage,
-        numPages: numPagesHabitableSystems,
-        currentPage: i + 1,
-        background: "Potentially Habitable Worlds.jpg",
-        categoryDescription:
-          "Dozens of potentially habitable exoplanets have been discovered. Simulate and learn about all systems that potentially contain at least one habitable planet.",
-        currentPageName: "Potentially Habitable Worlds",
-        type: "Exoplanets",
-        pageType: "navigation"
-      }
-    });
-  });
 
   const hofSystems = results.data.allScenariosJson.edges.filter(
     ({ node }) => node.hallOfFame

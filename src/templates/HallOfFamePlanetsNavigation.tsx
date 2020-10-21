@@ -120,17 +120,6 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
                 </NavItem>
               </Link>
 
-              <Link to={`/exoplanets/potentially-habitable-worlds`}>
-                <NavItem
-                  active={
-                    pageContext.currentPageName ===
-                    "Potentially Habitable Worlds"
-                  }
-                >
-                  Potentially Habitable Worlds
-                </NavItem>
-              </Link>
-
               {["Transit", "Radial Velocity", "Imaging", "Microlensing"].map(
                 discoveryFacility => (
                   <Link to={`/exoplanets/${kebabCase(discoveryFacility)}`}>
