@@ -59,31 +59,6 @@ export default ({
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={imageMetaContent} />
 
-      {pageType === "main" && (
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "http://schema.org",
-            "@type": "WebSite",
-            name: "Gravity Simulator",
-            url: "https://gravitysimulator.org",
-            image,
-            description: pageDescription
-          })}
-        </script>
-      )}
-
-      {pageType === "category" && (
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "http://schema.org",
-            "@type": "WebPage",
-            name: `${pageTitle} Scenarios`,
-            image,
-            description: pageDescription
-          })}
-        </script>
-      )}
-
       {pageType === "simulator" && (
         <script type="application/ld+json">
           {JSON.stringify({
