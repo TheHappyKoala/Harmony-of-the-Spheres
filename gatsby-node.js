@@ -92,17 +92,17 @@ exports.createPages = async ({ actions, graphql }) => {
       {
         name: "Exoplanets",
         description:
-          "3D gravity simulations of planets known to orbit stars other than our own, the Sun."
+          "3D gravity simulations, with procedural planet textures based on data from the Exoplanet Archive, of planets known to orbit stars other than our own, the Sun."
       },
       {
         name: "Solar System",
         description:
-          "3D gravity simulations of the solar system and its planets, moons, asteroids and comets powered by data from NASA."
+          "3D gravity simulations of the solar system and its planets, moons, asteroids and comets powered by data from NASA. Explore the schorched surface of Mercury and the icy plains of Pluto."
       },
       {
         name: "Misc",
         description:
-          "3D gravity simulations of beautiful choreograpies, planets and galaxies colliding and various what-if scenarios."
+          "3D gravity simulations of beautiful n-body choreograpies, galaxies colliding and various what-if scenarios."
       },
       {
         name: "Spaceflight",
@@ -112,7 +112,7 @@ exports.createPages = async ({ actions, graphql }) => {
       {
         name: "Starship",
         description:
-          "Take control of a spacecraft and visit whichever planet, moon, asteroid or comet you like."
+          "Take control of the Starship spacecraft and visit whichever planet, moon, asteroid or comet you like."
       }
     ];
 
@@ -230,9 +230,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       name: `scenarioImage`,
       value: `../../images/scenarios/${
-        fs.existsSync(filePath)
-          ? (node.fileName)
-          : "exoplanet"
+        fs.existsSync(filePath) ? node.fileName : "exoplanet"
       }.png`
     });
   }
