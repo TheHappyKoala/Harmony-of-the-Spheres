@@ -73,8 +73,9 @@
       "temperature": 212.4050338475079,
       "exoplanet": true,
       "bump": false,
-      "color": "#D89A3F",
-      "clouds": false
+      "color": "#22AAF5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-68-c",
@@ -85,14 +86,15 @@
       "radius": 86.93023255813954,
       "a": 0.09059,
       "e": 0,
-      "w": 44.39975864166067,
+      "w": 266.842404021022,
       "o": 0,
       "orbitalPeriod": 9.6051,
       "temperature": 941,
       "exoplanet": true,
       "bump": true,
-      "color": "#BD5E00",
-      "clouds": false
+      "color": "#5E65D4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-68-b",
@@ -103,18 +105,20 @@
       "radius": 205.11627906976744,
       "a": 0.0617,
       "e": 0,
-      "w": 45.017957219303135,
+      "w": 246.15783491274007,
       "o": 0,
       "orbitalPeriod": 5.3988,
       "temperature": 1280,
       "exoplanet": true,
       "bump": false,
-      "color": "#78DDEA",
-      "clouds": false
+      "color": "#52A398",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-68, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-68 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-68 - System With 3 Exolanets "
 }

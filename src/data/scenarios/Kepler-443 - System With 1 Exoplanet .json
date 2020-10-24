@@ -67,18 +67,20 @@
       "radius": 205.11627906976744,
       "a": 0.495,
       "e": 0.11,
-      "w": 150.59588600498194,
+      "w": 25.3958881331552,
       "o": 0,
       "orbitalPeriod": 177.6693,
       "temperature": 233,
       "exoplanet": true,
       "bump": false,
-      "color": "#E3B6E6",
-      "clouds": false
+      "color": "#8F5F41",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-443, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-443 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-443 - System With 1 Exoplanet "
 }

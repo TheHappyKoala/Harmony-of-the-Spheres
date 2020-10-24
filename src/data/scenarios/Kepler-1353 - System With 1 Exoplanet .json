@@ -67,18 +67,20 @@
       "radius": 157.2558139534884,
       "a": 0.153,
       "e": 0,
-      "w": 15.229753052384378,
+      "w": 61.3561042681408,
       "o": 0,
       "orbitalPeriod": 24.7543966,
       "temperature": 491,
       "exoplanet": true,
       "bump": true,
-      "color": "#7BFB4C",
-      "clouds": false
+      "color": "#6B6373",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1353, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1353 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1353 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 939.6279069767442,
       "a": 0.0376,
       "e": 0.062,
-      "w": 293.2937237602925,
+      "w": 159.37819281781987,
       "o": 0,
       "orbitalPeriod": 2.9444256,
       "temperature": 1029.7373214404527,
       "exoplanet": true,
       "bump": false,
-      "color": "#0290F5",
-      "clouds": false
+      "color": "#B4B0D2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-23, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-23 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-23 - System With 1 Exoplanet "
 }

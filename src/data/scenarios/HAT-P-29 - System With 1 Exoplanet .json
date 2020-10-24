@@ -73,12 +73,14 @@
       "temperature": 1271,
       "exoplanet": true,
       "bump": false,
-      "color": "#47CA7C",
-      "clouds": false
+      "color": "#372C89",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-29, which contains 1 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-29 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HAT-P-29 - System With 1 Exoplanet "
 }

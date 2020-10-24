@@ -67,14 +67,15 @@
       "radius": 236.37209302325581,
       "a": 0.179,
       "e": 0,
-      "w": 24.066684804774113,
+      "w": 299.57265564651675,
       "o": 0,
       "orbitalPeriod": 25.762294,
       "temperature": 633,
       "exoplanet": true,
       "bump": false,
-      "color": "#E5B7AA",
-      "clouds": false
+      "color": "#D08E53",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-355-b",
@@ -85,18 +86,20 @@
       "radius": 126.97674418604652,
       "a": 0.102,
       "e": 0,
-      "w": 314.1060279968149,
+      "w": 252.92929882160195,
       "o": 0,
       "orbitalPeriod": 11.03189,
       "temperature": 840,
       "exoplanet": true,
       "bump": true,
-      "color": "#5EBABC",
-      "clouds": false
+      "color": "#316799",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-355, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-355 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-355 - System With 2 Exolanets "
 }

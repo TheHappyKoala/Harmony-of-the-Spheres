@@ -73,12 +73,14 @@
       "temperature": 395.9130420135267,
       "exoplanet": true,
       "bump": false,
-      "color": "#ACB0E7",
-      "clouds": false
+      "color": "#5B6971",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 30 Ari B, which contains 1 exoplanets and was discovered by the Thueringer Landessternwarte Tautenburg.",
   "name": "30 Ari B - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "30 Ari B - System With 1 Exoplanet "
 }

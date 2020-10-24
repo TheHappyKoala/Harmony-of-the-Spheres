@@ -73,12 +73,14 @@
       "temperature": 186.71311094532294,
       "exoplanet": true,
       "bump": false,
-      "color": "#1F977F",
-      "clouds": false
+      "color": "#79C3ED",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 128356, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "HD 128356 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 128356 - System With 1 Exoplanet "
 }

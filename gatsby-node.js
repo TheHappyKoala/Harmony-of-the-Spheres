@@ -223,15 +223,15 @@ exports.createPages = async ({ actions, graphql }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
-  const filePath = `./src/images/scenarios/${node.name}.png`;
+  const filePath = `./src/images/scenarios/${node.fileName}.png`;
 
   if (node.internal.type === "ScenariosJson") {
     createNodeField({
       node,
       name: `scenarioImage`,
       value: `../../images/scenarios/${
-        node.type !== "Exoplanets" || fs.existsSync(filePath)
-          ? node.name
+        fs.existsSync(filePath)
+          ? (node.fileName)
           : "exoplanet"
       }.png`
     });

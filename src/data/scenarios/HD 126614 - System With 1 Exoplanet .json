@@ -73,12 +73,14 @@
       "temperature": 185.84597500786995,
       "exoplanet": true,
       "bump": false,
-      "color": "#4A9536",
-      "clouds": false
+      "color": "#7A7FDF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 126614, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 126614 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 126614 - System With 1 Exoplanet "
 }

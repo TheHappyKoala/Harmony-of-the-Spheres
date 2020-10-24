@@ -67,18 +67,20 @@
       "radius": 1220.9302325581396,
       "a": 1.02,
       "e": 0.41,
-      "w": 150.79437952976724,
+      "w": 256.1730545125191,
       "o": 0,
       "orbitalPeriod": 363.20001,
       "temperature": 301.6405773543184,
       "exoplanet": true,
       "bump": false,
-      "color": "#29099F",
-      "clouds": false
+      "color": "#9EE426",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 38283, which contains 1 exoplanets and was discovered by the Anglo-Australian Telescope.",
   "name": "HD 38283 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 38283 - System With 1 Exoplanet "
 }

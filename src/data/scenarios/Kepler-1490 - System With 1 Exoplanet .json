@@ -67,18 +67,20 @@
       "radius": 264.69767441860466,
       "a": 0.3729,
       "e": 0,
-      "w": 293.69301996247424,
+      "w": 325.33661839576666,
       "o": 0,
       "orbitalPeriod": 92.4362973,
       "temperature": 348,
       "exoplanet": true,
       "bump": false,
-      "color": "#30C308",
-      "clouds": false
+      "color": "#97BC7F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1490, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1490 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1490 - System With 1 Exoplanet "
 }

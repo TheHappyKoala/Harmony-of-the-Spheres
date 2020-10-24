@@ -67,18 +67,20 @@
       "radius": 97.67441860465118,
       "a": 0.0435,
       "e": 0,
-      "w": 257.31096585303374,
+      "w": 100.351995993879,
       "o": 0,
       "orbitalPeriod": 2.76122421,
       "temperature": 2017,
       "exoplanet": true,
       "bump": true,
-      "color": "#0082E1",
-      "clouds": false
+      "color": "#7B5CEA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1288, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1288 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1288 - System With 1 Exoplanet "
 }

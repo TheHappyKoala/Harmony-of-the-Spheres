@@ -67,18 +67,20 @@
       "radius": 293.0232558139535,
       "a": 0.4089,
       "e": 0,
-      "w": 70.796993537293,
+      "w": 138.8722477391911,
       "o": 0,
       "orbitalPeriod": 84.703921,
       "temperature": 537,
       "exoplanet": true,
       "bump": false,
-      "color": "#C19965",
-      "clouds": false
+      "color": "#17D423",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1510, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1510 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1510 - System With 1 Exoplanet "
 }

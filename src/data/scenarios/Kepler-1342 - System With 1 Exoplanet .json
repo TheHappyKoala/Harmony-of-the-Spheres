@@ -67,18 +67,20 @@
       "radius": 144.55813953488374,
       "a": 0.0313,
       "e": 0,
-      "w": 164.77879215933336,
+      "w": 33.50276818879279,
       "o": 0,
       "orbitalPeriod": 2.21571036,
       "temperature": 1283,
       "exoplanet": true,
       "bump": true,
-      "color": "#489AA2",
-      "clouds": false
+      "color": "#8A28A1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1342, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1342 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1342 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 1211.1627906976744,
       "a": 0.0449,
       "e": 0.017,
-      "w": 279.292753555889,
+      "w": 156.34694096749212,
       "o": 0,
       "orbitalPeriod": 3.37265,
       "temperature": 1400,
       "exoplanet": true,
       "bump": false,
-      "color": "#CC25D7",
-      "clouds": false
+      "color": "#28C4E6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-124, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-124 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-124 - System With 1 Exoplanet "
 }

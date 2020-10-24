@@ -67,14 +67,15 @@
       "radius": 219.76744186046514,
       "a": 0.07757,
       "e": 0.36,
-      "w": 91.98524476444229,
+      "w": 45.572925650632214,
       "o": 0,
       "orbitalPeriod": 8.509,
       "temperature": 824.6096605176305,
       "exoplanet": true,
       "bump": false,
-      "color": "#9B889E",
-      "clouds": false
+      "color": "#77532E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 3167-c",
@@ -85,14 +86,15 @@
       "radius": 249.06976744186048,
       "a": 0.1841,
       "e": 0.267,
-      "w": 334.6492329093841,
+      "w": 140.08054395541305,
       "o": 0,
       "orbitalPeriod": 29.83832,
       "temperature": 531,
       "exoplanet": true,
       "bump": false,
-      "color": "#67087B",
-      "clouds": false
+      "color": "#27AF33",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 3167-b",
@@ -103,18 +105,20 @@
       "radius": 148.46511627906978,
       "a": 0.0186,
       "e": 0,
-      "w": 53.77008781088358,
+      "w": 207.93144115090558,
       "o": 0,
       "orbitalPeriod": 0.959624,
       "temperature": 1669,
       "exoplanet": true,
       "bump": false,
-      "color": "#B5ADD7",
-      "clouds": false
+      "color": "#CC6A8A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 3167, which contains 3 exoplanets and was discovered by the K2.",
   "name": "HD 3167 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 3167 - System With 3 Exolanets "
 }

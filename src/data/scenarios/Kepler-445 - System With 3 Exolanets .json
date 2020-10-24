@@ -67,14 +67,15 @@
       "radius": 107.44186046511629,
       "a": 0.0439,
       "e": 0,
-      "w": 162.86423224017202,
+      "w": 358.52234098117583,
       "o": 0,
       "orbitalPeriod": 8.15275,
       "temperature": 305,
       "exoplanet": true,
       "bump": true,
-      "color": "#C190C2",
-      "clouds": false
+      "color": "#EC5B91",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-445-c",
@@ -85,14 +86,15 @@
       "radius": 214.88372093023258,
       "a": 0.0301,
       "e": 0,
-      "w": 345.69325943104246,
+      "w": 160.27395659582098,
       "o": 0,
       "orbitalPeriod": 4.871229,
       "temperature": 341,
       "exoplanet": true,
       "bump": false,
-      "color": "#0CDF3E",
-      "clouds": false
+      "color": "#BFD90F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-445-b",
@@ -103,18 +105,20 @@
       "radius": 136.74418604651166,
       "a": 0.0217,
       "e": 0,
-      "w": 323.44841006259094,
+      "w": 352.03068371506873,
       "o": 0,
       "orbitalPeriod": 2.984151,
       "temperature": 401,
       "exoplanet": true,
       "bump": true,
-      "color": "#E66B47",
-      "clouds": false
+      "color": "#F33C0A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-445, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-445 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-445 - System With 3 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 852.6976744186047,
       "a": 0.04667,
       "e": 0.376,
-      "w": 335.5711720779727,
+      "w": 172.48528916249285,
       "o": 0,
       "orbitalPeriod": 3.583893,
       "temperature": 1324,
       "exoplanet": true,
       "bump": false,
-      "color": "#90DBDB",
-      "clouds": false
+      "color": "#15A64A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-8, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-8 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-8 - System With 1 Exoplanet "
 }

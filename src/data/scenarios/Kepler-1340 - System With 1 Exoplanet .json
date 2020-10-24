@@ -67,18 +67,20 @@
       "radius": 134.79069767441862,
       "a": 0.0153,
       "e": 0,
-      "w": 137.96733914431144,
+      "w": 35.01373682388467,
       "o": 0,
       "orbitalPeriod": 0.66502692,
       "temperature": 2174,
       "exoplanet": true,
       "bump": true,
-      "color": "#BB58A2",
-      "clouds": false
+      "color": "#BB1552",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1340, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1340 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1340 - System With 1 Exoplanet "
 }

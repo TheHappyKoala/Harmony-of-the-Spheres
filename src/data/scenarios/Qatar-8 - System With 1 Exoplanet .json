@@ -67,18 +67,20 @@
       "radius": 1255.1162790697674,
       "a": 0.0474,
       "e": 0,
-      "w": 2.8446638937220836,
+      "w": 219.47904101245538,
       "o": 0,
       "orbitalPeriod": 3.71495,
       "temperature": 1457,
       "exoplanet": true,
       "bump": false,
-      "color": "#529F63",
-      "clouds": false
+      "color": "#0AA123",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Qatar-8, which contains 1 exoplanets and was discovered by the Qatar.",
   "name": "Qatar-8 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Qatar-8 - System With 1 Exoplanet "
 }

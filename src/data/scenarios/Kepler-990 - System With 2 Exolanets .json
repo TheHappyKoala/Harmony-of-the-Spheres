@@ -67,14 +67,15 @@
       "radius": 132.8372093023256,
       "a": 0.0127,
       "e": 0,
-      "w": 93.86263779294234,
+      "w": 311.1382003736096,
       "o": 0,
       "orbitalPeriod": 0.53835431,
       "temperature": 2386,
       "exoplanet": true,
       "bump": true,
-      "color": "#AE18FE",
-      "clouds": false
+      "color": "#E203E6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-990-b",
@@ -85,18 +86,20 @@
       "radius": 226.60465116279073,
       "a": 0.0883,
       "e": 0,
-      "w": 7.024924606023557,
+      "w": 130.54089202450126,
       "o": 0,
       "orbitalPeriod": 9.91723428,
       "temperature": 903,
       "exoplanet": true,
       "bump": false,
-      "color": "#FB230B",
-      "clouds": false
+      "color": "#5E9B8D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-990, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-990 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-990 - System With 2 Exolanets "
 }

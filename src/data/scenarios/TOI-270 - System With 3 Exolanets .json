@@ -67,14 +67,15 @@
       "radius": 185.58139534883722,
       "a": 0.0733,
       "e": 0,
-      "w": 83.78334053458664,
+      "w": 219.59003013988408,
       "o": 0,
       "orbitalPeriod": 11.38014,
       "temperature": 340,
       "exoplanet": true,
       "bump": false,
-      "color": "#47B686",
-      "clouds": false
+      "color": "#CDCA98",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "TOI-270-c",
@@ -85,14 +86,15 @@
       "radius": 210.97674418604652,
       "a": 0.0472,
       "e": 0,
-      "w": 309.81944564403483,
+      "w": 7.298256583626115,
       "o": 0,
       "orbitalPeriod": 5.660172,
       "temperature": 424,
       "exoplanet": true,
       "bump": false,
-      "color": "#C53C60",
-      "clouds": false
+      "color": "#E7A6CC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "TOI-270-b",
@@ -103,18 +105,20 @@
       "radius": 108.4186046511628,
       "a": 0.0306,
       "e": 0,
-      "w": 67.2633589582753,
+      "w": 199.4833539555554,
       "o": 0,
       "orbitalPeriod": 3.36008,
       "temperature": 528,
       "exoplanet": true,
       "bump": true,
-      "color": "#00597F",
-      "clouds": false
+      "color": "#71DAE5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TOI-270, which contains 3 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "TOI-270 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TOI-270 - System With 3 Exolanets "
 }

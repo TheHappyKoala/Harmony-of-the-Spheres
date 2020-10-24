@@ -67,14 +67,15 @@
       "radius": 186.55813953488374,
       "a": 0.1148,
       "e": 0,
-      "w": 215.07023344467072,
+      "w": 68.82830081963023,
       "o": 0,
       "orbitalPeriod": 16.1966,
       "temperature": 583.6419821634619,
       "exoplanet": true,
       "bump": false,
-      "color": "#74BCA6",
-      "clouds": false
+      "color": "#E15DBC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-62-b",
@@ -85,18 +86,20 @@
       "radius": 186.55813953488374,
       "a": 0.0636,
       "e": 0,
-      "w": 94.76204460886734,
+      "w": 216.82531562825824,
       "o": 0,
       "orbitalPeriod": 6.67202,
       "temperature": 784.1315168522491,
       "exoplanet": true,
       "bump": false,
-      "color": "#55EE30",
-      "clouds": false
+      "color": "#AFE47E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-62, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-62 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-62 - System With 2 Exolanets "
 }

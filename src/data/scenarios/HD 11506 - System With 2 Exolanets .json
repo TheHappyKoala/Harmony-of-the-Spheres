@@ -73,8 +73,9 @@
       "temperature": 321.32551140981013,
       "exoplanet": true,
       "bump": false,
-      "color": "#A6FDBC",
-      "clouds": false
+      "color": "#F751CF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 11506-b",
@@ -91,12 +92,14 @@
       "temperature": 166.00328749846955,
       "exoplanet": true,
       "bump": false,
-      "color": "#D4E25C",
-      "clouds": false
+      "color": "#1F34B8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 11506, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 11506 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 11506 - System With 2 Exolanets "
 }

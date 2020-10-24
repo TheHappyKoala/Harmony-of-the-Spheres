@@ -73,8 +73,9 @@
       "temperature": 409,
       "exoplanet": true,
       "bump": true,
-      "color": "#78912B",
-      "clouds": true
+      "color": "#6B4D8F",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "L 98-59-c",
@@ -91,8 +92,9 @@
       "temperature": 517,
       "exoplanet": true,
       "bump": true,
-      "color": "#416B15",
-      "clouds": false
+      "color": "#3D5BDF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "L 98-59-b",
@@ -109,12 +111,14 @@
       "temperature": 610,
       "exoplanet": true,
       "bump": true,
-      "color": "#68DD2E",
-      "clouds": false
+      "color": "#097544",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system L 98-59, which contains 3 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "L 98-59 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "L 98-59 - System With 3 Exolanets "
 }

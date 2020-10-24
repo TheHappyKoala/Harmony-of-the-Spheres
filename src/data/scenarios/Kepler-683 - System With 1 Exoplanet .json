@@ -67,18 +67,20 @@
       "radius": 171.90697674418604,
       "a": 0.0355,
       "e": 0,
-      "w": 223.71059167511845,
+      "w": 38.867061596440855,
       "o": 0,
       "orbitalPeriod": 2.53918318,
       "temperature": 1332,
       "exoplanet": true,
       "bump": true,
-      "color": "#12D91C",
-      "clouds": true
+      "color": "#308531",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-683, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-683 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-683 - System With 1 Exoplanet "
 }

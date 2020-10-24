@@ -67,18 +67,20 @@
       "radius": 1513.9534883720933,
       "a": 0.048,
       "e": 0.009,
-      "w": 259.2078975031773,
+      "w": 189.24746316305118,
       "o": 0,
       "orbitalPeriod": 3.332609,
       "temperature": 1700,
       "exoplanet": true,
       "bump": false,
-      "color": "#F527D0",
-      "clouds": false
+      "color": "#398744",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-153, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-153 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-153 - System With 1 Exoplanet "
 }

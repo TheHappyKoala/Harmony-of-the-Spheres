@@ -67,14 +67,15 @@
       "radius": 60.55813953488372,
       "a": 0.166,
       "e": 0,
-      "w": 17.852878712859763,
+      "w": 333.7350726465195,
       "o": 0,
       "orbitalPeriod": 28.906009,
       "temperature": 414,
       "exoplanet": true,
       "bump": true,
-      "color": "#B8C7E8",
-      "clouds": false
+      "color": "#358A70",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-378-b",
@@ -85,18 +86,20 @@
       "radius": 65.44186046511629,
       "a": 0.112,
       "e": 0,
-      "w": 183.07364559854716,
+      "w": 178.82390084604788,
       "o": 0,
       "orbitalPeriod": 16.092361,
       "temperature": 503,
       "exoplanet": true,
       "bump": true,
-      "color": "#B6CE65",
-      "clouds": false
+      "color": "#757AA9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-378, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-378 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-378 - System With 2 Exolanets "
 }

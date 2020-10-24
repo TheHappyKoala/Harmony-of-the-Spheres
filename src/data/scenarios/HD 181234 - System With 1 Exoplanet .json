@@ -73,12 +73,14 @@
       "temperature": 88.38560396529488,
       "exoplanet": true,
       "bump": false,
-      "color": "#EE0510",
-      "clouds": false
+      "color": "#FC1456",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 181234, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 181234 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 181234 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 201.2093023255814,
       "a": 0.0535,
       "e": 0,
-      "w": 99.44310212479165,
+      "w": 335.3101428077718,
       "o": 0,
       "orbitalPeriod": 4.46975774,
       "temperature": 1103,
       "exoplanet": true,
       "bump": false,
-      "color": "#9F3EDA",
-      "clouds": false
+      "color": "#35DA9D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-981, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-981 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-981 - System With 1 Exoplanet "
 }

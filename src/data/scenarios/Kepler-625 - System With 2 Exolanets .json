@@ -67,14 +67,15 @@
       "radius": 91.81395348837209,
       "a": 0.0508,
       "e": 0,
-      "w": 169.65655103998702,
+      "w": 277.1455446606185,
       "o": 0,
       "orbitalPeriod": 4.1653651,
       "temperature": 1048,
       "exoplanet": true,
       "bump": true,
-      "color": "#8BEB96",
-      "clouds": false
+      "color": "#49938C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-625-b",
@@ -85,18 +86,20 @@
       "radius": 173.86046511627907,
       "a": 0.0768,
       "e": 0,
-      "w": 356.03373447199755,
+      "w": 351.60179926872115,
       "o": 0,
       "orbitalPeriod": 7.75192492,
       "temperature": 852,
       "exoplanet": true,
       "bump": true,
-      "color": "#F5E2EB",
-      "clouds": true
+      "color": "#B53C6E",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-625, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-625 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-625 - System With 2 Exolanets "
 }

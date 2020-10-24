@@ -73,8 +73,9 @@
       "temperature": 276.77019158908485,
       "exoplanet": true,
       "bump": true,
-      "color": "#34E7CD",
-      "clouds": false
+      "color": "#126E16",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-72-d",
@@ -91,8 +92,9 @@
       "temperature": 402.98348176915204,
       "exoplanet": true,
       "bump": true,
-      "color": "#28E02B",
-      "clouds": false
+      "color": "#01B819",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-72-c",
@@ -109,8 +111,9 @@
       "temperature": 322.6450047482015,
       "exoplanet": true,
       "bump": true,
-      "color": "#20F711",
-      "clouds": false
+      "color": "#B0A729",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-72-b",
@@ -127,12 +130,14 @@
       "temperature": 450.54922952268555,
       "exoplanet": true,
       "bump": true,
-      "color": "#266B32",
-      "clouds": false
+      "color": "#37CE15",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-72, which contains 4 exoplanets, of which 1 is potentially habitable, and was discovered by the K2.",
   "name": "K2-72 - System With 4 Exolanets of Which 1 Is Potentially Habitable",
-  "cameraFocus": "K2-72-e"
+  "cameraFocus": "K2-72-e",
+  "fileName": "K2-72 - System With 4 Exolanets of Which 1 Is Potentially Habitable"
 }

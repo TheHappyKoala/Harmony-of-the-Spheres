@@ -67,14 +67,15 @@
       "radius": 147.48837209302326,
       "a": 0.052,
       "e": 0,
-      "w": 288.46469333091255,
+      "w": 113.55718048382994,
       "o": 0,
       "orbitalPeriod": 5.70940492,
       "temperature": 644,
       "exoplanet": true,
       "bump": true,
-      "color": "#A6060D",
-      "clouds": false
+      "color": "#F5873F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-968-b",
@@ -85,18 +86,20 @@
       "radius": 173.86046511627907,
       "a": 0.0389,
       "e": 0,
-      "w": 133.91611126467205,
+      "w": 270.550984751532,
       "o": 0,
       "orbitalPeriod": 3.69298373,
       "temperature": 745,
       "exoplanet": true,
       "bump": true,
-      "color": "#5E0773",
-      "clouds": true
+      "color": "#858A8C",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-968, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-968 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-968 - System With 2 Exolanets "
 }

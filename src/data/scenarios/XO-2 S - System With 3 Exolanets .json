@@ -73,8 +73,9 @@
       "temperature": 343.5959670654357,
       "exoplanet": true,
       "bump": false,
-      "color": "#8A3237",
-      "clouds": false
+      "color": "#19B5EE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "XO-2 S-b",
@@ -91,12 +92,14 @@
       "temperature": 657.1996212975602,
       "exoplanet": true,
       "bump": false,
-      "color": "#87FEE1",
-      "clouds": false
+      "color": "#C0227F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system XO-2 S, which contains 3 exoplanets and was discovered by the Roque de los Muchachos Observatory.",
   "name": "XO-2 S - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "XO-2 S - System With 3 Exolanets "
 }

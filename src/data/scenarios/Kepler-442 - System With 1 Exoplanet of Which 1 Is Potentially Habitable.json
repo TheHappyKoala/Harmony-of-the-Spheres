@@ -67,18 +67,20 @@
       "radius": 117.2093023255814,
       "a": 0.409,
       "e": 0.04,
-      "w": 107.00292140765325,
+      "w": 235.3129388707231,
       "o": 0,
       "orbitalPeriod": 112.3053,
       "temperature": 241,
       "exoplanet": true,
       "bump": true,
-      "color": "#9AD623",
-      "clouds": false
+      "color": "#F2FF00",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-442, which contains 1 exoplanets, of which 1 is potentially habitable, and was discovered by the Kepler.",
   "name": "Kepler-442 - System With 1 Exoplanet of Which 1 Is Potentially Habitable",
-  "cameraFocus": "Kepler-442-b"
+  "cameraFocus": "Kepler-442-b",
+  "fileName": "Kepler-442 - System With 1 Exoplanet of Which 1 Is Potentially Habitable"
 }

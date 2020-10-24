@@ -67,18 +67,20 @@
       "radius": 1625.3023255813953,
       "a": 330,
       "e": 0,
-      "w": 23.837121591911064,
+      "w": 202.07262623160378,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 1700,
       "exoplanet": true,
       "bump": false,
-      "color": "#D565CB",
-      "clouds": false
+      "color": "#9848E6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 1RXS J160929.1-210524, which contains 1 exoplanets and was discovered by the Gemini Observatory.",
   "name": "1RXS J160929.1-210524 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "1RXS J160929.1-210524 - System With 1 Exoplanet "
 }

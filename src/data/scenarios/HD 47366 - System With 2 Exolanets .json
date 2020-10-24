@@ -73,8 +73,9 @@
       "temperature": 308.5669422917733,
       "exoplanet": true,
       "bump": false,
-      "color": "#E94DDA",
-      "clouds": false
+      "color": "#B2BC4F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 47366-b",
@@ -91,12 +92,14 @@
       "temperature": 382.804932592888,
       "exoplanet": true,
       "bump": false,
-      "color": "#A1E439",
-      "clouds": false
+      "color": "#5FDB78",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 47366, which contains 2 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "HD 47366 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 47366 - System With 2 Exolanets "
 }

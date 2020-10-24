@@ -73,12 +73,14 @@
       "temperature": 433.60113225479824,
       "exoplanet": true,
       "bump": false,
-      "color": "#11FAF4",
-      "clouds": false
+      "color": "#78B442",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 16141, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 16141 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 16141 - System With 1 Exoplanet "
 }

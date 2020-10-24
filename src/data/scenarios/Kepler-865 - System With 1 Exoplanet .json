@@ -67,18 +67,20 @@
       "radius": 216.8372093023256,
       "a": 0.1057,
       "e": 0,
-      "w": 253.12138427004032,
+      "w": 220.60017002897766,
       "o": 0,
       "orbitalPeriod": 14.16399294,
       "temperature": 694,
       "exoplanet": true,
       "bump": false,
-      "color": "#A03C51",
-      "clouds": false
+      "color": "#E5BCE1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-865, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-865 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-865 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 73.79039382699871,
       "exoplanet": true,
       "bump": false,
-      "color": "#0F63AD",
-      "clouds": false
+      "color": "#A739D6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "47 UMa-c",
@@ -91,8 +92,9 @@
       "temperature": 132.45781064724952,
       "exoplanet": true,
       "bump": false,
-      "color": "#3183B0",
-      "clouds": false
+      "color": "#3A784B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "47 UMa-b",
@@ -109,12 +111,14 @@
       "temperature": 173.42798390832812,
       "exoplanet": true,
       "bump": false,
-      "color": "#348D21",
-      "clouds": false
+      "color": "#E964FD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 47 UMa, which contains 3 exoplanets and was discovered by the Lick Observatory.",
   "name": "47 UMa - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "47 UMa - System With 3 Exolanets "
 }

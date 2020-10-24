@@ -67,18 +67,20 @@
       "radius": 270.55813953488376,
       "a": 0.0276,
       "e": 0,
-      "w": 240.78853342722374,
+      "w": 139.1889769489177,
       "o": 0,
       "orbitalPeriod": 1.8270823,
       "temperature": 1877,
       "exoplanet": true,
       "bump": false,
-      "color": "#329947",
-      "clouds": false
+      "color": "#AC5EC0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-536, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-536 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-536 - System With 1 Exoplanet "
 }

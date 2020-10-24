@@ -67,18 +67,20 @@
       "radius": 1042.1860465116279,
       "a": 0.03649,
       "e": 0.279,
-      "w": 56.48110472760842,
+      "w": 180.95265881470576,
       "o": 0,
       "orbitalPeriod": 2.7439004,
       "temperature": 1161,
       "exoplanet": true,
       "bump": false,
-      "color": "#B6E0C9",
-      "clouds": false
+      "color": "#1227E6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-44, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-44 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-44 - System With 1 Exoplanet "
 }

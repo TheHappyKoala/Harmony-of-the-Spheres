@@ -67,14 +67,15 @@
       "radius": 844.8837209302326,
       "a": 0.509,
       "e": 0.008,
-      "w": 35.9075158707979,
+      "w": 333.89414117487956,
       "o": 0,
       "orbitalPeriod": 130.194,
       "temperature": 381,
       "exoplanet": true,
       "bump": false,
-      "color": "#50C4AF",
-      "clouds": false
+      "color": "#39590F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-51-c",
@@ -85,14 +86,15 @@
       "radius": 784.3255813953489,
       "a": 0.384,
       "e": 0.014,
-      "w": 77.52436418266502,
+      "w": 359.31404284867875,
       "o": 0,
       "orbitalPeriod": 85.312,
       "temperature": 439,
       "exoplanet": true,
       "bump": true,
-      "color": "#BFCC49",
-      "clouds": true
+      "color": "#CCDFA2",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-51-b",
@@ -103,18 +105,20 @@
       "radius": 618.2790697674419,
       "a": 0.2514,
       "e": 0.04,
-      "w": 275.30620755277096,
+      "w": 48.67423115558924,
       "o": 0,
       "orbitalPeriod": 45.154,
       "temperature": 543,
       "exoplanet": true,
       "bump": true,
-      "color": "#8DFDD7",
-      "clouds": true
+      "color": "#C0B7E1",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-51, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-51 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-51 - System With 3 Exolanets "
 }

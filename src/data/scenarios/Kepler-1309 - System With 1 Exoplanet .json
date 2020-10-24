@@ -67,18 +67,20 @@
       "radius": 206.09302325581396,
       "a": 0.1679,
       "e": 0,
-      "w": 307.065584471447,
+      "w": 9.042381882450625,
       "o": 0,
       "orbitalPeriod": 28.8432647,
       "temperature": 491,
       "exoplanet": true,
       "bump": false,
-      "color": "#B360EE",
-      "clouds": false
+      "color": "#460497",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1309, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1309 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1309 - System With 1 Exoplanet "
 }

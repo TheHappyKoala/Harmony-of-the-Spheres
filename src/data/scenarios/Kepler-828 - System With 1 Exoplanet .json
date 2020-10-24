@@ -67,18 +67,20 @@
       "radius": 131.86046511627907,
       "a": 0.0125,
       "e": 0,
-      "w": 64.20495842338713,
+      "w": 65.12202209195179,
       "o": 0,
       "orbitalPeriod": 0.56785714,
       "temperature": 1848,
       "exoplanet": true,
       "bump": true,
-      "color": "#C15884",
-      "clouds": false
+      "color": "#1CBEAF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-828, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-828 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-828 - System With 1 Exoplanet "
 }

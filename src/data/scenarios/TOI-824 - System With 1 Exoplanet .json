@@ -67,18 +67,20 @@
       "radius": 254.93023255813955,
       "a": 0.02177,
       "e": 0,
-      "w": 7.120850821840623,
+      "w": 357.9539261396254,
       "o": 0,
       "orbitalPeriod": 1.392978,
       "temperature": 1253,
       "exoplanet": true,
       "bump": false,
-      "color": "#E39570",
-      "clouds": false
+      "color": "#E7916B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TOI-824, which contains 1 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "TOI-824 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TOI-824 - System With 1 Exoplanet "
 }

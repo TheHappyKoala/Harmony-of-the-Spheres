@@ -67,18 +67,20 @@
       "radius": 195.34883720930236,
       "a": 0.1344,
       "e": 0,
-      "w": 77.95398140493258,
+      "w": 94.0435825140017,
       "o": 0,
       "orbitalPeriod": 20.5065,
       "temperature": 539.4085591547525,
       "exoplanet": true,
       "bump": false,
-      "color": "#320DD2",
-      "clouds": false
+      "color": "#8D1404",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-48, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-48 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-48 - System With 1 Exoplanet "
 }

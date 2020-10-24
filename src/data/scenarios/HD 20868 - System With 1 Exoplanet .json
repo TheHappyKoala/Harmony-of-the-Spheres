@@ -73,12 +73,14 @@
       "temperature": 121.8108788306094,
       "exoplanet": true,
       "bump": false,
-      "color": "#B6FB5C",
-      "clouds": false
+      "color": "#17A5B0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 20868, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 20868 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 20868 - System With 1 Exoplanet "
 }

@@ -73,12 +73,14 @@
       "temperature": 251.57553020407013,
       "exoplanet": true,
       "bump": false,
-      "color": "#F638DC",
-      "clouds": false
+      "color": "#E067BE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 14067, which contains 1 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "HD 14067 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 14067 - System With 1 Exoplanet "
 }

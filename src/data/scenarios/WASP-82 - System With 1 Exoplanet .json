@@ -67,18 +67,20 @@
       "radius": 1582.325581395349,
       "a": 0.0447,
       "e": 0,
-      "w": 182.869769359787,
+      "w": 273.38911993476245,
       "o": 0,
       "orbitalPeriod": 2.70579,
       "temperature": 2190,
       "exoplanet": true,
       "bump": false,
-      "color": "#E9216C",
-      "clouds": false
+      "color": "#67BDE2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-82, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-82 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-82 - System With 1 Exoplanet "
 }

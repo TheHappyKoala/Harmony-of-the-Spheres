@@ -67,18 +67,20 @@
       "radius": 958.186046511628,
       "a": 0.1725,
       "e": 0,
-      "w": 110.00469285714257,
+      "w": 160.91236285458956,
       "o": 0,
       "orbitalPeriod": 30.36044667,
       "temperature": 459,
       "exoplanet": true,
       "bump": false,
-      "color": "#A7FFCF",
-      "clouds": false
+      "color": "#234F62",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-486, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-486 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-486 - System With 1 Exoplanet "
 }

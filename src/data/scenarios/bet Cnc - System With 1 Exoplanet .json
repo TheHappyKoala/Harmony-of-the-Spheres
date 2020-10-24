@@ -73,12 +73,14 @@
       "temperature": 274.70189428716174,
       "exoplanet": true,
       "bump": false,
-      "color": "#B50F1E",
-      "clouds": false
+      "color": "#5A2F4E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system bet Cnc, which contains 1 exoplanets and was discovered by the Bohyunsan Optical Astronomical Observatory.",
   "name": "bet Cnc - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "bet Cnc - System With 1 Exoplanet "
 }

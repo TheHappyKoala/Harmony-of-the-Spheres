@@ -67,18 +67,20 @@
       "radius": 246.13953488372096,
       "a": 0.1201,
       "e": 0,
-      "w": 325.76171344970936,
+      "w": 115.20020248438337,
       "o": 0,
       "orbitalPeriod": 16.21775407,
       "temperature": 664,
       "exoplanet": true,
       "bump": false,
-      "color": "#D6B439",
-      "clouds": false
+      "color": "#FF8537",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-555, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-555 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-555 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 77.16279069767442,
       "a": 0.0425,
       "e": 0,
-      "w": 81.5959038634003,
+      "w": 304.98249206553,
       "o": 0,
       "orbitalPeriod": 2.99793191,
       "temperature": 1616,
       "exoplanet": true,
       "bump": true,
-      "color": "#3D3ED3",
-      "clouds": false
+      "color": "#E02C2F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1408, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1408 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1408 - System With 1 Exoplanet "
 }

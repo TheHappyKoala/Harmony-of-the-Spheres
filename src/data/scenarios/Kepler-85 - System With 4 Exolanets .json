@@ -67,14 +67,15 @@
       "radius": 110.37209302325583,
       "a": 0.163,
       "e": 0,
-      "w": 120.78549166300894,
+      "w": 157.65591508900823,
       "o": 0,
       "orbitalPeriod": 25.216751,
       "temperature": 559,
       "exoplanet": true,
       "bump": true,
-      "color": "#1F82FD",
-      "clouds": true
+      "color": "#39D6B7",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-85-d",
@@ -85,14 +86,15 @@
       "radius": 104.51162790697674,
       "a": 0.13,
       "e": 0,
-      "w": 350.8279560780776,
+      "w": 5.656658200959299,
       "o": 0,
       "orbitalPeriod": 17.91323,
       "temperature": 626,
       "exoplanet": true,
       "bump": true,
-      "color": "#A3CD7D",
-      "clouds": false
+      "color": "#44E606",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-85-c",
@@ -103,14 +105,15 @@
       "radius": 189.4883720930233,
       "a": 0.1007,
       "e": 0,
-      "w": 94.48142293276851,
+      "w": 126.72410093340865,
       "o": 0,
       "orbitalPeriod": 12.513,
       "temperature": 706,
       "exoplanet": true,
       "bump": false,
-      "color": "#377EDC",
-      "clouds": false
+      "color": "#826D83",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-85-b",
@@ -121,18 +124,20 @@
       "radius": 171.90697674418604,
       "a": 0.0766,
       "e": 0,
-      "w": 351.8116275616102,
+      "w": 183.09478346986896,
       "o": 0,
       "orbitalPeriod": 8.306,
       "temperature": 809,
       "exoplanet": true,
       "bump": true,
-      "color": "#B44A4B",
-      "clouds": true
+      "color": "#6F11A6",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-85, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-85 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-85 - System With 4 Exolanets "
 }

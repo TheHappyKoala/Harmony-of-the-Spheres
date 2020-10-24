@@ -73,12 +73,14 @@
       "temperature": 484.8152020126378,
       "exoplanet": true,
       "bump": false,
-      "color": "#FAB309",
-      "clouds": false
+      "color": "#F5DAD5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 178911 B, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 178911 B - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 178911 B - System With 1 Exoplanet "
 }

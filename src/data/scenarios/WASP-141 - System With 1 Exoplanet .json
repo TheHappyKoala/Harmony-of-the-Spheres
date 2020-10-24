@@ -67,18 +67,20 @@
       "radius": 1181.860465116279,
       "a": 0.0469,
       "e": 0,
-      "w": 229.33555273034264,
+      "w": 283.19388525475654,
       "o": 0,
       "orbitalPeriod": 3.310651,
       "temperature": 1540,
       "exoplanet": true,
       "bump": false,
-      "color": "#4A958E",
-      "clouds": false
+      "color": "#D34A08",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-141, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-141 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-141 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 99.62790697674419,
       "a": 0.0344,
       "e": 0,
-      "w": 49.07042926618624,
+      "w": 198.0948077451682,
       "o": 0,
       "orbitalPeriod": 2.50856,
       "temperature": 1252,
       "exoplanet": true,
       "bump": false,
-      "color": "#16526F",
-      "clouds": false
+      "color": "#F49DAE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-19-c",
@@ -91,8 +92,9 @@
       "temperature": 745,
       "exoplanet": true,
       "bump": false,
-      "color": "#28DF6A",
-      "clouds": false
+      "color": "#B15AEF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-19-b",
@@ -109,12 +111,14 @@
       "temperature": 854,
       "exoplanet": true,
       "bump": false,
-      "color": "#DF3071",
-      "clouds": false
+      "color": "#BD7133",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-19, which contains 3 exoplanets and was discovered by the K2.",
   "name": "K2-19 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-19 - System With 3 Exolanets "
 }

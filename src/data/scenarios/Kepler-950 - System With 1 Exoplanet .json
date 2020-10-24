@@ -67,18 +67,20 @@
       "radius": 782.372093023256,
       "a": 0.3982,
       "e": 0,
-      "w": 133.23923147842433,
+      "w": 322.28513784556185,
       "o": 0,
       "orbitalPeriod": 98.7180406,
       "temperature": 360,
       "exoplanet": true,
       "bump": false,
-      "color": "#E017A4",
-      "clouds": false
+      "color": "#48DDC5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-950, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-950 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-950 - System With 1 Exoplanet "
 }

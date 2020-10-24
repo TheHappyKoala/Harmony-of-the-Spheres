@@ -67,18 +67,20 @@
       "radius": 1738.6046511627908,
       "a": 0.06708,
       "e": 0,
-      "w": 105.59765641529998,
+      "w": 304.08981941390056,
       "o": 0,
       "orbitalPeriod": 5.031623,
       "temperature": 1800,
       "exoplanet": true,
       "bump": false,
-      "color": "#107B5B",
-      "clouds": false
+      "color": "#6CA51E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-12, which contains 1 exoplanets and was discovered by the KELT-North.",
   "name": "KELT-12 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KELT-12 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 248.09302325581396,
       "a": 0.1106,
       "e": 0,
-      "w": 177.26096439260766,
+      "w": 332.5327691732411,
       "o": 0,
       "orbitalPeriod": 14.13176026,
       "temperature": 675,
       "exoplanet": true,
       "bump": false,
-      "color": "#3B630B",
-      "clouds": false
+      "color": "#ECEC51",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-800, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-800 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-800 - System With 1 Exoplanet "
 }

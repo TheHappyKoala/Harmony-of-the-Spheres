@@ -67,14 +67,15 @@
       "radius": 255.90697674418607,
       "a": 0.503,
       "e": 0,
-      "w": 295.68484881157417,
+      "w": 168.72811781329568,
       "o": 0,
       "orbitalPeriod": 161.5163345,
       "temperature": 211,
       "exoplanet": true,
       "bump": false,
-      "color": "#4E9E63",
-      "clouds": false
+      "color": "#AFFC7F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1086-b",
@@ -85,18 +86,20 @@
       "radius": 212.93023255813955,
       "a": 0.1198,
       "e": 0,
-      "w": 180.88323104410804,
+      "w": 160.80267170936827,
       "o": 0,
       "orbitalPeriod": 18.78425728,
       "temperature": 433,
       "exoplanet": true,
       "bump": false,
-      "color": "#B667B3",
-      "clouds": false
+      "color": "#883CCA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1086, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1086 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1086 - System With 2 Exolanets "
 }

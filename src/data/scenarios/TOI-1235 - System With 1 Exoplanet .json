@@ -67,18 +67,20 @@
       "radius": 151.3953488372093,
       "a": 0.03845,
       "e": 0.15,
-      "w": 357.7203351658095,
+      "w": 356.94056809065415,
       "o": 0,
       "orbitalPeriod": 3.444729,
       "temperature": 754,
       "exoplanet": true,
       "bump": false,
-      "color": "#E31349",
-      "clouds": false
+      "color": "#582241",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TOI-1235, which contains 1 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "TOI-1235 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TOI-1235 - System With 1 Exoplanet "
 }

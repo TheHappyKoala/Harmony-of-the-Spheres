@@ -67,18 +67,20 @@
       "radius": 92.79069767441861,
       "a": 0.0114,
       "e": 0,
-      "w": 292.7804910405032,
+      "w": 288.4790413036004,
       "o": 0,
       "orbitalPeriod": 0.58800076,
       "temperature": 1188,
       "exoplanet": true,
       "bump": true,
-      "color": "#27F476",
-      "clouds": false
+      "color": "#2B49E5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1203, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1203 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1203 - System With 1 Exoplanet "
 }

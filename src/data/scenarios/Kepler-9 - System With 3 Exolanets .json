@@ -67,14 +67,15 @@
       "radius": 142.6046511627907,
       "a": 0.0273,
       "e": 0,
-      "w": 86.60390622618837,
+      "w": 343.2719905058941,
       "o": 0,
       "orbitalPeriod": 1.592851,
       "temperature": 2026,
       "exoplanet": true,
       "bump": true,
-      "color": "#93811F",
-      "clouds": false
+      "color": "#408147",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-9-c",
@@ -91,8 +92,9 @@
       "temperature": 523,
       "exoplanet": true,
       "bump": false,
-      "color": "#264325",
-      "clouds": false
+      "color": "#5A1F6B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-9-b",
@@ -109,12 +111,14 @@
       "temperature": 661,
       "exoplanet": true,
       "bump": false,
-      "color": "#E13F73",
-      "clouds": false
+      "color": "#200877",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-9, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-9 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-9 - System With 3 Exolanets "
 }

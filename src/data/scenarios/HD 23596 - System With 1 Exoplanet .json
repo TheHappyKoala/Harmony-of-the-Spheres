@@ -73,12 +73,14 @@
       "temperature": 192.9734407314487,
       "exoplanet": true,
       "bump": false,
-      "color": "#1109D9",
-      "clouds": false
+      "color": "#9752D0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 23596, which contains 1 exoplanets and was discovered by the Haute-Provence Observatory.",
   "name": "HD 23596 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 23596 - System With 1 Exoplanet "
 }

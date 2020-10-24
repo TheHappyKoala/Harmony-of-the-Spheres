@@ -67,18 +67,20 @@
       "radius": 71.30232558139535,
       "a": 0.0382,
       "e": 0,
-      "w": 61.210766848940864,
+      "w": 212.14707562758903,
       "o": 0,
       "orbitalPeriod": 2.36436901,
       "temperature": 1752,
       "exoplanet": true,
       "bump": true,
-      "color": "#5DDDBE",
-      "clouds": false
+      "color": "#A66397",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-910, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-910 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-910 - System With 1 Exoplanet "
 }

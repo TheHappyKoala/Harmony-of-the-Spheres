@@ -67,14 +67,15 @@
       "radius": 224.6511627906977,
       "a": 0.359,
       "e": 0,
-      "w": 330.31658516791134,
+      "w": 16.29487593725188,
       "o": 0,
       "orbitalPeriod": 87.090195,
       "temperature": 321,
       "exoplanet": true,
       "bump": false,
-      "color": "#2E4ECC",
-      "clouds": false
+      "color": "#0D1266",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-169-e",
@@ -85,14 +86,15 @@
       "radius": 191.4418604651163,
       "a": 0.105,
       "e": 0,
-      "w": 2.2824171123733628,
+      "w": 33.670428214101015,
       "o": 0,
       "orbitalPeriod": 13.767102,
       "temperature": 595,
       "exoplanet": true,
       "bump": false,
-      "color": "#7A41E4",
-      "clouds": false
+      "color": "#AC43DF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-169-d",
@@ -103,14 +105,15 @@
       "radius": 109.39534883720931,
       "a": 0.075,
       "e": 0,
-      "w": 114.80232713385638,
+      "w": 326.7638247899366,
       "o": 0,
       "orbitalPeriod": 8.348125,
       "temperature": 702,
       "exoplanet": true,
       "bump": true,
-      "color": "#A1BF8A",
-      "clouds": false
+      "color": "#0822C0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-169-c",
@@ -121,14 +124,15 @@
       "radius": 105.48837209302326,
       "a": 0.062,
       "e": 0,
-      "w": 252.45551490127372,
+      "w": 72.24401639200534,
       "o": 0,
       "orbitalPeriod": 6.195469,
       "temperature": 776,
       "exoplanet": true,
       "bump": true,
-      "color": "#08F0D9",
-      "clouds": false
+      "color": "#7ACEFE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-169-b",
@@ -139,18 +143,20 @@
       "radius": 98.65116279069768,
       "a": 0.04,
       "e": 0,
-      "w": 47.43755050183138,
+      "w": 38.4296111113582,
       "o": 0,
       "orbitalPeriod": 3.250619,
       "temperature": 962,
       "exoplanet": true,
       "bump": true,
-      "color": "#384060",
-      "clouds": false
+      "color": "#8ABF5F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-169, which contains 5 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-169 - System With 5 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-169 - System With 5 Exolanets "
 }

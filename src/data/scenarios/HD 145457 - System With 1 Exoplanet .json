@@ -73,12 +73,14 @@
       "temperature": 322.30827909712235,
       "exoplanet": true,
       "bump": false,
-      "color": "#BC75C4",
-      "clouds": false
+      "color": "#F3AEDF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 145457, which contains 1 exoplanets and was discovered by the Subaru Telescope.",
   "name": "HD 145457 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 145457 - System With 1 Exoplanet "
 }

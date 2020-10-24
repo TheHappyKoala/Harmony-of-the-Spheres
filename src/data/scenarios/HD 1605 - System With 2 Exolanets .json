@@ -73,8 +73,9 @@
       "temperature": 157.3816717249959,
       "exoplanet": true,
       "bump": false,
-      "color": "#7AA5FE",
-      "clouds": false
+      "color": "#AA00B7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 1605-b",
@@ -91,12 +92,14 @@
       "temperature": 243.92355619806105,
       "exoplanet": true,
       "bump": false,
-      "color": "#5DAB97",
-      "clouds": false
+      "color": "#B33E54",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 1605, which contains 2 exoplanets and was discovered by the Multiple Observatories.",
   "name": "HD 1605 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 1605 - System With 2 Exolanets "
 }

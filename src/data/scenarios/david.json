@@ -1,7 +1,8 @@
 {
-  "name": "The Star of David",
+  "name": "The Star of David N-body Choreography",
+  "fileName": "The Star of David N-body Choreography",
   "sortOrder": 19,
-  "description": "The n-body problem is the problem of taking the initial positions and velocities of n point masses and solving for their subsequent motion according to Newton's laws of motion and Newton's law of universal gravitation.",
+  "description": "A very beautiful n-body choreography, made up of four point masses, that traces out the star of David.",
   "type": "Misc",
   "particlesFun": false,
   "g": 100,

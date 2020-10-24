@@ -67,18 +67,20 @@
       "radius": 1064.6511627906978,
       "a": 210,
       "e": 0.83,
-      "w": 163.2831955229069,
+      "w": 87.36055804343631,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 14.954752021398766,
       "exoplanet": true,
       "bump": false,
-      "color": "#C7504A",
-      "clouds": false
+      "color": "#DA0D66",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system ROXs 12, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "ROXs 12 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "ROXs 12 - System With 1 Exoplanet "
 }

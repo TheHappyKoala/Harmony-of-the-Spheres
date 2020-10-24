@@ -67,18 +67,20 @@
       "radius": 238.32558139534885,
       "a": 0.1013,
       "e": 0,
-      "w": 60.64126501413814,
+      "w": 26.515593498980206,
       "o": 0,
       "orbitalPeriod": 11.36112327,
       "temperature": 869,
       "exoplanet": true,
       "bump": false,
-      "color": "#ACAC57",
-      "clouds": false
+      "color": "#0D9942",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-836, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-836 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-836 - System With 1 Exoplanet "
 }

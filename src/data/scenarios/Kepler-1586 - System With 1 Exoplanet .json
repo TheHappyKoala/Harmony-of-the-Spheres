@@ -67,18 +67,20 @@
       "radius": 132.8372093023256,
       "a": 0.1266,
       "e": 0,
-      "w": 23.973693621914602,
+      "w": 39.116323250069655,
       "o": 0,
       "orbitalPeriod": 15.6049212,
       "temperature": 1013,
       "exoplanet": true,
       "bump": true,
-      "color": "#1DC701",
-      "clouds": false
+      "color": "#FE3CCE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1586, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1586 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1586 - System With 1 Exoplanet "
 }

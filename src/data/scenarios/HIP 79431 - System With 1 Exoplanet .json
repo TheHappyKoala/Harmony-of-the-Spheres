@@ -73,12 +73,14 @@
       "temperature": 231.221972398312,
       "exoplanet": true,
       "bump": false,
-      "color": "#825C56",
-      "clouds": false
+      "color": "#0F877D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 79431, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HIP 79431 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HIP 79431 - System With 1 Exoplanet "
 }

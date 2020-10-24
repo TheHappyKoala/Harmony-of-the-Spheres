@@ -67,18 +67,20 @@
       "radius": 1113.4883720930231,
       "a": 0.03303,
       "e": 0,
-      "w": 280.4092748223804,
+      "w": 217.8742451700381,
       "o": 0,
       "orbitalPeriod": 2.07276,
       "temperature": 1555,
       "exoplanet": true,
       "bump": false,
-      "color": "#D5C531",
-      "clouds": false
+      "color": "#0BEB5E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-97, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-97 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-97 - System With 1 Exoplanet "
 }

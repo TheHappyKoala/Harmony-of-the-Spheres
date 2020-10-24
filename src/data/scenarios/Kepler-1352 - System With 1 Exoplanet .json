@@ -67,18 +67,20 @@
       "radius": 77.16279069767442,
       "a": 0.03,
       "e": 0,
-      "w": 21.696202795870427,
+      "w": 191.3946058899485,
       "o": 0,
       "orbitalPeriod": 1.87788275,
       "temperature": 1701,
       "exoplanet": true,
       "bump": true,
-      "color": "#DADE96",
-      "clouds": false
+      "color": "#E0574B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1352, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1352 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1352 - System With 1 Exoplanet "
 }

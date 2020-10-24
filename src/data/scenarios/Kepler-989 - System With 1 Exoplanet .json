@@ -67,18 +67,20 @@
       "radius": 192.4186046511628,
       "a": 0.0734,
       "e": 0,
-      "w": 67.78081288009139,
+      "w": 56.48985779667838,
       "o": 0,
       "orbitalPeriod": 7.96431535,
       "temperature": 805,
       "exoplanet": true,
       "bump": false,
-      "color": "#1D5BDD",
-      "clouds": false
+      "color": "#7A4987",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-989, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-989 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-989 - System With 1 Exoplanet "
 }

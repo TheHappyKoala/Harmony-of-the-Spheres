@@ -67,14 +67,15 @@
       "radius": 284.2325581395349,
       "a": 0.246,
       "e": 0,
-      "w": 183.09310353194562,
+      "w": 184.47941903272573,
       "o": 0,
       "orbitalPeriod": 44.851896,
       "temperature": 513,
       "exoplanet": true,
       "bump": false,
-      "color": "#A184E3",
-      "clouds": false
+      "color": "#6653F0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-287-b",
@@ -85,18 +86,20 @@
       "radius": 203.1627906976744,
       "a": 0.145,
       "e": 0,
-      "w": 77.92518474356672,
+      "w": 114.0092686754999,
       "o": 0,
       "orbitalPeriod": 20.342199,
       "temperature": 667,
       "exoplanet": true,
       "bump": false,
-      "color": "#46FC66",
-      "clouds": false
+      "color": "#BC94C4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-287, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-287 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-287 - System With 2 Exolanets "
 }

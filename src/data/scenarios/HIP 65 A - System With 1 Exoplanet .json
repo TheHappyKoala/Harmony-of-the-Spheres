@@ -67,18 +67,20 @@
       "radius": 1982.7906976744184,
       "a": 0.01782,
       "e": 0,
-      "w": 57.794078987586595,
+      "w": 229.55618717012422,
       "o": 0,
       "orbitalPeriod": 0.9809734,
       "temperature": 1411,
       "exoplanet": true,
       "bump": false,
-      "color": "#9CEB80",
-      "clouds": false
+      "color": "#32C6DC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 65 A, which contains 1 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "HIP 65 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HIP 65 A - System With 1 Exoplanet "
 }

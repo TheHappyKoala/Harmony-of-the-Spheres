@@ -67,14 +67,15 @@
       "radius": 1074.418604651163,
       "a": 2.504,
       "e": 0.083,
-      "w": 167.9814647192064,
+      "w": 171.77899940159094,
       "o": 0,
       "orbitalPeriod": 1422,
       "temperature": 176,
       "exoplanet": true,
       "bump": false,
-      "color": "#24B634",
-      "clouds": false
+      "color": "#CCF86B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HATS-59-b",
@@ -91,12 +92,14 @@
       "temperature": 1128,
       "exoplanet": true,
       "bump": false,
-      "color": "#76F15F",
-      "clouds": false
+      "color": "#0C12E5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-59, which contains 2 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-59 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-59 - System With 2 Exolanets "
 }

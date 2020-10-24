@@ -73,12 +73,14 @@
       "temperature": 198.97703542951368,
       "exoplanet": true,
       "bump": false,
-      "color": "#176ECB",
-      "clouds": false
+      "color": "#1C045E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 30856, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 30856 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 30856 - System With 1 Exoplanet "
 }

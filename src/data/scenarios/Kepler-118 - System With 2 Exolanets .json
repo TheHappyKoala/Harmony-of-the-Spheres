@@ -67,14 +67,15 @@
       "radius": 669.0697674418606,
       "a": 0.141,
       "e": 0,
-      "w": 132.97735225507913,
+      "w": 74.12757925239454,
       "o": 0,
       "orbitalPeriod": 20.17202,
       "temperature": 564,
       "exoplanet": true,
       "bump": false,
-      "color": "#0924ED",
-      "clouds": false
+      "color": "#EF593F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-118-b",
@@ -85,18 +86,20 @@
       "radius": 170.93023255813952,
       "a": 0.073,
       "e": 0,
-      "w": 1.0697777217719917,
+      "w": 83.73046780267589,
       "o": 0,
       "orbitalPeriod": 7.518496,
       "temperature": 784,
       "exoplanet": true,
       "bump": true,
-      "color": "#0990F4",
-      "clouds": true
+      "color": "#B986B4",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-118, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-118 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-118 - System With 2 Exolanets "
 }

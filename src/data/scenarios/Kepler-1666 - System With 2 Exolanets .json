@@ -67,14 +67,15 @@
       "radius": 282.27906976744185,
       "a": 0.2383,
       "e": 0,
-      "w": 36.10726537138,
+      "w": 338.9465352220844,
       "o": 0,
       "orbitalPeriod": 40.7157,
       "temperature": 578,
       "exoplanet": true,
       "bump": false,
-      "color": "#623213",
-      "clouds": false
+      "color": "#975B07",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1666-b",
@@ -85,18 +86,20 @@
       "radius": 251.0232558139535,
       "a": 0.1761,
       "e": 0,
-      "w": 240.77138768476465,
+      "w": 155.57244585756007,
       "o": 0,
       "orbitalPeriod": 25.8476,
       "temperature": 672,
       "exoplanet": true,
       "bump": false,
-      "color": "#DBC4C9",
-      "clouds": false
+      "color": "#F973BF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1666, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1666 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1666 - System With 2 Exolanets "
 }

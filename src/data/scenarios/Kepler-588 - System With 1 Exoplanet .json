@@ -67,18 +67,20 @@
       "radius": 229.53488372093022,
       "a": 0.052,
       "e": 0,
-      "w": 350.64684753976815,
+      "w": 204.66284821377212,
       "o": 0,
       "orbitalPeriod": 4.22162536,
       "temperature": 1176,
       "exoplanet": true,
       "bump": false,
-      "color": "#88FBBB",
-      "clouds": false
+      "color": "#559DAB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-588, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-588 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-588 - System With 1 Exoplanet "
 }

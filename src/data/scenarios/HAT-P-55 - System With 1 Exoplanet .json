@@ -67,18 +67,20 @@
       "radius": 1154.5116279069769,
       "a": 0.04604,
       "e": 0.139,
-      "w": 138.26864772196149,
+      "w": 24.77580842351033,
       "o": 0,
       "orbitalPeriod": 3.5852467,
       "temperature": 1313,
       "exoplanet": true,
       "bump": false,
-      "color": "#597A4F",
-      "clouds": false
+      "color": "#1981E5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-55, which contains 1 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-55 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HAT-P-55 - System With 1 Exoplanet "
 }

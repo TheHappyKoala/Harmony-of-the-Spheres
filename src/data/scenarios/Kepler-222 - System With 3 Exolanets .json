@@ -67,14 +67,15 @@
       "radius": 321.34883720930236,
       "a": 0.18,
       "e": 0,
-      "w": 185.5897941986546,
+      "w": 120.17792908875427,
       "o": 0,
       "orbitalPeriod": 28.081912,
       "temperature": 522,
       "exoplanet": true,
       "bump": false,
-      "color": "#6744EF",
-      "clouds": false
+      "color": "#86DF18",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-222-c",
@@ -85,14 +86,15 @@
       "radius": 404.37209302325584,
       "a": 0.091,
       "e": 0,
-      "w": 237.19426908141935,
+      "w": 258.5465781547463,
       "o": 0,
       "orbitalPeriod": 10.08881,
       "temperature": 734,
       "exoplanet": true,
       "bump": false,
-      "color": "#CA8313",
-      "clouds": false
+      "color": "#81814A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-222-b",
@@ -103,18 +105,20 @@
       "radius": 275.4418604651163,
       "a": 0.048,
       "e": 0,
-      "w": 112.19887631031594,
+      "w": 147.94074451313406,
       "o": 0,
       "orbitalPeriod": 3.936981,
       "temperature": 1004,
       "exoplanet": true,
       "bump": false,
-      "color": "#6E2E4F",
-      "clouds": false
+      "color": "#F29005",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-222, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-222 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-222 - System With 3 Exolanets "
 }

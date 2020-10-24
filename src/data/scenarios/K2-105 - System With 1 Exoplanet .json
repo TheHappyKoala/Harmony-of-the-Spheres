@@ -67,18 +67,20 @@
       "radius": 294,
       "a": 0.0796,
       "e": 0,
-      "w": 22.970637228367956,
+      "w": 336.2188960703615,
       "o": 0,
       "orbitalPeriod": 8.267704,
       "temperature": 814,
       "exoplanet": true,
       "bump": false,
-      "color": "#D2E4ED",
-      "clouds": false
+      "color": "#C693FA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-105, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-105 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-105 - System With 1 Exoplanet "
 }

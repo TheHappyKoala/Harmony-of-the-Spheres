@@ -67,18 +67,20 @@
       "radius": 1211.1627906976744,
       "a": 0.039,
       "e": 0,
-      "w": 152.37330361327156,
+      "w": 135.9351448320274,
       "o": 0,
       "orbitalPeriod": 2.6556777,
       "temperature": 1452,
       "exoplanet": true,
       "bump": false,
-      "color": "#F8FF21",
-      "clouds": false
+      "color": "#484ED6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-85 A, which contains 1 exoplanets and was discovered by the K2.",
   "name": "WASP-85 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-85 A - System With 1 Exoplanet "
 }

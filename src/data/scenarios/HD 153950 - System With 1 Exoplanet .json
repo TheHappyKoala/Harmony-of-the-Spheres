@@ -73,12 +73,14 @@
       "temperature": 251.37781606398764,
       "exoplanet": true,
       "bump": false,
-      "color": "#782097",
-      "clouds": false
+      "color": "#A8B5EB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 153950, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 153950 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 153950 - System With 1 Exoplanet "
 }

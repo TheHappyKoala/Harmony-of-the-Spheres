@@ -67,18 +67,20 @@
       "radius": 350.6511627906977,
       "a": 0.0647,
       "e": 0,
-      "w": 142.45366127646966,
+      "w": 333.5823585355945,
       "o": 0,
       "orbitalPeriod": 5.85296257,
       "temperature": 1056,
       "exoplanet": true,
       "bump": false,
-      "color": "#843EA0",
-      "clouds": false
+      "color": "#6DA2E1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-590, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-590 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-590 - System With 1 Exoplanet "
 }

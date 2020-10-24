@@ -67,18 +67,20 @@
       "radius": 1395.7674418604652,
       "a": 0.03908,
       "e": 0.066,
-      "w": 241.84700503200318,
+      "w": 337.7210136144561,
       "o": 0,
       "orbitalPeriod": 2.7164762,
       "temperature": 1623,
       "exoplanet": true,
       "bump": false,
-      "color": "#A1F20F",
-      "clouds": false
+      "color": "#AC7D87",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-81, which contains 1 exoplanets and was discovered by the Multiple Facilities.",
   "name": "WASP-81 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-81 - System With 1 Exoplanet "
 }

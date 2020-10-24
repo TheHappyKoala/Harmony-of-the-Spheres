@@ -73,12 +73,14 @@
       "temperature": 2043,
       "exoplanet": true,
       "bump": false,
-      "color": "#1260C7",
-      "clouds": false
+      "color": "#89BF51",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-114, which contains 1 exoplanets and was discovered by the SuperWASP-North.",
   "name": "WASP-114 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-114 - System With 1 Exoplanet "
 }

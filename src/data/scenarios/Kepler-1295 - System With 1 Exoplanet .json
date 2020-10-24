@@ -67,18 +67,20 @@
       "radius": 134.79069767441862,
       "a": 0.0464,
       "e": 0,
-      "w": 277.1323238234763,
+      "w": 321.88069022565895,
       "o": 0,
       "orbitalPeriod": 3.81371974,
       "temperature": 1029,
       "exoplanet": true,
       "bump": true,
-      "color": "#4988CA",
-      "clouds": false
+      "color": "#502470",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1295, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1295 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1295 - System With 1 Exoplanet "
 }

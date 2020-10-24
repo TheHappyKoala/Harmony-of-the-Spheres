@@ -67,18 +67,20 @@
       "radius": 90.83720930232559,
       "a": 0.0252,
       "e": 0,
-      "w": 151.99938437748722,
+      "w": 293.4536976274126,
       "o": 0,
       "orbitalPeriod": 1.45088691,
       "temperature": 1700,
       "exoplanet": true,
       "bump": true,
-      "color": "#C2149C",
-      "clouds": false
+      "color": "#3CF1AF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1578, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1578 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1578 - System With 1 Exoplanet "
 }

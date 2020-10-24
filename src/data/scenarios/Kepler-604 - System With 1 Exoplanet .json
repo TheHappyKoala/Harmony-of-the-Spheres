@@ -67,18 +67,20 @@
       "radius": 225.6279069767442,
       "a": 0.1735,
       "e": 0,
-      "w": 43.14092765521997,
+      "w": 322.15712021233946,
       "o": 0,
       "orbitalPeriod": 25.85501786,
       "temperature": 637,
       "exoplanet": true,
       "bump": false,
-      "color": "#0463E8",
-      "clouds": false
+      "color": "#74673E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-604, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-604 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-604 - System With 1 Exoplanet "
 }

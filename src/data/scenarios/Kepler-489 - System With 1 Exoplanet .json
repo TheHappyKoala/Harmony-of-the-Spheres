@@ -67,18 +67,20 @@
       "radius": 672.9767441860465,
       "a": 0.1209,
       "e": 0,
-      "w": 208.53630006592712,
+      "w": 186.24439502502037,
       "o": 0,
       "orbitalPeriod": 17.27629612,
       "temperature": 538,
       "exoplanet": true,
       "bump": false,
-      "color": "#8BCEF6",
-      "clouds": false
+      "color": "#8CC048",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-489, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-489 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-489 - System With 1 Exoplanet "
 }

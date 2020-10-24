@@ -73,12 +73,14 @@
       "temperature": 1160,
       "exoplanet": true,
       "bump": false,
-      "color": "#482B81",
-      "clouds": false
+      "color": "#2ED914",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-185, which contains 1 exoplanets and was discovered by the WASP-South.",
   "name": "WASP-185 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-185 - System With 1 Exoplanet "
 }

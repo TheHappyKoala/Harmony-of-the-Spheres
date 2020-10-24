@@ -67,14 +67,15 @@
       "radius": 198.27906976744188,
       "a": 0.216,
       "e": 0,
-      "w": 160.29308195045425,
+      "w": 200.94465340354043,
       "o": 0,
       "orbitalPeriod": 41.008011,
       "temperature": 425,
       "exoplanet": true,
       "bump": false,
-      "color": "#137B0F",
-      "clouds": false
+      "color": "#10B93E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-121-b",
@@ -85,18 +86,20 @@
       "radius": 204.13953488372093,
       "a": 0.039,
       "e": 0,
-      "w": 43.21097656200393,
+      "w": 77.60498961208717,
       "o": 0,
       "orbitalPeriod": 3.177422,
       "temperature": 997,
       "exoplanet": true,
       "bump": false,
-      "color": "#0A9DC3",
-      "clouds": false
+      "color": "#D47B62",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-121, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-121 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-121 - System With 2 Exolanets "
 }

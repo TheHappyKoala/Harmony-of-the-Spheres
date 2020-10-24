@@ -73,12 +73,14 @@
       "temperature": 2166,
       "exoplanet": true,
       "bump": false,
-      "color": "#D59A94",
-      "clouds": false
+      "color": "#E04668",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-24, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-24 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-24 - System With 1 Exoplanet "
 }

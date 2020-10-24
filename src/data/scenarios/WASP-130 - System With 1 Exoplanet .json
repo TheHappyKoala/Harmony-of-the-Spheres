@@ -67,18 +67,20 @@
       "radius": 869.3023255813954,
       "a": 0.1012,
       "e": 0,
-      "w": 341.11348779830496,
+      "w": 83.48262245700849,
       "o": 0,
       "orbitalPeriod": 11.55098,
       "temperature": 833,
       "exoplanet": true,
       "bump": false,
-      "color": "#087A47",
-      "clouds": false
+      "color": "#EC7FD1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-130, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-130 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-130 - System With 1 Exoplanet "
 }

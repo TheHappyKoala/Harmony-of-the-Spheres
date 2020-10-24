@@ -73,12 +73,14 @@
       "temperature": 351.6295008579025,
       "exoplanet": true,
       "bump": false,
-      "color": "#ABAB13",
-      "clouds": false
+      "color": "#0A1911",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 154672, which contains 1 exoplanets and was discovered by the Las Campanas Observatory.",
   "name": "HD 154672 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 154672 - System With 1 Exoplanet "
 }

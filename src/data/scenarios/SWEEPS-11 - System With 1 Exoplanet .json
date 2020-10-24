@@ -67,18 +67,20 @@
       "radius": 1103.7209302325582,
       "a": 0.03,
       "e": 0,
-      "w": 173.0675730527111,
+      "w": 38.83904086713193,
       "o": 0,
       "orbitalPeriod": 1.796,
       "temperature": 1491.8780025084793,
       "exoplanet": true,
       "bump": false,
-      "color": "#6BC4DB",
-      "clouds": false
+      "color": "#E56553",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system SWEEPS-11, which contains 1 exoplanets and was discovered by the Hubble Space Telescope.",
   "name": "SWEEPS-11 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "SWEEPS-11 - System With 1 Exoplanet "
 }

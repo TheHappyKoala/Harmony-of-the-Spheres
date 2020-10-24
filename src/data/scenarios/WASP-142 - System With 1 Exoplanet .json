@@ -67,18 +67,20 @@
       "radius": 1494.418604651163,
       "a": 0.0347,
       "e": 0,
-      "w": 145.3683067723292,
+      "w": 71.90099938018929,
       "o": 0,
       "orbitalPeriod": 2.052868,
       "temperature": 2000,
       "exoplanet": true,
       "bump": false,
-      "color": "#4A9A08",
-      "clouds": false
+      "color": "#A675B6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-142, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-142 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-142 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 82.44762591492682,
       "exoplanet": true,
       "bump": false,
-      "color": "#86D79D",
-      "clouds": false
+      "color": "#9CAA68",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 92788-b",
@@ -91,12 +92,14 @@
       "temperature": 271.2607367813404,
       "exoplanet": true,
       "bump": false,
-      "color": "#18951C",
-      "clouds": false
+      "color": "#938123",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 92788, which contains 2 exoplanets and was discovered by the Multiple Observatories.",
   "name": "HD 92788 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 92788 - System With 2 Exolanets "
 }

@@ -73,8 +73,9 @@
       "temperature": 164.41246169044385,
       "exoplanet": true,
       "bump": false,
-      "color": "#8BD304",
-      "clouds": false
+      "color": "#AEEE28",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 12661-b",
@@ -91,12 +92,14 @@
       "temperature": 300.9509477910529,
       "exoplanet": true,
       "bump": false,
-      "color": "#B24C7C",
-      "clouds": false
+      "color": "#537A87",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 12661, which contains 2 exoplanets and was discovered by the Multiple Observatories.",
   "name": "HD 12661 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 12661 - System With 2 Exolanets "
 }

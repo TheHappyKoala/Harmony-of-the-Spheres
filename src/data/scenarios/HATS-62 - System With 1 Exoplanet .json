@@ -67,18 +67,20 @@
       "radius": 1030.4651162790697,
       "a": 0.04163,
       "e": 0.298,
-      "w": 208.5313429160232,
+      "w": 135.89489468037092,
       "o": 0,
       "orbitalPeriod": 3.2768837,
       "temperature": 1237,
       "exoplanet": true,
       "bump": false,
-      "color": "#086253",
-      "clouds": false
+      "color": "#AFC0FA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-62, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-62 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-62 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 136.74418604651166,
       "a": 0.0549,
       "e": 0,
-      "w": 139.7212218712393,
+      "w": 128.80832819483734,
       "o": 0,
       "orbitalPeriod": 4.56327,
       "temperature": 1091,
       "exoplanet": true,
       "bump": true,
-      "color": "#C5B52C",
-      "clouds": false
+      "color": "#BDD657",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-223-b",
@@ -85,18 +86,20 @@
       "radius": 77.16279069767442,
       "a": 0.0127,
       "e": 0,
-      "w": 16.642660373084368,
+      "w": 280.95703164901727,
       "o": 0,
       "orbitalPeriod": 0.50565,
       "temperature": 2271,
       "exoplanet": true,
       "bump": true,
-      "color": "#A94867",
-      "clouds": false
+      "color": "#587E6A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-223, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-223 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-223 - System With 2 Exolanets "
 }

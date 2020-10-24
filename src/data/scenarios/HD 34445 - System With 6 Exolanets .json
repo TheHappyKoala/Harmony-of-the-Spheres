@@ -73,8 +73,9 @@
       "temperature": 105.24452311331328,
       "exoplanet": true,
       "bump": false,
-      "color": "#C35722",
-      "clouds": false
+      "color": "#B53C54",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 34445-f",
@@ -91,8 +92,9 @@
       "temperature": 213.6707622714329,
       "exoplanet": true,
       "bump": false,
-      "color": "#F7B043",
-      "clouds": false
+      "color": "#EE38A1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 34445-e",
@@ -109,8 +111,9 @@
       "temperature": 512.0286111531675,
       "exoplanet": true,
       "bump": false,
-      "color": "#17F0D8",
-      "clouds": false
+      "color": "#014CC2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 34445-d",
@@ -127,8 +130,9 @@
       "temperature": 382.4192445547275,
       "exoplanet": true,
       "bump": false,
-      "color": "#4437B4",
-      "clouds": false
+      "color": "#990F22",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 34445-c",
@@ -145,8 +149,9 @@
       "temperature": 313.2099852171717,
       "exoplanet": true,
       "bump": false,
-      "color": "#DE2102",
-      "clouds": false
+      "color": "#DAF802",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 34445-b",
@@ -163,12 +168,14 @@
       "temperature": 184.47728130082558,
       "exoplanet": true,
       "bump": false,
-      "color": "#CA6A77",
-      "clouds": false
+      "color": "#5D259B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 34445, which contains 6 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 34445 - System With 6 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 34445 - System With 6 Exolanets "
 }

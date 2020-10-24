@@ -67,18 +67,20 @@
       "radius": 206.09302325581396,
       "a": 0.1409,
       "e": 0,
-      "w": 134.5840026383477,
+      "w": 116.40469430667838,
       "o": 0,
       "orbitalPeriod": 21.38521506,
       "temperature": 574,
       "exoplanet": true,
       "bump": false,
-      "color": "#686A2A",
-      "clouds": false
+      "color": "#3350EA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-651, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-651 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-651 - System With 1 Exoplanet "
 }

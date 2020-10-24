@@ -67,18 +67,20 @@
       "radius": 177.7674418604651,
       "a": 0.017,
       "e": 0,
-      "w": 266.07220172871934,
+      "w": 289.27330266449326,
       "o": 0,
       "orbitalPeriod": 0.92785982,
       "temperature": 1361,
       "exoplanet": true,
       "bump": true,
-      "color": "#1D1E02",
-      "clouds": true
+      "color": "#4B081D",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-845, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-845 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-845 - System With 1 Exoplanet "
 }

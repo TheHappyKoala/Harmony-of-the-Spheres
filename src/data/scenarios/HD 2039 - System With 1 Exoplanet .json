@@ -73,12 +73,14 @@
       "temperature": 189.4379202087741,
       "exoplanet": true,
       "bump": false,
-      "color": "#04D4BB",
-      "clouds": false
+      "color": "#A24E4A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 2039, which contains 1 exoplanets and was discovered by the Anglo-Australian Telescope.",
   "name": "HD 2039 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 2039 - System With 1 Exoplanet "
 }

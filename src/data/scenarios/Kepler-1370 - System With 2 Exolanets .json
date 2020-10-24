@@ -67,14 +67,15 @@
       "radius": 110.37209302325583,
       "a": 0.0767,
       "e": 0,
-      "w": 205.4318971445632,
+      "w": 172.60166640496558,
       "o": 0,
       "orbitalPeriod": 7.44142113,
       "temperature": 1075,
       "exoplanet": true,
       "bump": true,
-      "color": "#8C4590",
-      "clouds": false
+      "color": "#EE9396",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1370-b",
@@ -85,18 +86,20 @@
       "radius": 160.18604651162792,
       "a": 0.1495,
       "e": 0,
-      "w": 1.6044636651866817,
+      "w": 192.11970024379616,
       "o": 0,
       "orbitalPeriod": 20.2641684,
       "temperature": 770,
       "exoplanet": true,
       "bump": true,
-      "color": "#489D29",
-      "clouds": false
+      "color": "#D8139B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1370, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1370 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1370 - System With 2 Exolanets "
 }

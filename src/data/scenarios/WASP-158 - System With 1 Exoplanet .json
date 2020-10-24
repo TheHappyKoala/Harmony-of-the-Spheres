@@ -67,18 +67,20 @@
       "radius": 1045.1162790697676,
       "a": 0.0517,
       "e": 0,
-      "w": 53.26417481637196,
+      "w": 221.40023673189376,
       "o": 0,
       "orbitalPeriod": 3.656333,
       "temperature": 1590,
       "exoplanet": true,
       "bump": false,
-      "color": "#1887CC",
-      "clouds": false
+      "color": "#205D16",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-158, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-158 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-158 - System With 1 Exoplanet "
 }

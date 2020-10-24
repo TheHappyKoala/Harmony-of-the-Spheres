@@ -67,14 +67,15 @@
       "radius": 135.76744186046514,
       "a": 0.1058,
       "e": 0.04,
-      "w": 168.91403202216352,
+      "w": 287.1731090481053,
       "o": 0,
       "orbitalPeriod": 18.80151,
       "temperature": 344,
       "exoplanet": true,
       "bump": true,
-      "color": "#C3D61C",
-      "clouds": true
+      "color": "#CA80B4",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "TOI-1266-b",
@@ -85,18 +86,20 @@
       "radius": 206.09302325581396,
       "a": 0.0736,
       "e": 0.09,
-      "w": 209.56669129832557,
+      "w": 90.61727821030452,
       "o": 0,
       "orbitalPeriod": 10.894843,
       "temperature": 413,
       "exoplanet": true,
       "bump": false,
-      "color": "#D33251",
-      "clouds": false
+      "color": "#9F4E92",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TOI-1266, which contains 2 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "TOI-1266 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TOI-1266 - System With 2 Exolanets "
 }

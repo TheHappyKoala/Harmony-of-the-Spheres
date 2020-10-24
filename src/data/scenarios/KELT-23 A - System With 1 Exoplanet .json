@@ -67,18 +67,20 @@
       "radius": 1292.2325581395348,
       "a": 0.03302,
       "e": 0,
-      "w": 209.58695389792263,
+      "w": 311.0865842059252,
       "o": 0,
       "orbitalPeriod": 2.255251,
       "temperature": 1561,
       "exoplanet": true,
       "bump": false,
-      "color": "#FA808D",
-      "clouds": false
+      "color": "#CD17F1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-23 A, which contains 1 exoplanets and was discovered by the KELT-North.",
   "name": "KELT-23 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KELT-23 A - System With 1 Exoplanet "
 }

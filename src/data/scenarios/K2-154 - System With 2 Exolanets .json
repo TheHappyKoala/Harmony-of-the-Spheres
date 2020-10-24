@@ -67,14 +67,15 @@
       "radius": 180.69767441860466,
       "a": 0.0677,
       "e": 0,
-      "w": 22.42470622183643,
+      "w": 297.28800629530974,
       "o": 0,
       "orbitalPeriod": 7.95486,
       "temperature": 552,
       "exoplanet": true,
       "bump": true,
-      "color": "#472263",
-      "clouds": true
+      "color": "#7999EA",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-154-b",
@@ -85,18 +86,20 @@
       "radius": 173.86046511627907,
       "a": 0.0405,
       "e": 0,
-      "w": 327.55023585544535,
+      "w": 239.54904695361623,
       "o": 0,
       "orbitalPeriod": 3.67626,
       "temperature": 715,
       "exoplanet": true,
       "bump": true,
-      "color": "#31037F",
-      "clouds": true
+      "color": "#6DA107",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-154, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-154 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-154 - System With 2 Exolanets "
 }

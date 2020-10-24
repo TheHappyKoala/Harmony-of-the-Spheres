@@ -73,12 +73,14 @@
       "temperature": 368.5928633278745,
       "exoplanet": true,
       "bump": false,
-      "color": "#68FD7B",
-      "clouds": false
+      "color": "#B76759",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 231701, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 231701 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 231701 - System With 1 Exoplanet "
 }

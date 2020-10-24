@@ -73,12 +73,14 @@
       "temperature": 296.49017165897135,
       "exoplanet": true,
       "bump": false,
-      "color": "#469C49",
-      "clouds": false
+      "color": "#72CBD3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 108863, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 108863 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 108863 - System With 1 Exoplanet "
 }

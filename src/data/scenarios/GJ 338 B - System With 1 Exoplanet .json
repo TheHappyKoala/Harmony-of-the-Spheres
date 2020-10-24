@@ -73,12 +73,14 @@
       "temperature": 391,
       "exoplanet": true,
       "bump": false,
-      "color": "#A650F8",
-      "clouds": false
+      "color": "#F63A95",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 338 B, which contains 1 exoplanets and was discovered by the Calar Alto Observatory.",
   "name": "GJ 338 B - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 338 B - System With 1 Exoplanet "
 }

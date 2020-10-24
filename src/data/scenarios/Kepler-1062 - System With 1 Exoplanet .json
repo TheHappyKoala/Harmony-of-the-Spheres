@@ -67,18 +67,20 @@
       "radius": 153.34883720930233,
       "a": 0.0748,
       "e": 0,
-      "w": 193.28129953510452,
+      "w": 142.94222542788907,
       "o": 0,
       "orbitalPeriod": 9.30412078,
       "temperature": 583,
       "exoplanet": true,
       "bump": true,
-      "color": "#D8F1C3",
-      "clouds": false
+      "color": "#1A9DD8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1062, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1062 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1062 - System With 1 Exoplanet "
 }

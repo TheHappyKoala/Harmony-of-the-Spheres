@@ -67,18 +67,20 @@
       "radius": 1103.7209302325582,
       "a": 0.03925,
       "e": 0,
-      "w": 348.543322587386,
+      "w": 198.0356143932283,
       "o": 0,
       "orbitalPeriod": 3.03007,
       "temperature": 1140,
       "exoplanet": true,
       "bump": false,
-      "color": "#333ABE",
-      "clouds": false
+      "color": "#568C37",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TrES-1, which contains 1 exoplanets and was discovered by the TrES.",
   "name": "TrES-1 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TrES-1 - System With 1 Exoplanet "
 }

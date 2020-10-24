@@ -1,7 +1,8 @@
 {
-  "name": "The Neptunian System",
+  "name": "Neptune and Its Major Moons",
+  "fileName": "Neptune and Its Major Moons",
   "sortOrder": 23,
-  "description": "Gravity simulation of Neptune and its 14 known moons. By far the largest of them is Triton.",
+  "description": "Gravity simulation of Neptune and its major moons. By far the largest of them is Triton, which is in a retrograde orbit around Neptune.",
   "particlesFun": false,
   "type": "Solar System",
   "g": 39.5,

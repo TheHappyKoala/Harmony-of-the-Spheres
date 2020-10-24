@@ -67,18 +67,20 @@
       "radius": 132.8372093023256,
       "a": 0.049,
       "e": 0,
-      "w": 197.7509479124542,
+      "w": 331.96351992652194,
       "o": 0,
       "orbitalPeriod": 4.162817,
       "temperature": 939,
       "exoplanet": true,
       "bump": true,
-      "color": "#301620",
-      "clouds": false
+      "color": "#9822D3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-192, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-192 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-192 - System With 1 Exoplanet "
 }

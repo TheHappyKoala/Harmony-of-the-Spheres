@@ -73,12 +73,14 @@
       "temperature": 547.7709787867354,
       "exoplanet": true,
       "bump": false,
-      "color": "#8431BD",
-      "clouds": false
+      "color": "#B1FCD3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 24 Boo, which contains 1 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "24 Boo - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "24 Boo - System With 1 Exoplanet "
 }

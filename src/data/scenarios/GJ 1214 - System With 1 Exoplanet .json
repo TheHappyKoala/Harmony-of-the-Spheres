@@ -67,18 +67,20 @@
       "radius": 248.09302325581396,
       "a": 0.01411,
       "e": 0,
-      "w": 44.72602035029397,
+      "w": 221.09209207970758,
       "o": 0,
       "orbitalPeriod": 1.58040456,
       "temperature": 547,
       "exoplanet": true,
       "bump": false,
-      "color": "#2BC368",
-      "clouds": false
+      "color": "#CA36D1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 1214, which contains 1 exoplanets and was discovered by the MEarth Project.",
   "name": "GJ 1214 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 1214 - System With 1 Exoplanet "
 }

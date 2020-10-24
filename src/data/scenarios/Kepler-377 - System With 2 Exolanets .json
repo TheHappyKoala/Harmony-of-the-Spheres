@@ -67,14 +67,15 @@
       "radius": 179.72093023255815,
       "a": 0.182,
       "e": 0,
-      "w": 165.59997670995978,
+      "w": 300.36941052527203,
       "o": 0,
       "orbitalPeriod": 27.014976,
       "temperature": 677,
       "exoplanet": true,
       "bump": true,
-      "color": "#D2DF39",
-      "clouds": true
+      "color": "#07CD81",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-377-b",
@@ -85,18 +86,20 @@
       "radius": 121.11627906976744,
       "a": 0.109,
       "e": 0,
-      "w": 134.7511929167332,
+      "w": 83.57331948532133,
       "o": 0,
       "orbitalPeriod": 12.509529,
       "temperature": 875,
       "exoplanet": true,
       "bump": true,
-      "color": "#DEA1BE",
-      "clouds": false
+      "color": "#CB46EB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-377, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-377 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-377 - System With 2 Exolanets "
 }

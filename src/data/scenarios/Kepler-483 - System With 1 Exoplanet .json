@@ -67,18 +67,20 @@
       "radius": 279.3488372093023,
       "a": 0.2072,
       "e": 0,
-      "w": 209.2070127786613,
+      "w": 209.37885472007883,
       "o": 0,
       "orbitalPeriod": 30.229104,
       "temperature": 755,
       "exoplanet": true,
       "bump": false,
-      "color": "#F3C32E",
-      "clouds": false
+      "color": "#BB53F9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-483, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-483 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-483 - System With 1 Exoplanet "
 }

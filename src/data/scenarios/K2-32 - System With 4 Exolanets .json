@@ -67,14 +67,15 @@
       "radius": 87.90697674418605,
       "a": 0.04951,
       "e": 0,
-      "w": 115.49361125683605,
+      "w": 237.20161807812067,
       "o": 0,
       "orbitalPeriod": 4.34882,
       "temperature": 965.5545153938612,
       "exoplanet": true,
       "bump": true,
-      "color": "#9225A4",
-      "clouds": false
+      "color": "#68B41A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-32-d",
@@ -85,14 +86,15 @@
       "radius": 285.2093023255814,
       "a": 0.1862,
       "e": 0,
-      "w": 219.7753950376382,
+      "w": 309.2893121858847,
       "o": 0,
       "orbitalPeriod": 31.7142,
       "temperature": 537,
       "exoplanet": true,
       "bump": false,
-      "color": "#4A50BD",
-      "clouds": false
+      "color": "#A3DA0E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-32-c",
@@ -103,14 +105,15 @@
       "radius": 238.32558139534885,
       "a": 0.1399,
       "e": 0,
-      "w": 151.35235156059608,
+      "w": 185.6139406550796,
       "o": 0,
       "orbitalPeriod": 20.66186,
       "temperature": 619,
       "exoplanet": true,
       "bump": false,
-      "color": "#4ACBBC",
-      "clouds": false
+      "color": "#EC4919",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-32-b",
@@ -121,18 +124,20 @@
       "radius": 432.69767441860466,
       "a": 0.08035,
       "e": 0,
-      "w": 63.84935478239208,
+      "w": 335.8611532376501,
       "o": 0,
       "orbitalPeriod": 8.991828,
       "temperature": 817,
       "exoplanet": true,
       "bump": false,
-      "color": "#11E466",
-      "clouds": false
+      "color": "#16D4C0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-32, which contains 4 exoplanets and was discovered by the K2.",
   "name": "K2-32 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-32 - System With 4 Exolanets "
 }

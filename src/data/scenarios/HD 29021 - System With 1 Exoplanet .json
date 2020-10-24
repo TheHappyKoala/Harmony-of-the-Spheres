@@ -73,12 +73,14 @@
       "temperature": 141.0412650576736,
       "exoplanet": true,
       "bump": false,
-      "color": "#F4DF12",
-      "clouds": false
+      "color": "#AABFFE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 29021, which contains 1 exoplanets and was discovered by the Haute-Provence Observatory.",
   "name": "HD 29021 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 29021 - System With 1 Exoplanet "
 }

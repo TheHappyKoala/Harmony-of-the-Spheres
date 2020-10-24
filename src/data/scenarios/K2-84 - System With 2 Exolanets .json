@@ -67,14 +67,15 @@
       "radius": 176.7906976744186,
       "a": 0.1768,
       "e": 0,
-      "w": 69.77608502751004,
+      "w": 339.58327651956847,
       "o": 0,
       "orbitalPeriod": 27.86,
       "temperature": 550.555363038622,
       "exoplanet": true,
       "bump": true,
-      "color": "#8748B3",
-      "clouds": true
+      "color": "#C3520E",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-84-b",
@@ -85,18 +86,20 @@
       "radius": 210,
       "a": 0.0665,
       "e": 0,
-      "w": 320.33170952876424,
+      "w": 322.1352355537329,
       "o": 0,
       "orbitalPeriod": 6.4215,
       "temperature": 897.7001654088293,
       "exoplanet": true,
       "bump": false,
-      "color": "#5C2AD4",
-      "clouds": false
+      "color": "#A507DF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-84, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-84 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-84 - System With 2 Exolanets "
 }

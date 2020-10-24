@@ -67,18 +67,20 @@
       "radius": 174.8372093023256,
       "a": 0.0471,
       "e": 0,
-      "w": 214.7609399031664,
+      "w": 218.22714185800444,
       "o": 0,
       "orbitalPeriod": 4.42157218,
       "temperature": 729,
       "exoplanet": true,
       "bump": true,
-      "color": "#098CE9",
-      "clouds": true
+      "color": "#56A15C",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1105, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1105 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1105 - System With 1 Exoplanet "
 }

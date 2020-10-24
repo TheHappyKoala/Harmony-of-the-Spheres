@@ -67,18 +67,20 @@
       "radius": 243.2093023255814,
       "a": 0.107,
       "e": 0,
-      "w": 249.1859694640553,
+      "w": 103.30221864088645,
       "o": 0,
       "orbitalPeriod": 11.41909375,
       "temperature": 921,
       "exoplanet": true,
       "bump": false,
-      "color": "#712F6A",
-      "clouds": false
+      "color": "#DF8ADD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-835, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-835 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-835 - System With 1 Exoplanet "
 }

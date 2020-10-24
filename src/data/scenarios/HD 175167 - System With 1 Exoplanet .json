@@ -73,12 +73,14 @@
       "temperature": 196.64559773949878,
       "exoplanet": true,
       "bump": false,
-      "color": "#6AF75D",
-      "clouds": false
+      "color": "#9D732B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 175167, which contains 1 exoplanets and was discovered by the Las Campanas Observatory.",
   "name": "HD 175167 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 175167 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 1123.2558139534883,
       "a": 55.7,
       "e": 0,
-      "w": 214.16617836333586,
+      "w": 208.33210649918914,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 1000,
       "exoplanet": true,
       "bump": false,
-      "color": "#BD224B",
-      "clouds": false
+      "color": "#22A291",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 95086, which contains 1 exoplanets and was discovered by the Paranal Observatory.",
   "name": "HD 95086 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 95086 - System With 1 Exoplanet "
 }

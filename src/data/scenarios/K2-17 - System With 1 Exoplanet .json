@@ -73,12 +73,14 @@
       "temperature": 487,
       "exoplanet": true,
       "bump": false,
-      "color": "#469795",
-      "clouds": false
+      "color": "#3A7D3B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-17, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-17 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-17 - System With 1 Exoplanet "
 }

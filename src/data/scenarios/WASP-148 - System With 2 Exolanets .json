@@ -73,8 +73,9 @@
       "temperature": 590,
       "exoplanet": true,
       "bump": false,
-      "color": "#9A45D2",
-      "clouds": false
+      "color": "#488189",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "WASP-148-b",
@@ -91,12 +92,14 @@
       "temperature": 940,
       "exoplanet": true,
       "bump": false,
-      "color": "#468189",
-      "clouds": false
+      "color": "#4CD191",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-148, which contains 2 exoplanets and was discovered by the SuperWASP-North.",
   "name": "WASP-148 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-148 - System With 2 Exolanets "
 }

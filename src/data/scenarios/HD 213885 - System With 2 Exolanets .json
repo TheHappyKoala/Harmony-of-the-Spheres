@@ -67,14 +67,15 @@
       "radius": 410.2325581395349,
       "a": 0.056798,
       "e": 0,
-      "w": 136.64635556131645,
+      "w": 339.4338216377617,
       "o": 0,
       "orbitalPeriod": 4.78503,
       "temperature": 1265,
       "exoplanet": true,
       "bump": false,
-      "color": "#FF639D",
-      "clouds": false
+      "color": "#67B773",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 213885-b",
@@ -85,18 +86,20 @@
       "radius": 152.37209302325581,
       "a": 0.02012,
       "e": 0,
-      "w": 88.03847926334798,
+      "w": 221.4716895564309,
       "o": 0,
       "orbitalPeriod": 1.008035,
       "temperature": 2128,
       "exoplanet": true,
       "bump": false,
-      "color": "#0B4A7C",
-      "clouds": false
+      "color": "#074C1A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 213885, which contains 2 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "HD 213885 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 213885 - System With 2 Exolanets "
 }

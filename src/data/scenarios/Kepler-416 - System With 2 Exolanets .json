@@ -67,14 +67,15 @@
       "radius": 213.90697674418607,
       "a": 0.1021,
       "e": 0,
-      "w": 21.721260130536642,
+      "w": 111.94018287014951,
       "o": 0,
       "orbitalPeriod": 12.209,
       "temperature": 791,
       "exoplanet": true,
       "bump": false,
-      "color": "#CBAA70",
-      "clouds": false
+      "color": "#9DFB27",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-416-b",
@@ -85,18 +86,20 @@
       "radius": 215.86046511627907,
       "a": 0.0658,
       "e": 0,
-      "w": 324.3071290022953,
+      "w": 305.3915045097696,
       "o": 0,
       "orbitalPeriod": 6.319,
       "temperature": 986,
       "exoplanet": true,
       "bump": false,
-      "color": "#415BFF",
-      "clouds": false
+      "color": "#0CF2EF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-416, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-416 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-416 - System With 2 Exolanets "
 }

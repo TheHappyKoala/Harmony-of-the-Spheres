@@ -67,18 +67,20 @@
       "radius": 221.72093023255815,
       "a": 0.2654,
       "e": 0,
-      "w": 111.65370440383954,
+      "w": 341.77771498285983,
       "o": 0,
       "orbitalPeriod": 44.9309804,
       "temperature": 565,
       "exoplanet": true,
       "bump": false,
-      "color": "#D20A6B",
-      "clouds": false
+      "color": "#B33A77",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-852, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-852 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-852 - System With 1 Exoplanet "
 }

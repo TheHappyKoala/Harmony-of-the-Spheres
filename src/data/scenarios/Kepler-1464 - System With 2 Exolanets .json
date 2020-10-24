@@ -67,14 +67,15 @@
       "radius": 86.93023255813954,
       "a": 0.0548,
       "e": 0,
-      "w": 248.48320653744383,
+      "w": 232.74731383499878,
       "o": 0,
       "orbitalPeriod": 5.32786292,
       "temperature": 1023,
       "exoplanet": true,
       "bump": true,
-      "color": "#9C218A",
-      "clouds": false
+      "color": "#52E32E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1464-b",
@@ -85,18 +86,20 @@
       "radius": 144.55813953488374,
       "a": 0.1803,
       "e": 0,
-      "w": 237.18869672191983,
+      "w": 100.40659899354554,
       "o": 0,
       "orbitalPeriod": 31.7785901,
       "temperature": 564,
       "exoplanet": true,
       "bump": true,
-      "color": "#132E1F",
-      "clouds": false
+      "color": "#CAE885",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1464, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1464 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1464 - System With 2 Exolanets "
 }

@@ -67,14 +67,15 @@
       "radius": 142.6046511627907,
       "a": 0.067,
       "e": 0,
-      "w": 114.9925721418815,
+      "w": 258.6471912691877,
       "o": 0,
       "orbitalPeriod": 6.766589,
       "temperature": 845,
       "exoplanet": true,
       "bump": true,
-      "color": "#941D31",
-      "clouds": false
+      "color": "#BF38EA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-46-c",
@@ -91,8 +92,9 @@
       "temperature": 455,
       "exoplanet": true,
       "bump": false,
-      "color": "#A23E43",
-      "clouds": false
+      "color": "#B74058",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-46-b",
@@ -109,12 +111,14 @@
       "temperature": 543,
       "exoplanet": true,
       "bump": false,
-      "color": "#BA7ADE",
-      "clouds": false
+      "color": "#D03A52",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-46, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-46 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-46 - System With 3 Exolanets "
 }

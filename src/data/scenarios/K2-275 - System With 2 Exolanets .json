@@ -67,14 +67,15 @@
       "radius": 204.13953488372093,
       "a": 0.075,
       "e": 0,
-      "w": 130.32265035466008,
+      "w": 272.56835543404304,
       "o": 0,
       "orbitalPeriod": 8.438756,
       "temperature": 660,
       "exoplanet": true,
       "bump": false,
-      "color": "#669A65",
-      "clouds": false
+      "color": "#53650E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-275-b",
@@ -85,18 +86,20 @@
       "radius": 195.34883720930236,
       "a": 0.04,
       "e": 0,
-      "w": 315.87325565538333,
+      "w": 44.626289174970715,
       "o": 0,
       "orbitalPeriod": 3.280961,
       "temperature": 905,
       "exoplanet": true,
       "bump": false,
-      "color": "#DB7B4C",
-      "clouds": false
+      "color": "#9096A6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-275, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-275 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-275 - System With 2 Exolanets "
 }

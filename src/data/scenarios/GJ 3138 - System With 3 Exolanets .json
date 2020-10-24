@@ -67,14 +67,15 @@
       "radius": 281.30232558139534,
       "a": 0.698,
       "e": 0.32,
-      "w": 213.19080125784336,
+      "w": 199.92661570493968,
       "o": 0,
       "orbitalPeriod": 257.8,
       "temperature": 215.6271273380368,
       "exoplanet": true,
       "bump": false,
-      "color": "#2E5A8E",
-      "clouds": false
+      "color": "#D228AB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 3138-c",
@@ -85,14 +86,15 @@
       "radius": 163.11627906976747,
       "a": 0.057,
       "e": 0.11,
-      "w": 196.72317031839472,
+      "w": 338.5157076928293,
       "o": 0,
       "orbitalPeriod": 5.974,
       "temperature": 754.559828871432,
       "exoplanet": true,
       "bump": true,
-      "color": "#39B8A8",
-      "clouds": true
+      "color": "#03009D",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 3138-b",
@@ -103,18 +105,20 @@
       "radius": 103.53488372093024,
       "a": 0.0197,
       "e": 0.19,
-      "w": 215.50236650693412,
+      "w": 151.9811749444732,
       "o": 0,
       "orbitalPeriod": 1.22003,
       "temperature": 1283.5062722879543,
       "exoplanet": true,
       "bump": true,
-      "color": "#1BD5C5",
-      "clouds": false
+      "color": "#1AE7BF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 3138, which contains 3 exoplanets and was discovered by the La Silla Observatory.",
   "name": "GJ 3138 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 3138 - System With 3 Exolanets "
 }

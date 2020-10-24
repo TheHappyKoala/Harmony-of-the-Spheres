@@ -73,12 +73,14 @@
       "temperature": 239.1450018941942,
       "exoplanet": true,
       "bump": false,
-      "color": "#C89719",
-      "clouds": false
+      "color": "#4E0428",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 158038, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 158038 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 158038 - System With 1 Exoplanet "
 }

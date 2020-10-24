@@ -67,14 +67,15 @@
       "radius": 132.8372093023256,
       "a": 0.0785,
       "e": 0,
-      "w": 322.5397927374546,
+      "w": 309.3516119916411,
       "o": 0,
       "orbitalPeriod": 8.1934719,
       "temperature": 1144,
       "exoplanet": true,
       "bump": true,
-      "color": "#C6E275",
-      "clouds": false
+      "color": "#047AF9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-758-d",
@@ -85,14 +86,15 @@
       "radius": 184.6046511627907,
       "a": 0.1447,
       "e": 0,
-      "w": 83.69501839455621,
+      "w": 9.96979497446218,
       "o": 0,
       "orbitalPeriod": 20.4966197,
       "temperature": 843,
       "exoplanet": true,
       "bump": false,
-      "color": "#FCE8BB",
-      "clouds": false
+      "color": "#99D7E3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-758-c",
@@ -103,14 +105,15 @@
       "radius": 147.48837209302326,
       "a": 0.0547,
       "e": 0,
-      "w": 283.887799082461,
+      "w": 347.54489564871994,
       "o": 0,
       "orbitalPeriod": 4.75793986,
       "temperature": 1372,
       "exoplanet": true,
       "bump": true,
-      "color": "#E7C1BC",
-      "clouds": false
+      "color": "#6B3344",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-758-b",
@@ -121,18 +124,20 @@
       "radius": 215.86046511627907,
       "a": 0.1019,
       "e": 0,
-      "w": 32.13956355909155,
+      "w": 180.61994505745548,
       "o": 0,
       "orbitalPeriod": 12.1097104,
       "temperature": 1005,
       "exoplanet": true,
       "bump": false,
-      "color": "#8253B5",
-      "clouds": false
+      "color": "#8B524B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-758, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-758 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-758 - System With 4 Exolanets "
 }

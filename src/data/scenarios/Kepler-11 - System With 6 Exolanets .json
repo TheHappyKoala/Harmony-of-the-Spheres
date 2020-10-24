@@ -1,6 +1,6 @@
 {
   "scenarioDescription": "\n<h1>The Kepler-11 Exoplanetary System</h1>\n<br/>\n<h1>Overview</h1>\n<p>Kepler-11 is a star with 0.96 times the mass of the Sun, and 1.06 times its radius. It is located 2108.10 light years away from the solar system and is estimated to be 8.5 billion years old, as compared to the Sun which is roughly 4.6 billion years old.</p>\n<p>Kepler-11 is known to have 6 exoplanets in orbit around it.</p>\n\n<br/>\n  <h1>Exoplanets in the Kepler-11 system</h1>\n  <br/>\n  \n      <h1>Kepler-11 b</h1>\n      <p>Kepler-11 b was discovered by the Kepler observatory, in 2011-02, using the transit method. Its semi-major axis is 0.09 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of Kepler-11 b is 1.908 times the mass of Earth. The radius of Kepler-11 b is 1.800 that of Earth.   With a mass below 5 Earth masses, a density of 1.72, and a semi-major axis of 0.091 astronomical units, Kepler-11 b could, potentially, be an ocean world - a planet with no dry land.    </p>\n      <br/>\n \n      <h1>Kepler-11 c</h1>\n      <p>Kepler-11 c was discovered by the Kepler observatory, in 2011-02, using the transit method. Its semi-major axis is 0.11 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of Kepler-11 c is 2.862 times the mass of Earth. The radius of Kepler-11 c is 2.870 that of Earth.   With a mass below 5 Earth masses, a density of 0.66, and a semi-major axis of 0.107 astronomical units, Kepler-11 c could, potentially, be an ocean world - a planet with no dry land.    </p>\n      <br/>\n \n      <h1>Kepler-11 d</h1>\n      <p>Kepler-11 d was discovered by the Kepler observatory, in 2011-02, using the transit method. Its semi-major axis is 0.15 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of Kepler-11 d is 7.314 times the mass of Earth. The radius of Kepler-11 d is 3.120 that of Earth.     At more than 10 Earth masses, Kepler-11 d is an ice giant, a planet that is made up mostly of volatiles like water, amonia and methane, and enveloped by a dense hydrogen and helium atmosphere, much like Uranus and Neptune in our solar system.  </p>\n      <br/>\n \n      <h1>Kepler-11 e</h1>\n      <p>Kepler-11 e was discovered by the Kepler observatory, in 2011-02, using the transit method. Its semi-major axis is 0.20 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of Kepler-11 e is 7.950 times the mass of Earth. The radius of Kepler-11 e is 4.190 that of Earth.     At more than 10 Earth masses, Kepler-11 e is an ice giant, a planet that is made up mostly of volatiles like water, amonia and methane, and enveloped by a dense hydrogen and helium atmosphere, much like Uranus and Neptune in our solar system.  </p>\n      <br/>\n \n      <h1>Kepler-11 f</h1>\n      <p>Kepler-11 f was discovered by the Kepler observatory, in 2011-02, using the transit method. Its semi-major axis is 0.25 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of Kepler-11 f is 1.908 times the mass of Earth. The radius of Kepler-11 f is 2.490 that of Earth.   With a mass below 5 Earth masses, a density of 0.69, and a semi-major axis of 0.25 astronomical units, Kepler-11 f could, potentially, be an ocean world - a planet with no dry land.    </p>\n      <br/>\n \n      <h1>Kepler-11 g</h1>\n      <p>Kepler-11 g was discovered by the Kepler observatory, in 2011-02, using the transit method. Its semi-major axis is 0.47 astronomical units, as compared to Earth's which is 1 astronomical unit. The mass of Kepler-11 g is 25.122 times the mass of Earth. The radius of Kepler-11 g is 3.330 that of Earth.     At more than 10 Earth masses, Kepler-11 g is an ice giant, a planet that is made up mostly of volatiles like water, amonia and methane, and enveloped by a dense hydrogen and helium atmosphere, much like Uranus and Neptune in our solar system.  </p>\n      <br/>\n\n",
-  "sortedOrder": 0,
+  "sortOrder": 50,
   "hasHabitableWorld": 0,
   "discoveryFacility": "Transit",
   "particlesFun": false,
@@ -73,8 +73,9 @@
       "temperature": 376,
       "exoplanet": true,
       "bump": false,
-      "color": "#63E83C",
-      "clouds": false
+      "color": "#39E769",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-11-f",
@@ -91,8 +92,9 @@
       "temperature": 513,
       "exoplanet": true,
       "bump": true,
-      "color": "#2DF0FF",
-      "clouds": true
+      "color": "#892BEF",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-11-e",
@@ -109,8 +111,9 @@
       "temperature": 582,
       "exoplanet": true,
       "bump": false,
-      "color": "#9BD797",
-      "clouds": false
+      "color": "#24B5F6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-11-d",
@@ -127,8 +130,9 @@
       "temperature": 653,
       "exoplanet": true,
       "bump": false,
-      "color": "#13DFBE",
-      "clouds": false
+      "color": "#15E149",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-11-c",
@@ -145,8 +149,9 @@
       "temperature": 786,
       "exoplanet": true,
       "bump": true,
-      "color": "#FB6E41",
-      "clouds": true
+      "color": "#A412DA",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-11-b",
@@ -163,12 +168,14 @@
       "temperature": 849,
       "exoplanet": true,
       "bump": true,
-      "color": "#A024CC",
-      "clouds": true
+      "color": "#DF720A",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-11, which contains 6 exoplanets and was discovered by the Kepler.",
-  "name": "Kepler-11 - System With 6 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "name": "Kepler-11 - Most Compact Planetary System Known to Exist",
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-11 - System With 6 Exolanets "
 }

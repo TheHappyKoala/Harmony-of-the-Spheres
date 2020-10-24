@@ -67,18 +67,20 @@
       "radius": 1070.5116279069769,
       "a": 0.0337,
       "e": 0,
-      "w": 31.004162845204995,
+      "w": 28.73993402585117,
       "o": 0,
       "orbitalPeriod": 2.34478022,
       "temperature": 1422,
       "exoplanet": true,
       "bump": false,
-      "color": "#5F1221",
-      "clouds": false
+      "color": "#EE7DEB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-170, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-170 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-170 - System With 1 Exoplanet "
 }

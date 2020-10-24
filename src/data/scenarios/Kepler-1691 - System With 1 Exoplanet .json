@@ -67,18 +67,20 @@
       "radius": 160.18604651162792,
       "a": 0.0495,
       "e": 0,
-      "w": 191.75662334333666,
+      "w": 320.49045403729053,
       "o": 0,
       "orbitalPeriod": 3.8482,
       "temperature": 1283,
       "exoplanet": true,
       "bump": true,
-      "color": "#917CC5",
-      "clouds": false
+      "color": "#C5D58C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1691, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1691 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1691 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 1045.1162790697676,
       "a": 740,
       "e": 0,
-      "w": 107.70627604302052,
+      "w": 105.56633656729898,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 2700,
       "exoplanet": true,
       "bump": false,
-      "color": "#BD4629",
-      "clouds": false
+      "color": "#0F2CE5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 78530, which contains 1 exoplanets and was discovered by the Gemini Observatory.",
   "name": "HIP 78530 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HIP 78530 - System With 1 Exoplanet "
 }

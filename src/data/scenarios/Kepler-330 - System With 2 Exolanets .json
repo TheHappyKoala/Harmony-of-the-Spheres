@@ -67,14 +67,15 @@
       "radius": 169.95348837209303,
       "a": 0.116,
       "e": 0,
-      "w": 17.01233018005132,
+      "w": 312.1387820811562,
       "o": 0,
       "orbitalPeriod": 15.955387,
       "temperature": 573,
       "exoplanet": true,
       "bump": true,
-      "color": "#73D967",
-      "clouds": true
+      "color": "#CB835F",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-330-b",
@@ -85,18 +86,20 @@
       "radius": 117.2093023255814,
       "a": 0.075,
       "e": 0,
-      "w": 288.6928849086195,
+      "w": 269.0571616297383,
       "o": 0,
       "orbitalPeriod": 8.25978,
       "temperature": 714,
       "exoplanet": true,
       "bump": true,
-      "color": "#293077",
-      "clouds": false
+      "color": "#688754",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-330, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-330 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-330 - System With 2 Exolanets "
 }

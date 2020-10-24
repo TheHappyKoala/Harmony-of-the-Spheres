@@ -67,18 +67,20 @@
       "radius": 223.67441860465118,
       "a": 0.0759,
       "e": 0,
-      "w": 293.4764698359265,
+      "w": 75.0683423393421,
       "o": 0,
       "orbitalPeriod": 9.27358194,
       "temperature": 649,
       "exoplanet": true,
       "bump": false,
-      "color": "#6BECF9",
-      "clouds": false
+      "color": "#307E51",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-660, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-660 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-660 - System With 1 Exoplanet "
 }

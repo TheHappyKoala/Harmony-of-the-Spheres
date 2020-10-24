@@ -67,14 +67,15 @@
       "radius": 139.67441860465115,
       "a": 0.0344,
       "e": 0,
-      "w": 39.41344166593967,
+      "w": 2.53353821040597,
       "o": 0,
       "orbitalPeriod": 2.37030743,
       "temperature": 1256,
       "exoplanet": true,
       "bump": true,
-      "color": "#1566A5",
-      "clouds": false
+      "color": "#74B526",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1065-b",
@@ -85,18 +86,20 @@
       "radius": 325.2558139534884,
       "a": 0.0455,
       "e": 0,
-      "w": 323.61348060268796,
+      "w": 198.21775127827064,
       "o": 0,
       "orbitalPeriod": 3.60930891,
       "temperature": 1092,
       "exoplanet": true,
       "bump": false,
-      "color": "#DE142F",
-      "clouds": false
+      "color": "#95B129",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1065, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1065 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1065 - System With 2 Exolanets "
 }

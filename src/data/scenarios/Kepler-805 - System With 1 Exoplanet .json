@@ -67,18 +67,20 @@
       "radius": 252.00000000000003,
       "a": 0.1978,
       "e": 0,
-      "w": 283.57629274876126,
+      "w": 280.7783192038744,
       "o": 0,
       "orbitalPeriod": 30.8638931,
       "temperature": 743,
       "exoplanet": true,
       "bump": false,
-      "color": "#2AAF0E",
-      "clouds": false
+      "color": "#642D24",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-805, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-805 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-805 - System With 1 Exoplanet "
 }

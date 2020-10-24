@@ -67,14 +67,15 @@
       "radius": 144.55813953488374,
       "a": 0.11,
       "e": 0,
-      "w": 341.9227563087905,
+      "w": 251.8647625674841,
       "o": 0,
       "orbitalPeriod": 12.130686,
       "temperature": 901,
       "exoplanet": true,
       "bump": true,
-      "color": "#C41C3A",
-      "clouds": false
+      "color": "#A83FD7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-394-b",
@@ -85,18 +86,20 @@
       "radius": 139.67441860465115,
       "a": 0.083,
       "e": 0,
-      "w": 99.0280854434248,
+      "w": 49.3712065260279,
       "o": 0,
       "orbitalPeriod": 8.005013,
       "temperature": 1035,
       "exoplanet": true,
       "bump": true,
-      "color": "#170B9D",
-      "clouds": false
+      "color": "#9EF7D3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-394, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-394 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-394 - System With 2 Exolanets "
 }

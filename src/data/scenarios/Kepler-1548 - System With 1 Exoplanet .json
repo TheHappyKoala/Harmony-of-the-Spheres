@@ -67,18 +67,20 @@
       "radius": 230.51162790697674,
       "a": 0.4679,
       "e": 0,
-      "w": 269.9756017106952,
+      "w": 12.312781410105904,
       "o": 0,
       "orbitalPeriod": 124.828679,
       "temperature": 350,
       "exoplanet": true,
       "bump": false,
-      "color": "#6EEA11",
-      "clouds": false
+      "color": "#05B6AA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1548, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1548 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1548 - System With 1 Exoplanet "
 }

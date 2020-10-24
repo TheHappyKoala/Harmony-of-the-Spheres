@@ -67,14 +67,15 @@
       "radius": 92.79069767441861,
       "a": 0.0649,
       "e": 0,
-      "w": 230.51474417157397,
+      "w": 339.9218481063072,
       "o": 0,
       "orbitalPeriod": 19.53527,
       "temperature": 234,
       "exoplanet": true,
       "bump": true,
-      "color": "#912CCF",
-      "clouds": false
+      "color": "#C9DB08",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1649-b",
@@ -85,18 +86,20 @@
       "radius": 88.88372093023256,
       "a": 0.0514,
       "e": 0,
-      "w": 68.02797172375308,
+      "w": 231.55807266531963,
       "o": 0,
       "orbitalPeriod": 8.689099,
       "temperature": 307,
       "exoplanet": true,
       "bump": true,
-      "color": "#FA0D43",
-      "clouds": false
+      "color": "#9701E3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1649, which contains 2 exoplanets, of which 1 is potentially habitable, and was discovered by the Kepler.",
   "name": "Kepler-1649 - System With 2 Exolanets of Which 1 Is Potentially Habitable",
-  "cameraFocus": "Kepler-1649-c"
+  "cameraFocus": "Kepler-1649-c",
+  "fileName": "Kepler-1649 - System With 2 Exolanets of Which 1 Is Potentially Habitable"
 }

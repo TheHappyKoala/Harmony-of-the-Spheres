@@ -67,18 +67,20 @@
       "radius": 133.8139534883721,
       "a": 0.1464,
       "e": 0,
-      "w": 29.111274869160376,
+      "w": 285.2246457652009,
       "o": 0,
       "orbitalPeriod": 19.76172042,
       "temperature": 791,
       "exoplanet": true,
       "bump": true,
-      "color": "#04AF61",
-      "clouds": false
+      "color": "#372DC2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1006, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1006 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1006 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 519.5234241457176,
       "exoplanet": true,
       "bump": true,
-      "color": "#9A66FC",
-      "clouds": false
+      "color": "#5640E0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-83-b",
@@ -91,12 +92,14 @@
       "temperature": 799.1139790605897,
       "exoplanet": true,
       "bump": true,
-      "color": "#A63987",
-      "clouds": false
+      "color": "#104812",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-83, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-83 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-83 - System With 2 Exolanets "
 }

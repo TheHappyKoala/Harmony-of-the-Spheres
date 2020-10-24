@@ -67,18 +67,20 @@
       "radius": 105.48837209302326,
       "a": 0.0143,
       "e": 0,
-      "w": 237.53284744106236,
+      "w": 81.65116547271647,
       "o": 0,
       "orbitalPeriod": 0.66407381,
       "temperature": 1703,
       "exoplanet": true,
       "bump": true,
-      "color": "#8370EF",
-      "clouds": false
+      "color": "#4FAA1F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1284, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1284 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1284 - System With 1 Exoplanet "
 }

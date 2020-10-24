@@ -67,18 +67,20 @@
       "radius": 317.4418604651163,
       "a": 0.0501,
       "e": 0,
-      "w": 287.23121469505185,
+      "w": 264.71533520422116,
       "o": 0,
       "orbitalPeriod": 4.24374723,
       "temperature": 1063,
       "exoplanet": true,
       "bump": false,
-      "color": "#328C0A",
-      "clouds": false
+      "color": "#4ECD72",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-565, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-565 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-565 - System With 1 Exoplanet "
 }

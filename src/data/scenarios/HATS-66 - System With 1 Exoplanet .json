@@ -67,18 +67,20 @@
       "radius": 1378.186046511628,
       "a": 0.04714,
       "e": 0.064,
-      "w": 89.14268960163513,
+      "w": 66.99176746349917,
       "o": 0,
       "orbitalPeriod": 3.1414391,
       "temperature": 1998,
       "exoplanet": true,
       "bump": false,
-      "color": "#47395F",
-      "clouds": false
+      "color": "#4692F7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-66, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-66 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-66 - System With 1 Exoplanet "
 }

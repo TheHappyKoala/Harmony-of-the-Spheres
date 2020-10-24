@@ -73,12 +73,14 @@
       "temperature": 451.7761009756756,
       "exoplanet": true,
       "bump": false,
-      "color": "#7D47C5",
-      "clouds": false
+      "color": "#50D371",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 8 UMi, which contains 1 exoplanets and was discovered by the Bohyunsan Optical Astronomical Observatory.",
   "name": "8 UMi - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "8 UMi - System With 1 Exoplanet "
 }

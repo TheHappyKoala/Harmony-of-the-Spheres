@@ -67,18 +67,20 @@
       "radius": 166.046511627907,
       "a": 0.242,
       "e": 0.34,
-      "w": 249.54420814957217,
+      "w": 137.03559152787506,
       "o": 0,
       "orbitalPeriod": 101.11141,
       "temperature": 229,
       "exoplanet": true,
       "bump": true,
-      "color": "#5F3363",
-      "clouds": false
+      "color": "#C5660A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-440, which contains 1 exoplanets, of which 1 is potentially habitable, and was discovered by the Kepler.",
   "name": "Kepler-440 - System With 1 Exoplanet of Which 1 Is Potentially Habitable",
-  "cameraFocus": "Kepler-440-b"
+  "cameraFocus": "Kepler-440-b",
+  "fileName": "Kepler-440 - System With 1 Exoplanet of Which 1 Is Potentially Habitable"
 }

@@ -67,18 +67,20 @@
       "radius": 237.34883720930233,
       "a": 0.0753,
       "e": 0,
-      "w": 325.50680069551413,
+      "w": 213.06071581756518,
       "o": 0,
       "orbitalPeriod": 8.0880135,
       "temperature": 792,
       "exoplanet": true,
       "bump": false,
-      "color": "#0726C5",
-      "clouds": false
+      "color": "#AB0B95",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-979, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-979 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-979 - System With 1 Exoplanet "
 }

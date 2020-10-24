@@ -67,18 +67,20 @@
       "radius": 122.09302325581396,
       "a": 0.3006,
       "e": 0,
-      "w": 292.35103554138414,
+      "w": 260.5899209242619,
       "o": 0,
       "orbitalPeriod": 86.828989,
       "temperature": 212,
       "exoplanet": true,
       "bump": true,
-      "color": "#DABB41",
-      "clouds": false
+      "color": "#466360",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1229, which contains 1 exoplanets, of which 1 is potentially habitable, and was discovered by the Kepler.",
   "name": "Kepler-1229 - System With 1 Exoplanet of Which 1 Is Potentially Habitable",
-  "cameraFocus": "Kepler-1229-b"
+  "cameraFocus": "Kepler-1229-b",
+  "fileName": "Kepler-1229 - System With 1 Exoplanet of Which 1 Is Potentially Habitable"
 }

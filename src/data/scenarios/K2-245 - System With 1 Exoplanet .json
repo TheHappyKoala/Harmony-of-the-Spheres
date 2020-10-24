@@ -67,18 +67,20 @@
       "radius": 378.00000000000006,
       "a": 0.0959,
       "e": 0,
-      "w": 348.0805143636951,
+      "w": 274.8381334118916,
       "o": 0,
       "orbitalPeriod": 11.89307,
       "temperature": 923,
       "exoplanet": true,
       "bump": false,
-      "color": "#4F9C63",
-      "clouds": false
+      "color": "#9CF47C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-245, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-245 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-245 - System With 1 Exoplanet "
 }

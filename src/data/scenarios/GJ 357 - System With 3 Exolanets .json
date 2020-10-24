@@ -67,14 +67,15 @@
       "radius": 204.13953488372093,
       "a": 0.204,
       "e": 0,
-      "w": 327.1000604528711,
+      "w": 296.6882830594736,
       "o": 0,
       "orbitalPeriod": 55.661,
       "temperature": 220,
       "exoplanet": true,
       "bump": false,
-      "color": "#D08E48",
-      "clouds": false
+      "color": "#012E71",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 357-c",
@@ -85,14 +86,15 @@
       "radius": 144.55813953488374,
       "a": 0.061,
       "e": 0,
-      "w": 50.307073344265696,
+      "w": 172.82153901205265,
       "o": 0,
       "orbitalPeriod": 9.1247,
       "temperature": 401,
       "exoplanet": true,
       "bump": true,
-      "color": "#E4D456",
-      "clouds": false
+      "color": "#98970C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 357-b",
@@ -103,18 +105,20 @@
       "radius": 106.46511627906978,
       "a": 0.035,
       "e": 0,
-      "w": 8.929487891405499,
+      "w": 5.2920615987049135,
       "o": 0,
       "orbitalPeriod": 3.93072,
       "temperature": 525,
       "exoplanet": true,
       "bump": true,
-      "color": "#3E2D5B",
-      "clouds": false
+      "color": "#78216A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 357, which contains 3 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "GJ 357 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 357 - System With 3 Exolanets "
 }

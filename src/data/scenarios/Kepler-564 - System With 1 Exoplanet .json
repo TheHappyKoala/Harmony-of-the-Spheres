@@ -67,18 +67,20 @@
       "radius": 403.3953488372093,
       "a": 0.0484,
       "e": 0,
-      "w": 126.22963756330736,
+      "w": 249.45362769080637,
       "o": 0,
       "orbitalPeriod": 3.75083228,
       "temperature": 1129,
       "exoplanet": true,
       "bump": false,
-      "color": "#4F356C",
-      "clouds": false
+      "color": "#6720E3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-564, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-564 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-564 - System With 1 Exoplanet "
 }

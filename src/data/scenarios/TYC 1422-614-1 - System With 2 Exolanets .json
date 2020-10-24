@@ -73,8 +73,9 @@
       "temperature": 228.25091152683888,
       "exoplanet": true,
       "bump": false,
-      "color": "#6CDF82",
-      "clouds": false
+      "color": "#227C02",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "TYC 1422-614-1-b",
@@ -91,12 +92,14 @@
       "temperature": 321.62385920666236,
       "exoplanet": true,
       "bump": false,
-      "color": "#DDE3BE",
-      "clouds": false
+      "color": "#5BAAEA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TYC 1422-614-1, which contains 2 exoplanets and was discovered by the Multiple Observatories.",
   "name": "TYC 1422-614-1 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TYC 1422-614-1 - System With 2 Exolanets "
 }

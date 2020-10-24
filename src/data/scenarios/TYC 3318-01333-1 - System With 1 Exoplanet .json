@@ -73,12 +73,14 @@
       "temperature": 230.5074361237698,
       "exoplanet": true,
       "bump": false,
-      "color": "#2563CD",
-      "clouds": false
+      "color": "#72FD37",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TYC 3318-01333-1, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "TYC 3318-01333-1 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TYC 3318-01333-1 - System With 1 Exoplanet "
 }

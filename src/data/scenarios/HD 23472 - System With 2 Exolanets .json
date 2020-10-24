@@ -67,14 +67,15 @@
       "radius": null,
       "a": 0.17,
       "e": 0,
-      "w": 198.6427846102401,
+      "w": 159.4018477683377,
       "o": 0,
       "orbitalPeriod": 29.625,
       "temperature": 475,
       "exoplanet": true,
       "bump": false,
-      "color": "#C0F23E",
-      "clouds": false
+      "color": "#34E25C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 23472-b",
@@ -85,18 +86,20 @@
       "radius": null,
       "a": 0.121,
       "e": 0,
-      "w": 154.04513773261027,
+      "w": 162.6907588548349,
       "o": 0,
       "orbitalPeriod": 17.667,
       "temperature": 557.3816749165061,
       "exoplanet": true,
       "bump": false,
-      "color": "#1C3AA7",
-      "clouds": false
+      "color": "#1B1DB8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 23472, which contains 2 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "HD 23472 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 23472 - System With 2 Exolanets "
 }

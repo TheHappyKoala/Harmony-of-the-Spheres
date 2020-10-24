@@ -67,18 +67,20 @@
       "radius": 675.9069767441861,
       "a": 0.0441,
       "e": 0.085,
-      "w": 69.09761334609695,
+      "w": 150.24247513128648,
       "o": 0,
       "orbitalPeriod": 3.142702,
       "temperature": 1446,
       "exoplanet": true,
       "bump": false,
-      "color": "#0D0983",
-      "clouds": false
+      "color": "#83C298",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-12, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-12 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-12 - System With 1 Exoplanet "
 }

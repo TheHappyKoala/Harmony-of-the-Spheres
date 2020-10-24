@@ -73,8 +73,9 @@
       "temperature": 177.028715970869,
       "exoplanet": true,
       "bump": false,
-      "color": "#40C6D1",
-      "clouds": false
+      "color": "#EDAA28",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 876-d",
@@ -91,8 +92,9 @@
       "temperature": 709.589489468306,
       "exoplanet": true,
       "bump": false,
-      "color": "#73EB96",
-      "clouds": false
+      "color": "#60774A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 876-c",
@@ -109,8 +111,9 @@
       "temperature": 284.3322768106789,
       "exoplanet": true,
       "bump": false,
-      "color": "#6A7386",
-      "clouds": false
+      "color": "#22542C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 876-b",
@@ -127,12 +130,14 @@
       "temperature": 224.25882963972694,
       "exoplanet": true,
       "bump": false,
-      "color": "#7980DE",
-      "clouds": false
+      "color": "#833700",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 876, which contains 4 exoplanets and was discovered by the Multiple Observatories.",
   "name": "GJ 876 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 876 - System With 4 Exolanets "
 }

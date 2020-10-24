@@ -67,14 +67,15 @@
       "radius": 119.16279069767442,
       "a": 0.142,
       "e": 0,
-      "w": 1.0229847360197475,
+      "w": 200.42964116268544,
       "o": 0,
       "orbitalPeriod": 17.934937,
       "temperature": 1002,
       "exoplanet": true,
       "bump": true,
-      "color": "#CCFDCE",
-      "clouds": false
+      "color": "#CAACEC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-320-b",
@@ -85,18 +86,20 @@
       "radius": 99.62790697674419,
       "a": 0.085,
       "e": 0,
-      "w": 281.5598043355579,
+      "w": 113.10020982795974,
       "o": 0,
       "orbitalPeriod": 8.371554,
       "temperature": 1292,
       "exoplanet": true,
       "bump": true,
-      "color": "#B672D9",
-      "clouds": false
+      "color": "#3DD11B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-320, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-320 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-320 - System With 2 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 243.2093023255814,
       "a": 0.1486,
       "e": 0,
-      "w": 321.19652748809517,
+      "w": 193.1815158080651,
       "o": 0,
       "orbitalPeriod": 22.18329658,
       "temperature": 646,
       "exoplanet": true,
       "bump": false,
-      "color": "#809A9A",
-      "clouds": false
+      "color": "#0A5DB4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-573, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-573 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-573 - System With 1 Exoplanet "
 }

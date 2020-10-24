@@ -67,14 +67,15 @@
       "radius": 157.2558139534884,
       "a": 0.414,
       "e": 0,
-      "w": 194.9665810799777,
+      "w": 357.0869221846582,
       "o": 0,
       "orbitalPeriod": 91.353282,
       "temperature": 428,
       "exoplanet": true,
       "bump": true,
-      "color": "#CF026D",
-      "clouds": false
+      "color": "#1F8662",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-140-b",
@@ -85,18 +86,20 @@
       "radius": 140.65116279069767,
       "a": 0.045,
       "e": 0,
-      "w": 96.55598967766056,
+      "w": 162.42157592109436,
       "o": 0,
       "orbitalPeriod": 3.25427,
       "temperature": 1301,
       "exoplanet": true,
       "bump": true,
-      "color": "#9FCA98",
-      "clouds": false
+      "color": "#928F7D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-140, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-140 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-140 - System With 2 Exolanets "
 }

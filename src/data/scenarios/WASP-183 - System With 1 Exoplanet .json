@@ -67,18 +67,20 @@
       "radius": 1435.8139534883721,
       "a": 0.04632,
       "e": 0,
-      "w": 340.0429197774854,
+      "w": 77.16664158493863,
       "o": 0,
       "orbitalPeriod": 4.1117771,
       "temperature": 1111,
       "exoplanet": true,
       "bump": false,
-      "color": "#226A4E",
-      "clouds": false
+      "color": "#591E93",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-183, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-183 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-183 - System With 1 Exoplanet "
 }

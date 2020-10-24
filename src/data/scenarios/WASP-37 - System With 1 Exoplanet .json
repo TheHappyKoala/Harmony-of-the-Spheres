@@ -67,18 +67,20 @@
       "radius": 1133.0232558139535,
       "a": 0.0446,
       "e": 0,
-      "w": 182.69577516921967,
+      "w": 16.90794013267808,
       "o": 0,
       "orbitalPeriod": 3.577469,
       "temperature": 1078.8081182572503,
       "exoplanet": true,
       "bump": false,
-      "color": "#D09F7E",
-      "clouds": false
+      "color": "#03181C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-37, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-37 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-37 - System With 1 Exoplanet "
 }

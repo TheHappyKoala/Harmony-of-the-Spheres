@@ -73,8 +73,9 @@
       "temperature": 338,
       "exoplanet": true,
       "bump": true,
-      "color": "#522D40",
-      "clouds": true
+      "color": "#F5ED12",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-138-c",
@@ -91,8 +92,9 @@
       "temperature": 402,
       "exoplanet": true,
       "bump": true,
-      "color": "#A992F8",
-      "clouds": false
+      "color": "#6B12B5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-138-b",
@@ -109,12 +111,14 @@
       "temperature": 443,
       "exoplanet": true,
       "bump": true,
-      "color": "#5AE9D5",
-      "clouds": false
+      "color": "#7A1E2A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-138, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-138 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-138 - System With 3 Exolanets "
 }

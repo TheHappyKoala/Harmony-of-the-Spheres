@@ -73,12 +73,14 @@
       "temperature": 149.26015579913172,
       "exoplanet": true,
       "bump": false,
-      "color": "#15DC6A",
-      "clouds": false
+      "color": "#22FB98",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 108341, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 108341 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 108341 - System With 1 Exoplanet "
 }

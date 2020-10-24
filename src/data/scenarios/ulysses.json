@@ -1,5 +1,6 @@
 {
-  "name": "Ulysses",
+  "name": "Ulysses Spacecraft Orbit",
+  "fileName": "Ulysses Spacecraft Orbit",
   "sortOrder": 8,
   "description": "Gravity simulation of the Ulysses spacecraft's trajectory to Jupiter and subsequent gravity assist which brought it into a highly inclined and eccentric orbit aroun the poles of the Sun.",
   "path": "/spaceflight",

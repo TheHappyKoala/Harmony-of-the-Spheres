@@ -67,18 +67,20 @@
       "radius": 262.7441860465117,
       "a": 0.0854,
       "e": 0,
-      "w": 127.07669130622487,
+      "w": 256.2356985504833,
       "o": 0,
       "orbitalPeriod": 9.07097734,
       "temperature": 825,
       "exoplanet": true,
       "bump": false,
-      "color": "#639B70",
-      "clouds": false
+      "color": "#3549E1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-623, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-623 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-623 - System With 1 Exoplanet "
 }

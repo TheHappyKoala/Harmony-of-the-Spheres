@@ -67,18 +67,20 @@
       "radius": 103.53488372093024,
       "a": 0.2196,
       "e": 0,
-      "w": 204.17390823160449,
+      "w": 95.67291291549311,
       "o": 0,
       "orbitalPeriod": 44.2008,
       "temperature": 409,
       "exoplanet": true,
       "bump": true,
-      "color": "#53A932",
-      "clouds": false
+      "color": "#14CEAA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1499, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1499 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1499 - System With 1 Exoplanet "
 }

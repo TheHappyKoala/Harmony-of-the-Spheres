@@ -67,18 +67,20 @@
       "radius": 929.8604651162791,
       "a": 0.0954,
       "e": 0,
-      "w": 186.41910867122724,
+      "w": 108.87092558757854,
       "o": 0,
       "orbitalPeriod": 11.391013,
       "temperature": 661,
       "exoplanet": true,
       "bump": false,
-      "color": "#7DD849",
-      "clouds": false
+      "color": "#549505",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-114, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-114 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-114 - System With 1 Exoplanet "
 }

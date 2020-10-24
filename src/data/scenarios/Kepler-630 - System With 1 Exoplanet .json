@@ -67,18 +67,20 @@
       "radius": 277.39534883720927,
       "a": 0.5729,
       "e": 0,
-      "w": 348.9319122964643,
+      "w": 292.0376961532349,
       "o": 0,
       "orbitalPeriod": 161.4743937,
       "temperature": 343,
       "exoplanet": true,
       "bump": false,
-      "color": "#7DD59F",
-      "clouds": false
+      "color": "#6D0AEB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-630, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-630 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-630 - System With 1 Exoplanet "
 }

@@ -73,12 +73,14 @@
       "temperature": 651,
       "exoplanet": true,
       "bump": false,
-      "color": "#1CD7CA",
-      "clouds": false
+      "color": "#50C0B6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1656, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1656 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1656 - System With 1 Exoplanet "
 }

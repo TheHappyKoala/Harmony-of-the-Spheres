@@ -73,12 +73,14 @@
       "temperature": 385,
       "exoplanet": true,
       "bump": false,
-      "color": "#F5C7E5",
-      "clouds": false
+      "color": "#241914",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 95338, which contains 1 exoplanets and was discovered by the Las Campanas Observatory.",
   "name": "HD 95338 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 95338 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 159.2093023255814,
       "a": 0.0632,
       "e": 0,
-      "w": 341.342062796035,
+      "w": 256.1740445858425,
       "o": 0,
       "orbitalPeriod": 6.07972888,
       "temperature": 1111,
       "exoplanet": true,
       "bump": true,
-      "color": "#E228FA",
-      "clouds": false
+      "color": "#A0660A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-638, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-638 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-638 - System With 1 Exoplanet "
 }

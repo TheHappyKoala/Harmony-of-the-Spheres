@@ -67,18 +67,20 @@
       "radius": 88.88372093023256,
       "a": 0.0382,
       "e": 0,
-      "w": 158.89944506242992,
+      "w": 272.1210078815264,
       "o": 0,
       "orbitalPeriod": 2.78786839,
       "temperature": 1432,
       "exoplanet": true,
       "bump": true,
-      "color": "#D928D9",
-      "clouds": false
+      "color": "#882608",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1150, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1150 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1150 - System With 1 Exoplanet "
 }

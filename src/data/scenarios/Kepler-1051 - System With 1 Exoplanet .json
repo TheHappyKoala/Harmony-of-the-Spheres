@@ -67,18 +67,20 @@
       "radius": 295.95348837209303,
       "a": 0.1891,
       "e": 0,
-      "w": 6.663572801242363,
+      "w": 258.1628105887445,
       "o": 0,
       "orbitalPeriod": 25.96200249,
       "temperature": 850,
       "exoplanet": true,
       "bump": false,
-      "color": "#CB6295",
-      "clouds": false
+      "color": "#031528",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1051, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1051 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1051 - System With 1 Exoplanet "
 }

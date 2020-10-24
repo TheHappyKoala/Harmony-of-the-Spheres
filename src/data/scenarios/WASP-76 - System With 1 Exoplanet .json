@@ -67,18 +67,20 @@
       "radius": 1787.4418604651164,
       "a": 0.033,
       "e": 0,
-      "w": 302.03499565754373,
+      "w": 201.14778369765054,
       "o": 0,
       "orbitalPeriod": 1.809886,
       "temperature": 2160,
       "exoplanet": true,
       "bump": false,
-      "color": "#AAEC76",
-      "clouds": false
+      "color": "#ADED0D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-76, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-76 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-76 - System With 1 Exoplanet "
 }

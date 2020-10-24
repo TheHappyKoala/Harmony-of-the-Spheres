@@ -67,18 +67,20 @@
       "radius": 213.90697674418607,
       "a": 0.07619,
       "e": 0,
-      "w": 40.36814810221636,
+      "w": 51.21660209034314,
       "o": 0,
       "orbitalPeriod": 7.49543,
       "temperature": 904.0499185723249,
       "exoplanet": true,
       "bump": false,
-      "color": "#A8A1E3",
-      "clouds": false
+      "color": "#024729",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-73, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-73 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-73 - System With 1 Exoplanet "
 }

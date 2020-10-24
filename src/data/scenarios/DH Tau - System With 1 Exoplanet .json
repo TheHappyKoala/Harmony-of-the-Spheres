@@ -67,18 +67,20 @@
       "radius": 2637.2093023255816,
       "a": 330,
       "e": 0,
-      "w": 59.91842181229658,
+      "w": 336.0754727426528,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 2200,
       "exoplanet": true,
       "bump": false,
-      "color": "#1BA084",
-      "clouds": false
+      "color": "#BA4B85",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system DH Tau, which contains 1 exoplanets and was discovered by the Subaru Telescope.",
   "name": "DH Tau - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "DH Tau - System With 1 Exoplanet "
 }

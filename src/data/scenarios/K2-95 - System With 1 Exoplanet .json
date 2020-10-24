@@ -73,12 +73,14 @@
       "temperature": 383,
       "exoplanet": true,
       "bump": false,
-      "color": "#B0DA1D",
-      "clouds": false
+      "color": "#D2DE20",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-95, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-95 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-95 - System With 1 Exoplanet "
 }

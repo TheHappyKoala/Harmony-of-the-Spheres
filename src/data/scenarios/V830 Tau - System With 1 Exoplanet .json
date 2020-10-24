@@ -67,18 +67,20 @@
       "radius": 1220.9302325581396,
       "a": 0.057,
       "e": 0,
-      "w": 326.4024737024385,
+      "w": 355.687015969443,
       "o": 0,
       "orbitalPeriod": 4.927,
       "temperature": 1007.6553059077909,
       "exoplanet": true,
       "bump": false,
-      "color": "#EAC8F6",
-      "clouds": false
+      "color": "#944420",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system V830 Tau, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "V830 Tau - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "V830 Tau - System With 1 Exoplanet "
 }

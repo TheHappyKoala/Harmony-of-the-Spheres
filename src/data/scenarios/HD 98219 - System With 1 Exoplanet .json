@@ -73,12 +73,14 @@
       "temperature": 277.3182722707693,
       "exoplanet": true,
       "bump": false,
-      "color": "#5E4DDD",
-      "clouds": false
+      "color": "#7BB3E0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 98219, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 98219 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 98219 - System With 1 Exoplanet "
 }

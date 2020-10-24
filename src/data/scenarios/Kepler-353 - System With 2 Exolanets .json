@@ -67,14 +67,15 @@
       "radius": 120.13953488372094,
       "a": 0.065,
       "e": 0,
-      "w": 152.46810432598176,
+      "w": 212.30033303809353,
       "o": 0,
       "orbitalPeriod": 8.410894,
       "temperature": 472,
       "exoplanet": true,
       "bump": true,
-      "color": "#2F1D9C",
-      "clouds": false
+      "color": "#7B98C0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-353-b",
@@ -85,18 +86,20 @@
       "radius": 77.16279069767442,
       "a": 0.051,
       "e": 0,
-      "w": 87.72426962834561,
+      "w": 198.2071278348389,
       "o": 0,
       "orbitalPeriod": 5.795278,
       "temperature": 534,
       "exoplanet": true,
       "bump": true,
-      "color": "#066AA9",
-      "clouds": false
+      "color": "#1B1B49",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-353, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-353 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-353 - System With 2 Exolanets "
 }

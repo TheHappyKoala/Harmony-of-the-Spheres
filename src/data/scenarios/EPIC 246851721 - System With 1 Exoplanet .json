@@ -67,18 +67,20 @@
       "radius": 1026.5581395348838,
       "a": 0.07229,
       "e": 0,
-      "w": 335.43271859415904,
+      "w": 90.20400928978404,
       "o": 0,
       "orbitalPeriod": 6.180235,
       "temperature": 1401,
       "exoplanet": true,
       "bump": false,
-      "color": "#6E6E7C",
-      "clouds": false
+      "color": "#ABAF79",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system EPIC 246851721, which contains 1 exoplanets and was discovered by the K2.",
   "name": "EPIC 246851721 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "EPIC 246851721 - System With 1 Exoplanet "
 }

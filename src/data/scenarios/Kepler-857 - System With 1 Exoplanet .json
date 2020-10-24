@@ -67,18 +67,20 @@
       "radius": 592.8837209302326,
       "a": 0.3751,
       "e": 0,
-      "w": 77.028317170477,
+      "w": 162.30896135250498,
       "o": 0,
       "orbitalPeriod": 85.35129427,
       "temperature": 390,
       "exoplanet": true,
       "bump": false,
-      "color": "#FFC728",
-      "clouds": false
+      "color": "#32CA44",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-857, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-857 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-857 - System With 1 Exoplanet "
 }

@@ -73,12 +73,14 @@
       "temperature": 288.5769244282122,
       "exoplanet": true,
       "bump": false,
-      "color": "#A1CCDF",
-      "clouds": false
+      "color": "#0F6FF2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 147379, which contains 1 exoplanets and was discovered by the Calar Alto Observatory.",
   "name": "HD 147379 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 147379 - System With 1 Exoplanet "
 }

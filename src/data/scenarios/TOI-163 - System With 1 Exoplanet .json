@@ -67,18 +67,20 @@
       "radius": 1454.372093023256,
       "a": 0.058,
       "e": 0,
-      "w": 352.4514533215202,
+      "w": 300.6339859770769,
       "o": 0,
       "orbitalPeriod": 4.231306,
       "temperature": 1669,
       "exoplanet": true,
       "bump": false,
-      "color": "#0A4CF1",
-      "clouds": false
+      "color": "#404F07",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TOI-163, which contains 1 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "TOI-163 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TOI-163 - System With 1 Exoplanet "
 }

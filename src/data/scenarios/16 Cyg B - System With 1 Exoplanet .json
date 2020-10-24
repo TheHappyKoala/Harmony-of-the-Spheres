@@ -73,12 +73,14 @@
       "temperature": 197.81681106993094,
       "exoplanet": true,
       "bump": false,
-      "color": "#D61F6A",
-      "clouds": false
+      "color": "#929D5C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 16 Cyg B, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "16 Cyg B - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "16 Cyg B - System With 1 Exoplanet "
 }

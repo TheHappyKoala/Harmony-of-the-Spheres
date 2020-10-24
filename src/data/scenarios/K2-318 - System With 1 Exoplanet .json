@@ -67,18 +67,20 @@
       "radius": 144.55813953488374,
       "a": 0.0911,
       "e": 0,
-      "w": 245.382872461428,
+      "w": 107.66179327149325,
       "o": 0,
       "orbitalPeriod": 7.01,
       "temperature": 456,
       "exoplanet": true,
       "bump": true,
-      "color": "#DFFF57",
-      "clouds": false
+      "color": "#415211",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-318, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-318 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-318 - System With 1 Exoplanet "
 }

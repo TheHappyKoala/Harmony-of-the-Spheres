@@ -67,18 +67,20 @@
       "radius": 1123.2558139534883,
       "a": 0.83,
       "e": 0,
-      "w": 354.68410852390286,
+      "w": 330.14852950822393,
       "o": 0,
       "orbitalPeriod": 185.84,
       "temperature": 477.0098952921979,
       "exoplanet": true,
       "bump": false,
-      "color": "#E6EE5A",
-      "clouds": false
+      "color": "#41682D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 14 And, which contains 1 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "14 And - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "14 And - System With 1 Exoplanet "
 }

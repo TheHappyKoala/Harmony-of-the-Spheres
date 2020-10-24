@@ -67,18 +67,20 @@
       "radius": 173.86046511627907,
       "a": 0.1149,
       "e": 0,
-      "w": 30.00690992456179,
+      "w": 355.9549808231528,
       "o": 0,
       "orbitalPeriod": 15.87364565,
       "temperature": 632,
       "exoplanet": true,
       "bump": true,
-      "color": "#79AFE7",
-      "clouds": true
+      "color": "#685DF9",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-646, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-646 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-646 - System With 1 Exoplanet "
 }

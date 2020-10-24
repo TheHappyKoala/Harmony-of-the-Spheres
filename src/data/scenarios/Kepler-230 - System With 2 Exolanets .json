@@ -67,14 +67,15 @@
       "radius": 177.7674418604651,
       "a": 0.38,
       "e": 0,
-      "w": 294.7576751081313,
+      "w": 197.02146051227592,
       "o": 0,
       "orbitalPeriod": 91.773242,
       "temperature": 359,
       "exoplanet": true,
       "bump": true,
-      "color": "#36FF34",
-      "clouds": true
+      "color": "#0D212C",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-230-b",
@@ -85,18 +86,20 @@
       "radius": 371.16279069767444,
       "a": 0.191,
       "e": 0,
-      "w": 31.95157778682427,
+      "w": 131.59933859707968,
       "o": 0,
       "orbitalPeriod": 32.625555,
       "temperature": 506,
       "exoplanet": true,
       "bump": false,
-      "color": "#E8B1E9",
-      "clouds": false
+      "color": "#0ED7C8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-230, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-230 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-230 - System With 2 Exolanets "
 }

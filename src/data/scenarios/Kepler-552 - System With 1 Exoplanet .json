@@ -67,18 +67,20 @@
       "radius": 343.8139534883721,
       "a": 0.0612,
       "e": 0,
-      "w": 249.7194112302782,
+      "w": 35.351728512824,
       "o": 0,
       "orbitalPeriod": 5.26341577,
       "temperature": 1103,
       "exoplanet": true,
       "bump": false,
-      "color": "#46E366",
-      "clouds": false
+      "color": "#3C8C8E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-552, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-552 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-552 - System With 1 Exoplanet "
 }

@@ -73,12 +73,14 @@
       "temperature": 343.5630449527596,
       "exoplanet": true,
       "bump": false,
-      "color": "#A691B7",
-      "clouds": false
+      "color": "#2DD252",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 220074, which contains 1 exoplanets and was discovered by the Bohyunsan Optical Astronomical Observatory.",
   "name": "HD 220074 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 220074 - System With 1 Exoplanet "
 }

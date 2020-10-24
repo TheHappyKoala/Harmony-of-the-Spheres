@@ -67,18 +67,20 @@
       "radius": 252.97674418604655,
       "a": 0.7576,
       "e": 0,
-      "w": 122.18727915936041,
+      "w": 36.91374340585689,
       "o": 0,
       "orbitalPeriod": 234.239,
       "temperature": 329,
       "exoplanet": true,
       "bump": false,
-      "color": "#1021EC",
-      "clouds": false
+      "color": "#B3C868",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1700, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1700 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1700 - System With 1 Exoplanet "
 }

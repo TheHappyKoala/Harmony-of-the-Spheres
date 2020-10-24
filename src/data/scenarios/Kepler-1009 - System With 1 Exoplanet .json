@@ -67,18 +67,20 @@
       "radius": 189.4883720930233,
       "a": 0.0796,
       "e": 0,
-      "w": 68.50348307588946,
+      "w": 188.2939762171877,
       "o": 0,
       "orbitalPeriod": 11.35011917,
       "temperature": 403,
       "exoplanet": true,
       "bump": false,
-      "color": "#F0DC63",
-      "clouds": false
+      "color": "#A74269",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1009, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1009 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1009 - System With 1 Exoplanet "
 }

@@ -73,12 +73,14 @@
       "temperature": 196.12987375060462,
       "exoplanet": true,
       "bump": false,
-      "color": "#28AE72",
-      "clouds": false
+      "color": "#B89269",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 139357, which contains 1 exoplanets and was discovered by the Thueringer Landessternwarte Tautenburg.",
   "name": "HD 139357 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 139357 - System With 1 Exoplanet "
 }

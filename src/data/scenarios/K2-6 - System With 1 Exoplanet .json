@@ -67,18 +67,20 @@
       "radius": 217.8139534883721,
       "a": 0.1898,
       "e": 0,
-      "w": 356.97706263752406,
+      "w": 181.2567719412395,
       "o": 0,
       "orbitalPeriod": 30.94191,
       "temperature": 615,
       "exoplanet": true,
       "bump": false,
-      "color": "#A97FF6",
-      "clouds": false
+      "color": "#A9B1FF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-6, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-6 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-6 - System With 1 Exoplanet "
 }

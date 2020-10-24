@@ -73,12 +73,14 @@
       "temperature": 1951,
       "exoplanet": true,
       "bump": false,
-      "color": "#D8F069",
-      "clouds": false
+      "color": "#856C3C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-23, which contains 1 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-23 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HAT-P-23 - System With 1 Exoplanet "
 }

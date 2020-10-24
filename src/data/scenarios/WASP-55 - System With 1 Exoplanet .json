@@ -67,18 +67,20 @@
       "radius": 1299.0697674418607,
       "a": 0.0558,
       "e": 0,
-      "w": 41.181257482633534,
+      "w": 136.7802258851258,
       "o": 0,
       "orbitalPeriod": 4.46563,
       "temperature": 1300,
       "exoplanet": true,
       "bump": false,
-      "color": "#C7919B",
-      "clouds": false
+      "color": "#89437D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-55, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-55 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-55 - System With 1 Exoplanet "
 }

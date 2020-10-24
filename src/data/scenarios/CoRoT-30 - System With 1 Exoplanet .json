@@ -73,12 +73,14 @@
       "temperature": 815.6385752470194,
       "exoplanet": true,
       "bump": false,
-      "color": "#D093BB",
-      "clouds": false
+      "color": "#39C146",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-30, which contains 1 exoplanets and was discovered by the CoRoT.",
   "name": "CoRoT-30 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "CoRoT-30 - System With 1 Exoplanet "
 }

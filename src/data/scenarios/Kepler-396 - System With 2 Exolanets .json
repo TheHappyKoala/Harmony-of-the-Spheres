@@ -67,14 +67,15 @@
       "radius": 462,
       "a": 0.378,
       "e": 0,
-      "w": 68.72999778564656,
+      "w": 45.639508107173405,
       "o": 0,
       "orbitalPeriod": 88.505,
       "temperature": 390,
       "exoplanet": true,
       "bump": false,
-      "color": "#4312E3",
-      "clouds": false
+      "color": "#6742E3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-396-b",
@@ -85,18 +86,20 @@
       "radius": 304.74418604651163,
       "a": 0.2336,
       "e": 0,
-      "w": 98.85712734820173,
+      "w": 14.87049222808099,
       "o": 0,
       "orbitalPeriod": 42.994,
       "temperature": 496,
       "exoplanet": true,
       "bump": false,
-      "color": "#EF8A03",
-      "clouds": false
+      "color": "#89C54F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-396, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-396 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-396 - System With 2 Exolanets "
 }

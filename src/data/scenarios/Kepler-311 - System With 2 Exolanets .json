@@ -67,14 +67,15 @@
       "radius": 125.0232558139535,
       "a": 0.145,
       "e": 0,
-      "w": 83.74771440346547,
+      "w": 0.707852807003091,
       "o": 0,
       "orbitalPeriod": 19.738286,
       "temperature": 744,
       "exoplanet": true,
       "bump": true,
-      "color": "#4DB3A1",
-      "clouds": false
+      "color": "#E0D1E1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-311-b",
@@ -85,18 +86,20 @@
       "radius": 148.46511627906978,
       "a": 0.087,
       "e": 0,
-      "w": 6.239231911024969,
+      "w": 270.29968146938376,
       "o": 0,
       "orbitalPeriod": 9.176092,
       "temperature": 960,
       "exoplanet": true,
       "bump": true,
-      "color": "#CC00BA",
-      "clouds": false
+      "color": "#608A8A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-311, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-311 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-311 - System With 2 Exolanets "
 }

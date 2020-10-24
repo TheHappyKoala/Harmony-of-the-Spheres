@@ -67,18 +67,20 @@
       "radius": 229.53488372093022,
       "a": 0.0578,
       "e": 0,
-      "w": 90.66175045389744,
+      "w": 7.883282060129098,
       "o": 0,
       "orbitalPeriod": 5.52011,
       "temperature": 845,
       "exoplanet": true,
       "bump": false,
-      "color": "#598F63",
-      "clouds": false
+      "color": "#4C23A9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-256, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-256 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-256 - System With 1 Exoplanet "
 }

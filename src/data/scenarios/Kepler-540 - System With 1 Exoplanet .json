@@ -67,18 +67,20 @@
       "radius": 236.37209302325581,
       "a": 0.5886,
       "e": 0,
-      "w": 196.28519639320416,
+      "w": 19.024764592095565,
       "o": 0,
       "orbitalPeriod": 172.7049784,
       "temperature": 355,
       "exoplanet": true,
       "bump": false,
-      "color": "#CD23ED",
-      "clouds": false
+      "color": "#1D2F92",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-540, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-540 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-540 - System With 1 Exoplanet "
 }

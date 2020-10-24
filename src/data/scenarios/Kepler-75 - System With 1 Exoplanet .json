@@ -73,12 +73,14 @@
       "temperature": 767,
       "exoplanet": true,
       "bump": false,
-      "color": "#464B9E",
-      "clouds": false
+      "color": "#A6FCEE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-75, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-75 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-75 - System With 1 Exoplanet "
 }

@@ -73,12 +73,14 @@
       "temperature": 690,
       "exoplanet": true,
       "bump": false,
-      "color": "#D40EC8",
-      "clouds": false
+      "color": "#963D99",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 116454, which contains 1 exoplanets and was discovered by the K2.",
   "name": "HIP 116454 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HIP 116454 - System With 1 Exoplanet "
 }

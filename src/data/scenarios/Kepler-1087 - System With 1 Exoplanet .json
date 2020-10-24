@@ -67,18 +67,20 @@
       "radius": 52.74418604651163,
       "a": 0.0148,
       "e": 0,
-      "w": 147.78552007119586,
+      "w": 254.25771630664485,
       "o": 0,
       "orbitalPeriod": 0.69384285,
       "temperature": 2161,
       "exoplanet": true,
       "bump": true,
-      "color": "#1121D6",
-      "clouds": false
+      "color": "#325D19",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1087, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1087 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1087 - System With 1 Exoplanet "
 }

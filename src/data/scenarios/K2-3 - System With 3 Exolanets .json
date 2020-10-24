@@ -67,14 +67,15 @@
       "radius": 132.8372093023256,
       "a": 0.2097,
       "e": 0,
-      "w": 320.3087621956485,
+      "w": 65.34411882805782,
       "o": 0,
       "orbitalPeriod": 44.55646,
       "temperature": 282,
       "exoplanet": true,
       "bump": true,
-      "color": "#490D72",
-      "clouds": false
+      "color": "#A1489E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-3-c",
@@ -85,14 +86,15 @@
       "radius": 135.76744186046514,
       "a": 0.1345,
       "e": 0,
-      "w": 7.931815550536543,
+      "w": 177.22487861408018,
       "o": 0,
       "orbitalPeriod": 24.646582,
       "temperature": 374,
       "exoplanet": true,
       "bump": true,
-      "color": "#CD6C59",
-      "clouds": true
+      "color": "#870316",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-3-b",
@@ -103,18 +105,20 @@
       "radius": 172.88372093023256,
       "a": 0.074,
       "e": 0,
-      "w": 168.22244798971897,
+      "w": 230.26680832771729,
       "o": 0,
       "orbitalPeriod": 10.054626,
       "temperature": 504,
       "exoplanet": true,
       "bump": false,
-      "color": "#60DF6D",
-      "clouds": false
+      "color": "#BE78F7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-3, which contains 3 exoplanets and was discovered by the K2.",
   "name": "K2-3 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-3 - System With 3 Exolanets "
 }

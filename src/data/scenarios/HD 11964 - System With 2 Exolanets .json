@@ -73,8 +73,9 @@
       "temperature": 468.39551393853986,
       "exoplanet": true,
       "bump": false,
-      "color": "#4FCCF5",
-      "clouds": false
+      "color": "#F949E5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 11964-b",
@@ -91,12 +92,14 @@
       "temperature": 126.09182391306322,
       "exoplanet": true,
       "bump": false,
-      "color": "#1748B9",
-      "clouds": false
+      "color": "#4C7488",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 11964, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 11964 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 11964 - System With 2 Exolanets "
 }

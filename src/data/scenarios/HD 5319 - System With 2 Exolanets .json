@@ -73,8 +73,9 @@
       "temperature": 207.16842298409938,
       "exoplanet": true,
       "bump": false,
-      "color": "#2B01E9",
-      "clouds": false
+      "color": "#6DEC72",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 5319-b",
@@ -91,12 +92,14 @@
       "temperature": 229.69544788020917,
       "exoplanet": true,
       "bump": false,
-      "color": "#C55D2D",
-      "clouds": false
+      "color": "#0F2496",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 5319, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 5319 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 5319 - System With 2 Exolanets "
 }

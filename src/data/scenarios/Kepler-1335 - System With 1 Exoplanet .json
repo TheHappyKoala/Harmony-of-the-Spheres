@@ -67,18 +67,20 @@
       "radius": 126.00000000000001,
       "a": 0.0615,
       "e": 0,
-      "w": 210.09306577582026,
+      "w": 50.57797387206763,
       "o": 0,
       "orbitalPeriod": 6.26406846,
       "temperature": 809,
       "exoplanet": true,
       "bump": true,
-      "color": "#075CBC",
-      "clouds": false
+      "color": "#0C560A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1335, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1335 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1335 - System With 1 Exoplanet "
 }

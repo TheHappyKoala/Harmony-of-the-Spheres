@@ -73,8 +73,9 @@
       "temperature": 158.46551598359213,
       "exoplanet": true,
       "bump": false,
-      "color": "#AEB704",
-      "clouds": false
+      "color": "#32503F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 108874-b",
@@ -91,12 +92,14 @@
       "temperature": 253.38287999787966,
       "exoplanet": true,
       "bump": false,
-      "color": "#A7E6A0",
-      "clouds": false
+      "color": "#01EC6A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 108874, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 108874 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 108874 - System With 2 Exolanets "
 }

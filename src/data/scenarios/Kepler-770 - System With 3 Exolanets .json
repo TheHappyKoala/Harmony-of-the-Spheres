@@ -67,14 +67,15 @@
       "radius": 122.09302325581396,
       "a": 0.0616,
       "e": 0,
-      "w": 87.27675048115049,
+      "w": 231.497064345406,
       "o": 0,
       "orbitalPeriod": 4.15244722,
       "temperature": 1941,
       "exoplanet": true,
       "bump": true,
-      "color": "#AFBCCF",
-      "clouds": false
+      "color": "#17D5E3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-770-c",
@@ -85,14 +86,15 @@
       "radius": 104.51162790697674,
       "a": 0.0309,
       "e": 0,
-      "w": 97.07392620520794,
+      "w": 227.56404491605952,
       "o": 0,
       "orbitalPeriod": 1.47532231,
       "temperature": 2740,
       "exoplanet": true,
       "bump": true,
-      "color": "#59BA09",
-      "clouds": false
+      "color": "#804D56",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-770-b",
@@ -103,18 +105,20 @@
       "radius": 200.2325581395349,
       "a": 0.1694,
       "e": 0,
-      "w": 292.2708718636028,
+      "w": 64.2370893649299,
       "o": 0,
       "orbitalPeriod": 18.92540274,
       "temperature": 1171,
       "exoplanet": true,
       "bump": false,
-      "color": "#F29546",
-      "clouds": false
+      "color": "#2A0C65",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-770, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-770 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-770 - System With 3 Exolanets "
 }

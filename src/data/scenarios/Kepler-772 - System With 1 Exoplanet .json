@@ -67,18 +67,20 @@
       "radius": 158.2325581395349,
       "a": 0.1071,
       "e": 0,
-      "w": 91.82634353902088,
+      "w": 156.40612666680178,
       "o": 0,
       "orbitalPeriod": 12.99207337,
       "temperature": 866,
       "exoplanet": true,
       "bump": true,
-      "color": "#9E2BCB",
-      "clouds": false
+      "color": "#9D2DBA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-772, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-772 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-772 - System With 1 Exoplanet "
 }

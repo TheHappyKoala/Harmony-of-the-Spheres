@@ -73,12 +73,14 @@
       "temperature": 144.34596464003053,
       "exoplanet": true,
       "bump": false,
-      "color": "#73EF3B",
-      "clouds": false
+      "color": "#CCBF37",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 72659, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 72659 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 72659 - System With 1 Exoplanet "
 }

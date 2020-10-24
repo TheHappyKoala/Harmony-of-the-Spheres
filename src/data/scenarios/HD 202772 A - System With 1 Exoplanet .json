@@ -73,12 +73,14 @@
       "temperature": 2132,
       "exoplanet": true,
       "bump": false,
-      "color": "#DF6A67",
-      "clouds": false
+      "color": "#3D399E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 202772 A, which contains 1 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "HD 202772 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 202772 A - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 366.2790697674419,
       "a": 0.066,
       "e": 0.1,
-      "w": 31.778845472611074,
+      "w": 5.515422837443857,
       "o": 0,
       "orbitalPeriod": 8.46321,
       "temperature": 556.8073499139025,
       "exoplanet": true,
       "bump": false,
-      "color": "#413A06",
-      "clouds": false
+      "color": "#D6F285",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system AU Mic, which contains 1 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "AU Mic - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "AU Mic - System With 1 Exoplanet "
 }

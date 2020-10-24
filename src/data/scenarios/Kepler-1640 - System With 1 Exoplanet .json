@@ -67,18 +67,20 @@
       "radius": 420,
       "a": 0.0836,
       "e": 0,
-      "w": 270.94914938194677,
+      "w": 22.738439268774037,
       "o": 0,
       "orbitalPeriod": 7.5844126,
       "temperature": 1228,
       "exoplanet": true,
       "bump": false,
-      "color": "#584090",
-      "clouds": false
+      "color": "#9A89F8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1640, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1640 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1640 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 238.32558139534885,
       "a": 0.207,
       "e": 0,
-      "w": 292.47217294253085,
+      "w": 162.0291904198937,
       "o": 0,
       "orbitalPeriod": 31.805174,
       "temperature": 664,
       "exoplanet": true,
       "bump": false,
-      "color": "#E19176",
-      "clouds": false
+      "color": "#B45DF3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-212-b",
@@ -85,18 +86,20 @@
       "radius": 94.74418604651164,
       "a": 0.133,
       "e": 0,
-      "w": 75.38074795823677,
+      "w": 122.67476011114097,
       "o": 0,
       "orbitalPeriod": 16.257582,
       "temperature": 830,
       "exoplanet": true,
       "bump": true,
-      "color": "#CE2236",
-      "clouds": false
+      "color": "#693F83",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-212, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-212 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-212 - System With 2 Exolanets "
 }

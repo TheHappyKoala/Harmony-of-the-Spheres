@@ -67,18 +67,20 @@
       "radius": 161.16279069767444,
       "a": 0.3436,
       "e": 0,
-      "w": 161.54173359706343,
+      "w": 22.660873689787884,
       "o": 0,
       "orbitalPeriod": 76.957857,
       "temperature": 451,
       "exoplanet": true,
       "bump": true,
-      "color": "#E76720",
-      "clouds": false
+      "color": "#9A2264",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1135, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1135 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1135 - System With 1 Exoplanet "
 }

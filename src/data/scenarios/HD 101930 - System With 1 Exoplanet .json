@@ -73,12 +73,14 @@
       "temperature": 288.13428525102216,
       "exoplanet": true,
       "bump": false,
-      "color": "#636AF7",
-      "clouds": false
+      "color": "#F93A87",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 101930, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 101930 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 101930 - System With 1 Exoplanet "
 }

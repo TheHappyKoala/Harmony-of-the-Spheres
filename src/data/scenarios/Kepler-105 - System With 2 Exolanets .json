@@ -67,14 +67,15 @@
       "radius": 114.27906976744187,
       "a": 0.0711,
       "e": 0,
-      "w": 216.6062586390991,
+      "w": 286.42812530386976,
       "o": 0,
       "orbitalPeriod": 7.1262,
       "temperature": 997,
       "exoplanet": true,
       "bump": true,
-      "color": "#D1C7E8",
-      "clouds": false
+      "color": "#594DF5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-105-b",
@@ -91,12 +92,14 @@
       "temperature": 1418,
       "exoplanet": true,
       "bump": false,
-      "color": "#A3D9FC",
-      "clouds": false
+      "color": "#C986A7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-105, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-105 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-105 - System With 2 Exolanets "
 }

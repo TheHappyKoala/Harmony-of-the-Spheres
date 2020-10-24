@@ -73,12 +73,14 @@
       "temperature": 311.89485895940464,
       "exoplanet": true,
       "bump": false,
-      "color": "#8FA059",
-      "clouds": false
+      "color": "#629757",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 175541, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 175541 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 175541 - System With 1 Exoplanet "
 }

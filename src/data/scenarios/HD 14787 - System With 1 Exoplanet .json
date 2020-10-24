@@ -73,12 +73,14 @@
       "temperature": 241.28314848441573,
       "exoplanet": true,
       "bump": false,
-      "color": "#66D913",
-      "clouds": false
+      "color": "#81C8C3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 14787, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 14787 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 14787 - System With 1 Exoplanet "
 }

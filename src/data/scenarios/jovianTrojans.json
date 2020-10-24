@@ -1,8 +1,9 @@
 {
-  "name": "Jupiter and Its Ten Largest Trojans",
+  "name": "Jupiter and Its Ten Largest Trojan Asteroids",
+  "fileName": "Jupiter and Its Ten Largest Trojan Asteroids",
   "date": "2020-Jun-07 00:00:00.0000",
   "sortOrder": 3,
-  "description": "Gravity simulation of the ten largest Jovian trojans, which are a large group of asteroids that share the planet Jupiter's orbit around the Sun.",
+  "description": "Gravity simulation of the ten largest Jupiter Trojans, which are a large group of asteroids that share the planet Jupiter's orbit around the Sun.",
   "type": "Solar System",
   "particlesFun": false,
   "g": 39.5,

@@ -73,12 +73,14 @@
       "temperature": 168.45162867746288,
       "exoplanet": true,
       "bump": false,
-      "color": "#477B62",
-      "clouds": false
+      "color": "#8F05DB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 8535, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 8535 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 8535 - System With 1 Exoplanet "
 }

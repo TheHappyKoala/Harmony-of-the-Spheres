@@ -67,14 +67,15 @@
       "radius": 85.95348837209302,
       "a": 0.0272,
       "e": 0,
-      "w": 193.87361503510348,
+      "w": 39.92694203450106,
       "o": 0,
       "orbitalPeriod": 1.6829346,
       "temperature": 1270,
       "exoplanet": true,
       "bump": true,
-      "color": "#00F30F",
-      "clouds": false
+      "color": "#65B22F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-969-b",
@@ -85,18 +86,20 @@
       "radius": 180.69767441860466,
       "a": 0.2027,
       "e": 0,
-      "w": 42.37211174197021,
+      "w": 57.084870174687694,
       "o": 0,
       "orbitalPeriod": 34.1731714,
       "temperature": 465,
       "exoplanet": true,
       "bump": true,
-      "color": "#037913",
-      "clouds": true
+      "color": "#2CE1DE",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-969, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-969 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-969 - System With 2 Exolanets "
 }

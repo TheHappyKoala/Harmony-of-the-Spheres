@@ -67,18 +67,20 @@
       "radius": 1067.5813953488373,
       "a": 0.02289,
       "e": 0.15,
-      "w": 140.8002790997619,
+      "w": 34.335106769898516,
       "o": 0,
       "orbitalPeriod": 1.4324752,
       "temperature": 1342,
       "exoplanet": true,
       "bump": false,
-      "color": "#4BB9E4",
-      "clouds": false
+      "color": "#F0D54A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system OGLE-TR-113, which contains 1 exoplanets and was discovered by the OGLE.",
   "name": "OGLE-TR-113 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "OGLE-TR-113 - System With 1 Exoplanet "
 }

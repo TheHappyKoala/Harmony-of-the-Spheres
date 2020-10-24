@@ -67,14 +67,15 @@
       "radius": 137.72093023255815,
       "a": 0.084,
       "e": 0,
-      "w": 94.94290403505578,
+      "w": 215.008218360783,
       "o": 0,
       "orbitalPeriod": 9.18186,
       "temperature": 804,
       "exoplanet": true,
       "bump": true,
-      "color": "#02527D",
-      "clouds": false
+      "color": "#C7DEBF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1001-b",
@@ -85,18 +86,20 @@
       "radius": 274.46511627906983,
       "a": 0.1129,
       "e": 0,
-      "w": 95.73830947580844,
+      "w": 328.62952130466704,
       "o": 0,
       "orbitalPeriod": 14.30511983,
       "temperature": 693,
       "exoplanet": true,
       "bump": false,
-      "color": "#F68215",
-      "clouds": false
+      "color": "#ED1977",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1001, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1001 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1001 - System With 2 Exolanets "
 }

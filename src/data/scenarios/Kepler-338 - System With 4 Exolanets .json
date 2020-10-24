@@ -67,14 +67,15 @@
       "radius": 135.76744186046514,
       "a": 0.0893,
       "e": 0.05,
-      "w": 247.83212034503754,
+      "w": 3.617917333928853,
       "o": 0,
       "orbitalPeriod": 9.341,
       "temperature": 1143,
       "exoplanet": true,
       "bump": false,
-      "color": "#7A634C",
-      "clouds": false
+      "color": "#6F5864",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-338-d",
@@ -85,14 +86,15 @@
       "radius": 261.76744186046517,
       "a": 0.257,
       "e": 0.03,
-      "w": 28.929496668717345,
+      "w": 65.57251841252483,
       "o": 0,
       "orbitalPeriod": 44.431014,
       "temperature": 680,
       "exoplanet": true,
       "bump": false,
-      "color": "#579986",
-      "clouds": false
+      "color": "#1C8566",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-338-c",
@@ -103,14 +105,15 @@
       "radius": 204.13953488372093,
       "a": 0.172,
       "e": 0.03,
-      "w": 225.42427937891773,
+      "w": 350.78786044711484,
       "o": 0,
       "orbitalPeriod": 24.310856,
       "temperature": 831,
       "exoplanet": true,
       "bump": false,
-      "color": "#20CD9A",
-      "clouds": false
+      "color": "#15E0C8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-338-b",
@@ -121,18 +124,20 @@
       "radius": 212.93023255813955,
       "a": 0.117,
       "e": 0.04,
-      "w": 196.52518050394949,
+      "w": 16.2455503494773,
       "o": 0,
       "orbitalPeriod": 13.726976,
       "temperature": 1005,
       "exoplanet": true,
       "bump": false,
-      "color": "#DD262E",
-      "clouds": false
+      "color": "#D8DEF9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-338, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-338 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-338 - System With 4 Exolanets "
 }

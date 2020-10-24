@@ -73,8 +73,9 @@
       "temperature": 90.376379835058,
       "exoplanet": true,
       "bump": false,
-      "color": "#887331",
-      "clouds": false
+      "color": "#78B74A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 65216-b",
@@ -91,12 +92,14 @@
       "temperature": 189.99851871367522,
       "exoplanet": true,
       "bump": false,
-      "color": "#619EC5",
-      "clouds": false
+      "color": "#1F0593",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 65216, which contains 2 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 65216 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 65216 - System With 2 Exolanets "
 }

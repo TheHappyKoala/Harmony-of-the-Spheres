@@ -67,14 +67,15 @@
       "radius": 79.11627906976744,
       "a": 0.164,
       "e": 0.38,
-      "w": 159.24402293632443,
+      "w": 277.74022153754737,
       "o": 0,
       "orbitalPeriod": 25.209715,
       "temperature": 691,
       "exoplanet": true,
       "bump": true,
-      "color": "#29597D",
-      "clouds": false
+      "color": "#715FCB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-197-d",
@@ -85,14 +86,15 @@
       "radius": 106.46511627906978,
       "a": 0.119,
       "e": 0.03,
-      "w": 266.74458326294854,
+      "w": 264.8628698398015,
       "o": 0,
       "orbitalPeriod": 15.677563,
       "temperature": 810,
       "exoplanet": true,
       "bump": true,
-      "color": "#96A858",
-      "clouds": false
+      "color": "#E745B4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-197-c",
@@ -103,14 +105,15 @@
       "radius": 107.44186046511629,
       "a": 0.09,
       "e": 0.08,
-      "w": 30.569378648507612,
+      "w": 41.77330671567482,
       "o": 0,
       "orbitalPeriod": 10.349695,
       "temperature": 930,
       "exoplanet": true,
       "bump": false,
-      "color": "#1549E1",
-      "clouds": false
+      "color": "#115A80",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-197-b",
@@ -121,18 +124,20 @@
       "radius": 88.88372093023256,
       "a": 0.06,
       "e": 0.02,
-      "w": 69.3436758364186,
+      "w": 340.84166669652035,
       "o": 0,
       "orbitalPeriod": 5.599308,
       "temperature": 1142,
       "exoplanet": true,
       "bump": true,
-      "color": "#FD39DE",
-      "clouds": false
+      "color": "#28B091",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-197, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-197 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-197 - System With 4 Exolanets "
 }

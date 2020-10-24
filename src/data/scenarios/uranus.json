@@ -1,7 +1,8 @@
 {
-  "name": "The Uranian System",
+  "name": "Uranus and Its Rings and Major Moons",
+  "fileName": "Uranus and Its Rings and Major Moons",
   "sortOrder": 10,
-  "description": "Gravity simulation of Uranus and its ring system and major moons.",
+  "description": "Gravity simulation of Uranus and its ring system and major moons. Uranus's axis of rotation is tilted sideways, almost into the plane of its orbit around the Sun.",
   "particlesFun": false,
   "type": "Solar System",
   "integrator": "RK4",

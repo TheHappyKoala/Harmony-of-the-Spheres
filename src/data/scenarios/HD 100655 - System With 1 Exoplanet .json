@@ -73,12 +73,14 @@
       "temperature": 541.3100655559429,
       "exoplanet": true,
       "bump": false,
-      "color": "#DFE6FD",
-      "clouds": false
+      "color": "#42D75B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 100655, which contains 1 exoplanets and was discovered by the Bohyunsan Optical Astronomical Observatory.",
   "name": "HD 100655 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 100655 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 289.1162790697675,
       "a": 0.1054,
       "e": 0,
-      "w": 31.602228137419594,
+      "w": 313.14344432121055,
       "o": 0,
       "orbitalPeriod": 12.53248465,
       "temperature": 775,
       "exoplanet": true,
       "bump": false,
-      "color": "#587BA0",
-      "clouds": false
+      "color": "#D72B20",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-739, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-739 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-739 - System With 1 Exoplanet "
 }

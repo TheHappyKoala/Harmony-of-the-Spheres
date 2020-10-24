@@ -73,8 +73,9 @@
       "temperature": 448,
       "exoplanet": true,
       "bump": false,
-      "color": "#2CE15B",
-      "clouds": false
+      "color": "#13B326",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "rho CrB-b",
@@ -91,12 +92,14 @@
       "temperature": 614,
       "exoplanet": true,
       "bump": false,
-      "color": "#1C7524",
-      "clouds": false
+      "color": "#27461C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system rho CrB, which contains 2 exoplanets and was discovered by the Fred Lawrence Whipple Observatory.",
   "name": "rho CrB - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "rho CrB - System With 2 Exolanets "
 }

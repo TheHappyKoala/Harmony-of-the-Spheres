@@ -73,12 +73,14 @@
       "temperature": 174.80133587181984,
       "exoplanet": true,
       "bump": false,
-      "color": "#CE7712",
-      "clouds": false
+      "color": "#E42CE3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 132406, which contains 1 exoplanets and was discovered by the Haute-Provence Observatory.",
   "name": "HD 132406 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 132406 - System With 1 Exoplanet "
 }

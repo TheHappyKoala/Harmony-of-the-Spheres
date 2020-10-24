@@ -73,12 +73,14 @@
       "temperature": 1003,
       "exoplanet": true,
       "bump": false,
-      "color": "#DEC821",
-      "clouds": false
+      "color": "#D315FF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-43, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-43 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-43 - System With 1 Exoplanet "
 }

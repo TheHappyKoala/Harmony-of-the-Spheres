@@ -67,18 +67,20 @@
       "radius": 983.5813953488372,
       "a": 0.0476,
       "e": 0.065,
-      "w": 151.50856676786975,
+      "w": 352.6501625353138,
       "o": 0,
       "orbitalPeriod": 3.57532,
       "temperature": 1500,
       "exoplanet": true,
       "bump": false,
-      "color": "#7CF1EB",
-      "clouds": false
+      "color": "#2C5C25",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-27, which contains 1 exoplanets and was discovered by the CoRoT.",
   "name": "CoRoT-27 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "CoRoT-27 - System With 1 Exoplanet "
 }

@@ -73,12 +73,14 @@
       "temperature": 373.59384449394616,
       "exoplanet": true,
       "bump": false,
-      "color": "#C21E7B",
-      "clouds": false
+      "color": "#EB18E0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 59686 A, which contains 1 exoplanets and was discovered by the Lick Observatory.",
   "name": "HD 59686 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 59686 A - System With 1 Exoplanet "
 }

@@ -73,12 +73,14 @@
       "temperature": 341.87365909222757,
       "exoplanet": true,
       "bump": false,
-      "color": "#9D5274",
-      "clouds": false
+      "color": "#886DFA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 148427, which contains 1 exoplanets and was discovered by the Lick Observatory.",
   "name": "HD 148427 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 148427 - System With 1 Exoplanet "
 }

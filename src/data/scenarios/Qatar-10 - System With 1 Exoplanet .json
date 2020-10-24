@@ -67,18 +67,20 @@
       "radius": 1507.1162790697674,
       "a": 0.0286,
       "e": 0,
-      "w": 301.338756368345,
+      "w": 28.931189467787704,
       "o": 0,
       "orbitalPeriod": 1.645321,
       "temperature": 1955,
       "exoplanet": true,
       "bump": false,
-      "color": "#EC6F38",
-      "clouds": false
+      "color": "#3C1CB8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Qatar-10, which contains 1 exoplanets and was discovered by the Qatar.",
   "name": "Qatar-10 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Qatar-10 - System With 1 Exoplanet "
 }

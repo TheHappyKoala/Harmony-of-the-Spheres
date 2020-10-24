@@ -67,18 +67,20 @@
       "radius": 262.7441860465117,
       "a": 0.2212,
       "e": 0,
-      "w": 262.45893906551044,
+      "w": 106.9572088960123,
       "o": 0,
       "orbitalPeriod": 39.30941904,
       "temperature": 488,
       "exoplanet": true,
       "bump": false,
-      "color": "#52889F",
-      "clouds": false
+      "color": "#2AC105",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-530, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-530 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-530 - System With 1 Exoplanet "
 }

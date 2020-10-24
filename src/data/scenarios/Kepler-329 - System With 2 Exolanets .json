@@ -67,14 +67,15 @@
       "radius": 168,
       "a": 0.113,
       "e": 0,
-      "w": 61.586166079452695,
+      "w": 50.22425651307511,
       "o": 0,
       "orbitalPeriod": 18.684737,
       "temperature": 402,
       "exoplanet": true,
       "bump": true,
-      "color": "#CCD2F6",
-      "clouds": true
+      "color": "#E47D05",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-329-b",
@@ -85,18 +86,20 @@
       "radius": 122.09302325581396,
       "a": 0.061,
       "e": 0,
-      "w": 224.44870928603757,
+      "w": 268.36036489757765,
       "o": 0,
       "orbitalPeriod": 7.416397,
       "temperature": 547,
       "exoplanet": true,
       "bump": true,
-      "color": "#2F2E2A",
-      "clouds": false
+      "color": "#FB792F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-329, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-329 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-329 - System With 2 Exolanets "
 }

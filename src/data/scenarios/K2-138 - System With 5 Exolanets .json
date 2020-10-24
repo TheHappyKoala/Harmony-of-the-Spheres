@@ -67,14 +67,15 @@
       "radius": 245.16279069767444,
       "a": 0.1043,
       "e": 0.364,
-      "w": 121.6848935563038,
+      "w": 132.21085494830393,
       "o": 0,
       "orbitalPeriod": 12.75759,
       "temperature": 705.4552682878261,
       "exoplanet": true,
       "bump": false,
-      "color": "#8638A5",
-      "clouds": false
+      "color": "#CC0A3D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-138-e",
@@ -85,14 +86,15 @@
       "radius": 287.16279069767444,
       "a": 0.07807,
       "e": 0.315,
-      "w": 248.30627513210408,
+      "w": 166.59722862491017,
       "o": 0,
       "orbitalPeriod": 8.26144,
       "temperature": 815.3978192688492,
       "exoplanet": true,
       "bump": false,
-      "color": "#5832C1",
-      "clouds": false
+      "color": "#163D17",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-138-d",
@@ -103,14 +105,15 @@
       "radius": 231.48837209302326,
       "a": 0.05883,
       "e": 0.348,
-      "w": 49.89439425390945,
+      "w": 267.9347089379142,
       "o": 0,
       "orbitalPeriod": 5.40478,
       "temperature": 939.3170621429705,
       "exoplanet": true,
       "bump": false,
-      "color": "#787F31",
-      "clouds": false
+      "color": "#04B16D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-138-c",
@@ -121,14 +124,15 @@
       "radius": 219.76744186046514,
       "a": 0.04454,
       "e": 0.296,
-      "w": 58.02034385389288,
+      "w": 264.2539088601119,
       "o": 0,
       "orbitalPeriod": 3.55987,
       "temperature": 1079.5345069277628,
       "exoplanet": true,
       "bump": false,
-      "color": "#3390C4",
-      "clouds": false
+      "color": "#8A4FD5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-138-b",
@@ -139,18 +143,20 @@
       "radius": 136.74418604651166,
       "a": 0.0338,
       "e": 0.403,
-      "w": 8.644714047029218,
+      "w": 223.14247811729854,
       "o": 0,
       "orbitalPeriod": 2.35322,
       "temperature": 1239.233899609182,
       "exoplanet": true,
       "bump": true,
-      "color": "#0AF502",
-      "clouds": false
+      "color": "#718679",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-138, which contains 5 exoplanets and was discovered by the K2.",
   "name": "K2-138 - System With 5 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-138 - System With 5 Exolanets "
 }

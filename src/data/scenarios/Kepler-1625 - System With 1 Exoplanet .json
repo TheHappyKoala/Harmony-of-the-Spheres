@@ -67,18 +67,20 @@
       "radius": 528.4186046511628,
       "a": 0.8748,
       "e": 0,
-      "w": 307.2337282854414,
+      "w": 25.448998042798372,
       "o": 0,
       "orbitalPeriod": 287.378949,
       "temperature": 350,
       "exoplanet": true,
       "bump": false,
-      "color": "#754F72",
-      "clouds": false
+      "color": "#196273",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1625, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1625 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1625 - System With 1 Exoplanet "
 }

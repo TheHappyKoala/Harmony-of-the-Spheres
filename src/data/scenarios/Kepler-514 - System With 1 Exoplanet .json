@@ -67,18 +67,20 @@
       "radius": 149.4418604651163,
       "a": 0.0676,
       "e": 0,
-      "w": 257.89585286946186,
+      "w": 261.2414920097583,
       "o": 0,
       "orbitalPeriod": 5.65179605,
       "temperature": 1248,
       "exoplanet": true,
       "bump": true,
-      "color": "#A7BD2A",
-      "clouds": false
+      "color": "#F00065",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-514, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-514 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-514 - System With 1 Exoplanet "
 }

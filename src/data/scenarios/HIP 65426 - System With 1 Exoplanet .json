@@ -67,18 +67,20 @@
       "radius": 1465.1162790697676,
       "a": 92,
       "e": 0,
-      "w": 341.5326454849052,
+      "w": 319.0893167963398,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 1500,
       "exoplanet": true,
       "bump": false,
-      "color": "#1BF3E2",
-      "clouds": false
+      "color": "#9B44F2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 65426, which contains 1 exoplanets and was discovered by the Paranal Observatory.",
   "name": "HIP 65426 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HIP 65426 - System With 1 Exoplanet "
 }

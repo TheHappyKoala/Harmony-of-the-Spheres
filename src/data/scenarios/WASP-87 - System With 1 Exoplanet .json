@@ -67,18 +67,20 @@
       "radius": 1352.7906976744187,
       "a": 0.02946,
       "e": 0,
-      "w": 202.72520613142643,
+      "w": 322.8067457287,
       "o": 0,
       "orbitalPeriod": 1.682795,
       "temperature": 1607.0115093484987,
       "exoplanet": true,
       "bump": false,
-      "color": "#8E3128",
-      "clouds": false
+      "color": "#8990B6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-87, which contains 1 exoplanets and was discovered by the Anglo-Australian Telescope.",
   "name": "WASP-87 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-87 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 175.8139534883721,
       "a": 0.05591,
       "e": 0,
-      "w": 338.06388742092537,
+      "w": 186.40424448516092,
       "o": 0,
       "orbitalPeriod": 6.2014698,
       "temperature": 605,
       "exoplanet": true,
       "bump": true,
-      "color": "#3C5557",
-      "clouds": true
+      "color": "#5B16A9",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 9827-c",
@@ -85,14 +86,15 @@
       "radius": 108.4186046511628,
       "a": 0.03925,
       "e": 0,
-      "w": 21.51988808113036,
+      "w": 109.61633657337099,
       "o": 0,
       "orbitalPeriod": 3.6480957,
       "temperature": 722,
       "exoplanet": true,
       "bump": true,
-      "color": "#BA0816",
-      "clouds": true
+      "color": "#EA4B9A",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 9827-b",
@@ -103,18 +105,20 @@
       "radius": 137.72093023255815,
       "a": 0.0188,
       "e": 0,
-      "w": 20.429572901259093,
+      "w": 16.919068467910428,
       "o": 0,
       "orbitalPeriod": 1.2089819,
       "temperature": 1044,
       "exoplanet": true,
       "bump": true,
-      "color": "#E6796D",
-      "clouds": false
+      "color": "#DF2A6E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 9827, which contains 3 exoplanets and was discovered by the K2.",
   "name": "GJ 9827 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 9827 - System With 3 Exolanets "
 }

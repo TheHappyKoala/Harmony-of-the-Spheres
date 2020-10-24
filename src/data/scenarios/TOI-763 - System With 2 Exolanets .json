@@ -73,8 +73,9 @@
       "temperature": 800,
       "exoplanet": true,
       "bump": false,
-      "color": "#9787CC",
-      "clouds": false
+      "color": "#D895F3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "TOI-763-b",
@@ -91,12 +92,14 @@
       "temperature": 1038,
       "exoplanet": true,
       "bump": false,
-      "color": "#C50CA7",
-      "clouds": false
+      "color": "#C9BB18",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TOI-763, which contains 2 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "TOI-763 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TOI-763 - System With 2 Exolanets "
 }

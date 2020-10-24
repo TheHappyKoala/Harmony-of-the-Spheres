@@ -67,18 +67,20 @@
       "radius": 292.04651162790697,
       "a": 0.0682,
       "e": 0,
-      "w": 310.6541440156162,
+      "w": 241.37783608320603,
       "o": 0,
       "orbitalPeriod": 6.52121067,
       "temperature": 932,
       "exoplanet": true,
       "bump": false,
-      "color": "#5DA214",
-      "clouds": false
+      "color": "#30888B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-609, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-609 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-609 - System With 1 Exoplanet "
 }

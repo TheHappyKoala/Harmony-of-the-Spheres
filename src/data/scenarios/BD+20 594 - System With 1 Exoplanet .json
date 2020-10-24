@@ -67,18 +67,20 @@
       "radius": 224.6511627906977,
       "a": 0.241,
       "e": 0,
-      "w": 147.3630345882669,
+      "w": 6.025817565066509,
       "o": 0,
       "orbitalPeriod": 41.6855,
       "temperature": 546,
       "exoplanet": true,
       "bump": false,
-      "color": "#B148E1",
-      "clouds": false
+      "color": "#1A65C7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system BD+20 594, which contains 1 exoplanets and was discovered by the K2.",
   "name": "BD+20 594 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "BD+20 594 - System With 1 Exoplanet "
 }

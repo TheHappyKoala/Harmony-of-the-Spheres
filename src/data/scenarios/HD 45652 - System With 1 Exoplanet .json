@@ -73,12 +73,14 @@
       "temperature": 464.21174186954767,
       "exoplanet": true,
       "bump": false,
-      "color": "#B8DCC7",
-      "clouds": false
+      "color": "#20EE09",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 45652, which contains 1 exoplanets and was discovered by the Haute-Provence Observatory.",
   "name": "HD 45652 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 45652 - System With 1 Exoplanet "
 }

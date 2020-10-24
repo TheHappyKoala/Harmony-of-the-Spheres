@@ -73,12 +73,14 @@
       "temperature": 359.6582332924227,
       "exoplanet": true,
       "bump": false,
-      "color": "#413AF1",
-      "clouds": false
+      "color": "#392B89",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 180314, which contains 1 exoplanets and was discovered by the Subaru Telescope.",
   "name": "HD 180314 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 180314 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 91.81395348837209,
       "a": 0.036467,
       "e": 0.17,
-      "w": 333.6815508531276,
+      "w": 78.41020519745943,
       "o": 0,
       "orbitalPeriod": 4.7234,
       "temperature": 497.8493034010248,
       "exoplanet": true,
       "bump": true,
-      "color": "#2C4102",
-      "clouds": false
+      "color": "#0302F3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 273-b",
@@ -85,18 +86,20 @@
       "radius": 131.86046511627907,
       "a": 0.091101,
       "e": 0.1,
-      "w": 332.8293059693779,
+      "w": 306.93211431223904,
       "o": 0,
       "orbitalPeriod": 18.6498,
       "temperature": 314.9824452993888,
       "exoplanet": true,
       "bump": true,
-      "color": "#95EB15",
-      "clouds": false
+      "color": "#567499",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 273, which contains 2 exoplanets and was discovered by the La Silla Observatory.",
   "name": "GJ 273 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 273 - System With 2 Exolanets "
 }

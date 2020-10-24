@@ -67,18 +67,20 @@
       "radius": 142.6046511627907,
       "a": 0.083,
       "e": 0,
-      "w": 184.5211444918351,
+      "w": 199.74824185069863,
       "o": 0,
       "orbitalPeriod": 11.332,
       "temperature": 562.1463387215624,
       "exoplanet": true,
       "bump": true,
-      "color": "#602832",
-      "clouds": false
+      "color": "#790D76",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-149, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-149 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-149 - System With 1 Exoplanet "
 }

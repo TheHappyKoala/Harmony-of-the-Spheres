@@ -67,18 +67,20 @@
       "radius": 268.60465116279073,
       "a": 0.1126,
       "e": 0,
-      "w": 151.25433431049441,
+      "w": 343.4991543037618,
       "o": 0,
       "orbitalPeriod": 14.00640607,
       "temperature": 807,
       "exoplanet": true,
       "bump": false,
-      "color": "#7DC3B4",
-      "clouds": false
+      "color": "#4E8A2B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-476, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-476 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-476 - System With 1 Exoplanet "
 }

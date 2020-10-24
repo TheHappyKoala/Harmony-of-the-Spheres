@@ -67,14 +67,15 @@
       "radius": 143.58139534883722,
       "a": 0.06,
       "e": 0,
-      "w": 287.1413246533501,
+      "w": 303.2758799502099,
       "o": 0,
       "orbitalPeriod": 5.3227406,
       "temperature": 1167,
       "exoplanet": true,
       "bump": true,
-      "color": "#C47EAA",
-      "clouds": false
+      "color": "#37A845",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1530-b",
@@ -85,18 +86,20 @@
       "radius": 142.6046511627907,
       "a": 0.0371,
       "e": 0,
-      "w": 177.33348802843227,
+      "w": 284.0363561416633,
       "o": 0,
       "orbitalPeriod": 2.5904434,
       "temperature": 1484,
       "exoplanet": true,
       "bump": true,
-      "color": "#7239CD",
-      "clouds": false
+      "color": "#71E4A4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1530, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1530 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1530 - System With 2 Exolanets "
 }

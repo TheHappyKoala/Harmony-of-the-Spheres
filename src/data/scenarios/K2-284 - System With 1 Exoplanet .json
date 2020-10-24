@@ -73,12 +73,14 @@
       "temperature": 653,
       "exoplanet": true,
       "bump": false,
-      "color": "#8A1EA5",
-      "clouds": false
+      "color": "#20AAF3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-284, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-284 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-284 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 308,
       "exoplanet": true,
       "bump": false,
-      "color": "#743635",
-      "clouds": false
+      "color": "#8DE51F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-30-c",
@@ -91,8 +92,9 @@
       "temperature": 411,
       "exoplanet": true,
       "bump": false,
-      "color": "#AEC6BA",
-      "clouds": false
+      "color": "#B8B176",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-30-b",
@@ -109,12 +111,14 @@
       "temperature": 524,
       "exoplanet": true,
       "bump": false,
-      "color": "#85EE7A",
-      "clouds": false
+      "color": "#1B240D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-30, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-30 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-30 - System With 3 Exolanets "
 }

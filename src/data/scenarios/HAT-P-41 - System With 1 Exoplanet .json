@@ -67,18 +67,20 @@
       "radius": 2002.3255813953488,
       "a": 0.04258,
       "e": 0,
-      "w": 121.71149256653452,
+      "w": 211.08454394991395,
       "o": 0,
       "orbitalPeriod": 2.69405,
       "temperature": 1941,
       "exoplanet": true,
       "bump": false,
-      "color": "#B0074B",
-      "clouds": false
+      "color": "#5C5183",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-41, which contains 1 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-41 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HAT-P-41 - System With 1 Exoplanet "
 }

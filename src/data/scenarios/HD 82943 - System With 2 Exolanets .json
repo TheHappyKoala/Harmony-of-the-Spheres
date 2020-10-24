@@ -73,8 +73,9 @@
       "temperature": 295.59110267709696,
       "exoplanet": true,
       "bump": false,
-      "color": "#19B00E",
-      "clouds": false
+      "color": "#EE4602",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 82943-b",
@@ -91,12 +92,14 @@
       "temperature": 234.3224260149272,
       "exoplanet": true,
       "bump": false,
-      "color": "#183E8A",
-      "clouds": false
+      "color": "#E82611",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 82943, which contains 2 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 82943 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 82943 - System With 2 Exolanets "
 }

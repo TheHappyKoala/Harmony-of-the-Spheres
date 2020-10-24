@@ -67,18 +67,20 @@
       "radius": 178.74418604651163,
       "a": 0.0575,
       "e": 0,
-      "w": 27.841397396560836,
+      "w": 249.6167020435586,
       "o": 0,
       "orbitalPeriod": 5.03251791,
       "temperature": 1047,
       "exoplanet": true,
       "bump": true,
-      "color": "#E62646",
-      "clouds": true
+      "color": "#7EBC72",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-868, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-868 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-868 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 152.37209302325581,
       "a": 0.287,
       "e": 0,
-      "w": 37.700655128373526,
+      "w": 192.5051291392288,
       "o": 0,
       "orbitalPeriod": 56.268,
       "temperature": 543,
       "exoplanet": true,
       "bump": false,
-      "color": "#00BB59",
-      "clouds": false
+      "color": "#614D55",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-122-e",
@@ -85,14 +86,15 @@
       "radius": 226.60465116279073,
       "a": 0.227,
       "e": 0,
-      "w": 200.01266111830276,
+      "w": 216.38198501196348,
       "o": 0,
       "orbitalPeriod": 37.993273,
       "temperature": 618,
       "exoplanet": true,
       "bump": false,
-      "color": "#B040A5",
-      "clouds": false
+      "color": "#9217B9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-122-d",
@@ -103,14 +105,15 @@
       "radius": 191.4418604651163,
       "a": 0.155,
       "e": 0,
-      "w": 194.23340872787318,
+      "w": 290.15555232717264,
       "o": 0,
       "orbitalPeriod": 21.587475,
       "temperature": 747,
       "exoplanet": true,
       "bump": false,
-      "color": "#4894BF",
-      "clouds": false
+      "color": "#54A075",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-122-c",
@@ -121,14 +124,15 @@
       "radius": 511.81395348837214,
       "a": 0.108,
       "e": 0,
-      "w": 223.86105171943248,
+      "w": 222.90400790851217,
       "o": 0,
       "orbitalPeriod": 12.465988,
       "temperature": 897,
       "exoplanet": true,
       "bump": false,
-      "color": "#84C21E",
-      "clouds": false
+      "color": "#4994D7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-122-b",
@@ -139,18 +143,20 @@
       "radius": 204.13953488372093,
       "a": 0.064,
       "e": 0,
-      "w": 105.37909988201109,
+      "w": 302.2544974705373,
       "o": 0,
       "orbitalPeriod": 5.766193,
       "temperature": 1159,
       "exoplanet": true,
       "bump": false,
-      "color": "#93BFFF",
-      "clouds": false
+      "color": "#1A0BEA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-122, which contains 5 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-122 - System With 5 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-122 - System With 5 Exolanets "
 }

@@ -73,8 +73,9 @@
       "temperature": 94.59915027501661,
       "exoplanet": true,
       "bump": false,
-      "color": "#EFD8F7",
-      "clouds": false
+      "color": "#2F7B8F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HIP 57274-c",
@@ -91,8 +92,9 @@
       "temperature": 225.33980863220185,
       "exoplanet": true,
       "bump": false,
-      "color": "#CC8721",
-      "clouds": false
+      "color": "#CEF90C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HIP 57274-b",
@@ -109,12 +111,14 @@
       "temperature": 359.3344885257174,
       "exoplanet": true,
       "bump": false,
-      "color": "#5A67C2",
-      "clouds": false
+      "color": "#57FE10",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 57274, which contains 3 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HIP 57274 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HIP 57274 - System With 3 Exolanets "
 }

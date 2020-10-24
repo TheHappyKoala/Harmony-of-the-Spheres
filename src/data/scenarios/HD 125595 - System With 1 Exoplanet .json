@@ -67,18 +67,20 @@
       "radius": 209.02325581395348,
       "a": 0.08,
       "e": 0,
-      "w": 155.7874504437613,
+      "w": 128.07564225411863,
       "o": 0,
       "orbitalPeriod": 9.6737,
       "temperature": 336.12663582872165,
       "exoplanet": true,
       "bump": false,
-      "color": "#67B759",
-      "clouds": false
+      "color": "#11F5CF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 125595, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 125595 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 125595 - System With 1 Exoplanet "
 }

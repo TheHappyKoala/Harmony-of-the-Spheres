@@ -73,12 +73,14 @@
       "temperature": 250.10980464673708,
       "exoplanet": true,
       "bump": false,
-      "color": "#3B150C",
-      "clouds": false
+      "color": "#B0D9E9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 111591, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "HD 111591 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 111591 - System With 1 Exoplanet "
 }

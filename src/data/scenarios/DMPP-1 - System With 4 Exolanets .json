@@ -67,14 +67,15 @@
       "radius": 162.13953488372096,
       "a": 0.0651,
       "e": 0.07,
-      "w": 89.50650184555076,
+      "w": 6.735355483347076,
       "o": 0,
       "orbitalPeriod": 5.516,
       "temperature": 1314,
       "exoplanet": true,
       "bump": true,
-      "color": "#406880",
-      "clouds": false
+      "color": "#66E3BB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "DMPP-1-d",
@@ -85,14 +86,15 @@
       "radius": 143.58139534883722,
       "a": 0.0422,
       "e": 0.07,
-      "w": 211.7370065639315,
+      "w": 31.461549837585174,
       "o": 0,
       "orbitalPeriod": 2.882,
       "temperature": 1632,
       "exoplanet": true,
       "bump": true,
-      "color": "#64A4A3",
-      "clouds": false
+      "color": "#67A602",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "DMPP-1-c",
@@ -103,14 +105,15 @@
       "radius": 266.6511627906977,
       "a": 0.0733,
       "e": 0.057,
-      "w": 252.6937137941807,
+      "w": 211.96908622356773,
       "o": 0,
       "orbitalPeriod": 6.584,
       "temperature": 1239,
       "exoplanet": true,
       "bump": false,
-      "color": "#5791D9",
-      "clouds": false
+      "color": "#0E8931",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "DMPP-1-b",
@@ -121,18 +124,20 @@
       "radius": 461.0232558139535,
       "a": 0.1462,
       "e": 0.083,
-      "w": 79.89682489966745,
+      "w": 193.62726826209413,
       "o": 0,
       "orbitalPeriod": 18.57,
       "temperature": 877,
       "exoplanet": true,
       "bump": false,
-      "color": "#3A70C3",
-      "clouds": false
+      "color": "#3C529B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system DMPP-1, which contains 4 exoplanets and was discovered by the La Silla Observatory.",
   "name": "DMPP-1 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "DMPP-1 - System With 4 Exolanets "
 }

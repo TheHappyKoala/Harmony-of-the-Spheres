@@ -67,18 +67,20 @@
       "radius": 774.5581395348838,
       "a": 0.2944,
       "e": 0,
-      "w": 191.16946086332794,
+      "w": 101.27021788111057,
       "o": 0,
       "orbitalPeriod": 52.75875577,
       "temperature": 540,
       "exoplanet": true,
       "bump": false,
-      "color": "#C35EBB",
-      "clouds": false
+      "color": "#7EA1C2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-890, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-890 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-890 - System With 1 Exoplanet "
 }

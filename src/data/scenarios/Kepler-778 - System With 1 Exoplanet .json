@@ -67,18 +67,20 @@
       "radius": 146.51162790697674,
       "a": 0.0453,
       "e": 0,
-      "w": 213.80027143536418,
+      "w": 357.44910228523156,
       "o": 0,
       "orbitalPeriod": 3.75574426,
       "temperature": 977,
       "exoplanet": true,
       "bump": true,
-      "color": "#4BDA65",
-      "clouds": false
+      "color": "#F5D5DA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-778, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-778 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-778 - System With 1 Exoplanet "
 }

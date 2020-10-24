@@ -67,14 +67,15 @@
       "radius": 275.4418604651163,
       "a": 0.215,
       "e": 0,
-      "w": 226.60060678762886,
+      "w": 334.7368464196945,
       "o": 0,
       "orbitalPeriod": 38.3561,
       "temperature": 499,
       "exoplanet": true,
       "bump": false,
-      "color": "#0516A5",
-      "clouds": false
+      "color": "#934134",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 191939-c",
@@ -85,14 +86,15 @@
       "radius": 281.30232558139534,
       "a": 0.1762,
       "e": 0,
-      "w": 98.79428197438622,
+      "w": 352.27088746338524,
       "o": 0,
       "orbitalPeriod": 28.58059,
       "temperature": 552,
       "exoplanet": true,
       "bump": false,
-      "color": "#F5F3AD",
-      "clouds": false
+      "color": "#BB6121",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 191939-b",
@@ -103,18 +105,20 @@
       "radius": 297.90697674418607,
       "a": 0.0814,
       "e": 0,
-      "w": 279.03416824786984,
+      "w": 106.68772854338647,
       "o": 0,
       "orbitalPeriod": 8.880403,
       "temperature": 812,
       "exoplanet": true,
       "bump": false,
-      "color": "#CCD749",
-      "clouds": false
+      "color": "#41FAF9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 191939, which contains 3 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "HD 191939 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 191939 - System With 3 Exolanets "
 }

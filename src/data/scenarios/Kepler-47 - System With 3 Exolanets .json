@@ -73,8 +73,9 @@
       "temperature": 279.0307965367282,
       "exoplanet": true,
       "bump": false,
-      "color": "#DF563F",
-      "clouds": false
+      "color": "#975D4F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-47-c",
@@ -91,8 +92,9 @@
       "temperature": 237.6618030827514,
       "exoplanet": true,
       "bump": true,
-      "color": "#BC654F",
-      "clouds": true
+      "color": "#A85BBE",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-47-b",
@@ -109,12 +111,14 @@
       "temperature": 434.9936505188318,
       "exoplanet": true,
       "bump": true,
-      "color": "#7A027F",
-      "clouds": true
+      "color": "#AD2BD7",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-47, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-47 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-47 - System With 3 Exolanets "
 }

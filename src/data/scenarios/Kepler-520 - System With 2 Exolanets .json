@@ -67,14 +67,15 @@
       "radius": 92.79069767441861,
       "a": 0.0594,
       "e": 0,
-      "w": 276.49794263861855,
+      "w": 166.00780321899205,
       "o": 0,
       "orbitalPeriod": 5.21104261,
       "temperature": 1107,
       "exoplanet": true,
       "bump": true,
-      "color": "#A3F749",
-      "clouds": false
+      "color": "#9DEC9D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-520-b",
@@ -85,18 +86,20 @@
       "radius": 144.55813953488374,
       "a": 0.144,
       "e": 0,
-      "w": 300.15754533025853,
+      "w": 89.73647273387056,
       "o": 0,
       "orbitalPeriod": 19.67416124,
       "temperature": 711,
       "exoplanet": true,
       "bump": true,
-      "color": "#0D8F2E",
-      "clouds": false
+      "color": "#D91672",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-520, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-520 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-520 - System With 2 Exolanets "
 }

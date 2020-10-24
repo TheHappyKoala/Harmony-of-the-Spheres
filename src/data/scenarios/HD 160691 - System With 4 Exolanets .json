@@ -73,8 +73,9 @@
       "temperature": 265.5751438622899,
       "exoplanet": true,
       "bump": false,
-      "color": "#014D00",
-      "clouds": false
+      "color": "#059413",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 160691-d",
@@ -91,8 +92,9 @@
       "temperature": 900,
       "exoplanet": true,
       "bump": false,
-      "color": "#7A06B3",
-      "clouds": false
+      "color": "#D1F7F2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 160691-c",
@@ -109,8 +111,9 @@
       "temperature": 111.39325575286671,
       "exoplanet": true,
       "bump": false,
-      "color": "#3014D6",
-      "clouds": false
+      "color": "#15F0F2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 160691-b",
@@ -127,12 +130,14 @@
       "temperature": 208.30818760446354,
       "exoplanet": true,
       "bump": false,
-      "color": "#9AA7B6",
-      "clouds": false
+      "color": "#E171A1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 160691, which contains 4 exoplanets and was discovered by the Anglo-Australian Telescope.",
   "name": "HD 160691 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 160691 - System With 4 Exolanets "
 }

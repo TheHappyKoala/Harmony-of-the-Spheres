@@ -73,8 +73,9 @@
       "temperature": 1915.4748666356913,
       "exoplanet": true,
       "bump": false,
-      "color": "#427911",
-      "clouds": false
+      "color": "#5D3D3A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "WASP-47-d",
@@ -91,8 +92,9 @@
       "temperature": 849.7965537125639,
       "exoplanet": true,
       "bump": false,
-      "color": "#60759F",
-      "clouds": false
+      "color": "#43C4F3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "WASP-47-c",
@@ -109,8 +111,9 @@
       "temperature": 247,
       "exoplanet": true,
       "bump": false,
-      "color": "#268F77",
-      "clouds": false
+      "color": "#181E0F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "WASP-47-b",
@@ -127,12 +130,14 @@
       "temperature": 1275,
       "exoplanet": true,
       "bump": false,
-      "color": "#87C21E",
-      "clouds": false
+      "color": "#29DF1E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-47, which contains 4 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-47 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-47 - System With 4 Exolanets "
 }

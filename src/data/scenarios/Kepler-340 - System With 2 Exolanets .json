@@ -67,14 +67,15 @@
       "radius": 294,
       "a": 0.178,
       "e": 0,
-      "w": 29.85731245039571,
+      "w": 258.8064990518713,
       "o": 0,
       "orbitalPeriod": 22.824669,
       "temperature": 946,
       "exoplanet": true,
       "bump": false,
-      "color": "#682CA2",
-      "clouds": false
+      "color": "#7C6A33",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-340-b",
@@ -85,18 +86,20 @@
       "radius": 220.74418604651166,
       "a": 0.134,
       "e": 0,
-      "w": 280.31820438126886,
+      "w": 248.321111539993,
       "o": 0,
       "orbitalPeriod": 14.844387,
       "temperature": 1092,
       "exoplanet": true,
       "bump": false,
-      "color": "#0E8C0D",
-      "clouds": false
+      "color": "#3E4130",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-340, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-340 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-340 - System With 2 Exolanets "
 }

@@ -67,14 +67,15 @@
       "radius": 246.13953488372096,
       "a": 0.566,
       "e": 0,
-      "w": 122.77527147607914,
+      "w": 100.04369994339821,
       "o": 0,
       "orbitalPeriod": 140.101261,
       "temperature": 511,
       "exoplanet": true,
       "bump": false,
-      "color": "#E540C7",
-      "clouds": false
+      "color": "#95DF74",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-264-b",
@@ -85,18 +86,20 @@
       "radius": 290.09302325581393,
       "a": 0.249,
       "e": 0,
-      "w": 135.10951065417038,
+      "w": 229.5461384931354,
       "o": 0,
       "orbitalPeriod": 40.806231,
       "temperature": 772,
       "exoplanet": true,
       "bump": false,
-      "color": "#21CE70",
-      "clouds": false
+      "color": "#291CBD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-264, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-264 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-264 - System With 2 Exolanets "
 }

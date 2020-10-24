@@ -67,18 +67,20 @@
       "radius": 633.9069767441861,
       "a": 0.077,
       "e": 0,
-      "w": 152.05115152027014,
+      "w": 253.65406076263912,
       "o": 0,
       "orbitalPeriod": 8.562421,
       "temperature": 893,
       "exoplanet": true,
       "bump": false,
-      "color": "#2A3D76",
-      "clouds": false
+      "color": "#0C949D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-271, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-271 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-271 - System With 1 Exoplanet "
 }

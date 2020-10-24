@@ -67,18 +67,20 @@
       "radius": 245.16279069767444,
       "a": 0.4382,
       "e": 0,
-      "w": 146.7625266443308,
+      "w": 233.42144768224097,
       "o": 0,
       "orbitalPeriod": 109.6471842,
       "temperature": 428,
       "exoplanet": true,
       "bump": false,
-      "color": "#07E665",
-      "clouds": false
+      "color": "#AB5DFF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1333, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1333 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1333 - System With 1 Exoplanet "
 }

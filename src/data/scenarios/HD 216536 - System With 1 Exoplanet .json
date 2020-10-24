@@ -73,12 +73,14 @@
       "temperature": 262.99547154573554,
       "exoplanet": true,
       "bump": false,
-      "color": "#E6C0EB",
-      "clouds": false
+      "color": "#863F47",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 216536, which contains 1 exoplanets and was discovered by the McDonald Observatory.",
   "name": "HD 216536 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 216536 - System With 1 Exoplanet "
 }

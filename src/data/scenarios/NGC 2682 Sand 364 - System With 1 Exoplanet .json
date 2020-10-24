@@ -73,12 +73,14 @@
       "temperature": 1725.6695557404496,
       "exoplanet": true,
       "bump": false,
-      "color": "#43BD95",
-      "clouds": false
+      "color": "#5B9B13",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system NGC 2682 Sand 364, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "NGC 2682 Sand 364 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "NGC 2682 Sand 364 - System With 1 Exoplanet "
 }

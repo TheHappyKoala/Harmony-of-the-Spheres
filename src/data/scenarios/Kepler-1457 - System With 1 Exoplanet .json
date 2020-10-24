@@ -67,18 +67,20 @@
       "radius": 173.86046511627907,
       "a": 0.2668,
       "e": 0,
-      "w": 350.1922907789325,
+      "w": 118.59292698321005,
       "o": 0,
       "orbitalPeriod": 51.1110243,
       "temperature": 478,
       "exoplanet": true,
       "bump": true,
-      "color": "#825D57",
-      "clouds": true
+      "color": "#8A3F2E",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1457, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1457 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1457 - System With 1 Exoplanet "
 }

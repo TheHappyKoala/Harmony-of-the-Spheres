@@ -67,18 +67,20 @@
       "radius": 216.8372093023256,
       "a": 0.0503,
       "e": 0,
-      "w": 121.02383913950008,
+      "w": 52.056803213829554,
       "o": 0,
       "orbitalPeriod": 4.18200253,
       "temperature": 974,
       "exoplanet": true,
       "bump": false,
-      "color": "#A93939",
-      "clouds": false
+      "color": "#AD22D2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-652, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-652 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-652 - System With 1 Exoplanet "
 }

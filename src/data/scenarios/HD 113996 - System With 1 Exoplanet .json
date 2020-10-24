@@ -73,12 +73,14 @@
       "temperature": 256.4951360073592,
       "exoplanet": true,
       "bump": false,
-      "color": "#CCCC6C",
-      "clouds": false
+      "color": "#7A03FE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 113996, which contains 1 exoplanets and was discovered by the Bohyunsan Optical Astronomical Observatory.",
   "name": "HD 113996 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 113996 - System With 1 Exoplanet "
 }

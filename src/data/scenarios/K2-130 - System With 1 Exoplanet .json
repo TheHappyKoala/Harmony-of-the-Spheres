@@ -73,12 +73,14 @@
       "temperature": 1029.1957040058583,
       "exoplanet": true,
       "bump": true,
-      "color": "#D0D787",
-      "clouds": false
+      "color": "#7352E6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-130, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-130 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-130 - System With 1 Exoplanet "
 }

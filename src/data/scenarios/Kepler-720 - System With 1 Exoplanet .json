@@ -67,18 +67,20 @@
       "radius": 732.5581395348838,
       "a": 0.0539,
       "e": 0,
-      "w": 266.75797574969243,
+      "w": 119.90225759736046,
       "o": 0,
       "orbitalPeriod": 4.70832654,
       "temperature": 1162,
       "exoplanet": true,
       "bump": false,
-      "color": "#3CF81A",
-      "clouds": false
+      "color": "#CD5C27",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-720, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-720 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-720 - System With 1 Exoplanet "
 }

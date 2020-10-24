@@ -73,12 +73,14 @@
       "temperature": 161.51522426975413,
       "exoplanet": true,
       "bump": false,
-      "color": "#D54677",
-      "clouds": false
+      "color": "#FE8904",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 50554, which contains 1 exoplanets and was discovered by the Lick Observatory.",
   "name": "HD 50554 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 50554 - System With 1 Exoplanet "
 }

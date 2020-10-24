@@ -67,18 +67,20 @@
       "radius": 229.53488372093022,
       "a": 0.2037,
       "e": 0,
-      "w": 168.09593864741606,
+      "w": 268.92042751480477,
       "o": 0,
       "orbitalPeriod": 31.0033814,
       "temperature": 616,
       "exoplanet": true,
       "bump": false,
-      "color": "#6F2E5C",
-      "clouds": false
+      "color": "#826CAC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-945, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-945 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-945 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 97.92959746065071,
       "exoplanet": true,
       "bump": false,
-      "color": "#786B71",
-      "clouds": false
+      "color": "#E1B815",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Pr0211-b",
@@ -91,12 +92,14 @@
       "temperature": 1288.7096103489207,
       "exoplanet": true,
       "bump": false,
-      "color": "#5D6D08",
-      "clouds": false
+      "color": "#9C86FA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Pr0211, which contains 2 exoplanets and was discovered by the Fred Lawrence Whipple Observatory.",
   "name": "Pr0211 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Pr0211 - System With 2 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 277.39534883720927,
       "a": 0.3625,
       "e": 0,
-      "w": 293.8170544980096,
+      "w": 75.47895574759474,
       "o": 0,
       "orbitalPeriod": 78.1000231,
       "temperature": 480,
       "exoplanet": true,
       "bump": false,
-      "color": "#FA1291",
-      "clouds": false
+      "color": "#9A0366",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1094, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1094 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1094 - System With 1 Exoplanet "
 }

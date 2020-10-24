@@ -73,12 +73,14 @@
       "temperature": 418.73311260823215,
       "exoplanet": true,
       "bump": false,
-      "color": "#DC25A9",
-      "clouds": false
+      "color": "#74936D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 11 UMi, which contains 1 exoplanets and was discovered by the Thueringer Landessternwarte Tautenburg.",
   "name": "11 UMi - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "11 UMi - System With 1 Exoplanet "
 }

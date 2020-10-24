@@ -67,18 +67,20 @@
       "radius": 526.4651162790699,
       "a": 0.0457,
       "e": 0,
-      "w": 102.39979319062591,
+      "w": 183.3377061449289,
       "o": 0,
       "orbitalPeriod": 3.57320367,
       "temperature": 1210,
       "exoplanet": true,
       "bump": false,
-      "color": "#BD62D5",
-      "clouds": false
+      "color": "#504A3E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-497, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-497 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-497 - System With 1 Exoplanet "
 }

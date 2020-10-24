@@ -67,14 +67,15 @@
       "radius": 173.86046511627907,
       "a": 0.2747,
       "e": 0,
-      "w": 112.91720366403845,
+      "w": 328.5601833279045,
       "o": 0,
       "orbitalPeriod": 50.447,
       "temperature": 568,
       "exoplanet": true,
       "bump": false,
-      "color": "#0E5CA2",
-      "clouds": false
+      "color": "#333BCB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-238-e",
@@ -85,14 +86,15 @@
       "radius": 488.37209302325584,
       "a": 0.1658,
       "e": 0,
-      "w": 322.3684585763695,
+      "w": 321.87383609235155,
       "o": 0,
       "orbitalPeriod": 23.654,
       "temperature": 731,
       "exoplanet": true,
       "bump": false,
-      "color": "#C28C6B",
-      "clouds": false
+      "color": "#B108F3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-238-d",
@@ -103,14 +105,15 @@
       "radius": 267.6279069767442,
       "a": 0.115,
       "e": 0,
-      "w": 3.8418038793714526,
+      "w": 343.5975536306764,
       "o": 0,
       "orbitalPeriod": 13.233549,
       "temperature": 888,
       "exoplanet": true,
       "bump": false,
-      "color": "#AD2BF9",
-      "clouds": false
+      "color": "#DC3D98",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-238-c",
@@ -121,14 +124,15 @@
       "radius": 208.046511627907,
       "a": 0.069,
       "e": 0,
-      "w": 313.944724924784,
+      "w": 51.430654134098006,
       "o": 0,
       "orbitalPeriod": 6.155557,
       "temperature": 1146,
       "exoplanet": true,
       "bump": false,
-      "color": "#AE632A",
-      "clouds": false
+      "color": "#E980F4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-238-b",
@@ -139,18 +143,20 @@
       "radius": 150.4186046511628,
       "a": 0.034,
       "e": 0,
-      "w": 141.07113502558954,
+      "w": 155.73216573316512,
       "o": 0,
       "orbitalPeriod": 2.090876,
       "temperature": 1642,
       "exoplanet": true,
       "bump": true,
-      "color": "#A7F5D4",
-      "clouds": false
+      "color": "#BF7474",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-238, which contains 5 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-238 - System With 5 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-238 - System With 5 Exolanets "
 }

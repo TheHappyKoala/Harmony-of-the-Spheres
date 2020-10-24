@@ -67,18 +67,20 @@
       "radius": 208.046511627907,
       "a": 0.0397,
       "e": 0,
-      "w": 320.9496868965313,
+      "w": 315.6756965634547,
       "o": 0,
       "orbitalPeriod": 2.82019241,
       "temperature": 1367,
       "exoplanet": true,
       "bump": false,
-      "color": "#D93E15",
-      "clouds": false
+      "color": "#35BE46",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-592, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-592 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-592 - System With 1 Exoplanet "
 }

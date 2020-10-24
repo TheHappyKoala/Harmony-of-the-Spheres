@@ -67,18 +67,20 @@
       "radius": 127.95348837209303,
       "a": 0.0732,
       "e": 0,
-      "w": 352.2167693757199,
+      "w": 334.9301516825324,
       "o": 0,
       "orbitalPeriod": 7.6847716,
       "temperature": 830,
       "exoplanet": true,
       "bump": true,
-      "color": "#527457",
-      "clouds": false
+      "color": "#78ADA7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1198, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1198 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1198 - System With 1 Exoplanet "
 }

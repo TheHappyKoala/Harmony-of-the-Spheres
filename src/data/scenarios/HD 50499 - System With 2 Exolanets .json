@@ -73,8 +73,9 @@
       "temperature": 94.69535246607907,
       "exoplanet": true,
       "bump": false,
-      "color": "#C5A6B3",
-      "clouds": false
+      "color": "#514A65",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 50499-b",
@@ -91,12 +92,14 @@
       "temperature": 145.26551363096848,
       "exoplanet": true,
       "bump": false,
-      "color": "#A3FA9D",
-      "clouds": false
+      "color": "#311CEE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 50499, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 50499 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 50499 - System With 2 Exolanets "
 }

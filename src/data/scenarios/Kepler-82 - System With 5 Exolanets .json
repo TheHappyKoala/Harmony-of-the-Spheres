@@ -73,8 +73,9 @@
       "temperature": 384.68971817648753,
       "exoplanet": true,
       "bump": false,
-      "color": "#7CC04F",
-      "clouds": false
+      "color": "#9BADB5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-82-e",
@@ -85,14 +86,15 @@
       "radius": 214.88372093023258,
       "a": 0.063,
       "e": 0,
-      "w": 258.68205439700654,
+      "w": 19.18878429202553,
       "o": 0,
       "orbitalPeriod": 5.902206,
       "temperature": 926,
       "exoplanet": true,
       "bump": false,
-      "color": "#8C67AD",
-      "clouds": false
+      "color": "#C10D04",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-82-d",
@@ -103,14 +105,15 @@
       "radius": 154.32558139534885,
       "a": 0.034,
       "e": 0,
-      "w": 128.7690066912446,
+      "w": 179.04132686782907,
       "o": 0,
       "orbitalPeriod": 2.382961,
       "temperature": 1253,
       "exoplanet": true,
       "bump": true,
-      "color": "#4AE743",
-      "clouds": false
+      "color": "#E4E810",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-82-c",
@@ -127,8 +130,9 @@
       "temperature": 450,
       "exoplanet": true,
       "bump": false,
-      "color": "#ACB044",
-      "clouds": false
+      "color": "#A32430",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-82-b",
@@ -145,12 +149,14 @@
       "temperature": 562,
       "exoplanet": true,
       "bump": false,
-      "color": "#D6A97F",
-      "clouds": false
+      "color": "#7048C9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-82, which contains 5 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-82 - System With 5 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-82 - System With 5 Exolanets "
 }

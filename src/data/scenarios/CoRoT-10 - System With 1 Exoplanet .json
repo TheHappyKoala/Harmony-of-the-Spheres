@@ -73,12 +73,14 @@
       "temperature": 600,
       "exoplanet": true,
       "bump": false,
-      "color": "#B0465C",
-      "clouds": false
+      "color": "#8F793E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-10, which contains 1 exoplanets and was discovered by the CoRoT.",
   "name": "CoRoT-10 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "CoRoT-10 - System With 1 Exoplanet "
 }

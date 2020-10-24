@@ -73,12 +73,14 @@
       "temperature": 245.82968492310286,
       "exoplanet": true,
       "bump": false,
-      "color": "#7FA9B2",
-      "clouds": false
+      "color": "#785C8B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 142415, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 142415 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 142415 - System With 1 Exoplanet "
 }

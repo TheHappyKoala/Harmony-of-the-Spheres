@@ -67,18 +67,20 @@
       "radius": 125.0232558139535,
       "a": 0.0795,
       "e": 0,
-      "w": 115.09294794294729,
+      "w": 132.9514017202191,
       "o": 0,
       "orbitalPeriod": 9.45889,
       "temperature": 631,
       "exoplanet": true,
       "bump": true,
-      "color": "#6E64F1",
-      "clouds": false
+      "color": "#872159",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-162, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-162 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-162 - System With 1 Exoplanet "
 }

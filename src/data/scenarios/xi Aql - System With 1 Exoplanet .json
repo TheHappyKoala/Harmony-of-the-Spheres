@@ -67,18 +67,20 @@
       "radius": 1152.5581395348838,
       "a": 0.68,
       "e": 0,
-      "w": 125.13584543891028,
+      "w": 86.5848057688825,
       "o": 0,
       "orbitalPeriod": 136.75,
       "temperature": 527.0016538811238,
       "exoplanet": true,
       "bump": false,
-      "color": "#C23BFE",
-      "clouds": false
+      "color": "#A8716D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system xi Aql, which contains 1 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "xi Aql - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "xi Aql - System With 1 Exoplanet "
 }

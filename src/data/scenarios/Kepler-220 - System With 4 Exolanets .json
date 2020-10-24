@@ -67,14 +67,15 @@
       "radius": 116.23255813953489,
       "a": 0.226,
       "e": 0,
-      "w": 6.844590336974257,
+      "w": 24.722708968754112,
       "o": 0,
       "orbitalPeriod": 45.902733,
       "temperature": 341,
       "exoplanet": true,
       "bump": true,
-      "color": "#9FA450",
-      "clouds": false
+      "color": "#EF41BF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-220-d",
@@ -85,14 +86,15 @@
       "radius": 84.97674418604652,
       "a": 0.163,
       "e": 0,
-      "w": 187.9904690170037,
+      "w": 213.81990376728683,
       "o": 0,
       "orbitalPeriod": 28.122397,
       "temperature": 401,
       "exoplanet": true,
       "bump": true,
-      "color": "#F95A4C",
-      "clouds": false
+      "color": "#784C0C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-220-c",
@@ -103,14 +105,15 @@
       "radius": 136.74418604651166,
       "a": 0.076,
       "e": 0,
-      "w": 279.4714246531776,
+      "w": 309.1944588947012,
       "o": 0,
       "orbitalPeriod": 9.034199,
       "temperature": 586,
       "exoplanet": true,
       "bump": true,
-      "color": "#55604A",
-      "clouds": false
+      "color": "#83F625",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-220-b",
@@ -121,18 +124,20 @@
       "radius": 70.32558139534883,
       "a": 0.046,
       "e": 0,
-      "w": 197.70879337184823,
+      "w": 326.20735580520017,
       "o": 0,
       "orbitalPeriod": 4.159807,
       "temperature": 759,
       "exoplanet": true,
       "bump": true,
-      "color": "#A3D969",
-      "clouds": false
+      "color": "#9A153F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-220, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-220 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-220 - System With 4 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 333.0697674418605,
       "a": 0.3094,
       "e": 0,
-      "w": 142.42195749631833,
+      "w": 91.25850055380825,
       "o": 0,
       "orbitalPeriod": 65.6488341,
       "temperature": 390,
       "exoplanet": true,
       "bump": false,
-      "color": "#9E8CA9",
-      "clouds": false
+      "color": "#01ED1C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1462, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1462 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1462 - System With 1 Exoplanet "
 }

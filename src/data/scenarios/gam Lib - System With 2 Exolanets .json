@@ -73,8 +73,9 @@
       "temperature": 218.02563398608348,
       "exoplanet": true,
       "bump": false,
-      "color": "#48FE3D",
-      "clouds": false
+      "color": "#CA3E2C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "gam Lib-b",
@@ -91,12 +92,14 @@
       "temperature": 288.42080348218445,
       "exoplanet": true,
       "bump": false,
-      "color": "#4244E1",
-      "clouds": false
+      "color": "#E3F8D8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system gam Lib, which contains 2 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "gam Lib - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "gam Lib - System With 2 Exolanets "
 }

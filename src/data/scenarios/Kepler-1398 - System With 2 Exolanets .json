@@ -67,14 +67,15 @@
       "radius": 89.86046511627907,
       "a": 0.051,
       "e": 0,
-      "w": 34.53388763358241,
+      "w": 15.920459123399437,
       "o": 0,
       "orbitalPeriod": 4.13827595,
       "temperature": 1324,
       "exoplanet": true,
       "bump": true,
-      "color": "#D02E64",
-      "clouds": false
+      "color": "#992575",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1398-b",
@@ -85,18 +86,20 @@
       "radius": 78.13953488372094,
       "a": 0.0392,
       "e": 0,
-      "w": 44.68429250226905,
+      "w": 153.5165626883534,
       "o": 0,
       "orbitalPeriod": 2.78815679,
       "temperature": 1510,
       "exoplanet": true,
       "bump": true,
-      "color": "#1C023C",
-      "clouds": false
+      "color": "#974F18",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1398, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1398 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1398 - System With 2 Exolanets "
 }

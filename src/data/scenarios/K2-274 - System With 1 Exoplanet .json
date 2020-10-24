@@ -67,18 +67,20 @@
       "radius": 191.4418604651163,
       "a": 0.1064,
       "e": 0,
-      "w": 8.540922239833773,
+      "w": 245.28868518126683,
       "o": 0,
       "orbitalPeriod": 14.129714,
       "temperature": 589,
       "exoplanet": true,
       "bump": false,
-      "color": "#91181A",
-      "clouds": false
+      "color": "#8EFD3C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-274, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-274 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-274 - System With 1 Exoplanet "
 }

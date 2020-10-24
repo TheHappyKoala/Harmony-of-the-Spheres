@@ -67,18 +67,20 @@
       "radius": 957.2093023255815,
       "a": 0.0504,
       "e": 0,
-      "w": 121.54923236363997,
+      "w": 223.88758098544662,
       "o": 0,
       "orbitalPeriod": 3.8186244,
       "temperature": 1642,
       "exoplanet": true,
       "bump": false,
-      "color": "#AD933D",
-      "clouds": false
+      "color": "#CB6E68",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-171, which contains 1 exoplanets and was discovered by the WASP-South.",
   "name": "WASP-171 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-171 - System With 1 Exoplanet "
 }

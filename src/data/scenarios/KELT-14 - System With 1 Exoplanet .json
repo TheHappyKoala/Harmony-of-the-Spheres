@@ -67,18 +67,20 @@
       "radius": 1702.46511627907,
       "a": 0.03005,
       "e": 0,
-      "w": 53.051811085447994,
+      "w": 307.5432944849595,
       "o": 0,
       "orbitalPeriod": 1.7100566,
       "temperature": 1970,
       "exoplanet": true,
       "bump": false,
-      "color": "#CDECF0",
-      "clouds": false
+      "color": "#1ECFE5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-14, which contains 1 exoplanets and was discovered by the KELT-South.",
   "name": "KELT-14 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KELT-14 - System With 1 Exoplanet "
 }

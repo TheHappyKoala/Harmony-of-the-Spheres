@@ -67,14 +67,15 @@
       "radius": 208.046511627907,
       "a": 0.356,
       "e": 0,
-      "w": 236.03165282148072,
+      "w": 214.93319766560077,
       "o": 0,
       "orbitalPeriod": 88.255055,
       "temperature": 326,
       "exoplanet": true,
       "bump": false,
-      "color": "#1D6D5A",
-      "clouds": false
+      "color": "#0F70DF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-152-b",
@@ -85,18 +86,20 @@
       "radius": 243.2093023255814,
       "a": 0.124,
       "e": 0,
-      "w": 165.59729886536178,
+      "w": 339.5672312350449,
       "o": 0,
       "orbitalPeriod": 18.207973,
       "temperature": 551,
       "exoplanet": true,
       "bump": false,
-      "color": "#871F6E",
-      "clouds": false
+      "color": "#D26823",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-152, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-152 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-152 - System With 2 Exolanets "
 }

@@ -73,8 +73,9 @@
       "temperature": 211.07581678898728,
       "exoplanet": true,
       "bump": true,
-      "color": "#4A1E19",
-      "clouds": false
+      "color": "#065798",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 1061-c",
@@ -91,8 +92,9 @@
       "temperature": 262.18107283704614,
       "exoplanet": true,
       "bump": true,
-      "color": "#C2EAD6",
-      "clouds": false
+      "color": "#B98242",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 1061-b",
@@ -109,12 +111,14 @@
       "temperature": 338.4743095962246,
       "exoplanet": true,
       "bump": true,
-      "color": "#9D9343",
-      "clouds": false
+      "color": "#C249F4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 1061, which contains 3 exoplanets, of which 1 is potentially habitable, and was discovered by the La Silla Observatory.",
   "name": "GJ 1061 - System With 3 Exolanets of Which 1 Is Potentially Habitable",
-  "cameraFocus": "GJ 1061-d"
+  "cameraFocus": "GJ 1061-d",
+  "fileName": "GJ 1061 - System With 3 Exolanets of Which 1 Is Potentially Habitable"
 }

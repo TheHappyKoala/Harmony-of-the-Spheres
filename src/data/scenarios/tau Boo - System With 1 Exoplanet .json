@@ -73,12 +73,14 @@
       "temperature": 1338.3873780955523,
       "exoplanet": true,
       "bump": false,
-      "color": "#2FDFF5",
-      "clouds": false
+      "color": "#F5205E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system tau Boo, which contains 1 exoplanets and was discovered by the Roque de los Muchachos Observatory.",
   "name": "tau Boo - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "tau Boo - System With 1 Exoplanet "
 }

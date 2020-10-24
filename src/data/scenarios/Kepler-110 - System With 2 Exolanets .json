@@ -67,14 +67,15 @@
       "radius": 192.4186046511628,
       "a": 0.198,
       "e": 0,
-      "w": 139.25524024454535,
+      "w": 79.01627283982177,
       "o": 0,
       "orbitalPeriod": 31.719775,
       "temperature": 743,
       "exoplanet": true,
       "bump": false,
-      "color": "#EAF33A",
-      "clouds": false
+      "color": "#3F8BB7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-110-b",
@@ -85,18 +86,20 @@
       "radius": 159.2093023255814,
       "a": 0.107,
       "e": 0,
-      "w": 327.49759480533174,
+      "w": 81.11316577538763,
       "o": 0,
       "orbitalPeriod": 12.691112,
       "temperature": 1008,
       "exoplanet": true,
       "bump": true,
-      "color": "#5A76A8",
-      "clouds": false
+      "color": "#DAF97D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-110, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-110 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-110 - System With 2 Exolanets "
 }

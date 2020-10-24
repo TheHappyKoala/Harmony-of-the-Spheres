@@ -67,18 +67,20 @@
       "radius": 187.53488372093025,
       "a": 0.1247,
       "e": 0,
-      "w": 81.07431930546187,
+      "w": 331.84138632516147,
       "o": 0,
       "orbitalPeriod": 18.42794624,
       "temperature": 526,
       "exoplanet": true,
       "bump": false,
-      "color": "#35A027",
-      "clouds": false
+      "color": "#CDEC39",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-566, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-566 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-566 - System With 1 Exoplanet "
 }

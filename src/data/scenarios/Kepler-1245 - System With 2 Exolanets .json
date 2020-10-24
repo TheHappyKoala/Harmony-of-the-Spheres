@@ -67,14 +67,15 @@
       "radius": 125.0232558139535,
       "a": 0.0372,
       "e": 0,
-      "w": 137.41747039594483,
+      "w": 144.48078240896984,
       "o": 0,
       "orbitalPeriod": 2.93658468,
       "temperature": 1190,
       "exoplanet": true,
       "bump": true,
-      "color": "#37F384",
-      "clouds": false
+      "color": "#4C7953",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1245-b",
@@ -85,18 +86,20 @@
       "radius": 125.0232558139535,
       "a": 0.0484,
       "e": 0,
-      "w": 310.48203234052846,
+      "w": 180.05342879205708,
       "o": 0,
       "orbitalPeriod": 4.35409304,
       "temperature": 1043,
       "exoplanet": true,
       "bump": true,
-      "color": "#D58B40",
-      "clouds": false
+      "color": "#AAFBFA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1245, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1245 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1245 - System With 2 Exolanets "
 }

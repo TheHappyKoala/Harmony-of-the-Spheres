@@ -73,12 +73,14 @@
       "temperature": 558.8375410321867,
       "exoplanet": true,
       "bump": false,
-      "color": "#ED834A",
-      "clouds": false
+      "color": "#12CFFA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 3779, which contains 1 exoplanets and was discovered by the Calar Alto Observatory.",
   "name": "GJ 3779 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 3779 - System With 1 Exoplanet "
 }

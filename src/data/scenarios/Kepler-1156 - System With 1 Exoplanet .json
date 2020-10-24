@@ -67,18 +67,20 @@
       "radius": 115.25581395348837,
       "a": 0.0994,
       "e": 0,
-      "w": 238.22864759747205,
+      "w": 278.12677984800433,
       "o": 0,
       "orbitalPeriod": 11.89520511,
       "temperature": 787,
       "exoplanet": true,
       "bump": true,
-      "color": "#59E9B3",
-      "clouds": false
+      "color": "#242F95",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1156, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1156 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1156 - System With 1 Exoplanet "
 }

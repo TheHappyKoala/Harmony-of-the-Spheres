@@ -73,8 +73,9 @@
       "temperature": 637,
       "exoplanet": true,
       "bump": false,
-      "color": "#BF7944",
-      "clouds": false
+      "color": "#C52179",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "TOI-1130-b",
@@ -85,18 +86,20 @@
       "radius": 318.4186046511628,
       "a": 0.04394,
       "e": 0.22,
-      "w": 97.5611163905698,
+      "w": 102.10154409853205,
       "o": 0,
       "orbitalPeriod": 4.066499,
       "temperature": 810,
       "exoplanet": true,
       "bump": false,
-      "color": "#7CCEBC",
-      "clouds": false
+      "color": "#5ECE6D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TOI-1130, which contains 2 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "TOI-1130 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TOI-1130 - System With 2 Exolanets "
 }

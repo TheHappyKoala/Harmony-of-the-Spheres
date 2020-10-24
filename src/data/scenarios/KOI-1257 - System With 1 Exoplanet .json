@@ -73,12 +73,14 @@
       "temperature": 511,
       "exoplanet": true,
       "bump": false,
-      "color": "#A48B72",
-      "clouds": false
+      "color": "#DFE1FC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KOI-1257, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "KOI-1257 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KOI-1257 - System With 1 Exoplanet "
 }

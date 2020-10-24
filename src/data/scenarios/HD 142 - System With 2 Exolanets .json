@@ -73,8 +73,9 @@
       "temperature": 107.75161821403734,
       "exoplanet": true,
       "bump": false,
-      "color": "#462974",
-      "clouds": false
+      "color": "#AB79AB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 142-b",
@@ -91,12 +92,14 @@
       "temperature": 278.2134819132442,
       "exoplanet": true,
       "bump": false,
-      "color": "#9E5ABD",
-      "clouds": false
+      "color": "#765843",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 142, which contains 2 exoplanets and was discovered by the Anglo-Australian Telescope.",
   "name": "HD 142 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 142 - System With 2 Exolanets "
 }

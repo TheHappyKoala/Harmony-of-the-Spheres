@@ -67,18 +67,20 @@
       "radius": 192.4186046511628,
       "a": 0.1977,
       "e": 0,
-      "w": 225.57498402266887,
+      "w": 292.65318156947694,
       "o": 0,
       "orbitalPeriod": 36.5156053,
       "temperature": 425,
       "exoplanet": true,
       "bump": false,
-      "color": "#1315EB",
-      "clouds": false
+      "color": "#05FF66",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1026, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1026 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1026 - System With 1 Exoplanet "
 }

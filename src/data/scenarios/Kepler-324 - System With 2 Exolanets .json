@@ -67,14 +67,15 @@
       "radius": 274.46511627906983,
       "a": 0.26,
       "e": 0,
-      "w": 140.66454935414188,
+      "w": 239.82680405250034,
       "o": 0,
       "orbitalPeriod": 51.805612,
       "temperature": 410,
       "exoplanet": true,
       "bump": false,
-      "color": "#29F5FF",
-      "clouds": false
+      "color": "#06370E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-324-b",
@@ -85,18 +86,20 @@
       "radius": 99.62790697674419,
       "a": 0.05,
       "e": 0,
-      "w": 93.00516740649013,
+      "w": 287.3132811354902,
       "o": 0,
       "orbitalPeriod": 4.385315,
       "temperature": 935,
       "exoplanet": true,
       "bump": true,
-      "color": "#B100E1",
-      "clouds": false
+      "color": "#A8F2CF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-324, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-324 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-324 - System With 2 Exolanets "
 }

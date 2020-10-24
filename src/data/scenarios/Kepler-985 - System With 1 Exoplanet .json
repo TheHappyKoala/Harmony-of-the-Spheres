@@ -67,18 +67,20 @@
       "radius": 259.81395348837214,
       "a": 0.4451,
       "e": 0,
-      "w": 354.13495727443876,
+      "w": 331.2283667205676,
       "o": 0,
       "orbitalPeriod": 116.331901,
       "temperature": 323,
       "exoplanet": true,
       "bump": false,
-      "color": "#CE51D5",
-      "clouds": false
+      "color": "#0A2B3E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-985, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-985 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-985 - System With 1 Exoplanet "
 }

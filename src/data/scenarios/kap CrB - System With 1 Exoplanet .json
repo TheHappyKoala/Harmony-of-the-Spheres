@@ -73,12 +73,14 @@
       "temperature": 200.30644867455027,
       "exoplanet": true,
       "bump": false,
-      "color": "#2DEADD",
-      "clouds": false
+      "color": "#F37173",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system kap CrB, which contains 1 exoplanets and was discovered by the Lick Observatory.",
   "name": "kap CrB - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "kap CrB - System With 1 Exoplanet "
 }

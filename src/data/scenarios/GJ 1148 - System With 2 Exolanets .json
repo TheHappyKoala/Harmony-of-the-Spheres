@@ -73,8 +73,9 @@
       "temperature": 112.1659896486428,
       "exoplanet": true,
       "bump": false,
-      "color": "#64B70D",
-      "clouds": false
+      "color": "#C11D1A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 1148-b",
@@ -91,12 +92,14 @@
       "temperature": 262.9084638598681,
       "exoplanet": true,
       "bump": false,
-      "color": "#FE2B22",
-      "clouds": false
+      "color": "#81F0E3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 1148, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "GJ 1148 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 1148 - System With 2 Exolanets "
 }

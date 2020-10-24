@@ -67,18 +67,20 @@
       "radius": 390.6976744186047,
       "a": 0.06702,
       "e": 0.251,
-      "w": 240.74354921644715,
+      "w": 340.17707057003776,
       "o": 0,
       "orbitalPeriod": 6.771315,
       "temperature": 902,
       "exoplanet": true,
       "bump": false,
-      "color": "#E366A0",
-      "clouds": false
+      "color": "#5107B3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-27, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-27 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-27 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 156.27906976744188,
       "a": 0.11,
       "e": 0,
-      "w": 121.28857358242213,
+      "w": 137.09426608956994,
       "o": 0,
       "orbitalPeriod": 12.51616,
       "temperature": 848,
       "exoplanet": true,
       "bump": true,
-      "color": "#D66D23",
-      "clouds": false
+      "color": "#16D603",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-366-b",
@@ -85,18 +86,20 @@
       "radius": 126.97674418604652,
       "a": 0.045,
       "e": 0,
-      "w": 57.29256599581209,
+      "w": 94.16705049064211,
       "o": 0,
       "orbitalPeriod": 3.281959,
       "temperature": 1326,
       "exoplanet": true,
       "bump": true,
-      "color": "#DCE5F3",
-      "clouds": false
+      "color": "#88E591",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-366, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-366 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-366 - System With 2 Exolanets "
 }

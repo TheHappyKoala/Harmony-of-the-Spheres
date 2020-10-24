@@ -73,12 +73,14 @@
       "temperature": 188.0540660818144,
       "exoplanet": true,
       "bump": false,
-      "color": "#A909D4",
-      "clouds": false
+      "color": "#649869",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 196885 A, which contains 1 exoplanets and was discovered by the Haute-Provence Observatory.",
   "name": "HD 196885 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 196885 A - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 146.51162790697674,
       "a": 0.1817,
       "e": 0,
-      "w": 204.08982972981846,
+      "w": 195.54824628287236,
       "o": 0,
       "orbitalPeriod": 29.6193421,
       "temperature": 580,
       "exoplanet": true,
       "bump": true,
-      "color": "#D979AE",
-      "clouds": false
+      "color": "#9B9D38",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-795, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-795 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-795 - System With 1 Exoplanet "
 }

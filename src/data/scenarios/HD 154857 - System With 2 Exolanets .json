@@ -73,8 +73,9 @@
       "temperature": 172.13099633584403,
       "exoplanet": true,
       "bump": false,
-      "color": "#490AD5",
-      "clouds": false
+      "color": "#9B78D3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 154857-b",
@@ -91,12 +92,14 @@
       "temperature": 350.8703113639917,
       "exoplanet": true,
       "bump": false,
-      "color": "#D0E55E",
-      "clouds": false
+      "color": "#5AC445",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 154857, which contains 2 exoplanets and was discovered by the Anglo-Australian Telescope.",
   "name": "HD 154857 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 154857 - System With 2 Exolanets "
 }

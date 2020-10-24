@@ -67,14 +67,15 @@
       "radius": 314.5116279069768,
       "a": 0.193,
       "e": 0,
-      "w": 169.3119501190145,
+      "w": 188.4070544103293,
       "o": 0,
       "orbitalPeriod": 33.653079,
       "temperature": 470,
       "exoplanet": true,
       "bump": false,
-      "color": "#CA0E89",
-      "clouds": false
+      "color": "#4949A1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-258-b",
@@ -85,18 +86,20 @@
       "radius": 353.5813953488372,
       "a": 0.103,
       "e": 0,
-      "w": 64.26477666280181,
+      "w": 358.08788224259985,
       "o": 0,
       "orbitalPeriod": 13.19722,
       "temperature": 642,
       "exoplanet": true,
       "bump": false,
-      "color": "#B60A32",
-      "clouds": false
+      "color": "#6CDE67",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-258, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-258 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-258 - System With 2 Exolanets "
 }

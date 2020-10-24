@@ -73,12 +73,14 @@
       "temperature": 261.68656879389397,
       "exoplanet": true,
       "bump": false,
-      "color": "#7610B0",
-      "clouds": false
+      "color": "#DD5D3C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system bet UMi, which contains 1 exoplanets and was discovered by the Bohyunsan Optical Astronomical Observatory.",
   "name": "bet UMi - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "bet UMi - System With 1 Exoplanet "
 }

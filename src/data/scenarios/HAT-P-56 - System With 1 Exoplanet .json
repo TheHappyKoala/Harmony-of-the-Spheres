@@ -67,18 +67,20 @@
       "radius": 1474.8837209302326,
       "a": 0.0423,
       "e": 0.29,
-      "w": 189.6998201678072,
+      "w": 333.7956913673153,
       "o": 0,
       "orbitalPeriod": 2.79083,
       "temperature": 1840,
       "exoplanet": true,
       "bump": false,
-      "color": "#B60A78",
-      "clouds": false
+      "color": "#87D16B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-56, which contains 1 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-56 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HAT-P-56 - System With 1 Exoplanet "
 }

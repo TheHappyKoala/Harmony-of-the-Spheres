@@ -73,12 +73,14 @@
       "temperature": 159.53250425456727,
       "exoplanet": true,
       "bump": false,
-      "color": "#99F9A5",
-      "clouds": false
+      "color": "#C4E3A7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system BD+14 4559, which contains 1 exoplanets and was discovered by the McDonald Observatory.",
   "name": "BD+14 4559 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "BD+14 4559 - System With 1 Exoplanet "
 }

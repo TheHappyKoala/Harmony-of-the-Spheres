@@ -67,18 +67,20 @@
       "radius": 209.02325581395348,
       "a": 0.0687,
       "e": 0,
-      "w": 282.54834657951386,
+      "w": 179.27853416196768,
       "o": 0,
       "orbitalPeriod": 5.83376092,
       "temperature": 1143,
       "exoplanet": true,
       "bump": false,
-      "color": "#4AA1CC",
-      "clouds": false
+      "color": "#C22DBA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-864, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-864 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-864 - System With 1 Exoplanet "
 }

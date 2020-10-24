@@ -67,18 +67,20 @@
       "radius": 247.11627906976747,
       "a": 0.1226,
       "e": 0.17,
-      "w": 270.0067180125585,
+      "w": 331.0937190760997,
       "o": 0,
       "orbitalPeriod": 17.833648,
       "temperature": 866,
       "exoplanet": true,
       "bump": false,
-      "color": "#F9472E",
-      "clouds": false
+      "color": "#E81F7D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-410 A, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-410 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-410 A - System With 1 Exoplanet "
 }

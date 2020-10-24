@@ -67,14 +67,15 @@
       "radius": 242.2325581395349,
       "a": 0.0668,
       "e": 0,
-      "w": 354.1393698873387,
+      "w": 143.3100389834309,
       "o": 0,
       "orbitalPeriod": 7.374694,
       "temperature": 653,
       "exoplanet": true,
       "bump": false,
-      "color": "#858FF8",
-      "clouds": false
+      "color": "#60464A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-199-b",
@@ -85,18 +86,20 @@
       "radius": 163.11627906976747,
       "a": 0.0385,
       "e": 0,
-      "w": 352.99132248709566,
+      "w": 230.00948107931745,
       "o": 0,
       "orbitalPeriod": 3.225338,
       "temperature": 861,
       "exoplanet": true,
       "bump": true,
-      "color": "#35DD90",
-      "clouds": false
+      "color": "#990FB2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-199, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-199 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-199 - System With 2 Exolanets "
 }

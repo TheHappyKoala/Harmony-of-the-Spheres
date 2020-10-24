@@ -67,14 +67,15 @@
       "radius": 85.95348837209302,
       "a": 0.0434,
       "e": 0,
-      "w": 105.88357771717256,
+      "w": 144.69203391257173,
       "o": 0,
       "orbitalPeriod": 3.18897601,
       "temperature": 1309,
       "exoplanet": true,
       "bump": true,
-      "color": "#7EB3B9",
-      "clouds": false
+      "color": "#41CE33",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1047-b",
@@ -85,18 +86,20 @@
       "radius": 181.67441860465118,
       "a": 0.2939,
       "e": 0,
-      "w": 160.3151239037804,
+      "w": 150.02407042758762,
       "o": 0,
       "orbitalPeriod": 56.1886887,
       "temperature": 503,
       "exoplanet": true,
       "bump": false,
-      "color": "#803342",
-      "clouds": false
+      "color": "#FB4C28",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1047, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1047 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1047 - System With 2 Exolanets "
 }

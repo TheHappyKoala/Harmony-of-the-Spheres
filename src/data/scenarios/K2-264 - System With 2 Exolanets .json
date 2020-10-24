@@ -67,14 +67,15 @@
       "radius": 232.46511627906978,
       "a": 0.11283,
       "e": 0.45,
-      "w": 208.69219854888624,
+      "w": 325.3230501197119,
       "o": 0,
       "orbitalPeriod": 19.660302,
       "temperature": 331,
       "exoplanet": true,
       "bump": false,
-      "color": "#6332A1",
-      "clouds": false
+      "color": "#F4065C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-264-b",
@@ -85,18 +86,20 @@
       "radius": 194.37209302325584,
       "a": 0.05023,
       "e": 0.5,
-      "w": 213.02339450125675,
+      "w": 358.15401399163045,
       "o": 0,
       "orbitalPeriod": 5.840002,
       "temperature": 496,
       "exoplanet": true,
       "bump": false,
-      "color": "#8A5C21",
-      "clouds": false
+      "color": "#524671",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-264, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-264 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-264 - System With 2 Exolanets "
 }

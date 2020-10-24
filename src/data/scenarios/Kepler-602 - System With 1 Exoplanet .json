@@ -67,18 +67,20 @@
       "radius": 181.67441860465118,
       "a": 0.1224,
       "e": 0,
-      "w": 1.6433137378693363,
+      "w": 170.39481551497562,
       "o": 0,
       "orbitalPeriod": 15.28469497,
       "temperature": 852,
       "exoplanet": true,
       "bump": false,
-      "color": "#500CC8",
-      "clouds": false
+      "color": "#677650",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-602, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-602 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-602 - System With 1 Exoplanet "
 }

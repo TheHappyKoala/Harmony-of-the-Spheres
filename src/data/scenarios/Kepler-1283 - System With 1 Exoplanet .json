@@ -67,18 +67,20 @@
       "radius": 166.046511627907,
       "a": 0.1062,
       "e": 0,
-      "w": 231.5288522713287,
+      "w": 180.2217019652755,
       "o": 0,
       "orbitalPeriod": 12.9460978,
       "temperature": 764,
       "exoplanet": true,
       "bump": true,
-      "color": "#47D4EC",
-      "clouds": true
+      "color": "#5A7F47",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1283, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1283 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1283 - System With 1 Exoplanet "
 }

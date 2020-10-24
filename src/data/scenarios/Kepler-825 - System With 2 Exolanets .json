@@ -67,14 +67,15 @@
       "radius": 160.18604651162792,
       "a": 0.0759,
       "e": 0,
-      "w": 40.96670511976101,
+      "w": 237.376204165476,
       "o": 0,
       "orbitalPeriod": 8.1818246,
       "temperature": 981,
       "exoplanet": true,
       "bump": true,
-      "color": "#A77733",
-      "clouds": false
+      "color": "#05C31B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-825-b",
@@ -85,18 +86,20 @@
       "radius": 132.8372093023256,
       "a": 0.0453,
       "e": 0,
-      "w": 80.92600399152961,
+      "w": 168.22100120901518,
       "o": 0,
       "orbitalPeriod": 3.77360059,
       "temperature": 1270,
       "exoplanet": true,
       "bump": true,
-      "color": "#58BC34",
-      "clouds": false
+      "color": "#D1B149",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-825, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-825 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-825 - System With 2 Exolanets "
 }

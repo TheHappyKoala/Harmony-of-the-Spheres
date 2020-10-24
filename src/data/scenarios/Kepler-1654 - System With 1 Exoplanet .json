@@ -73,12 +73,14 @@
       "temperature": 206,
       "exoplanet": true,
       "bump": false,
-      "color": "#D2003B",
-      "clouds": false
+      "color": "#BA17DB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1654, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1654 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1654 - System With 1 Exoplanet "
 }

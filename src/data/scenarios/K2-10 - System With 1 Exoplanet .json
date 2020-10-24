@@ -67,18 +67,20 @@
       "radius": 335.02325581395354,
       "a": 0.137,
       "e": 0.31,
-      "w": 334.0720853451233,
+      "w": 12.001808697104606,
       "o": 0,
       "orbitalPeriod": 19.3044,
       "temperature": 703,
       "exoplanet": true,
       "bump": false,
-      "color": "#323A1A",
-      "clouds": false
+      "color": "#8DC19D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-10, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-10 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-10 - System With 1 Exoplanet "
 }

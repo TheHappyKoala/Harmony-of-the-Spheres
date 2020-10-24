@@ -67,18 +67,20 @@
       "radius": 328.1860465116279,
       "a": 0.1291,
       "e": 0,
-      "w": 282.67161279649974,
+      "w": 286.62214977600144,
       "o": 0,
       "orbitalPeriod": 18.718269,
       "temperature": 583,
       "exoplanet": true,
       "bump": false,
-      "color": "#566F30",
-      "clouds": false
+      "color": "#A8989E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-276, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-276 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-276 - System With 1 Exoplanet "
 }

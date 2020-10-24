@@ -73,12 +73,14 @@
       "temperature": 1458,
       "exoplanet": true,
       "bump": false,
-      "color": "#54E880",
-      "clouds": false
+      "color": "#60E72E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-46, which contains 1 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-46 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HAT-P-46 - System With 1 Exoplanet "
 }

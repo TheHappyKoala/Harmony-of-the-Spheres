@@ -67,18 +67,20 @@
       "radius": 1250.232558139535,
       "a": 0.0664,
       "e": 0.078,
-      "w": 178.8972876604886,
+      "w": 344.41048519304655,
       "o": 0,
       "orbitalPeriod": 5.2072,
       "temperature": 1000,
       "exoplanet": true,
       "bump": false,
-      "color": "#66B547",
-      "clouds": false
+      "color": "#B34ACB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system DMPP-2, which contains 1 exoplanets and was discovered by the Multiple Facilities.",
   "name": "DMPP-2 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "DMPP-2 - System With 1 Exoplanet "
 }

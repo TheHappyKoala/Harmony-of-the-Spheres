@@ -73,8 +73,9 @@
       "temperature": 113.18848707245414,
       "exoplanet": true,
       "bump": false,
-      "color": "#6E253F",
-      "clouds": false
+      "color": "#5AB296",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 141399-d",
@@ -91,8 +92,9 @@
       "temperature": 175.07096036203149,
       "exoplanet": true,
       "bump": false,
-      "color": "#4CE4C4",
-      "clouds": false
+      "color": "#865D85",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 141399-c",
@@ -109,8 +111,9 @@
       "temperature": 304.9141972358581,
       "exoplanet": true,
       "bump": false,
-      "color": "#340B35",
-      "clouds": false
+      "color": "#D758F0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 141399-b",
@@ -127,12 +130,14 @@
       "temperature": 392.8829741724522,
       "exoplanet": true,
       "bump": false,
-      "color": "#7677AE",
-      "clouds": false
+      "color": "#8BC3D4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 141399, which contains 4 exoplanets and was discovered by the Multiple Observatories.",
   "name": "HD 141399 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 141399 - System With 4 Exolanets "
 }

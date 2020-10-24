@@ -73,8 +73,9 @@
       "temperature": 909.3285228866055,
       "exoplanet": true,
       "bump": true,
-      "color": "#26EDEE",
-      "clouds": false
+      "color": "#9A2262",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-90-b",
@@ -91,12 +92,14 @@
       "temperature": 502,
       "exoplanet": true,
       "bump": false,
-      "color": "#68195F",
-      "clouds": false
+      "color": "#21B748",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-90, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-90 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-90 - System With 2 Exolanets "
 }

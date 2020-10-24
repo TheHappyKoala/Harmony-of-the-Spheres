@@ -73,12 +73,14 @@
       "temperature": 216.25617645426806,
       "exoplanet": true,
       "bump": false,
-      "color": "#06636F",
-      "clouds": false
+      "color": "#32FA69",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system gam Cep, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "gam Cep - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "gam Cep - System With 1 Exoplanet "
 }

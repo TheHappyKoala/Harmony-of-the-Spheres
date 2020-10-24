@@ -67,14 +67,15 @@
       "radius": 235.3953488372093,
       "a": 0.205,
       "e": 0,
-      "w": 282.2044336860388,
+      "w": 286.9463046660724,
       "o": 0,
       "orbitalPeriod": 36.77031,
       "temperature": 437,
       "exoplanet": true,
       "bump": false,
-      "color": "#775DCE",
-      "clouds": false
+      "color": "#6F2E39",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-290-b",
@@ -85,18 +86,20 @@
       "radius": 196.32558139534885,
       "a": 0.11,
       "e": 0,
-      "w": 114.17210002128837,
+      "w": 158.48280575596527,
       "o": 0,
       "orbitalPeriod": 14.589347,
       "temperature": 594,
       "exoplanet": true,
       "bump": false,
-      "color": "#899464",
-      "clouds": false
+      "color": "#C4579D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-290, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-290 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-290 - System With 2 Exolanets "
 }

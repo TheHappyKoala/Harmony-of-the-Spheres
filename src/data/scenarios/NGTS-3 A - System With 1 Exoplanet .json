@@ -67,18 +67,20 @@
       "radius": 1445.5813953488373,
       "a": 0.023,
       "e": 0,
-      "w": 3.919560495874448,
+      "w": 82.74580630313437,
       "o": 0,
       "orbitalPeriod": 1.6753728,
       "temperature": 1610.036177382916,
       "exoplanet": true,
       "bump": false,
-      "color": "#55DE92",
-      "clouds": false
+      "color": "#2DF0C6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system NGTS-3 A, which contains 1 exoplanets and was discovered by the Paranal Observatory.",
   "name": "NGTS-3 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "NGTS-3 A - System With 1 Exoplanet "
 }

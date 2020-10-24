@@ -73,12 +73,14 @@
       "temperature": 132.4999492489194,
       "exoplanet": true,
       "bump": false,
-      "color": "#FEFB0E",
-      "clouds": false
+      "color": "#4DD6AA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 220689, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 220689 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 220689 - System With 1 Exoplanet "
 }

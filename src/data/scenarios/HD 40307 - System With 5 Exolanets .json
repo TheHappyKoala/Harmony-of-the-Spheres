@@ -73,8 +73,9 @@
       "temperature": 255,
       "exoplanet": true,
       "bump": false,
-      "color": "#1FEE26",
-      "clouds": false
+      "color": "#741ED8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 40307-f",
@@ -91,8 +92,9 @@
       "temperature": 398,
       "exoplanet": true,
       "bump": false,
-      "color": "#DAEFAE",
-      "clouds": false
+      "color": "#ADDAEE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 40307-d",
@@ -109,8 +111,9 @@
       "temperature": 541,
       "exoplanet": true,
       "bump": false,
-      "color": "#444278",
-      "clouds": false
+      "color": "#A5ADA4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 40307-c",
@@ -127,8 +130,9 @@
       "temperature": 696,
       "exoplanet": true,
       "bump": false,
-      "color": "#5DFE90",
-      "clouds": false
+      "color": "#57F18B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 40307-b",
@@ -145,12 +149,14 @@
       "temperature": 910,
       "exoplanet": true,
       "bump": true,
-      "color": "#12D485",
-      "clouds": false
+      "color": "#C216F0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 40307, which contains 5 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 40307 - System With 5 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 40307 - System With 5 Exolanets "
 }

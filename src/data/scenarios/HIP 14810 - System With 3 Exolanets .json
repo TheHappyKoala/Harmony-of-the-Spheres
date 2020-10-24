@@ -73,8 +73,9 @@
       "temperature": 174.01616335652608,
       "exoplanet": true,
       "bump": false,
-      "color": "#A6BA3C",
-      "clouds": false
+      "color": "#37F031",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HIP 14810-c",
@@ -91,8 +92,9 @@
       "temperature": 327.1178792785547,
       "exoplanet": true,
       "bump": false,
-      "color": "#3F1B9A",
-      "clouds": false
+      "color": "#3A51A3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HIP 14810-b",
@@ -109,12 +111,14 @@
       "temperature": 918.725634692091,
       "exoplanet": true,
       "bump": false,
-      "color": "#A0E25E",
-      "clouds": false
+      "color": "#5660B2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 14810, which contains 3 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HIP 14810 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HIP 14810 - System With 3 Exolanets "
 }

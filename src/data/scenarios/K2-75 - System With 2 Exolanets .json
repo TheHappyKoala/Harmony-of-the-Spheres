@@ -67,14 +67,15 @@
       "radius": 241.25581395348837,
       "a": 0.1429,
       "e": 0,
-      "w": 44.26774845730948,
+      "w": 284.38180270323846,
       "o": 0,
       "orbitalPeriod": 18.311,
       "temperature": 711.3392970488661,
       "exoplanet": true,
       "bump": false,
-      "color": "#AFB31F",
-      "clouds": false
+      "color": "#746660",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-75-b",
@@ -85,18 +86,20 @@
       "radius": 232.46511627906978,
       "a": 0.081,
       "e": 0,
-      "w": 209.83641231395228,
+      "w": 176.19660047671445,
       "o": 0,
       "orbitalPeriod": 7.8142,
       "temperature": 944.8228901944169,
       "exoplanet": true,
       "bump": false,
-      "color": "#241805",
-      "clouds": false
+      "color": "#979FE6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-75, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-75 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-75 - System With 2 Exolanets "
 }

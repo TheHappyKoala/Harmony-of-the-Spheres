@@ -73,12 +73,14 @@
       "temperature": 170.66679961336203,
       "exoplanet": true,
       "bump": false,
-      "color": "#C9907E",
-      "clouds": false
+      "color": "#2716D7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 145934, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 145934 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 145934 - System With 1 Exoplanet "
 }

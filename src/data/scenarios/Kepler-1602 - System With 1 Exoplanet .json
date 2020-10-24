@@ -67,18 +67,20 @@
       "radius": 117.2093023255814,
       "a": 0.1074,
       "e": 0,
-      "w": 281.15082551013637,
+      "w": 6.646548094356355,
       "o": 0,
       "orbitalPeriod": 11.17931605,
       "temperature": 1159,
       "exoplanet": true,
       "bump": true,
-      "color": "#13CE74",
-      "clouds": false
+      "color": "#6BF9B9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1602, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1602 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1602 - System With 1 Exoplanet "
 }

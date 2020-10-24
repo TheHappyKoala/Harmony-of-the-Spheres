@@ -67,18 +67,20 @@
       "radius": 912.2790697674419,
       "a": 8,
       "e": 0,
-      "w": 123.61667272542401,
+      "w": 298.8319052899556,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 450,
       "exoplanet": true,
       "bump": false,
-      "color": "#2534DD",
-      "clouds": false
+      "color": "#76D999",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WISEP J121756.91+162640.2 A, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "WISEP J121756.91+162640.2 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WISEP J121756.91+162640.2 A - System With 1 Exoplanet "
 }

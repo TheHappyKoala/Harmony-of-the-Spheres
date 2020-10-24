@@ -67,14 +67,15 @@
       "radius": 166.046511627907,
       "a": 0.1937,
       "e": 0,
-      "w": 133.22459451584987,
+      "w": 359.0050121851476,
       "o": 0,
       "orbitalPeriod": 40.718,
       "temperature": 381,
       "exoplanet": true,
       "bump": true,
-      "color": "#6142F6",
-      "clouds": true
+      "color": "#4D1AF2",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-155-c",
@@ -85,14 +86,15 @@
       "radius": 226.60465116279073,
       "a": 0.0946,
       "e": 0,
-      "w": 121.0496480750448,
+      "w": 293.80507569799573,
       "o": 0,
       "orbitalPeriod": 13.85,
       "temperature": 583,
       "exoplanet": true,
       "bump": false,
-      "color": "#B9EDFD",
-      "clouds": false
+      "color": "#0A8C4E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-155-b",
@@ -103,18 +105,20 @@
       "radius": 157.2558139534884,
       "a": 0.0562,
       "e": 0,
-      "w": 337.637313887083,
+      "w": 148.29367870648122,
       "o": 0,
       "orbitalPeriod": 6.342,
       "temperature": 708,
       "exoplanet": true,
       "bump": true,
-      "color": "#EDCD60",
-      "clouds": false
+      "color": "#764828",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-155, which contains 3 exoplanets and was discovered by the K2.",
   "name": "K2-155 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-155 - System With 3 Exolanets "
 }

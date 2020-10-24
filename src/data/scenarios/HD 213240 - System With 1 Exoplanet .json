@@ -73,12 +73,14 @@
       "temperature": 245.43882384380657,
       "exoplanet": true,
       "bump": false,
-      "color": "#5BBCF8",
-      "clouds": false
+      "color": "#6EF2A5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 213240, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 213240 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 213240 - System With 1 Exoplanet "
 }

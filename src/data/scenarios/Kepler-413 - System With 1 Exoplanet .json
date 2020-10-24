@@ -73,12 +73,14 @@
       "temperature": 347.7860911182964,
       "exoplanet": true,
       "bump": false,
-      "color": "#66F9F2",
-      "clouds": false
+      "color": "#AD0D99",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-413, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-413 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-413 - System With 1 Exoplanet "
 }

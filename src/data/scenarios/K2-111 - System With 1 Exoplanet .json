@@ -67,18 +67,20 @@
       "radius": 166.046511627907,
       "a": 0.0621,
       "e": 0,
-      "w": 198.7966347586006,
+      "w": 246.83604121535487,
       "o": 0,
       "orbitalPeriod": 5.35117,
       "temperature": 1309,
       "exoplanet": true,
       "bump": false,
-      "color": "#5473B8",
-      "clouds": false
+      "color": "#EEFF6A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-111, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-111 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-111 - System With 1 Exoplanet "
 }

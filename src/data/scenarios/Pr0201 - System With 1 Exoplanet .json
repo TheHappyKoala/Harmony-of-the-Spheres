@@ -67,18 +67,20 @@
       "radius": 1240.46511627907,
       "a": 0.06,
       "e": 0,
-      "w": 348.8961581150376,
+      "w": 142.46410904230228,
       "o": 0,
       "orbitalPeriod": 4.4264,
       "temperature": 1154.0910220809324,
       "exoplanet": true,
       "bump": false,
-      "color": "#BEB93E",
-      "clouds": false
+      "color": "#17E981",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Pr0201, which contains 1 exoplanets and was discovered by the Fred Lawrence Whipple Observatory.",
   "name": "Pr0201 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Pr0201 - System With 1 Exoplanet "
 }

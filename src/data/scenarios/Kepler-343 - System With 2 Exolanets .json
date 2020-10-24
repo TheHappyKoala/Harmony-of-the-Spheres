@@ -67,14 +67,15 @@
       "radius": 175.8139534883721,
       "a": 0.167,
       "e": 0,
-      "w": 110.39590149633283,
+      "w": 311.5730211664614,
       "o": 0,
       "orbitalPeriod": 23.22182,
       "temperature": 746,
       "exoplanet": true,
       "bump": true,
-      "color": "#510AEA",
-      "clouds": true
+      "color": "#14BEC6",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-343-b",
@@ -85,18 +86,20 @@
       "radius": 210,
       "a": 0.088,
       "e": 0,
-      "w": 339.9922447228187,
+      "w": 160.12190226904482,
       "o": 0,
       "orbitalPeriod": 8.96855,
       "temperature": 1024,
       "exoplanet": true,
       "bump": false,
-      "color": "#1B371A",
-      "clouds": false
+      "color": "#AC73BF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-343, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-343 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-343 - System With 2 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 247.11627906976747,
       "a": 0.1006,
       "e": 0,
-      "w": 346.98086663163116,
+      "w": 2.3773471198649165,
       "o": 0,
       "orbitalPeriod": 11.9548,
       "temperature": 906,
       "exoplanet": true,
       "bump": false,
-      "color": "#BDF0BE",
-      "clouds": false
+      "color": "#F4E649",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1665, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1665 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1665 - System With 1 Exoplanet "
 }

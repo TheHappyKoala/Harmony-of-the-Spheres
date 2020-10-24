@@ -67,18 +67,20 @@
       "radius": 1543.2558139534885,
       "a": 0.04997,
       "e": 0.312,
-      "w": 220.80951780352945,
+      "w": 49.40662707781216,
       "o": 0,
       "orbitalPeriod": 3.2642736,
       "temperature": 2101,
       "exoplanet": true,
       "bump": false,
-      "color": "#FBAC29",
-      "clouds": false
+      "color": "#D20013",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-40, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-40 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-40 - System With 1 Exoplanet "
 }

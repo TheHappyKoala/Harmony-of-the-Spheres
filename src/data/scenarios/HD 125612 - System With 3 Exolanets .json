@@ -73,8 +73,9 @@
       "temperature": 129.11557724011132,
       "exoplanet": true,
       "bump": false,
-      "color": "#BC554F",
-      "clouds": false
+      "color": "#BD2C87",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 125612-c",
@@ -91,8 +92,9 @@
       "temperature": 1136.5172046715093,
       "exoplanet": true,
       "bump": false,
-      "color": "#320D42",
-      "clouds": false
+      "color": "#43CD18",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 125612-b",
@@ -109,12 +111,14 @@
       "temperature": 222.1082049903089,
       "exoplanet": true,
       "bump": false,
-      "color": "#728AB3",
-      "clouds": false
+      "color": "#B2FAFD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 125612, which contains 3 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 125612 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 125612 - System With 3 Exolanets "
 }

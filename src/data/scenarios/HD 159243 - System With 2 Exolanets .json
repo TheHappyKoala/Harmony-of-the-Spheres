@@ -73,8 +73,9 @@
       "temperature": 292.831604693461,
       "exoplanet": true,
       "bump": false,
-      "color": "#503C17",
-      "clouds": false
+      "color": "#F949BA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 159243-b",
@@ -91,12 +92,14 @@
       "temperature": 789.7081104368875,
       "exoplanet": true,
       "bump": false,
-      "color": "#101F76",
-      "clouds": false
+      "color": "#70FB13",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 159243, which contains 2 exoplanets and was discovered by the Haute-Provence Observatory.",
   "name": "HD 159243 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 159243 - System With 2 Exolanets "
 }

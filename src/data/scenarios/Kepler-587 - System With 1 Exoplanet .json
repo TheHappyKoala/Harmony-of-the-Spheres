@@ -67,18 +67,20 @@
       "radius": 194.37209302325584,
       "a": 0.0952,
       "e": 0,
-      "w": 288.6481054675062,
+      "w": 151.8608849928175,
       "o": 0,
       "orbitalPeriod": 10.94027841,
       "temperature": 764,
       "exoplanet": true,
       "bump": false,
-      "color": "#6068CF",
-      "clouds": false
+      "color": "#05A2E7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-587, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-587 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-587 - System With 1 Exoplanet "
 }

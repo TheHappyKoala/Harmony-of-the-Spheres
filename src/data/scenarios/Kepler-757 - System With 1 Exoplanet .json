@@ -67,18 +67,20 @@
       "radius": 118.18604651162791,
       "a": 0.019,
       "e": 0,
-      "w": 312.234279334289,
+      "w": 254.80968326267939,
       "o": 0,
       "orbitalPeriod": 1.02267882,
       "temperature": 1734,
       "exoplanet": true,
       "bump": true,
-      "color": "#638133",
-      "clouds": false
+      "color": "#0B9A15",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-757, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-757 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-757 - System With 1 Exoplanet "
 }

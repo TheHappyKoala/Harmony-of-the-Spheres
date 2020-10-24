@@ -67,18 +67,20 @@
       "radius": 1079.3023255813955,
       "a": 0.02712,
       "e": 0.126,
-      "w": 254.613597276122,
+      "w": 206.19916489023885,
       "o": 0,
       "orbitalPeriod": 1.74748753,
       "temperature": 1505,
       "exoplanet": true,
       "bump": false,
-      "color": "#E0A1E7",
-      "clouds": false
+      "color": "#15C02B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-15, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-15 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-15 - System With 1 Exoplanet "
 }

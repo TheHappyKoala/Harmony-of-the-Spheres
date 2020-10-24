@@ -67,18 +67,20 @@
       "radius": 269.58139534883725,
       "a": 0.1345,
       "e": 0,
-      "w": 158.4331532049801,
+      "w": 341.684311195155,
       "o": 0,
       "orbitalPeriod": 20.38177573,
       "temperature": 528,
       "exoplanet": true,
       "bump": false,
-      "color": "#E2E251",
-      "clouds": false
+      "color": "#B79241",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-859, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-859 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-859 - System With 1 Exoplanet "
 }

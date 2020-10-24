@@ -67,18 +67,20 @@
       "radius": 1172.093023255814,
       "a": 0.0968,
       "e": 0,
-      "w": 96.39874597674712,
+      "w": 289.96412036871084,
       "o": 0,
       "orbitalPeriod": 10.79,
       "temperature": 796.318398009721,
       "exoplanet": true,
       "bump": false,
-      "color": "#6FFF99",
-      "clouds": false
+      "color": "#B431BC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TAP 26, which contains 1 exoplanets and was discovered by the Multiple Facilities.",
   "name": "TAP 26 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TAP 26 - System With 1 Exoplanet "
 }

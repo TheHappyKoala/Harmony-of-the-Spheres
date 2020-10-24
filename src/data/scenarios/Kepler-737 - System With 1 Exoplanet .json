@@ -67,18 +67,20 @@
       "radius": 170.93023255813952,
       "a": 0.1422,
       "e": 0,
-      "w": 229.3814175065112,
+      "w": 322.5919622495494,
       "o": 0,
       "orbitalPeriod": 28.59915399,
       "temperature": 298,
       "exoplanet": true,
       "bump": true,
-      "color": "#1E5859",
-      "clouds": true
+      "color": "#A022F7",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-737, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-737 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-737 - System With 1 Exoplanet "
 }

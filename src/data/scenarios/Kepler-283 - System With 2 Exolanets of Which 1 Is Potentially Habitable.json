@@ -67,14 +67,15 @@
       "radius": 158.2325581395349,
       "a": 0.341,
       "e": 0,
-      "w": 102.48605665852413,
+      "w": 94.09122656807081,
       "o": 0,
       "orbitalPeriod": 92.743711,
       "temperature": 240,
       "exoplanet": true,
       "bump": true,
-      "color": "#D2E47B",
-      "clouds": false
+      "color": "#E7C9DF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-283-b",
@@ -85,18 +86,20 @@
       "radius": 185.58139534883722,
       "a": 0.082,
       "e": 0,
-      "w": 332.87651685865626,
+      "w": 224.83231646846713,
       "o": 0,
       "orbitalPeriod": 11.008151,
       "temperature": 488,
       "exoplanet": true,
       "bump": false,
-      "color": "#FE0DDA",
-      "clouds": false
+      "color": "#D3AB8B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-283, which contains 2 exoplanets, of which 1 is potentially habitable, and was discovered by the Kepler.",
   "name": "Kepler-283 - System With 2 Exolanets of Which 1 Is Potentially Habitable",
-  "cameraFocus": "Kepler-283-c"
+  "cameraFocus": "Kepler-283-c",
+  "fileName": "Kepler-283 - System With 2 Exolanets of Which 1 Is Potentially Habitable"
 }

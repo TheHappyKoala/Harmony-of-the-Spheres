@@ -67,14 +67,15 @@
       "radius": 197.30232558139537,
       "a": 0.152,
       "e": 0,
-      "w": 8.441573056871139,
+      "w": 4.771331582088987,
       "o": 0,
       "orbitalPeriod": 21.347262,
       "temperature": 648,
       "exoplanet": true,
       "bump": false,
-      "color": "#5C8A03",
-      "clouds": false
+      "color": "#FD6032",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-163-b",
@@ -85,18 +86,20 @@
       "radius": 91.81395348837209,
       "a": 0.078,
       "e": 0,
-      "w": 105.70957374831194,
+      "w": 325.73341905289794,
       "o": 0,
       "orbitalPeriod": 7.810937,
       "temperature": 906,
       "exoplanet": true,
       "bump": true,
-      "color": "#4E28E0",
-      "clouds": false
+      "color": "#E06323",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-163, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-163 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-163 - System With 2 Exolanets "
 }

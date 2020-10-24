@@ -67,18 +67,20 @@
       "radius": 272.5116279069768,
       "a": 0.1083,
       "e": 0,
-      "w": 111.8778703041449,
+      "w": 152.09255556777,
       "o": 0,
       "orbitalPeriod": 14.53244172,
       "temperature": 664,
       "exoplanet": true,
       "bump": false,
-      "color": "#15DD88",
-      "clouds": false
+      "color": "#299B8D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-955, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-955 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-955 - System With 1 Exoplanet "
 }

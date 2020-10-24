@@ -67,18 +67,20 @@
       "radius": 1089.0697674418604,
       "a": 0.0549,
       "e": 0,
-      "w": 164.76416059662233,
+      "w": 153.0290280007843,
       "o": 0,
       "orbitalPeriod": 4.60273,
       "temperature": 1404,
       "exoplanet": true,
       "bump": false,
-      "color": "#7E65EB",
-      "clouds": false
+      "color": "#29B4D9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-147, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-147 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-147 - System With 1 Exoplanet "
 }

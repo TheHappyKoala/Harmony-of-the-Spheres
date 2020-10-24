@@ -67,18 +67,20 @@
       "radius": 132.8372093023256,
       "a": 0.0785,
       "e": 0,
-      "w": 332.6005299462505,
+      "w": 298.0434430826819,
       "o": 0,
       "orbitalPeriod": 7.99019627,
       "temperature": 1113,
       "exoplanet": true,
       "bump": true,
-      "color": "#F07E54",
-      "clouds": false
+      "color": "#FC5D99",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1289, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1289 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1289 - System With 1 Exoplanet "
 }

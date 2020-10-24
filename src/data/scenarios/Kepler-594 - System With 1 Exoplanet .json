@@ -67,18 +67,20 @@
       "radius": 189.4883720930233,
       "a": 0.1089,
       "e": 0,
-      "w": 44.05763764912771,
+      "w": 29.46896856241228,
       "o": 0,
       "orbitalPeriod": 13.64618192,
       "temperature": 678,
       "exoplanet": true,
       "bump": false,
-      "color": "#947BC4",
-      "clouds": false
+      "color": "#BF20DC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-594, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-594 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-594 - System With 1 Exoplanet "
 }

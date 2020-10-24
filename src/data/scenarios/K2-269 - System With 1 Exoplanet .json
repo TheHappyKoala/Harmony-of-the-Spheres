@@ -67,18 +67,20 @@
       "radius": 136.74418604651166,
       "a": 0.0531,
       "e": 0,
-      "w": 161.2789444116315,
+      "w": 357.47310245750776,
       "o": 0,
       "orbitalPeriod": 4.144965,
       "temperature": 1429,
       "exoplanet": true,
       "bump": true,
-      "color": "#BFE85B",
-      "clouds": false
+      "color": "#20C7D6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-269, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-269 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-269 - System With 1 Exoplanet "
 }

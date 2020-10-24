@@ -73,12 +73,14 @@
       "temperature": 489.69722391152334,
       "exoplanet": true,
       "bump": false,
-      "color": "#96DA1C",
-      "clouds": false
+      "color": "#B29BB5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Gl 49, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "Gl 49 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Gl 49 - System With 1 Exoplanet "
 }

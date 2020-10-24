@@ -67,18 +67,20 @@
       "radius": 113.30232558139537,
       "a": 0.0473,
       "e": 0,
-      "w": 131.4410648325273,
+      "w": 191.16795981893867,
       "o": 0,
       "orbitalPeriod": 3.56809693,
       "temperature": 1407,
       "exoplanet": true,
       "bump": true,
-      "color": "#32A065",
-      "clouds": false
+      "color": "#395429",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-507, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-507 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-507 - System With 1 Exoplanet "
 }

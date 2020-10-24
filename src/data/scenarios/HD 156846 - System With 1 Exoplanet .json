@@ -73,12 +73,14 @@
       "temperature": 289.4341204415342,
       "exoplanet": true,
       "bump": false,
-      "color": "#1B1601",
-      "clouds": false
+      "color": "#FBD609",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 156846, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 156846 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 156846 - System With 1 Exoplanet "
 }

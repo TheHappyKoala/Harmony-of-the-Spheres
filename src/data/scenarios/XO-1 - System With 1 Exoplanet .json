@@ -67,18 +67,20 @@
       "radius": 1113.4883720930231,
       "a": 0.0488,
       "e": 0,
-      "w": 8.575992759926567,
+      "w": 238.5942545764836,
       "o": 0,
       "orbitalPeriod": 3.94153,
       "temperature": 1210,
       "exoplanet": true,
       "bump": false,
-      "color": "#92C05D",
-      "clouds": false
+      "color": "#4D217F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system XO-1, which contains 1 exoplanets and was discovered by the XO.",
   "name": "XO-1 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "XO-1 - System With 1 Exoplanet "
 }

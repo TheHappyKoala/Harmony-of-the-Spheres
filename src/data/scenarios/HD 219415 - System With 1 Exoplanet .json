@@ -73,12 +73,14 @@
       "temperature": 134.48518190315042,
       "exoplanet": true,
       "bump": false,
-      "color": "#2D7816",
-      "clouds": false
+      "color": "#A90EE7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 219415, which contains 1 exoplanets and was discovered by the McDonald Observatory.",
   "name": "HD 219415 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 219415 - System With 1 Exoplanet "
 }

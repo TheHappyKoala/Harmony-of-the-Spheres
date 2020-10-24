@@ -67,18 +67,20 @@
       "radius": 111.34883720930233,
       "a": 0.0523,
       "e": 0,
-      "w": 299.241264149192,
+      "w": 157.94834444923103,
       "o": 0,
       "orbitalPeriod": 4.89718784,
       "temperature": 904,
       "exoplanet": true,
       "bump": true,
-      "color": "#9E7408",
-      "clouds": false
+      "color": "#D5C14B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-776, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-776 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-776 - System With 1 Exoplanet "
 }

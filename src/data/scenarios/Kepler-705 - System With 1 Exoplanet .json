@@ -67,18 +67,20 @@
       "radius": 183.62790697674419,
       "a": 0.232,
       "e": 0,
-      "w": 87.04599012094386,
+      "w": 140.46989279979994,
       "o": 0,
       "orbitalPeriod": 56.0560538,
       "temperature": 265,
       "exoplanet": true,
       "bump": false,
-      "color": "#1E0105",
-      "clouds": false
+      "color": "#5EF913",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-705, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-705 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-705 - System With 1 Exoplanet "
 }

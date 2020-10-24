@@ -67,14 +67,15 @@
       "radius": 400.4651162790698,
       "a": 0.1455,
       "e": 0.051,
-      "w": 53.366523296244864,
+      "w": 288.18411867690423,
       "o": 0,
       "orbitalPeriod": 19.72567,
       "temperature": 751,
       "exoplanet": true,
       "bump": true,
-      "color": "#F61339",
-      "clouds": true
+      "color": "#E91E29",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-223-d",
@@ -85,14 +86,15 @@
       "radius": 456.13953488372096,
       "a": 0.1201,
       "e": 0.037,
-      "w": 178.68801284243563,
+      "w": 257.64468414462357,
       "o": 0,
       "orbitalPeriod": 14.78869,
       "temperature": 827,
       "exoplanet": true,
       "bump": false,
-      "color": "#99EEB8",
-      "clouds": false
+      "color": "#CCA78E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-223-c",
@@ -103,14 +105,15 @@
       "radius": 299.8604651162791,
       "a": 0.0916,
       "e": 0.15,
-      "w": 259.9515483724142,
+      "w": 170.23918074400297,
       "o": 0,
       "orbitalPeriod": 9.84564,
       "temperature": 947,
       "exoplanet": true,
       "bump": false,
-      "color": "#62B022",
-      "clouds": false
+      "color": "#C4E7C3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-223-b",
@@ -121,18 +124,20 @@
       "radius": 260.79069767441865,
       "a": 0.0756,
       "e": 0.078,
-      "w": 336.0803160914748,
+      "w": 94.04081563466765,
       "o": 0,
       "orbitalPeriod": 7.38449,
       "temperature": 1042,
       "exoplanet": true,
       "bump": false,
-      "color": "#6B2FE4",
-      "clouds": false
+      "color": "#7A0BFE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-223, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-223 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-223 - System With 4 Exolanets "
 }

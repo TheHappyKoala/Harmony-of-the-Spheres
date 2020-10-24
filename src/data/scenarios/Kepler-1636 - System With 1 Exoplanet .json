@@ -67,18 +67,20 @@
       "radius": 281.30232558139534,
       "a": 1.1546,
       "e": 0,
-      "w": 94.39412102259939,
+      "w": 103.20529084534903,
       "o": 0,
       "orbitalPeriod": 425.47785,
       "temperature": 248,
       "exoplanet": true,
       "bump": false,
-      "color": "#B9A098",
-      "clouds": false
+      "color": "#95AEFA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1636, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1636 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1636 - System With 1 Exoplanet "
 }

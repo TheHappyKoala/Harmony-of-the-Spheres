@@ -67,18 +67,20 @@
       "radius": 125.0232558139535,
       "a": 0.0917,
       "e": 0,
-      "w": 188.68073484841088,
+      "w": 172.70277291516834,
       "o": 0,
       "orbitalPeriod": 10.3108245,
       "temperature": 786,
       "exoplanet": true,
       "bump": true,
-      "color": "#A55CA7",
-      "clouds": false
+      "color": "#825950",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1380, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1380 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1380 - System With 1 Exoplanet "
 }

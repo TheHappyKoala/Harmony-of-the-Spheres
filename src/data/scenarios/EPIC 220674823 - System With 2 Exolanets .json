@@ -73,8 +73,9 @@
       "temperature": 741,
       "exoplanet": true,
       "bump": false,
-      "color": "#B1F447",
-      "clouds": false
+      "color": "#B910E6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "EPIC 220674823-b",
@@ -85,18 +86,20 @@
       "radius": 158.2325581395349,
       "a": 0.0134,
       "e": 0,
-      "w": 251.0107540801068,
+      "w": 297.6030275068253,
       "o": 0,
       "orbitalPeriod": 0.571331,
       "temperature": 2119,
       "exoplanet": true,
       "bump": false,
-      "color": "#3175A7",
-      "clouds": false
+      "color": "#24C07E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system EPIC 220674823, which contains 2 exoplanets and was discovered by the K2.",
   "name": "EPIC 220674823 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "EPIC 220674823 - System With 2 Exolanets "
 }

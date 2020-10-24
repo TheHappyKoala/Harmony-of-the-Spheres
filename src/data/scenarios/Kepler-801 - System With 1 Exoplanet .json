@@ -67,18 +67,20 @@
       "radius": 173.86046511627907,
       "a": 0.0795,
       "e": 0,
-      "w": 22.03113869499657,
+      "w": 8.231952974496082,
       "o": 0,
       "orbitalPeriod": 11.41928253,
       "temperature": 419,
       "exoplanet": true,
       "bump": true,
-      "color": "#28D923",
-      "clouds": true
+      "color": "#C4D1E5",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-801, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-801 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-801 - System With 1 Exoplanet "
 }

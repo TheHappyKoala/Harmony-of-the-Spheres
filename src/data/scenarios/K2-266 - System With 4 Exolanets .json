@@ -73,8 +73,9 @@
       "temperature": 490,
       "exoplanet": true,
       "bump": false,
-      "color": "#3324F8",
-      "clouds": false
+      "color": "#DC24F0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-266-d",
@@ -91,8 +92,9 @@
       "temperature": 538,
       "exoplanet": true,
       "bump": false,
-      "color": "#1657F5",
-      "clouds": false
+      "color": "#D2E744",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-266-c",
@@ -109,8 +111,9 @@
       "temperature": 664,
       "exoplanet": true,
       "bump": true,
-      "color": "#38E9C7",
-      "clouds": false
+      "color": "#5B7ECD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-266-b",
@@ -121,18 +124,20 @@
       "radius": 287.16279069767444,
       "a": 0.01306,
       "e": 0,
-      "w": 281.4049435613875,
+      "w": 51.11998317566804,
       "o": 0,
       "orbitalPeriod": 0.658524,
       "temperature": 1515,
       "exoplanet": true,
       "bump": false,
-      "color": "#CB22B4",
-      "clouds": false
+      "color": "#AA6DEF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-266, which contains 4 exoplanets and was discovered by the K2.",
   "name": "K2-266 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-266 - System With 4 Exolanets "
 }

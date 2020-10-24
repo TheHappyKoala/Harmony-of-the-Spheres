@@ -73,12 +73,14 @@
       "temperature": 168.51450564721492,
       "exoplanet": true,
       "bump": false,
-      "color": "#A93DBB",
-      "clouds": false
+      "color": "#2D86E1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 106270, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 106270 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 106270 - System With 1 Exoplanet "
 }

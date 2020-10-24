@@ -67,14 +67,15 @@
       "radius": 318.4186046511628,
       "a": 0.6253,
       "e": 0,
-      "w": 124.95389113371567,
+      "w": 354.1306629524941,
       "o": 0,
       "orbitalPeriod": 198.7112502,
       "temperature": 258,
       "exoplanet": true,
       "bump": false,
-      "color": "#AA9DB6",
-      "clouds": false
+      "color": "#A5CFDF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-967-b",
@@ -85,18 +86,20 @@
       "radius": 205.11627906976744,
       "a": 0.1027,
       "e": 0,
-      "w": 139.2761820217561,
+      "w": 169.56549853723004,
       "o": 0,
       "orbitalPeriod": 13.22713379,
       "temperature": 638,
       "exoplanet": true,
       "bump": false,
-      "color": "#F3735B",
-      "clouds": false
+      "color": "#646743",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-967, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-967 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-967 - System With 2 Exolanets "
 }

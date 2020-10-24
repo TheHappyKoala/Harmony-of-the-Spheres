@@ -67,18 +67,20 @@
       "radius": 137.72093023255815,
       "a": 0.0269,
       "e": 0,
-      "w": 193.32237025855173,
+      "w": 30.486940148782384,
       "o": 0,
       "orbitalPeriod": 1.5690665,
       "temperature": 1849,
       "exoplanet": true,
       "bump": true,
-      "color": "#D6E930",
-      "clouds": false
+      "color": "#837BCB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1072, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1072 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1072 - System With 1 Exoplanet "
 }

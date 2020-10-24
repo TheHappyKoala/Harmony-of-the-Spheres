@@ -67,18 +67,20 @@
       "radius": 139.67441860465115,
       "a": 0.0204,
       "e": 0,
-      "w": 126.10926371609499,
+      "w": 153.94814701518473,
       "o": 0,
       "orbitalPeriod": 1.21956827,
       "temperature": 1252,
       "exoplanet": true,
       "bump": true,
-      "color": "#0C532C",
-      "clouds": false
+      "color": "#76F3A5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-842, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-842 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-842 - System With 1 Exoplanet "
 }

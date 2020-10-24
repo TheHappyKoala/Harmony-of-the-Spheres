@@ -67,18 +67,20 @@
       "radius": 277.39534883720927,
       "a": 0.019,
       "e": 0,
-      "w": 149.96803956018263,
+      "w": 92.54522958530754,
       "o": 0,
       "orbitalPeriod": 1.3373508,
       "temperature": 1650,
       "exoplanet": true,
       "bump": false,
-      "color": "#79137F",
-      "clouds": false
+      "color": "#0EE3EB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system NGTS-4, which contains 1 exoplanets and was discovered by the Paranal Observatory.",
   "name": "NGTS-4 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "NGTS-4 - System With 1 Exoplanet "
 }

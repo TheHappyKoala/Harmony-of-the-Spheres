@@ -73,12 +73,14 @@
       "temperature": 217.7108459444116,
       "exoplanet": true,
       "bump": false,
-      "color": "#8DE4B9",
-      "clouds": false
+      "color": "#76D753",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 6 Lyn, which contains 1 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "6 Lyn - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "6 Lyn - System With 1 Exoplanet "
 }

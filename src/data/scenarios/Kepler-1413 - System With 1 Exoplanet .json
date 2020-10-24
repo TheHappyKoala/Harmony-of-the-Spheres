@@ -67,18 +67,20 @@
       "radius": 158.2325581395349,
       "a": 0.1066,
       "e": 0,
-      "w": 64.63156697318567,
+      "w": 349.03683102451004,
       "o": 0,
       "orbitalPeriod": 13.1829642,
       "temperature": 661,
       "exoplanet": true,
       "bump": true,
-      "color": "#F0E0C0",
-      "clouds": false
+      "color": "#28EE89",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1413, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1413 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1413 - System With 1 Exoplanet "
 }

@@ -73,12 +73,14 @@
       "temperature": 93.10346884875595,
       "exoplanet": true,
       "bump": false,
-      "color": "#24ECA1",
-      "clouds": false
+      "color": "#5CF539",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 87883, which contains 1 exoplanets and was discovered by the Lick Observatory.",
   "name": "HD 87883 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 87883 - System With 1 Exoplanet "
 }

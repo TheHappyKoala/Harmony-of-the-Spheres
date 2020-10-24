@@ -73,12 +73,14 @@
       "temperature": 1978,
       "exoplanet": true,
       "bump": false,
-      "color": "#2B08E1",
-      "clouds": false
+      "color": "#783D5D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system LTT 9779, which contains 1 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "LTT 9779 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "LTT 9779 - System With 1 Exoplanet "
 }

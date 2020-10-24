@@ -67,14 +67,15 @@
       "radius": 108.4186046511628,
       "a": 0.146,
       "e": 0,
-      "w": 167.23396159402407,
+      "w": 263.75866579510927,
       "o": 0,
       "orbitalPeriod": 24.209842,
       "temperature": 451,
       "exoplanet": true,
       "bump": true,
-      "color": "#17CB57",
-      "clouds": false
+      "color": "#5CC9BD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-354-c",
@@ -85,14 +86,15 @@
       "radius": 114.27906976744187,
       "a": 0.115,
       "e": 0,
-      "w": 92.5436171335009,
+      "w": 79.35696841098361,
       "o": 0,
       "orbitalPeriod": 16.934402,
       "temperature": 508,
       "exoplanet": true,
       "bump": true,
-      "color": "#C1106A",
-      "clouds": false
+      "color": "#80FBA4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-354-b",
@@ -103,18 +105,20 @@
       "radius": 160.18604651162792,
       "a": 0.054,
       "e": 0,
-      "w": 246.26802916550722,
+      "w": 356.8595926144844,
       "o": 0,
       "orbitalPeriod": 5.47666,
       "temperature": 741,
       "exoplanet": true,
       "bump": true,
-      "color": "#4AD194",
-      "clouds": false
+      "color": "#EDC5C9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-354, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-354 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-354 - System With 3 Exolanets "
 }

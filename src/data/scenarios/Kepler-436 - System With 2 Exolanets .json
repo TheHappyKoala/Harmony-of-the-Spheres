@@ -67,14 +67,15 @@
       "radius": 203.1627906976744,
       "a": 0.1158,
       "e": 0,
-      "w": 217.03378519016817,
+      "w": 285.96238193436824,
       "o": 0,
       "orbitalPeriod": 16.79713874,
       "temperature": 503,
       "exoplanet": true,
       "bump": false,
-      "color": "#E99E1F",
-      "clouds": false
+      "color": "#04821F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-436-b",
@@ -85,18 +86,20 @@
       "radius": 234.4186046511628,
       "a": 0.339,
       "e": 0.19,
-      "w": 111.06072728906537,
+      "w": 0.8055460750015353,
       "o": 0,
       "orbitalPeriod": 64.00205,
       "temperature": 322,
       "exoplanet": true,
       "bump": false,
-      "color": "#09BE57",
-      "clouds": false
+      "color": "#13784F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-436, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-436 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-436 - System With 2 Exolanets "
 }

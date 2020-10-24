@@ -73,12 +73,14 @@
       "temperature": 343.6934270130347,
       "exoplanet": true,
       "bump": false,
-      "color": "#D41A77",
-      "clouds": false
+      "color": "#077A04",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 8574, which contains 1 exoplanets and was discovered by the Haute-Provence Observatory.",
   "name": "HD 8574 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 8574 - System With 1 Exoplanet "
 }

@@ -73,12 +73,14 @@
       "temperature": 167.11843095679976,
       "exoplanet": true,
       "bump": false,
-      "color": "#86FB7D",
-      "clouds": false
+      "color": "#D59DFF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 85390, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 85390 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 85390 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 752,
       "exoplanet": true,
       "bump": false,
-      "color": "#A04710",
-      "clouds": false
+      "color": "#FBC09F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "EPIC 249893012-c",
@@ -91,8 +92,9 @@
       "temperature": 990,
       "exoplanet": true,
       "bump": false,
-      "color": "#4A89F1",
-      "clouds": false
+      "color": "#8FF1BA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "EPIC 249893012-b",
@@ -109,12 +111,14 @@
       "temperature": 1616,
       "exoplanet": true,
       "bump": false,
-      "color": "#E8454F",
-      "clouds": false
+      "color": "#2063D1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system EPIC 249893012, which contains 3 exoplanets and was discovered by the K2.",
   "name": "EPIC 249893012 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "EPIC 249893012 - System With 3 Exolanets "
 }

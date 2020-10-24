@@ -73,12 +73,14 @@
       "temperature": 905.3713989617098,
       "exoplanet": true,
       "bump": true,
-      "color": "#D508A9",
-      "clouds": false
+      "color": "#576FB0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-89, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-89 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-89 - System With 1 Exoplanet "
 }

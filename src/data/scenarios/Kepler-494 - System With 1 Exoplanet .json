@@ -67,18 +67,20 @@
       "radius": 622.186046511628,
       "a": 0.0804,
       "e": 0,
-      "w": 277.80943897073587,
+      "w": 337.7296198874507,
       "o": 0,
       "orbitalPeriod": 8.02511821,
       "temperature": 1093,
       "exoplanet": true,
       "bump": false,
-      "color": "#C8B4E2",
-      "clouds": false
+      "color": "#730168",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-494, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-494 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-494 - System With 1 Exoplanet "
 }

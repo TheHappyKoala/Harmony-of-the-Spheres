@@ -73,12 +73,14 @@
       "temperature": 283.91345839610085,
       "exoplanet": true,
       "bump": false,
-      "color": "#49F63D",
-      "clouds": false
+      "color": "#015F00",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system omi UMa, which contains 1 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "omi UMa - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "omi UMa - System With 1 Exoplanet "
 }

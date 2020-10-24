@@ -67,18 +67,20 @@
       "radius": 1086.1395348837211,
       "a": 0.0334,
       "e": 0,
-      "w": 288.16872269608393,
+      "w": 74.27834125460629,
       "o": 0,
       "orbitalPeriod": 2.3114243,
       "temperature": 1480,
       "exoplanet": true,
       "bump": false,
-      "color": "#41FECB",
-      "clouds": false
+      "color": "#B0CECF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-65, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-65 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-65 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 125.0232558139535,
       "a": 0.0476,
       "e": 0.27,
-      "w": 313.61101277952395,
+      "w": 194.30970185533334,
       "o": 0,
       "orbitalPeriod": 8.929,
       "temperature": 300,
       "exoplanet": true,
       "bump": true,
-      "color": "#970BB8",
-      "clouds": false
+      "color": "#D09794",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 1132-b",
@@ -85,18 +86,20 @@
       "radius": 98.65116279069768,
       "a": 0.0153,
       "e": 0.22,
-      "w": 103.04436691003788,
+      "w": 231.49672845420804,
       "o": 0,
       "orbitalPeriod": 1.628931,
       "temperature": 529,
       "exoplanet": true,
       "bump": true,
-      "color": "#CED02B",
-      "clouds": false
+      "color": "#810E83",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 1132, which contains 2 exoplanets and was discovered by the Cerro Tololo Inter-American Observatory.",
   "name": "GJ 1132 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 1132 - System With 2 Exolanets "
 }

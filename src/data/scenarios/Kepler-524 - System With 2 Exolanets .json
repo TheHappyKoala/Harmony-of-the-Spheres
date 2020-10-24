@@ -67,14 +67,15 @@
       "radius": 84,
       "a": 0.0303,
       "e": 0,
-      "w": 39.92184830028176,
+      "w": 290.4719660672692,
       "o": 0,
       "orbitalPeriod": 1.88897906,
       "temperature": 1574,
       "exoplanet": true,
       "bump": true,
-      "color": "#FB9C2B",
-      "clouds": false
+      "color": "#BD15DA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-524-b",
@@ -85,18 +86,20 @@
       "radius": 166.046511627907,
       "a": 0.0791,
       "e": 0,
-      "w": 89.21816860538046,
+      "w": 181.1745721853329,
       "o": 0,
       "orbitalPeriod": 7.97419807,
       "temperature": 974,
       "exoplanet": true,
       "bump": true,
-      "color": "#914F71",
-      "clouds": true
+      "color": "#0438F5",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-524, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-524 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-524 - System With 2 Exolanets "
 }

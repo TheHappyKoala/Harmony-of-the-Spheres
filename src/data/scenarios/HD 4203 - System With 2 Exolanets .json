@@ -73,8 +73,9 @@
       "temperature": 107.87965063953271,
       "exoplanet": true,
       "bump": false,
-      "color": "#3BCA01",
-      "clouds": false
+      "color": "#EFC42E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 4203-b",
@@ -91,12 +92,14 @@
       "temperature": 262.9293106450485,
       "exoplanet": true,
       "bump": false,
-      "color": "#6D9912",
-      "clouds": false
+      "color": "#9C85D1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 4203, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 4203 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 4203 - System With 2 Exolanets "
 }

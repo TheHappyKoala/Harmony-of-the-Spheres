@@ -67,14 +67,15 @@
       "radius": 195.34883720930236,
       "a": 0.24,
       "e": 0,
-      "w": 204.7963658053916,
+      "w": 23.298155749390776,
       "o": 0,
       "orbitalPeriod": 47.427737,
       "temperature": 407,
       "exoplanet": true,
       "bump": false,
-      "color": "#B5BE87",
-      "clouds": false
+      "color": "#984D91",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-196-b",
@@ -85,18 +86,20 @@
       "radius": 166.046511627907,
       "a": 0.138,
       "e": 0,
-      "w": 68.46844572454562,
+      "w": 238.28596107352163,
       "o": 0,
       "orbitalPeriod": 20.739886,
       "temperature": 536,
       "exoplanet": true,
       "bump": true,
-      "color": "#9DA993",
-      "clouds": true
+      "color": "#86929E",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-196, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-196 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-196 - System With 2 Exolanets "
 }

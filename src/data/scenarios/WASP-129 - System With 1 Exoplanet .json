@@ -67,18 +67,20 @@
       "radius": 908.372093023256,
       "a": 0.0628,
       "e": 0.096,
-      "w": 334.35036534467355,
+      "w": 231.45796243239852,
       "o": 0,
       "orbitalPeriod": 5.748145,
       "temperature": 1100,
       "exoplanet": true,
       "bump": false,
-      "color": "#96720A",
-      "clouds": false
+      "color": "#428F48",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-129, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-129 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-129 - System With 1 Exoplanet "
 }

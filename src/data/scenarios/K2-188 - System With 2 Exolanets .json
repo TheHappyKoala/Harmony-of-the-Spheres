@@ -67,14 +67,15 @@
       "radius": 246.13953488372096,
       "a": 0.0785,
       "e": 0,
-      "w": 310.03709473197034,
+      "w": 230.05016770235966,
       "o": 0,
       "orbitalPeriod": 7.810253,
       "temperature": 1026,
       "exoplanet": true,
       "bump": false,
-      "color": "#3F3B35",
-      "clouds": false
+      "color": "#33DD8F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-188-b",
@@ -85,18 +86,20 @@
       "radius": 117.2093023255814,
       "a": 0.0289,
       "e": 0,
-      "w": 317.35871689633,
+      "w": 20.425595435574042,
       "o": 0,
       "orbitalPeriod": 1.742169,
       "temperature": 1692,
       "exoplanet": true,
       "bump": true,
-      "color": "#E8EEA9",
-      "clouds": false
+      "color": "#20F32E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-188, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-188 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-188 - System With 2 Exolanets "
 }

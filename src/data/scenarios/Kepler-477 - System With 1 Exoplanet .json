@@ -67,18 +67,20 @@
       "radius": 180.69767441860466,
       "a": 0.0911,
       "e": 0,
-      "w": 159.31075054646467,
+      "w": 286.4415703327684,
       "o": 0,
       "orbitalPeriod": 11.11990653,
       "temperature": 649,
       "exoplanet": true,
       "bump": true,
-      "color": "#F8DD2B",
-      "clouds": true
+      "color": "#8BF037",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-477, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-477 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-477 - System With 1 Exoplanet "
 }

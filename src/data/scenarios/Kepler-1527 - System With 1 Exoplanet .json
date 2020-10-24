@@ -67,18 +67,20 @@
       "radius": 416.093023255814,
       "a": 0.6276,
       "e": 0,
-      "w": 345.94302892183714,
+      "w": 162.74383317315085,
       "o": 0,
       "orbitalPeriod": 160.129918,
       "temperature": 450,
       "exoplanet": true,
       "bump": false,
-      "color": "#75C5F5",
-      "clouds": false
+      "color": "#4B0697",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1527, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1527 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1527 - System With 1 Exoplanet "
 }

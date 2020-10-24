@@ -67,18 +67,20 @@
       "radius": 546.9767441860466,
       "a": 0.05708,
       "e": 0,
-      "w": 41.08591184072174,
+      "w": 155.6763599996542,
       "o": 0,
       "orbitalPeriod": 4.60543,
       "temperature": 1670,
       "exoplanet": true,
       "bump": false,
-      "color": "#1D3CFE",
-      "clouds": false
+      "color": "#61F93E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-39, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-39 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-39 - System With 1 Exoplanet "
 }

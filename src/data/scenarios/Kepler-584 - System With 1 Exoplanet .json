@@ -67,18 +67,20 @@
       "radius": 367.25581395348837,
       "a": 0.2281,
       "e": 0,
-      "w": 258.31667158050203,
+      "w": 68.70024619544182,
       "o": 0,
       "orbitalPeriod": 35.1810304,
       "temperature": 664,
       "exoplanet": true,
       "bump": false,
-      "color": "#188265",
-      "clouds": false
+      "color": "#70DD06",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-584, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-584 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-584 - System With 1 Exoplanet "
 }

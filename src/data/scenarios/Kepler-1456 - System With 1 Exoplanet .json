@@ -67,18 +67,20 @@
       "radius": 99.62790697674419,
       "a": 0.1132,
       "e": 0,
-      "w": 153.8113992438662,
+      "w": 154.77878021727463,
       "o": 0,
       "orbitalPeriod": 18.1373829,
       "temperature": 433,
       "exoplanet": true,
       "bump": true,
-      "color": "#4FBFED",
-      "clouds": false
+      "color": "#21F79B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1456, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1456 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1456 - System With 1 Exoplanet "
 }

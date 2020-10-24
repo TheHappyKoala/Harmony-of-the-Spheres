@@ -73,12 +73,14 @@
       "temperature": 627.5616497585041,
       "exoplanet": true,
       "bump": false,
-      "color": "#7C778F",
-      "clouds": false
+      "color": "#156905",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 63454, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 63454 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 63454 - System With 1 Exoplanet "
 }

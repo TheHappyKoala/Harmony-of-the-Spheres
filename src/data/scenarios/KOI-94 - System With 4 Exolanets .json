@@ -67,14 +67,15 @@
       "radius": 571.3953488372093,
       "a": 0.3046,
       "e": 0.019,
-      "w": 288.02932228955484,
+      "w": 131.00570553703093,
       "o": 0,
       "orbitalPeriod": 54.32031,
       "temperature": 584,
       "exoplanet": true,
       "bump": false,
-      "color": "#A4328A",
-      "clouds": false
+      "color": "#D13BED",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "KOI-94-d",
@@ -85,14 +86,15 @@
       "radius": 981.6279069767442,
       "a": 0.1684,
       "e": 0.022,
-      "w": 270.9822364295757,
+      "w": 347.00648686547027,
       "o": 0,
       "orbitalPeriod": 22.342989,
       "temperature": 806,
       "exoplanet": true,
       "bump": false,
-      "color": "#71AB17",
-      "clouds": false
+      "color": "#8E39BD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "KOI-94-c",
@@ -103,14 +105,15 @@
       "radius": 376.046511627907,
       "a": 0.1013,
       "e": 0.43,
-      "w": 165.30632264928278,
+      "w": 20.186780560696906,
       "o": 0,
       "orbitalPeriod": 10.423648,
       "temperature": 1012,
       "exoplanet": true,
       "bump": false,
-      "color": "#A29988",
-      "clouds": false
+      "color": "#6B0384",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "KOI-94-b",
@@ -121,18 +124,20 @@
       "radius": 149.4418604651163,
       "a": 0.05119,
       "e": 0.25,
-      "w": 211.3904504884335,
+      "w": 159.27117219458316,
       "o": 0,
       "orbitalPeriod": 3.743208,
       "temperature": 1486,
       "exoplanet": true,
       "bump": false,
-      "color": "#E1CCE1",
-      "clouds": false
+      "color": "#942B54",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system KOI-94, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "KOI-94 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KOI-94 - System With 4 Exolanets "
 }

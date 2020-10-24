@@ -67,18 +67,20 @@
       "radius": 120.13953488372094,
       "a": 0.0159,
       "e": 0,
-      "w": 256.67770061851706,
+      "w": 289.9513716047331,
       "o": 0,
       "orbitalPeriod": 0.961917,
       "temperature": 1268.0076009868346,
       "exoplanet": true,
       "bump": true,
-      "color": "#32B809",
-      "clouds": false
+      "color": "#C29001",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-147, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-147 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-147 - System With 1 Exoplanet "
 }

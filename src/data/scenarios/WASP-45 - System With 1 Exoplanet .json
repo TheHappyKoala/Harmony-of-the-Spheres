@@ -67,18 +67,20 @@
       "radius": 924,
       "a": 0.03963,
       "e": 0.043,
-      "w": 321.78878552362056,
+      "w": 131.24678243761898,
       "o": 0,
       "orbitalPeriod": 3.126089,
       "temperature": 1153,
       "exoplanet": true,
       "bump": false,
-      "color": "#F57FBC",
-      "clouds": false
+      "color": "#6DF92C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-45, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-45 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-45 - System With 1 Exoplanet "
 }

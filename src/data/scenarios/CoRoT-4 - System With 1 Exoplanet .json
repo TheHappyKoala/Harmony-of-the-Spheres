@@ -67,18 +67,20 @@
       "radius": 1162.3255813953488,
       "a": 0.09,
       "e": 0,
-      "w": 57.66218884650201,
+      "w": 119.5346094400376,
       "o": 0,
       "orbitalPeriod": 9.20205,
       "temperature": 1074,
       "exoplanet": true,
       "bump": false,
-      "color": "#D18B3F",
-      "clouds": false
+      "color": "#2E42E4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-4, which contains 1 exoplanets and was discovered by the CoRoT.",
   "name": "CoRoT-4 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "CoRoT-4 - System With 1 Exoplanet "
 }

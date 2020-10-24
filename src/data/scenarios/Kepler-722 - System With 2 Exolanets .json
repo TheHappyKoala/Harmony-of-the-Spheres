@@ -67,14 +67,15 @@
       "radius": 246.13953488372096,
       "a": 0.4471,
       "e": 0,
-      "w": 323.0040353263004,
+      "w": 285.2962604979945,
       "o": 0,
       "orbitalPeriod": 105.144749,
       "temperature": 401,
       "exoplanet": true,
       "bump": false,
-      "color": "#74BBD6",
-      "clouds": false
+      "color": "#876D48",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-722-b",
@@ -85,18 +86,20 @@
       "radius": 229.53488372093022,
       "a": 0.0514,
       "e": 0,
-      "w": 209.14984781827053,
+      "w": 198.06635149490626,
       "o": 0,
       "orbitalPeriod": 4.09357325,
       "temperature": 1182,
       "exoplanet": true,
       "bump": false,
-      "color": "#102542",
-      "clouds": false
+      "color": "#DBC825",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-722, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-722 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-722 - System With 2 Exolanets "
 }

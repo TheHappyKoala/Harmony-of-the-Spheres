@@ -67,18 +67,20 @@
       "radius": 306.69767441860466,
       "a": 0.0291,
       "e": 0,
-      "w": 333.31869744362217,
+      "w": 135.08239695632147,
       "o": 0,
       "orbitalPeriod": 1.921036,
       "temperature": 1186,
       "exoplanet": true,
       "bump": false,
-      "color": "#C5348A",
-      "clouds": false
+      "color": "#74BE97",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-283, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-283 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-283 - System With 1 Exoplanet "
 }

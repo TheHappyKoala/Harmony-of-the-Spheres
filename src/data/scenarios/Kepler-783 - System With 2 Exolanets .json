@@ -67,14 +67,15 @@
       "radius": 203.1627906976744,
       "a": 0.0684,
       "e": 0,
-      "w": 25.9459296631349,
+      "w": 237.841757553925,
       "o": 0,
       "orbitalPeriod": 7.05395,
       "temperature": 840,
       "exoplanet": true,
       "bump": false,
-      "color": "#E6CB59",
-      "clouds": false
+      "color": "#D9B0E3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-783-b",
@@ -85,18 +86,20 @@
       "radius": 68.37209302325583,
       "a": 0.0491,
       "e": 0,
-      "w": 101.46172473651147,
+      "w": 95.45065930614118,
       "o": 0,
       "orbitalPeriod": 4.29264638,
       "temperature": 991,
       "exoplanet": true,
       "bump": true,
-      "color": "#33C6D3",
-      "clouds": false
+      "color": "#914944",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-783, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-783 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-783 - System With 2 Exolanets "
 }

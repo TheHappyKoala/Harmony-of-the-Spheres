@@ -73,12 +73,14 @@
       "temperature": 700,
       "exoplanet": true,
       "bump": false,
-      "color": "#DF2E2D",
-      "clouds": false
+      "color": "#05BCCF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 51 Eri, which contains 1 exoplanets and was discovered by the Gemini Observatory.",
   "name": "51 Eri - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "51 Eri - System With 1 Exoplanet "
 }

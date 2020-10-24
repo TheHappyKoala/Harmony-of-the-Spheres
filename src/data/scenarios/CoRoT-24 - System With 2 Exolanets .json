@@ -67,14 +67,15 @@
       "radius": 429.76744186046517,
       "a": 0.098,
       "e": 0,
-      "w": 257.7621577492817,
+      "w": 83.9947697254249,
       "o": 0,
       "orbitalPeriod": 11.759,
       "temperature": 850,
       "exoplanet": true,
       "bump": false,
-      "color": "#71C304",
-      "clouds": false
+      "color": "#20B585",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "CoRoT-24-b",
@@ -85,18 +86,20 @@
       "radius": 322.3255813953489,
       "a": 0.056,
       "e": 0,
-      "w": 134.47803293512672,
+      "w": 23.923151458221614,
       "o": 0,
       "orbitalPeriod": 5.1134,
       "temperature": 1070,
       "exoplanet": true,
       "bump": false,
-      "color": "#5D3CEC",
-      "clouds": false
+      "color": "#9D3559",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-24, which contains 2 exoplanets and was discovered by the CoRoT.",
   "name": "CoRoT-24 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "CoRoT-24 - System With 2 Exolanets "
 }

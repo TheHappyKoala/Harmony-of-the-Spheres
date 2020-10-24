@@ -67,14 +67,15 @@
       "radius": 231.48837209302326,
       "a": 0.0678,
       "e": 0,
-      "w": 239.1063005437511,
+      "w": 280.19329272344527,
       "o": 0,
       "orbitalPeriod": 6.6513802,
       "temperature": 1095,
       "exoplanet": true,
       "bump": false,
-      "color": "#E850A6",
-      "clouds": false
+      "color": "#244196",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1642-b",
@@ -85,18 +86,20 @@
       "radius": 278.3720930232558,
       "a": 0.1016,
       "e": 0,
-      "w": 270.17898979057577,
+      "w": 186.40706846902333,
       "o": 0,
       "orbitalPeriod": 12.2057513,
       "temperature": 895,
       "exoplanet": true,
       "bump": false,
-      "color": "#3061BB",
-      "clouds": false
+      "color": "#2D8A57",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1642, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1642 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1642 - System With 2 Exolanets "
 }

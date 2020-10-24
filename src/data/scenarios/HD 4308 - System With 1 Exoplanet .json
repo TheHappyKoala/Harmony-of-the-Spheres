@@ -73,12 +73,14 @@
       "temperature": 657.6896573004094,
       "exoplanet": true,
       "bump": false,
-      "color": "#263ECB",
-      "clouds": false
+      "color": "#7D85FF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 4308, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 4308 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 4308 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 1413,
       "exoplanet": true,
       "bump": true,
-      "color": "#A28104",
-      "clouds": false
+      "color": "#042714",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-101-b",
@@ -91,12 +92,14 @@
       "temperature": 1513,
       "exoplanet": true,
       "bump": false,
-      "color": "#C34F81",
-      "clouds": false
+      "color": "#B6F24C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-101, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-101 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-101 - System With 2 Exolanets "
 }

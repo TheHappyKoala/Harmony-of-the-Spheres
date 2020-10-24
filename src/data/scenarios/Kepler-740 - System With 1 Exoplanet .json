@@ -67,18 +67,20 @@
       "radius": 398.51162790697674,
       "a": 0.0462,
       "e": 0,
-      "w": 53.80176594142575,
+      "w": 184.42395775109543,
       "o": 0,
       "orbitalPeriod": 3.58410122,
       "temperature": 1131,
       "exoplanet": true,
       "bump": false,
-      "color": "#279F63",
-      "clouds": false
+      "color": "#27BB71",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-740, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-740 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-740 - System With 1 Exoplanet "
 }

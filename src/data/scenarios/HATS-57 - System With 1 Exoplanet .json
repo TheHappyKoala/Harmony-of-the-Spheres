@@ -67,18 +67,20 @@
       "radius": 1112.5116279069769,
       "a": 0.03493,
       "e": 0.028,
-      "w": 176.76705956058615,
+      "w": 227.83992333792506,
       "o": 0,
       "orbitalPeriod": 2.350621,
       "temperature": 1413,
       "exoplanet": true,
       "bump": false,
-      "color": "#2D001C",
-      "clouds": false
+      "color": "#C3F709",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-57, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-57 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-57 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 98.2187061082388,
       "exoplanet": true,
       "bump": false,
-      "color": "#6F9946",
-      "clouds": false
+      "color": "#F44309",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 181433-c",
@@ -91,8 +92,9 @@
       "temperature": 128.23261597742842,
       "exoplanet": true,
       "bump": false,
-      "color": "#0B9632",
-      "clouds": false
+      "color": "#B73F82",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 181433-b",
@@ -109,12 +111,14 @@
       "temperature": 601.4642829039159,
       "exoplanet": true,
       "bump": false,
-      "color": "#623F94",
-      "clouds": false
+      "color": "#B00823",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 181433, which contains 3 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 181433 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 181433 - System With 3 Exolanets "
 }

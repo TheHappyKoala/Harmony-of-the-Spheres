@@ -67,18 +67,20 @@
       "radius": 175.8139534883721,
       "a": 0.1499,
       "e": 0,
-      "w": 269.578504483383,
+      "w": 346.80377766892974,
       "o": 0,
       "orbitalPeriod": 18.6051942,
       "temperature": 833,
       "exoplanet": true,
       "bump": true,
-      "color": "#93BEA4",
-      "clouds": true
+      "color": "#597C32",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1422, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1422 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1422 - System With 1 Exoplanet "
 }

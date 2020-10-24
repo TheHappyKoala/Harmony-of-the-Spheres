@@ -67,18 +67,20 @@
       "radius": 310.60465116279073,
       "a": 0.0583,
       "e": 0,
-      "w": 291.1984906977044,
+      "w": 293.39253785600164,
       "o": 0,
       "orbitalPeriod": 6.10485286,
       "temperature": 784,
       "exoplanet": true,
       "bump": false,
-      "color": "#238BB7",
-      "clouds": false
+      "color": "#F44E48",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-734, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-734 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-734 - System With 1 Exoplanet "
 }

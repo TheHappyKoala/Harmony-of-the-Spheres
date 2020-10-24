@@ -67,18 +67,20 @@
       "radius": 1392.8372093023256,
       "a": 0.0475,
       "e": 0,
-      "w": 219.2577395081442,
+      "w": 250.96081695027172,
       "o": 0,
       "orbitalPeriod": 3.313959,
       "temperature": 1649,
       "exoplanet": true,
       "bump": false,
-      "color": "#44A23D",
-      "clouds": false
+      "color": "#D9922B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-107, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-107 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-107 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 275.4418604651163,
       "a": 0.1981,
       "e": 0,
-      "w": 216.40527709830843,
+      "w": 316.59801980200587,
       "o": 0,
       "orbitalPeriod": 34.18890521,
       "temperature": 526,
       "exoplanet": true,
       "bump": false,
-      "color": "#5674DA",
-      "clouds": false
+      "color": "#853355",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-569, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-569 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-569 - System With 1 Exoplanet "
 }

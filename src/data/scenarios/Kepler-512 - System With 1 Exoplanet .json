@@ -67,18 +67,20 @@
       "radius": 234.4186046511628,
       "a": 0.2194,
       "e": 0,
-      "w": 293.96045061337577,
+      "w": 352.1179461108255,
       "o": 0,
       "orbitalPeriod": 34.43587975,
       "temperature": 652,
       "exoplanet": true,
       "bump": false,
-      "color": "#B1DC25",
-      "clouds": false
+      "color": "#4167F7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-512, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-512 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-512 - System With 1 Exoplanet "
 }

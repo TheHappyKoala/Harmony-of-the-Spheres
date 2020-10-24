@@ -73,12 +73,14 @@
       "temperature": 383.93815298708955,
       "exoplanet": true,
       "bump": false,
-      "color": "#25D0DE",
-      "clouds": false
+      "color": "#2BD423",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 82886, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 82886 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 82886 - System With 1 Exoplanet "
 }

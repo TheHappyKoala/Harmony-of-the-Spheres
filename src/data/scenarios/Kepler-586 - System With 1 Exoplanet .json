@@ -67,18 +67,20 @@
       "radius": 243.2093023255814,
       "a": 0.0331,
       "e": 0,
-      "w": 285.26227516619383,
+      "w": 310.66667727254116,
       "o": 0,
       "orbitalPeriod": 2.10472218,
       "temperature": 1365,
       "exoplanet": true,
       "bump": false,
-      "color": "#AFF818",
-      "clouds": false
+      "color": "#F143F8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-586, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-586 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-586 - System With 1 Exoplanet "
 }

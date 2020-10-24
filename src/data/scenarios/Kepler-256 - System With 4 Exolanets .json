@@ -67,14 +67,15 @@
       "radius": 205.11627906976744,
       "a": 0.096,
       "e": 0,
-      "w": 150.15572140982596,
+      "w": 128.6587750754417,
       "o": 0,
       "orbitalPeriod": 10.681572,
       "temperature": 897,
       "exoplanet": true,
       "bump": false,
-      "color": "#C93509",
-      "clouds": false
+      "color": "#8A4A77",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-256-d",
@@ -85,14 +86,15 @@
       "radius": 215.86046511627907,
       "a": 0.064,
       "e": 0,
-      "w": 337.9554451385557,
+      "w": 1.6795587051199767,
       "o": 0,
       "orbitalPeriod": 5.839172,
       "temperature": 1097,
       "exoplanet": true,
       "bump": false,
-      "color": "#12053B",
-      "clouds": false
+      "color": "#7998B5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-256-c",
@@ -103,14 +105,15 @@
       "radius": 187.53488372093025,
       "a": 0.045,
       "e": 0,
-      "w": 248.39910646418105,
+      "w": 0.13998585337064995,
       "o": 0,
       "orbitalPeriod": 3.38802,
       "temperature": 1315,
       "exoplanet": true,
       "bump": false,
-      "color": "#A9628D",
-      "clouds": false
+      "color": "#66DF5D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-256-b",
@@ -121,18 +124,20 @@
       "radius": 138.69767441860463,
       "a": 0.027,
       "e": 0,
-      "w": 210.7266860933391,
+      "w": 143.59841916917247,
       "o": 0,
       "orbitalPeriod": 1.620493,
       "temperature": 1681,
       "exoplanet": true,
       "bump": true,
-      "color": "#98E9DD",
-      "clouds": false
+      "color": "#987868",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-256, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-256 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-256 - System With 4 Exolanets "
 }

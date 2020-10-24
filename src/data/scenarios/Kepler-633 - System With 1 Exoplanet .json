@@ -67,18 +67,20 @@
       "radius": 141.62790697674419,
       "a": 0.0815,
       "e": 0,
-      "w": 338.8684886339231,
+      "w": 284.16802749446464,
       "o": 0,
       "orbitalPeriod": 8.50340718,
       "temperature": 1021,
       "exoplanet": true,
       "bump": true,
-      "color": "#633BC0",
-      "clouds": false
+      "color": "#C034C1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-633, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-633 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-633 - System With 1 Exoplanet "
 }

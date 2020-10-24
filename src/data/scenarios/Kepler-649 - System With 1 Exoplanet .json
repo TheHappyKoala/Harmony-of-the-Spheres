@@ -67,18 +67,20 @@
       "radius": 197.30232558139537,
       "a": 0.1805,
       "e": 0,
-      "w": 349.49417502026387,
+      "w": 205.96853737317198,
       "o": 0,
       "orbitalPeriod": 29.90722674,
       "temperature": 564,
       "exoplanet": true,
       "bump": false,
-      "color": "#2F348C",
-      "clouds": false
+      "color": "#DB04FE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-649, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-649 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-649 - System With 1 Exoplanet "
 }

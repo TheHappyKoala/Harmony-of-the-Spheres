@@ -73,12 +73,14 @@
       "temperature": 607.2833774257289,
       "exoplanet": true,
       "bump": false,
-      "color": "#055870",
-      "clouds": false
+      "color": "#A59586",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 43691, which contains 1 exoplanets and was discovered by the Haute-Provence Observatory.",
   "name": "HD 43691 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 43691 - System With 1 Exoplanet "
 }

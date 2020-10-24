@@ -67,14 +67,15 @@
       "radius": 128.93023255813955,
       "a": 0.181,
       "e": 0,
-      "w": 230.1818163339294,
+      "w": 263.4748670190272,
       "o": 0,
       "orbitalPeriod": 26.695074,
       "temperature": 706,
       "exoplanet": true,
       "bump": true,
-      "color": "#E72107",
-      "clouds": false
+      "color": "#3C69C8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-123-b",
@@ -85,18 +86,20 @@
       "radius": 255.90697674418607,
       "a": 0.135,
       "e": 0,
-      "w": 231.8194175446889,
+      "w": 235.85817445996398,
       "o": 0,
       "orbitalPeriod": 17.232366,
       "temperature": 817,
       "exoplanet": true,
       "bump": false,
-      "color": "#BE05A1",
-      "clouds": false
+      "color": "#91C5B6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-123, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-123 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-123 - System With 2 Exolanets "
 }

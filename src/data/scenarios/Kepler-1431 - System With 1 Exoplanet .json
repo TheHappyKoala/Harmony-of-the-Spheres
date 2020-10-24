@@ -67,18 +67,20 @@
       "radius": 127.95348837209303,
       "a": 0.0648,
       "e": 0,
-      "w": 316.5825779109307,
+      "w": 329.1369365164555,
       "o": 0,
       "orbitalPeriod": 5.86601526,
       "temperature": 1064,
       "exoplanet": true,
       "bump": true,
-      "color": "#BFC9C8",
-      "clouds": false
+      "color": "#60DFAF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1431, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1431 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1431 - System With 1 Exoplanet "
 }

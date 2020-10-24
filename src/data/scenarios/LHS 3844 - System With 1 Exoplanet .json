@@ -67,18 +67,20 @@
       "radius": 113.30232558139537,
       "a": 0.00622,
       "e": 0,
-      "w": 236.34022059664187,
+      "w": 302.94671607381207,
       "o": 0,
       "orbitalPeriod": 0.46292913,
       "temperature": 805,
       "exoplanet": true,
       "bump": true,
-      "color": "#C43371",
-      "clouds": false
+      "color": "#9D821B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system LHS 3844, which contains 1 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "LHS 3844 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "LHS 3844 - System With 1 Exoplanet "
 }

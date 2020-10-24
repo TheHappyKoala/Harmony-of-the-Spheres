@@ -67,18 +67,20 @@
       "radius": 206.09302325581396,
       "a": 0.1693,
       "e": 0,
-      "w": 52.57300636945973,
+      "w": 85.90540102662969,
       "o": 0,
       "orbitalPeriod": 25.2034787,
       "temperature": 600,
       "exoplanet": true,
       "bump": false,
-      "color": "#6EC111",
-      "clouds": false
+      "color": "#5EBA36",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1192, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1192 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1192 - System With 1 Exoplanet "
 }

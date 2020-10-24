@@ -67,18 +67,20 @@
       "radius": 211.95348837209303,
       "a": 0.0331,
       "e": 0,
-      "w": 206.8069516411498,
+      "w": 9.538573964682318,
       "o": 0,
       "orbitalPeriod": 3.262,
       "temperature": 707,
       "exoplanet": true,
       "bump": false,
-      "color": "#005F13",
-      "clouds": false
+      "color": "#2095A7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-324, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-324 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-324 - System With 1 Exoplanet "
 }

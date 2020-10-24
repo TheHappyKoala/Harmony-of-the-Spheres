@@ -67,14 +67,15 @@
       "radius": 77.16279069767442,
       "a": 0.0293,
       "e": 0,
-      "w": 137.59315425548812,
+      "w": 214.56036538190597,
       "o": 0,
       "orbitalPeriod": 1.64422461,
       "temperature": 1897,
       "exoplanet": true,
       "bump": true,
-      "color": "#3CAA8F",
-      "clouds": false
+      "color": "#027F92",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-342-d",
@@ -85,14 +86,15 @@
       "radius": 216.8372093023256,
       "a": 0.242,
       "e": 0,
-      "w": 49.65251489345917,
+      "w": 299.22849879250845,
       "o": 0,
       "orbitalPeriod": 39.459357,
       "temperature": 658,
       "exoplanet": true,
       "bump": false,
-      "color": "#483129",
-      "clouds": false
+      "color": "#7B66F8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-342-c",
@@ -103,14 +105,15 @@
       "radius": 170.93023255813952,
       "a": 0.185,
       "e": 0,
-      "w": 87.61802183357821,
+      "w": 322.9180938569775,
       "o": 0,
       "orbitalPeriod": 26.234138,
       "temperature": 754,
       "exoplanet": true,
       "bump": true,
-      "color": "#1E06FA",
-      "clouds": true
+      "color": "#162D6D",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-342-b",
@@ -121,18 +124,20 @@
       "radius": 196.32558139534885,
       "a": 0.128,
       "e": 0,
-      "w": 305.15705714384154,
+      "w": 99.71744057732258,
       "o": 0,
       "orbitalPeriod": 15.170318,
       "temperature": 905,
       "exoplanet": true,
       "bump": false,
-      "color": "#7C2F7A",
-      "clouds": false
+      "color": "#01F589",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-342, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-342 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-342 - System With 4 Exolanets "
 }

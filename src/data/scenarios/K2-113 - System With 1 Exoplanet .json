@@ -67,18 +67,20 @@
       "radius": 1057.8139534883721,
       "a": 0.0642,
       "e": 0,
-      "w": 87.30689108909972,
+      "w": 0.8162393891859843,
       "o": 0,
       "orbitalPeriod": 5.817685,
       "temperature": 1098,
       "exoplanet": true,
       "bump": false,
-      "color": "#CD73C5",
-      "clouds": false
+      "color": "#94B3DF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-113, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-113 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-113 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 202.18604651162792,
       "a": 0.0626,
       "e": 0,
-      "w": 346.23732276090163,
+      "w": 161.68734173880614,
       "o": 0,
       "orbitalPeriod": 5.65377733,
       "temperature": 1020,
       "exoplanet": true,
       "bump": false,
-      "color": "#EC0232",
-      "clouds": false
+      "color": "#EA65A2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-998, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-998 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-998 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 225.6279069767442,
       "a": 0.319,
       "e": 0,
-      "w": 173.25457005920217,
+      "w": 191.5432516856046,
       "o": 0,
       "orbitalPeriod": 67.831024,
       "temperature": 476,
       "exoplanet": true,
       "bump": false,
-      "color": "#A0775E",
-      "clouds": false
+      "color": "#EE01D2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-265-d",
@@ -85,14 +86,15 @@
       "radius": 216.8372093023256,
       "a": 0.236,
       "e": 0,
-      "w": 282.6606185221549,
+      "w": 335.94877931933087,
       "o": 0,
       "orbitalPeriod": 43.130617,
       "temperature": 554,
       "exoplanet": true,
       "bump": false,
-      "color": "#F9A142",
-      "clouds": false
+      "color": "#153095",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-265-c",
@@ -103,14 +105,15 @@
       "radius": 229.53488372093022,
       "a": 0.127,
       "e": 0,
-      "w": 233.81956485856415,
+      "w": 308.3744369479848,
       "o": 0,
       "orbitalPeriod": 17.028937,
       "temperature": 755,
       "exoplanet": true,
       "bump": false,
-      "color": "#897166",
-      "clouds": false
+      "color": "#F3CC01",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-265-b",
@@ -121,18 +124,20 @@
       "radius": 162.13953488372096,
       "a": 0.069,
       "e": 0,
-      "w": 359.25362863150633,
+      "w": 95.10145286908768,
       "o": 0,
       "orbitalPeriod": 6.846262,
       "temperature": 1022,
       "exoplanet": true,
       "bump": true,
-      "color": "#D66E71",
-      "clouds": false
+      "color": "#FBF179",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-265, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-265 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-265 - System With 4 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 1220.9302325581396,
       "a": 1100,
       "e": 0,
-      "w": 284.9301401747935,
+      "w": 14.453789732684728,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 4.695632518534507,
       "exoplanet": true,
       "bump": false,
-      "color": "#F6D851",
-      "clouds": false
+      "color": "#DB087C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Ross 458, which contains 1 exoplanets and was discovered by the Las Campanas Observatory.",
   "name": "Ross 458 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Ross 458 - System With 1 Exoplanet "
 }

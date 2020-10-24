@@ -1,7 +1,8 @@
 {
-  "name": "The Figure Eight",
+  "name": "The Figure Eight N-body Choreography",
+  "fileName": "The Figure Eight N-body Choreography",
   "sortOrder": 18,
-  "description": "The n-body problem is the problem of taking the initial positions and velocities of n point masses and solving for their subsequent motion according to Newton's laws of motion and Newton's law of universal gravitation.",
+  "description": "A stunningly beautiful n-body choreography, consisting of three point masses that, that traces out a figure eight.",
   "type": "Misc",
   "particlesFun": false,
   "g": 100,

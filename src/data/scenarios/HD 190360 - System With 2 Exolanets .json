@@ -73,8 +73,9 @@
       "temperature": 661.2063627974851,
       "exoplanet": true,
       "bump": false,
-      "color": "#8DA706",
-      "clouds": false
+      "color": "#BFD90C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 190360-b",
@@ -91,12 +92,14 @@
       "temperature": 119.83414082325548,
       "exoplanet": true,
       "bump": false,
-      "color": "#F01101",
-      "clouds": false
+      "color": "#E410C2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 190360, which contains 2 exoplanets and was discovered by the Haute-Provence Observatory.",
   "name": "HD 190360 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 190360 - System With 2 Exolanets "
 }

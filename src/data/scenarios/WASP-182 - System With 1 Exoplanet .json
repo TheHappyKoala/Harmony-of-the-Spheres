@@ -67,18 +67,20 @@
       "radius": 830.232558139535,
       "a": 0.0451,
       "e": 0,
-      "w": 263.4485032648704,
+      "w": 153.04526285207658,
       "o": 0,
       "orbitalPeriod": 3.3769848,
       "temperature": 1479,
       "exoplanet": true,
       "bump": false,
-      "color": "#D8160A",
-      "clouds": false
+      "color": "#1ABE13",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-182, which contains 1 exoplanets and was discovered by the WASP-South.",
   "name": "WASP-182 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-182 - System With 1 Exoplanet "
 }

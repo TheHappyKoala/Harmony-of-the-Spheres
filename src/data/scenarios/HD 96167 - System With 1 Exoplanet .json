@@ -73,12 +73,14 @@
       "temperature": 249.37338600065823,
       "exoplanet": true,
       "bump": false,
-      "color": "#951CBE",
-      "clouds": false
+      "color": "#BD4129",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 96167, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 96167 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 96167 - System With 1 Exoplanet "
 }

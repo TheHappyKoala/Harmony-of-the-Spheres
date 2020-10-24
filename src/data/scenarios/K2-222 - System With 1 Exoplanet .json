@@ -67,18 +67,20 @@
       "radius": 208.046511627907,
       "a": 0.1211,
       "e": 0,
-      "w": 11.592303794271022,
+      "w": 270.9150077026536,
       "o": 0,
       "orbitalPeriod": 15.387063,
       "temperature": 801,
       "exoplanet": true,
       "bump": false,
-      "color": "#6E28CD",
-      "clouds": false
+      "color": "#E8BE6F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-222, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-222 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-222 - System With 1 Exoplanet "
 }

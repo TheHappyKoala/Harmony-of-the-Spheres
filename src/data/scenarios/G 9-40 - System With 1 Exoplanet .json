@@ -67,18 +67,20 @@
       "radius": 176.7906976744186,
       "a": 0.0385,
       "e": 0,
-      "w": 70.93978350856642,
+      "w": 246.5320169622224,
       "o": 0,
       "orbitalPeriod": 5.746007,
       "temperature": 456,
       "exoplanet": true,
       "bump": true,
-      "color": "#5180B0",
-      "clouds": true
+      "color": "#6DB8A3",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system G 9-40, which contains 1 exoplanets and was discovered by the K2.",
   "name": "G 9-40 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "G 9-40 - System With 1 Exoplanet "
 }

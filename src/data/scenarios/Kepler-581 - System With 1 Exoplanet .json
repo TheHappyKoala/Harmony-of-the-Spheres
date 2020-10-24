@@ -67,18 +67,20 @@
       "radius": 229.53488372093022,
       "a": 0.2259,
       "e": 0,
-      "w": 251.78179394953546,
+      "w": 291.45521365988304,
       "o": 0,
       "orbitalPeriod": 40.6069821,
       "temperature": 521,
       "exoplanet": true,
       "bump": false,
-      "color": "#CDF462",
-      "clouds": false
+      "color": "#A6AE25",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-581, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-581 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-581 - System With 1 Exoplanet "
 }

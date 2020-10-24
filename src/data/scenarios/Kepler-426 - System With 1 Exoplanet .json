@@ -67,18 +67,20 @@
       "radius": 1064.6511627906978,
       "a": 0.0414,
       "e": 0.18,
-      "w": 89.9864377992593,
+      "w": 279.88817842795885,
       "o": 0,
       "orbitalPeriod": 3.21751883,
       "temperature": 1300,
       "exoplanet": true,
       "bump": false,
-      "color": "#CD1A3D",
-      "clouds": false
+      "color": "#40D4FE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-426, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-426 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-426 - System With 1 Exoplanet "
 }

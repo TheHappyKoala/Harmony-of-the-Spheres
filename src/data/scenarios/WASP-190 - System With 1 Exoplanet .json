@@ -67,18 +67,20 @@
       "radius": 1123.2558139534883,
       "a": 0.0663,
       "e": 0,
-      "w": 1.318456085188977,
+      "w": 316.7810373503114,
       "o": 0,
       "orbitalPeriod": 5.367753,
       "temperature": 1500,
       "exoplanet": true,
       "bump": false,
-      "color": "#A6F55C",
-      "clouds": false
+      "color": "#E7AD55",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-190, which contains 1 exoplanets and was discovered by the WASP-South.",
   "name": "WASP-190 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-190 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 106.46511627906978,
       "a": 0.076,
       "e": 0,
-      "w": 251.6021013188812,
+      "w": 163.2478479861884,
       "o": 0,
       "orbitalPeriod": 8.109044,
       "temperature": 800,
       "exoplanet": true,
       "bump": true,
-      "color": "#8630B7",
-      "clouds": false
+      "color": "#3A3157",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-226-c",
@@ -85,14 +86,15 @@
       "radius": 198.27906976744188,
       "a": 0.058,
       "e": 0,
-      "w": 276.16183431534347,
+      "w": 239.05220305113141,
       "o": 0,
       "orbitalPeriod": 5.349555,
       "temperature": 919,
       "exoplanet": true,
       "bump": false,
-      "color": "#74B272",
-      "clouds": false
+      "color": "#FACEE0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-226-b",
@@ -103,18 +105,20 @@
       "radius": 134.79069767441862,
       "a": 0.047,
       "e": 0,
-      "w": 181.84666319934203,
+      "w": 202.41324163712414,
       "o": 0,
       "orbitalPeriod": 3.940997,
       "temperature": 1018,
       "exoplanet": true,
       "bump": false,
-      "color": "#98B1C2",
-      "clouds": false
+      "color": "#17ED5E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-226, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-226 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-226 - System With 3 Exolanets "
 }

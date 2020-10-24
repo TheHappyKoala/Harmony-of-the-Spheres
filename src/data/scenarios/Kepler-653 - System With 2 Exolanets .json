@@ -67,14 +67,15 @@
       "radius": 68.37209302325583,
       "a": 0.0186,
       "e": 0,
-      "w": 318.74350267592655,
+      "w": 105.01288485491456,
       "o": 0,
       "orbitalPeriod": 0.90037648,
       "temperature": 2078,
       "exoplanet": true,
       "bump": true,
-      "color": "#306D93",
-      "clouds": false
+      "color": "#799FB2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-653-b",
@@ -85,18 +86,20 @@
       "radius": 169.95348837209303,
       "a": 0.1197,
       "e": 0,
-      "w": 342.34451403339347,
+      "w": 256.0179770835056,
       "o": 0,
       "orbitalPeriod": 14.70748976,
       "temperature": 819,
       "exoplanet": true,
       "bump": true,
-      "color": "#930055",
-      "clouds": true
+      "color": "#0E7749",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-653, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-653 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-653 - System With 2 Exolanets "
 }

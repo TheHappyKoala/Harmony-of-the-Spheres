@@ -67,14 +67,15 @@
       "radius": 137.72093023255815,
       "a": 0.155,
       "e": 0,
-      "w": 81.92139832235837,
+      "w": 239.33677978484917,
       "o": 0,
       "orbitalPeriod": 25.193458,
       "temperature": 513,
       "exoplanet": true,
       "bump": true,
-      "color": "#22ADD6",
-      "clouds": false
+      "color": "#509FC9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-386-b",
@@ -85,18 +86,20 @@
       "radius": 121.11627906976744,
       "a": 0.096,
       "e": 0,
-      "w": 21.32230789245197,
+      "w": 5.989971918618293,
       "o": 0,
       "orbitalPeriod": 12.31043,
       "temperature": 651,
       "exoplanet": true,
       "bump": true,
-      "color": "#C5D96B",
-      "clouds": false
+      "color": "#6AADE6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-386, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-386 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-386 - System With 2 Exolanets "
 }

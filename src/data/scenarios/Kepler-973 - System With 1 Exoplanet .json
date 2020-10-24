@@ -67,18 +67,20 @@
       "radius": 170.93023255813952,
       "a": 0.2508,
       "e": 0,
-      "w": 46.01040851746072,
+      "w": 116.22464919154726,
       "o": 0,
       "orbitalPeriod": 49.6077331,
       "temperature": 402,
       "exoplanet": true,
       "bump": true,
-      "color": "#7BDD4D",
-      "clouds": true
+      "color": "#D31131",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-973, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-973 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-973 - System With 1 Exoplanet "
 }

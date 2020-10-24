@@ -67,18 +67,20 @@
       "radius": 705.2093023255815,
       "a": 0.066517,
       "e": 0.013,
-      "w": 227.45219324294595,
+      "w": 305.76874344626424,
       "o": 0,
       "orbitalPeriod": 7.3279474,
       "temperature": 739,
       "exoplanet": true,
       "bump": false,
-      "color": "#50C1A4",
-      "clouds": false
+      "color": "#D005B4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-72, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-72 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-72 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 299.8604651162791,
       "a": 0.01598,
       "e": 0,
-      "w": 333.865610975926,
+      "w": 232.4881907657774,
       "o": 0,
       "orbitalPeriod": 0.76552414,
       "temperature": 1932,
       "exoplanet": true,
       "bump": false,
-      "color": "#9D0580",
-      "clouds": false
+      "color": "#66D830",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TOI-849, which contains 1 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "TOI-849 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TOI-849 - System With 1 Exoplanet "
 }

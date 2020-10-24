@@ -67,18 +67,20 @@
       "radius": 1351.8139534883721,
       "a": 0.03632,
       "e": 0.18,
-      "w": 245.78753346690007,
+      "w": 252.46874259980743,
       "o": 0,
       "orbitalPeriod": 1.8882378,
       "temperature": 2730,
       "exoplanet": true,
       "bump": false,
-      "color": "#CE4156",
-      "clouds": false
+      "color": "#ABA5B8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-70, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-70 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-70 - System With 1 Exoplanet "
 }

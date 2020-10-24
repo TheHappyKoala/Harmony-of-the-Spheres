@@ -67,18 +67,20 @@
       "radius": 123.06976744186048,
       "a": 0.0572,
       "e": 0,
-      "w": 193.18906065139015,
+      "w": 144.22625992958427,
       "o": 0,
       "orbitalPeriod": 5.08274652,
       "temperature": 928,
       "exoplanet": true,
       "bump": true,
-      "color": "#6F6D09",
-      "clouds": false
+      "color": "#04D02B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-905, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-905 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-905 - System With 1 Exoplanet "
 }

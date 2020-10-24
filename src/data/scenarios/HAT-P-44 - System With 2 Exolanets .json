@@ -67,14 +67,15 @@
       "radius": 1133.0232558139535,
       "a": 1.752,
       "e": 0.494,
-      "w": 28.95611128288092,
+      "w": 98.78745468221678,
       "o": 0,
       "orbitalPeriod": 872.2,
       "temperature": 173.51149956532754,
       "exoplanet": true,
       "bump": false,
-      "color": "#AE9FFB",
-      "clouds": false
+      "color": "#72FF85",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HAT-P-44-b",
@@ -91,12 +92,14 @@
       "temperature": 1108,
       "exoplanet": true,
       "bump": false,
-      "color": "#D7A78D",
-      "clouds": false
+      "color": "#CA2E7B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-44, which contains 2 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-44 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HAT-P-44 - System With 2 Exolanets "
 }

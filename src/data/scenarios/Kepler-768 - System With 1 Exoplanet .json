@@ -67,18 +67,20 @@
       "radius": 156.27906976744188,
       "a": 0.092,
       "e": 0,
-      "w": 208.88369122825904,
+      "w": 112.38963956324068,
       "o": 0,
       "orbitalPeriod": 11.3910025,
       "temperature": 618,
       "exoplanet": true,
       "bump": true,
-      "color": "#BABBAE",
-      "clouds": false
+      "color": "#210584",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-768, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-768 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-768 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 1064.6511627906978,
       "a": 0.0452,
       "e": 0,
-      "w": 352.60685300175254,
+      "w": 236.3030706578655,
       "o": 0,
       "orbitalPeriod": 3.7684952,
       "temperature": 1119,
       "exoplanet": true,
       "bump": false,
-      "color": "#EBBA4C",
-      "clouds": false
+      "color": "#F9BFF0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-160 B, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-160 B - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-160 B - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 117.2093023255814,
       "a": 0.1622,
       "e": 0,
-      "w": 214.19178940070123,
+      "w": 76.63628639281872,
       "o": 0,
       "orbitalPeriod": 22.804,
       "temperature": 843,
       "exoplanet": true,
       "bump": true,
-      "color": "#664C9B",
-      "clouds": true
+      "color": "#E6644D",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-128-b",
@@ -85,18 +86,20 @@
       "radius": 125.0232558139535,
       "a": 0.1231,
       "e": 0,
-      "w": 116.26112346505876,
+      "w": 327.80554432775324,
       "o": 0,
       "orbitalPeriod": 15.09,
       "temperature": 968,
       "exoplanet": true,
       "bump": true,
-      "color": "#C545E0",
-      "clouds": true
+      "color": "#B033E3",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-128, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-128 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-128 - System With 2 Exolanets "
 }

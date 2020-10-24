@@ -67,18 +67,20 @@
       "radius": 212.93023255813955,
       "a": 0.0459,
       "e": 0,
-      "w": 327.6037549829796,
+      "w": 235.09985422477826,
       "o": 0,
       "orbitalPeriod": 4.01457,
       "temperature": 958,
       "exoplanet": true,
       "bump": false,
-      "color": "#8EBC69",
-      "clouds": false
+      "color": "#0D96D2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-250, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-250 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-250 - System With 1 Exoplanet "
 }

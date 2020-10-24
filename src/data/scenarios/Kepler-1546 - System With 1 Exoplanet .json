@@ -67,18 +67,20 @@
       "radius": 272.5116279069768,
       "a": 0.1366,
       "e": 0,
-      "w": 247.96074430263096,
+      "w": 125.60714727875393,
       "o": 0,
       "orbitalPeriod": 19.5974971,
       "temperature": 671,
       "exoplanet": true,
       "bump": false,
-      "color": "#004EC7",
-      "clouds": false
+      "color": "#631BEC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1546, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1546 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1546 - System With 1 Exoplanet "
 }

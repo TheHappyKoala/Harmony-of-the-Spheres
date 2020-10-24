@@ -67,18 +67,20 @@
       "radius": 127.95348837209303,
       "a": 0.1467,
       "e": 0,
-      "w": 274.7424162653162,
+      "w": 102.6686863267736,
       "o": 0,
       "orbitalPeriod": 19.9157725,
       "temperature": 728,
       "exoplanet": true,
       "bump": true,
-      "color": "#ECB95B",
-      "clouds": false
+      "color": "#DB1A7A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1485, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1485 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1485 - System With 1 Exoplanet "
 }

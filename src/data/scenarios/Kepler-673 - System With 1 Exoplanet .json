@@ -67,18 +67,20 @@
       "radius": 569.4418604651163,
       "a": 0.0455,
       "e": 0,
-      "w": 57.19831995296617,
+      "w": 263.2181805840523,
       "o": 0,
       "orbitalPeriod": 3.72873109,
       "temperature": 1023,
       "exoplanet": true,
       "bump": false,
-      "color": "#7F9428",
-      "clouds": false
+      "color": "#1F5077",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-673, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-673 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-673 - System With 1 Exoplanet "
 }

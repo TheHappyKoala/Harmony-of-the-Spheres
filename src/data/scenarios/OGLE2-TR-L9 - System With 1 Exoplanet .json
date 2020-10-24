@@ -67,18 +67,20 @@
       "radius": 1572.5581395348838,
       "a": 0.0308,
       "e": 0,
-      "w": 6.104073454323045,
+      "w": 125.36328841955905,
       "o": 0,
       "orbitalPeriod": 2.4855335,
       "temperature": 2034,
       "exoplanet": true,
       "bump": false,
-      "color": "#EA16F3",
-      "clouds": false
+      "color": "#79215E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system OGLE2-TR-L9, which contains 1 exoplanets and was discovered by the OGLE.",
   "name": "OGLE2-TR-L9 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "OGLE2-TR-L9 - System With 1 Exoplanet "
 }

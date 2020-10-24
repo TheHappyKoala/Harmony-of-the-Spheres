@@ -67,14 +67,15 @@
       "radius": 232.46511627906978,
       "a": 0.1458,
       "e": 0,
-      "w": 256.3000417315427,
+      "w": 25.716711148063442,
       "o": 0,
       "orbitalPeriod": 20.5453,
       "temperature": 622,
       "exoplanet": true,
       "bump": false,
-      "color": "#F8AB7E",
-      "clouds": false
+      "color": "#79C1BF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 63433-b",
@@ -85,18 +86,20 @@
       "radius": 187.53488372093025,
       "a": 0.0719,
       "e": 0,
-      "w": 245.16578233064513,
+      "w": 260.93067447640294,
       "o": 0,
       "orbitalPeriod": 7.10793,
       "temperature": 886,
       "exoplanet": true,
       "bump": false,
-      "color": "#333162",
-      "clouds": false
+      "color": "#20465C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 63433, which contains 2 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "HD 63433 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 63433 - System With 2 Exolanets "
 }

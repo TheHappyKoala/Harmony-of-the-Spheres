@@ -67,14 +67,15 @@
       "radius": 653.4418604651164,
       "a": 0.247,
       "e": 0.07,
-      "w": 212.83094925734247,
+      "w": 175.9161576986961,
       "o": 0,
       "orbitalPeriod": 42.3391,
       "temperature": 560,
       "exoplanet": true,
       "bump": false,
-      "color": "#2A7F66",
-      "clouds": false
+      "color": "#ED4871",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-24-b",
@@ -85,18 +86,20 @@
       "radius": 470.7906976744186,
       "a": 0.154,
       "e": 0.06,
-      "w": 241.1397020620659,
+      "w": 350.5486015964353,
       "o": 0,
       "orbitalPeriod": 20.88977,
       "temperature": 709,
       "exoplanet": true,
       "bump": false,
-      "color": "#DBFE88",
-      "clouds": false
+      "color": "#93295B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-24, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-24 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-24 - System With 2 Exolanets "
 }

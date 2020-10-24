@@ -67,14 +67,15 @@
       "radius": 263.72093023255815,
       "a": 0.3576,
       "e": 0,
-      "w": 205.48456947717483,
+      "w": 139.48518584315372,
       "o": 0,
       "orbitalPeriod": 86.4945,
       "temperature": 367,
       "exoplanet": true,
       "bump": false,
-      "color": "#FD44B4",
-      "clouds": false
+      "color": "#E5CB62",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-598-b",
@@ -85,18 +86,20 @@
       "radius": 130.88372093023258,
       "a": 0.0438,
       "e": 0,
-      "w": 341.6561819992177,
+      "w": 156.48990707827818,
       "o": 0,
       "orbitalPeriod": 3.70175428,
       "temperature": 1050,
       "exoplanet": true,
       "bump": true,
-      "color": "#F53123",
-      "clouds": false
+      "color": "#651800",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-598, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-598 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-598 - System With 2 Exolanets "
 }

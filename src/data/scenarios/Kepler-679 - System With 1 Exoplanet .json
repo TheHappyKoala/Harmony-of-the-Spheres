@@ -67,18 +67,20 @@
       "radius": 262.7441860465117,
       "a": 0.0983,
       "e": 0,
-      "w": 322.13971454551495,
+      "w": 168.41971223042702,
       "o": 0,
       "orbitalPeriod": 12.39358604,
       "temperature": 677,
       "exoplanet": true,
       "bump": false,
-      "color": "#343A8C",
-      "clouds": false
+      "color": "#61C75B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-679, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-679 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-679 - System With 1 Exoplanet "
 }

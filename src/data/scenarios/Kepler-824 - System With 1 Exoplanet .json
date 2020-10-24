@@ -67,18 +67,20 @@
       "radius": 163.11627906976747,
       "a": 0.055,
       "e": 0,
-      "w": 222.7552642074233,
+      "w": 306.7966361771164,
       "o": 0,
       "orbitalPeriod": 4.51436633,
       "temperature": 1231,
       "exoplanet": true,
       "bump": true,
-      "color": "#03F982",
-      "clouds": false
+      "color": "#C95B54",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-824, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-824 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-824 - System With 1 Exoplanet "
 }

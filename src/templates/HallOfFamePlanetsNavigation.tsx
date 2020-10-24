@@ -172,6 +172,7 @@ export const pageQuery = graphql`
   query($limit: Int, $skip: Int, $background: String) {
     scenarios: allScenariosJson(
       filter: { hallOfFame: { eq: true } }
+      sort: { order: ASC, fields: [sortOrder] }
       limit: $limit
       skip: $skip
     ) {

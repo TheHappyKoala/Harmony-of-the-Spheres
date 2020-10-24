@@ -67,18 +67,20 @@
       "radius": 237.34883720930233,
       "a": 0.0651,
       "e": 0,
-      "w": 109.44849487896116,
+      "w": 191.67152485180495,
       "o": 0,
       "orbitalPeriod": 5.65688,
       "temperature": 1211,
       "exoplanet": true,
       "bump": false,
-      "color": "#1CDC91",
-      "clouds": false
+      "color": "#1A19D3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-44, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-44 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-44 - System With 1 Exoplanet "
 }

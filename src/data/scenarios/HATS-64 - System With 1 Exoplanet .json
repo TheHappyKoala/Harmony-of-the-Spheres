@@ -67,18 +67,20 @@
       "radius": 1639.9534883720933,
       "a": 0.06562,
       "e": 0.151,
-      "w": 66.84996669896853,
+      "w": 15.692417811854718,
       "o": 0,
       "orbitalPeriod": 4.908897,
       "temperature": 1793,
       "exoplanet": true,
       "bump": false,
-      "color": "#F44205",
-      "clouds": false
+      "color": "#FE7461",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-64, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-64 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-64 - System With 1 Exoplanet "
 }

@@ -73,12 +73,14 @@
       "temperature": 185.9370921929501,
       "exoplanet": true,
       "bump": false,
-      "color": "#2D535E",
-      "clouds": false
+      "color": "#7EF806",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 196050, which contains 1 exoplanets and was discovered by the Anglo-Australian Telescope.",
   "name": "HD 196050 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 196050 - System With 1 Exoplanet "
 }

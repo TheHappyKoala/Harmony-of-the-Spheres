@@ -67,18 +67,20 @@
       "radius": 1045.1162790697676,
       "a": 0.0694,
       "e": 0.3775,
-      "w": 148.74775928359588,
+      "w": 274.85989726801057,
       "o": 0,
       "orbitalPeriod": 5.644207,
       "temperature": 1460,
       "exoplanet": true,
       "bump": false,
-      "color": "#C7CBF7",
-      "clouds": false
+      "color": "#104F51",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-150, which contains 1 exoplanets and was discovered by the SuperWASP-North.",
   "name": "WASP-150 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-150 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 97.67441860465118,
       "a": 0.166,
       "e": 0.03,
-      "w": 108.7964402397969,
+      "w": 76.55383339257958,
       "o": 0,
       "orbitalPeriod": 35.23319,
       "temperature": 288,
       "exoplanet": true,
       "bump": true,
-      "color": "#FD6A61",
-      "clouds": false
+      "color": "#5B1F1D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-438, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-438 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-438 - System With 1 Exoplanet "
 }

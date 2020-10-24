@@ -67,18 +67,20 @@
       "radius": 226.60465116279073,
       "a": 0.1148,
       "e": 0,
-      "w": 316.49847604054787,
+      "w": 279.6637963245075,
       "o": 0,
       "orbitalPeriod": 16.01310205,
       "temperature": 593,
       "exoplanet": true,
       "bump": false,
-      "color": "#E7F406",
-      "clouds": false
+      "color": "#105ED0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-665, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-665 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-665 - System With 1 Exoplanet "
 }

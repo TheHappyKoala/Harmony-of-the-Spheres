@@ -67,18 +67,20 @@
       "radius": 1484.6511627906978,
       "a": 0.0608,
       "e": 0,
-      "w": 205.67220936842892,
+      "w": 19.027156340812965,
       "o": 0,
       "orbitalPeriod": 4.45724,
       "temperature": 1770,
       "exoplanet": true,
       "bump": false,
-      "color": "#F36611",
-      "clouds": false
+      "color": "#6AC795",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-40, which contains 1 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-40 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HAT-P-40 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 217.8139534883721,
       "a": 0.1432,
       "e": 0,
-      "w": 98.88018286478786,
+      "w": 202.54820777991839,
       "o": 0,
       "orbitalPeriod": 18.11472949,
       "temperature": 830,
       "exoplanet": true,
       "bump": false,
-      "color": "#65EC89",
-      "clouds": false
+      "color": "#7F55E6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-885, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-885 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-885 - System With 1 Exoplanet "
 }

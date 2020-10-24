@@ -67,14 +67,15 @@
       "radius": 104.51162790697674,
       "a": 0.0232,
       "e": 0,
-      "w": 78.98272246484754,
+      "w": 237.40379768746348,
       "o": 0,
       "orbitalPeriod": 1.49914695,
       "temperature": 1137,
       "exoplanet": true,
       "bump": true,
-      "color": "#6100C9",
-      "clouds": false
+      "color": "#2790C3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-304-d",
@@ -85,14 +86,15 @@
       "radius": 239.30232558139537,
       "a": 0.08,
       "e": 0,
-      "w": 166.8241730723994,
+      "w": 172.10373668193824,
       "o": 0,
       "orbitalPeriod": 9.653471,
       "temperature": 611,
       "exoplanet": true,
       "bump": false,
-      "color": "#20BEB5",
-      "clouds": false
+      "color": "#531884",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-304-c",
@@ -103,14 +105,15 @@
       "radius": 189.4883720930233,
       "a": 0.054,
       "e": 0,
-      "w": 180.79136921580184,
+      "w": 158.75694913456158,
       "o": 0,
       "orbitalPeriod": 5.315946,
       "temperature": 746,
       "exoplanet": true,
       "bump": false,
-      "color": "#89AB80",
-      "clouds": false
+      "color": "#184C0C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-304-b",
@@ -121,18 +124,20 @@
       "radius": 249.06976744186048,
       "a": 0.039,
       "e": 0,
-      "w": 253.86382389461744,
+      "w": 72.58933139780696,
       "o": 0,
       "orbitalPeriod": 3.295709,
       "temperature": 875,
       "exoplanet": true,
       "bump": false,
-      "color": "#F165C7",
-      "clouds": false
+      "color": "#C27DCB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-304, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-304 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-304 - System With 4 Exolanets "
 }

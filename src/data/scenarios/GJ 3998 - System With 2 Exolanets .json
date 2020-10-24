@@ -67,14 +67,15 @@
       "radius": 207.06976744186048,
       "a": 0.089,
       "e": 0.049,
-      "w": 91.41112064923138,
+      "w": 153.5479374514387,
       "o": 0,
       "orbitalPeriod": 13.74,
       "temperature": 479.49261625224295,
       "exoplanet": true,
       "bump": false,
-      "color": "#246958",
-      "clouds": false
+      "color": "#7182DF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 3998-b",
@@ -85,18 +86,20 @@
       "radius": 120.13953488372094,
       "a": 0.029,
       "e": 0,
-      "w": 53.47080799108909,
+      "w": 324.2036134793302,
       "o": 0,
       "orbitalPeriod": 2.64977,
       "temperature": 839.9973736534771,
       "exoplanet": true,
       "bump": true,
-      "color": "#2ADB56",
-      "clouds": false
+      "color": "#A34875",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 3998, which contains 2 exoplanets and was discovered by the Roque de los Muchachos Observatory.",
   "name": "GJ 3998 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 3998 - System With 2 Exolanets "
 }

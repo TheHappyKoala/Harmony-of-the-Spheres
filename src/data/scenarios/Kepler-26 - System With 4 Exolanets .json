@@ -67,14 +67,15 @@
       "radius": 210,
       "a": 0.22,
       "e": 0,
-      "w": 331.38589242081235,
+      "w": 247.08751112996342,
       "o": 0,
       "orbitalPeriod": 46.827915,
       "temperature": 276,
       "exoplanet": true,
       "bump": false,
-      "color": "#9321E1",
-      "clouds": false
+      "color": "#F65531",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-26-d",
@@ -85,14 +86,15 @@
       "radius": 92.79069767441861,
       "a": 0.039,
       "e": 0,
-      "w": 268.49214376267645,
+      "w": 114.11762113472977,
       "o": 0,
       "orbitalPeriod": 3.543919,
       "temperature": 652,
       "exoplanet": true,
       "bump": true,
-      "color": "#F2E710",
-      "clouds": false
+      "color": "#045A4B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-26-c",
@@ -103,14 +105,15 @@
       "radius": 237.34883720930233,
       "a": 0.10725,
       "e": 0,
-      "w": 210.1770171399915,
+      "w": 86.95755279350598,
       "o": 0,
       "orbitalPeriod": 17.2559,
       "temperature": 385,
       "exoplanet": true,
       "bump": false,
-      "color": "#5E56E3",
-      "clouds": false
+      "color": "#DF90CD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-26-b",
@@ -121,18 +124,20 @@
       "radius": 242.2325581395349,
       "a": 0.08551,
       "e": 0,
-      "w": 266.558810122131,
+      "w": 24.745916746903347,
       "o": 0,
       "orbitalPeriod": 12.28,
       "temperature": 431,
       "exoplanet": true,
       "bump": false,
-      "color": "#CE7B4A",
-      "clouds": false
+      "color": "#A09B97",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-26, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-26 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-26 - System With 4 Exolanets "
 }

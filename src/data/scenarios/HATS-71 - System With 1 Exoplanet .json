@@ -67,18 +67,20 @@
       "radius": 1000.186046511628,
       "a": 0.03745,
       "e": 0,
-      "w": 251.59500533471817,
+      "w": 120.35867508971677,
       "o": 0,
       "orbitalPeriod": 3.7955202,
       "temperature": 587,
       "exoplanet": true,
       "bump": false,
-      "color": "#D6E3D4",
-      "clouds": false
+      "color": "#8D354B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-71, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-71 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-71 - System With 1 Exoplanet "
 }

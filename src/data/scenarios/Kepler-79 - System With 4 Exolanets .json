@@ -67,14 +67,15 @@
       "radius": 303.7674418604651,
       "a": 0.386,
       "e": 0.012,
-      "w": 32.62693944328276,
+      "w": 109.60007761302276,
       "o": 0,
       "orbitalPeriod": 81.0659,
       "temperature": 511,
       "exoplanet": true,
       "bump": true,
-      "color": "#ADF58B",
-      "clouds": true
+      "color": "#33F525",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-79-d",
@@ -85,14 +86,15 @@
       "radius": 624.139534883721,
       "a": 0.287,
       "e": 0.025,
-      "w": 119.6271651372682,
+      "w": 144.80871888498393,
       "o": 0,
       "orbitalPeriod": 52.0902,
       "temperature": 592,
       "exoplanet": true,
       "bump": false,
-      "color": "#8A6D94",
-      "clouds": false
+      "color": "#D3EDE4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-79-c",
@@ -103,14 +105,15 @@
       "radius": 324.2790697674419,
       "a": 0.187,
       "e": 0.03,
-      "w": 340.8402513954105,
+      "w": 354.2709913923723,
       "o": 0,
       "orbitalPeriod": 27.4029,
       "temperature": 734,
       "exoplanet": true,
       "bump": false,
-      "color": "#885EE4",
-      "clouds": false
+      "color": "#1DF5B6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-79-b",
@@ -121,18 +124,20 @@
       "radius": 302.7906976744186,
       "a": 0.117,
       "e": 0.015,
-      "w": 329.87240055684134,
+      "w": 309.51129543953124,
       "o": 0,
       "orbitalPeriod": 13.4845,
       "temperature": 929,
       "exoplanet": true,
       "bump": false,
-      "color": "#3F71B3",
-      "clouds": false
+      "color": "#63D73A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-79, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-79 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-79 - System With 4 Exolanets "
 }

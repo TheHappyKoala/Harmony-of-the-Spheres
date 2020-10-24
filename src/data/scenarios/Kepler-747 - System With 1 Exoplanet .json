@@ -67,18 +67,20 @@
       "radius": 459.06976744186045,
       "a": 0.1916,
       "e": 0,
-      "w": 39.85357683929371,
+      "w": 329.7204109916317,
       "o": 0,
       "orbitalPeriod": 35.61760587,
       "temperature": 456,
       "exoplanet": true,
       "bump": false,
-      "color": "#E7E5CC",
-      "clouds": false
+      "color": "#CD3A60",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-747, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-747 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-747 - System With 1 Exoplanet "
 }

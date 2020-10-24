@@ -73,12 +73,14 @@
       "temperature": 278.64973021779343,
       "exoplanet": true,
       "bump": false,
-      "color": "#C2488C",
-      "clouds": false
+      "color": "#BE4432",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 18 Del, which contains 1 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "18 Del - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "18 Del - System With 1 Exoplanet "
 }

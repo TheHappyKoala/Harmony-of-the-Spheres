@@ -67,18 +67,20 @@
       "radius": 112.32558139534885,
       "a": 0.1011,
       "e": 0,
-      "w": 161.00782326105065,
+      "w": 296.2994204541843,
       "o": 0,
       "orbitalPeriod": 12.0999,
       "temperature": 807,
       "exoplanet": true,
       "bump": true,
-      "color": "#BBBE8F",
-      "clouds": false
+      "color": "#53F27C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1693, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1693 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1693 - System With 1 Exoplanet "
 }

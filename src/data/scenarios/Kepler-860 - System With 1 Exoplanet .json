@@ -67,18 +67,20 @@
       "radius": 282.27906976744185,
       "a": 0.058,
       "e": 0,
-      "w": 171.85356020818458,
+      "w": 242.92947188813196,
       "o": 0,
       "orbitalPeriod": 5.10137945,
       "temperature": 1050,
       "exoplanet": true,
       "bump": false,
-      "color": "#58C303",
-      "clouds": false
+      "color": "#111911",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-860, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-860 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-860 - System With 1 Exoplanet "
 }

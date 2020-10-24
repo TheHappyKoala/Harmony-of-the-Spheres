@@ -67,18 +67,20 @@
       "radius": 1074.418604651163,
       "a": 0.03453,
       "e": 0.068,
-      "w": 178.03015104045164,
+      "w": 164.72478123297225,
       "o": 0,
       "orbitalPeriod": 2.423804,
       "temperature": 1337,
       "exoplanet": true,
       "bump": false,
-      "color": "#D0B984",
-      "clouds": false
+      "color": "#E35CA4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-44, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-44 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-44 - System With 1 Exoplanet "
 }

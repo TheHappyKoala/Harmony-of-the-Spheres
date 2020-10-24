@@ -73,12 +73,14 @@
       "temperature": 298,
       "exoplanet": true,
       "bump": true,
-      "color": "#546455",
-      "clouds": false
+      "color": "#1ADB81",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 85512, which contains 1 exoplanets, of which 1 is potentially habitable, and was discovered by the La Silla Observatory.",
   "name": "HD 85512 - System With 1 Exoplanet of Which 1 Is Potentially Habitable",
-  "cameraFocus": "HD 85512-b"
+  "cameraFocus": "HD 85512-b",
+  "fileName": "HD 85512 - System With 1 Exoplanet of Which 1 Is Potentially Habitable"
 }

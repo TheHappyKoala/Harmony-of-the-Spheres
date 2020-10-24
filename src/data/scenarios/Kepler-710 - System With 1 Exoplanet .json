@@ -67,18 +67,20 @@
       "radius": 164.09302325581396,
       "a": 0.0524,
       "e": 0,
-      "w": 103.49494612471497,
+      "w": 143.1234493244617,
       "o": 0,
       "orbitalPeriod": 4.34728553,
       "temperature": 1174,
       "exoplanet": true,
       "bump": true,
-      "color": "#581089",
-      "clouds": true
+      "color": "#4E8391",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-710, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-710 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-710 - System With 1 Exoplanet "
 }

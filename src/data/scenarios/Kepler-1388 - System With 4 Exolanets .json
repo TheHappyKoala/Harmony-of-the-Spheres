@@ -67,14 +67,15 @@
       "radius": 213.90697674418607,
       "a": 0.1861,
       "e": 0,
-      "w": 47.93804978997916,
+      "w": 111.29751435430278,
       "o": 0,
       "orbitalPeriod": 37.6327084,
       "temperature": 299,
       "exoplanet": true,
       "bump": false,
-      "color": "#5D6044",
-      "clouds": false
+      "color": "#6D853C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1388-d",
@@ -85,14 +86,15 @@
       "radius": 249.06976744186048,
       "a": 0.126,
       "e": 0,
-      "w": 105.12738946670582,
+      "w": 155.57575862025615,
       "o": 0,
       "orbitalPeriod": 20.9568158,
       "temperature": 363,
       "exoplanet": true,
       "bump": false,
-      "color": "#361CA0",
-      "clouds": false
+      "color": "#70A4C8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1388-c",
@@ -103,14 +105,15 @@
       "radius": 197.30232558139537,
       "a": 0.0519,
       "e": 0,
-      "w": 238.83269148047717,
+      "w": 175.68275314002244,
       "o": 0,
       "orbitalPeriod": 5.53608151,
       "temperature": 566,
       "exoplanet": true,
       "bump": false,
-      "color": "#86D1E1",
-      "clouds": false
+      "color": "#593DF7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1388-b",
@@ -121,18 +124,20 @@
       "radius": 225.6279069767442,
       "a": 0.0882,
       "e": 0,
-      "w": 26.682874557847242,
+      "w": 221.55773389376142,
       "o": 0,
       "orbitalPeriod": 12.2854603,
       "temperature": 434,
       "exoplanet": true,
       "bump": false,
-      "color": "#A1BD92",
-      "clouds": false
+      "color": "#2FA66C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1388, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1388 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1388 - System With 4 Exolanets "
 }

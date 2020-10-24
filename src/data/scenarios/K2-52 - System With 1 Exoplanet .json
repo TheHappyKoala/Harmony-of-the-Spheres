@@ -67,18 +67,20 @@
       "radius": 1568.6511627906978,
       "a": 0.054,
       "e": 0,
-      "w": 341.54847669376636,
+      "w": 69.61077935577416,
       "o": 0,
       "orbitalPeriod": 3.535055,
       "temperature": 2004,
       "exoplanet": true,
       "bump": false,
-      "color": "#B5791D",
-      "clouds": false
+      "color": "#59EB42",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-52, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-52 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-52 - System With 1 Exoplanet "
 }

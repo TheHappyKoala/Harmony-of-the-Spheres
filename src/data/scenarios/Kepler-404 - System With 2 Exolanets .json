@@ -67,14 +67,15 @@
       "radius": 149.4418604651163,
       "a": 0.118,
       "e": 0,
-      "w": 269.4713470167862,
+      "w": 215.06584885113097,
       "o": 0,
       "orbitalPeriod": 14.751166,
       "temperature": 678,
       "exoplanet": true,
       "bump": true,
-      "color": "#F8DFEE",
-      "clouds": false
+      "color": "#AC6CEB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-404-b",
@@ -85,18 +86,20 @@
       "radius": 110.37209302325583,
       "a": 0.102,
       "e": 0,
-      "w": 120.21319385296913,
+      "w": 129.68937569299413,
       "o": 0,
       "orbitalPeriod": 11.829851,
       "temperature": 730,
       "exoplanet": true,
       "bump": true,
-      "color": "#04CB6A",
-      "clouds": false
+      "color": "#231CBA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-404, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-404 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-404 - System With 2 Exolanets "
 }

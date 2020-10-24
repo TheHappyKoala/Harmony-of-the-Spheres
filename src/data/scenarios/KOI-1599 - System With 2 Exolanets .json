@@ -73,8 +73,9 @@
       "temperature": 755,
       "exoplanet": true,
       "bump": false,
-      "color": "#3CC382",
-      "clouds": false
+      "color": "#68569F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "KOI-1599-c",
@@ -91,12 +92,14 @@
       "temperature": 660,
       "exoplanet": true,
       "bump": true,
-      "color": "#B808CF",
-      "clouds": false
+      "color": "#54EF91",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KOI-1599, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "KOI-1599 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KOI-1599 - System With 2 Exolanets "
 }

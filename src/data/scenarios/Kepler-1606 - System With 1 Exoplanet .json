@@ -67,18 +67,20 @@
       "radius": 180.69767441860466,
       "a": 0.6421,
       "e": 0,
-      "w": 44.63213348033054,
+      "w": 257.42668027020517,
       "o": 0,
       "orbitalPeriod": 196.435224,
       "temperature": 324,
       "exoplanet": true,
       "bump": true,
-      "color": "#675983",
-      "clouds": true
+      "color": "#530E55",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1606, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1606 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1606 - System With 1 Exoplanet "
 }

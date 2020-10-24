@@ -67,18 +67,20 @@
       "radius": 247.11627906976747,
       "a": 0.0706,
       "e": 0,
-      "w": 25.244023656617536,
+      "w": 26.12278129498054,
       "o": 0,
       "orbitalPeriod": 6.894256,
       "temperature": 962,
       "exoplanet": true,
       "bump": false,
-      "color": "#E079FC",
-      "clouds": false
+      "color": "#45BDCD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-181, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-181 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-181 - System With 1 Exoplanet "
 }

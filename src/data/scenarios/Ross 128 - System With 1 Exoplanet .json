@@ -67,18 +67,20 @@
       "radius": 96.69767441860466,
       "a": 0.0496,
       "e": 0.116,
-      "w": 290.8443337765034,
+      "w": 207.89552538721918,
       "o": 0,
       "orbitalPeriod": 9.8658,
       "temperature": 301,
       "exoplanet": true,
       "bump": true,
-      "color": "#7BABF5",
-      "clouds": false
+      "color": "#81035C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Ross 128, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "Ross 128 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Ross 128 - System With 1 Exoplanet "
 }

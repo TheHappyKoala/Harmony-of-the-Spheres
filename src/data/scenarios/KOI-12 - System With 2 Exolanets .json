@@ -73,8 +73,9 @@
       "temperature": 159.10844194973046,
       "exoplanet": true,
       "bump": false,
-      "color": "#F0FD86",
-      "clouds": false
+      "color": "#C209C8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "KOI-12-b",
@@ -91,12 +92,14 @@
       "temperature": 911,
       "exoplanet": true,
       "bump": false,
-      "color": "#66EABE",
-      "clouds": false
+      "color": "#56C1AB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KOI-12, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "KOI-12 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KOI-12 - System With 2 Exolanets "
 }

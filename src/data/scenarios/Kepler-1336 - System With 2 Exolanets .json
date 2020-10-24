@@ -67,14 +67,15 @@
       "radius": 149.4418604651163,
       "a": 0.0631,
       "e": 0,
-      "w": 147.715586230394,
+      "w": 83.88682860321364,
       "o": 0,
       "orbitalPeriod": 5.77721211,
       "temperature": 1260,
       "exoplanet": true,
       "bump": true,
-      "color": "#7E5148",
-      "clouds": false
+      "color": "#DA98DE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1336-b",
@@ -85,18 +86,20 @@
       "radius": 172.88372093023256,
       "a": 0.1595,
       "e": 0,
-      "w": 117.76344533725398,
+      "w": 126.8484003991324,
       "o": 0,
       "orbitalPeriod": 23.198681,
       "temperature": 793,
       "exoplanet": true,
       "bump": true,
-      "color": "#5169F3",
-      "clouds": true
+      "color": "#F3493C",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1336, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1336 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1336 - System With 2 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 188.51162790697677,
       "a": 0.2108,
       "e": 0,
-      "w": 193.22856809728881,
+      "w": 87.25155107469305,
       "o": 0,
       "orbitalPeriod": 36.4333452,
       "temperature": 561,
       "exoplanet": true,
       "bump": false,
-      "color": "#C56618",
-      "clouds": false
+      "color": "#B98F87",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1474, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1474 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1474 - System With 1 Exoplanet "
 }

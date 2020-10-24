@@ -73,12 +73,14 @@
       "temperature": 1350,
       "exoplanet": true,
       "bump": false,
-      "color": "#421670",
-      "clouds": false
+      "color": "#DFF087",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TYC 3667-1280-1, which contains 1 exoplanets and was discovered by the McDonald Observatory.",
   "name": "TYC 3667-1280-1 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TYC 3667-1280-1 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 1211.1627906976744,
       "a": 0.048,
       "e": 0,
-      "w": 241.4449045946048,
+      "w": 309.1434525817701,
       "o": 0,
       "orbitalPeriod": 3.409264,
       "temperature": 1540,
       "exoplanet": true,
       "bump": false,
-      "color": "#83A29E",
-      "clouds": false
+      "color": "#636B44",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-180 A, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-180 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-180 A - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 152.37209302325581,
       "a": 0.028,
       "e": 0,
-      "w": 81.09002682951339,
+      "w": 104.93014311830245,
       "o": 0,
       "orbitalPeriod": 2.1748,
       "temperature": 1103,
       "exoplanet": true,
       "bump": false,
-      "color": "#419B45",
-      "clouds": false
+      "color": "#070632",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-216, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-216 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-216 - System With 1 Exoplanet "
 }

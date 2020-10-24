@@ -67,18 +67,20 @@
       "radius": 258.8372093023256,
       "a": 0.0744,
       "e": 0,
-      "w": 321.0193369797247,
+      "w": 339.0957041877717,
       "o": 0,
       "orbitalPeriod": 7.03902374,
       "temperature": 1051,
       "exoplanet": true,
       "bump": false,
-      "color": "#E7E71C",
-      "clouds": false
+      "color": "#1E278D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-741, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-741 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-741 - System With 1 Exoplanet "
 }

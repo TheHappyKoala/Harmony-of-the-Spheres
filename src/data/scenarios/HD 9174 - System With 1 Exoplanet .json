@@ -73,12 +73,14 @@
       "temperature": 165.83110781851363,
       "exoplanet": true,
       "bump": false,
-      "color": "#7D9066",
-      "clouds": false
+      "color": "#02321D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 9174, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "HD 9174 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 9174 - System With 1 Exoplanet "
 }

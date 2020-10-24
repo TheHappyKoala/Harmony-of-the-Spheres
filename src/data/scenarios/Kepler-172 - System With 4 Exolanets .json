@@ -67,14 +67,15 @@
       "radius": 240.27906976744188,
       "a": 0.211,
       "e": 0,
-      "w": 15.943964647921032,
+      "w": 83.19560935036276,
       "o": 0,
       "orbitalPeriod": 35.118736,
       "temperature": 550,
       "exoplanet": true,
       "bump": false,
-      "color": "#845737",
-      "clouds": false
+      "color": "#2750EC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-172-d",
@@ -85,14 +86,15 @@
       "radius": 196.32558139534885,
       "a": 0.118,
       "e": 0,
-      "w": 96.33302278550164,
+      "w": 181.0414819101439,
       "o": 0,
       "orbitalPeriod": 14.627119,
       "temperature": 736,
       "exoplanet": true,
       "bump": false,
-      "color": "#8D9B26",
-      "clouds": false
+      "color": "#A0D533",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-172-c",
@@ -103,14 +105,15 @@
       "radius": 249.06976744186048,
       "a": 0.068,
       "e": 0,
-      "w": 61.825610881492345,
+      "w": 208.97443591065888,
       "o": 0,
       "orbitalPeriod": 6.388996,
       "temperature": 970,
       "exoplanet": true,
       "bump": false,
-      "color": "#CE0AF9",
-      "clouds": false
+      "color": "#C045E2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-172-b",
@@ -121,18 +124,20 @@
       "radius": 205.11627906976744,
       "a": 0.04,
       "e": 0,
-      "w": 150.52577076200666,
+      "w": 73.50622095642007,
       "o": 0,
       "orbitalPeriod": 2.940309,
       "temperature": 1256,
       "exoplanet": true,
       "bump": false,
-      "color": "#1B5E66",
-      "clouds": false
+      "color": "#C96FF2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-172, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-172 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-172 - System With 4 Exolanets "
 }

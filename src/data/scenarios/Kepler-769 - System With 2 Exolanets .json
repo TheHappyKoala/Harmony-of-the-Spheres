@@ -67,14 +67,15 @@
       "radius": 156.27906976744188,
       "a": 0.1297,
       "e": 0,
-      "w": 302.1391325860317,
+      "w": 333.4215739257994,
       "o": 0,
       "orbitalPeriod": 15.9870174,
       "temperature": 803,
       "exoplanet": true,
       "bump": true,
-      "color": "#5EA930",
-      "clouds": false
+      "color": "#810F14",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-769-b",
@@ -85,18 +86,20 @@
       "radius": 254.93023255813955,
       "a": 0.0778,
       "e": 0,
-      "w": 51.77321682765344,
+      "w": 233.73436205644424,
       "o": 0,
       "orbitalPeriod": 7.42608998,
       "temperature": 1037,
       "exoplanet": true,
       "bump": false,
-      "color": "#4D46F3",
-      "clouds": false
+      "color": "#F682A8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-769, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-769 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-769 - System With 2 Exolanets "
 }

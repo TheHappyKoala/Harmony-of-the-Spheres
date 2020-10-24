@@ -67,18 +67,20 @@
       "radius": 1553.0232558139537,
       "a": 0.04378,
       "e": 0,
-      "w": 254.19282894579436,
+      "w": 326.51831431568957,
       "o": 0,
       "orbitalPeriod": 2.69155,
       "temperature": 2131,
       "exoplanet": true,
       "bump": false,
-      "color": "#714DF9",
-      "clouds": false
+      "color": "#E5015E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-49, which contains 1 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-49 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HAT-P-49 - System With 1 Exoplanet "
 }

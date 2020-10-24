@@ -67,18 +67,20 @@
       "radius": 507.90697674418607,
       "a": 0.25,
       "e": 0,
-      "w": 338.0061941708879,
+      "w": 286.10096987408923,
       "o": 0,
       "orbitalPeriod": 47.84,
       "temperature": 407.00234342454485,
       "exoplanet": true,
       "bump": false,
-      "color": "#9CFCC6",
-      "clouds": false
+      "color": "#AAAA81",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 103197, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 103197 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 103197 - System With 1 Exoplanet "
 }

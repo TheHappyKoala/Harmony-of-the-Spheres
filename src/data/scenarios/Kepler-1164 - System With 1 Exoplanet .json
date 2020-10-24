@@ -67,18 +67,20 @@
       "radius": 97.67441860465118,
       "a": 0.0457,
       "e": 0,
-      "w": 327.8690005737052,
+      "w": 113.46334309726515,
       "o": 0,
       "orbitalPeriod": 3.97599768,
       "temperature": 936,
       "exoplanet": true,
       "bump": true,
-      "color": "#66424B",
-      "clouds": false
+      "color": "#BB59FF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1164, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1164 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1164 - System With 1 Exoplanet "
 }

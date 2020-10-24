@@ -67,18 +67,20 @@
       "radius": 274.46511627906983,
       "a": 0.0466,
       "e": 0,
-      "w": 43.76844502478175,
+      "w": 275.878693396327,
       "o": 0,
       "orbitalPeriod": 3.1739171,
       "temperature": 1655,
       "exoplanet": true,
       "bump": false,
-      "color": "#E1D55E",
-      "clouds": false
+      "color": "#9E6B80",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-644, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-644 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-644 - System With 1 Exoplanet "
 }

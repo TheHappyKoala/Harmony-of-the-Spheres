@@ -67,18 +67,20 @@
       "radius": 155.30232558139537,
       "a": 0.2543,
       "e": 0,
-      "w": 58.101633863638114,
+      "w": 33.100741435446615,
       "o": 0,
       "orbitalPeriod": 60.866168,
       "temperature": 290,
       "exoplanet": true,
       "bump": true,
-      "color": "#59FBC2",
-      "clouds": false
+      "color": "#BB675B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1410, which contains 1 exoplanets, of which 1 is potentially habitable, and was discovered by the Kepler.",
   "name": "Kepler-1410 - System With 1 Exoplanet of Which 1 Is Potentially Habitable",
-  "cameraFocus": "Kepler-1410-b"
+  "cameraFocus": "Kepler-1410-b",
+  "fileName": "Kepler-1410 - System With 1 Exoplanet of Which 1 Is Potentially Habitable"
 }

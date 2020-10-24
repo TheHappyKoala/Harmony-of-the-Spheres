@@ -73,12 +73,14 @@
       "temperature": 190.9572295036737,
       "exoplanet": true,
       "bump": false,
-      "color": "#E61C43",
-      "clouds": false
+      "color": "#3C79BF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 137388, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 137388 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 137388 - System With 1 Exoplanet "
 }

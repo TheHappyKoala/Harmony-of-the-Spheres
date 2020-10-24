@@ -67,18 +67,20 @@
       "radius": 118.18604651162791,
       "a": 0.0848,
       "e": 0,
-      "w": 228.05391631012995,
+      "w": 333.7769007737316,
       "o": 0,
       "orbitalPeriod": 11.32271513,
       "temperature": 554,
       "exoplanet": true,
       "bump": true,
-      "color": "#E01657",
-      "clouds": false
+      "color": "#54E578",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1246, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1246 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1246 - System With 1 Exoplanet "
 }

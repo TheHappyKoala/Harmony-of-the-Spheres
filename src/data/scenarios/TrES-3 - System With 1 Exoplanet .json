@@ -73,12 +73,14 @@
       "temperature": 1638,
       "exoplanet": true,
       "bump": false,
-      "color": "#4A0DD1",
-      "clouds": false
+      "color": "#A8C304",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TrES-3, which contains 1 exoplanets and was discovered by the TrES.",
   "name": "TrES-3 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TrES-3 - System With 1 Exoplanet "
 }

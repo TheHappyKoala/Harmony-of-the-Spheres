@@ -73,8 +73,9 @@
       "temperature": 71.95732552429557,
       "exoplanet": true,
       "bump": false,
-      "color": "#0E455E",
-      "clouds": false
+      "color": "#7BBC81",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HIP 5158-b",
@@ -91,12 +92,14 @@
       "temperature": 211.6534600483564,
       "exoplanet": true,
       "bump": false,
-      "color": "#D6AF80",
-      "clouds": false
+      "color": "#7E949D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 5158, which contains 2 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HIP 5158 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HIP 5158 - System With 2 Exolanets "
 }

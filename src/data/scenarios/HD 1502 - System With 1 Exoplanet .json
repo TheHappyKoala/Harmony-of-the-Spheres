@@ -73,12 +73,14 @@
       "temperature": 284.43588585174945,
       "exoplanet": true,
       "bump": false,
-      "color": "#A886E3",
-      "clouds": false
+      "color": "#B81B0D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 1502, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 1502 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 1502 - System With 1 Exoplanet "
 }

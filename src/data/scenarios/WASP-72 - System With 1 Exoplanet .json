@@ -67,18 +67,20 @@
       "radius": 1260,
       "a": 0.03711,
       "e": 0,
-      "w": 181.09793155893797,
+      "w": 256.5657273100079,
       "o": 0,
       "orbitalPeriod": 2.21673,
       "temperature": 2210,
       "exoplanet": true,
       "bump": false,
-      "color": "#18D4BA",
-      "clouds": false
+      "color": "#57CCDD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-72, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-72 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-72 - System With 1 Exoplanet "
 }

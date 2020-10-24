@@ -67,14 +67,15 @@
       "radius": 448.3255813953489,
       "a": 0.6372,
       "e": 0.02,
-      "w": 20.50687106329594,
+      "w": 257.3135508070902,
       "o": 0,
       "orbitalPeriod": 179.612,
       "temperature": 389,
       "exoplanet": true,
       "bump": false,
-      "color": "#5A7BFA",
-      "clouds": false
+      "color": "#87C295",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-103-b",
@@ -85,18 +86,20 @@
       "radius": 294,
       "a": 0.1269,
       "e": 0.03,
-      "w": 38.61637900415716,
+      "w": 2.949693087716234,
       "o": 0,
       "orbitalPeriod": 15.9654,
       "temperature": 872,
       "exoplanet": true,
       "bump": false,
-      "color": "#AA895E",
-      "clouds": false
+      "color": "#AB7496",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-103, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-103 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-103 - System With 2 Exolanets "
 }

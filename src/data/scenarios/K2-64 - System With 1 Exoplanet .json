@@ -67,18 +67,20 @@
       "radius": 180.69767441860466,
       "a": 0.0619,
       "e": 0,
-      "w": 233.80106608182155,
+      "w": 298.3951494793275,
       "o": 0,
       "orbitalPeriod": 6.53044,
       "temperature": 771.4857153516527,
       "exoplanet": true,
       "bump": true,
-      "color": "#7B489F",
-      "clouds": true
+      "color": "#EE6DE1",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-64, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-64 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-64 - System With 1 Exoplanet "
 }

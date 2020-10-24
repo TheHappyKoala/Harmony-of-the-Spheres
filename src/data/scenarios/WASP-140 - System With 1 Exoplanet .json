@@ -67,18 +67,20 @@
       "radius": 1406.5116279069769,
       "a": 0.0323,
       "e": 0.047,
-      "w": 316.7967125389762,
+      "w": 36.85847967483823,
       "o": 0,
       "orbitalPeriod": 2.2359835,
       "temperature": 1320,
       "exoplanet": true,
       "bump": false,
-      "color": "#D55B76",
-      "clouds": false
+      "color": "#0751EE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-140, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-140 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-140 - System With 1 Exoplanet "
 }

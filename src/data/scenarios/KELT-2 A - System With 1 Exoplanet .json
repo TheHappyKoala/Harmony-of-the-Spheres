@@ -73,12 +73,14 @@
       "temperature": 1418.492670312582,
       "exoplanet": true,
       "bump": false,
-      "color": "#B6E12E",
-      "clouds": false
+      "color": "#487B24",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-2 A, which contains 1 exoplanets and was discovered by the KELT.",
   "name": "KELT-2 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KELT-2 A - System With 1 Exoplanet "
 }

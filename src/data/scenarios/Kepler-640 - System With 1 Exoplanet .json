@@ -67,18 +67,20 @@
       "radius": 222.69767441860466,
       "a": 0.1566,
       "e": 0,
-      "w": 328.5190080288826,
+      "w": 66.02315520626816,
       "o": 0,
       "orbitalPeriod": 22.24813967,
       "temperature": 609,
       "exoplanet": true,
       "bump": false,
-      "color": "#267F10",
-      "clouds": false
+      "color": "#17E753",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-640, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-640 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-640 - System With 1 Exoplanet "
 }

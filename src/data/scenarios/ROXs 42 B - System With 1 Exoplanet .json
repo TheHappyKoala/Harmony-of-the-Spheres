@@ -67,18 +67,20 @@
       "radius": 1093.9534883720933,
       "a": 157,
       "e": 0.58,
-      "w": 25.975840017312812,
+      "w": 188.66570367057318,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 1975,
       "exoplanet": true,
       "bump": false,
-      "color": "#55C9B7",
-      "clouds": false
+      "color": "#0F86FD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system ROXs 42 B, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "ROXs 42 B - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "ROXs 42 B - System With 1 Exoplanet "
 }

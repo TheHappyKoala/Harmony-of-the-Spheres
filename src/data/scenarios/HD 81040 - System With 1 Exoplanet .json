@@ -73,12 +73,14 @@
       "temperature": 179.15978525930237,
       "exoplanet": true,
       "bump": false,
-      "color": "#4D5340",
-      "clouds": false
+      "color": "#0B4F72",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 81040, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "HD 81040 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 81040 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 642,
       "exoplanet": true,
       "bump": false,
-      "color": "#BBC845",
-      "clouds": false
+      "color": "#BFB5A7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 15337-b",
@@ -91,12 +92,14 @@
       "temperature": 1001,
       "exoplanet": true,
       "bump": false,
-      "color": "#B12E2D",
-      "clouds": false
+      "color": "#BA4AEA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 15337, which contains 2 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "HD 15337 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 15337 - System With 2 Exolanets "
 }

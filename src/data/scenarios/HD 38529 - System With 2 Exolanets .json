@@ -73,8 +73,9 @@
       "temperature": 163.15976328282574,
       "exoplanet": true,
       "bump": false,
-      "color": "#4CAE18",
-      "clouds": false
+      "color": "#57E2E5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 38529-b",
@@ -91,12 +92,14 @@
       "temperature": 865.3596084937334,
       "exoplanet": true,
       "bump": false,
-      "color": "#16F300",
-      "clouds": false
+      "color": "#E4DB5E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 38529, which contains 2 exoplanets and was discovered by the Multiple Observatories.",
   "name": "HD 38529 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 38529 - System With 2 Exolanets "
 }

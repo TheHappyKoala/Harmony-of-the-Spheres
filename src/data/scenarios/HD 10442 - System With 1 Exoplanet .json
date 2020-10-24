@@ -73,12 +73,14 @@
       "temperature": 170.95917977778774,
       "exoplanet": true,
       "bump": false,
-      "color": "#1DAAE3",
-      "clouds": false
+      "color": "#58B93C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 10442, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 10442 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 10442 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 260.78284510647467,
       "exoplanet": true,
       "bump": false,
-      "color": "#A4CF3D",
-      "clouds": false
+      "color": "#D96B91",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "55 Cnc-e",
@@ -91,8 +92,9 @@
       "temperature": 1958,
       "exoplanet": true,
       "bump": false,
-      "color": "#D2313F",
-      "clouds": false
+      "color": "#9D8FA5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "55 Cnc-d",
@@ -109,8 +111,9 @@
       "temperature": 98.68300629853678,
       "exoplanet": true,
       "bump": false,
-      "color": "#C2B9B4",
-      "clouds": false
+      "color": "#ECE567",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "55 Cnc-c",
@@ -127,8 +130,9 @@
       "temperature": 471.18893667383145,
       "exoplanet": true,
       "bump": false,
-      "color": "#BE01FB",
-      "clouds": false
+      "color": "#64B048",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "55 Cnc-b",
@@ -145,12 +149,14 @@
       "temperature": 700,
       "exoplanet": true,
       "bump": false,
-      "color": "#1E1263",
-      "clouds": false
+      "color": "#1DC4CF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system 55 Cnc, which contains 5 exoplanets and was discovered by the Lick Observatory.",
   "name": "55 Cnc - System With 5 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "55 Cnc - System With 5 Exolanets "
 }

@@ -67,14 +67,15 @@
       "radius": 66.4186046511628,
       "a": 0.0567,
       "e": 0,
-      "w": 252.8540458977847,
+      "w": 255.86414465560185,
       "o": 0,
       "orbitalPeriod": 5.10115756,
       "temperature": 1065,
       "exoplanet": true,
       "bump": true,
-      "color": "#699ED4",
-      "clouds": false
+      "color": "#3C6BDB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1542-d",
@@ -85,14 +86,15 @@
       "radius": 76.18604651162791,
       "a": 0.0632,
       "e": 0,
-      "w": 209.37901702917358,
+      "w": 93.84402220337707,
       "o": 0,
       "orbitalPeriod": 5.99273738,
       "temperature": 1010,
       "exoplanet": true,
       "bump": true,
-      "color": "#D4C5B4",
-      "clouds": false
+      "color": "#62CF99",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1542-c",
@@ -103,14 +105,15 @@
       "radius": 56.65116279069768,
       "a": 0.0389,
       "e": 0,
-      "w": 26.91776275956383,
+      "w": 56.38828088666443,
       "o": 0,
       "orbitalPeriod": 2.89223021,
       "temperature": 1287,
       "exoplanet": true,
       "bump": true,
-      "color": "#55CE02",
-      "clouds": false
+      "color": "#42B152",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1542-b",
@@ -121,18 +124,20 @@
       "radius": 66.4186046511628,
       "a": 0.0479,
       "e": 0,
-      "w": 42.17384186340949,
+      "w": 269.6769421450182,
       "o": 0,
       "orbitalPeriod": 3.95116882,
       "temperature": 1160,
       "exoplanet": true,
       "bump": true,
-      "color": "#A0B962",
-      "clouds": false
+      "color": "#9263FF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1542, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1542 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1542 - System With 4 Exolanets "
 }

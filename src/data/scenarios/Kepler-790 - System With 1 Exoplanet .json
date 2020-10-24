@@ -67,18 +67,20 @@
       "radius": 189.4883720930233,
       "a": 0.101,
       "e": 0,
-      "w": 239.7492556205654,
+      "w": 34.97280479769242,
       "o": 0,
       "orbitalPeriod": 13.73469807,
       "temperature": 634,
       "exoplanet": true,
       "bump": false,
-      "color": "#5B3308",
-      "clouds": false
+      "color": "#8E04CA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-790, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-790 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-790 - System With 1 Exoplanet "
 }

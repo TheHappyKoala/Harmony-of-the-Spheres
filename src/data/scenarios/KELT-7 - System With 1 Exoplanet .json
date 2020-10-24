@@ -67,18 +67,20 @@
       "radius": 1562.7906976744189,
       "a": 0.04415,
       "e": 0,
-      "w": 140.59734826468946,
+      "w": 57.49199871952938,
       "o": 0,
       "orbitalPeriod": 2.73477,
       "temperature": 2048,
       "exoplanet": true,
       "bump": false,
-      "color": "#8B9ED1",
-      "clouds": false
+      "color": "#DC5688",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-7, which contains 1 exoplanets and was discovered by the KELT.",
   "name": "KELT-7 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KELT-7 - System With 1 Exoplanet "
 }

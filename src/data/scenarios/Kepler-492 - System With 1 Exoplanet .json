@@ -67,18 +67,20 @@
       "radius": 836.0930232558139,
       "a": 0.0935,
       "e": 0,
-      "w": 341.5906565943733,
+      "w": 197.66007231349712,
       "o": 0,
       "orbitalPeriod": 11.72012266,
       "temperature": 660,
       "exoplanet": true,
       "bump": false,
-      "color": "#D782C2",
-      "clouds": false
+      "color": "#C32377",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-492, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-492 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-492 - System With 1 Exoplanet "
 }

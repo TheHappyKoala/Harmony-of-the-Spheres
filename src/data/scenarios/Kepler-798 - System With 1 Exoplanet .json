@@ -67,18 +67,20 @@
       "radius": 208.046511627907,
       "a": 0.1174,
       "e": 0,
-      "w": 89.77904169203862,
+      "w": 24.131512914736895,
       "o": 0,
       "orbitalPeriod": 13.71933369,
       "temperature": 864,
       "exoplanet": true,
       "bump": false,
-      "color": "#951FD2",
-      "clouds": false
+      "color": "#212998",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-798, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-798 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-798 - System With 1 Exoplanet "
 }

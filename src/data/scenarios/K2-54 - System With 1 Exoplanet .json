@@ -67,18 +67,20 @@
       "radius": 100.6046511627907,
       "a": 0.0671,
       "e": 0,
-      "w": 303.3393007305879,
+      "w": 182.3062537227181,
       "o": 0,
       "orbitalPeriod": 9.7843,
       "temperature": 484.534975643172,
       "exoplanet": true,
       "bump": true,
-      "color": "#2BADDD",
-      "clouds": false
+      "color": "#EDB0B6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-54, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-54 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-54 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 256.8837209302326,
       "a": 0.1344,
       "e": 0,
-      "w": 50.807050105882475,
+      "w": 102.86673439727846,
       "o": 0,
       "orbitalPeriod": 24.16,
       "temperature": 419.1040007897729,
       "exoplanet": true,
       "bump": false,
-      "color": "#336F06",
-      "clouds": false
+      "color": "#A0AAC0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 685, which contains 1 exoplanets and was discovered by the Qatar.",
   "name": "GJ 685 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 685 - System With 1 Exoplanet "
 }

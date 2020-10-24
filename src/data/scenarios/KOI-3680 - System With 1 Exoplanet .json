@@ -73,12 +73,14 @@
       "temperature": 347,
       "exoplanet": true,
       "bump": false,
-      "color": "#BF0CAB",
-      "clouds": false
+      "color": "#3B3E05",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KOI-3680, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "KOI-3680 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KOI-3680 - System With 1 Exoplanet "
 }

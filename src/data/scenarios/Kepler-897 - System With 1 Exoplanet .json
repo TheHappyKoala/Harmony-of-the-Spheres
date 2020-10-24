@@ -67,18 +67,20 @@
       "radius": 208.046511627907,
       "a": 0.077,
       "e": 0,
-      "w": 238.93442553004382,
+      "w": 326.3273779850538,
       "o": 0,
       "orbitalPeriod": 8.0472642,
       "temperature": 855,
       "exoplanet": true,
       "bump": false,
-      "color": "#C529BF",
-      "clouds": false
+      "color": "#A9888F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-897, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-897 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-897 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 918.1395348837209,
       "a": 0.055,
       "e": 0,
-      "w": 213.5846069281258,
+      "w": 189.8633122315942,
       "o": 0,
       "orbitalPeriod": 5.72149,
       "temperature": 770,
       "exoplanet": true,
       "bump": false,
-      "color": "#C84C83",
-      "clouds": false
+      "color": "#F2EFE3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-107, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-107 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-107 - System With 1 Exoplanet "
 }

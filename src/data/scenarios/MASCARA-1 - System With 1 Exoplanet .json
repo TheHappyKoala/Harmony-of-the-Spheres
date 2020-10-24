@@ -67,18 +67,20 @@
       "radius": 1465.1162790697676,
       "a": 0.043,
       "e": 0,
-      "w": 198.66445565181752,
+      "w": 250.4535632963152,
       "o": 0,
       "orbitalPeriod": 2.14878,
       "temperature": 2570,
       "exoplanet": true,
       "bump": false,
-      "color": "#4DEDDD",
-      "clouds": false
+      "color": "#C9E644",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system MASCARA-1, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "MASCARA-1 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "MASCARA-1 - System With 1 Exoplanet "
 }

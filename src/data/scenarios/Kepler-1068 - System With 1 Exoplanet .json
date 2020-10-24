@@ -67,18 +67,20 @@
       "radius": 316.4651162790698,
       "a": 0.1309,
       "e": 0,
-      "w": 312.551424466826,
+      "w": 44.32346776146984,
       "o": 0,
       "orbitalPeriod": 16.92344113,
       "temperature": 702,
       "exoplanet": true,
       "bump": false,
-      "color": "#2BB1A6",
-      "clouds": false
+      "color": "#99F19A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1068, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1068 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1068 - System With 1 Exoplanet "
 }

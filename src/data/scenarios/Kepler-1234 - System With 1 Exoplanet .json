@@ -67,18 +67,20 @@
       "radius": 245.16279069767444,
       "a": 0.096,
       "e": 0,
-      "w": 190.2061883817937,
+      "w": 53.361838610472525,
       "o": 0,
       "orbitalPeriod": 11.94014029,
       "temperature": 625,
       "exoplanet": true,
       "bump": false,
-      "color": "#33FD94",
-      "clouds": false
+      "color": "#51622A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1234, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1234 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1234 - System With 1 Exoplanet "
 }

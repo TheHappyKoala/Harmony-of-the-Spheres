@@ -73,12 +73,14 @@
       "temperature": 257.5756335829887,
       "exoplanet": true,
       "bump": false,
-      "color": "#DEA693",
-      "clouds": false
+      "color": "#CEF33C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system gam 1 Leo, which contains 1 exoplanets and was discovered by the Bohyunsan Optical Astronomical Observatory.",
   "name": "gam 1 Leo - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "gam 1 Leo - System With 1 Exoplanet "
 }

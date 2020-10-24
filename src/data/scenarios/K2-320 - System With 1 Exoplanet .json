@@ -67,18 +67,20 @@
       "radius": 228.55813953488374,
       "a": 0.0142,
       "e": 0,
-      "w": 222.21652993330403,
+      "w": 219.3792130170011,
       "o": 0,
       "orbitalPeriod": 1.995,
       "temperature": 698,
       "exoplanet": true,
       "bump": false,
-      "color": "#9812BB",
-      "clouds": false
+      "color": "#7D6A1B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-320, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-320 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-320 - System With 1 Exoplanet "
 }

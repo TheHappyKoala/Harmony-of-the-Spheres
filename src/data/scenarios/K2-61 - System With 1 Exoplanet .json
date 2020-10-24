@@ -67,18 +67,20 @@
       "radius": 215.86046511627907,
       "a": 0.0392,
       "e": 0,
-      "w": 173.4154303115668,
+      "w": 15.506852340098085,
       "o": 0,
       "orbitalPeriod": 2.57302,
       "temperature": 1401.8302201685383,
       "exoplanet": true,
       "bump": false,
-      "color": "#1ECCB5",
-      "clouds": false
+      "color": "#DAEF7E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-61, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-61 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-61 - System With 1 Exoplanet "
 }

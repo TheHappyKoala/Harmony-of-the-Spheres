@@ -67,18 +67,20 @@
       "radius": 1470,
       "a": 0.0535,
       "e": 0,
-      "w": 94.77314375724956,
+      "w": 34.37168067595895,
       "o": 0,
       "orbitalPeriod": 3.899052,
       "temperature": 1721,
       "exoplanet": true,
       "bump": false,
-      "color": "#BC87EE",
-      "clouds": false
+      "color": "#30E1A8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-176, which contains 1 exoplanets and was discovered by the SuperWASP-North.",
   "name": "WASP-176 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-176 - System With 1 Exoplanet "
 }

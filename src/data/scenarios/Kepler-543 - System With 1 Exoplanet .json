@@ -67,18 +67,20 @@
       "radius": 217.8139534883721,
       "a": 0.098,
       "e": 0,
-      "w": 79.82519002703084,
+      "w": 98.7447421020409,
       "o": 0,
       "orbitalPeriod": 13.89961966,
       "temperature": 521,
       "exoplanet": true,
       "bump": false,
-      "color": "#7B50F2",
-      "clouds": false
+      "color": "#BE3A9A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-543, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-543 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-543 - System With 1 Exoplanet "
 }

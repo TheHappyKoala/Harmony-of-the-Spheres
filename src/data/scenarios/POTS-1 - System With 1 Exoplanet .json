@@ -67,18 +67,20 @@
       "radius": 919.1162790697674,
       "a": 0.03734,
       "e": 0,
-      "w": 111.62503826833604,
+      "w": 313.93553864315277,
       "o": 0,
       "orbitalPeriod": 3.1606296,
       "temperature": 942.5384700729982,
       "exoplanet": true,
       "bump": false,
-      "color": "#600AC8",
-      "clouds": false
+      "color": "#EEC68B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system POTS-1, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "POTS-1 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "POTS-1 - System With 1 Exoplanet "
 }

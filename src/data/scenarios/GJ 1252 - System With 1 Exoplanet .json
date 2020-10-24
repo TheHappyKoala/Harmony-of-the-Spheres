@@ -67,18 +67,20 @@
       "radius": 103.53488372093024,
       "a": 0.00916,
       "e": 0,
-      "w": 307.3173894213033,
+      "w": 280.8686122924938,
       "o": 0,
       "orbitalPeriod": 0.5182349,
       "temperature": 1089,
       "exoplanet": true,
       "bump": true,
-      "color": "#6FED33",
-      "clouds": false
+      "color": "#F92E47",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 1252, which contains 1 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "GJ 1252 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 1252 - System With 1 Exoplanet "
 }

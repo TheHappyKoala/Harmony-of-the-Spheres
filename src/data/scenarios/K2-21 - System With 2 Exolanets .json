@@ -73,8 +73,9 @@
       "temperature": 420,
       "exoplanet": true,
       "bump": false,
-      "color": "#BA3DB1",
-      "clouds": false
+      "color": "#AB15C7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-21-b",
@@ -91,12 +92,14 @@
       "temperature": 500,
       "exoplanet": true,
       "bump": true,
-      "color": "#B84C95",
-      "clouds": true
+      "color": "#B1C6D5",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-21, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-21 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-21 - System With 2 Exolanets "
 }

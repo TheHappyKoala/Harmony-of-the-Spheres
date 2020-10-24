@@ -67,18 +67,20 @@
       "radius": 163.11627906976747,
       "a": 0.05,
       "e": 0,
-      "w": 175.25565899460298,
+      "w": 261.2306785005767,
       "o": 0,
       "orbitalPeriod": 4.6455,
       "temperature": 884.3668717433526,
       "exoplanet": true,
       "bump": true,
-      "color": "#EF159D",
-      "clouds": true
+      "color": "#8183CD",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 156668, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 156668 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 156668 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 756.0000000000001,
       "a": 0.2607,
       "e": 0,
-      "w": 228.1777865484934,
+      "w": 279.02245157362347,
       "o": 0,
       "orbitalPeriod": 51.84688575,
       "temperature": 413,
       "exoplanet": true,
       "bump": false,
-      "color": "#7D54DB",
-      "clouds": false
+      "color": "#E85B09",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-148-c",
@@ -85,14 +86,15 @@
       "radius": 313.5348837209303,
       "a": 0.05,
       "e": 0,
-      "w": 139.20824690168013,
+      "w": 98.82353096727168,
       "o": 0,
       "orbitalPeriod": 4.180043,
       "temperature": 957,
       "exoplanet": true,
       "bump": false,
-      "color": "#A24142",
-      "clouds": false
+      "color": "#BD225C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-148-b",
@@ -103,18 +105,20 @@
       "radius": 157.2558139534884,
       "a": 0.028,
       "e": 0,
-      "w": 206.963598912698,
+      "w": 104.02229972602873,
       "o": 0,
       "orbitalPeriod": 1.729366,
       "temperature": 1284,
       "exoplanet": true,
       "bump": true,
-      "color": "#426931",
-      "clouds": false
+      "color": "#7B0142",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-148, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-148 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-148 - System With 3 Exolanets "
 }

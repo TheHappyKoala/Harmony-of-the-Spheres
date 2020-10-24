@@ -73,8 +73,9 @@
       "temperature": 966.5646268997779,
       "exoplanet": true,
       "bump": false,
-      "color": "#B83CD7",
-      "clouds": false
+      "color": "#0A1F9B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "CoRoT-7-b",
@@ -91,12 +92,14 @@
       "temperature": 1756,
       "exoplanet": true,
       "bump": true,
-      "color": "#2E738A",
-      "clouds": false
+      "color": "#BAB6F8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-7, which contains 2 exoplanets and was discovered by the CoRoT.",
   "name": "CoRoT-7 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "CoRoT-7 - System With 2 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 170.93023255813952,
       "a": 0.0409,
       "e": 0,
-      "w": 34.49296033603987,
+      "w": 214.58310201496553,
       "o": 0,
       "orbitalPeriod": 2.86041,
       "temperature": 1529,
       "exoplanet": true,
       "bump": true,
-      "color": "#F40918",
-      "clouds": false
+      "color": "#8C2F7E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-230, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-230 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-230 - System With 1 Exoplanet "
 }

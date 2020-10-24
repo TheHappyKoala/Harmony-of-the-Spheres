@@ -67,18 +67,20 @@
       "radius": 259.81395348837214,
       "a": 0.0488,
       "e": 0,
-      "w": 151.98168289453744,
+      "w": 145.97327149125942,
       "o": 0,
       "orbitalPeriod": 3.334966,
       "temperature": 1711,
       "exoplanet": true,
       "bump": false,
-      "color": "#2F562A",
-      "clouds": false
+      "color": "#62D915",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-278, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-278 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-278 - System With 1 Exoplanet "
 }

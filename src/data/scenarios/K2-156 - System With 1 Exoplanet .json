@@ -67,18 +67,20 @@
       "radius": 100.6046511627907,
       "a": 0.0149,
       "e": 0,
-      "w": 144.42549463358748,
+      "w": 220.2025065252419,
       "o": 0,
       "orbitalPeriod": 0.81314,
       "temperature": 1347,
       "exoplanet": true,
       "bump": true,
-      "color": "#0697B8",
-      "clouds": false
+      "color": "#48CA9C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-156, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-156 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-156 - System With 1 Exoplanet "
 }

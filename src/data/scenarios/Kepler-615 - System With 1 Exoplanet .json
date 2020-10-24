@@ -67,18 +67,20 @@
       "radius": 151.3953488372093,
       "a": 0.085,
       "e": 0,
-      "w": 314.9088217413229,
+      "w": 12.479467226103944,
       "o": 0,
       "orbitalPeriod": 10.35584657,
       "temperature": 620,
       "exoplanet": true,
       "bump": true,
-      "color": "#49058C",
-      "clouds": false
+      "color": "#CD5799",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-615, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-615 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-615 - System With 1 Exoplanet "
 }

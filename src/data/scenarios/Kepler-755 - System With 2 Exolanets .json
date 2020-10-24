@@ -67,14 +67,15 @@
       "radius": 109.39534883720931,
       "a": 0.0367,
       "e": 0,
-      "w": 7.417658844887276,
+      "w": 298.770638219984,
       "o": 0,
       "orbitalPeriod": 2.85313364,
       "temperature": 1016,
       "exoplanet": true,
       "bump": true,
-      "color": "#DF5B07",
-      "clouds": false
+      "color": "#88131F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-755-b",
@@ -85,18 +86,20 @@
       "radius": 153.34883720930233,
       "a": 0.0214,
       "e": 0,
-      "w": 298.39682767508145,
+      "w": 249.53041264387343,
       "o": 0,
       "orbitalPeriod": 1.26909037,
       "temperature": 1331,
       "exoplanet": true,
       "bump": true,
-      "color": "#A2661E",
-      "clouds": false
+      "color": "#ACEB39",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-755, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-755 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-755 - System With 2 Exolanets "
 }

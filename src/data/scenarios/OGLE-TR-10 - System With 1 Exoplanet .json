@@ -67,18 +67,20 @@
       "radius": 1220.9302325581396,
       "a": 0.0434,
       "e": 0.82,
-      "w": 53.177265810496266,
+      "w": 201.29357282335644,
       "o": 0,
       "orbitalPeriod": 3.101278,
       "temperature": 1702,
       "exoplanet": true,
       "bump": false,
-      "color": "#434DD4",
-      "clouds": false
+      "color": "#4B1B79",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system OGLE-TR-10, which contains 1 exoplanets and was discovered by the OGLE.",
   "name": "OGLE-TR-10 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "OGLE-TR-10 - System With 1 Exoplanet "
 }

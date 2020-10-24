@@ -73,12 +73,14 @@
       "temperature": 405,
       "exoplanet": true,
       "bump": false,
-      "color": "#63A6DF",
-      "clouds": false
+      "color": "#E3937B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 80606, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "HD 80606 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 80606 - System With 1 Exoplanet "
 }

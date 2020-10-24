@@ -67,18 +67,20 @@
       "radius": 1084.186046511628,
       "a": 650,
       "e": 0,
-      "w": 221.65008176154444,
+      "w": 311.4218782949521,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 1800,
       "exoplanet": true,
       "bump": false,
-      "color": "#A24407",
-      "clouds": false
+      "color": "#34B7A1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 106906, which contains 1 exoplanets and was discovered by the Las Campanas Observatory.",
   "name": "HD 106906 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 106906 - System With 1 Exoplanet "
 }

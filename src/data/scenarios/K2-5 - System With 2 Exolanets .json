@@ -67,14 +67,15 @@
       "radius": 197.30232558139537,
       "a": 0.0818,
       "e": 0,
-      "w": 210.3395876199265,
+      "w": 63.41544773770237,
       "o": 0,
       "orbitalPeriod": 10.93241,
       "temperature": 456,
       "exoplanet": true,
       "bump": false,
-      "color": "#9FA8E4",
-      "clouds": false
+      "color": "#8F3C2A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-5-b",
@@ -85,18 +86,20 @@
       "radius": 166.046511627907,
       "a": 0.0532,
       "e": 0,
-      "w": 165.99323172826251,
+      "w": 39.459072504785766,
       "o": 0,
       "orbitalPeriod": 5.73594,
       "temperature": 565,
       "exoplanet": true,
       "bump": true,
-      "color": "#7FECCF",
-      "clouds": true
+      "color": "#76DE9B",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-5, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-5 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-5 - System With 2 Exolanets "
 }

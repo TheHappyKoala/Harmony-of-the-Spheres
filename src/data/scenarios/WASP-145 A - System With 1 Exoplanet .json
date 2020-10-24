@@ -67,18 +67,20 @@
       "radius": 879.0697674418606,
       "a": 0.0261,
       "e": 0,
-      "w": 16.721860022592452,
+      "w": 249.62175261467672,
       "o": 0,
       "orbitalPeriod": 1.7690381,
       "temperature": 1200,
       "exoplanet": true,
       "bump": false,
-      "color": "#B6E104",
-      "clouds": false
+      "color": "#48646C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-145 A, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-145 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-145 A - System With 1 Exoplanet "
 }

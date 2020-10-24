@@ -67,18 +67,20 @@
       "radius": 202.18604651162792,
       "a": 0.0591,
       "e": 0,
-      "w": 282.5979968232131,
+      "w": 61.88773888739854,
       "o": 0,
       "orbitalPeriod": 7.06599,
       "temperature": 632.015458102019,
       "exoplanet": true,
       "bump": false,
-      "color": "#97F8F3",
-      "clouds": false
+      "color": "#375C74",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-69, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-69 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-69 - System With 1 Exoplanet "
 }

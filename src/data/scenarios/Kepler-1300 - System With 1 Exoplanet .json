@@ -67,18 +67,20 @@
       "radius": 119.16279069767442,
       "a": 0.1655,
       "e": 0,
-      "w": 239.33624475309819,
+      "w": 169.95524093211017,
       "o": 0,
       "orbitalPeriod": 22.2419092,
       "temperature": 954,
       "exoplanet": true,
       "bump": true,
-      "color": "#E9D833",
-      "clouds": false
+      "color": "#DFE9E3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1300, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1300 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1300 - System With 1 Exoplanet "
 }

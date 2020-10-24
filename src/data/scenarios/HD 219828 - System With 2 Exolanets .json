@@ -73,8 +73,9 @@
       "temperature": 113.19354138259584,
       "exoplanet": true,
       "bump": false,
-      "color": "#38CA23",
-      "clouds": false
+      "color": "#7628B6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 219828-b",
@@ -91,12 +92,14 @@
       "temperature": 1209.6422566347549,
       "exoplanet": true,
       "bump": false,
-      "color": "#D73855",
-      "clouds": false
+      "color": "#C0064B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 219828, which contains 2 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 219828 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 219828 - System With 2 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 265.6744186046512,
       "a": 0.078,
       "e": 0,
-      "w": 63.72008283443981,
+      "w": 155.76007459590804,
       "o": 0,
       "orbitalPeriod": 8.98101683,
       "temperature": 880,
       "exoplanet": true,
       "bump": false,
-      "color": "#5102E3",
-      "clouds": false
+      "color": "#28244E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-463, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-463 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-463 - System With 1 Exoplanet "
 }

@@ -73,12 +73,14 @@
       "temperature": 95.96097626486959,
       "exoplanet": true,
       "bump": false,
-      "color": "#29435D",
-      "clouds": false
+      "color": "#3AF462",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 98649, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 98649 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 98649 - System With 1 Exoplanet "
 }

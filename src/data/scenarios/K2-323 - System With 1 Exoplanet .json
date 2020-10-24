@@ -67,18 +67,20 @@
       "radius": 182.6511627906977,
       "a": 0.1275,
       "e": 0,
-      "w": 225.54656753794654,
+      "w": 285.34605157369936,
       "o": 0,
       "orbitalPeriod": 24.93,
       "temperature": 318,
       "exoplanet": true,
       "bump": false,
-      "color": "#5161E4",
-      "clouds": false
+      "color": "#4DD2C2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-323, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-323 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-323 - System With 1 Exoplanet "
 }

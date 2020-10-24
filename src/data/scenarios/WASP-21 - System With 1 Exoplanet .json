@@ -67,18 +67,20 @@
       "radius": 1045.1162790697676,
       "a": 0.052,
       "e": 0,
-      "w": 152.44995913175163,
+      "w": 91.11065264699852,
       "o": 0,
       "orbitalPeriod": 4.322482,
       "temperature": 1340,
       "exoplanet": true,
       "bump": false,
-      "color": "#81FDEB",
-      "clouds": false
+      "color": "#4DB3EB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-21, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-21 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-21 - System With 1 Exoplanet "
 }

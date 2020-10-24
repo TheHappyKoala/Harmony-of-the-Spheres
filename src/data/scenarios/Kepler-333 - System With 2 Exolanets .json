@@ -67,14 +67,15 @@
       "radius": 96.69767441860466,
       "a": 0.135,
       "e": 0,
-      "w": 57.19078243628313,
+      "w": 224.90610315620808,
       "o": 0,
       "orbitalPeriod": 24.08821,
       "temperature": 386,
       "exoplanet": true,
       "bump": true,
-      "color": "#7A29B1",
-      "clouds": false
+      "color": "#7FE607",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-333-b",
@@ -85,18 +86,20 @@
       "radius": 115.25581395348837,
       "a": 0.087,
       "e": 0,
-      "w": 115.45071236973757,
+      "w": 76.01959075200205,
       "o": 0,
       "orbitalPeriod": 12.551158,
       "temperature": 480,
       "exoplanet": true,
       "bump": false,
-      "color": "#69CA69",
-      "clouds": false
+      "color": "#92C7E7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-333, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-333 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-333 - System With 2 Exolanets "
 }

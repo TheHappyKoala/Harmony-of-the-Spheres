@@ -67,14 +67,15 @@
       "radius": 238.32558139534885,
       "a": 0.1103,
       "e": 0,
-      "w": 356.21955628869586,
+      "w": 100.38699335845638,
       "o": 0,
       "orbitalPeriod": 14.09189,
       "temperature": 663,
       "exoplanet": true,
       "bump": false,
-      "color": "#19C7AF",
-      "clouds": false
+      "color": "#A8746B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-37-c",
@@ -85,14 +86,15 @@
       "radius": 239.30232558139537,
       "a": 0.0654,
       "e": 0,
-      "w": 21.34365149221523,
+      "w": 184.5459541932486,
       "o": 0,
       "orbitalPeriod": 6.42904,
       "temperature": 861,
       "exoplanet": true,
       "bump": false,
-      "color": "#2E8438",
-      "clouds": false
+      "color": "#86C230",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-37-b",
@@ -103,18 +105,20 @@
       "radius": 140.65116279069767,
       "a": 0.0511,
       "e": 0,
-      "w": 47.32408527702596,
+      "w": 117.34485053483088,
       "o": 0,
       "orbitalPeriod": 4.44117,
       "temperature": 974,
       "exoplanet": true,
       "bump": true,
-      "color": "#7E3420",
-      "clouds": false
+      "color": "#44BA97",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-37, which contains 3 exoplanets and was discovered by the K2.",
   "name": "K2-37 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-37 - System With 3 Exolanets "
 }

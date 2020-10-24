@@ -67,18 +67,20 @@
       "radius": 125.0232558139535,
       "a": 0.048,
       "e": 0,
-      "w": 219.19634045425033,
+      "w": 344.22179239515293,
       "o": 0,
       "orbitalPeriod": 5.18500207,
       "temperature": 652,
       "exoplanet": true,
       "bump": true,
-      "color": "#C86A57",
-      "clouds": false
+      "color": "#0EC431",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1007, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1007 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1007 - System With 1 Exoplanet "
 }

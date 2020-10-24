@@ -1,7 +1,8 @@
 {
   "name": "Apophis 2029 Earth Encounter",
+  "fileName": "Apophis 2029 Earth Encounter",
   "sortOrder": 9,
-  "description": "Gravity simulation of Apophis close encounter with Earth in 2029. On April 13, 2029, Apophis will pass Earth closer than geosynchronous communication satellites.",
+  "description": "Gravity simulation of asteroid Apophis close encounter with Earth in 2029. On April 13, 2029, Apophis will pass Earth closer than geosynchronous communication satellites.",
   "particlesFun": false,
   "type": "Solar System",
   "logarithmicDepthBuffer": true,

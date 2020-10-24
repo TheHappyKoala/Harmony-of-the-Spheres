@@ -67,18 +67,20 @@
       "radius": 172.88372093023256,
       "a": 0.0474,
       "e": 0,
-      "w": 104.25587802390089,
+      "w": 86.26028832046163,
       "o": 0,
       "orbitalPeriod": 3.77059058,
       "temperature": 1272,
       "exoplanet": true,
       "bump": true,
-      "color": "#800E3F",
-      "clouds": true
+      "color": "#66CD71",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-996, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-996 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-996 - System With 1 Exoplanet "
 }

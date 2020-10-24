@@ -67,18 +67,20 @@
       "radius": 1256.0930232558142,
       "a": 0.0433,
       "e": 0,
-      "w": 208.30919598678744,
+      "w": 85.12155615001517,
       "o": 0,
       "orbitalPeriod": 3.2432598,
       "temperature": 1243,
       "exoplanet": true,
       "bump": false,
-      "color": "#A55842",
-      "clouds": false
+      "color": "#13CC0A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-485, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-485 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-485 - System With 1 Exoplanet "
 }

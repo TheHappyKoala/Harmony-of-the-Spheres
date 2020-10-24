@@ -67,18 +67,20 @@
       "radius": 269.58139534883725,
       "a": 0.1418,
       "e": 0,
-      "w": 16.974032281564632,
+      "w": 267.06201722882895,
       "o": 0,
       "orbitalPeriod": 22.18432708,
       "temperature": 546,
       "exoplanet": true,
       "bump": false,
-      "color": "#248BD0",
-      "clouds": false
+      "color": "#436068",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-563, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-563 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-563 - System With 1 Exoplanet "
 }

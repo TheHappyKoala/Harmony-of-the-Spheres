@@ -67,14 +67,15 @@
       "radius": 232.46511627906978,
       "a": 0.5545,
       "e": 0,
-      "w": 228.09082076078536,
+      "w": 4.064443089715164,
       "o": 0,
       "orbitalPeriod": 153.343364,
       "temperature": 377,
       "exoplanet": true,
       "bump": false,
-      "color": "#2DC25B",
-      "clouds": false
+      "color": "#3ACD81",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-937-b",
@@ -85,18 +86,20 @@
       "radius": 324.2790697674419,
       "a": 0.3214,
       "e": 0,
-      "w": 131.75178703524313,
+      "w": 67.12805655557626,
       "o": 0,
       "orbitalPeriod": 67.668827,
       "temperature": 495,
       "exoplanet": true,
       "bump": false,
-      "color": "#CA6A2D",
-      "clouds": false
+      "color": "#9863F9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-937, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-937 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-937 - System With 2 Exolanets "
 }

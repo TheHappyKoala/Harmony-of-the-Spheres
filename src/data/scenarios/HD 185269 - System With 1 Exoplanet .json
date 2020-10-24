@@ -73,12 +73,14 @@
       "temperature": 1055.5081123699224,
       "exoplanet": true,
       "bump": false,
-      "color": "#68ED7F",
-      "clouds": false
+      "color": "#FF96F0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 185269, which contains 1 exoplanets and was discovered by the Lick Observatory.",
   "name": "HD 185269 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 185269 - System With 1 Exoplanet "
 }

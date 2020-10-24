@@ -67,18 +67,20 @@
       "radius": 135.76744186046514,
       "a": 0.1228,
       "e": 0,
-      "w": 42.949514628703646,
+      "w": 216.62659301539844,
       "o": 0,
       "orbitalPeriod": 14.5564533,
       "temperature": 787,
       "exoplanet": true,
       "bump": true,
-      "color": "#4AE351",
-      "clouds": false
+      "color": "#EDE9D4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1501, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1501 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1501 - System With 1 Exoplanet "
 }

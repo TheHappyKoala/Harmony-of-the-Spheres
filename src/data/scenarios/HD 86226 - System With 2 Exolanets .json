@@ -73,8 +73,9 @@
       "temperature": 1311,
       "exoplanet": true,
       "bump": false,
-      "color": "#A71A99",
-      "clouds": false
+      "color": "#9CE17D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 86226-b",
@@ -91,12 +92,14 @@
       "temperature": 176,
       "exoplanet": true,
       "bump": false,
-      "color": "#E37F62",
-      "clouds": false
+      "color": "#8B21DA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 86226, which contains 2 exoplanets and was discovered by the Las Campanas Observatory.",
   "name": "HD 86226 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 86226 - System With 2 Exolanets "
 }

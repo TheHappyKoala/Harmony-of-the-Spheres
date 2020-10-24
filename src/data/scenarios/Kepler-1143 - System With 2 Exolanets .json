@@ -67,14 +67,15 @@
       "radius": 313.5348837209303,
       "a": 0.6477,
       "e": 0,
-      "w": 67.68708878172224,
+      "w": 62.49933187798047,
       "o": 0,
       "orbitalPeriod": 210.630591,
       "temperature": 234,
       "exoplanet": true,
       "bump": false,
-      "color": "#03484A",
-      "clouds": false
+      "color": "#D840DC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1143-b",
@@ -85,18 +86,20 @@
       "radius": 145.53488372093022,
       "a": 0.0371,
       "e": 0,
-      "w": 269.41682482697354,
+      "w": 265.81552036463796,
       "o": 0,
       "orbitalPeriod": 2.88890485,
       "temperature": 976,
       "exoplanet": true,
       "bump": true,
-      "color": "#D7D48C",
-      "clouds": false
+      "color": "#00851C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1143, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1143 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1143 - System With 2 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 72.27906976744187,
       "a": 0.0216,
       "e": 0,
-      "w": 160.5528322890966,
+      "w": 330.38583167950077,
       "o": 0,
       "orbitalPeriod": 1.60588,
       "temperature": 789,
       "exoplanet": true,
       "bump": true,
-      "color": "#01B332",
-      "clouds": false
+      "color": "#B1CE4A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-257, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-257 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-257 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 241.25581395348837,
       "a": 0.404,
       "e": 0,
-      "w": 340.1477828827264,
+      "w": 197.22371288797822,
       "o": 0,
       "orbitalPeriod": 99.640161,
       "temperature": 360,
       "exoplanet": true,
       "bump": false,
-      "color": "#227675",
-      "clouds": false
+      "color": "#BDCB7B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-251-d",
@@ -85,14 +86,15 @@
       "radius": 241.25581395348837,
       "a": 0.182,
       "e": 0,
-      "w": 317.41744897833274,
+      "w": 88.55812078764171,
       "o": 0,
       "orbitalPeriod": 30.133001,
       "temperature": 536,
       "exoplanet": true,
       "bump": false,
-      "color": "#C72046",
-      "clouds": false
+      "color": "#08C223",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-251-c",
@@ -103,14 +105,15 @@
       "radius": 241.25581395348837,
       "a": 0.122,
       "e": 0,
-      "w": 343.90074446482157,
+      "w": 173.85466603919775,
       "o": 0,
       "orbitalPeriod": 16.514043,
       "temperature": 655,
       "exoplanet": true,
       "bump": false,
-      "color": "#E18C9D",
-      "clouds": false
+      "color": "#00DD96",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-251-b",
@@ -121,18 +124,20 @@
       "radius": 116.23255813953489,
       "a": 0.053,
       "e": 0,
-      "w": 85.45714503070143,
+      "w": 263.36082657834817,
       "o": 0,
       "orbitalPeriod": 4.790936,
       "temperature": 990,
       "exoplanet": true,
       "bump": true,
-      "color": "#997F85",
-      "clouds": false
+      "color": "#E01CB9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-251, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-251 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-251 - System With 4 Exolanets "
 }

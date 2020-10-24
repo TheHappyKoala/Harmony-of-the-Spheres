@@ -73,12 +73,14 @@
       "temperature": 364.26398768460353,
       "exoplanet": true,
       "bump": false,
-      "color": "#B541EF",
-      "clouds": false
+      "color": "#916789",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 12961, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HIP 12961 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HIP 12961 - System With 1 Exoplanet "
 }

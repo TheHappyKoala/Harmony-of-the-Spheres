@@ -67,18 +67,20 @@
       "radius": 163.11627906976747,
       "a": 0.745,
       "e": 0,
-      "w": 272.31851860919096,
+      "w": 96.35548058863232,
       "o": 0,
       "orbitalPeriod": 259.33683,
       "temperature": 304,
       "exoplanet": true,
       "bump": true,
-      "color": "#6A2A6E",
-      "clouds": false
+      "color": "#1FA5F6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1638, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1638 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1638 - System With 1 Exoplanet "
 }

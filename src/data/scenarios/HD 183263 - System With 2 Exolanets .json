@@ -73,8 +73,9 @@
       "temperature": 141.24018155720302,
       "exoplanet": true,
       "bump": false,
-      "color": "#FF9421",
-      "clouds": false
+      "color": "#5568F6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 183263-b",
@@ -91,12 +92,14 @@
       "temperature": 241.32913787791244,
       "exoplanet": true,
       "bump": false,
-      "color": "#F1E62C",
-      "clouds": false
+      "color": "#F7DBAB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 183263, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 183263 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 183263 - System With 2 Exolanets "
 }

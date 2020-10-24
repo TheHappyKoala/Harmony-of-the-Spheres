@@ -67,18 +67,20 @@
       "radius": 138.69767441860463,
       "a": 0.0646,
       "e": 0,
-      "w": 153.99336041452204,
+      "w": 313.96304804496486,
       "o": 0,
       "orbitalPeriod": 9.54927542,
       "temperature": 374,
       "exoplanet": true,
       "bump": true,
-      "color": "#25F217",
-      "clouds": false
+      "color": "#A4BAFD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-504, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-504 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-504 - System With 1 Exoplanet "
 }

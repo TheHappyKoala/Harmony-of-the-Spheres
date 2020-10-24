@@ -67,14 +67,15 @@
       "radius": 206.09302325581396,
       "a": 0.0875,
       "e": 0,
-      "w": 17.81773440632601,
+      "w": 46.1795975028295,
       "o": 0,
       "orbitalPeriod": 8.45808312,
       "temperature": 1117,
       "exoplanet": true,
       "bump": false,
-      "color": "#AD92F6",
-      "clouds": false
+      "color": "#B03E94",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1154-b",
@@ -85,18 +86,20 @@
       "radius": 204.13953488372093,
       "a": 0.0631,
       "e": 0,
-      "w": 16.56400950012153,
+      "w": 110.8280196927686,
       "o": 0,
       "orbitalPeriod": 5.1856142,
       "temperature": 1314,
       "exoplanet": true,
       "bump": false,
-      "color": "#6B9D40",
-      "clouds": false
+      "color": "#04361A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1154, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1154 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1154 - System With 2 Exolanets "
 }

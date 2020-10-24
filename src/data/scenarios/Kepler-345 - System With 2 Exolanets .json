@@ -67,14 +67,15 @@
       "radius": 104.51162790697674,
       "a": 0.077,
       "e": 0,
-      "w": 262.12610973104694,
+      "w": 110.49909213771066,
       "o": 0,
       "orbitalPeriod": 9.387427,
       "temperature": 575,
       "exoplanet": true,
       "bump": true,
-      "color": "#CBDECD",
-      "clouds": false
+      "color": "#224F0C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-345-b",
@@ -85,18 +86,20 @@
       "radius": 64.46511627906978,
       "a": 0.066,
       "e": 0,
-      "w": 276.6324134856582,
+      "w": 86.21199774466629,
       "o": 0,
       "orbitalPeriod": 7.415563,
       "temperature": 622,
       "exoplanet": true,
       "bump": true,
-      "color": "#80B87C",
-      "clouds": false
+      "color": "#A61330",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-345, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-345 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-345 - System With 2 Exolanets "
 }

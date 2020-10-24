@@ -67,18 +67,20 @@
       "radius": 173.86046511627907,
       "a": 0.0727,
       "e": 0,
-      "w": 149.94597722924192,
+      "w": 62.15722874115147,
       "o": 0,
       "orbitalPeriod": 10.59357,
       "temperature": 498.36850898058725,
       "exoplanet": true,
       "bump": true,
-      "color": "#A35B65",
-      "clouds": true
+      "color": "#5719AE",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-150, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-150 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-150 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 340,
       "exoplanet": true,
       "bump": false,
-      "color": "#6EE363",
-      "clouds": false
+      "color": "#5B666B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HAT-P-13-b",
@@ -91,12 +92,14 @@
       "temperature": 1740,
       "exoplanet": true,
       "bump": false,
-      "color": "#2C1AC2",
-      "clouds": false
+      "color": "#0DC931",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-13, which contains 2 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-13 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HAT-P-13 - System With 2 Exolanets "
 }

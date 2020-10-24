@@ -67,18 +67,20 @@
       "radius": 242.2325581395349,
       "a": 0.1539,
       "e": 0,
-      "w": 41.17228867623414,
+      "w": 265.3012738455283,
       "o": 0,
       "orbitalPeriod": 21.3587621,
       "temperature": 691,
       "exoplanet": true,
       "bump": false,
-      "color": "#BC2F8B",
-      "clouds": false
+      "color": "#7894C9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-870, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-870 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-870 - System With 1 Exoplanet "
 }

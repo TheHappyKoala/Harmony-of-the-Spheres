@@ -67,18 +67,20 @@
       "radius": 1240.46511627907,
       "a": 0.0486,
       "e": 0,
-      "w": 296.04063171307615,
+      "w": 291.63754729526386,
       "o": 0,
       "orbitalPeriod": 4.055259,
       "temperature": 1166,
       "exoplanet": true,
       "bump": false,
-      "color": "#26760A",
-      "clouds": false
+      "color": "#C980A4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-39, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-39 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-39 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 415.1162790697675,
       "a": 0.5337,
       "e": 0,
-      "w": 24.433124385042618,
+      "w": 246.2037783263228,
       "o": 0,
       "orbitalPeriod": 120.0181272,
       "temperature": 473,
       "exoplanet": true,
       "bump": false,
-      "color": "#3D4999",
-      "clouds": false
+      "color": "#640D8B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1000, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1000 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1000 - System With 1 Exoplanet "
 }

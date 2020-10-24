@@ -73,8 +73,9 @@
       "temperature": 353,
       "exoplanet": true,
       "bump": false,
-      "color": "#5D99D0",
-      "clouds": false
+      "color": "#363323",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "LTT 3780-b",
@@ -85,18 +86,20 @@
       "radius": 116.23255813953489,
       "a": 0.01211,
       "e": 0,
-      "w": 209.71332864394614,
+      "w": 268.1860111081342,
       "o": 0,
       "orbitalPeriod": 0.768448,
       "temperature": 892,
       "exoplanet": true,
       "bump": true,
-      "color": "#73FB9C",
-      "clouds": false
+      "color": "#8DE44C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system LTT 3780, which contains 2 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "LTT 3780 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "LTT 3780 - System With 2 Exolanets "
 }

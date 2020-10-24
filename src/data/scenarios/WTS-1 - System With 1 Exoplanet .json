@@ -67,18 +67,20 @@
       "radius": 1455.3488372093025,
       "a": 0.047,
       "e": 0.1,
-      "w": 177.45916363100577,
+      "w": 111.36234035864261,
       "o": 0,
       "orbitalPeriod": 3.352057,
       "temperature": 1500,
       "exoplanet": true,
       "bump": false,
-      "color": "#DCBBCD",
-      "clouds": false
+      "color": "#18940D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WTS-1, which contains 1 exoplanets and was discovered by the United Kingdom Infrared Telescope.",
   "name": "WTS-1 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WTS-1 - System With 1 Exoplanet "
 }

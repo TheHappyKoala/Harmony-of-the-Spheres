@@ -67,18 +67,20 @@
       "radius": 200.2325581395349,
       "a": 0.0531,
       "e": 0,
-      "w": 113.41094600486034,
+      "w": 351.9265526673337,
       "o": 0,
       "orbitalPeriod": 5.34264507,
       "temperature": 799,
       "exoplanet": true,
       "bump": false,
-      "color": "#254F16",
-      "clouds": false
+      "color": "#CC470C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1643, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1643 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1643 - System With 1 Exoplanet "
 }

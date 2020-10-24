@@ -73,12 +73,14 @@
       "temperature": 236.17273746992745,
       "exoplanet": true,
       "bump": false,
-      "color": "#3F067F",
-      "clouds": false
+      "color": "#4DF537",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 208527, which contains 1 exoplanets and was discovered by the Bohyunsan Optical Astronomical Observatory.",
   "name": "HD 208527 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 208527 - System With 1 Exoplanet "
 }

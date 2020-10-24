@@ -67,18 +67,20 @@
       "radius": 168.97674418604652,
       "a": 0.1126,
       "e": 0,
-      "w": 274.44205175611205,
+      "w": 120.52584199999019,
       "o": 0,
       "orbitalPeriod": 15.36262753,
       "temperature": 608,
       "exoplanet": true,
       "bump": true,
-      "color": "#7B719B",
-      "clouds": true
+      "color": "#34EB10",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1384, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1384 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1384 - System With 1 Exoplanet "
 }

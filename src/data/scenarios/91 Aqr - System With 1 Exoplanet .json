@@ -73,12 +73,14 @@
       "temperature": 370.08069467920484,
       "exoplanet": true,
       "bump": false,
-      "color": "#607E8B",
-      "clouds": false
+      "color": "#13D982",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 91 Aqr, which contains 1 exoplanets and was discovered by the Lick Observatory.",
   "name": "91 Aqr - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "91 Aqr - System With 1 Exoplanet "
 }

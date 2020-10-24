@@ -73,12 +73,14 @@
       "temperature": 185,
       "exoplanet": true,
       "bump": false,
-      "color": "#F2B5A0",
-      "clouds": false
+      "color": "#0DB9A9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-421, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-421 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-421 - System With 1 Exoplanet "
 }

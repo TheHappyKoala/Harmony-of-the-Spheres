@@ -73,12 +73,14 @@
       "temperature": 274.2486158069064,
       "exoplanet": true,
       "bump": false,
-      "color": "#81F86E",
-      "clouds": false
+      "color": "#69D72D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 4917, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 4917 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 4917 - System With 1 Exoplanet "
 }

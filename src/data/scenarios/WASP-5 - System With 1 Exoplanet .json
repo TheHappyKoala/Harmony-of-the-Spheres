@@ -73,12 +73,14 @@
       "temperature": 1706,
       "exoplanet": true,
       "bump": false,
-      "color": "#CCDDAE",
-      "clouds": false
+      "color": "#E38FB8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-5, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-5 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-5 - System With 1 Exoplanet "
 }

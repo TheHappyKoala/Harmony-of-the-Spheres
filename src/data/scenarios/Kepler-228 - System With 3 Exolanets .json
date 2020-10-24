@@ -67,14 +67,15 @@
       "radius": 351.6279069767442,
       "a": 0.101,
       "e": 0,
-      "w": 310.5301054871516,
+      "w": 275.249263676561,
       "o": 0,
       "orbitalPeriod": 11.094286,
       "temperature": 835,
       "exoplanet": true,
       "bump": false,
-      "color": "#9B827C",
-      "clouds": false
+      "color": "#D99FC1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-228-c",
@@ -85,14 +86,15 @@
       "radius": 235.3953488372093,
       "a": 0.052,
       "e": 0,
-      "w": 232.62909398494233,
+      "w": 170.56248710079822,
       "o": 0,
       "orbitalPeriod": 4.134444,
       "temperature": 1160,
       "exoplanet": true,
       "bump": false,
-      "color": "#FAA08B",
-      "clouds": false
+      "color": "#FAFE16",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-228-b",
@@ -103,18 +105,20 @@
       "radius": 132.8372093023256,
       "a": 0.038,
       "e": 0,
-      "w": 217.18411112088612,
+      "w": 139.25531006719103,
       "o": 0,
       "orbitalPeriod": 2.566546,
       "temperature": 1360,
       "exoplanet": true,
       "bump": true,
-      "color": "#BFB971",
-      "clouds": false
+      "color": "#B54B43",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-228, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-228 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-228 - System With 3 Exolanets "
 }

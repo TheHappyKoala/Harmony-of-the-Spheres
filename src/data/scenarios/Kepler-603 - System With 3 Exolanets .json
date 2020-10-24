@@ -67,14 +67,15 @@
       "radius": 115.25581395348837,
       "a": 0.0666,
       "e": 0,
-      "w": 104.78500974299935,
+      "w": 56.75885866337853,
       "o": 0,
       "orbitalPeriod": 6.2171292,
       "temperature": 1098,
       "exoplanet": true,
       "bump": true,
-      "color": "#90A917",
-      "clouds": false
+      "color": "#45BACD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-603-c",
@@ -85,14 +86,15 @@
       "radius": 566.5116279069767,
       "a": 0.5001,
       "e": 0,
-      "w": 37.656796406602275,
+      "w": 303.6129812564669,
       "o": 0,
       "orbitalPeriod": 127.9075774,
       "temperature": 401,
       "exoplanet": true,
       "bump": false,
-      "color": "#36EDDC",
-      "clouds": false
+      "color": "#688A27",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-603-b",
@@ -103,18 +105,20 @@
       "radius": 230.51162790697674,
       "a": 0.1502,
       "e": 0,
-      "w": 22.622795179186895,
+      "w": 246.7816383304135,
       "o": 0,
       "orbitalPeriod": 21.05358596,
       "temperature": 731,
       "exoplanet": true,
       "bump": false,
-      "color": "#E3443D",
-      "clouds": false
+      "color": "#28B55B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-603, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-603 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-603 - System With 3 Exolanets "
 }

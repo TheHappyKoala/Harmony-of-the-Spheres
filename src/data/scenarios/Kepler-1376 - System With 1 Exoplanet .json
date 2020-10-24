@@ -67,18 +67,20 @@
       "radius": 91.81395348837209,
       "a": 0.0598,
       "e": 0,
-      "w": 342.3727624035578,
+      "w": 71.3824310956324,
       "o": 0,
       "orbitalPeriod": 5.30880656,
       "temperature": 1042,
       "exoplanet": true,
       "bump": true,
-      "color": "#2FB743",
-      "clouds": false
+      "color": "#F51A16",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1376, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1376 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1376 - System With 1 Exoplanet "
 }

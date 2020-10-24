@@ -67,14 +67,15 @@
       "radius": 207.06976744186048,
       "a": 0.1106,
       "e": 0,
-      "w": 301.3493848499667,
+      "w": 289.7404697139499,
       "o": 0,
       "orbitalPeriod": 13.609878,
       "temperature": 698,
       "exoplanet": true,
       "bump": false,
-      "color": "#E2E878",
-      "clouds": false
+      "color": "#88797A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-187-d",
@@ -85,14 +86,15 @@
       "radius": 276.4186046511628,
       "a": 0.072,
       "e": 0,
-      "w": 88.54335759233699,
+      "w": 160.5387525363411,
       "o": 0,
       "orbitalPeriod": 7.14921,
       "temperature": 865,
       "exoplanet": true,
       "bump": false,
-      "color": "#D50E04",
-      "clouds": false
+      "color": "#592FB3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-187-c",
@@ -103,14 +105,15 @@
       "radius": 157.2558139534884,
       "a": 0.0392,
       "e": 0,
-      "w": 25.973991904652944,
+      "w": 269.7969445737704,
       "o": 0,
       "orbitalPeriod": 2.872042,
       "temperature": 1173,
       "exoplanet": true,
       "bump": true,
-      "color": "#A56A3C",
-      "clouds": false
+      "color": "#E60571",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-187-b",
@@ -121,18 +124,20 @@
       "radius": 113.30232558139537,
       "a": 0.0164,
       "e": 0,
-      "w": 260.8381142086631,
+      "w": 83.74845783816751,
       "o": 0,
       "orbitalPeriod": 0.77392,
       "temperature": 1815,
       "exoplanet": true,
       "bump": true,
-      "color": "#D3E978",
-      "clouds": false
+      "color": "#2B79C0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-187, which contains 4 exoplanets and was discovered by the K2.",
   "name": "K2-187 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-187 - System With 4 Exolanets "
 }

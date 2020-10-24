@@ -73,12 +73,14 @@
       "temperature": 570.7977004069412,
       "exoplanet": true,
       "bump": false,
-      "color": "#D4EA0E",
-      "clouds": false
+      "color": "#287BEB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 536, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "GJ 536 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 536 - System With 1 Exoplanet "
 }

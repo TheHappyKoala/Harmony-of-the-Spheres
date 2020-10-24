@@ -67,18 +67,20 @@
       "radius": 179.72093023255815,
       "a": 0.0852,
       "e": 0,
-      "w": 1.087698404057953,
+      "w": 111.95142758931419,
       "o": 0,
       "orbitalPeriod": 9.7678805,
       "temperature": 749,
       "exoplanet": true,
       "bump": true,
-      "color": "#1E6B21",
-      "clouds": true
+      "color": "#C89C24",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-958, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-958 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-958 - System With 1 Exoplanet "
 }

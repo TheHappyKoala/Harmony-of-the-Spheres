@@ -67,14 +67,15 @@
       "radius": 376.046511627907,
       "a": 0.2578,
       "e": 0.11,
-      "w": 103.3034280460826,
+      "w": 328.02512857110287,
       "o": 0,
       "orbitalPeriod": 42.882,
       "temperature": 709,
       "exoplanet": true,
       "bump": false,
-      "color": "#9BF100",
-      "clouds": false
+      "color": "#4EEFF6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-145-b",
@@ -85,18 +86,20 @@
       "radius": 230.51162790697674,
       "a": 0.1699,
       "e": 0.43,
-      "w": 93.68994068785196,
+      "w": 46.56095987391914,
       "o": 0,
       "orbitalPeriod": 22.951,
       "temperature": 873,
       "exoplanet": true,
       "bump": false,
-      "color": "#CACD45",
-      "clouds": false
+      "color": "#1D432B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-145, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-145 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-145 - System With 2 Exolanets "
 }

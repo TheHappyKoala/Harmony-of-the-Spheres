@@ -67,18 +67,20 @@
       "radius": 247.11627906976747,
       "a": 0.0895,
       "e": 0,
-      "w": 163.9929939058334,
+      "w": 238.50464194075454,
       "o": 0,
       "orbitalPeriod": 10.35533177,
       "temperature": 777,
       "exoplanet": true,
       "bump": false,
-      "color": "#328DE7",
-      "clouds": false
+      "color": "#509442",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-701, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-701 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-701 - System With 1 Exoplanet "
 }

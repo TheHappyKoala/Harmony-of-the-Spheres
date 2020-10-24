@@ -67,18 +67,20 @@
       "radius": 182.6511627906977,
       "a": 0.049,
       "e": 0,
-      "w": 84.61363106442947,
+      "w": 77.66444449404045,
       "o": 0,
       "orbitalPeriod": 3.27582262,
       "temperature": 1730,
       "exoplanet": true,
       "bump": false,
-      "color": "#741B7C",
-      "clouds": false
+      "color": "#3EC42E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-645, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-645 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-645 - System With 1 Exoplanet "
 }

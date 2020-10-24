@@ -67,18 +67,20 @@
       "radius": 69.34883720930232,
       "a": 0.0595,
       "e": 0,
-      "w": 187.39633209114356,
+      "w": 203.10550362560966,
       "o": 0,
       "orbitalPeriod": 5.45298175,
       "temperature": 904,
       "exoplanet": true,
       "bump": true,
-      "color": "#787C24",
-      "clouds": false
+      "color": "#14133E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1130, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1130 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1130 - System With 1 Exoplanet "
 }

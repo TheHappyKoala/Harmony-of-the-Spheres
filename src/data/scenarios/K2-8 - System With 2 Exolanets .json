@@ -67,14 +67,15 @@
       "radius": 210,
       "a": 0.0532,
       "e": 0,
-      "w": 35.70666307779326,
+      "w": 15.194294319545634,
       "o": 0,
       "orbitalPeriod": 5.06416,
       "temperature": 801,
       "exoplanet": true,
       "bump": false,
-      "color": "#734CAC",
-      "clouds": false
+      "color": "#FFDB3E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-8-b",
@@ -85,18 +86,20 @@
       "radius": 311.58139534883725,
       "a": 0.0856,
       "e": 0,
-      "w": 42.41089217702695,
+      "w": 26.60979640473502,
       "o": 0,
       "orbitalPeriod": 10.35239,
       "temperature": 631,
       "exoplanet": true,
       "bump": false,
-      "color": "#9A5490",
-      "clouds": false
+      "color": "#239938",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-8, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-8 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-8 - System With 2 Exolanets "
 }

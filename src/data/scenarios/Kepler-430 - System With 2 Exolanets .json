@@ -67,14 +67,15 @@
       "radius": 156.27906976744188,
       "a": 0.4757,
       "e": 0,
-      "w": 212.13693971637613,
+      "w": 321.141334823445,
       "o": 0,
       "orbitalPeriod": 110.979,
       "temperature": 458,
       "exoplanet": true,
       "bump": true,
-      "color": "#EE4602",
-      "clouds": false
+      "color": "#15489A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-430-b",
@@ -85,18 +86,20 @@
       "radius": 283.25581395348837,
       "a": 0.2244,
       "e": 0,
-      "w": 221.98454890442127,
+      "w": 257.88804758167174,
       "o": 0,
       "orbitalPeriod": 35.968,
       "temperature": 667,
       "exoplanet": true,
       "bump": false,
-      "color": "#620ABD",
-      "clouds": false
+      "color": "#EF012B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-430, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-430 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-430 - System With 2 Exolanets "
 }

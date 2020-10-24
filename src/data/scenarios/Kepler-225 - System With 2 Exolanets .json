@@ -67,14 +67,15 @@
       "radius": 160.18604651162792,
       "a": 0.111,
       "e": 0,
-      "w": 115.95509797571876,
+      "w": 181.1393631620148,
       "o": 0,
       "orbitalPeriod": 18.794234,
       "temperature": 412,
       "exoplanet": true,
       "bump": true,
-      "color": "#D92C2F",
-      "clouds": false
+      "color": "#E54C68",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-225-b",
@@ -85,18 +86,20 @@
       "radius": 104.51162790697674,
       "a": 0.056,
       "e": 0,
-      "w": 264.1536436269152,
+      "w": 276.1389511013767,
       "o": 0,
       "orbitalPeriod": 6.738975,
       "temperature": 579,
       "exoplanet": true,
       "bump": true,
-      "color": "#20D0F3",
-      "clouds": false
+      "color": "#CFBFFB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-225, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-225 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-225 - System With 2 Exolanets "
 }

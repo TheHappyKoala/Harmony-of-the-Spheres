@@ -67,14 +67,15 @@
       "radius": 308.6511627906977,
       "a": 0.161,
       "e": 0,
-      "w": 226.19784633858058,
+      "w": 105.23972407156509,
       "o": 0,
       "orbitalPeriod": 20.485435,
       "temperature": 1015,
       "exoplanet": true,
       "bump": false,
-      "color": "#6EAF0A",
-      "clouds": false
+      "color": "#C8BF12",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-391-b",
@@ -85,18 +86,20 @@
       "radius": 278.3720930232558,
       "a": 0.082,
       "e": 0,
-      "w": 155.8869589788145,
+      "w": 66.77787522462587,
       "o": 0,
       "orbitalPeriod": 7.416755,
       "temperature": 1425,
       "exoplanet": true,
       "bump": false,
-      "color": "#D8D0CB",
-      "clouds": false
+      "color": "#5CBCCC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-391, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-391 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-391 - System With 2 Exolanets "
 }

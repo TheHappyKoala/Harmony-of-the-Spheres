@@ -67,18 +67,20 @@
       "radius": 81.06976744186048,
       "a": 0.031,
       "e": 0,
-      "w": 211.55892760702673,
+      "w": 252.2138157220174,
       "o": 0,
       "orbitalPeriod": 2.27952666,
       "temperature": 1123,
       "exoplanet": true,
       "bump": true,
-      "color": "#7202FE",
-      "clouds": false
+      "color": "#ECC7F0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1387, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1387 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1387 - System With 1 Exoplanet "
 }

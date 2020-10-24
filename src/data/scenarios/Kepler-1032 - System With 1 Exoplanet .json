@@ -67,18 +67,20 @@
       "radius": 163.11627906976747,
       "a": 0.0361,
       "e": 0,
-      "w": 224.6631574995172,
+      "w": 81.43187746701287,
       "o": 0,
       "orbitalPeriod": 3.29011795,
       "temperature": 802,
       "exoplanet": true,
       "bump": true,
-      "color": "#AEDA3C",
-      "clouds": false
+      "color": "#707B58",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1032, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1032 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1032 - System With 1 Exoplanet "
 }

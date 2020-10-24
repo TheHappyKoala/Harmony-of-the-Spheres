@@ -67,18 +67,20 @@
       "radius": 166.046511627907,
       "a": 0.054,
       "e": 0,
-      "w": 313.23401926626684,
+      "w": 122.32183770439408,
       "o": 0,
       "orbitalPeriod": 5.74772501,
       "temperature": 641,
       "exoplanet": true,
       "bump": true,
-      "color": "#21BB90",
-      "clouds": true
+      "color": "#A957AA",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-753, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-753 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-753 - System With 1 Exoplanet "
 }

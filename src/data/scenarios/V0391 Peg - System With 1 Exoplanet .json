@@ -67,18 +67,20 @@
       "radius": 1142.7906976744187,
       "a": 1.7,
       "e": 0,
-      "w": 299.99492508490124,
+      "w": 181.33729255814734,
       "o": 0,
       "orbitalPeriod": 1170,
       "temperature": 109.71157921782493,
       "exoplanet": true,
       "bump": false,
-      "color": "#DB314E",
-      "clouds": false
+      "color": "#EFA49D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system V0391 Peg, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "V0391 Peg - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "V0391 Peg - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 232.46511627906978,
       "a": 0.0741,
       "e": 0,
-      "w": 42.232173458803814,
+      "w": 38.4631163452923,
       "o": 0,
       "orbitalPeriod": 6.77408868,
       "temperature": 1058,
       "exoplanet": true,
       "bump": false,
-      "color": "#4E2C17",
-      "clouds": false
+      "color": "#0A9E84",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1044, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1044 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1044 - System With 1 Exoplanet "
 }

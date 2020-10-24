@@ -67,18 +67,20 @@
       "radius": 995.3023255813953,
       "a": 0.0473,
       "e": 0.54,
-      "w": 223.8221900624953,
+      "w": 303.06014634293615,
       "o": 0,
       "orbitalPeriod": 4.0144463,
       "temperature": 1019,
       "exoplanet": true,
       "bump": false,
-      "color": "#66B431",
-      "clouds": false
+      "color": "#9534D3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system OGLE-TR-111, which contains 1 exoplanets and was discovered by the OGLE.",
   "name": "OGLE-TR-111 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "OGLE-TR-111 - System With 1 Exoplanet "
 }

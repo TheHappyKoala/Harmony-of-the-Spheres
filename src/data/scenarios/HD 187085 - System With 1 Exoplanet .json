@@ -73,12 +73,14 @@
       "temperature": 189.14723522419837,
       "exoplanet": true,
       "bump": false,
-      "color": "#6E1F3A",
-      "clouds": false
+      "color": "#9677E6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 187085, which contains 1 exoplanets and was discovered by the Anglo-Australian Telescope.",
   "name": "HD 187085 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 187085 - System With 1 Exoplanet "
 }

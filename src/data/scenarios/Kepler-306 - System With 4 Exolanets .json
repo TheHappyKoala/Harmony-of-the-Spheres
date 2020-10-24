@@ -67,14 +67,15 @@
       "radius": 198.27906976744188,
       "a": 0.227,
       "e": 0,
-      "w": 354.61306650953986,
+      "w": 220.00256361872724,
       "o": 0,
       "orbitalPeriod": 44.840975,
       "temperature": 390,
       "exoplanet": true,
       "bump": false,
-      "color": "#41E4A4",
-      "clouds": false
+      "color": "#53D41D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-306-d",
@@ -85,14 +86,15 @@
       "radius": 214.88372093023258,
       "a": 0.12,
       "e": 0,
-      "w": 169.19469929939115,
+      "w": 185.70867317413098,
       "o": 0,
       "orbitalPeriod": 17.326644,
       "temperature": 535,
       "exoplanet": true,
       "bump": false,
-      "color": "#160A39",
-      "clouds": false
+      "color": "#5B622F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-306-c",
@@ -103,14 +105,15 @@
       "radius": 205.11627906976744,
       "a": 0.067,
       "e": 0,
-      "w": 51.20072692580468,
+      "w": 229.59517456074877,
       "o": 0,
       "orbitalPeriod": 7.240193,
       "temperature": 716,
       "exoplanet": true,
       "bump": false,
-      "color": "#BE1473",
-      "clouds": false
+      "color": "#706530",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-306-b",
@@ -121,18 +124,20 @@
       "radius": 132.8372093023256,
       "a": 0.05,
       "e": 0,
-      "w": 29.138990354144532,
+      "w": 183.79042480928396,
       "o": 0,
       "orbitalPeriod": 4.646186,
       "temperature": 830,
       "exoplanet": true,
       "bump": true,
-      "color": "#B88037",
-      "clouds": false
+      "color": "#7D14E1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-306, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-306 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-306 - System With 4 Exolanets "
 }

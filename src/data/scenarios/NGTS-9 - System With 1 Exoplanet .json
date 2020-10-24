@@ -67,18 +67,20 @@
       "radius": 1045.1162790697676,
       "a": 0.058,
       "e": 0.06,
-      "w": 2.9698369810402614,
+      "w": 19.81466636808806,
       "o": 0,
       "orbitalPeriod": 4.43527,
       "temperature": 1448,
       "exoplanet": true,
       "bump": false,
-      "color": "#0FBEEF",
-      "clouds": false
+      "color": "#2ACC2A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system NGTS-9, which contains 1 exoplanets and was discovered by the Paranal Observatory.",
   "name": "NGTS-9 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "NGTS-9 - System With 1 Exoplanet "
 }

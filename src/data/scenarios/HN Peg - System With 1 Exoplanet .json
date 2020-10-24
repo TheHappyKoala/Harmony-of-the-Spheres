@@ -67,18 +67,20 @@
       "radius": 1026.5581395348838,
       "a": 773,
       "e": 0,
-      "w": 354.8470213090324,
+      "w": 196.44188935634452,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 9.167005534397719,
       "exoplanet": true,
       "bump": false,
-      "color": "#943F27",
-      "clouds": false
+      "color": "#DDE1BC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HN Peg, which contains 1 exoplanets and was discovered by the Spitzer Space Telescope.",
   "name": "HN Peg - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HN Peg - System With 1 Exoplanet "
 }

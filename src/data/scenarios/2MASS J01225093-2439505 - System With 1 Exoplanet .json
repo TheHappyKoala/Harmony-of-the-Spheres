@@ -67,18 +67,20 @@
       "radius": 976.7441860465117,
       "a": 52,
       "e": 0,
-      "w": 192.00769537770765,
+      "w": 256.14113711731466,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 1600,
       "exoplanet": true,
       "bump": false,
-      "color": "#1C5EA8",
-      "clouds": false
+      "color": "#AE81F6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 2MASS J01225093-2439505, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "2MASS J01225093-2439505 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "2MASS J01225093-2439505 - System With 1 Exoplanet "
 }

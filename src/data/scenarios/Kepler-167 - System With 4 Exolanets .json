@@ -73,8 +73,9 @@
       "temperature": 131,
       "exoplanet": true,
       "bump": false,
-      "color": "#E48B8F",
-      "clouds": false
+      "color": "#CB6D33",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-167-d",
@@ -85,14 +86,15 @@
       "radius": 104.51162790697674,
       "a": 0.1405,
       "e": 0.12,
-      "w": 177.5213524313178,
+      "w": 11.782040761694947,
       "o": 0,
       "orbitalPeriod": 21.803855,
       "temperature": 536,
       "exoplanet": true,
       "bump": true,
-      "color": "#314048",
-      "clouds": false
+      "color": "#53673A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-167-c",
@@ -103,14 +105,15 @@
       "radius": 134.79069767441862,
       "a": 0.0684,
       "e": 0,
-      "w": 253.6733848264189,
+      "w": 339.6223055455647,
       "o": 0,
       "orbitalPeriod": 7.406114,
       "temperature": 768,
       "exoplanet": true,
       "bump": true,
-      "color": "#45BE20",
-      "clouds": false
+      "color": "#7795E9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-167-b",
@@ -121,18 +124,20 @@
       "radius": 140.65116279069767,
       "a": 0.0483,
       "e": 0,
-      "w": 107.93766053266617,
+      "w": 62.54363189586841,
       "o": 0,
       "orbitalPeriod": 4.3931632,
       "temperature": 914,
       "exoplanet": true,
       "bump": true,
-      "color": "#497D96",
-      "clouds": false
+      "color": "#DFEC38",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-167, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-167 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-167 - System With 4 Exolanets "
 }

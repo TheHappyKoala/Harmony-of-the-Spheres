@@ -73,8 +73,9 @@
       "temperature": 171.70954651980335,
       "exoplanet": true,
       "bump": false,
-      "color": "#876C6D",
-      "clouds": false
+      "color": "#678880",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 207832-b",
@@ -91,12 +92,14 @@
       "temperature": 325.9812270528825,
       "exoplanet": true,
       "bump": false,
-      "color": "#43467F",
-      "clouds": false
+      "color": "#31872C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 207832, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 207832 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 207832 - System With 2 Exolanets "
 }

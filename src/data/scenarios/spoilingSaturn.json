@@ -1,7 +1,8 @@
 {
-  "name": "Earth Spoils Saturn",
+  "name": "Earth Spoils the Rings of Saturn",
+  "fileName": "Earth Spoils the Rings of Saturn",
   "sortOrder": 1,
-  "description": "Find out what would happen to Saturn's rings if you put Earth into orbit around Saturn.",
+  "description": "Gravity simulation of what would happen to Saturn's rings if you put Earth into orbit around Saturn.",
   "path": "/Misc",
   "img": "../../images/scenarios/Borisov Saying Hello.png",
   "particlesFun": false,

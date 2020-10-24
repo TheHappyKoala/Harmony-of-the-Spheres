@@ -73,12 +73,14 @@
       "temperature": 297.092786018271,
       "exoplanet": true,
       "bump": false,
-      "color": "#1B7B7C",
-      "clouds": false
+      "color": "#AFE6F2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 192699, which contains 1 exoplanets and was discovered by the Lick Observatory.",
   "name": "HD 192699 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 192699 - System With 1 Exoplanet "
 }

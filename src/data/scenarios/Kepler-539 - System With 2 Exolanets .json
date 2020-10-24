@@ -73,8 +73,9 @@
       "temperature": 253,
       "exoplanet": true,
       "bump": false,
-      "color": "#01A9DC",
-      "clouds": false
+      "color": "#ED9A13",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-539-b",
@@ -85,18 +86,20 @@
       "radius": 729.6279069767443,
       "a": 0.4988,
       "e": 0.39,
-      "w": 10.373846402751177,
+      "w": 156.2722015329736,
       "o": 0,
       "orbitalPeriod": 125.63243,
       "temperature": 388,
       "exoplanet": true,
       "bump": false,
-      "color": "#42247C",
-      "clouds": false
+      "color": "#6ADDFB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-539, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-539 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-539 - System With 2 Exolanets "
 }

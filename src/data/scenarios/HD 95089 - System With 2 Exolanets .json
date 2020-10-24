@@ -73,8 +73,9 @@
       "temperature": 182.25013041555962,
       "exoplanet": true,
       "bump": false,
-      "color": "#E0BDC3",
-      "clouds": false
+      "color": "#CBBE47",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 95089-b",
@@ -91,12 +92,14 @@
       "temperature": 285.1809492924503,
       "exoplanet": true,
       "bump": false,
-      "color": "#6946E3",
-      "clouds": false
+      "color": "#E14988",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 95089, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 95089 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 95089 - System With 2 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 105.48837209302326,
       "a": 0.067,
       "e": 0,
-      "w": 229.89617529715306,
+      "w": 300.51360891916516,
       "o": 0,
       "orbitalPeriod": 7.122605,
       "temperature": 879,
       "exoplanet": true,
       "bump": true,
-      "color": "#DAFF2D",
-      "clouds": false
+      "color": "#AB754F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-279, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-279 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-279 - System With 1 Exoplanet "
 }

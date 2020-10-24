@@ -73,12 +73,14 @@
       "temperature": 1243.6959614041496,
       "exoplanet": true,
       "bump": false,
-      "color": "#9A48AA",
-      "clouds": false
+      "color": "#C18BF8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 77338, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 77338 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 77338 - System With 1 Exoplanet "
 }

@@ -67,18 +67,20 @@
       "radius": 191.4418604651163,
       "a": 0.0419,
       "e": 0,
-      "w": 116.61796208812385,
+      "w": 169.6676447284572,
       "o": 0,
       "orbitalPeriod": 6.93,
       "temperature": 423,
       "exoplanet": true,
       "bump": false,
-      "color": "#7B85A6",
-      "clouds": false
+      "color": "#CF771B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-325, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-325 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-325 - System With 1 Exoplanet "
 }

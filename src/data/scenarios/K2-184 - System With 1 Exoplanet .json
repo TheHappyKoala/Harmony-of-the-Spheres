@@ -67,18 +67,20 @@
       "radius": 134.79069767441862,
       "a": 0.1229,
       "e": 0,
-      "w": 31.460406051017877,
+      "w": 328.3359021609604,
       "o": 0,
       "orbitalPeriod": 16.995731,
       "temperature": 580,
       "exoplanet": true,
       "bump": true,
-      "color": "#54AEFD",
-      "clouds": false
+      "color": "#28765E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-184, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-184 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-184 - System With 1 Exoplanet "
 }

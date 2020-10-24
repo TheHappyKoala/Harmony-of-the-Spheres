@@ -67,18 +67,20 @@
       "radius": 791.1627906976745,
       "a": 0.055,
       "e": 0,
-      "w": 88.35712979820309,
+      "w": 75.03663653531602,
       "o": 0,
       "orbitalPeriod": 4.2,
       "temperature": 1205.4087593001852,
       "exoplanet": true,
       "bump": false,
-      "color": "#FBA71C",
-      "clouds": false
+      "color": "#611FDA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system SWEEPS-4, which contains 1 exoplanets and was discovered by the Hubble Space Telescope.",
   "name": "SWEEPS-4 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "SWEEPS-4 - System With 1 Exoplanet "
 }

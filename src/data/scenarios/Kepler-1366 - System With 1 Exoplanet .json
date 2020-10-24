@@ -67,18 +67,20 @@
       "radius": 125.0232558139535,
       "a": 0.0273,
       "e": 0,
-      "w": 152.66090208944996,
+      "w": 282.1886832534885,
       "o": 0,
       "orbitalPeriod": 2.16457097,
       "temperature": 783,
       "exoplanet": true,
       "bump": true,
-      "color": "#E2A2AB",
-      "clouds": false
+      "color": "#C405C0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1366, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1366 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1366 - System With 1 Exoplanet "
 }

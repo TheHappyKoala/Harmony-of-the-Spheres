@@ -67,18 +67,20 @@
       "radius": 1225.8139534883721,
       "a": 0.07037,
       "e": 0.262,
-      "w": 58.95851237487189,
+      "w": 303.0252179191326,
       "o": 0,
       "orbitalPeriod": 5.857487,
       "temperature": 1404,
       "exoplanet": true,
       "bump": false,
-      "color": "#602A6D",
-      "clouds": false
+      "color": "#2F4C5B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TOI-150, which contains 1 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "TOI-150 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TOI-150 - System With 1 Exoplanet "
 }

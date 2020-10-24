@@ -67,14 +67,15 @@
       "radius": 198.27906976744188,
       "a": 0.103,
       "e": 0,
-      "w": 209.08983529065847,
+      "w": 346.96668820120215,
       "o": 0,
       "orbitalPeriod": 11.637071,
       "temperature": 857,
       "exoplanet": true,
       "bump": false,
-      "color": "#A91EDF",
-      "clouds": false
+      "color": "#65E22F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-183-b",
@@ -85,18 +86,20 @@
       "radius": 179.72093023255815,
       "a": 0.064,
       "e": 0,
-      "w": 37.24556149774194,
+      "w": 159.44600408519054,
       "o": 0,
       "orbitalPeriod": 5.687945,
       "temperature": 1088,
       "exoplanet": true,
       "bump": true,
-      "color": "#5693F2",
-      "clouds": true
+      "color": "#854220",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-183, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-183 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-183 - System With 2 Exolanets "
 }

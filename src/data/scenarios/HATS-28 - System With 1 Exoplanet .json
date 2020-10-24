@@ -67,18 +67,20 @@
       "radius": 1166.2325581395348,
       "a": 0.04131,
       "e": 0.202,
-      "w": 23.499553066276924,
+      "w": 107.1993021506463,
       "o": 0,
       "orbitalPeriod": 3.1810781,
       "temperature": 1253,
       "exoplanet": true,
       "bump": false,
-      "color": "#97A794",
-      "clouds": false
+      "color": "#6D50C2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-28, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-28 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-28 - System With 1 Exoplanet "
 }

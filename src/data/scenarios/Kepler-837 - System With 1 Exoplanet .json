@@ -67,18 +67,20 @@
       "radius": 222.69767441860466,
       "a": 0.1144,
       "e": 0,
-      "w": 131.25853056177166,
+      "w": 167.74368250288887,
       "o": 0,
       "orbitalPeriod": 16.56059504,
       "temperature": 701,
       "exoplanet": true,
       "bump": false,
-      "color": "#03D93A",
-      "clouds": false
+      "color": "#6AB8A6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-837, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-837 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-837 - System With 1 Exoplanet "
 }

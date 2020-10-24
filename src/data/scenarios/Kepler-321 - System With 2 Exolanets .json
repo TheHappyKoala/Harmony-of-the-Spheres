@@ -67,14 +67,15 @@
       "radius": 202.18604651162792,
       "a": 0.11,
       "e": 0,
-      "w": 197.88712349164427,
+      "w": 302.98144682907287,
       "o": 0,
       "orbitalPeriod": 13.093921,
       "temperature": 752,
       "exoplanet": true,
       "bump": false,
-      "color": "#16794C",
-      "clouds": false
+      "color": "#4E5C53",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-321-b",
@@ -85,18 +86,20 @@
       "radius": 154.32558139534885,
       "a": 0.057,
       "e": 0,
-      "w": 4.761120526825016,
+      "w": 135.14287695729627,
       "o": 0,
       "orbitalPeriod": 4.915379,
       "temperature": 1042,
       "exoplanet": true,
       "bump": true,
-      "color": "#43B5F5",
-      "clouds": false
+      "color": "#23E8D6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-321, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-321 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-321 - System With 2 Exolanets "
 }

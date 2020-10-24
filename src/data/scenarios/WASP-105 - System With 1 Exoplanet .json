@@ -67,18 +67,20 @@
       "radius": 937.6744186046512,
       "a": 0.075,
       "e": 0,
-      "w": 281.391735257502,
+      "w": 165.311530304488,
       "o": 0,
       "orbitalPeriod": 7.87288,
       "temperature": 900,
       "exoplanet": true,
       "bump": false,
-      "color": "#671DD4",
-      "clouds": false
+      "color": "#587E2F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-105, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-105 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-105 - System With 1 Exoplanet "
 }

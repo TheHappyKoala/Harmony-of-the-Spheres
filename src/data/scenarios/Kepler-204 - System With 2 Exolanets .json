@@ -67,14 +67,15 @@
       "radius": 156.27906976744188,
       "a": 0.173,
       "e": 0,
-      "w": 276.2559122566794,
+      "w": 72.54119294336674,
       "o": 0,
       "orbitalPeriod": 25.660593,
       "temperature": 683,
       "exoplanet": true,
       "bump": true,
-      "color": "#E85BF0",
-      "clouds": false
+      "color": "#29095B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-204-b",
@@ -85,18 +86,20 @@
       "radius": 220.74418604651166,
       "a": 0.117,
       "e": 0,
-      "w": 203.41070212345733,
+      "w": 158.98430618393706,
       "o": 0,
       "orbitalPeriod": 14.400974,
       "temperature": 828,
       "exoplanet": true,
       "bump": false,
-      "color": "#DFC97E",
-      "clouds": false
+      "color": "#2F06AD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-204, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-204 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-204 - System With 2 Exolanets "
 }

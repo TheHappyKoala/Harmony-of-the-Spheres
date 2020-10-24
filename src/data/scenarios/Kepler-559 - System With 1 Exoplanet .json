@@ -67,18 +67,20 @@
       "radius": 314.5116279069768,
       "a": 0.1277,
       "e": 0,
-      "w": 169.6841129779735,
+      "w": 351.3234204739737,
       "o": 0,
       "orbitalPeriod": 17.58752333,
       "temperature": 706,
       "exoplanet": true,
       "bump": false,
-      "color": "#3F7CE6",
-      "clouds": false
+      "color": "#2D0416",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-559, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-559 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-559 - System With 1 Exoplanet "
 }

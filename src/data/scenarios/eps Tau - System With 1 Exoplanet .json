@@ -73,12 +73,14 @@
       "temperature": 364.7485654585848,
       "exoplanet": true,
       "bump": false,
-      "color": "#436FC3",
-      "clouds": false
+      "color": "#A048E1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system eps Tau, which contains 1 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "eps Tau - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "eps Tau - System With 1 Exoplanet "
 }

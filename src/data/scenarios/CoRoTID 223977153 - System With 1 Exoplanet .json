@@ -67,18 +67,20 @@
       "radius": 556.7441860465116,
       "a": 0.071,
       "e": 0,
-      "w": 318.8407767895258,
+      "w": 44.14607399521188,
       "o": 0,
       "orbitalPeriod": 6.71837,
       "temperature": 938,
       "exoplanet": true,
       "bump": false,
-      "color": "#ED35D9",
-      "clouds": false
+      "color": "#8CA187",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoTID 223977153, which contains 1 exoplanets and was discovered by the CoRoT.",
   "name": "CoRoTID 223977153 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "CoRoTID 223977153 - System With 1 Exoplanet "
 }

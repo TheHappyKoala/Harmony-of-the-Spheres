@@ -67,14 +67,15 @@
       "radius": 287.16279069767444,
       "a": 0.5594,
       "e": 0,
-      "w": 208.13847770710868,
+      "w": 66.76556988243874,
       "o": 0,
       "orbitalPeriod": 151.86392,
       "temperature": 318,
       "exoplanet": true,
       "bump": false,
-      "color": "#2E8434",
-      "clouds": false
+      "color": "#592706",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-610-b",
@@ -85,18 +86,20 @@
       "radius": 365.3023255813954,
       "a": 0.0719,
       "e": 0,
-      "w": 266.17524264265063,
+      "w": 167.91117552791846,
       "o": 0,
       "orbitalPeriod": 6.99692655,
       "temperature": 888,
       "exoplanet": true,
       "bump": false,
-      "color": "#4E0690",
-      "clouds": false
+      "color": "#AF931B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-610, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-610 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-610 - System With 2 Exolanets "
 }

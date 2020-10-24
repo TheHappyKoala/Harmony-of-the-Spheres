@@ -67,18 +67,20 @@
       "radius": 267.6279069767442,
       "a": 0.0585,
       "e": 0,
-      "w": 293.488542044803,
+      "w": 143.19726697908163,
       "o": 0,
       "orbitalPeriod": 6.02930132,
       "temperature": 678,
       "exoplanet": true,
       "bump": false,
-      "color": "#3BB0CA",
-      "clouds": false
+      "color": "#E6202A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-661, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-661 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-661 - System With 1 Exoplanet "
 }

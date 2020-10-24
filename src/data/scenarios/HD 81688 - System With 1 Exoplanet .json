@@ -67,18 +67,20 @@
       "radius": 1152.5581395348838,
       "a": 0.81,
       "e": 0,
-      "w": 239.0866559760161,
+      "w": 166.54488653322835,
       "o": 0,
       "orbitalPeriod": 184.02,
       "temperature": 466.3064100566762,
       "exoplanet": true,
       "bump": false,
-      "color": "#8A9005",
-      "clouds": false
+      "color": "#01DF6D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 81688, which contains 1 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "HD 81688 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 81688 - System With 1 Exoplanet "
 }

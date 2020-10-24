@@ -67,18 +67,20 @@
       "radius": 1865.5813953488373,
       "a": 0.0637,
       "e": 0,
-      "w": 16.64109681689129,
+      "w": 311.8894487274363,
       "o": 0,
       "orbitalPeriod": 4.6117093,
       "temperature": 1935,
       "exoplanet": true,
       "bump": false,
-      "color": "#D2628B",
-      "clouds": false
+      "color": "#77617A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KELT-19 A, which contains 1 exoplanets and was discovered by the KELT.",
   "name": "KELT-19 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KELT-19 A - System With 1 Exoplanet "
 }

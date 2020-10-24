@@ -67,18 +67,20 @@
       "radius": 183.62790697674419,
       "a": 0.0678,
       "e": 0,
-      "w": 225.13365619923655,
+      "w": 212.79340865072683,
       "o": 0,
       "orbitalPeriod": 6.88337562,
       "temperature": 857,
       "exoplanet": true,
       "bump": false,
-      "color": "#B66240",
-      "clouds": false
+      "color": "#DAE2AA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-829, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-829 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-829 - System With 1 Exoplanet "
 }

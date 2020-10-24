@@ -73,12 +73,14 @@
       "temperature": 136.88010184810824,
       "exoplanet": true,
       "bump": false,
-      "color": "#049F38",
-      "clouds": false
+      "color": "#F23773",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 66428, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 66428 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 66428 - System With 1 Exoplanet "
 }

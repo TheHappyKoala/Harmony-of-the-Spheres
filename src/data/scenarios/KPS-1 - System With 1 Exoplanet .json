@@ -67,18 +67,20 @@
       "radius": 1006.0465116279071,
       "a": 0.0269,
       "e": 0,
-      "w": 138.5057227440834,
+      "w": 51.82358533278969,
       "o": 0,
       "orbitalPeriod": 1.706291,
       "temperature": 1459,
       "exoplanet": true,
       "bump": false,
-      "color": "#093CFE",
-      "clouds": false
+      "color": "#32E8F7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KPS-1, which contains 1 exoplanets and was discovered by the Acton Sky Portal Observatory.",
   "name": "KPS-1 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KPS-1 - System With 1 Exoplanet "
 }

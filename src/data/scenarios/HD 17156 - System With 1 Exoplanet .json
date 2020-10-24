@@ -73,12 +73,14 @@
       "temperature": 883,
       "exoplanet": true,
       "bump": false,
-      "color": "#A408AD",
-      "clouds": false
+      "color": "#88F47C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 17156, which contains 1 exoplanets and was discovered by the Subaru Telescope.",
   "name": "HD 17156 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 17156 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 638,
       "exoplanet": true,
       "bump": false,
-      "color": "#67BA62",
-      "clouds": false
+      "color": "#2E4DC1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "TOI-125-c",
@@ -91,8 +92,9 @@
       "temperature": 828,
       "exoplanet": true,
       "bump": false,
-      "color": "#BEE19A",
-      "clouds": false
+      "color": "#2F4DA9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "TOI-125-b",
@@ -109,12 +111,14 @@
       "temperature": 1037,
       "exoplanet": true,
       "bump": false,
-      "color": "#05686B",
-      "clouds": false
+      "color": "#F6FF6C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system TOI-125, which contains 3 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "TOI-125 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "TOI-125 - System With 3 Exolanets "
 }

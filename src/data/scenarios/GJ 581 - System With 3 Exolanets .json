@@ -73,8 +73,9 @@
       "temperature": 595.7053420161023,
       "exoplanet": true,
       "bump": true,
-      "color": "#6251DD",
-      "clouds": false
+      "color": "#D19C17",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 581-c",
@@ -91,8 +92,9 @@
       "temperature": 372.2228772918898,
       "exoplanet": true,
       "bump": false,
-      "color": "#988CDB",
-      "clouds": false
+      "color": "#8DAEA8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 581-b",
@@ -109,12 +111,14 @@
       "temperature": 495.96862003563166,
       "exoplanet": true,
       "bump": false,
-      "color": "#FBAE48",
-      "clouds": false
+      "color": "#416756",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 581, which contains 3 exoplanets and was discovered by the La Silla Observatory.",
   "name": "GJ 581 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 581 - System With 3 Exolanets "
 }

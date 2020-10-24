@@ -67,18 +67,20 @@
       "radius": 1201.3953488372094,
       "a": 0.03727,
       "e": 0.08,
-      "w": 62.26879406568706,
+      "w": 190.15966927077363,
       "o": 0,
       "orbitalPeriod": 2.5495551,
       "temperature": 1429,
       "exoplanet": true,
       "bump": false,
-      "color": "#B61344",
-      "clouds": false
+      "color": "#0E4151",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-33, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-33 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-33 - System With 1 Exoplanet "
 }

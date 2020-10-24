@@ -73,12 +73,14 @@
       "temperature": 1463,
       "exoplanet": true,
       "bump": false,
-      "color": "#96F9E0",
-      "clouds": false
+      "color": "#008C72",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-22, which contains 1 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-22 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HAT-P-22 - System With 1 Exoplanet "
 }

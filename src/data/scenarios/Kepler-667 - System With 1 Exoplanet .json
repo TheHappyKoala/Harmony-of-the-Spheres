@@ -67,18 +67,20 @@
       "radius": 412.1860465116279,
       "a": 0.2288,
       "e": 0,
-      "w": 47.333139010658044,
+      "w": 344.935095638277,
       "o": 0,
       "orbitalPeriod": 41.43962808,
       "temperature": 516,
       "exoplanet": true,
       "bump": false,
-      "color": "#09C75E",
-      "clouds": false
+      "color": "#E11344",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-667, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-667 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-667 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 147.48837209302326,
       "a": 0.201,
       "e": 0,
-      "w": 55.77831327432483,
+      "w": 153.27527804927527,
       "o": 0,
       "orbitalPeriod": 30.092568,
       "temperature": 660,
       "exoplanet": true,
       "bump": true,
-      "color": "#743436",
-      "clouds": false
+      "color": "#B04661",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-372-c",
@@ -85,14 +86,15 @@
       "radius": 181.67441860465118,
       "a": 0.154,
       "e": 0,
-      "w": 65.98180078710539,
+      "w": 74.9287008672264,
       "o": 0,
       "orbitalPeriod": 20.053763,
       "temperature": 755,
       "exoplanet": true,
       "bump": false,
-      "color": "#26CA95",
-      "clouds": false
+      "color": "#5C7D83",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-372-b",
@@ -103,18 +105,20 @@
       "radius": 118.18604651162791,
       "a": 0.075,
       "e": 0,
-      "w": 45.29837874167262,
+      "w": 275.8393949335884,
       "o": 0,
       "orbitalPeriod": 6.849692,
       "temperature": 1081,
       "exoplanet": true,
       "bump": true,
-      "color": "#A82415",
-      "clouds": false
+      "color": "#C89061",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-372, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-372 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-372 - System With 3 Exolanets "
 }

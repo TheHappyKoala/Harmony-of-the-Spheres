@@ -73,8 +73,9 @@
       "temperature": 503,
       "exoplanet": true,
       "bump": false,
-      "color": "#9CD0D6",
-      "clouds": false
+      "color": "#DC1129",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-411-d",
@@ -91,8 +92,9 @@
       "temperature": 410,
       "exoplanet": true,
       "bump": false,
-      "color": "#37B12E",
-      "clouds": false
+      "color": "#A5C2D2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-411-c",
@@ -109,8 +111,9 @@
       "temperature": 838,
       "exoplanet": true,
       "bump": false,
-      "color": "#05A136",
-      "clouds": false
+      "color": "#F521DB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-411-b",
@@ -127,12 +130,14 @@
       "temperature": 1138,
       "exoplanet": true,
       "bump": false,
-      "color": "#7197D9",
-      "clouds": false
+      "color": "#F20CA1",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-411, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-411 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-411 - System With 4 Exolanets "
 }

@@ -67,14 +67,15 @@
       "radius": 331.1162790697675,
       "a": 0.4029,
       "e": 0,
-      "w": 328.18527856675433,
+      "w": 172.9824410730857,
       "o": 0,
       "orbitalPeriod": 100.8274113,
       "temperature": 364,
       "exoplanet": true,
       "bump": false,
-      "color": "#420DA0",
-      "clouds": false
+      "color": "#6D618C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-920-b",
@@ -85,18 +86,20 @@
       "radius": 210.97674418604652,
       "a": 0.065,
       "e": 0,
-      "w": 335.7506581718553,
+      "w": 28.05992602108042,
       "o": 0,
       "orbitalPeriod": 6.53192704,
       "temperature": 907,
       "exoplanet": true,
       "bump": false,
-      "color": "#74C14E",
-      "clouds": false
+      "color": "#45BE52",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-920, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-920 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-920 - System With 2 Exolanets "
 }

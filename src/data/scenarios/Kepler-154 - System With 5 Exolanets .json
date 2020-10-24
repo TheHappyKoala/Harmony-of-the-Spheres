@@ -67,14 +67,15 @@
       "radius": 130.88372093023258,
       "a": 0.0871,
       "e": 0,
-      "w": 305.5435503968904,
+      "w": 105.46169866111305,
       "o": 0,
       "orbitalPeriod": 9.91935684,
       "temperature": 838,
       "exoplanet": true,
       "bump": true,
-      "color": "#EA2D48",
-      "clouds": false
+      "color": "#6DA8D9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-154-e",
@@ -85,14 +86,15 @@
       "radius": 130.88372093023258,
       "a": 0.047,
       "e": 0,
-      "w": 220.633594734574,
+      "w": 7.910282428461679,
       "o": 0,
       "orbitalPeriod": 3.93276465,
       "temperature": 1140,
       "exoplanet": true,
       "bump": true,
-      "color": "#1E5723",
-      "clouds": false
+      "color": "#B5C987",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-154-d",
@@ -103,14 +105,15 @@
       "radius": 335.02325581395354,
       "a": 0.1415,
       "e": 0,
-      "w": 44.227875389636594,
+      "w": 265.34995433072066,
       "o": 0,
       "orbitalPeriod": 20.54981883,
       "temperature": 657,
       "exoplanet": true,
       "bump": false,
-      "color": "#ED284B",
-      "clouds": false
+      "color": "#482E5A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-154-c",
@@ -121,14 +124,15 @@
       "radius": 256.8837209302326,
       "a": 0.303,
       "e": 0,
-      "w": 339.8407811457551,
+      "w": 123.89522799711885,
       "o": 0,
       "orbitalPeriod": 62.303276,
       "temperature": 454,
       "exoplanet": true,
       "bump": false,
-      "color": "#2713AA",
-      "clouds": false
+      "color": "#039405",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-154-b",
@@ -139,18 +143,20 @@
       "radius": 197.30232558139537,
       "a": 0.198,
       "e": 0,
-      "w": 118.69764179614222,
+      "w": 274.81432192487864,
       "o": 0,
       "orbitalPeriod": 33.040532,
       "temperature": 561,
       "exoplanet": true,
       "bump": false,
-      "color": "#EB20E3",
-      "clouds": false
+      "color": "#5EA250",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-154, which contains 5 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-154 - System With 5 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-154 - System With 5 Exolanets "
 }

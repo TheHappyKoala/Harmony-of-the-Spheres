@@ -73,12 +73,14 @@
       "temperature": 71.05736435314486,
       "exoplanet": true,
       "bump": false,
-      "color": "#03B5BD",
-      "clouds": false
+      "color": "#E0FBE0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system NSVS 14256825, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "NSVS 14256825 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "NSVS 14256825 - System With 1 Exoplanet "
 }

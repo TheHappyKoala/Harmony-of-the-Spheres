@@ -67,14 +67,15 @@
       "radius": 75.2093023255814,
       "a": 0.033,
       "e": 0,
-      "w": 163.73110316838373,
+      "w": 28.237334624377503,
       "o": 0,
       "orbitalPeriod": 2.35895152,
       "temperature": 1278,
       "exoplanet": true,
       "bump": true,
-      "color": "#06524D",
-      "clouds": false
+      "color": "#B2D9EC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-605-b",
@@ -85,18 +86,20 @@
       "radius": 125.0232558139535,
       "a": 0.042,
       "e": 0,
-      "w": 159.16855336415304,
+      "w": 268.8009189838684,
       "o": 0,
       "orbitalPeriod": 3.38353807,
       "temperature": 1133,
       "exoplanet": true,
       "bump": true,
-      "color": "#DE8C04",
-      "clouds": false
+      "color": "#E1F791",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-605, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-605 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-605 - System With 2 Exolanets "
 }

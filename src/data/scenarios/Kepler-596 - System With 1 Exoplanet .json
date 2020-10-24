@@ -67,18 +67,20 @@
       "radius": 301.81395348837214,
       "a": 0.156,
       "e": 0,
-      "w": 36.861452922772486,
+      "w": 180.36641331785353,
       "o": 0,
       "orbitalPeriod": 21.30022655,
       "temperature": 725,
       "exoplanet": true,
       "bump": false,
-      "color": "#1BD068",
-      "clouds": false
+      "color": "#59DF9F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-596, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-596 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-596 - System With 1 Exoplanet "
 }

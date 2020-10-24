@@ -73,12 +73,14 @@
       "temperature": 158.2745451739923,
       "exoplanet": true,
       "bump": false,
-      "color": "#25547E",
-      "clouds": false
+      "color": "#E6229F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 217786, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 217786 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 217786 - System With 1 Exoplanet "
 }

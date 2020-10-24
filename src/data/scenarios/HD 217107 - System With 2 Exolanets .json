@@ -73,8 +73,9 @@
       "temperature": 104.30223334433263,
       "exoplanet": true,
       "bump": false,
-      "color": "#3E0CE3",
-      "clouds": false
+      "color": "#9AAD0D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 217107-b",
@@ -91,12 +92,14 @@
       "temperature": 850.5589727120267,
       "exoplanet": true,
       "bump": false,
-      "color": "#82D3F5",
-      "clouds": false
+      "color": "#199C71",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 217107, which contains 2 exoplanets and was discovered by the Lick Observatory.",
   "name": "HD 217107 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 217107 - System With 2 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 206.09302325581396,
       "a": 0.3148,
       "e": 0,
-      "w": 22.761665854252566,
+      "w": 156.65288832807505,
       "o": 0,
       "orbitalPeriod": 60.0855082,
       "temperature": 485,
       "exoplanet": true,
       "bump": false,
-      "color": "#EE81AB",
-      "clouds": false
+      "color": "#37FC6D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-983, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-983 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-983 - System With 1 Exoplanet "
 }

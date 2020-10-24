@@ -67,18 +67,20 @@
       "radius": 141.62790697674419,
       "a": 0.0993,
       "e": 0,
-      "w": 96.78109078382067,
+      "w": 306.0823849953312,
       "o": 0,
       "orbitalPeriod": 12.06222443,
       "temperature": 750,
       "exoplanet": true,
       "bump": true,
-      "color": "#412D42",
-      "clouds": false
+      "color": "#FFC5EB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-744, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-744 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-744 - System With 1 Exoplanet "
 }

@@ -73,8 +73,9 @@
       "temperature": 50.10605853742365,
       "exoplanet": true,
       "bump": false,
-      "color": "#3819E7",
-      "clouds": false
+      "color": "#5BFF37",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 15 A-b",
@@ -91,12 +92,14 @@
       "temperature": 550,
       "exoplanet": true,
       "bump": true,
-      "color": "#0901E9",
-      "clouds": false
+      "color": "#7BBF29",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 15 A, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "GJ 15 A - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 15 A - System With 2 Exolanets "
 }

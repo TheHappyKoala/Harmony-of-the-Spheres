@@ -67,18 +67,20 @@
       "radius": 303.7674418604651,
       "a": 0.134,
       "e": 0,
-      "w": 136.11651044937256,
+      "w": 253.38189402006805,
       "o": 0,
       "orbitalPeriod": 15.87209,
       "temperature": 902,
       "exoplanet": true,
       "bump": false,
-      "color": "#40244A",
-      "clouds": false
+      "color": "#4D96E2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-225, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-225 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-225 - System With 1 Exoplanet "
 }

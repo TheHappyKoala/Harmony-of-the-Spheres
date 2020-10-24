@@ -67,18 +67,20 @@
       "radius": 146.51162790697674,
       "a": 0.64,
       "e": 0.1,
-      "w": 359.93127895301666,
+      "w": 77.67654210736396,
       "o": 0,
       "orbitalPeriod": 207.2482,
       "temperature": 189,
       "exoplanet": true,
       "bump": true,
-      "color": "#AB6F5D",
-      "clouds": false
+      "color": "#1901AE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-441, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-441 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-441 - System With 1 Exoplanet "
 }

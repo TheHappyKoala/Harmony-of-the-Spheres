@@ -67,18 +67,20 @@
       "radius": 249.06976744186048,
       "a": 0.3778,
       "e": 0,
-      "w": 311.5129901602323,
+      "w": 7.082041734595972,
       "o": 0,
       "orbitalPeriod": 84.5733226,
       "temperature": 366,
       "exoplanet": true,
       "bump": false,
-      "color": "#52E796",
-      "clouds": false
+      "color": "#6E4B03",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1237, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1237 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1237 - System With 1 Exoplanet "
 }

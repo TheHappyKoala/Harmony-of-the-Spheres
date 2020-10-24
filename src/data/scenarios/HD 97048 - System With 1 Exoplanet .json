@@ -67,18 +67,20 @@
       "radius": 1152.5581395348838,
       "a": 130,
       "e": 0,
-      "w": 101.64821457450797,
+      "w": 276.371274875109,
       "o": 0,
       "orbitalPeriod": null,
       "temperature": 40.68517412365351,
       "exoplanet": true,
       "bump": false,
-      "color": "#23AE14",
-      "clouds": false
+      "color": "#66B2E8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 97048, which contains 1 exoplanets and was discovered by the Atacama Large Millimeter Array (ALMA).",
   "name": "HD 97048 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 97048 - System With 1 Exoplanet "
 }

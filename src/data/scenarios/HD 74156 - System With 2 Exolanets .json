@@ -73,8 +73,9 @@
       "temperature": 144.0739035057857,
       "exoplanet": true,
       "bump": false,
-      "color": "#84E718",
-      "clouds": false
+      "color": "#0B11A2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 74156-b",
@@ -91,12 +92,14 @@
       "temperature": 523.1476298189323,
       "exoplanet": true,
       "bump": false,
-      "color": "#AEAB5E",
-      "clouds": false
+      "color": "#B24A6D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 74156, which contains 2 exoplanets and was discovered by the Haute-Provence Observatory.",
   "name": "HD 74156 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 74156 - System With 2 Exolanets "
 }

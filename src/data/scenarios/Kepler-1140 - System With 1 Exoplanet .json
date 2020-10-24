@@ -67,18 +67,20 @@
       "radius": 241.25581395348837,
       "a": 0.1478,
       "e": 0,
-      "w": 196.99211053411136,
+      "w": 166.08312507342094,
       "o": 0,
       "orbitalPeriod": 24.0862707,
       "temperature": 500,
       "exoplanet": true,
       "bump": false,
-      "color": "#964098",
-      "clouds": false
+      "color": "#C69FA0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1140, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1140 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1140 - System With 1 Exoplanet "
 }

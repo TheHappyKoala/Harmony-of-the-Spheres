@@ -73,12 +73,14 @@
       "temperature": 135.68401939520905,
       "exoplanet": true,
       "bump": false,
-      "color": "#C111EF",
-      "clouds": false
+      "color": "#547C67",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 220197, which contains 1 exoplanets and was discovered by the Roque de los Muchachos Observatory.",
   "name": "HD 220197 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 220197 - System With 1 Exoplanet "
 }

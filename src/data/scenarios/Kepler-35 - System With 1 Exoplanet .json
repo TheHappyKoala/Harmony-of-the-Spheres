@@ -67,18 +67,20 @@
       "radius": 711.0697674418604,
       "a": 0.60347,
       "e": 0.042,
-      "w": 43.808386619744645,
+      "w": 54.21754511537847,
       "o": 0,
       "orbitalPeriod": 131.458,
       "temperature": 283.7684358410679,
       "exoplanet": true,
       "bump": false,
-      "color": "#143BB7",
-      "clouds": false
+      "color": "#953C8B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-35, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-35 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-35 - System With 1 Exoplanet "
 }

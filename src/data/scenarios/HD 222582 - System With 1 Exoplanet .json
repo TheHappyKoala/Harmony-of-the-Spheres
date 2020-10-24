@@ -73,12 +73,14 @@
       "temperature": 226.26143735563346,
       "exoplanet": true,
       "bump": false,
-      "color": "#0DF47A",
-      "clouds": false
+      "color": "#B2E984",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 222582, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 222582 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 222582 - System With 1 Exoplanet "
 }

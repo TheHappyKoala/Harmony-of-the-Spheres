@@ -67,18 +67,20 @@
       "radius": 1181.860465116279,
       "a": 0.0345,
       "e": 0.17,
-      "w": 141.8613564695997,
+      "w": 0.40248506739936296,
       "o": 0,
       "orbitalPeriod": 2.176423,
       "temperature": 1790,
       "exoplanet": true,
       "bump": false,
-      "color": "#8FC4E7",
-      "clouds": false
+      "color": "#43EC21",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-133, which contains 1 exoplanets and was discovered by the SuperWASP-South.",
   "name": "WASP-133 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-133 - System With 1 Exoplanet "
 }

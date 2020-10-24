@@ -67,18 +67,20 @@
       "radius": 1376.232558139535,
       "a": 0.05885,
       "e": 0,
-      "w": 103.7776271866766,
+      "w": 314.0838374536583,
       "o": 0,
       "orbitalPeriod": 4.54216875,
       "temperature": 1496,
       "exoplanet": true,
       "bump": false,
-      "color": "#DF7488",
-      "clouds": false
+      "color": "#3AE6A0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-113, which contains 1 exoplanets and was discovered by the SuperWASP-North.",
   "name": "WASP-113 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-113 - System With 1 Exoplanet "
 }

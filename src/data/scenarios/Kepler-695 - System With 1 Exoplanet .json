@@ -67,18 +67,20 @@
       "radius": 802.8837209302326,
       "a": 0.0374,
       "e": 0,
-      "w": 197.78524527770077,
+      "w": 339.96530136470335,
       "o": 0,
       "orbitalPeriod": 3.04033042,
       "temperature": 1021,
       "exoplanet": true,
       "bump": false,
-      "color": "#FF38C0",
-      "clouds": false
+      "color": "#838796",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-695, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-695 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-695 - System With 1 Exoplanet "
 }

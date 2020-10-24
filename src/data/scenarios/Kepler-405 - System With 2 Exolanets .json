@@ -67,14 +67,15 @@
       "radius": 406.3255813953488,
       "a": 0.188,
       "e": 0,
-      "w": 283.1911664948532,
+      "w": 345.30949230057166,
       "o": 0,
       "orbitalPeriod": 29.726682,
       "temperature": 557,
       "exoplanet": true,
       "bump": false,
-      "color": "#C663CD",
-      "clouds": false
+      "color": "#BC0A0B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-405-b",
@@ -85,18 +86,20 @@
       "radius": 181.67441860465118,
       "a": 0.095,
       "e": 0,
-      "w": 184.38588630720486,
+      "w": 122.51112135216859,
       "o": 0,
       "orbitalPeriod": 10.613839,
       "temperature": 785,
       "exoplanet": true,
       "bump": true,
-      "color": "#79814F",
-      "clouds": true
+      "color": "#9A9528",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-405, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-405 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-405 - System With 2 Exolanets "
 }

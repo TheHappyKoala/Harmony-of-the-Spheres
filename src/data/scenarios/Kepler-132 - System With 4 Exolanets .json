@@ -67,14 +67,15 @@
       "radius": 102.55813953488372,
       "a": 0.4393,
       "e": 0,
-      "w": 151.51507473433597,
+      "w": 106.21494894978578,
       "o": 0,
       "orbitalPeriod": 110.2869374,
       "temperature": 414,
       "exoplanet": true,
       "bump": true,
-      "color": "#16897C",
-      "clouds": false
+      "color": "#D1ED2C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-132-d",
@@ -85,14 +86,15 @@
       "radius": 134.79069767441862,
       "a": 0.136,
       "e": 0,
-      "w": 88.89781203421256,
+      "w": 284.7261744635446,
       "o": 0,
       "orbitalPeriod": 18.010199,
       "temperature": 758,
       "exoplanet": true,
       "bump": true,
-      "color": "#612873",
-      "clouds": false
+      "color": "#142587",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-132-c",
@@ -103,14 +105,15 @@
       "radius": 111.34883720930233,
       "a": 0.068,
       "e": 0,
-      "w": 97.63144098287728,
+      "w": 221.98550457759265,
       "o": 0,
       "orbitalPeriod": 6.414914,
       "temperature": 1069,
       "exoplanet": true,
       "bump": true,
-      "color": "#C8B632",
-      "clouds": false
+      "color": "#5A7C70",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-132-b",
@@ -121,18 +124,20 @@
       "radius": 105.48837209302326,
       "a": 0.067,
       "e": 0,
-      "w": 294.8228535146495,
+      "w": 220.8677925928584,
       "o": 0,
       "orbitalPeriod": 6.178196,
       "temperature": 1082,
       "exoplanet": true,
       "bump": true,
-      "color": "#C29E74",
-      "clouds": false
+      "color": "#38BAF4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-132, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-132 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-132 - System With 4 Exolanets "
 }

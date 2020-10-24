@@ -67,14 +67,15 @@
       "radius": 149.4418604651163,
       "a": 0.64,
       "e": 0.14,
-      "w": 54.03678009482974,
+      "w": 30.592367533991336,
       "o": 0,
       "orbitalPeriod": 242.4613,
       "temperature": 299,
       "exoplanet": true,
       "bump": true,
-      "color": "#6B87D6",
-      "clouds": false
+      "color": "#8EA370",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-69-b",
@@ -85,18 +86,20 @@
       "radius": 195.34883720930236,
       "a": 0.094,
       "e": 0.16,
-      "w": 84.624350108078,
+      "w": 102.40607433815097,
       "o": 0,
       "orbitalPeriod": 13.722341,
       "temperature": 779,
       "exoplanet": true,
       "bump": false,
-      "color": "#B9D523",
-      "clouds": false
+      "color": "#9C0284",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-69, which contains 2 exoplanets, of which 1 is potentially habitable, and was discovered by the Kepler.",
   "name": "Kepler-69 - System With 2 Exolanets of Which 1 Is Potentially Habitable",
-  "cameraFocus": "Kepler-69-c"
+  "cameraFocus": "Kepler-69-c",
+  "fileName": "Kepler-69 - System With 2 Exolanets of Which 1 Is Potentially Habitable"
 }

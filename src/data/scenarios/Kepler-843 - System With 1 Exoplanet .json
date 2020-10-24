@@ -67,18 +67,20 @@
       "radius": 225.6279069767442,
       "a": 0.0313,
       "e": 0,
-      "w": 35.93760773626245,
+      "w": 175.91529631863747,
       "o": 0,
       "orbitalPeriod": 2.05387982,
       "temperature": 1523,
       "exoplanet": true,
       "bump": false,
-      "color": "#6E1390",
-      "clouds": false
+      "color": "#27D972",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-843, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-843 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-843 - System With 1 Exoplanet "
 }

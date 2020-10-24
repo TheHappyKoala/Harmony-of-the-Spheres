@@ -73,8 +73,9 @@
       "temperature": 136.6803988512207,
       "exoplanet": true,
       "bump": false,
-      "color": "#0E3764",
-      "clouds": false
+      "color": "#A6DEF3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 10180-g",
@@ -91,8 +92,9 @@
       "temperature": 210.38599984673507,
       "exoplanet": true,
       "bump": false,
-      "color": "#0C9C06",
-      "clouds": false
+      "color": "#1C6EEA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 10180-f",
@@ -109,8 +111,9 @@
       "temperature": 357.97229311780404,
       "exoplanet": true,
       "bump": false,
-      "color": "#0F37E1",
-      "clouds": false
+      "color": "#1133F2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 10180-e",
@@ -127,8 +130,9 @@
       "temperature": 483.7571316787366,
       "exoplanet": true,
       "bump": false,
-      "color": "#087643",
-      "clouds": false
+      "color": "#438472",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 10180-d",
@@ -145,8 +149,9 @@
       "temperature": 700.8502372275365,
       "exoplanet": true,
       "bump": false,
-      "color": "#D20823",
-      "clouds": false
+      "color": "#5D5796",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 10180-c",
@@ -163,12 +168,14 @@
       "temperature": 992.5035435326728,
       "exoplanet": true,
       "bump": false,
-      "color": "#492321",
-      "clouds": false
+      "color": "#21B57C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 10180, which contains 6 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 10180 - System With 6 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 10180 - System With 6 Exolanets "
 }

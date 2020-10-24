@@ -73,12 +73,14 @@
       "temperature": 293.38496290802686,
       "exoplanet": true,
       "bump": false,
-      "color": "#968960",
-      "clouds": false
+      "color": "#8FA4AB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 81 Cet, which contains 1 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "81 Cet - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "81 Cet - System With 1 Exoplanet "
 }

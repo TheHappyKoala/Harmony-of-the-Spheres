@@ -73,12 +73,14 @@
       "temperature": 335.81956814096003,
       "exoplanet": true,
       "bump": false,
-      "color": "#16E23A",
-      "clouds": false
+      "color": "#D01933",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system BD+15 2375, which contains 1 exoplanets and was discovered by the Roque de los Muchachos Observatory.",
   "name": "BD+15 2375 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "BD+15 2375 - System With 1 Exoplanet "
 }

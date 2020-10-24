@@ -67,14 +67,15 @@
       "radius": 209.02325581395348,
       "a": 0.0267,
       "e": 0,
-      "w": 273.34524017093065,
+      "w": 115.49503538137667,
       "o": 0,
       "orbitalPeriod": 2.22649109,
       "temperature": 697,
       "exoplanet": true,
       "bump": false,
-      "color": "#5FA5E1",
-      "clouds": false
+      "color": "#6A8466",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1321-b",
@@ -85,18 +86,20 @@
       "radius": 428.79069767441865,
       "a": 0.0781,
       "e": 0,
-      "w": 87.9854647201748,
+      "w": 258.29820765726026,
       "o": 0,
       "orbitalPeriod": 11.12830484,
       "temperature": 408,
       "exoplanet": true,
       "bump": false,
-      "color": "#243052",
-      "clouds": false
+      "color": "#E920DE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1321, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1321 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1321 - System With 2 Exolanets "
 }

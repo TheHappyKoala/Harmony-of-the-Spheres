@@ -73,12 +73,14 @@
       "temperature": 301.2441564247602,
       "exoplanet": true,
       "bump": false,
-      "color": "#927714",
-      "clouds": false
+      "color": "#6C7BC8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 4 UMa, which contains 1 exoplanets and was discovered by the Thueringer Landessternwarte Tautenburg.",
   "name": "4 UMa - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "4 UMa - System With 1 Exoplanet "
 }

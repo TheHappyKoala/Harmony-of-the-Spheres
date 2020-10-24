@@ -67,14 +67,15 @@
       "radius": 220.74418604651166,
       "a": 0.237,
       "e": 0,
-      "w": 58.420895888100176,
+      "w": 116.05579533486336,
       "o": 0,
       "orbitalPeriod": 46.90232,
       "temperature": 458,
       "exoplanet": true,
       "bump": false,
-      "color": "#72521A",
-      "clouds": false
+      "color": "#0C85CC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-153-b",
@@ -85,18 +86,20 @@
       "radius": 254.93023255813955,
       "a": 0.129,
       "e": 0,
-      "w": 278.21014669039,
+      "w": 184.4103101829854,
       "o": 0,
       "orbitalPeriod": 18.870227,
       "temperature": 621,
       "exoplanet": true,
       "bump": false,
-      "color": "#071B0A",
-      "clouds": false
+      "color": "#6F2DBE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-153, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-153 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-153 - System With 2 Exolanets "
 }

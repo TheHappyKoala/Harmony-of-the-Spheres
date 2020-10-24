@@ -67,14 +67,15 @@
       "radius": 74.23255813953489,
       "a": 0.0552,
       "e": 0,
-      "w": 295.33952987095614,
+      "w": 68.22542369001502,
       "o": 0,
       "orbitalPeriod": 4.62332,
       "temperature": 1050,
       "exoplanet": true,
       "bump": true,
-      "color": "#71F06F",
-      "clouds": false
+      "color": "#72FF90",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-406-b",
@@ -85,18 +86,20 @@
       "radius": 125.0232558139535,
       "a": 0.0359,
       "e": 0,
-      "w": 231.41432902744765,
+      "w": 313.3304812557962,
       "o": 0,
       "orbitalPeriod": 2.42629,
       "temperature": 1302,
       "exoplanet": true,
       "bump": false,
-      "color": "#F29D55",
-      "clouds": false
+      "color": "#DF2128",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-406, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-406 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-406 - System With 2 Exolanets "
 }

@@ -67,14 +67,15 @@
       "radius": 108.4186046511628,
       "a": 0.126,
       "e": 0,
-      "w": 174.619123340319,
+      "w": 115.025250462463,
       "o": 0,
       "orbitalPeriod": 16.725948,
       "temperature": 729,
       "exoplanet": true,
       "bump": true,
-      "color": "#1B7399",
-      "clouds": false
+      "color": "#FC3973",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-373-b",
@@ -85,18 +86,20 @@
       "radius": 118.18604651162791,
       "a": 0.06,
       "e": 0,
-      "w": 291.6898683732098,
+      "w": 162.70567457141013,
       "o": 0,
       "orbitalPeriod": 5.535309,
       "temperature": 1054,
       "exoplanet": true,
       "bump": true,
-      "color": "#9EA377",
-      "clouds": false
+      "color": "#899A84",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-373, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-373 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-373 - System With 2 Exolanets "
 }

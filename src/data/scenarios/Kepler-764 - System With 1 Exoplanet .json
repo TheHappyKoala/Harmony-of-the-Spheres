@@ -67,18 +67,20 @@
       "radius": 142.6046511627907,
       "a": 0.0724,
       "e": 0,
-      "w": 153.55240973945527,
+      "w": 11.412654103660298,
       "o": 0,
       "orbitalPeriod": 7.33683936,
       "temperature": 875,
       "exoplanet": true,
       "bump": true,
-      "color": "#4E4774",
-      "clouds": false
+      "color": "#A806D9",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-764, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-764 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-764 - System With 1 Exoplanet "
 }

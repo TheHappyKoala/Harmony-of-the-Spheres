@@ -67,14 +67,15 @@
       "radius": 366.2790697674419,
       "a": 0.154,
       "e": 0,
-      "w": 240.9411965679011,
+      "w": 359.9512765478753,
       "o": 0,
       "orbitalPeriod": 20.74028413,
       "temperature": 798,
       "exoplanet": true,
       "bump": false,
-      "color": "#69CED0",
-      "clouds": false
+      "color": "#DC8EEE",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "KIC 9663113-b",
@@ -85,18 +86,20 @@
       "radius": 400.4651162790698,
       "a": 1.4062,
       "e": 0,
-      "w": 135.52439105306104,
+      "w": 25.077428511091906,
       "o": 0,
       "orbitalPeriod": 572.3847,
       "temperature": 264,
       "exoplanet": true,
       "bump": false,
-      "color": "#2D3C53",
-      "clouds": false
+      "color": "#E9408D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KIC 9663113, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "KIC 9663113 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KIC 9663113 - System With 2 Exolanets "
 }

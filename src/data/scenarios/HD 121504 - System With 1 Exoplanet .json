@@ -73,12 +73,14 @@
       "temperature": 601.3519379070145,
       "exoplanet": true,
       "bump": false,
-      "color": "#8A2E2D",
-      "clouds": false
+      "color": "#BD0CA4",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 121504, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 121504 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 121504 - System With 1 Exoplanet "
 }

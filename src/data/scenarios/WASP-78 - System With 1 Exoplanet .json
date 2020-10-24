@@ -67,18 +67,20 @@
       "radius": 1885.1162790697674,
       "a": 0.03488,
       "e": 0,
-      "w": 236.67536731913324,
+      "w": 16.817034324561455,
       "o": 0,
       "orbitalPeriod": 2.17518,
       "temperature": 2470,
       "exoplanet": true,
       "bump": false,
-      "color": "#B1CB0A",
-      "clouds": false
+      "color": "#33FC31",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-78, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-78 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-78 - System With 1 Exoplanet "
 }

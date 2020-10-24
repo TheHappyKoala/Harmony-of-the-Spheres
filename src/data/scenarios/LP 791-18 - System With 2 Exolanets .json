@@ -67,14 +67,15 @@
       "radius": 201.2093023255814,
       "a": 0.029392,
       "e": 0,
-      "w": 223.24003754154384,
+      "w": 257.5749396881734,
       "o": 0,
       "orbitalPeriod": 4.989963,
       "temperature": 370,
       "exoplanet": true,
       "bump": false,
-      "color": "#D409B8",
-      "clouds": false
+      "color": "#886A02",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "LP 791-18-b",
@@ -85,18 +86,20 @@
       "radius": 97.67441860465118,
       "a": 0.00969,
       "e": 0,
-      "w": 97.95724205285401,
+      "w": 178.7307732919731,
       "o": 0,
       "orbitalPeriod": 0.948005,
       "temperature": 650,
       "exoplanet": true,
       "bump": true,
-      "color": "#98D68F",
-      "clouds": false
+      "color": "#9CC8A0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system LP 791-18, which contains 2 exoplanets and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "LP 791-18 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "LP 791-18 - System With 2 Exolanets "
 }

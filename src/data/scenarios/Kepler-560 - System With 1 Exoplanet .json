@@ -67,18 +67,20 @@
       "radius": 149.4418604651163,
       "a": 0.0899,
       "e": 0.17,
-      "w": 245.38475156133168,
+      "w": 187.1567772521374,
       "o": 0,
       "orbitalPeriod": 18.47764449,
       "temperature": 298,
       "exoplanet": true,
       "bump": true,
-      "color": "#6901A4",
-      "clouds": false
+      "color": "#D35336",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-560, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-560 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-560 - System With 1 Exoplanet "
 }

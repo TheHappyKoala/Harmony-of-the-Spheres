@@ -67,18 +67,20 @@
       "radius": 1172.093023255814,
       "a": 0.03035,
       "e": 0.6,
-      "w": 323.70152715636675,
+      "w": 10.868306193969115,
       "o": 0,
       "orbitalPeriod": 1.689868,
       "temperature": 2013,
       "exoplanet": true,
       "bump": false,
-      "color": "#05DD0A",
-      "clouds": false
+      "color": "#4D129F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system OGLE-TR-132, which contains 1 exoplanets and was discovered by the OGLE.",
   "name": "OGLE-TR-132 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "OGLE-TR-132 - System With 1 Exoplanet "
 }

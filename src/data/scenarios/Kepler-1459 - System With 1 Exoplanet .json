@@ -67,18 +67,20 @@
       "radius": 118.18604651162791,
       "a": 0.2829,
       "e": 0,
-      "w": 337.03844155118003,
+      "w": 73.1004988018857,
       "o": 0,
       "orbitalPeriod": 62.8691611,
       "temperature": 349,
       "exoplanet": true,
       "bump": true,
-      "color": "#37ED42",
-      "clouds": false
+      "color": "#C360D5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1459, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1459 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1459 - System With 1 Exoplanet "
 }

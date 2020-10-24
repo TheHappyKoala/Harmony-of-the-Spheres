@@ -67,18 +67,20 @@
       "radius": 211.95348837209303,
       "a": 0.1754,
       "e": 0,
-      "w": 199.2818516895827,
+      "w": 67.4437996302685,
       "o": 0,
       "orbitalPeriod": 27.6655226,
       "temperature": 641,
       "exoplanet": true,
       "bump": false,
-      "color": "#CC0AB3",
-      "clouds": false
+      "color": "#E0EB37",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-765, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-765 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-765 - System With 1 Exoplanet "
 }

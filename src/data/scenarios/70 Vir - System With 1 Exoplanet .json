@@ -73,12 +73,14 @@
       "temperature": 370.03836992834323,
       "exoplanet": true,
       "bump": false,
-      "color": "#622C4E",
-      "clouds": false
+      "color": "#CAFD68",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 70 Vir, which contains 1 exoplanets and was discovered by the Lick Observatory.",
   "name": "70 Vir - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "70 Vir - System With 1 Exoplanet "
 }

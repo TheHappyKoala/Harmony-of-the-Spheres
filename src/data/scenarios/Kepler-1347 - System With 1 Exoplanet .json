@@ -67,18 +67,20 @@
       "radius": 89.86046511627907,
       "a": 0.104,
       "e": 0,
-      "w": 330.02191257540693,
+      "w": 69.79313834982703,
       "o": 0,
       "orbitalPeriod": 14.00947528,
       "temperature": 617,
       "exoplanet": true,
       "bump": true,
-      "color": "#F2DAD9",
-      "clouds": false
+      "color": "#FF2474",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1347, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1347 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1347 - System With 1 Exoplanet "
 }

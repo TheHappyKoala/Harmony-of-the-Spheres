@@ -73,12 +73,14 @@
       "temperature": 1395,
       "exoplanet": true,
       "bump": false,
-      "color": "#426AFF",
-      "clouds": false
+      "color": "#03B0EB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-50, which contains 1 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-50 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-50 - System With 1 Exoplanet "
 }

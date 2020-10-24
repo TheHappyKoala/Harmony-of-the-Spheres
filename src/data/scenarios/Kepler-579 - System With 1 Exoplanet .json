@@ -67,18 +67,20 @@
       "radius": 173.86046511627907,
       "a": 0.0854,
       "e": 0,
-      "w": 18.692210399534428,
+      "w": 53.43889721638659,
       "o": 0,
       "orbitalPeriod": 9.66857723,
       "temperature": 730,
       "exoplanet": true,
       "bump": true,
-      "color": "#801E53",
-      "clouds": true
+      "color": "#C22FE0",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-579, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-579 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-579 - System With 1 Exoplanet "
 }

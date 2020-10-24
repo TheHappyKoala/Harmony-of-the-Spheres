@@ -67,14 +67,15 @@
       "radius": 1142.7906976744187,
       "a": 16.4,
       "e": 0.15,
-      "w": 189.04523497336822,
+      "w": 166.64944108999987,
       "o": 0,
       "orbitalPeriod": 20815.6,
       "temperature": 1150,
       "exoplanet": true,
       "bump": false,
-      "color": "#232657",
-      "clouds": false
+      "color": "#6CEF8E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HR 8799-d",
@@ -85,14 +86,15 @@
       "radius": 1172.093023255814,
       "a": 24,
       "e": 0.6,
-      "w": 115.31252980540742,
+      "w": 15.869570547532863,
       "o": 0,
       "orbitalPeriod": 37000,
       "temperature": 1300,
       "exoplanet": true,
       "bump": false,
-      "color": "#CF47D1",
-      "clouds": false
+      "color": "#7F5D89",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HR 8799-c",
@@ -103,14 +105,15 @@
       "radius": 1172.093023255814,
       "a": 38,
       "e": 0.5,
-      "w": 340.90016336453937,
+      "w": 271.40487767179894,
       "o": 0,
       "orbitalPeriod": 69000,
       "temperature": 1200,
       "exoplanet": true,
       "bump": false,
-      "color": "#459168",
-      "clouds": false
+      "color": "#287C59",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HR 8799-b",
@@ -121,18 +124,20 @@
       "radius": 1172.093023255814,
       "a": 68,
       "e": 0,
-      "w": 275.81784756478083,
+      "w": 232.41512897205413,
       "o": 0,
       "orbitalPeriod": 170000,
       "temperature": 1200,
       "exoplanet": true,
       "bump": false,
-      "color": "#C615BC",
-      "clouds": false
+      "color": "#37842E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system HR 8799, which contains 4 exoplanets and was discovered by the Gemini Observatory.",
   "name": "HR 8799 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HR 8799 - System With 4 Exolanets "
 }

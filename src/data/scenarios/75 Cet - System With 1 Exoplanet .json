@@ -73,12 +73,14 @@
       "temperature": 329.0707544112859,
       "exoplanet": true,
       "bump": false,
-      "color": "#0BA5FE",
-      "clouds": false
+      "color": "#D5DDF5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system 75 Cet, which contains 1 exoplanets and was discovered by the Okayama Astrophysical Observatory.",
   "name": "75 Cet - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "75 Cet - System With 1 Exoplanet "
 }

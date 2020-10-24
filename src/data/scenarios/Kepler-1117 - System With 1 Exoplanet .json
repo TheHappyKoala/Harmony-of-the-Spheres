@@ -67,18 +67,20 @@
       "radius": 96.69767441860466,
       "a": 0.0546,
       "e": 0,
-      "w": 100.71322918003327,
+      "w": 186.31372411253437,
       "o": 0,
       "orbitalPeriod": 4.79028459,
       "temperature": 938,
       "exoplanet": true,
       "bump": true,
-      "color": "#8D1F7B",
-      "clouds": false
+      "color": "#5477D2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1117, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1117 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1117 - System With 1 Exoplanet "
 }

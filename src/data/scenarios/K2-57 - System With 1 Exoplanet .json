@@ -67,18 +67,20 @@
       "radius": 182.6511627906977,
       "a": 0.0746,
       "e": 0,
-      "w": 199.15715376147395,
+      "w": 173.43272367661902,
       "o": 0,
       "orbitalPeriod": 9.0063,
       "temperature": 659.5712161743866,
       "exoplanet": true,
       "bump": false,
-      "color": "#D3B1E7",
-      "clouds": false
+      "color": "#70217D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-57, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-57 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-57 - System With 1 Exoplanet "
 }

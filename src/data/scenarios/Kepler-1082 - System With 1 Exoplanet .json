@@ -67,18 +67,20 @@
       "radius": 97.67441860465118,
       "a": 0.0257,
       "e": 0,
-      "w": 108.1830536170728,
+      "w": 8.741777426026145,
       "o": 0,
       "orbitalPeriod": 1.5432066,
       "temperature": 1827,
       "exoplanet": true,
       "bump": true,
-      "color": "#CA0A72",
-      "clouds": false
+      "color": "#596DFB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1082, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1082 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1082 - System With 1 Exoplanet "
 }

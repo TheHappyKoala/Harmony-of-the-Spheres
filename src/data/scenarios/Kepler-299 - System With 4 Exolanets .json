@@ -67,14 +67,15 @@
       "radius": 163.11627906976747,
       "a": 0.22,
       "e": 0,
-      "w": 67.37504165395698,
+      "w": 209.75557339121343,
       "o": 0,
       "orbitalPeriod": 38.285489,
       "temperature": 534,
       "exoplanet": true,
       "bump": true,
-      "color": "#828F49",
-      "clouds": false
+      "color": "#AD9AB2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-299-d",
@@ -85,14 +86,15 @@
       "radius": 162.13953488372096,
       "a": 0.118,
       "e": 0,
-      "w": 216.86102517563933,
+      "w": 33.446798997088734,
       "o": 0,
       "orbitalPeriod": 15.054786,
       "temperature": 729,
       "exoplanet": true,
       "bump": true,
-      "color": "#8BB017",
-      "clouds": false
+      "color": "#DCBE08",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-299-c",
@@ -103,14 +105,15 @@
       "radius": 230.51162790697674,
       "a": 0.07,
       "e": 0,
-      "w": 96.88821472178128,
+      "w": 244.76898140936498,
       "o": 0,
       "orbitalPeriod": 6.885875,
       "temperature": 946,
       "exoplanet": true,
       "bump": false,
-      "color": "#B6E94F",
-      "clouds": false
+      "color": "#AF6387",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-299-b",
@@ -121,18 +124,20 @@
       "radius": 115.25581395348837,
       "a": 0.04,
       "e": 0,
-      "w": 290.686787304889,
+      "w": 82.53958062245216,
       "o": 0,
       "orbitalPeriod": 2.927128,
       "temperature": 1258,
       "exoplanet": true,
       "bump": true,
-      "color": "#7BE5D9",
-      "clouds": false
+      "color": "#E1C600",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-299, which contains 4 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-299 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-299 - System With 4 Exolanets "
 }

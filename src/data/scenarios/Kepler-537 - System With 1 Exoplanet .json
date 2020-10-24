@@ -67,18 +67,20 @@
       "radius": 123.06976744186048,
       "a": 0.0442,
       "e": 0,
-      "w": 338.03840755663236,
+      "w": 267.9908094174665,
       "o": 0,
       "orbitalPeriod": 3.24755522,
       "temperature": 1181,
       "exoplanet": true,
       "bump": true,
-      "color": "#ED3008",
-      "clouds": false
+      "color": "#226879",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-537, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-537 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-537 - System With 1 Exoplanet "
 }

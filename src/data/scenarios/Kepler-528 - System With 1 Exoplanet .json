@@ -67,18 +67,20 @@
       "radius": 181.67441860465118,
       "a": 0.1409,
       "e": 0,
-      "w": 37.3447537756505,
+      "w": 97.32466699308135,
       "o": 0,
       "orbitalPeriod": 19.78297415,
       "temperature": 708,
       "exoplanet": true,
       "bump": true,
-      "color": "#451638",
-      "clouds": true
+      "color": "#5A0045",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-528, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-528 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-528 - System With 1 Exoplanet "
 }

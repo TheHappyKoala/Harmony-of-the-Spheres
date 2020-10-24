@@ -67,18 +67,20 @@
       "radius": 152.37209302325581,
       "a": 0.1153,
       "e": 0,
-      "w": 262.61916473250835,
+      "w": 336.0607198650243,
       "o": 0,
       "orbitalPeriod": 14.878296,
       "temperature": 692,
       "exoplanet": true,
       "bump": true,
-      "color": "#9C2E4C",
-      "clouds": false
+      "color": "#15C31A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-939, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-939 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-939 - System With 1 Exoplanet "
 }

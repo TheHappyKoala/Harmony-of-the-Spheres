@@ -73,8 +73,9 @@
       "temperature": 107.29511287442034,
       "exoplanet": true,
       "bump": false,
-      "color": "#F0B492",
-      "clouds": false
+      "color": "#D00AF8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 134987-b",
@@ -91,12 +92,14 @@
       "temperature": 287.11205544878385,
       "exoplanet": true,
       "bump": false,
-      "color": "#ADF562",
-      "clouds": false
+      "color": "#EBC0D6",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 134987, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 134987 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 134987 - System With 2 Exolanets "
 }

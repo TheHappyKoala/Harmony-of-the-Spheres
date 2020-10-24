@@ -73,8 +73,9 @@
       "temperature": 704,
       "exoplanet": true,
       "bump": false,
-      "color": "#F416A5",
-      "clouds": false
+      "color": "#E71A3B",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-117-b",
@@ -91,12 +92,14 @@
       "temperature": 984,
       "exoplanet": true,
       "bump": false,
-      "color": "#466461",
-      "clouds": false
+      "color": "#5F7F81",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-117, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-117 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-117 - System With 2 Exolanets "
 }

@@ -67,14 +67,15 @@
       "radius": 473.72093023255815,
       "a": 0.8453,
       "e": 0,
-      "w": 282.47709175087476,
+      "w": 47.89295691459485,
       "o": 0,
       "orbitalPeriod": 284.215,
       "temperature": 321,
       "exoplanet": true,
       "bump": false,
-      "color": "#CE11E4",
-      "clouds": false
+      "color": "#778D06",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "KOI-1783-b",
@@ -85,18 +86,20 @@
       "radius": 771.6279069767443,
       "a": 0.5135,
       "e": 0,
-      "w": 113.07793973353438,
+      "w": 130.6298547593499,
       "o": 0,
       "orbitalPeriod": 134.4628,
       "temperature": 412,
       "exoplanet": true,
       "bump": false,
-      "color": "#7E14E6",
-      "clouds": false
+      "color": "#8368B5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system KOI-1783, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "KOI-1783 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "KOI-1783 - System With 2 Exolanets "
 }

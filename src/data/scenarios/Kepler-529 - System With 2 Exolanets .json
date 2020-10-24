@@ -67,14 +67,15 @@
       "radius": 173.86046511627907,
       "a": 0.1075,
       "e": 0,
-      "w": 322.5601051881699,
+      "w": 246.82550001824598,
       "o": 0,
       "orbitalPeriod": 12.8345022,
       "temperature": 891,
       "exoplanet": true,
       "bump": true,
-      "color": "#BC62FC",
-      "clouds": true
+      "color": "#E2B6E3",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-529-b",
@@ -85,18 +86,20 @@
       "radius": 162.13953488372096,
       "a": 0.0309,
       "e": 0,
-      "w": 258.6223213929402,
+      "w": 203.6339391562111,
       "o": 0,
       "orbitalPeriod": 1.98035766,
       "temperature": 1662,
       "exoplanet": true,
       "bump": true,
-      "color": "#CB22C1",
-      "clouds": false
+      "color": "#07BE0A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-529, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-529 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-529 - System With 2 Exolanets "
 }

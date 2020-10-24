@@ -73,12 +73,14 @@
       "temperature": 652.1371491446533,
       "exoplanet": true,
       "bump": true,
-      "color": "#31E3AC",
-      "clouds": true
+      "color": "#1CBD27",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-120, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-120 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-120 - System With 1 Exoplanet "
 }

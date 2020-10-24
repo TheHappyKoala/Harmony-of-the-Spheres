@@ -67,18 +67,20 @@
       "radius": 1260,
       "a": 0.0518,
       "e": 0.047,
-      "w": 105.84556667636788,
+      "w": 149.19767518546462,
       "o": 0,
       "orbitalPeriod": 3.89713,
       "temperature": 2000,
       "exoplanet": true,
       "bump": false,
-      "color": "#3EC026",
-      "clouds": false
+      "color": "#28FB4D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system CoRoT-19, which contains 1 exoplanets and was discovered by the CoRoT.",
   "name": "CoRoT-19 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "CoRoT-19 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 159.2093023255814,
       "a": 0.0582,
       "e": 0,
-      "w": 313.9901637283293,
+      "w": 258.835736784518,
       "o": 0,
       "orbitalPeriod": 5.26,
       "temperature": 423,
       "exoplanet": true,
       "bump": true,
-      "color": "#C29FC1",
-      "clouds": false
+      "color": "#6D8299",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "K2-316-b",
@@ -85,18 +86,20 @@
       "radius": 116.23255813953489,
       "a": 0.0147,
       "e": 0,
-      "w": 151.62097755948176,
+      "w": 350.5280084446401,
       "o": 0,
       "orbitalPeriod": 1.133,
       "temperature": 841,
       "exoplanet": true,
       "bump": true,
-      "color": "#FF996A",
-      "clouds": false
+      "color": "#291370",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-316, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-316 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-316 - System With 2 Exolanets "
 }

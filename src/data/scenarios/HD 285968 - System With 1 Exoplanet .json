@@ -67,18 +67,20 @@
       "radius": 247.11627906976747,
       "a": 0.066,
       "e": 0,
-      "w": 233.07789243763204,
+      "w": 265.34617700963327,
       "o": 0,
       "orbitalPeriod": 8.7836,
       "temperature": 450,
       "exoplanet": true,
       "bump": false,
-      "color": "#A7FA76",
-      "clouds": false
+      "color": "#EA2F64",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 285968, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 285968 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 285968 - System With 1 Exoplanet "
 }

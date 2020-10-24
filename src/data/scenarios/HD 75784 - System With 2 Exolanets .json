@@ -73,8 +73,9 @@
       "temperature": 98.71603191013968,
       "exoplanet": true,
       "bump": false,
-      "color": "#1447F7",
-      "clouds": false
+      "color": "#FF5EAA",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 75784-b",
@@ -91,12 +92,14 @@
       "temperature": 281.635556796091,
       "exoplanet": true,
       "bump": false,
-      "color": "#3FBD34",
-      "clouds": false
+      "color": "#591AB8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 75784, which contains 2 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 75784 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 75784 - System With 2 Exolanets "
 }

@@ -73,12 +73,14 @@
       "temperature": 486,
       "exoplanet": true,
       "bump": false,
-      "color": "#8343F6",
-      "clouds": false
+      "color": "#C4D061",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 192263, which contains 1 exoplanets and was discovered by the La Silla Observatory.",
   "name": "HD 192263 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 192263 - System With 1 Exoplanet "
 }

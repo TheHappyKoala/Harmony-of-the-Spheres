@@ -73,12 +73,14 @@
       "temperature": 492.4106287376556,
       "exoplanet": true,
       "bump": false,
-      "color": "#4FD1C7",
-      "clouds": false
+      "color": "#EE4F12",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 5891, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 5891 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 5891 - System With 1 Exoplanet "
 }

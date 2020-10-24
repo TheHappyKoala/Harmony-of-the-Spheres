@@ -67,18 +67,20 @@
       "radius": 140.65116279069767,
       "a": 0.0166,
       "e": 0,
-      "w": 158.47406481789145,
+      "w": 23.066476543538023,
       "o": 0,
       "orbitalPeriod": 0.719573,
       "temperature": 2114.009260163499,
       "exoplanet": true,
       "bump": false,
-      "color": "#9E0F0B",
-      "clouds": false
+      "color": "#22E6FC",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 80653, which contains 1 exoplanets and was discovered by the K2.",
   "name": "HD 80653 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 80653 - System With 1 Exoplanet "
 }

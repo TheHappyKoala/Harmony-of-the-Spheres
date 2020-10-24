@@ -67,18 +67,20 @@
       "radius": 141.62790697674419,
       "a": 0.0771,
       "e": 0,
-      "w": 295.7084968044946,
+      "w": 177.26209557462946,
       "o": 0,
       "orbitalPeriod": 9.06689421,
       "temperature": 725,
       "exoplanet": true,
       "bump": true,
-      "color": "#51CA8E",
-      "clouds": false
+      "color": "#4F087C",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1400, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1400 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1400 - System With 1 Exoplanet "
 }

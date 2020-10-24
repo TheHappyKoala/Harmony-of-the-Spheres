@@ -73,12 +73,14 @@
       "temperature": 253.3515545134548,
       "exoplanet": true,
       "bump": false,
-      "color": "#8554FD",
-      "clouds": false
+      "color": "#D57FAF",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 206610, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 206610 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 206610 - System With 1 Exoplanet "
 }

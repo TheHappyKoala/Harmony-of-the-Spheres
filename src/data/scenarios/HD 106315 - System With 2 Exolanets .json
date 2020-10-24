@@ -73,8 +73,9 @@
       "temperature": 886,
       "exoplanet": true,
       "bump": false,
-      "color": "#8E0CA6",
-      "clouds": false
+      "color": "#77481F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "HD 106315-b",
@@ -91,12 +92,14 @@
       "temperature": 1153,
       "exoplanet": true,
       "bump": false,
-      "color": "#C4750C",
-      "clouds": false
+      "color": "#2623A3",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 106315, which contains 2 exoplanets and was discovered by the K2.",
   "name": "HD 106315 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 106315 - System With 2 Exolanets "
 }

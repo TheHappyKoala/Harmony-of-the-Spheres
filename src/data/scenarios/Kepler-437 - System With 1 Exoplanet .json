@@ -67,18 +67,20 @@
       "radius": 185.58139534883722,
       "a": 0.288,
       "e": 0.02,
-      "w": 6.675134118308943,
+      "w": 312.401829012733,
       "o": 0,
       "orbitalPeriod": 66.65062,
       "temperature": 308,
       "exoplanet": true,
       "bump": false,
-      "color": "#614919",
-      "clouds": false
+      "color": "#23C339",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-437, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-437 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-437 - System With 1 Exoplanet "
 }

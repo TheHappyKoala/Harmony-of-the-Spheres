@@ -73,12 +73,14 @@
       "temperature": 246.68759752322492,
       "exoplanet": true,
       "bump": false,
-      "color": "#5FB3AB",
-      "clouds": false
+      "color": "#81A1FB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HIP 97233, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "HIP 97233 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HIP 97233 - System With 1 Exoplanet "
 }

@@ -67,14 +67,15 @@
       "radius": 151.3953488372093,
       "a": 0.332,
       "e": 0,
-      "w": 64.34945276291818,
+      "w": 126.18541603906772,
       "o": 0,
       "orbitalPeriod": 76.050178,
       "temperature": 372,
       "exoplanet": true,
       "bump": true,
-      "color": "#43FF7D",
-      "clouds": false
+      "color": "#C0FF3D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-260-b",
@@ -85,18 +86,20 @@
       "radius": 174.8372093023256,
       "a": 0.075,
       "e": 0,
-      "w": 248.39239416676995,
+      "w": 34.283232267019756,
       "o": 0,
       "orbitalPeriod": 8.187399,
       "temperature": 782,
       "exoplanet": true,
       "bump": true,
-      "color": "#64C81D",
-      "clouds": true
+      "color": "#E53898",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-260, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-260 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-260 - System With 2 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 261.76744186046517,
       "a": 0.149,
       "e": 0,
-      "w": 349.14614883648954,
+      "w": 239.5021358581892,
       "o": 0,
       "orbitalPeriod": 19.0921,
       "temperature": 831,
       "exoplanet": true,
       "bump": false,
-      "color": "#4D8AC0",
-      "clouds": false
+      "color": "#DF8BC8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system K2-258, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-258 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "K2-258 - System With 1 Exoplanet "
 }

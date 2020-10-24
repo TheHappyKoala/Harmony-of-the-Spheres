@@ -67,18 +67,20 @@
       "radius": 111.34883720930233,
       "a": 0.0159,
       "e": 0,
-      "w": 9.09454155308512,
+      "w": 102.26363023924256,
       "o": 0,
       "orbitalPeriod": 0.9283105,
       "temperature": 1115,
       "exoplanet": true,
       "bump": true,
-      "color": "#576BEE",
-      "clouds": false
+      "color": "#4B46A2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-787, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-787 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-787 - System With 1 Exoplanet "
 }

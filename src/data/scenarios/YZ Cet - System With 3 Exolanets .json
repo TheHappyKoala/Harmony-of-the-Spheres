@@ -73,8 +73,9 @@
       "temperature": 313.28378615449293,
       "exoplanet": true,
       "bump": true,
-      "color": "#92EFAF",
-      "clouds": false
+      "color": "#3C5F9D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "YZ Cet-c",
@@ -91,8 +92,9 @@
       "temperature": 360.27472476367404,
       "exoplanet": true,
       "bump": true,
-      "color": "#6022AD",
-      "clouds": false
+      "color": "#89D80F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "YZ Cet-b",
@@ -109,12 +111,14 @@
       "temperature": 417.4097909337701,
       "exoplanet": true,
       "bump": true,
-      "color": "#5A6F47",
-      "clouds": false
+      "color": "#686FC5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system YZ Cet, which contains 3 exoplanets and was discovered by the La Silla Observatory.",
   "name": "YZ Cet - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "YZ Cet - System With 3 Exolanets "
 }

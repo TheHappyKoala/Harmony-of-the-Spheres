@@ -67,14 +67,15 @@
       "radius": 69.34883720930232,
       "a": 0.0545,
       "e": 0,
-      "w": 51.035676727422306,
+      "w": 194.40501073032115,
       "o": 0,
       "orbitalPeriod": 4.77468005,
       "temperature": 1137,
       "exoplanet": true,
       "bump": true,
-      "color": "#A0C71A",
-      "clouds": false
+      "color": "#2665A8",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-1365-b",
@@ -85,18 +86,20 @@
       "radius": 80.09302325581396,
       "a": 0.075,
       "e": 0,
-      "w": 98.06009176822226,
+      "w": 239.99879017038091,
       "o": 0,
       "orbitalPeriod": 7.69993485,
       "temperature": 969,
       "exoplanet": true,
       "bump": true,
-      "color": "#088750",
-      "clouds": false
+      "color": "#4319E7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1365, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1365 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1365 - System With 2 Exolanets "
 }

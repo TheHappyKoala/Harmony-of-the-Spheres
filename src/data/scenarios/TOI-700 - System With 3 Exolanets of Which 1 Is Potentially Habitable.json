@@ -67,14 +67,15 @@
       "radius": 99.62790697674419,
       "a": 0.1633,
       "e": 0.111,
-      "w": 253.04676088131535,
+      "w": 41.70635228449598,
       "o": 0,
       "orbitalPeriod": 37.42475,
       "temperature": 269,
       "exoplanet": true,
       "bump": true,
-      "color": "#579B6A",
-      "clouds": false
+      "color": "#F934E0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "TOI-700-c",
@@ -91,8 +92,9 @@
       "temperature": 356,
       "exoplanet": true,
       "bump": false,
-      "color": "#7C20D8",
-      "clouds": false
+      "color": "#68FEDB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "TOI-700-b",
@@ -109,12 +111,14 @@
       "temperature": 417,
       "exoplanet": true,
       "bump": true,
-      "color": "#75BEE5",
-      "clouds": false
+      "color": "#0F0DCD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system TOI-700, which contains 3 exoplanets, of which 1 is potentially habitable, and was discovered by the Transiting Exoplanet Survey Satellite (TESS).",
   "name": "TOI-700 - System With 3 Exolanets of Which 1 Is Potentially Habitable",
-  "cameraFocus": "TOI-700-d"
+  "cameraFocus": "TOI-700-d",
+  "fileName": "TOI-700 - System With 3 Exolanets of Which 1 Is Potentially Habitable"
 }

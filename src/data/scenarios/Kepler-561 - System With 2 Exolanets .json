@@ -67,14 +67,15 @@
       "radius": 233.4418604651163,
       "a": 0.0593,
       "e": 0,
-      "w": 77.67982004577634,
+      "w": 292.96390713618155,
       "o": 0,
       "orbitalPeriod": 5.35016198,
       "temperature": 989,
       "exoplanet": true,
       "bump": false,
-      "color": "#F2A3A9",
-      "clouds": false
+      "color": "#209E85",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-561-b",
@@ -85,18 +86,20 @@
       "radius": 606.5581395348837,
       "a": 0.2918,
       "e": 0,
-      "w": 339.3403003762765,
+      "w": 138.2614043014458,
       "o": 0,
       "orbitalPeriod": 58.3620495,
       "temperature": 446,
       "exoplanet": true,
       "bump": false,
-      "color": "#BFE6E2",
-      "clouds": false
+      "color": "#8BDCDD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-561, which contains 2 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-561 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-561 - System With 2 Exolanets "
 }

@@ -73,12 +73,14 @@
       "temperature": 319.08092498988344,
       "exoplanet": true,
       "bump": false,
-      "color": "#906987",
-      "clouds": false
+      "color": "#06E114",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 31253, which contains 1 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 31253 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HD 31253 - System With 1 Exoplanet "
 }

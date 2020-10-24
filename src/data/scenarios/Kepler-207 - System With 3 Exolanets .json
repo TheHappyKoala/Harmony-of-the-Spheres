@@ -67,14 +67,15 @@
       "radius": 288.13953488372096,
       "a": 0.068,
       "e": 0,
-      "w": 147.93434404868594,
+      "w": 11.895350801405433,
       "o": 0,
       "orbitalPeriod": 5.868075,
       "temperature": 1254,
       "exoplanet": true,
       "bump": false,
-      "color": "#D9CC29",
-      "clouds": false
+      "color": "#16161E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-207-c",
@@ -85,14 +86,15 @@
       "radius": 130.88372093023258,
       "a": 0.044,
       "e": 0,
-      "w": 154.57796866986234,
+      "w": 252.47805010783165,
       "o": 0,
       "orbitalPeriod": 3.071571,
       "temperature": 1556,
       "exoplanet": true,
       "bump": true,
-      "color": "#363A8E",
-      "clouds": false
+      "color": "#1EF2E2",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-207-b",
@@ -103,18 +105,20 @@
       "radius": 136.74418604651166,
       "a": 0.029,
       "e": 0,
-      "w": 167.04177364829224,
+      "w": 186.32497713768086,
       "o": 0,
       "orbitalPeriod": 1.611865,
       "temperature": 1930,
       "exoplanet": true,
       "bump": true,
-      "color": "#8B9B50",
-      "clouds": false
+      "color": "#D949B7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-207, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-207 - System With 3 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-207 - System With 3 Exolanets "
 }

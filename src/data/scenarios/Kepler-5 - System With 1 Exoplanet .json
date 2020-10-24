@@ -67,18 +67,20 @@
       "radius": 1392.8372093023256,
       "a": 0.0538,
       "e": 0,
-      "w": 257.62256704137957,
+      "w": 9.670623456043392,
       "o": 0,
       "orbitalPeriod": 3.5484657,
       "temperature": 1750,
       "exoplanet": true,
       "bump": false,
-      "color": "#0678D4",
-      "clouds": false
+      "color": "#1BE351",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-5, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-5 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-5 - System With 1 Exoplanet "
 }

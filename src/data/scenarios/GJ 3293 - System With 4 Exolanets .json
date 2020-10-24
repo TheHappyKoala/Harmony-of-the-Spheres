@@ -67,14 +67,15 @@
       "radius": 141.62790697674419,
       "a": 0.08208,
       "e": 0.21,
-      "w": 93.53261859924626,
+      "w": 259.956558375608,
       "o": 0,
       "orbitalPeriod": 13.2543,
       "temperature": 438.0944161588893,
       "exoplanet": true,
       "bump": true,
-      "color": "#35BC9C",
-      "clouds": false
+      "color": "#E68C43",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 3293-d",
@@ -85,14 +86,15 @@
       "radius": 232.46511627906978,
       "a": 0.19394,
       "e": 0.12,
-      "w": 23.708810889340235,
+      "w": 168.31989148937703,
       "o": 0,
       "orbitalPeriod": 48.1345,
       "temperature": 285.0051423462141,
       "exoplanet": true,
       "bump": false,
-      "color": "#FB0183",
-      "clouds": false
+      "color": "#24188E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 3293-c",
@@ -109,8 +111,9 @@
       "temperature": 208.6806216490744,
       "exoplanet": true,
       "bump": false,
-      "color": "#04868C",
-      "clouds": false
+      "color": "#78A1D5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "GJ 3293-b",
@@ -127,12 +130,14 @@
       "temperature": 331.45681992346323,
       "exoplanet": true,
       "bump": false,
-      "color": "#9BF9E0",
-      "clouds": false
+      "color": "#96A796",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system GJ 3293, which contains 4 exoplanets and was discovered by the La Silla Observatory.",
   "name": "GJ 3293 - System With 4 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "GJ 3293 - System With 4 Exolanets "
 }

@@ -67,14 +67,15 @@
       "radius": 111.34883720930233,
       "a": 0.02675,
       "e": 0.31,
-      "w": 48.86601073731862,
+      "w": 163.70315586679743,
       "o": 0,
       "orbitalPeriod": 3.777931,
       "temperature": 438,
       "exoplanet": true,
       "bump": true,
-      "color": "#FC902C",
-      "clouds": false
+      "color": "#DB48F0",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "LHS 1140-b",
@@ -85,18 +86,20 @@
       "radius": 150.4186046511628,
       "a": 0.0936,
       "e": 0.06,
-      "w": 289.4311373149475,
+      "w": 109.93397281935952,
       "o": 0,
       "orbitalPeriod": 24.736959,
       "temperature": 235,
       "exoplanet": true,
       "bump": false,
-      "color": "#F8F0D6",
-      "clouds": false
+      "color": "#8B4C8F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system LHS 1140, which contains 2 exoplanets and was discovered by the MEarth Project.",
   "name": "LHS 1140 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "LHS 1140 - System With 2 Exolanets "
 }

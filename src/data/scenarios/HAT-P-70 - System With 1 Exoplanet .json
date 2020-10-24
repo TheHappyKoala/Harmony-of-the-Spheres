@@ -67,18 +67,20 @@
       "radius": 1826.5116279069769,
       "a": 0.04739,
       "e": 0,
-      "w": 136.56229188383725,
+      "w": 304.00566575660486,
       "o": 0,
       "orbitalPeriod": 2.74432452,
       "temperature": 2562,
       "exoplanet": true,
       "bump": false,
-      "color": "#F40028",
-      "clouds": false
+      "color": "#2628C7",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HAT-P-70, which contains 1 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-70 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HAT-P-70 - System With 1 Exoplanet "
 }

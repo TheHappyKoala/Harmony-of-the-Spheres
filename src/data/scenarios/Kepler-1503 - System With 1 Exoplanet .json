@@ -67,18 +67,20 @@
       "radius": 198.27906976744188,
       "a": 0.3771,
       "e": 0,
-      "w": 168.0253870180093,
+      "w": 67.7193130506438,
       "o": 0,
       "orbitalPeriod": 96.16987,
       "temperature": 321,
       "exoplanet": true,
       "bump": false,
-      "color": "#483214",
-      "clouds": false
+      "color": "#EB4F8E",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1503, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1503 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1503 - System With 1 Exoplanet "
 }

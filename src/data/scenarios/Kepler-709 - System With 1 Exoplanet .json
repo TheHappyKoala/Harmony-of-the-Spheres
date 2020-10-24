@@ -67,18 +67,20 @@
       "radius": 254.93023255813955,
       "a": 0.1173,
       "e": 0,
-      "w": 243.68340922593035,
+      "w": 311.14129842274735,
       "o": 0,
       "orbitalPeriod": 16.08524954,
       "temperature": 613,
       "exoplanet": true,
       "bump": false,
-      "color": "#929A62",
-      "clouds": false
+      "color": "#3D318F",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-709, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-709 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-709 - System With 1 Exoplanet "
 }

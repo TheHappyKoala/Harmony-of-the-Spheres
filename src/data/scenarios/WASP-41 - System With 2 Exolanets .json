@@ -73,8 +73,9 @@
       "temperature": 241,
       "exoplanet": true,
       "bump": false,
-      "color": "#976CF3",
-      "clouds": false
+      "color": "#5A7425",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "WASP-41-b",
@@ -85,18 +86,20 @@
       "radius": 1074.418604651163,
       "a": 0.04022,
       "e": 0,
-      "w": 22.137935201959973,
+      "w": 301.5365388466764,
       "o": 0,
       "orbitalPeriod": 3.0524,
       "temperature": 1244,
       "exoplanet": true,
       "bump": false,
-      "color": "#592AE7",
-      "clouds": false
+      "color": "#7A8E20",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system WASP-41, which contains 2 exoplanets and was discovered by the SuperWASP.",
   "name": "WASP-41 - System With 2 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "WASP-41 - System With 2 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 142.6046511627907,
       "a": 0.1763,
       "e": 0,
-      "w": 227.53687910675538,
+      "w": 150.85931553134463,
       "o": 0,
       "orbitalPeriod": 25.30889748,
       "temperature": 710,
       "exoplanet": true,
       "bump": true,
-      "color": "#C0E82C",
-      "clouds": false
+      "color": "#BBFF06",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-508, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-508 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-508 - System With 1 Exoplanet "
 }

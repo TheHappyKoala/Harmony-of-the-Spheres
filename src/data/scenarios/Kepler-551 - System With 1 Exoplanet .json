@@ -67,18 +67,20 @@
       "radius": 238.32558139534885,
       "a": 0.0893,
       "e": 0,
-      "w": 310.16023123282196,
+      "w": 336.670594075365,
       "o": 0,
       "orbitalPeriod": 12.3764661,
       "temperature": 483,
       "exoplanet": true,
       "bump": false,
-      "color": "#CB52F4",
-      "clouds": false
+      "color": "#14B54A",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-551, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-551 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-551 - System With 1 Exoplanet "
 }

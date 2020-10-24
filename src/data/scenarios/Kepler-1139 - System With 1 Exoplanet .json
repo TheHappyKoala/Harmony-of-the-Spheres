@@ -67,18 +67,20 @@
       "radius": 103.53488372093024,
       "a": 0.0165,
       "e": 0,
-      "w": 294.6581075496064,
+      "w": 89.13662233344111,
       "o": 0,
       "orbitalPeriod": 0.81316672,
       "temperature": 1693,
       "exoplanet": true,
       "bump": true,
-      "color": "#E91FC2",
-      "clouds": false
+      "color": "#1C45CB",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-1139, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-1139 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-1139 - System With 1 Exoplanet "
 }

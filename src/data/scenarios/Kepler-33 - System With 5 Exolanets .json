@@ -67,14 +67,15 @@
       "radius": 388.7441860465117,
       "a": 0.2535,
       "e": 0,
-      "w": 126.89346029239368,
+      "w": 333.8147465083118,
       "o": 0,
       "orbitalPeriod": 41.02902,
       "temperature": 691,
       "exoplanet": true,
       "bump": false,
-      "color": "#6D92AA",
-      "clouds": false
+      "color": "#82DDA5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-33-e",
@@ -85,14 +86,15 @@
       "radius": 350.6511627906977,
       "a": 0.2138,
       "e": 0,
-      "w": 269.3146475506695,
+      "w": 229.82882061207084,
       "o": 0,
       "orbitalPeriod": 31.7844,
       "temperature": 752,
       "exoplanet": true,
       "bump": false,
-      "color": "#1B6F4F",
-      "clouds": false
+      "color": "#9032E5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-33-d",
@@ -103,14 +105,15 @@
       "radius": 465.90697674418607,
       "a": 0.1662,
       "e": 0,
-      "w": 274.43559840982016,
+      "w": 113.58680254762061,
       "o": 0,
       "orbitalPeriod": 21.77596,
       "temperature": 853,
       "exoplanet": true,
       "bump": true,
-      "color": "#60EBA3",
-      "clouds": true
+      "color": "#0C0D33",
+      "clouds": true,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-33-c",
@@ -121,14 +124,15 @@
       "radius": 278.3720930232558,
       "a": 0.1189,
       "e": 0,
-      "w": 146.3606521509904,
+      "w": 310.2044890786349,
       "o": 0,
       "orbitalPeriod": 13.17562,
       "temperature": 1009,
       "exoplanet": true,
       "bump": true,
-      "color": "#19EFDF",
-      "clouds": false
+      "color": "#F4FBDD",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     },
     {
       "name": "Kepler-33-b",
@@ -139,18 +143,20 @@
       "radius": 151.3953488372093,
       "a": 0.0677,
       "e": 0,
-      "w": 19.26356460946092,
+      "w": 56.677241722239984,
       "o": 0,
       "orbitalPeriod": 5.66793,
       "temperature": 1336,
       "exoplanet": true,
       "bump": true,
-      "color": "#0AAC88",
-      "clouds": false
+      "color": "#F4E6F5",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": true,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-33, which contains 5 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-33 - System With 5 Exolanets ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-33 - System With 5 Exolanets "
 }

@@ -67,18 +67,20 @@
       "radius": 384.8372093023256,
       "a": 0.0747,
       "e": 0,
-      "w": 60.27181943823555,
+      "w": 222.47937067121094,
       "o": 0,
       "orbitalPeriod": 8.60010411,
       "temperature": 760,
       "exoplanet": true,
       "bump": false,
-      "color": "#76F0B5",
-      "clouds": false
+      "color": "#19414D",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system Kepler-550, which contains 1 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-550 - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "Kepler-550 - System With 1 Exoplanet "
 }

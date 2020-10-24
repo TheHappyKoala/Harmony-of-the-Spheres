@@ -67,18 +67,20 @@
       "radius": 591.9069767441861,
       "a": 0.04913,
       "e": 0,
-      "w": 129.8009321445843,
+      "w": 40.13495441769977,
       "o": 0,
       "orbitalPeriod": 4.3315366,
       "temperature": 1085,
       "exoplanet": true,
       "bump": false,
-      "color": "#BC0644",
-      "clouds": false
+      "color": "#BA5742",
+      "clouds": false,
+      "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
   "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HATS-37 A, which contains 1 exoplanets and was discovered by the HATSouth.",
   "name": "HATS-37 A - System With 1 Exoplanet ",
-  "cameraFocus": "Barycenter"
+  "cameraFocus": "Barycenter",
+  "fileName": "HATS-37 A - System With 1 Exoplanet "
 }
