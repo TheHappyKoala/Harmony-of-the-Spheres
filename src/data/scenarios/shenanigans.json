@@ -1,7 +1,8 @@
 {
-  "name": "Three Body Shenanigans",
+  "name": "Three Body Shenanigans N-body Choreography",
+  "fileName": "Three Body Shenanigans N-body Choreography",
   "sortOrder": 15,
-  "description": "The n-body problem is the problem of taking the initial positions and velocities of n point masses and solving for their subsequent motion according to Newton's laws of motion and Newton's law of universal gravitation.",
+  "description": "A peculiar n-body choreography, consisting of three point masses, that produces a very intricate and beautiful pattern.",
   "particlesFun": false,
   "particleFun": false,
   "type": "Misc",

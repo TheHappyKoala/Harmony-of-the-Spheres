@@ -1,7 +1,8 @@
 {
-  "name": "The Cronian System",
+  "name": "Saturn and Its Rings and Major Moons",
+  "fileName": "Saturn and Its Rings and Major Moons",
   "sortOrder": 13,
-  "description": "Gravity simulation of Saturn, a planet whose most famous feature is its prominent ring system that is composed mostly of ice particles. At least 82 moons are known to orbit Saturn.",
+  "description": "Gravity simulation of Saturn and its dazzling system of rings and major moons, including Titan, Enceladus, Mimas and Dione.",
   "particlesFun": false,
   "type": "Solar System",
   "g": 39.5,

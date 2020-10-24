@@ -20,7 +20,9 @@ export default ({
   image
 }: HeadProps): ReactElement => {
   const siteMeta = useSiteMeta();
-  const imageMetaContent = image ? image : `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`;
+  const imageMetaContent = image
+    ? image
+    : `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`;
 
   return (
     <Helmet>
@@ -49,44 +51,13 @@ export default ({
         content={`https://gravitysimulator.org${pathName}`}
       />
       <meta property="og:description" content={pageDescription} />
-      <meta
-        property="og:image"
-        content={imageMetaContent}
-      />
+      <meta property="og:image" content={imageMetaContent} />
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@SpaceGravitySim" />
+      <meta name="twitter:site" content="@Space_Darrell" />
       <meta name="twitter:title" content={`${siteMeta.title} | ${pageTitle}`} />
       <meta name="twitter:description" content={pageDescription} />
-      <meta
-        name="twitter:image"
-        content={imageMetaContent}
-      />
-
-      {pageType === "main" && (
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "http://schema.org",
-            "@type": "WebSite",
-            name: "Gravity Simulator",
-            url: "https://gravitysimulator.org",
-            image,
-            description: pageDescription
-          })}
-        </script>
-      )}
-      
-      {pageType === "category" && (
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "http://schema.org",
-            "@type": "WebPage",
-            name: `${pageTitle} Scenarios`,
-            image,
-            description: pageDescription
-          })}
-        </script>
-      )}
+      <meta name="twitter:image" content={imageMetaContent} />
 
       {pageType === "simulator" && (
         <script type="application/ld+json">
@@ -118,7 +89,7 @@ export default ({
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
-      
+
       <body className={bodyCssClass ? bodyCssClass : ""} />
     </Helmet>
   );

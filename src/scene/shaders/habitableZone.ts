@@ -24,7 +24,7 @@ export default {
         fragColor = vec4(0.0, 1.0, 0.0, 1.0);
       }
 
-      fragColor.a = 0.35;
+      fragColor.a = 0.2;
     }
 
     varying vec2 vUv;

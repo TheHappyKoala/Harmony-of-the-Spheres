@@ -1,5 +1,6 @@
 {
   "name": "Dear Moon",
+  "fileName": "Dear Moon",
   "description": "Gravity simulation of space travel in the solar system. Uses a lambert solver to calculate the velocity needed to get from a to b in a given time frame.",
   "integrator": "Orbital Elements",
   "thrust": false,

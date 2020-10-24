@@ -1,9 +1,11 @@
 {
-  "name": "The Earth System",
+  "name": "The Sun, Earth and Moon System",
+  "fileName": "The Sun, Earth and Moon System",
   "sortOrder": 24,
-  "description": "Gravity simulation of the Moon, an astronomical body that orbits the Earth as its only permanent natural satellite. It is the fifth-largest satellite in the Solar System.",
+  "description": "Gravity simulation of the Sun, Earth and Moon, Earth's only permanent natural satellite. It is the fifth-largest satellite in the Solar System.",
   "particlesFun": false,
   "type": "Solar System",
+  "hasHabitableWorld": true,
   "g": 39.5,
   "dt": 0.0000085,
   "soi": "Earth",

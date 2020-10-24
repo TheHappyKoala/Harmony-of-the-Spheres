@@ -1,5 +1,6 @@
 {
   "name": "The Inner Solar System",
+  "fileName": "The Inner Solar System",
   "sortOrder": 5,
   "description": "Gravity simulation of the inner Solar System, the region comprising the terrestrial planets and the asteroid belt.",
   "type": "Solar System",

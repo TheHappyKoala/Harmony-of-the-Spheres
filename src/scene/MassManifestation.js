@@ -99,9 +99,11 @@ export default class extends THREE.Object3D {
       }
 
       this.updateTrajectory(
-        trajectoryData.scenario.masses.find(
-          mass => mass.name === trajectoryData.scenario.soi
-        ),
+        trajectoryData.scenario.type === "Exoplanets"
+          ? trajectoryData.scenario.masses[0]
+          : trajectoryData.scenario.masses.find(
+              mass => mass.name === trajectoryData.scenario.soi
+            ),
         trajectoryData.mass,
         trajectoryData.scenario.g,
         trajectoryData.scenario.scale,
@@ -133,8 +135,8 @@ export default class extends THREE.Object3D {
             ? `/textures/${this.mass.texture}.jpg`
             : `/textures/${this.mass.texture}Bump.jpg`
         ),
-        bumpScale: this.mass.bumpScale ? this.mass.bumpScale : 1,
-        roughness: 0.7
+        bumpScale: 0.75,
+        roughness: 0.75
       });
     } else
       material = new THREE.MeshLambertMaterial({
@@ -241,7 +243,7 @@ export default class extends THREE.Object3D {
 
     this.add(mesh);
 
-    this.mass.clouds && this.getClouds();
+    if (this.mass.clouds) this.getClouds();
   }
 
   getClouds() {

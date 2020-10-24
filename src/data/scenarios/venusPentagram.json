@@ -1,5 +1,6 @@
 {
   "name": "Pentagram of Venus",
+  "fileName": "Pentagram of Venus",
   "sortOrder": 11,
   "description": "Gravity simulation of the pentagram of Venus, the dazzling path that Venus makes as observed from Earth.",
   "particlesFun": false,

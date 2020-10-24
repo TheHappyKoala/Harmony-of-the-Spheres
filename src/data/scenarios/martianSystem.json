@@ -1,9 +1,10 @@
 {
-  "name": "The Martian System",
+  "name": "Mars and Its Moons Phobos and Deimos",
+  "fileName": "Mars and Its Moons Phobos and Deimos",
   "sortOrder": 12,
-  "description": "Gravity simulation of Mars's two Moons Phobos and Deimos. They are irregular in shape and much smaller than Earth's Moon",
+  "description": "Gravity simulation of Mars and its two Moons Phobos and Deimos. They are irregular in shape and much smaller than Earth's Moon",
   "particlesFun": false,
-  "type": "Solar System",
+  "type": "Solar System", 
   "g": 39.5,
   "dt": 9e-7,
   "distMax": 50,

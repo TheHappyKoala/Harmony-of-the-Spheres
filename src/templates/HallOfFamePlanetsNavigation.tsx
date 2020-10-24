@@ -69,39 +69,41 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
       />
       <section className="scenarios-wrapper">
         <div>
-          <Nav
-            css={{
-              borderLeft: "none",
-              borderRight: "none",
-              borderTop: "none",
-              fontWeight: "bold"
-            }}
-          >
-            <Link to={`/`}>
-              <NavItem active={pageContext.currentPageName === "All"}>
-                All
-              </NavItem>
-            </Link>
-            {categories.map(category => (
-              <Link
-                to={
-                  category.fieldValue !== "Exoplanets"
-                    ? `/${kebabCase(category.fieldValue)}`
-                    : `/${kebabCase(category.fieldValue)}/all`
-                }
-              >
-                <NavItem
-                  active={
-                    kebabCase(pageContext.currentPageName) ===
-                      kebabCase(category.fieldValue) ||
-                    category.fieldValue === "Exoplanets"
-                  }
-                >
-                  {category.fieldValue}
+          <nav>
+            <Nav
+              css={{
+                borderLeft: "none",
+                borderRight: "none",
+                borderTop: "none",
+                fontWeight: "bold"
+              }}
+            >
+              <Link to={`/`}>
+                <NavItem active={pageContext.currentPageName === "All"}>
+                  All
                 </NavItem>
               </Link>
-            ))}
-          </Nav>
+              {categories.map(category => (
+                <Link
+                  to={
+                    category.fieldValue !== "Exoplanets"
+                      ? `/${kebabCase(category.fieldValue)}`
+                      : `/${kebabCase(category.fieldValue)}/hall-of-fame`
+                  }
+                >
+                  <NavItem
+                    active={
+                      kebabCase(pageContext.currentPageName) ===
+                        kebabCase(category.fieldValue) ||
+                      category.fieldValue === "Exoplanets"
+                    }
+                  >
+                    {category.fieldValue}
+                  </NavItem>
+                </Link>
+              ))}
+            </Nav>
+          </nav>
 
           {pageContext.type === "Exoplanets" && (
             <Nav
@@ -117,17 +119,6 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
                   active={pageContext.currentPageName === "Hall of Fame"}
                 >
                   Hall of Fame
-                </NavItem>
-              </Link>
-
-              <Link to={`/exoplanets/potentially-habitable-worlds`}>
-                <NavItem
-                  active={
-                    pageContext.currentPageName ===
-                    "Potentially Habitable Worlds"
-                  }
-                >
-                  Potentially Habitable Worlds
                 </NavItem>
               </Link>
 
@@ -183,6 +174,7 @@ export const pageQuery = graphql`
   query($limit: Int, $skip: Int, $background: String) {
     scenarios: allScenariosJson(
       filter: { hallOfFame: { eq: true } }
+      sort: { order: ASC, fields: [sortOrder] }
       limit: $limit
       skip: $skip
     ) {

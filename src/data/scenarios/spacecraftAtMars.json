@@ -1,8 +1,9 @@
 {
   "name": "Operational Spacecraft in Orbit Around Mars",
+  "fileName": "Operational Spacecraft in Orbit Around Mars",
   "sortOrder": 2,
   "date": "2020-Jun-07 00:00:00.0000",
-  "description": "Gravity simulation of Mars's two Moons Phobos and Deimos. They are irregular in shape and much smaller than Earth's Moon",
+  "description": "Gravity simulation of all currently operational spacecraft in orbit around planet Mars. Phobos and Deimos are included in the simulation, as well.",
   "particlesFun": false,
   "type": "Spaceflight",
   "g": 39.5,

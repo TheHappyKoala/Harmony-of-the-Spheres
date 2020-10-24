@@ -1,7 +1,8 @@
 {
-  "name": "TESS",
+  "name": "NASA TESS Spacecraft Orbit",
+  "fileName": "NASA TESS Spacecraft Orbit",
   "sortOrder": 2,
-  "description": "Gravity simulation of The Transiting Exoplanet Survey Satellite (TESS), a NASA space telescope, designed to search for exoplanets using the transit method.",
+  "description": "Gravity simulation of the orbit of the Transiting Exoplanet Survey Satellite (TESS), a NASA space telescope designed to search for exoplanets using the transit method.",
   "path": "/spaceflight",
   "isLoaded": false,
   "particlesFun": false,

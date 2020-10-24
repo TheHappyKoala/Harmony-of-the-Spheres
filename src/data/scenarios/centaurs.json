@@ -1,8 +1,9 @@
 {
-  "name": "The Centaurs",
+  "name": "The Centaur Asteroids and Comets",
+  "fileName": "The Centaur Asteroids and Comets",
   "sortOrder": 6,
   "img": "../images/scenarios/Borisov Saying Hello.png",
-  "description": "Centaurs are small Solar System bodies with either a perihelion or a semi-major axis between those of the outer planets.",
+  "description": "Gravity simulation of the Centaurs, which are small Solar System bodies with either a perihelion or a semi-major axis between those of the outer planets.",
   "particlesFun": false,
   "type": "Solar System",
   "integrator": "PEFRL",

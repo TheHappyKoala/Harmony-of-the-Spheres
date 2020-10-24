@@ -20,7 +20,6 @@ exports.createPages = async ({ actions, graphql }) => {
             name
             type
             discoveryFacility
-            hasHabitableWorld
             hallOfFame
           }
         }
@@ -33,37 +32,6 @@ exports.createPages = async ({ actions, graphql }) => {
   const numPages = Math.ceil(
     results.data.allScenariosJson.edges.length / scenariosPerPage
   );
-
-  const habitableSystems = results.data.allScenariosJson.edges.filter(
-    ({ node }) => node.hasHabitableWorld
-  );
-  const numberOfHabitableSystems = habitableSystems.length;
-  const numPagesHabitableSystems = Math.ceil(
-    numberOfHabitableSystems / scenariosPerPage
-  );
-
-  [...new Array(numPagesHabitableSystems)].forEach((page, i) => {
-    const pagePath = `/exoplanets/potentially-habitable-worlds`;
-    createPage({
-      path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
-      component: require.resolve(
-        `./src/templates/HabitablePlanetsNavigation.tsx`
-      ),
-      context: {
-        pagePath,
-        limit: scenariosPerPage,
-        skip: i * scenariosPerPage,
-        numPages: numPagesHabitableSystems,
-        currentPage: i + 1,
-        background: "Potentially Habitable Worlds.jpg",
-        categoryDescription:
-          "Dozens of potentially habitable exoplanets have been discovered. Simulate and learn about all systems that potentially contain at least one habitable planet.",
-        currentPageName: "Potentially Habitable Worlds",
-        type: "Exoplanets",
-        pageType: "navigation"
-      }
-    });
-  });
 
   const hofSystems = results.data.allScenariosJson.edges.filter(
     ({ node }) => node.hallOfFame
@@ -124,17 +92,17 @@ exports.createPages = async ({ actions, graphql }) => {
       {
         name: "Exoplanets",
         description:
-          "3D gravity simulations of planets known to orbit stars other than our own, the Sun."
+          "3D gravity simulations, with procedural planet textures based on data from the Exoplanet Archive, of planets known to orbit stars other than our own, the Sun."
       },
       {
         name: "Solar System",
         description:
-          "3D gravity simulations of the solar system and its planets, moons, asteroids and comets powered by data from NASA."
+          "3D gravity simulations of the solar system and its planets, moons, asteroids and comets powered by data from NASA. Explore the schorched surface of Mercury and the icy plains of Pluto."
       },
       {
         name: "Misc",
         description:
-          "3D gravity simulations of beautiful choreograpies, planets and galaxies colliding and various what-if scenarios."
+          "3D gravity simulations of beautiful n-body choreograpies, galaxies colliding and various what-if scenarios."
       },
       {
         name: "Spaceflight",
@@ -144,7 +112,7 @@ exports.createPages = async ({ actions, graphql }) => {
       {
         name: "Starship",
         description:
-          "Take control of a spacecraft and visit whichever planet, moon, asteroid or comet you like."
+          "Take control of the Starship spacecraft and visit whichever planet, moon, asteroid or comet you like."
       }
     ];
 
@@ -255,16 +223,14 @@ exports.createPages = async ({ actions, graphql }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
-  const filePath = `./src/images/scenarios/${node.name}.png`;
+  const filePath = `./src/images/scenarios/${node.fileName}.png`;
 
   if (node.internal.type === "ScenariosJson") {
     createNodeField({
       node,
       name: `scenarioImage`,
       value: `../../images/scenarios/${
-        node.type !== "Exoplanets" || fs.existsSync(filePath)
-          ? node.name
-          : "exoplanet"
+        fs.existsSync(filePath) ? node.fileName : "exoplanet"
       }.png`
     });
   }
