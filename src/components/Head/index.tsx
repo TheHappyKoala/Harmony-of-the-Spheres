@@ -54,7 +54,7 @@ export default ({
       <meta property="og:image" content={imageMetaContent} />
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@SpaceGravitySim" />
+      <meta name="twitter:site" content="@Space_Darrell" />
       <meta name="twitter:title" content={`${siteMeta.title} | ${pageTitle}`} />
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={imageMetaContent} />
