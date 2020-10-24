@@ -87,7 +87,7 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
                 to={
                   category.fieldValue !== "Exoplanets"
                     ? `/${kebabCase(category.fieldValue)}`
-                    : `/${kebabCase(category.fieldValue)}/all`
+                    : `/${kebabCase(category.fieldValue)}/hall-of-fame`
                 }
               >
                 <NavItem
