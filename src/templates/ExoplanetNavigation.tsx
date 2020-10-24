@@ -102,54 +102,52 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
               </Link>
             ))}
           </Nav>
-
-          {pageContext.type === "Exoplanets" && (
-            <Nav
-              css={{
-                borderLeft: "none",
-                borderRight: "none",
-                borderTop: "none",
-                fontWeight: "bold"
-              }}
-            >
-              <Link to={`/exoplanets/hall-of-fame`}>
-                <NavItem
-                  active={pageContext.currentPageName === "Hall of Fame"}
-                >
-                  Hall of Fame
-                </NavItem>
-              </Link>
-
-              {["Transit", "Radial Velocity", "Imaging", "Microlensing"].map(
-                discoveryFacility => (
-                  <Link to={`/exoplanets/${kebabCase(discoveryFacility)}`}>
-                    <NavItem
-                      active={
-                        kebabCase(pageContext.currentPageName) ===
-                        kebabCase(discoveryFacility)
-                      }
-                    >
-                      {discoveryFacility}
-                    </NavItem>
-                  </Link>
-                )
-              )}
-            </Nav>
-          )}
-
-          {pageContext.numPages > 1 && (
-            <Pagination
-              pagination={{
-                start: pageContext.skip,
-                end: pageContext.currentPage * pageContext.limit,
-                count: pageContext.numPages,
-                page: pageContext.currentPage,
-                path: pageContext.pagePath
-              }}
-              itemsPerPage={pageContext.limit}
-            />
-          )}
         </nav>
+
+        {pageContext.type === "Exoplanets" && (
+          <Nav
+            css={{
+              borderLeft: "none",
+              borderRight: "none",
+              borderTop: "none",
+              fontWeight: "bold"
+            }}
+          >
+            <Link to={`/exoplanets/hall-of-fame`}>
+              <NavItem active={pageContext.currentPageName === "Hall of Fame"}>
+                Hall of Fame
+              </NavItem>
+            </Link>
+
+            {["Transit", "Radial Velocity", "Imaging", "Microlensing"].map(
+              discoveryFacility => (
+                <Link to={`/exoplanets/${kebabCase(discoveryFacility)}`}>
+                  <NavItem
+                    active={
+                      kebabCase(pageContext.currentPageName) ===
+                      kebabCase(discoveryFacility)
+                    }
+                  >
+                    {discoveryFacility}
+                  </NavItem>
+                </Link>
+              )
+            )}
+          </Nav>
+        )}
+
+        {pageContext.numPages > 1 && (
+          <Pagination
+            pagination={{
+              start: pageContext.skip,
+              end: pageContext.currentPage * pageContext.limit,
+              count: pageContext.numPages,
+              page: pageContext.currentPage,
+              path: pageContext.pagePath
+            }}
+            itemsPerPage={pageContext.limit}
+          />
+        )}
         <section className="navigation-scenarios-title">
           <h2>{`Exoplanets - Detected Using the ${pageContext.currentPageName} Method`}</h2>
         </section>
