@@ -34,8 +34,7 @@ const Scenario = ({
   data,
   scenario,
   pageContext,
-  location,
-  fileName
+  location
 }: ScenarioProps): ReactElement => {
   const scenarioFromData = data.scenariosJson;
 
@@ -51,7 +50,7 @@ const Scenario = ({
         pathName={location.pathname}
         pageType={pageContext.pageType}
         bodyCssClass="body-with-overflow-hidden"
-        fileName={fileName}
+        fileName={scenarioFromData.fileName}
       />
       <Simulator
         modifyScenarioProperty={modifyScenarioProperty}
