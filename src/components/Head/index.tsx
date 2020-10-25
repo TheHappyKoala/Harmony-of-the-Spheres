@@ -9,6 +9,7 @@ interface HeadProps {
   bodyCssClass?: string;
   pageType: string;
   image?: string;
+  fileName?: string;
 }
 
 export default ({
@@ -17,12 +18,13 @@ export default ({
   pageType,
   pathName,
   bodyCssClass,
-  image
+  image,
+  fileName
 }: HeadProps): ReactElement => {
   const siteMeta = useSiteMeta();
   const imageMetaContent = image
     ? image
-    : `https://www.gravitysimulator.org/images/social/${pageTitle}.jpg`;
+    : `https://www.gravitysimulator.org/images/social/${fileName}.jpg`;
 
   return (
     <Helmet>
@@ -70,7 +72,7 @@ export default ({
             applicationCategory: "GameApplication",
             applicationSubCategory: "Science",
             name: pageTitle,
-            image: `https://www.gravitysimulator.org/images/social/${pageTitle}.jpg`,
+            image: `https://www.gravitysimulator.org/images/social/${fileName}.jpg`,
             description: pageDescription,
             about: {
               "@type": "Thing",

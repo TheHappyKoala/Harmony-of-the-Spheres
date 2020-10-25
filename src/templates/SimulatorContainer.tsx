@@ -34,7 +34,8 @@ const Scenario = ({
   data,
   scenario,
   pageContext,
-  location
+  location,
+  fileName
 }: ScenarioProps): ReactElement => {
   const scenarioFromData = data.scenariosJson;
 
@@ -50,6 +51,7 @@ const Scenario = ({
         pathName={location.pathname}
         pageType={pageContext.pageType}
         bodyCssClass="body-with-overflow-hidden"
+        fileName={fileName}
       />
       <Simulator
         modifyScenarioProperty={modifyScenarioProperty}
@@ -82,6 +84,7 @@ export const pageQuery = graphql`
   query($id: String) {
     scenariosJson(id: { eq: $id }) {
       name
+      fileName
       description
       scenarioDescription
       type
