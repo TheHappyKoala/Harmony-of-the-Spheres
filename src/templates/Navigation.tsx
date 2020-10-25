@@ -65,7 +65,7 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
         pageDescription={pageContext.categoryDescription}
         location={location}
         pageType={pageContext.pageType}
-        image={`https://www.gravitysimulator.org/images/${pageContext.currentPageName}.jpg`}
+        image={`https://www.gravitysimulator.org/images/social/${pageContext.currentPageName}.jpg`}
       />
       <section className="scenarios-wrapper">
         <nav>

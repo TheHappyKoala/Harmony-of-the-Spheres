@@ -22,7 +22,7 @@ export default ({
   const siteMeta = useSiteMeta();
   const imageMetaContent = image
     ? image
-    : `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`;
+    : `https://www.gravitysimulator.org/images/social/${pageTitle}.jpg`;
 
   return (
     <Helmet>
@@ -52,6 +52,8 @@ export default ({
       />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:image" content={imageMetaContent} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="1200" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="gravitysimulator.org" />
@@ -68,11 +70,11 @@ export default ({
             applicationCategory: "GameApplication",
             applicationSubCategory: "Science",
             name: pageTitle,
-            image: `https://www.gravitysimulator.org/images/scenarios/${pageTitle}.png`,
+            image: `https://www.gravitysimulator.org/images/social/${pageTitle}.jpg`,
             description: pageDescription,
             about: {
               "@type": "Thing",
-              description: "gravity, simulation, space"
+              description: "gravity, simulation, space" 
             },
             creator: {
               "@type": "Person",
