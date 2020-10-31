@@ -15,14 +15,8 @@ interface PaginationProps {
   };
 }
 
-export default ({
-  itemsPerPage,
-  pagination
-}: PaginationProps): ReactElement => {
-  const renderRange = (
-    range: { start: number; end: number },
-    itemsPerPage: number
-  ) => {
+export default ({ pagination }: PaginationProps): ReactElement => {
+  const renderRange = (range: { start: number; end: number }) => {
     const items = [
       <Link to={pagination.path}>
         <NavItem key="pagination-first-page">First Page</NavItem>
@@ -49,10 +43,7 @@ export default ({
 
   return (
     <Nav css={{ border: "none", borderBottom: "1px solid #545454" }}>
-      {renderRange(
-        getPaginationRange(pagination.page, pagination.count),
-        itemsPerPage
-      )}
+      {renderRange(getPaginationRange(pagination.page, pagination.count))}
     </Nav>
   );
 };

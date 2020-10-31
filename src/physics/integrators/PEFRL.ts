@@ -13,7 +13,7 @@ export default class extends Euler {
     this.chi = -0.6626458266981849e-1;
   }
 
-  generatePositionVectors(v: Vector[], dt: number, p?: Vector[]): Vector[] {
+  generatePositionVectors(v: Vector[], dt: number, p: Vector[]): Vector[] {
     super.generatePositionVectors(v, dt);
 
     const pFinal = [];
@@ -32,7 +32,7 @@ export default class extends Euler {
     return pFinal;
   }
 
-  generateVelocityVectors(a: Vector[], dt: number, v?: Vector[]): Vector[] {
+  generateVelocityVectors(a: Vector[], dt: number, v: Vector[]): Vector[] {
     super.generateVelocityVectors(a, dt);
 
     const vFinal = [];

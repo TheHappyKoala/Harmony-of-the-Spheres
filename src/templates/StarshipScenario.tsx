@@ -17,12 +17,13 @@ interface ScenarioProps {
   setScenario: typeof scenarioActionCreators.setScenario;
   getTrajectory: typeof scenarioActionCreators.getTrajectory;
   modifyScenarioProperty: typeof scenarioActionCreators.modifyScenarioProperty;
-  resetScenario: typeof scenarioActionCreators.resetScenario;
+  location: {
+    pathname: string;
+  };
 }
 
 const Scenario = ({
   setScenario,
-  resetScenario,
   modifyScenarioProperty,
   getTrajectory,
   data,
@@ -46,7 +47,6 @@ const Scenario = ({
         bodyCssClass="body-with-overflow-hidden"
       />
       <StarshipSimulator
-        resetScenario={resetScenario}
         modifyScenarioProperty={modifyScenarioProperty}
         getTrajectory={getTrajectory}
         scenario={scenario}

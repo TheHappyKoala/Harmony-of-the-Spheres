@@ -10,7 +10,7 @@ interface PhysicsProps {
   modifyScenarioProperty: typeof modifyScenarioProperty;
   masses: MassType[];
   integrator: string;
-  useBarnesHut?: boolean;
+  useBarnesHut: boolean;
   systemBarycenter: boolean;
   collisions: boolean;
   dt: number;
@@ -73,7 +73,6 @@ export default ({
             dropdownWrapperCssClassName="tabs-dropdown-wrapper"
             selectedOptionCssClassName="selected-option"
             optionsWrapperCssClass="options"
-            dynamicChildrenLen={masses.length}
           >
             {masses.map(mass => (
               <div
@@ -102,7 +101,6 @@ export default ({
             dropdownWrapperCssClassName="tabs-dropdown-wrapper"
             selectedOptionCssClassName="selected-option"
             optionsWrapperCssClass="options"
-            dynamicChildrenLen={masses.length}
           >
             {masses.map(mass => (
               <div
@@ -133,7 +131,6 @@ export default ({
         selectedOptionCssClassName="selected-option"
         dropdownWrapperCssClassName="tabs-dropdown-wrapper"
         optionsWrapperCssClass="options"
-        dynamicChildrenLen={integrators.length}
       >
         {integrators.map(integrator => (
           <div

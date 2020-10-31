@@ -3,14 +3,14 @@ import H3 from "../vectors";
 export default class {
   g: number;
   dt: number;
-  tol: number;
-  maxDt: number;
-  minDt: number;
+  tol?: number;
+  maxDt?: number;
+  minDt?: number;
   masses: any[];
   elapsedTime: number;
   softening: number;
   softeningSquared: number;
-  useBarnesHut: boolean;
+  useBarnesHut?: boolean;
   theta: number;
   maximumDistance: number;
 
@@ -18,9 +18,20 @@ export default class {
   v: H3;
   p: H3;
 
-  constructor({ g, dt, masses, elapsedTime }: IntegratorType) {
+  constructor({
+    g,
+    dt,
+    masses,
+    elapsedTime,
+    tol,
+    maxDt,
+    minDt
+  }: IntegratorType) {
     this.g = g;
     this.dt = dt;
+    this.tol = tol;
+    this.maxDt = maxDt;
+    this.minDt = minDt;
     this.masses = masses;
     this.softening = 0;
     this.softeningSquared = this.softening * this.softening;

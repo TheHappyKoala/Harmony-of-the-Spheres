@@ -9,7 +9,7 @@ import "./Header.less";
 interface HeaderProps {
   pageTitle: string;
   pageDescription: string;
-  pageType: string;
+  pageType?: string;
   image?: string;
   location: any;
 }

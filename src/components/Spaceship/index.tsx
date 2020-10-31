@@ -90,11 +90,11 @@ export default ({
         39.5 * spacecraft.currentSOI.m
       );
 
-      orbitalElements.a = orbitalElements.a.toFixed(5);
-      orbitalElements.e = orbitalElements.e.toFixed(5);
-      orbitalElements.i = orbitalElements.i.toFixed(5);
-      orbitalElements.argP = orbitalElements.argP.toFixed(5);
-      orbitalElements.lAn = orbitalElements.lAn.toFixed(5);
+      orbitalElements.a = parseFloat(orbitalElements.a.toFixed(5));
+      orbitalElements.e = parseFloat(orbitalElements.e.toFixed(5));
+      orbitalElements.i = parseFloat(orbitalElements.i.toFixed(5));
+      orbitalElements.argP = parseFloat(orbitalElements.argP.toFixed(5));
+      orbitalElements.lAn = parseFloat(orbitalElements.lAn.toFixed(5));
 
       const { name } = currentSOI;
 
@@ -110,11 +110,13 @@ export default ({
         orbitalElements,
         currentSOI,
         targetSOI: radiusSOI(scenario.masses[1], target),
-        velocity: getVelocityMagnitude({
-          x: spacecraftMass.vx,
-          y: spacecraftMass.vy,
-          z: spacecraftMass.vz
-        }).toFixed(5)
+        velocity: parseFloat(
+          getVelocityMagnitude({
+            x: spacecraftMass.vx,
+            y: spacecraftMass.vy,
+            z: spacecraftMass.vz
+          }).toFixed(5)
+        )
       });
 
       modifyScenarioProperty({

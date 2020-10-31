@@ -1,16 +1,11 @@
-import React, {
-  ReactElement,
-  MouseEvent,
-  ReactChildren,
-  ReactChild
-} from "react";
+import React, { ReactElement, MouseEvent, ReactNode } from "react";
 import "./Modal.less";
 
 interface ModalProps {
-  children: ReactChildren | ReactChild;
+  children: ReactNode;
   callback: (event: MouseEvent<HTMLButtonElement>) => void;
   modalWrapperCssClass: string;
-  modalCssClass: string;
+  modalCssClass?: string;
 }
 
 export default ({

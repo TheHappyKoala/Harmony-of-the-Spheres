@@ -35,7 +35,7 @@ export const modifyScenarioProperty = (
 export const resetScenario = () =>
   modifyScenarioProperty(
     ...Object.entries(
-      JSON.parse(sessionStorage.getItem("currentScenario"))
+      JSON.parse(sessionStorage.getItem("currentScenario") || "{}")
     ).map(([key, value]: [string, any]) => ({
       key,
       value
@@ -165,7 +165,13 @@ export const getTrajectory = (
       resolve => {
         trajectoryCruncher.addEventListener(
           "message",
-          ({ data: { trajectory } }) => {
+          ({
+            data: { trajectory }
+          }: {
+            data: {
+              trajectory: [Vector, { x: number; y: number; z: number; p: any }];
+            };
+          }) => {
             resolve(trajectory);
           }
         );

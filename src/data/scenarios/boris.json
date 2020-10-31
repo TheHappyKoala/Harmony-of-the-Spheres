@@ -8,7 +8,7 @@
   "type": "Solar System",
   "particlesFun": false,
   "g": 39.5,
-  "dt": 0.001, 
+  "dt": 0.001,
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "Sun",

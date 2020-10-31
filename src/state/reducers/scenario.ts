@@ -35,7 +35,7 @@ export default (state = <ScenarioState>{}, action: ScenarioActionTypes) => {
         .indexOf(action.name);
 
       const newMasses = state.masses.filter(
-        (mass: MassType, i: number) => index !== i
+        (_mass: MassType, i: number) => index !== i
       );
 
       let newState;

@@ -118,7 +118,6 @@ function tofEqP2(
 function tofEqP3(
   x: number,
   y: number,
-  trash: number,
   dT: number,
   ddT: number,
   ll: number
@@ -148,7 +147,7 @@ function halley(
     if (fder2 == 0) {
       console.log("fder2 was 0");
     }
-    fder3 = tofEqP3(p0, y, T0, fder, fder2, ll);
+    fder3 = tofEqP3(p0, y, fder, fder2, ll);
     p = p0 - (2 * fder * fder2) / (2 * fder2 ** 2 - fder * fder3);
     if (Math.abs(p - p0) < tol) {
       return p;
@@ -179,7 +178,7 @@ function householder(
     T = fval + T0;
     fder = tofEqP(p0, y, T, ll);
     fder2 = tofEqP2(p0, y, T, fder, ll);
-    fder3 = tofEqP3(p0, y, T, fder, fder2, ll);
+    fder3 = tofEqP3(p0, y, fder, fder2, ll);
     p =
       p0 -
       fval *
@@ -428,6 +427,8 @@ export function stateToKepler(
   };
 }
 
+/*
+
 export function stateToKepler2(
   r: { x: number; y: number; z: number },
   v: { x: number; y: number; z: number },
@@ -468,6 +469,8 @@ export function stateToKepler2(
   };
 }
 
+*/
+
 export function keplerToState(
   orb: OrbitalElements,
   gm: number
@@ -478,7 +481,6 @@ export function keplerToState(
   const i = orb.i;
   const argP = orb.argP;
   const lAn = orb.lAn;
-  const trueAnom = orb.trueAnom;
   const eccAnom = orb.eccAnom;
 
   let o = { x: 0, y: 0, z: 0 };

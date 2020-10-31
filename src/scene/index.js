@@ -384,7 +384,6 @@ const scene = {
       this.scenario.cameraFocus,
       this.previous,
       this.scenario.barycenterZ,
-      this.scenario.customCameraToBodyDistanceFactor,
       this.scenario.masses,
       this.manifestationsService.manifestations,
       this.scenario.cameraPosition

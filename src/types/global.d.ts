@@ -5,12 +5,6 @@ interface Vector {
 }
 
 interface MassType extends Vector {
-  name?: string;
-  color?: string;
-  m: number;
-  vx: number;
-  vy: number;
-  vz: number;
   [key: string]: any;
 }
 
@@ -64,10 +58,10 @@ interface SOITree {
   name: string;
   SOIradius: number;
   children: SOITree[];
-  m: number;
-  x: number;
-  y: number;
-  z: number;
+  m?: number;
+  x?: number;
+  y?: number;
+  z?: number;
 }
 
 interface ScenarioSeed {
@@ -90,6 +84,7 @@ interface ExoplanetScenarioSeed {
 
 interface ScenarioState {
   name: string;
+  fileName?: string;
   description: string;
   type: string;
   exoPlanetArchive?: boolean;
@@ -106,12 +101,14 @@ interface ScenarioState {
   maxDt: number;
   g: number;
   softeningConstant: number;
-  useBarnesHut?: boolean;
+  useBarnesHut: boolean;
   theta: number;
   elapsedTime: number;
   barycenter: boolean;
   systemBarycenter: boolean;
   barycenterMassOne: string;
+  minTOF: number;
+  maxTOF: number;
   barycenterMassTwo: string;
   collisions: boolean;
   particles: {
@@ -133,7 +130,10 @@ interface ScenarioState {
   velMin: number;
   velMax: number;
   velStep: number;
+  thrustOn: boolean;
+  spacecraftDirections: Vector;
   masses: MassType[];
+  mapMode: boolean;
   massBeingModified: string;
   trails: boolean;
   labels: boolean;
@@ -163,7 +163,6 @@ interface ScenarioState {
   };
   soi?: string;
   scenarioDescription?: string;
-  scenarioWikiUrl?: string;
 }
 
 interface Shape {

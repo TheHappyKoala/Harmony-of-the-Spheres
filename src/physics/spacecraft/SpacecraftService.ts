@@ -30,9 +30,4 @@ export default class {
     spacecraft.vy += deltaV * Math.sign(spacecraft.vy) * directionalSlope.y;
     spacecraft.vz += deltaV * Math.sign(spacecraft.vx) * directionalSlope.z;
   }
-
-  static applyOrbitalInsertionBurn(
-    spacecraft: MassType,
-    deltaV: number
-  ): void {}
 }

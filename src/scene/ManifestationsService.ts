@@ -90,7 +90,14 @@ export default class {
   dispose() {
     this.manifestations.forEach(manifestation => {
       manifestation.dispose();
-      this.scene.remove(this.scene.getObjectByName(manifestation.name));
+
+      const manifestationInstance = this.scene.getObjectByName(
+        manifestation.name
+      );
+
+      if (manifestationInstance) {
+        this.scene.remove(manifestationInstance);
+      }
     });
   }
 }

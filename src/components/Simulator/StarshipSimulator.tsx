@@ -10,12 +10,7 @@ import "./StarshipSimulator.less";
 interface SimulatorProps {
   scenario: ScenarioState;
   modifyScenarioProperty: typeof scenarioActionCreators.modifyScenarioProperty;
-  modifyMassProperty: typeof scenarioActionCreators.modifyMassProperty;
-  deleteMass: typeof scenarioActionCreators.deleteMass;
-  addMass: typeof scenarioActionCreators.addMass;
-  resetScenario: typeof scenarioActionCreators.resetScenario;
   getTrajectory: typeof scenarioActionCreators.getTrajectory;
-  app: any;
 }
 
 export default ({

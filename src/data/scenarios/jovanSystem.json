@@ -4,7 +4,7 @@
   "sortOrder": 4,
   "description": "Gravity simulation of Jupiter and its Galilean moons - the four largest moons of Jupiter — Io, Europa, Ganymede, and Callisto - and the Juno spacecraft.",
   "type": "Solar System",
-  "particlesFun": false, 
+  "particlesFun": false,
   "g": 39.5,
   "dt": 0.000006,
   "soi": "Earth",

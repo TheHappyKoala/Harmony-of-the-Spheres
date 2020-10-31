@@ -183,9 +183,9 @@ export default ({
                 }}
                 className="iframe-scroll-wrapper"
               />
-            ) : (
+            ) : scenarioWikiUrl ? (
               <Iframe url={scenarioWikiUrl} />
-            )}
+            ) : null}
           </Modal>
         )}
       </ReactCSSTransitionGroup>

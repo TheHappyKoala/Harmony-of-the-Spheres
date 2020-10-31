@@ -6,7 +6,7 @@ export default class {
 
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas;
-    this.ctx = this.canvas.getContext("2d");
+    this.ctx = <CanvasRenderingContext2D>this.canvas.getContext("2d");
   }
 
   clear(): void {

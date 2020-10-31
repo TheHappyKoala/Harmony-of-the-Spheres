@@ -8,9 +8,9 @@ import StellarService from "../physics/stars";
 const TWEEN = require("@tweenjs/tween.js");
 
 export default class extends PerspectiveCamera {
-  controls: ReturnType<typeof CustomizedOrbitControls>;
+  controls: any;
   rotatingReferenceFrame: H3;
-  rotatedMasses: Vector[];
+  rotatedMasses: MassType[];
   rotatedBarycenter: Vector;
   started: boolean;
 
@@ -118,7 +118,6 @@ export default class extends PerspectiveCamera {
     cameraFocus: string,
     previous: { cameraFocus: string },
     barycenterZ: number,
-    customCameraToBodyDistanceFactor: number,
     masses: MassType[],
     manifestations: Manifestation[],
     cameraPosition: string
@@ -199,29 +198,30 @@ export default class extends PerspectiveCamera {
           ({ massType }) => massType === "star"
         );
 
-        const [
-          habitableZoneStart,
-          habitableZoneEnd
-        ] = StellarService.getHabitableZoneBounds(star.m);
+        if (star) {
+          const habitableZoneEnd = StellarService.getHabitableZoneBounds(
+            star.m
+          )[1];
 
-        this.tween(
-          {
-            x: star.x,
-            y: star.y + star.radius * 3,
-            z: star.z
-          },
-          {
-            x: star.x,
-            y: star.y + star.radius * 3,
-            z: habitableZoneEnd * star.scale * 5
-          },
-          {
-            x: star.x,
-            y: star.y,
-            z: star.z
-          },
-          5000
-        );
+          this.tween(
+            {
+              x: star.x,
+              y: star.y + star.radius * 3,
+              z: star.z
+            },
+            {
+              x: star.x,
+              y: star.y + star.radius * 3,
+              z: habitableZoneEnd * star.scale * 5
+            },
+            {
+              x: star.x,
+              y: star.y,
+              z: star.z
+            },
+            5000
+          );
+        }
       }
 
       return;
@@ -266,7 +266,7 @@ export default class extends PerspectiveCamera {
   }
 
   tween(from: Vector, to: Vector, lookAt: Vector, duration: number) {
-    const tween = new TWEEN.Tween(from)
+    new TWEEN.Tween(from)
       .to(to, duration)
       .easing(TWEEN.Easing.Exponential.InOut)
       .onUpdate(() => {

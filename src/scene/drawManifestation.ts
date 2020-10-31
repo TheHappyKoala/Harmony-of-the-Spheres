@@ -3,7 +3,7 @@ import { Manifestation } from "./ManifestationsService";
 export default function(
   this: any,
   manifestation: Manifestation,
-  rotatedPosition: Vector,
+  rotatedPosition: MassType,
   delta: number,
   mass: MassType
 ) {

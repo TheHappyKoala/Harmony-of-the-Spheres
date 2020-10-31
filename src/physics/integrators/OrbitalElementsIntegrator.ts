@@ -21,7 +21,6 @@ export default class extends Euler {
       "name",
       tree.name
     );
-    const bodyPos = { x: body.x, y: body.y, z: body.z };
     const relPos = {
       x: body.x - parent.x,
       y: body.y - parent.y,

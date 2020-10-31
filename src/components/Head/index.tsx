@@ -7,7 +7,7 @@ interface HeadProps {
   pageDescription: string;
   pathName: string;
   bodyCssClass?: string;
-  pageType: string;
+  pageType?: string;
   image?: string;
   fileName?: string;
 }
@@ -76,7 +76,7 @@ export default ({
             description: pageDescription,
             about: {
               "@type": "Thing",
-              description: "gravity, simulation, space" 
+              description: "gravity, simulation, space"
             },
             creator: {
               "@type": "Person",

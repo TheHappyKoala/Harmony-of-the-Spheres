@@ -16,7 +16,7 @@ export default class extends MassManifestation {
 
   draw(
     position: MassType,
-    spacecraftDirections: {
+    spacecraftDirections?: {
       x: number;
       y: number;
       z: number;
@@ -25,20 +25,22 @@ export default class extends MassManifestation {
   ) {
     const main = this.getObjectByName("main");
 
-    const flame = main.getObjectByName("flame");
+    if (main) {
+      const flame = main.getObjectByName("flame");
 
-    if (thrustOn && flame) {
-      flame.visible = true;
-    } else if (flame) {
-      flame.visible = false;
-    }
+      if (thrustOn && flame) {
+        flame.visible = true;
+      } else if (flame) {
+        flame.visible = false;
+      }
 
-    main.position.set(position.x, position.y, position.z);
+      main.position.set(position.x, position.y, position.z);
 
-    if (spacecraftDirections) {
-      main.rotation.x = spacecraftDirections.z;
-      main.rotation.y = spacecraftDirections.y;
-      main.rotation.z = spacecraftDirections.x;
+      if (spacecraftDirections) {
+        main.rotation.x = spacecraftDirections.z;
+        main.rotation.y = spacecraftDirections.y;
+        main.rotation.z = spacecraftDirections.x;
+      }
     }
   }
 
