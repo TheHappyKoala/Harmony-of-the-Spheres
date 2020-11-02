@@ -15,6 +15,7 @@ import CollisionsService from "../physics/collisions/";
 import CustomEllipseCurve from "./CustomEllipseCurve";
 import ManifestationsService from "./ManifestationsService";
 import drawManifestation from "./drawManifestation";
+import { constructSOITree } from "../physics/spacecraft/lambert";
 
 const TWEEN = require("@tweenjs/tween.js");
 
@@ -281,6 +282,8 @@ const scene = {
 
     const delta = this.clock.getDelta();
 
+    const SOITree = constructSOITree(this.scenario.masses);
+
     this.system.sync(this.scenario);
 
     const { cameraFocus, barycenterMassOne, barycenterMassTwo } = this.scenario;
@@ -362,7 +365,13 @@ const scene = {
 
       const rotatedPosition = this.camera.rotatedMasses[i];
 
-      this.drawManifestation(massManifestation, rotatedPosition, delta, mass);
+      this.drawManifestation(
+        massManifestation,
+        rotatedPosition,
+        delta,
+        mass,
+        SOITree
+      );
 
       if (this.scenario.labels)
         this.graphics2D.drawLabel(

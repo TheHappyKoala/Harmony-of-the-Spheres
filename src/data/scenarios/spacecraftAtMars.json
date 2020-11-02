@@ -9,6 +9,7 @@
   "g": 39.5,
   "dt": 9e-8,
   "distMax": 50,
+  "mapMode": true,
   "distMin": -50,
   "rotatingReferenceFrame": "Mars",
   "cameraPosition": "Free",

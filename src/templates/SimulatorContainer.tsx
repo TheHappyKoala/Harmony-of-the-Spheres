@@ -94,6 +94,7 @@ export const pageQuery = graphql`
       integrator
       dt
       tol
+      mapMode
       scale
       minDt
       maxDt

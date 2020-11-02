@@ -104,6 +104,7 @@
   "barycenterMassOne": "Uranus",
   "barycenterMassTwo": "Sun",
   "tol": 1e-4,
+  "mapMode": true,
   "maxDt": 1e-3,
   "minDt": 1e-6,
   "drawLineEvery": 6,

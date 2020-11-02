@@ -99,11 +99,7 @@ export default class extends THREE.Object3D {
       }
 
       this.updateTrajectory(
-        trajectoryData.scenario.type === "Exoplanets"
-          ? trajectoryData.scenario.masses[0]
-          : trajectoryData.scenario.masses.find(
-              mass => mass.name === trajectoryData.scenario.soi
-            ),
+        trajectoryData.currentSOI,
         trajectoryData.mass,
         trajectoryData.scenario.g,
         trajectoryData.scenario.scale,

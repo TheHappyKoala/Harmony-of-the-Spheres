@@ -7,6 +7,8 @@
   "type": "Solar System",
   "g": 39.5,
   "dt": 9e-7,
+  "mapMode": true,
+  "cameraPosition": "Free",
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "Mars",

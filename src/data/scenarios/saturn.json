@@ -6,6 +6,7 @@
   "particlesFun": false,
   "type": "Solar System",
   "g": 39.5,
+  "mapMode": true,
   "dt": 0.000005,
   "rotatingReferenceFrame": "Saturn",
   "cameraPosition": "Free",

@@ -6,6 +6,8 @@
   "path": "/spaceflight",
   "isLoaded": false,
   "particlesFun": false,
+  "cameraPosition": "Free",
+  "mapMode": true,
   "playing": false,
   "type": "Spaceflight",
   "g": 39.5,
