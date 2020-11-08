@@ -4,7 +4,8 @@ import React, {
   useState,
   ReactNode,
   Children,
-  isValidElement
+  isValidElement,
+  useEffect
 } from "react";
 import Nav from "../Nav";
 import NavItem from "../NavItem";
@@ -21,6 +22,7 @@ interface TabsProps {
     leaveTimeout: number | boolean;
   };
   noCloseButton?: boolean;
+  onTabClickCallback?: Function;
 }
 
 export default ({
@@ -29,7 +31,8 @@ export default ({
   tabsContentClassName,
   children,
   transition,
-  noCloseButton
+  noCloseButton,
+  onTabClickCallback
 }: TabsProps): ReactElement => {
   const [selectedTabIndex, setSelectedTabIndex] = useState<number>(
     initTab === undefined ? -1 : initTab
@@ -43,7 +46,14 @@ export default ({
         {panes.map((child, i) => (
           <NavItem
             key={i}
-            callback={() => setSelectedTabIndex(i)}
+            callback={() => {
+              setSelectedTabIndex(i);
+              onTabClickCallback &&
+                onTabClickCallback({
+                  key: "activeTab",
+                  value: child.props["data-label"]
+                });
+            }}
             active={selectedTabIndex === i}
           >
             {isValidElement<{

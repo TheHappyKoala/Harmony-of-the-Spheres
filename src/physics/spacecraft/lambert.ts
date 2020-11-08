@@ -710,7 +710,7 @@ export function findCurrentSOI(
   tree: SOITree,
   masses: Array<MassType>
 ): MassType {
-  if (tree.children.length == 0) {
+  if (tree?.children?.length == 0) {
     return getObjFromArrByKeyValuePair(masses, "name", tree.name);
   }
   for (let i = 0; i < tree.children.length; i++) {

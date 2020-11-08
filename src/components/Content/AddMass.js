@@ -23,7 +23,8 @@ export default class extends Component {
       z: 0,
       vx: 0,
       vy: 0,
-      vz: 0
+      vz: 0,
+      activeTab: "Vectors"
     };
   }
 
@@ -93,6 +94,7 @@ export default class extends Component {
           transition={{ enterTimeout: false, leaveTimeout: false }}
           initTab={0}
           noCloseButton={true}
+          onTabClickCallback={this.modifyProperty}
         >
           {this.props.masses.length && (
             <div data-label="Elements">
@@ -267,9 +269,9 @@ export default class extends Component {
               payload={{ key: "vx" }}
               value={this.state.vx}
               callback={this.modifyProperty}
-              max={this.props.maximumDistance / 100}
-              min={-(this.props.maximumDistance / 100)}
-              step={this.props.maximumDistance / 1000}
+              max={20}
+              min={-20}
+              step={20 / 1000}
             />
             <label className="top">
               Y Velocity Vector
@@ -282,9 +284,9 @@ export default class extends Component {
               payload={{ key: "vy" }}
               value={this.state.vy}
               callback={this.modifyProperty}
-              max={this.props.maximumDistance / 100}
-              min={-(this.props.maximumDistance / 100)}
-              step={this.props.maximumDistance / 1000}
+              max={20}
+              min={-20}
+              step={20 / 1000}
             />
             <label className="top">
               Z Velocity Vector
@@ -297,9 +299,9 @@ export default class extends Component {
               payload={{ key: "vz" }}
               value={this.state.vz}
               callback={this.modifyProperty}
-              max={this.props.maximumDistance / 100}
-              min={-(this.props.maximumDistance / 100)}
-              step={this.props.maximumDistance / 1000}
+              max={20}
+              min={-20}
+              step={20 / 1000}
             />
           </div>
         </Tabs>
@@ -357,7 +359,8 @@ export default class extends Component {
                 z: this.state.z,
                 vx: this.state.vx,
                 vy: this.state.vy,
-                vz: this.state.vz
+                vz: this.state.vz,
+                activeTab: this.state.activeTab
               }
             })
           }

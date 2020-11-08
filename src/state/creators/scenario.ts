@@ -74,7 +74,10 @@ export const addMass = (
 
   dispatch({
     type: ADD_MASS,
-    payload: getOrbit(primary, payload.secondary, scenario.g)
+    payload:
+      payload.secondary.activeTab !== "Vectors"
+        ? getOrbit(primary, payload.secondary, scenario.g)
+        : payload.secondary
   });
 };
 
