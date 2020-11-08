@@ -122,7 +122,7 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
                 </NavItem>
               </Link>
 
-              {["Transit", "Radial Velocity", "Imaging"].map(
+              {["Transit", "Radial Velocity", "Imaging", "Microlensing"].map(
                 discoveryFacility => (
                   <Link to={`/exoplanets/${kebabCase(discoveryFacility)}`}>
                     <NavItem
