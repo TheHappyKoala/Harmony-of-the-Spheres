@@ -68,10 +68,7 @@ export default class extends Component {
   insertMassTemplate = payload =>
     this.setState({
       ...this.state,
-      m: payload.m,
-      radius: payload.radius,
-      texture: payload.texture,
-      type: payload.type
+      ...payload
     });
 
   render() {
@@ -213,7 +210,8 @@ export default class extends Component {
                   m: body.m,
                   radius: body.radius,
                   texture: body.name,
-                  type: body.type
+                  massType: body.massType,
+                  temperature: body.temperature
                 })
               }
             >
@@ -228,16 +226,21 @@ export default class extends Component {
               secondary: {
                 name: `Custom Mass ${Date.now()}`,
                 trailVertices: 3000,
-                m: this.state.m,
-                radius: this.state.radius,
-                texture: this.state.texture,
-                massType: this.state.type,
                 color: getRandomColor(),
                 a: this.props.a,
                 e: this.props.e,
                 w: this.props.w,
                 i: this.props.i,
-                o: this.props.o
+                o: this.props.o,
+                x: this.state.x,
+                y: this.state.y,
+                z: this.state.z,
+                vx: this.state.vx,
+                vy: this.state.vy,
+                vz: this.state.vz,
+                activeTab: this.state.activeTab,
+                customCameraPosition: { x: 5, y: 2, z: 0 },
+                ...this.state
               }
             })
           }
