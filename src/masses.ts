@@ -410,13 +410,65 @@ export default [
     name: "Planet 9",
     bodyType: "Planet"
   },
+  ,
   {
-    m: 1,
-    radius: 42767.441860465116,
-    type: "star",
+    name: "Betelgeuse",
+    m: 17,
+    radius: 7846280,
+    massType: "star",
+    bump: false,
     luminosity: 1,
+    temperature: 3600,
+    tilt: 0,
+    spacecraft: false,
+    orbitalPeriod: 0
+  },
+  {
     name: "Sun",
-    color: "#ffffff",
-    temperature: 5000
+    m: 1,
+    radius: 10270,
+    massType: "star",
+    bump: false,
+    luminosity: 1,
+    temperature: 5778,
+    tilt: 0,
+    spacecraft: false,
+    orbitalPeriod: 0
+  },
+  {
+    name: "Kepler-62",
+    massType: "star",
+    bump: false,
+    luminosity: 1,
+    tilt: 0,
+    spacecraft: false,
+    orbitalPeriod: 0,
+    m: 0.69,
+    radius: 6251.162790697675,
+    temperature: 4925
+  },
+  {
+    name: "Sigma Orionis",
+    m: 18,
+    radius: 57511,
+    massType: "star",
+    bump: false,
+    luminosity: 1,
+    temperature: 35000,
+    tilt: 0,
+    spacecraft: false,
+    orbitalPeriod: 0
+  },
+  {
+    name: "Proxima Centauri",
+    m: 0.12,
+    radius: 1367.4418604651164,
+    temperature: 3050,
+    massType: "star",
+    bump: false,
+    luminosity: 1,
+    tilt: 0,
+    spacecraft: false,
+    orbitalPeriod: 0
   }
 ];

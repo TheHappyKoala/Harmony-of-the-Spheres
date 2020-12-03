@@ -678,11 +678,11 @@ export function constructSOITree(masses: Array<MassType>): SOITree {
   let tree: SOITree = {
     SOIradius: 1e100,
     children: [],
-    name: sun.name,
-    m: sun.m,
-    x: sun.x,
-    y: sun.y,
-    z: sun.z
+    name: sun?.name,
+    m: sun?.m,
+    x: sun?.x,
+    y: sun?.y,
+    z: sun?.z
   };
   masses.forEach(val => {
     if (val.name != sun.name) {
