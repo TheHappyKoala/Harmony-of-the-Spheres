@@ -271,7 +271,7 @@ export default class extends Component {
                 vy: 0,
                 vz: 0,
                 activeTab: !this.props.masses.length ? "Vectors" : "Elements",
-                customCameraPosition: { x: 5, y: 2, z: 0 },
+                customCameraPosition: { x: 0, y: 40, z: 0 },
                 ...this.state
               }
             })

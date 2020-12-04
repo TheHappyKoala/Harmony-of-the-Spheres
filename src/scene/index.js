@@ -278,6 +278,28 @@ const scene = {
   loop() {
     this.scenario = JSON.parse(JSON.stringify(this.store.getState().scenario));
 
+    if (this.scenario.masses.length === 1)
+      this.store.dispatch(
+        modifyScenarioProperty(
+          {
+            key: "rotatingReferenceFrame",
+            value: this.scenario.masses[0].name
+          },
+          {
+            key: "massBeingModified",
+            value: this.scenario.masses[0].name
+          },
+          {
+            key: "cameraFocus",
+            value: this.scenario.masses[0].name
+          },
+          {
+            key: "primary",
+            value: this.scenario.masses[0].name
+          }
+        )
+      );
+
     if (this.scenario.reset) this.resetParticlePhysics();
 
     const delta = this.clock.getDelta();
