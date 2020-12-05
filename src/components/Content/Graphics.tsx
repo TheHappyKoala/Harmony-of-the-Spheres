@@ -9,6 +9,7 @@ interface GraphicsProps {
   barycenter: boolean;
   trails: boolean;
   labels: boolean;
+  displayGrid: boolean;
   habitableZone: boolean;
   masses: MassType[];
   rotatingReferenceFrame: string;
@@ -21,6 +22,7 @@ export default ({
   barycenter,
   trails,
   labels,
+  displayGrid,
   habitableZone,
   masses,
   rotatingReferenceFrame,
@@ -213,6 +215,16 @@ export default ({
             value: !habitableZone ? "Habitable Zone" : cameraFocus
           }
         )
+      }
+    />
+    <Toggle
+      label="Display Grid"
+      checked={displayGrid}
+      callback={() =>
+        modifyScenarioProperty({
+          key: "displayGrid",
+          value: !displayGrid
+        })
       }
     />
   </Fragment>

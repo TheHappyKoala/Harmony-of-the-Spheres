@@ -76,7 +76,7 @@ export default class extends MassManifestation {
     const halo3 = new THREE.Sprite(halo3Material);
     halo3.scale.set(30, 30, 60);
 
-    mesh.add(halo1, halo2, halo3);
+    //mesh.add(halo1, halo2, halo3);
 
     const light = new THREE.PointLight(0xffffff, 1.5, 0);
     light.position.set(0, 0, 0);

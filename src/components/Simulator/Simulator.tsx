@@ -128,6 +128,7 @@ export default ({
             trails={scenario.trails}
             labels={scenario.labels}
             modifyScenarioProperty={modifyScenarioProperty}
+            displayGrid={scenario.displayGrid}
             habitableZone={scenario.habitableZone}
             rotatingReferenceFrame={scenario.rotatingReferenceFrame}
             cameraFocus={scenario.cameraFocus}

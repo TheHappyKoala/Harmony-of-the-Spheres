@@ -1,7 +1,6 @@
 import { PerspectiveCamera, Vector3, Object3D } from "three";
 import CustomizedOrbitControls from "./CustomizedOrbitControls";
 import H3 from "../physics/vectors";
-import { degreesToRadians } from "../physics/utils";
 import { Manifestation } from "./ManifestationsService";
 import StellarService from "../physics/stars";
 
@@ -48,10 +47,6 @@ export default class extends PerspectiveCamera {
     this.controls.update();
   }
 
-  getVisibleSceneHeight(z: number): number {
-    return Math.tan(degreesToRadians(this.fov) / 2) * 3 * z;
-  }
-
   setRotatingReferenceFrame(
     rotatingReferenceFrame: string,
     masses: MassType[],
@@ -59,6 +54,12 @@ export default class extends PerspectiveCamera {
   ): this {
     if (rotatingReferenceFrame === "Barycenter") {
       this.rotatingReferenceFrame.set(barycenter);
+
+      return this;
+    }
+
+    if (rotatingReferenceFrame === "Origo") {
+      this.rotatingReferenceFrame.set({ x: 0, y: 0, z: 0 });
 
       return this;
     }
@@ -173,6 +174,39 @@ export default class extends PerspectiveCamera {
             x: this.rotatedBarycenter.x,
             y: this.rotatedBarycenter.y,
             z: this.rotatedBarycenter.z
+          },
+          5000
+        );
+      }
+
+      return;
+    }
+
+    if (previous.cameraFocus !== cameraFocus && cameraFocus === "Origo") {
+      previous.cameraFocus = cameraFocus;
+
+      if (cameraFocus === "Origo") {
+        this.controls.target.set(
+          0,
+          0,
+          0
+        );
+
+        this.tween(
+          {
+            x: barycenterZ,
+            y: 0,
+            z: 0
+          },
+          {
+            x: 0,
+            y: barycenterZ / 3,
+            z: barycenterZ
+          },
+          {
+            x: 0,
+            y: 0,
+            z: 0
           },
           5000
         );

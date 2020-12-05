@@ -83,6 +83,9 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
                   All
                 </NavItem>
               </Link>
+              <Link to={"/misc/create-new-gravity-simulation"}>
+                <NavItem>Create New Simulation</NavItem>
+              </Link>
               {categories.map(category => (
                 <Link
                   to={

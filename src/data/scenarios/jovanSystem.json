@@ -8,6 +8,7 @@
   "g": 39.5,
   "dt": 0.000006,
   "mapMode": true,
+  "displayGrid": true,
   "cameraPosition": "Free",
   "soi": "Earth",
   "rotatingReferenceFrame": "Jupiter",

@@ -4,7 +4,12 @@ import { modifyScenarioProperty, deleteMass } from "../state/creators/scenario";
 import H3 from "../physics/vectors";
 import getIntegrator from "../physics/integrators";
 import { getObjFromArrByKeyValuePair } from "../utils";
-import { setBarycenter, getEllipse, radiansToDegrees } from "../physics/utils";
+import {
+  setBarycenter,
+  getEllipse,
+  radiansToDegrees,
+  degreesToRadians
+} from "../physics/utils";
 import ParticleService from "../physics/particles/ParticleService";
 import arena from "./arena";
 import Camera from "./Camera";
@@ -69,6 +74,8 @@ const scene = {
     this.requestAnimationFrameId = null;
 
     this.scene = new THREE.Scene();
+
+    this.grid = undefined;
 
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas,
@@ -450,6 +457,32 @@ const scene = {
         );
     }
 
+    if (this.scenario.displayGrid) {
+      if (!this.grid) {
+        this.grid = new THREE.GridHelper(this.scenario.scale, 50, "yellow", "skyblue");
+
+        this.grid.rotateX(degreesToRadians(90));
+
+        this.grid.material.transparent = true;
+        this.grid.material.opacity = 0.5;
+
+        this.scene.add(this.grid);
+      }
+
+      console.log('ey', this.camera.position.distanceTo(new THREE.Vector3(0, 0, 0)))
+
+      this.grid.scale.setScalar(
+        (this.camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) /
+          this.scenario.scale) *
+          2
+      );
+    } else {
+      if (this.grid) {
+        this.scene.remove(this.grid);
+        this.grid = undefined;
+      }
+    }
+
     this.store.dispatch(
       modifyScenarioProperty(
         {
@@ -471,8 +504,7 @@ const scene = {
         {
           key: "maximumDistance",
           value:
-            this.camera.getVisibleSceneHeight(this.camera.position.z) /
-            2 /
+            this.camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) /
             this.scenario.scale
         }
       )
