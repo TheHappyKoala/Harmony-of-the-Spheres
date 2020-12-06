@@ -52,7 +52,7 @@
   "velMax": 5,
   "velMin": -5,
   "velStep": 0.00000185765499287888,
-  "isMassBeingAdded": false,
+  "isMassBeingAdded": true,
   "a": 0,
   "e": 0,
   "w": 0,
