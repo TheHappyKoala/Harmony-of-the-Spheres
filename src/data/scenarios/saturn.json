@@ -13,6 +13,7 @@
   "cameraFocus": "Saturn",
   "massBeingModified": "Saturn",
   "distMax": 50,
+  "displayGrid": true,
   "distMin": -50,
   "primary": "Saturn",
   "maximumDistance": { "name": "Titan to Saturn * 2", "value": 0.01633512555 },

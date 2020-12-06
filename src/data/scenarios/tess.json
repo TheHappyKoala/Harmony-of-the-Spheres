@@ -14,6 +14,7 @@
   "distMin": -50,
   "rotatingReferenceFrame": "Moon",
   "cameraFocus": "Earth",
+  "displayGrid": true,
   "customCameraToBodyDistanceFactor": 180,
   "massBeingModified": "Sun",
   "primary": "Earth",

@@ -98,6 +98,7 @@ interface ScenarioState {
   scale: number;
   reset: boolean;
   minDt: number;
+  initTab: number;
   maxDt: number;
   g: number;
   softeningConstant: number;
@@ -137,6 +138,7 @@ interface ScenarioState {
   massBeingModified: string;
   trails: boolean;
   labels: boolean;
+  displayGrid: boolean;
   habitableZone: boolean;
   referenceOrbits: boolean;
   logarithmicDepthBuffer: boolean;

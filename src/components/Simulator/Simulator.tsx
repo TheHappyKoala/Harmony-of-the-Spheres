@@ -24,6 +24,7 @@ interface SimulatorProps {
   addMass: typeof scenarioActionCreators.addMass;
   description?: string;
   scenarioWikiUrl?: string;
+  initTab?: number;
 }
 
 export default ({
@@ -33,7 +34,8 @@ export default ({
   addMass,
   scenario,
   description,
-  scenarioWikiUrl
+  scenarioWikiUrl,
+  initTab
 }: SimulatorProps): ReactElement => {
   const [displayWiki, setDisplayWiki] = useState(true);
 
@@ -73,12 +75,15 @@ export default ({
           Scenarios
         </Fragment>
       </Button>
-      <Button cssClassName="button wiki" callback={setWikiState}>
-        <Fragment>
-          <i className="fas fa-wikipedia-w" />
-          Scenario Wiki
-        </Fragment>
-      </Button>
+      {scenarioWikiUrl ||
+        (description && (
+          <Button cssClassName="button wiki" callback={setWikiState}>
+            <Fragment>
+              <i className="fas fa-wikipedia-w" />
+              Scenario Wiki
+            </Fragment>
+          </Button>
+        ))}
       <Tweet
         shareText={`Hey friends! Check out this 3D gravity simulation of ${scenario.name}. It will run in your browser :)!`}
         shareUrl={
@@ -94,7 +99,7 @@ export default ({
         cssClassName="button facebook"
       />
       <Tabs
-        initTab={1}
+        initTab={initTab ? initTab : 1}
         tabsWrapperClassName="sidebar-wrapper"
         tabsContentClassName="sidebar-content box"
         transition={{
@@ -171,7 +176,7 @@ export default ({
         transitionEnterTimeout={250}
         transitionLeaveTimeout={250}
       >
-        {displayWiki && (
+        {displayWiki && (scenarioWikiUrl || description) && (
           <Modal
             callback={setWikiState}
             modalWrapperCssClass="modal-wrapper"

@@ -75,7 +75,7 @@ export default class extends Component {
     return (
       <Fragment>
         <h2>Add Mass</h2>
-        {this.props.masses.length ? (
+        {this.props?.masses?.length ? (
           <Fragment>
             <label className="top">
               Primary
@@ -195,7 +195,6 @@ export default class extends Component {
                 content="The mass, radius, texture, type and color of the mass you're adding."
               />
             </label>
-
             <Dropdown
               selectedOption={this.state.texture}
               dropdownWrapperCssClassName="tabs-dropdown-wrapper"
@@ -223,33 +222,36 @@ export default class extends Component {
             </Dropdown>
           </Fragment>
         ) : (
-          <Dropdown
-            selectedOption={this.state.texture}
-            dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-            selectedOptionCssClassName="selected-option"
-            optionsWrapperCssClass="options"
-            dynamicChildrenLen={this.props.masses.length}
-          >
-            {bodies
-              .filter(body => body.massType === "star")
-              .map(body => (
-                <div
-                  data-name={body.name}
-                  key={body.name}
-                  onClick={() =>
-                    this.insertMassTemplate({
-                      m: body.m,
-                      radius: body.radius,
-                      texture: body.name,
-                      massType: body.massType,
-                      temperature: body.temperature
-                    })
-                  }
-                >
-                  {body.name}
-                </div>
-              ))}
-          </Dropdown>
+          <Fragment>
+            <p>Start by adding a star to your simulation.</p>
+            <Dropdown
+              selectedOption="Select a star"
+              dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+              selectedOptionCssClassName="selected-option"
+              optionsWrapperCssClass="options"
+              dynamicChildrenLen={this.props.masses?.length}
+            >
+              {bodies
+                .filter(body => body.massType === "star")
+                .map(body => (
+                  <div
+                    data-name={body.name}
+                    key={body.name}
+                    onClick={() =>
+                      this.insertMassTemplate({
+                        m: body.m,
+                        radius: body.radius,
+                        texture: body.name,
+                        massType: body.massType,
+                        temperature: body.temperature
+                      })
+                    }
+                  >
+                    {body.name}
+                  </div>
+                ))}
+            </Dropdown>
+          </Fragment>
         )}
         <Button
           callback={() =>
@@ -271,7 +273,7 @@ export default class extends Component {
                 vy: 0,
                 vz: 0,
                 activeTab: !this.props.masses.length ? "Vectors" : "Elements",
-                customCameraPosition: { x: 0, y: 40, z: 0 },
+                customCameraPosition: { x: 0, y: 0, z: 50 },
                 ...this.state
               }
             })

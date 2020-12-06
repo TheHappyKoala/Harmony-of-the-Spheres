@@ -186,11 +186,7 @@ export default class extends PerspectiveCamera {
       previous.cameraFocus = cameraFocus;
 
       if (cameraFocus === "Origo") {
-        this.controls.target.set(
-          0,
-          0,
-          0
-        );
+        this.controls.target.set(0, 0, 0);
 
         this.tween(
           {

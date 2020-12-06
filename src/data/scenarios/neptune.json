@@ -7,6 +7,7 @@
   "type": "Solar System",
   "g": 39.5,
   "mapMode": true,
+  "displayGrid": true,
   "dt": 9e-7,
   "cameraPosition": "Free",
   "distMax": 50,

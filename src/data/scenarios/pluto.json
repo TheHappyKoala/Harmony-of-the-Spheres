@@ -8,6 +8,7 @@
   "g": 39.5,
   "dt": 0.000009,
   "distMax": 50,
+  "displayGrid": true,
   "distMin": -50,
   "systemBarycenter": false,
   "barycenterMassOne": "Pluto",

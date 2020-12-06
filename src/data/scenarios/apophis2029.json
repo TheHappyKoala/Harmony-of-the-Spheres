@@ -11,6 +11,7 @@
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "Earth",
+  "displayGrid": true,
   "cameraFocus": "Earth",
   "massBeingModified": "Sun",
   "primary": "Earth",

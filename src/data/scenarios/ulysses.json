@@ -10,6 +10,7 @@
   "mapMode": true,
   "playing": false,
   "type": "Spaceflight",
+  "displayGrid": true,
   "g": 39.5,
   "dt": 0.00085,
   "distMax": 50,

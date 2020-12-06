@@ -16,6 +16,7 @@
   "mapMode": true,
   "distMax": 50,
   "distMin": -50,
+  "displayGrid": true,
   "rotatingReferenceFrame": "Sun",
   "cameraFocus": "Barycenter",
   "barycenterZ": 100000000,

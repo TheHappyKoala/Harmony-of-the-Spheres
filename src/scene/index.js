@@ -459,7 +459,12 @@ const scene = {
 
     if (this.scenario.displayGrid) {
       if (!this.grid) {
-        this.grid = new THREE.GridHelper(this.scenario.scale, 50, "yellow", "skyblue");
+        this.grid = new THREE.GridHelper(
+          this.scenario.scale,
+          80,
+          "yellow",
+          "skyblue"
+        );
 
         this.grid.rotateX(degreesToRadians(90));
 
@@ -469,12 +474,10 @@ const scene = {
         this.scene.add(this.grid);
       }
 
-      console.log('ey', this.camera.position.distanceTo(new THREE.Vector3(0, 0, 0)))
-
       this.grid.scale.setScalar(
         (this.camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) /
           this.scenario.scale) *
-          2
+          8
       );
     } else {
       if (this.grid) {

@@ -58,6 +58,7 @@ const Scenario = ({
         addMass={addMass}
         deleteMass={deleteMass}
         scenario={scenario}
+        initTab={scenarioFromData.initTab}
         description={scenarioFromData.scenarioDescription}
         scenarioWikiUrl={scenarioFromData.scenarioWikiUrl}
       />
@@ -95,7 +96,9 @@ export const pageQuery = graphql`
       dt
       tol
       mapMode
+      displayGrid
       scale
+      initTab
       minDt
       maxDt
       g

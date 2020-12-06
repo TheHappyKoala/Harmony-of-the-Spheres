@@ -11,6 +11,7 @@
   "dt": 2e-7,
   "distMax": 50,
   "distMin": -50,
+  "displayGrid": true,
   "barycenterMassOne": "Earth",
   "barycenterMassTwo": "Moon",
   "rotatingReferenceFrame": "Barycenter",

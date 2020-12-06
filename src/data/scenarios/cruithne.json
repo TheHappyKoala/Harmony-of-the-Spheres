@@ -12,6 +12,7 @@
   "distMin": -50,
   "rotatingReferenceFrame": "Earth",
   "cameraFocus": "Sun",
+  "displayGrid": true,
   "customCameraToBodyDistanceFactor": 160,
   "barycenterZ": 8000000,
   "massBeingModified": "Sun",
