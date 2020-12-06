@@ -95,7 +95,7 @@
     },
     {
       "m": 1,
-      "radius": 42767.441860465115,
+      "radius": 10270,
       "massType": "star",
       "luminosity": 1,
       "name": "Sun",
@@ -120,7 +120,7 @@
       "orbitalPeriod": 0.0739726,
       "bump": true,
       "name": "Moon",
-      "color": "grey",
+      "color": "limegreen",
       "x": 0.9956218231659631,
       "y": 0.1372984436242337,
       "z": -0.0001963882374615497,

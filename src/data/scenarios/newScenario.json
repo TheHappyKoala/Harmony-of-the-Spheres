@@ -38,7 +38,7 @@
   "referenceOrbits": false,
   "softeningConstant": 0,
   "systemBarycenter": true,
-  "logarithmicDepthBuffer": true,
+  "logarithmicDepthBuffer": false,
   "scale": 2100000,
   "barycenter": false,
   "trails": false,

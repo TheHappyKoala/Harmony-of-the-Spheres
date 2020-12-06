@@ -7,6 +7,7 @@
   "type": "Solar System",
   "g": 39.5,
   "dt": 0.00005,
+  "displayGrid": true,
   "distMax": 50,
   "distMin": -50,
   "rotatingReferenceFrame": "Earth",
@@ -90,7 +91,7 @@
     },
     {
       "m": 1,
-      "radius": 42767.441860465115,
+      "radius": 10270,
       "massType": "star",
       "bump": false,
       "luminosity": 1,

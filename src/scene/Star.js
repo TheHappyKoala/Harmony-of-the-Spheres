@@ -34,7 +34,7 @@ export default class extends MassManifestation {
 
     mesh.scale.x = mesh.scale.y = mesh.scale.z = this.mass.radius;
 
-    const spriteMap = new THREE.TextureLoader().load("/textures/corona.png");
+    const spriteMap = new THREE.TextureLoader().load("/textures/halo.png");
 
     const rgb = colorTemperatureToRGB(this.mass.temperature);
 
@@ -44,11 +44,11 @@ export default class extends MassManifestation {
         `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
       ),
       blending: THREE.AdditiveBlending,
-      opacity: 0.2
+      opacity: 0.3
     });
 
     const halo1 = new THREE.Sprite(halo1Material);
-    halo1.scale.set(25, 25, 25);
+    halo1.scale.set(90, 90, 90);
 
     const halo2Material = new THREE.SpriteMaterial({
       map: spriteMap,
@@ -56,12 +56,12 @@ export default class extends MassManifestation {
         `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
       ),
       blending: THREE.AdditiveBlending,
-      opacity: 0.2,
+      opacity: 0.3,
       rotation: Math.PI / 4
     });
 
     const halo2 = new THREE.Sprite(halo2Material);
-    halo2.scale.set(40, 40, 40);
+    halo2.scale.set(70, 70, 70);
 
     const halo3Material = new THREE.SpriteMaterial({
       map: spriteMap,
@@ -69,12 +69,12 @@ export default class extends MassManifestation {
         `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
       ),
       blending: THREE.AdditiveBlending,
-      opacity: 0.2,
+      opacity: 0.3,
       rotation: Math.PI / 2
     });
 
     const halo3 = new THREE.Sprite(halo3Material);
-    halo3.scale.set(30, 30, 60);
+    halo3.scale.set(50, 50, 50);
 
     mesh.add(halo1, halo2, halo3);
 

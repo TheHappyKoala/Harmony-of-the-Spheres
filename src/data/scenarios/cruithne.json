@@ -85,7 +85,7 @@
     },
     {
       "m": 1,
-      "radius": 42767.441860465115,
+      "radius": 10270,
       "massType": "star",
       "bump": false,
       "luminosity": 1,
@@ -113,7 +113,7 @@
       "radius": 1.2,
       "tilt": 0,
       "bump": false,
-      "color": "grey",
+      "color": "red",
       "texture": "",
       "spacecraft": false,
       "massType": "asteroid",
