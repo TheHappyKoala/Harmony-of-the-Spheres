@@ -60,7 +60,6 @@ const Scenario = ({
         scenario={scenario}
         initTab={scenarioFromData.initTab}
         description={scenarioFromData.scenarioDescription}
-        scenarioWikiUrl={scenarioFromData.scenarioWikiUrl}
       />
     </Fragment>
   );

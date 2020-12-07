@@ -7,7 +7,6 @@ import Button from "../Button";
 import Renderer from "../Renderer";
 import Tabs from "../Tabs";
 import Modal from "../Modal";
-import Iframe from "../Iframe";
 import Physics from "../Content/Physics";
 import Graphics from "../Content/Graphics";
 import Masses from "../Content/Masses";
@@ -32,7 +31,6 @@ export default ({
   addMass,
   scenario,
   description,
-  scenarioWikiUrl,
   initTab
 }: SimulatorProps): ReactElement => {
   const [displayWiki, setDisplayWiki] = useState(true);
@@ -73,15 +71,14 @@ export default ({
           Scenarios
         </Fragment>
       </Button>
-      {scenarioWikiUrl ||
-        (description && (
-          <Button cssClassName="button wiki" callback={setWikiState}>
-            <Fragment>
-              <i className="fas fa-wikipedia-w" />
-              Scenario Wiki
-            </Fragment>
-          </Button>
-        ))}
+      {description && (
+        <Button cssClassName="button wiki" callback={setWikiState}>
+          <Fragment>
+            <i className="fas fa-wikipedia-w" />
+            Scenario Wiki
+          </Fragment>
+        </Button>
+      )}
       <Tabs
         initTab={initTab ? initTab : 1}
         tabsWrapperClassName="sidebar-wrapper"
@@ -160,22 +157,18 @@ export default ({
         transitionEnterTimeout={250}
         transitionLeaveTimeout={250}
       >
-        {displayWiki && (scenarioWikiUrl || description) && (
+        {displayWiki && description && (
           <Modal
             callback={setWikiState}
             modalWrapperCssClass="modal-wrapper"
             modalCssClass="modal"
           >
-            {description ? (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: description
-                }}
-                className="iframe-scroll-wrapper"
-              />
-            ) : scenarioWikiUrl ? (
-              <Iframe url={scenarioWikiUrl} />
-            ) : null}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: description
+              }}
+              className="iframe-scroll-wrapper"
+            />
           </Modal>
         )}
       </ReactCSSTransitionGroup>
