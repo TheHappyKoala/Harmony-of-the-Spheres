@@ -13,6 +13,7 @@
   "cameraPosition": "Free",
   "velMin": -12,
   "velStep": 0.000005,
+  "displayGrid": true,
   "mapMode": true,
   "rotatingReferenceFrame": "Sun",
   "cameraFocus": "Barycenter",

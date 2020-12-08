@@ -10,6 +10,7 @@
   "dt": 0.01,
   "distMax": 50,
   "distMin": -50,
+  "displayGrid": true,
   "mapMode": true,
   "rotatingReferenceFrame": "Sun",
   "cameraPosition": "Free",
