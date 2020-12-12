@@ -82,9 +82,9 @@
       "spacecraft": false,
       "orbitalPeriod": 0,
       "customCameraPosition": {
-          "x": 0,
-          "y": 2000,
-          "z": -500
+        "x": 0,
+        "y": 2000,
+        "z": -500
       }
     },
     {
