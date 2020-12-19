@@ -25,6 +25,8 @@ export default function(
       scenario.dt
     );
 
+    let currentSOI;
+
     switch (manifestation.mass.massType) {
       case "star":
         manifestation.draw(rotatedPosition, delta, scenario.habitableZone);
@@ -37,10 +39,17 @@ export default function(
           scenario.thrustOn
         );
 
+        currentSOI = findCurrentSOI(
+          scenario.masses.find(massEntry => massEntry.name === mass.name),
+          SOITree,
+          scenario.masses
+        );
+
         manifestation.handleTrajectoryUpdate(scenario.mapMode, {
           mass,
           scenario,
-          rotatingReferenceFrame: this.camera.rotatingReferenceFrame
+          rotatingReferenceFrame: this.camera.rotatingReferenceFrame,
+          currentSOI
         });
 
         break;
@@ -48,7 +57,7 @@ export default function(
       default:
         manifestation.draw(rotatedPosition);
 
-        const currentSOI = findCurrentSOI(
+        currentSOI = findCurrentSOI(
           scenario.masses.find(massEntry => massEntry.name === mass.name),
           SOITree,
           scenario.masses

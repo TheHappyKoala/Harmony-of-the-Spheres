@@ -8,6 +8,7 @@ import Camera from "./Camera";
 import Graphics2D, { drawMarkerLabel, drawMassLabel } from "./Graphics2D";
 import ManifestationsService from "./ManifestationsService";
 import drawManifestation from "./drawManifestation";
+import { constructSOITree } from "../physics/spacecraft/lambert";
 
 const TWEEN = require("@tweenjs/tween.js");
 
@@ -125,6 +126,8 @@ const scene = {
 
     this.manifestationsService.diff(this.scenario.masses);
 
+    const SOITree = constructSOITree(this.scenario.masses);
+
     this.graphics2D.clear();
 
     if (this.scenario.mapMode) {
@@ -157,7 +160,13 @@ const scene = {
 
       const rotatedPosition = this.camera.rotatedMasses[i];
 
-      this.drawManifestation(massManifestation, rotatedPosition, delta, mass);
+      this.drawManifestation(
+        massManifestation,
+        rotatedPosition,
+        delta,
+        mass,
+        SOITree
+      );
 
       if (this.scenario.labels)
         this.graphics2D.drawLabel(
@@ -191,7 +200,6 @@ const scene = {
       this.scenario.cameraFocus,
       this.previous,
       this.scenario.barycenterZ,
-      this.scenario.customCameraToBodyDistanceFactor,
       this.scenario.masses,
       this.manifestationsService.manifestations,
       this.scenario.cameraPosition
@@ -220,13 +228,6 @@ const scene = {
         {
           key: "dt",
           value: this.system.dt
-        },
-        {
-          key: "maximumDistance",
-          value:
-            this.camera.getVisibleSceneHeight(this.camera.position.z) /
-            2 /
-            this.scenario.scale
         }
       )
     );
