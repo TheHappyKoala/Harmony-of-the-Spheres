@@ -110,7 +110,7 @@
       "bump": true,
       "bodyType": "Planet",
       "color": "skyblue",
-      "texture": "EarthHighRes",
+      "texture": "Earth",
       "spacecraft": false,
       "massType": "sphere",
       "luminosity": 0,
