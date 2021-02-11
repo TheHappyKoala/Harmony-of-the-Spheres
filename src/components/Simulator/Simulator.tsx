@@ -1,4 +1,9 @@
-import React, { ReactElement, Fragment, useState, useCallback } from "react";
+import React, {
+  ReactElement,
+  Fragment,
+  useState,
+  useCallback
+} from "react";
 import { navigate } from "gatsby";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import * as scenarioActionCreators from "../../state/creators/scenario";
@@ -11,6 +16,8 @@ import Physics from "../Content/Physics";
 import Graphics from "../Content/Graphics";
 import Masses from "../Content/Masses";
 import AddMass from "../Content/AddMass";
+import Slider from "../Slider";
+import Tooltip from "../Tooltip";
 import "./App.less";
 
 interface SimulatorProps {
@@ -152,6 +159,46 @@ export default ({
           />
         </div>
       </Tabs>
+      <div className="time-step-wrapper">
+        {scenario.integrator === "RKN64" || scenario.integrator === "RKN12" ? (
+          <Fragment>
+            {" "}
+            <label className="top">
+              Error Tolerance
+              <Tooltip
+                position="left"
+                content="The tolerated error according to which delta time is adapted when the RKN12 or RKN64 integrator is used. The lower the error tolerance, the more accurate the simulation will be, and vice versa."
+              />
+            </label>
+            <Slider
+              payload={{ key: "tol" }}
+              value={scenario.tol}
+              callback={modifyScenarioProperty}
+              max={0.00000000000000000000000001}
+              min={0.0000000000000000000000000000001}
+              step={0.000000000000000000000000000000000000000000000000001}
+            />
+          </Fragment>
+        ) : (
+          <Fragment>
+            <label className="top">
+              Delta Time
+              <Tooltip
+                position="left"
+                content="The time that elapses per iteration of the simulation. The lower the time step, the more accurate the simulation will be, and vice versa."
+              />
+            </label>
+            <Slider
+              payload={{ key: "dt" }}
+              value={scenario.dt}
+              callback={modifyScenarioProperty}
+              max={scenario.maxDt}
+              min={scenario.minDt}
+              step={scenario.dt / 1000}
+            />{" "}
+          </Fragment>
+        )}
+      </div>
       <ReactCSSTransitionGroup
         transitionName="fade"
         transitionEnterTimeout={250}

@@ -101,7 +101,7 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
                 <NavItem
                   active={
                     kebabCase(pageContext.currentPageName) ===
-                      kebabCase(category.fieldValue) 
+                    kebabCase(category.fieldValue)
                   }
                 >
                   {category.fieldValue}
