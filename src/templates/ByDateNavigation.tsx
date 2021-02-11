@@ -61,7 +61,7 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
         style={{ position: "fixed", top: 0, bottom: 0, width: "100%" }}
       />
       <Header
-        pageTitle={`Exoplanets ${pageContext.currentPageName}`}
+        pageTitle={`New Scenarios`}
         pageDescription={pageContext.categoryDescription}
         location={location}
         pageType={pageContext.pageType}
