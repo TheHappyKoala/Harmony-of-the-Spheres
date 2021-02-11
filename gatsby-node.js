@@ -83,7 +83,7 @@ exports.createPages = async ({ actions, graphql }) => {
         numPages: numPagesSystemsWithDate,
         background: "Jupiter.jpg",
         categoryDescription:
-          "Thousands of stars with exoplanets orbiting around them have been discovered. Simulate and discover the most remarkable of these exoplanetary systems.",
+          "Gravity simulator scenarios sorted according to the date they were added.",
         currentPage: i + 1,
         currentPageName: "New Scenarios",
         pageType: "navigation"
