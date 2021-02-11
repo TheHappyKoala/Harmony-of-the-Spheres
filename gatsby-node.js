@@ -16,6 +16,7 @@ exports.createPages = async ({ actions, graphql }) => {
         edges {
           node {
             sortOrder
+            publishDate
             id
             name
             type
@@ -57,6 +58,34 @@ exports.createPages = async ({ actions, graphql }) => {
         currentPage: i + 1,
         currentPageName: "Hall of Fame",
         type: "Exoplanets",
+        pageType: "navigation"
+      }
+    });
+  });
+
+  const systemsWithDate = results.data.allScenariosJson.edges.filter(
+    ({ node }) => node.publishDate
+  );
+  const numberOfSystemsWithDate = systemsWithDate.length;
+  const numPagesSystemsWithDate = Math.ceil(
+    numberOfSystemsWithDate / scenariosPerPage
+  );
+
+  [...new Array(numPagesSystemsWithDate)].forEach((page, i) => {
+    const pagePath = `/new-scenarios`;
+    createPage({
+      path: i === 0 ? pagePath : `${pagePath}/${i + 1}`,
+      component: require.resolve(`./src/templates/ByDateNavigation.tsx`),
+      context: {
+        pagePath,
+        limit: scenariosPerPage,
+        skip: i * scenariosPerPage,
+        numPages: numPagesSystemsWithDate,
+        background: "Jupiter.jpg",
+        categoryDescription:
+          "Thousands of stars with exoplanets orbiting around them have been discovered. Simulate and discover the most remarkable of these exoplanetary systems.",
+        currentPage: i + 1,
+        currentPageName: "New Scenarios",
         pageType: "navigation"
       }
     });

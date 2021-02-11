@@ -43,8 +43,8 @@ interface IndexProps {
     currentPage: number;
     currentPageName: string;
     pagePath: string;
-    categoryDescription: string;
     type: string;
+    categoryDescription: string;
     pageType: string;
   };
   location: any;
@@ -68,102 +68,95 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
         image={`https://www.gravitysimulator.org/images/social/${pageContext.currentPageName}.jpg`}
       />
       <section className="scenarios-wrapper">
-        <div>
-          <nav>
-            <Nav
-              css={{
-                borderLeft: "none",
-                borderRight: "none",
-                borderTop: "none",
-                fontWeight: "bold"
-              }}
-            >
-              <Link to={`/`}>
-                <NavItem active={pageContext.currentPageName === "All"}>
-                  All
-                </NavItem>
-              </Link>
-              <Link to={`/new-scenarios`}>
+        <nav>
+          <Nav
+            css={{
+              borderLeft: "none",
+              borderRight: "none",
+              borderTop: "none",
+              fontWeight: "bold"
+            }}
+          >
+            <Link to={`/`}>
+              <NavItem active={pageContext.currentPageName === "All"}>
+                All
+              </NavItem>
+            </Link>
+            <Link to={`/new-scenarios`}>
+              <NavItem active={pageContext.currentPageName === "New Scenarios"}>
+                New Scenarios
+              </NavItem>
+            </Link>
+            <Link to={"/misc/create-new-gravity-simulation"}>
+              <NavItem>Create New Simulation</NavItem>
+            </Link>
+            {categories.map(category => (
+              <Link
+                to={
+                  category.fieldValue !== "Exoplanets"
+                    ? `/${kebabCase(category.fieldValue)}`
+                    : `/${kebabCase(category.fieldValue)}/hall-of-fame`
+                }
+              >
                 <NavItem
-                  active={pageContext.currentPageName === "New Scenarios"}
-                >
-                  New Scenarios
-                </NavItem>
-              </Link>
-              <Link to={"/misc/create-new-gravity-simulation"}>
-                <NavItem>Create New Simulation</NavItem>
-              </Link>
-              {categories.map(category => (
-                <Link
-                  to={
-                    category.fieldValue !== "Exoplanets"
-                      ? `/${kebabCase(category.fieldValue)}`
-                      : `/${kebabCase(category.fieldValue)}/hall-of-fame`
+                  active={
+                    kebabCase(pageContext.currentPageName) ===
+                      kebabCase(category.fieldValue) 
                   }
                 >
+                  {category.fieldValue}
+                </NavItem>
+              </Link>
+            ))}
+          </Nav>
+        </nav>
+
+        {pageContext.type === "Exoplanets" && (
+          <Nav
+            css={{
+              borderLeft: "none",
+              borderRight: "none",
+              borderTop: "none",
+              fontWeight: "bold"
+            }}
+          >
+            <Link to={`/exoplanets/hall-of-fame`}>
+              <NavItem active={pageContext.currentPageName === "Hall of Fame"}>
+                Hall of Fame
+              </NavItem>
+            </Link>
+
+            {["Transit", "Radial Velocity", "Imaging", "Microlensing"].map(
+              discoveryFacility => (
+                <Link to={`/exoplanets/${kebabCase(discoveryFacility)}`}>
                   <NavItem
                     active={
                       kebabCase(pageContext.currentPageName) ===
-                        kebabCase(category.fieldValue) ||
-                      category.fieldValue === "Exoplanets"
+                      kebabCase(discoveryFacility)
                     }
                   >
-                    {category.fieldValue}
+                    {discoveryFacility}
                   </NavItem>
                 </Link>
-              ))}
-            </Nav>
-          </nav>
+              )
+            )}
+          </Nav>
+        )}
 
-          {pageContext.type === "Exoplanets" && (
-            <Nav
-              css={{
-                borderLeft: "none",
-                borderRight: "none",
-                borderTop: "none",
-                fontWeight: "bold"
-              }}
-            >
-              <Link to={`/exoplanets/hall-of-fame`}>
-                <NavItem
-                  active={pageContext.currentPageName === "Hall of Fame"}
-                >
-                  Hall of Fame
-                </NavItem>
-              </Link>
-
-              {["Transit", "Radial Velocity", "Imaging", "Microlensing"].map(
-                discoveryFacility => (
-                  <Link to={`/exoplanets/${kebabCase(discoveryFacility)}`}>
-                    <NavItem
-                      active={
-                        kebabCase(pageContext.currentPageName) ===
-                        kebabCase(discoveryFacility)
-                      }
-                    >
-                      {discoveryFacility}
-                    </NavItem>
-                  </Link>
-                )
-              )}
-            </Nav>
-          )}
-
-          {pageContext.numPages > 1 && (
-            <Pagination
-              pagination={{
-                start: pageContext.skip,
-                end: pageContext.currentPage * pageContext.limit,
-                count: pageContext.numPages,
-                page: pageContext.currentPage,
-                path: pageContext.pagePath
-              }}
-              itemsPerPage={pageContext.limit}
-            />
-          )}
-        </div>
+        {pageContext.numPages > 1 && (
+          <Pagination
+            pagination={{
+              start: pageContext.skip,
+              end: pageContext.currentPage * pageContext.limit,
+              count: pageContext.numPages,
+              page: pageContext.currentPage,
+              path: pageContext.pagePath
+            }}
+            itemsPerPage={pageContext.limit}
+          />
+        )}
         <section className="navigation-scenarios-title">
-          <h2>{`Exoplanets - ${pageContext.currentPageName}`}</h2>
+          <h2>New Scenarios</h2>
         </section>
         <div className="scenarios-gallery">
           {scenarios.map(({ node }) => (
@@ -183,17 +176,15 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
 export const pageQuery = graphql`
   query($limit: Int, $skip: Int, $background: String) {
     scenarios: allScenariosJson(
-      filter: { hallOfFame: { eq: true } }
-      sort: { order: ASC, fields: [sortOrder] }
+      filter: { hasPublishDate: { eq: true } }
+      sort: { order: DESC, fields: [publishDate] }
       limit: $limit
       skip: $skip
     ) {
       edges {
         node {
           type
-          discoveryFacility
           name
-          pl_pnum
           fields {
             scenarioImage {
               childImageSharp {

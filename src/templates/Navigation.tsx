@@ -82,6 +82,11 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
                 All
               </NavItem>
             </Link>
+            <Link to={`/new-scenarios`}>
+              <NavItem active={pageContext.currentPageName === "New Scenarios"}>
+                New Scenarios
+              </NavItem>
+            </Link>
             <Link to={"/misc/create-new-gravity-simulation"}>
               <NavItem>Create New Simulation</NavItem>
             </Link>
