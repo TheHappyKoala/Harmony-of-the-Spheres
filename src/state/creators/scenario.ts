@@ -66,11 +66,17 @@ export const addMass = (
 ) => {
   const scenario = getState().scenario;
 
-  const primary = getObjFromArrByKeyValuePair(
-    scenario.masses,
-    "name",
-    payload.primary
-  );
+  let primary;
+
+  if (payload.primary !== "Barycenter") {
+    primary = getObjFromArrByKeyValuePair(
+      scenario.masses,
+      "name",
+      payload.primary
+    );
+  } else {
+    primary = scenario.barycenterData;
+  }
 
   dispatch({
     type: ADD_MASS,
@@ -186,16 +192,15 @@ export const getTrajectory = (
           elapsedTime: scenario.elapsedTime,
           masses: rotatedScenario,
           departure: scenario.elapsedTime,
-          arrival:
-            scenario.elapsedTime +
-            (scenario.trajectoryTargetArrival - scenario.elapsedTime),
+          arrival: scenario.elapsedTime + scenario.trajectoryTargetArrival,
           target: scenario.trajectoryTarget,
           primary: referenceMass.name,
           a: scenario.a,
           e: scenario.e,
           i: scenario.i,
           w: scenario.w,
-          o: scenario.o
+          o: scenario.o,
+          tof: scenario.trajectoryTargetArrival
         });
       }
     );

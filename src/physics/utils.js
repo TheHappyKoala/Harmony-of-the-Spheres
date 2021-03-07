@@ -148,12 +148,15 @@ export function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export function setBarycenter(masses, p = new H3()) {
+export function setBarycenter(masses, p = new H3(), v = new H3()) {
   const massesLen = masses.length;
   let systemMass = 0;
 
   p.set({ x: 0, y: 0, z: 0 });
+  v.set({ x: 0, y: 0, z: 0 });
+
   const massPosition = new H3();
+  const massVelocity = new H3();
 
   for (let i = 0; i < massesLen; i++) {
     const mass = masses[i];
@@ -164,12 +167,19 @@ export function setBarycenter(masses, p = new H3()) {
         .multiplyByScalar(mass.m)
     );
 
+    v.add(
+      massVelocity
+        .set({ x: mass.vx, y: mass.vy, z: mass.vz })
+        .multiplyByScalar(mass.m)
+    );
+
     systemMass += mass.m;
   }
 
   p.divideByScalar(systemMass);
+  v.divideByScalar(systemMass);
 
-  return { m: systemMass, x: p.x, y: p.y, z: p.z, vx: 0, vy: 0, vz: 0 };
+  return { m: systemMass, x: p.x, y: p.y, z: p.z, vx: v.x, vy: v.y, vz: v.z };
 }
 
 export const clamp = (x, min, max) => {

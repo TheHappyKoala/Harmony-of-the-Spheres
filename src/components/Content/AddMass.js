@@ -91,6 +91,20 @@ export default class extends Component {
               optionsWrapperCssClass="options"
               dynamicChildrenLen={this.props.masses.length}
             >
+              <div
+                data-name="barycenter"
+                key="barycenter"
+                onClick={() =>
+                  this.props.modifyScenarioProperty(
+                    { key: "primary", value: "Barycenter" },
+                    { key: "rotatingReferenceFrame", value: "Barycenter" },
+                    { key: "cameraPosition", value: "Free" },
+                    { key: "cameraFocus", value: "Barycenter" }
+                  )
+                }
+              >
+                Barycenter
+              </div>
               {this.props.masses.map(mass => (
                 <div
                   data-name={mass.name}
@@ -225,7 +239,7 @@ export default class extends Component {
           <Fragment>
             <p>Start by adding a star to your simulation.</p>
             <Dropdown
-              selectedOption="Select a star"
+              selectedOption={this.state.texture}
               dropdownWrapperCssClassName="tabs-dropdown-wrapper"
               selectedOptionCssClassName="selected-option"
               optionsWrapperCssClass="options"

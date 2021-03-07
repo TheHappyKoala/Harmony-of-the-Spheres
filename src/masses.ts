@@ -1,5 +1,17 @@
 export default [
   {
+    name: "Sun",
+    m: 1,
+    radius: 10270,
+    massType: "star",
+    bump: false,
+    luminosity: 1,
+    temperature: 5778,
+    tilt: 0,
+    spacecraft: false,
+    orbitalPeriod: 0
+  },
+  {
     m: 3.69396868e-8,
     radius: 22.93577981651376,
     tilt: -1.54,
@@ -419,18 +431,6 @@ export default [
     bump: false,
     luminosity: 1,
     temperature: 3600,
-    tilt: 0,
-    spacecraft: false,
-    orbitalPeriod: 0
-  },
-  {
-    name: "Sun",
-    m: 1,
-    radius: 10270,
-    massType: "star",
-    bump: false,
-    luminosity: 1,
-    temperature: 5778,
     tilt: 0,
     spacecraft: false,
     orbitalPeriod: 0

@@ -157,11 +157,17 @@ const scene = {
     if (scenario.isMassBeingAdded) {
       this.addMassTrajectory.visible = true;
 
-      const primary = getObjFromArrByKeyValuePair(
-        scenario.masses,
-        "name",
-        scenario.primary
-      );
+      let primary;
+
+      if (scenario.primary !== "Barycenter") {
+        primary = getObjFromArrByKeyValuePair(
+          scenario.masses,
+          "name",
+          scenario.primary
+        );
+      } else {
+        primary = scenario.barycenterData;
+      }
 
       const a = scenario.a;
       const e = scenario.e;
@@ -333,7 +339,7 @@ const scene = {
 
     if (this.scenario.playing) this.system.iterate();
 
-    setBarycenter(
+    const barycenterPosition = setBarycenter(
       this.scenario.systemBarycenter
         ? this.system.masses
         : this.system.masses
@@ -509,6 +515,10 @@ const scene = {
           value:
             this.camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) /
             this.scenario.scale
+        },
+        {
+          key: "barycenterData",
+          value: barycenterPosition
         }
       )
     );

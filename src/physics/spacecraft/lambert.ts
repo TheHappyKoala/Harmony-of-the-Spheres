@@ -1,6 +1,8 @@
 import H3 from "../vectors";
 import { getDistanceParams } from "../utils";
 import { getObjFromArrByKeyValuePair } from "../../utils";
+import { clamp } from "../utils";
+
 function hyp2f1b(x: number): number {
   let res = 1.0;
   let resOld = 1.0;
@@ -397,6 +399,7 @@ export function stateToKepler(
   }
 
   let trueAnom = Math.acos(reDot / (e * rNorm));
+
   if (rvDot < 0) {
     trueAnom = 2 * Math.PI - trueAnom;
   }
@@ -548,11 +551,22 @@ function solveKeplerEq(meanAnom: number, e: number, tol = 1e-14): number {
   // Solves Keplers third law M = E - e*sin(E) for E using Newton-Raphson
   let E = meanAnom;
   let E_last = E + 1e3 * tol; // make sure we enter the while loop
-  while (Math.abs(E - E_last) > tol) {
-    E_last = E;
-    if (e < 1) {
+  if (e < 1) {
+    while (Math.abs(E - E_last) > tol) {
+      E_last = E;
       E = E - (E - e * Math.sin(E) - meanAnom) / (1 - e * Math.cos(E));
-    } else if (e > 1) {
+    }
+  } else if (e > 1) {
+    let s = Math.sign(meanAnom);
+    let E0 = 1e-3 * s;
+    while (Math.sign(meanAnom - e * Math.sinh(E0) + E0) == s) {
+      // Find a sign change and use it as inital value
+      E0 += s;
+    }
+    E = E0;
+    E_last = E + 1e3 * tol; // make sure we enter the while loop
+    while (Math.abs(E - E_last) > tol) {
+      E_last = E;
       E = E + (meanAnom - e * Math.sinh(E) + E) / (e * Math.cosh(E) - 1);
     }
   }
@@ -572,6 +586,7 @@ export function propagateOrbitalElements(
     meanAnomNew = orb.meanAnom + dt * mean_motion;
   }
   const eccAnomNew = solveKeplerEq(meanAnomNew, orb.e);
+
   let trueAnomNew = 0;
   if (orb.e < 1) {
     trueAnomNew =

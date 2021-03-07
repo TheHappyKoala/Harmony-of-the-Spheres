@@ -8,7 +8,10 @@ import Camera from "./Camera";
 import Graphics2D, { drawMarkerLabel, drawMassLabel } from "./Graphics2D";
 import ManifestationsService from "./ManifestationsService";
 import drawManifestation from "./drawManifestation";
-import { constructSOITree } from "../physics/spacecraft/lambert";
+import {
+  constructSOITree,
+  findCurrentSOI
+} from "../physics/spacecraft/lambert";
 
 const TWEEN = require("@tweenjs/tween.js");
 
@@ -188,7 +191,7 @@ const scene = {
 
         const velocity = new THREE.Vector3(1, 0, 0)
           .applyQuaternion(main.quaternion)
-          .multiplyScalar(0.00001);
+          .multiplyScalar(0.0005);
 
         mass.vx += velocity.x;
         mass.vy += velocity.y;

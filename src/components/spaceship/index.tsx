@@ -16,6 +16,7 @@ import {
 import { getObjFromArrByKeyValuePair } from "../../utils";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import Modal from "../Modal";
+import NumberPicker from "../NumberPicker";
 
 import ThrustControls from "./ThrustControls";
 
@@ -76,6 +77,10 @@ export default ({
         scenario.masses
       );
 
+      if (currentSOI.name !== spacecraft.currentSOI.name && currentSOI.name === "Sun") {
+        getTrajectory(spacecraft.tree, spacecraft.currentSOI);
+      }
+
       const orbitalElements = stateToKepler(
         {
           x: currentSOI.x - spacecraftMass.x,
@@ -105,6 +110,10 @@ export default ({
         });
       }
 
+      if (false) {
+        getTrajectory(spacecraft.tree, spacecraft.currentSOI);
+      }
+
       setSpacecraft({
         ...spacecraft,
         orbitalElements,
@@ -123,7 +132,7 @@ export default ({
         key: "soi",
         value: name
       });
-    }, 500);
+    }, 16);
     return () => {
       clearTimeout(timer);
     };
@@ -272,6 +281,15 @@ export default ({
         modifyScenarioProperty={modifyScenarioProperty}
         thrustOn={scenario.thrustOn}
       />
+      <div className="number-picker-wrapper">
+        <NumberPicker
+          numbers={[5.28496533062743064e-10, 0.00000001, 0.000001, 0.00001, 0.0001]}
+          callback={modifyScenarioProperty}
+          icon="fas fa-chevron-right"
+          payload={{ key: "dt" }}
+          payloadKey="value"
+        />
+      </div>
     </Fragment>
   );
 };
