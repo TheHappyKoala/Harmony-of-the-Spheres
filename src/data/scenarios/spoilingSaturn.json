@@ -25,18 +25,54 @@
   },
   "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Saturn",
   "particles": {
-    "max": 60000,
+    "max": 110000,
     "softening": 0,
-    "size": 40,
+    "size": 30,
     "shapes": [
       {
         "primary": "Saturn",
         "type": "getRingParticle",
         "flatLand": true,
         "tilt": [-26.73, 0, 0],
-        "number": 50000,
-        "minD": 0.0006749650466666667,
-        "maxD": 0.00111244757
+        "number": 4000,
+        "minD": 0.00044719888,
+        "maxD": 0.00049806859
+      },
+      {
+        "primary": "Saturn",
+        "type": "getRingParticle",
+        "flatLand": true,
+        "tilt": [-26.73, 0, 0],
+        "number": 7500,
+        "minD": 0.000499057905,
+        "maxD": 0.00061498202
+      },
+      {
+        "primary": "Saturn",
+        "type": "getRingParticle",
+        "flatLand": true,
+        "tilt": [-26.73, 0, 0],
+        "number": 35000,
+        "minD": 0.00061498202,
+        "maxD": 0.000785973754
+      },
+      {
+        "primary": "Saturn",
+        "type": "getRingParticle",
+        "flatLand": true,
+        "tilt": [-26.73, 0, 0],
+        "number": 20000,
+        "minD": 0.000816656009,
+        "maxD": 0.0009142844036
+      },
+      {
+        "primary": "Saturn",
+        "type": "getRingParticle",
+        "flatLand": true,
+        "tilt": [-26.73, 0, 0],
+        "number": 4000,
+        "minD": 0.000937045423,
+        "maxD": 0.00094373001012226841264
       }
     ]
   },
