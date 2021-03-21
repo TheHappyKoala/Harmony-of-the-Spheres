@@ -1,9 +1,4 @@
-import React, {
-  ReactElement,
-  Fragment,
-  useState,
-  useCallback
-} from "react";
+import React, { ReactElement, Fragment, useState, useCallback } from "react";
 import { navigate } from "gatsby";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import * as scenarioActionCreators from "../../state/creators/scenario";
@@ -156,6 +151,7 @@ export default ({
             masses={scenario.masses}
             addMass={addMass}
             modifyScenarioProperty={modifyScenarioProperty}
+            massTypeToAdd={scenario.massTypeToAdd}
           />
         </div>
       </Tabs>

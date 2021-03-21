@@ -71,8 +71,7 @@ export default function worker(self) {
     const [spacecraft] = masses;
     let targetMass = getObjFromArrByKeyValuePair(masses, "name", target);
 
-    let primaryM = getObjFromArrByKeyValuePair(masses, "name", primary)
-      .m;
+    let primaryM = getObjFromArrByKeyValuePair(masses, "name", primary).m;
 
     const pm = getObjFromArrByKeyValuePair(masses, "name", primary);
 
@@ -128,7 +127,7 @@ export default function worker(self) {
           x: velocities.finalVel.x,
           y: velocities.finalVel.y,
           z: velocities.finalVel.z,
-          p: { ...targetMass, t: 0 }
+          p: { ...targetMass, t: arrival }
         }
       ]
     });

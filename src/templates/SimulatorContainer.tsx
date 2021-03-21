@@ -140,6 +140,7 @@ export const pageQuery = graphql`
       cameraFocus
       cameraPosition
       isMassBeingAdded
+      massTypeToAdd
       primary
       a
       e

@@ -8,6 +8,7 @@ import Camera from "./Camera";
 import Graphics2D, { drawMarkerLabel, drawMassLabel } from "./Graphics2D";
 import ManifestationsService from "./ManifestationsService";
 import drawManifestation from "./drawManifestation";
+import { degreesToRadians } from "../physics/utils";
 import {
   constructSOITree,
   findCurrentSOI
@@ -186,12 +187,12 @@ const scene = {
           drawMassLabel
         );
 
-      if (mass.spacecraft && this.scenario.thrustOn && this.scenario.playing) {
-        const main = massManifestation.getObjectByName("main");
+      const main = massManifestation.getObjectByName("main");
 
+      if (mass.spacecraft && this.scenario.thrustOn && this.scenario.playing) {
         const velocity = new THREE.Vector3(1, 0, 0)
           .applyQuaternion(main.quaternion)
-          .multiplyScalar(0.0005);
+          .multiplyScalar(0.005);
 
         mass.vx += velocity.x;
         mass.vy += velocity.y;

@@ -110,6 +110,7 @@ export const setScenario = (scenario: ScenarioState): ScenarioActionTypes => {
 export const getTrajectory = (
   soiTree: SOITree,
   currentSOI: MassType,
+  correction = false,
   applyTrajectory = true
 ): ThunkAction<void, AppState, void, Action> => async (
   dispatch: Dispatch<ScenarioActionTypes>,
@@ -192,7 +193,9 @@ export const getTrajectory = (
           elapsedTime: scenario.elapsedTime,
           masses: rotatedScenario,
           departure: scenario.elapsedTime,
-          arrival: scenario.elapsedTime + scenario.trajectoryTargetArrival,
+          arrival: correction
+            ? scenario.trajectoryRendevouz.p.t
+            : scenario.elapsedTime + scenario.trajectoryTargetArrival,
           target: scenario.trajectoryTarget,
           primary: referenceMass.name,
           a: scenario.a,
@@ -200,7 +203,9 @@ export const getTrajectory = (
           i: scenario.i,
           w: scenario.w,
           o: scenario.o,
-          tof: scenario.trajectoryTargetArrival
+          tof: correction
+            ? scenario.trajectoryTargetArrival - scenario.elapsedTime
+            : scenario.trajectoryTargetArrival
         });
       }
     );
@@ -237,7 +242,15 @@ export const getTrajectory = (
   }
 
   modifyScenarioProperty(
-    { key: "trajectoryRendevouz", value: rendevouz },
+    {
+      key: "trajectoryRendevouz",
+      value: correction
+        ? {
+            ...rendevouz,
+            p: { ...rendevouz.p, t: scenario.trajectoryRendevouz.p.t }
+          }
+        : rendevouz
+    },
     { key: "playing", value: originalPlayState },
     { key: "trails", value: originalTrailsState }
   )(dispatch, getState);

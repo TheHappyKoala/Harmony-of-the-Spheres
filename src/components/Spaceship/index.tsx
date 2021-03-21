@@ -59,7 +59,8 @@ export default ({
     scenario: scenario.name,
     orbitalElements: { a: 0, e: 0, i: 0, argP: 0, lAn: 0 },
     targetSOI: 0,
-    velocity: 0
+    velocity: 0,
+    relativeVelocity: 0
   });
 
   useEffect(() => {
@@ -77,8 +78,11 @@ export default ({
         scenario.masses
       );
 
-      if (currentSOI.name !== spacecraft.currentSOI.name && currentSOI.name === "Sun") {
-        getTrajectory(spacecraft.tree, spacecraft.currentSOI);
+      if (
+        currentSOI.name !== spacecraft.currentSOI.name &&
+        currentSOI.name === "Sun"
+      ) {
+        getTrajectory(spacecraft.tree, spacecraft.currentSOI, true);
       }
 
       const orbitalElements = stateToKepler(
@@ -108,10 +112,13 @@ export default ({
           key: "rotatingReferenceFrame",
           value: name
         });
-      }
 
-      if (false) {
-        getTrajectory(spacecraft.tree, spacecraft.currentSOI);
+        if (name === scenario.trajectoryTarget) {
+          modifyScenarioProperty({
+            key: "dt",
+            value: 5.28496533062743064e-10
+          });
+        }
       }
 
       setSpacecraft({
@@ -125,7 +132,18 @@ export default ({
             y: spacecraftMass.vy,
             z: spacecraftMass.vz
           }).toFixed(5)
-        )
+        ),
+        relativeVelocity:
+          getVelocityMagnitude({
+            x: currentSOI.vx,
+            y: currentSOI.vy,
+            z: currentSOI.vz
+          }) -
+          getVelocityMagnitude({
+            x: spacecraftMass.vx,
+            y: spacecraftMass.vy,
+            z: spacecraftMass.vz
+          })
       });
 
       modifyScenarioProperty({
@@ -283,7 +301,13 @@ export default ({
       />
       <div className="number-picker-wrapper">
         <NumberPicker
-          numbers={[5.28496533062743064e-10, 0.00000001, 0.000001, 0.00001, 0.0001]}
+          numbers={[
+            5.28496533062743064e-10,
+            0.00000001,
+            0.000001,
+            0.00001,
+            0.0001
+          ]}
           callback={modifyScenarioProperty}
           icon="fas fa-chevron-right"
           payload={{ key: "dt" }}
