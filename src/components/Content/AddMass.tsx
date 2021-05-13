@@ -11,6 +11,16 @@ const bodyTypes = [...new Set(bodies.map(body => body.bodyType))].filter(
   Boolean
 );
 
+const findAvailableMassName = (name, masses, number = 1) => {
+  const nameToTest = `${name}-[${number}]`;
+
+  if (!masses.find(mass => mass.name === nameToTest)) {
+    return nameToTest;
+  } else {
+    return findAvailableMassName(name, masses, number + 1);
+  }
+};
+
 export default props => {
   useEffect(() => {
     props.modifyScenarioProperty({
@@ -19,32 +29,46 @@ export default props => {
     });
   }, [props.massTypeToAdd]);
 
-  const addMassCallback = useCallback(
-    () =>
-      props.addMass({
-        primary: props.primary,
-        secondary: {
-          name: `Custom Mass ${Date.now()}`,
-          trailVertices: 3000,
-          color: getRandomColor(),
-          a: props.a,
-          e: props.e,
-          w: props.w,
-          i: props.i,
-          o: props.o,
-          x: 0,
-          y: 0,
-          z: 0,
-          vx: 0,
-          vy: 0,
-          vz: 0,
-          customCameraPosition: { x: 0, y: 0, z: 50 },
-          texture: props.massToAdd.name,
-          ...props.massToAdd
-        }
-      }),
-    [props.massToAdd]
-  );
+  const [massName, setMassName] = useState("");
+
+  const addMassCallback = useCallback(() => {
+    const massAlreadyExists = props.masses.find(mass => mass.name === massName);
+
+    let name;
+
+    if (massAlreadyExists) {
+      name = findAvailableMassName(massName, props.masses);
+    } else {
+      name = massName;
+    }
+
+    props.addMass({
+      primary: props.primary,
+      secondary: {
+        ...props.massToAdd,
+        name,
+        trailVertices: 3000,
+        color: getRandomColor(),
+        a: props.a,
+        e: props.e,
+        w: props.w,
+        i: props.i,
+        o: props.o,
+        x: 0,
+        y: 0,
+        z: 0,
+        vx: 0,
+        vy: 0,
+        vz: 0,
+        customCameraPosition: { x: 0, y: 0, z: 50 },
+        texture: props.massToAdd.name
+      }
+    });
+  }, [props.massToAdd, massName, props.masses]);
+
+  const nameFieldCallback = useCallback(e => setMassName(e.target.value), [
+    setMassName
+  ]);
 
   return (
     <Fragment>
@@ -97,6 +121,18 @@ export default props => {
           </div>
         ))}
       </Dropdown>
+      <label className="top">
+        Mass Name{" "}
+        <Tooltip
+          position="left"
+          content="The name of the mass that you are adding to the simulation."
+        />
+      </label>
+      <input
+        type="text"
+        className="box text-input-field"
+        onInput={nameFieldCallback}
+      />
       <label className="top">
         Semi-major Axis{" "}
         <Tooltip
