@@ -133,6 +133,18 @@ export const pageQuery = graphql`
       massBeingModified
       trails
       labels
+      massToAdd {
+        name
+        m
+        radius
+        massType
+        bump
+        luminosity
+        temperature
+        tilt
+        spacecraft
+        orbitalPeriod
+      }
       habitableZone
       referenceOrbits
       logarithmicDepthBuffer

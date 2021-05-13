@@ -151,6 +151,7 @@ export default ({
             masses={scenario.masses}
             addMass={addMass}
             modifyScenarioProperty={modifyScenarioProperty}
+            massToAdd={scenario.massToAdd}
             massTypeToAdd={scenario.massTypeToAdd}
           />
         </div>

@@ -9,7 +9,8 @@ export default [
     temperature: 5778,
     tilt: 0,
     spacecraft: false,
-    orbitalPeriod: 0
+    orbitalPeriod: 0,
+    bodyType: "Star"
   },
   {
     m: 3.69396868e-8,
@@ -433,7 +434,8 @@ export default [
     temperature: 3600,
     tilt: 0,
     spacecraft: false,
-    orbitalPeriod: 0
+    orbitalPeriod: 0,
+    bodyType: "Star"
   },
   {
     name: "Kepler-62",
@@ -445,7 +447,8 @@ export default [
     orbitalPeriod: 0,
     m: 0.69,
     radius: 6251.162790697675,
-    temperature: 4925
+    temperature: 4925,
+    bodyType: "Star"
   },
   {
     name: "Sigma Orionis",
@@ -457,7 +460,8 @@ export default [
     temperature: 35000,
     tilt: 0,
     spacecraft: false,
-    orbitalPeriod: 0
+    orbitalPeriod: 0,
+    bodyType: "Star"
   },
   {
     name: "Proxima Centauri",
@@ -469,6 +473,7 @@ export default [
     luminosity: 1,
     tilt: 0,
     spacecraft: false,
-    orbitalPeriod: 0
+    orbitalPeriod: 0,
+    bodyType: "Star"
   }
 ];
