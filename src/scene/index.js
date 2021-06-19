@@ -523,6 +523,33 @@ const scene = {
       )
     );
 
+    if (this.scenario.tcmsData.length) {
+      const [tcm] = this.scenario.tcmsData;
+
+      if (tcm.t <= this.scenario.elapsedTime) {
+        let events = [];
+
+        for (const key in tcm)
+          if (this.scenario.hasOwnProperty(key)) {
+            events = [...events, { key, value: tcm[key] }];
+
+            if (key === 'dt') this.system.dt = tcm[key];
+          }
+
+        this.scenario.tcmsData.shift();
+
+        store.dispatch(
+          modifyScenarioProperty(
+            {
+              key: 'tcmsData',
+              value: this.scenario.tcmsData
+            },
+            ...events
+          )
+        );
+      }
+    }
+
     TWEEN.update();
     this.requestAnimationFrameId = requestAnimationFrame(this.loop);
     this.renderer.render(this.scene, this.camera);

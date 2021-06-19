@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import * as scenarioActionCreators from "../state/creators/scenario";
 import Simulator from "../components/Simulator/Simulator";
 import Head from "../components/Head";
-
+import { convertMillisecondsToYears, subtractDateFromAnotherDate } from '../utils'
 interface ScenarioProps {
   data: {
     scenariosJson: ScenarioState;
@@ -39,7 +39,26 @@ const Scenario = ({
   const scenarioFromData = data.scenariosJson;
 
   useEffect(() => {
-    setScenario(scenarioFromData);
+    const processedScenario = {
+      ...scenarioFromData,
+      tcmsData:
+      scenario.tcmsData !== undefined
+        ? scenario.tcmsData.map(tcmData => ({
+            ...tcmData,
+            t:
+              tcmData.t instanceof Date
+                ? convertMillisecondsToYears(
+                    subtractDateFromAnotherDate(
+                      new Date(tcmData.t),
+                      new Date(scenario.missionStart)
+                    )
+                  )
+                : tcmData.t
+          }))
+        : false,
+    };
+    
+    setScenario(processedScenario);
   }, [scenarioFromData.name]);
 
   return (
@@ -129,6 +148,13 @@ export const pageQuery = graphql`
       discoveryFacility
       velMin
       velMax
+      tcmsData {
+        t
+        dt
+        labels
+        trails
+        cameraFocus
+      }
       velStep
       massBeingModified
       trails
