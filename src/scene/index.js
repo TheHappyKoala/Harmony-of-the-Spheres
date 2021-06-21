@@ -408,7 +408,7 @@ const scene = {
         SOITree
       );
 
-      if (this.scenario.labels)
+      if (this.scenario.labels && this.scenario.cameraPosition !== mass.name)
         this.graphics2D.drawLabel(
           mass.name,
           this.utilityVector.set(
