@@ -39,26 +39,7 @@ const Scenario = ({
   const scenarioFromData = data.scenariosJson;
 
   useEffect(() => {
-    const processedScenario = {
-      ...scenarioFromData,
-      tcmsData:
-      scenario.tcmsData !== undefined
-        ? scenario.tcmsData.map(tcmData => ({
-            ...tcmData,
-            t:
-              tcmData.t instanceof Date
-                ? convertMillisecondsToYears(
-                    subtractDateFromAnotherDate(
-                      new Date(tcmData.t),
-                      new Date(scenario.missionStart)
-                    )
-                  )
-                : tcmData.t
-          }))
-        : false,
-    };
-    
-    setScenario(processedScenario);
+    setScenario(scenarioFromData);
   }, [scenarioFromData.name]);
 
   return (
