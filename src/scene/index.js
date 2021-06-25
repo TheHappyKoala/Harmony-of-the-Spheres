@@ -523,7 +523,7 @@ const scene = {
       )
     );
 
-    if (this.scenario.tcmsData.length) {
+    if (this.scenario?.tcmsData?.length) {
       const [tcm] = this.scenario.tcmsData;
 
       if (tcm.t <= this.scenario.elapsedTime) {
