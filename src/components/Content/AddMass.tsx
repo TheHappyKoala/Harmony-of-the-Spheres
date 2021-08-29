@@ -261,7 +261,7 @@ export default props => {
             className="box text-input-field"
             onInput={nameFieldCallback}
           />
-          {props.masses?.length && (
+          {!!props.masses?.length && (
             <Fragment>
               <label className="top">
                 Semi-major Axis{" "}
