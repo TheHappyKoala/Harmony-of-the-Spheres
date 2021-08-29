@@ -261,83 +261,86 @@ export default props => {
             className="box text-input-field"
             onInput={nameFieldCallback}
           />
-          <label className="top">
-            Semi-major Axis{" "}
-            <Tooltip
-              position="left"
-              content="The semi-major axis, a, is half of the longest diameter of the ellipse the constitutes the shape of the orbit. "
-            />
-          </label>
-          <Slider
-            payload={{ key: "a" }}
-            value={props.a}
-            callback={props.modifyScenarioProperty}
-            max={props.maximumDistance}
-            min={0}
-            shouldUpdateOnMaxMinChange={true}
-            step={props.maximumDistance / 200}
-          />
-          <label className="top">
-            Eccentricity{" "}
-            <Tooltip
-              position="left"
-              content="The orbital element that determines the shape of the orbit. Bound orbits always have a value between 0 and 1, a value of 0 means the orbit has the shape of a perfect circle."
-            />
-          </label>
-          <Slider
-            payload={{ key: "e" }}
-            value={props.e}
-            callback={props.modifyScenarioProperty}
-            max={1}
-            min={0}
-            step={0.001}
-          />
-          <label className="top">
-            Argument of Periapsis{" "}
-            <Tooltip
-              position="left"
-              content="The angle, starting from the center of the orbit, between an orbiting body's periapsis, the point in space where it is the closest to the primary it is orbiting, and its ascending node."
-            />
-          </label>
-          <Slider
-            payload={{ key: "w" }}
-            value={props.w}
-            callback={props.modifyScenarioProperty}
-            max={360}
-            min={0}
-            step={0.1}
-          />
-          <label className="top">
-            Inclination{" "}
-            <Tooltip
-              position="left"
-              content="Orbital inclination is the angle between the plane of an orbit and an arbitrarily defined equator. If a body has an orbital inclination of 90 degrees, orbits from the geographic South to North pole of its primary."
-            />
-          </label>
-          <Slider
-            payload={{ key: "i" }}
-            value={props.i}
-            callback={props.modifyScenarioProperty}
-            max={360}
-            min={0}
-            step={0.1}
-          />
-          <label className="top">
-            Ascending Node{" "}
-            <Tooltip
-              position="left"
-              content="The ascending node is the angular position at which a celestial body passes from the southern side of an arbitrarily defined reference plane to the northern side."
-            />
-          </label>
-          <Slider
-            payload={{ key: "o" }}
-            value={props.o}
-            callback={props.modifyScenarioProperty}
-            max={360}
-            min={0}
-            step={0.1}
-          />
-
+          {props.masses?.length && (
+            <Fragment>
+              <label className="top">
+                Semi-major Axis{" "}
+                <Tooltip
+                  position="left"
+                  content="The semi-major axis, a, is half of the longest diameter of the ellipse the constitutes the shape of the orbit. "
+                />
+              </label>
+              <Slider
+                payload={{ key: "a" }}
+                value={props.a}
+                callback={props.modifyScenarioProperty}
+                max={props.maximumDistance}
+                min={0}
+                shouldUpdateOnMaxMinChange={true}
+                step={props.maximumDistance / 200}
+              />
+              <label className="top">
+                Eccentricity{" "}
+                <Tooltip
+                  position="left"
+                  content="The orbital element that determines the shape of the orbit. Bound orbits always have a value between 0 and 1, a value of 0 means the orbit has the shape of a perfect circle."
+                />
+              </label>
+              <Slider
+                payload={{ key: "e" }}
+                value={props.e}
+                callback={props.modifyScenarioProperty}
+                max={1}
+                min={0}
+                step={0.001}
+              />
+              <label className="top">
+                Argument of Periapsis{" "}
+                <Tooltip
+                  position="left"
+                  content="The angle, starting from the center of the orbit, between an orbiting body's periapsis, the point in space where it is the closest to the primary it is orbiting, and its ascending node."
+                />
+              </label>
+              <Slider
+                payload={{ key: "w" }}
+                value={props.w}
+                callback={props.modifyScenarioProperty}
+                max={360}
+                min={0}
+                step={0.1}
+              />
+              <label className="top">
+                Inclination{" "}
+                <Tooltip
+                  position="left"
+                  content="Orbital inclination is the angle between the plane of an orbit and an arbitrarily defined equator. If a body has an orbital inclination of 90 degrees, orbits from the geographic South to North pole of its primary."
+                />
+              </label>
+              <Slider
+                payload={{ key: "i" }}
+                value={props.i}
+                callback={props.modifyScenarioProperty}
+                max={360}
+                min={0}
+                step={0.1}
+              />
+              <label className="top">
+                Ascending Node{" "}
+                <Tooltip
+                  position="left"
+                  content="The ascending node is the angular position at which a celestial body passes from the southern side of an arbitrarily defined reference plane to the northern side."
+                />
+              </label>
+              <Slider
+                payload={{ key: "o" }}
+                value={props.o}
+                callback={props.modifyScenarioProperty}
+                max={360}
+                min={0}
+                step={0.1}
+              />
+            </Fragment>
+          )}
           <label className="top">
             Mass Template
             <Tooltip

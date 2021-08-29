@@ -36,10 +36,12 @@ const Scenario = ({
   pageContext,
   location
 }: ScenarioProps): ReactElement => {
-  const scenarioFromData = {...data.scenariosJson, sizeAttenuation: true };
+  const scenarioFromData = data.scenariosJson;
 
   useEffect(() => {
-    setScenario(scenarioFromData);
+    const defaults = { sizeAttenuation: true, massTypeToAdd: "Star" };
+
+    setScenario({ ...scenarioFromData, ...defaults });
   }, [scenarioFromData.name]);
 
   return (
