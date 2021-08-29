@@ -4,11 +4,9 @@ import {
   BufferAttribute,
   Points,
   Color,
-  ShaderMaterial,
-  PointsMaterial,
-  AdditiveBlending,
-  TextureLoader
+  ShaderMaterial
 } from "three";
+import particleMaterial from "./particleMaterial";
 
 interface ParticlesManifestationType {
   particles: MassType[];
@@ -95,13 +93,7 @@ export default class extends Object3D {
     geometry.addAttribute("customColor", new BufferAttribute(colors, 3));
     geometry.addAttribute("size", new BufferAttribute(sizes, 1));
 
-    const map = new TextureLoader().load("/textures/particle.png");
-
-    const material = new PointsMaterial({
-      size: this.size,
-      blending: AdditiveBlending,
-      map
-    });
+    const material = particleMaterial(this.type === "Galaxy" ? false : true);
 
     const mesh = new Points(geometry, material);
 

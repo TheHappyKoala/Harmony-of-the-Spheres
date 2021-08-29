@@ -51,6 +51,10 @@ const scene = {
 
     this.particlePhysics = new ParticlePhysics(this.scenario.scale);
 
+    this.oldNumberOfParticleSystmes = this.scenario?.particles.shapes?.length
+      ? this.scenario.particles.shapes.length
+      : 0;
+
     if (this.scenario.particles.shapes)
       ParticleService.addParticleSystems(
         this.scenario.particles.shapes,
@@ -321,6 +325,43 @@ const scene = {
 
     this.system.sync(this.scenario);
 
+    if (this.scenario.particles) {
+      const particleSystemMaterial = this.scene.getObjectByName("system")
+        .material;
+
+      if (
+        !this.scenario.sizeAttenuation &&
+        particleSystemMaterial.uniforms.sizeAttenuation.value
+      ) {
+        particleSystemMaterial.uniforms.sizeAttenuation.value = false;
+      }
+
+      if (
+        this.scenario.sizeAttenuation &&
+        !particleSystemMaterial.uniforms.sizeAttenuation.value
+      ) {
+        particleSystemMaterial.uniforms.sizeAttenuation.value = true;
+      }
+    }
+
+    if (
+      this.oldNumberOfParticleSystmes !==
+      this.scenario.particles?.shapes?.length
+    ) {
+      ParticleService.addParticleSystems(
+        [
+          this.scenario.particles.shapes[
+            this.scenario.particles.shapes.length - 1
+          ]
+        ],
+        this.scenario.masses,
+        this.scenario.g,
+        this.particlePhysics.particles
+      );
+
+      this.oldNumberOfParticleSystmes = this.scenario.particles.shapes.length;
+    }
+
     const { cameraFocus, barycenterMassOne, barycenterMassTwo } = this.scenario;
 
     if (this.scenario.integrator !== this.previous.integrator) {
@@ -533,7 +574,7 @@ const scene = {
           if (this.scenario.hasOwnProperty(key)) {
             events = [...events, { key, value: tcm[key] }];
 
-            if (key === 'dt') this.system.dt = tcm[key];
+            if (key === "dt") this.system.dt = tcm[key];
           }
 
         this.scenario.tcmsData.shift();
@@ -541,7 +582,7 @@ const scene = {
         store.dispatch(
           modifyScenarioProperty(
             {
-              key: 'tcmsData',
+              key: "tcmsData",
               value: this.scenario.tcmsData
             },
             ...events

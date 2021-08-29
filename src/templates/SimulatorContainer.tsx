@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import * as scenarioActionCreators from "../state/creators/scenario";
 import Simulator from "../components/Simulator/Simulator";
 import Head from "../components/Head";
-import { convertMillisecondsToYears, subtractDateFromAnotherDate } from '../utils'
+
 interface ScenarioProps {
   data: {
     scenariosJson: ScenarioState;
@@ -36,7 +36,7 @@ const Scenario = ({
   pageContext,
   location
 }: ScenarioProps): ReactElement => {
-  const scenarioFromData = data.scenariosJson;
+  const scenarioFromData = {...data.scenariosJson, sizeAttenuation: true };
 
   useEffect(() => {
     setScenario(scenarioFromData);
@@ -94,6 +94,7 @@ export const pageQuery = graphql`
       integrator
       dt
       tol
+      sizeAttenuation
       mapMode
       displayGrid
       scale
@@ -152,6 +153,17 @@ export const pageQuery = graphql`
         spacecraft
         orbitalPeriod
       }
+      ringToAdd {
+        primary
+        type
+        flatLand
+      }
+      particleTiltX
+      particleTiltY
+      particleTiltZ
+      particleNumber
+      particleMinD
+      particleMaxD
       habitableZone
       referenceOrbits
       logarithmicDepthBuffer

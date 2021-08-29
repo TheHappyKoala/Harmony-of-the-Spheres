@@ -15,6 +15,7 @@ interface GraphicsProps {
   rotatingReferenceFrame: string;
   cameraFocus: string;
   cameraPosition: string;
+  sizeAttenuation: boolean;
 }
 
 export default ({
@@ -27,7 +28,8 @@ export default ({
   masses,
   rotatingReferenceFrame,
   cameraFocus,
-  cameraPosition
+  cameraPosition,
+  sizeAttenuation
 }: GraphicsProps): ReactElement => (
   <Fragment>
     <h2>Graphics</h2>
@@ -215,6 +217,16 @@ export default ({
             value: !habitableZone ? "Habitable Zone" : cameraFocus
           }
         )
+      }
+    />
+    <Toggle
+      label="Particle Size Attenuation"
+      checked={sizeAttenuation}
+      callback={() =>
+        modifyScenarioProperty({
+          key: "sizeAttenuation",
+          value: !sizeAttenuation
+        })
       }
     />
     <Toggle

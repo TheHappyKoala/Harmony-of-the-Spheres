@@ -122,6 +122,7 @@ export default ({
             cameraFocus={scenario.cameraFocus}
             cameraPosition={scenario.cameraPosition}
             masses={scenario.masses}
+            sizeAttenuation={scenario.sizeAttenuation}
           />
         </div>
         <div data-label="Masses" data-icon="fas fa-globe">
@@ -153,6 +154,14 @@ export default ({
             modifyScenarioProperty={modifyScenarioProperty}
             massToAdd={scenario.massToAdd}
             massTypeToAdd={scenario.massTypeToAdd}
+            particles={scenario.particles}
+            ringToAdd={scenario.ringToAdd}
+            particleNumber={scenario.particleNumber}
+            particleMinD={scenario.particleMinD}
+            particleMaxD={scenario.particleMaxD}
+            particleTiltX={scenario.particleTiltX}
+            particleTiltY={scenario.particleTiltY}
+            particleTiltZ={scenario.particleTiltZ}
           />
         </div>
       </Tabs>
