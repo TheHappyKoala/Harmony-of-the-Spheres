@@ -24,10 +24,11 @@
     "value": 0.000040837813874999996
   },
   "scenarioWikiUrl": "https://en.wikipedia.org/wiki/Saturn",
+  "sizeAttenuation": true,
   "particles": {
     "max": 110000,
     "softening": 0,
-    "size": 30,
+    "size": 80,
     "shapes": [
       {
         "primary": "Saturn",
@@ -78,7 +79,7 @@
   },
   "barycenterMassOne": "Earth",
   "barycenterMassTwo": "Sun",
-  "tol": 1e-4,
+  "tol": 1e-9,
   "maxDt": 1e-3,
   "minDt": 1e-8,
   "drawLineEvery": 6,

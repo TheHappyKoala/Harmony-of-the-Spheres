@@ -12,7 +12,6 @@
   "distMin": -50,
   "rotatingReferenceFrame": "Origo",
   "cameraFocus": "Origo",
-  "particles": { "max": 20000, "size": 10, "rings": [] },
   "massBeingModified": "There are no masses",
   "primary": "There are no masses",
   "maximumDistance": { "name": "Phobos to Mars * 100", "value": 0.00626747 },
@@ -47,6 +46,24 @@
     "spacecraft": false,
     "orbitalPeriod": 0
   },
+  "ringToAdd": {
+    "primary": "Barycenter",
+    "type": "getRingParticle",
+    "flatLand": true
+  },
+  "particles": {
+    "max": 110000,
+    "softening": 0,
+    "size": 30,
+    "shapes": []
+  },
+  "particleTiltX": 0,
+  "sizeAttenuation": false,
+  "particleTiltY": 0,
+  "particleTiltZ": 0,
+  "particleNumber": 0,
+  "particleMinD": 0,
+  "particleMaxD": 0,
   "habitableZone": false,
   "referenceOrbits": false,
   "softeningConstant": 0,
