@@ -34,14 +34,15 @@ export default ({
           <i
             className={icon}
             style={{
-              border: number === selectedNumber ? "3px solid limegreen" : "none"
+              color: number === selectedNumber ? "#fff" : "#a9a9a9"
             }}
             onClick={handleClick(number)}
           />
         ) : (
           <span
             style={{
-              border: number === selectedNumber ? "3px solid limegreen" : "none"
+              border: number === selectedNumber ? "3px solid #a9a9a9" : "none",
+              borderRadius: "100%"
             }}
             onClick={handleClick(number)}
           >

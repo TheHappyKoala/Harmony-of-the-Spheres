@@ -32,6 +32,19 @@ export default props => {
     });
   }, [props.massTypeToAdd]);
 
+  useEffect(() => {
+    props.modifyScenarioProperty({
+      key: "isMassBeingAdded",
+      value: true
+    });
+
+    return () =>
+      props.modifyScenarioProperty({
+        key: "isMassBeingAdded",
+        value: false
+      });
+  }, []);
+
   const [massName, setMassName] = useState("");
 
   const [isParticleSphere, setIsParticleSphere] = useState(true);
@@ -193,7 +206,7 @@ export default props => {
             Number of Particles{" "}
             <Tooltip
               position="left"
-              content="The semi-major axis, a, is half of the longest diameter of the ellipse the constitutes the shape of the orbit. "
+              content="The number of particles in the ring."
             />
           </label>
           <Slider
@@ -209,7 +222,7 @@ export default props => {
             Average Distance{" "}
             <Tooltip
               position="left"
-              content="The semi-major axis, a, is half of the longest diameter of the ellipse the constitutes the shape of the orbit. "
+              content="The average distance of the ring from its primary."
             />
           </label>
           <Slider
@@ -223,10 +236,7 @@ export default props => {
           />
           <label className="top">
             Ring Width{" "}
-            <Tooltip
-              position="left"
-              content="The semi-major axis, a, is half of the longest diameter of the ellipse the constitutes the shape of the orbit. "
-            />
+            <Tooltip position="left" content="The width of the ring." />
           </label>
           <Slider
             payload={{ key: "particleMaxD" }}

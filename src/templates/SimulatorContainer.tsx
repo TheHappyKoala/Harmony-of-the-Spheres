@@ -39,7 +39,24 @@ const Scenario = ({
   const scenarioFromData = data.scenariosJson;
 
   useEffect(() => {
-    const defaults = { sizeAttenuation: true, massTypeToAdd: "Star" };
+    const defaults = {
+      sizeAttenuation:
+        scenarioFromData.sizeAttenuation !== null
+          ? scenarioFromData.sizeAttenuation
+          : true,
+      massTypeToAdd: "Star",
+      background: true,
+      tol: 1e-27,
+      maxDt: 1e-2,
+      minDt: 1e-13,
+      particles: {
+        ...scenarioFromData.particles,
+        shapes:
+          scenarioFromData.particles.shapes !== null
+            ? scenarioFromData.particles.shapes
+            : []
+      }
+    };
 
     setScenario({ ...scenarioFromData, ...defaults });
   }, [scenarioFromData.name]);

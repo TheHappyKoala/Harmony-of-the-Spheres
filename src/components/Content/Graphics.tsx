@@ -16,6 +16,7 @@ interface GraphicsProps {
   cameraFocus: string;
   cameraPosition: string;
   sizeAttenuation: boolean;
+  background: boolean;
 }
 
 export default ({
@@ -29,7 +30,8 @@ export default ({
   rotatingReferenceFrame,
   cameraFocus,
   cameraPosition,
-  sizeAttenuation
+  sizeAttenuation,
+  background
 }: GraphicsProps): ReactElement => (
   <Fragment>
     <h2>Graphics</h2>
@@ -226,6 +228,16 @@ export default ({
         modifyScenarioProperty({
           key: "sizeAttenuation",
           value: !sizeAttenuation
+        })
+      }
+    />
+    <Toggle
+      label="Starfield Background"
+      checked={background}
+      callback={() =>
+        modifyScenarioProperty({
+          key: "background",
+          value: !background
         })
       }
     />

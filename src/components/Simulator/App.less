@@ -1,10 +1,10 @@
 @primary: rgba(0, 0, 0, 0.6);
-@secondary: #545454;
+@secondary: #A9A9A9;
 @input: #191919;
 @font-color: #fff;
 @fat-padding: 10px;
 @skinny-padding: 5px;
-@border: 1px solid @secondary;
+@border: 1px solid #545454;
 
 .absolute {
   position: absolute;
@@ -43,14 +43,23 @@ button:focus {
   margin-top: 55px;
 }
 
+.time-step-picker-wrapper {
+  margin-left: 20px;
+  i {
+    padding: 5px 10px;
+    font-size: 1.3em !important;
+    cursor: pointer;    
+  }
+}
+
 .italic {
   font-style: italic;
 }
 
 .box {
   position: relative;
-  background-color: rgba(0, 0, 0, 0.6);
-  border: 1px solid @secondary;
+  background-color: #000;
+  border: 1px solid #545454;
   padding: 15px;
 }
 
@@ -71,7 +80,7 @@ button:focus {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #191919;
+  background-color: #545454;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -102,7 +111,7 @@ body {
   margin: 0;
   font-family: Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif; 
   font-size: 14px;
-  color: @font-color;
+  color: #fff;
   background-color: #000;
   i {
     font-family: FontAwesome;
@@ -149,10 +158,18 @@ body {
   justify-content: space-evenly;
 }
 
-.simulation-state {
-  .absolute();
-  top: 8px;
-  left: 80px;
+.bottom-controls-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  z-index: 99999;
+  width: 100%;
+  padding: 0 10px;
+  background-color: #000;
+  border-top: 1px solid #545454;
+  display: flex;
+  align-items: center;
 }
 
 .navigation {
@@ -162,9 +179,11 @@ body {
 }
 
 .wiki {
-  .absolute();
-  top: 8px;
-  left: 120px;
+  margin-left: 30px;
+}
+
+.play-pause {
+  margin-left: 30px;
 }
 
 .simulation-reset {
@@ -179,20 +198,13 @@ body {
   right: 0;
   width: 250px;
   .sidebar-content {
-    height: calc(100vh - 45px);
+    height: calc(100vh - 95px);
     width: 250px;
     float: right;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #000;
     overflow: auto;
     padding-bottom: 120px;
   }
-}
-
-.time-step-wrapper {
-  .absolute();
-  bottom: 30px;
-  left: 20px;
-  width: 300px;
 }
 
 .mass-tabs {

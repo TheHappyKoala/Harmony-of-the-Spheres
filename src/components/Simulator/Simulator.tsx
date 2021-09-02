@@ -11,9 +11,8 @@ import Physics from "../Content/Physics";
 import Graphics from "../Content/Graphics";
 import Masses from "../Content/Masses";
 import AddMass from "../Content/AddMass";
-import Slider from "../Slider";
-import Tooltip from "../Tooltip";
 import "./App.less";
+import NumberPicker from "../NumberPicker";
 
 interface SimulatorProps {
   scenario: ScenarioState;
@@ -58,29 +57,6 @@ export default ({
   return (
     <Fragment>
       <Renderer scenarioName={scenario.name} />
-      <Button cssClassName="button simulation-state" callback={setPlayState}>
-        <Fragment>
-          <i className={`fas fa-${scenario.playing ? "pause" : "play"}`} />
-          {scenario.playing ? "Pause" : "Play"}
-        </Fragment>
-      </Button>
-      <Button
-        cssClassName="button navigation"
-        callback={navigateToScenariosMenu}
-      >
-        <Fragment>
-          <i className={`fas fa-align-justify`} />
-          Scenarios
-        </Fragment>
-      </Button>
-      {description && (
-        <Button cssClassName="button wiki" callback={setWikiState}>
-          <Fragment>
-            <i className="fas fa-wikipedia-w" />
-            Scenario Wiki
-          </Fragment>
-        </Button>
-      )}
       <Tabs
         initTab={initTab ? initTab : 1}
         tabsWrapperClassName="sidebar-wrapper"
@@ -123,6 +99,7 @@ export default ({
             cameraPosition={scenario.cameraPosition}
             masses={scenario.masses}
             sizeAttenuation={scenario.sizeAttenuation}
+            background={scenario.background}
           />
         </div>
         <div data-label="Masses" data-icon="fas fa-globe">
@@ -159,51 +136,36 @@ export default ({
             particleNumber={scenario.particleNumber}
             particleMinD={scenario.particleMinD}
             particleMaxD={scenario.particleMaxD}
-            particleTiltX={scenario.particleTiltX}
-            particleTiltY={scenario.particleTiltY}
-            particleTiltZ={scenario.particleTiltZ}
           />
         </div>
       </Tabs>
-      <div className="time-step-wrapper">
-        {scenario.integrator === "RKN64" || scenario.integrator === "RKN12" ? (
-          <Fragment>
-            {" "}
-            <label className="top">
-              Error Tolerance
-              <Tooltip
-                position="left"
-                content="The tolerated error according to which delta time is adapted when the RKN12 or RKN64 integrator is used. The lower the error tolerance, the more accurate the simulation will be, and vice versa."
-              />
-            </label>
-            <Slider
-              payload={{ key: "tol" }}
-              value={scenario.tol}
-              callback={modifyScenarioProperty}
-              max={0.00000000000000000000000001}
-              min={0.0000000000000000000000000000001}
-              step={0.000000000000000000000000000000000000000000000000001}
-            />
-          </Fragment>
-        ) : (
-          <Fragment>
-            <label className="top">
-              Delta Time
-              <Tooltip
-                position="left"
-                content="The time that elapses per iteration of the simulation. The lower the time step, the more accurate the simulation will be, and vice versa."
-              />
-            </label>
-            <Slider
-              payload={{ key: "dt" }}
-              value={scenario.dt}
-              callback={modifyScenarioProperty}
-              max={scenario.maxDt}
-              min={scenario.minDt}
-              step={scenario.dt / 1000}
-            />{" "}
-          </Fragment>
+      <div className="bottom-controls-bar">
+        <Button cssClassName="button" callback={navigateToScenariosMenu}>
+          <i className={`fas fa-align-justify`} />
+        </Button>
+        {description && (
+          <Button cssClassName="button wiki" callback={setWikiState}>
+            <Fragment>
+              <i className="fas fa-wikipedia-w" />
+              Scenario Wiki
+            </Fragment>
+          </Button>
         )}
+        <Button cssClassName="button play-pause" callback={setPlayState}>
+          <i className={`fas fa-${scenario.playing ? "pause" : "play"}`} />
+        </Button>
+        <div className="time-step-picker-wrapper">
+          {scenario.integrator !== "RKN64" &&
+            scenario.integrator !== "RKN12" && (
+              <NumberPicker
+                numbers={[0.00000001, 0.0000001, 0.00001, 0.0001, 0.001]}
+                callback={modifyScenarioProperty}
+                icon="fas fa-chevron-right"
+                payload={{ key: "dt" }}
+                payloadKey="value"
+              />
+            )}
+        </div>
       </div>
       <ReactCSSTransitionGroup
         transitionName="fade"
