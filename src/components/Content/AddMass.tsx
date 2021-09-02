@@ -7,7 +7,6 @@ import Tooltip from "../Tooltip";
 import { getRandomColor } from "../../utils";
 import bodies from "../../masses";
 import Toggle from "../Toggle";
-import { modifyScenarioProperty } from "../../state/creators/scenario";
 
 const bodyTypes = [
   "Ring",
@@ -103,7 +102,8 @@ export default props => {
             minD: props.a - props.particleMaxD,
             maxD: props.a + props.particleMaxD,
             tilt: [0, 0, 0],
-            flatLand: isParticleSphere
+            flatLand: isParticleSphere,
+            type: 'getRingParticle'
           }
         ]
       }
