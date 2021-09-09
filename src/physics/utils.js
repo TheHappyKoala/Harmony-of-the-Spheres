@@ -226,3 +226,51 @@ export const colorTemperatureToRGB = kelvin => {
     b: clamp(blue, 0, 255)
   };
 };
+
+const calculateAlpha = (m1, m2) => m2 / (m1 + m2);
+
+const calculateBeta = (m1, m2) => (m1 - m2) / (m1 + m2);
+
+const calculateL1R = (alpha, d, v) => ({
+  x: d - d * (1 - Math.pow(alpha / 3, 1 / 3)),
+  y: 0,
+  z: 0
+});
+
+const calculateL2R = (alpha, d, v) => ({
+  x: d - d * (1 + Math.pow(alpha / 3, 1 / 3)),
+  y: 0,
+  z: 0
+});
+
+const calculateL3R = (alpha, d, v) => ({
+  x: d - -d * (1 + (5 * alpha) / 12),
+  y: 0,
+  z: 0
+});
+
+const calculateL4R = (beta, d, v) => ({
+  x: d - (d / 2) * beta,
+  y: (Math.sqrt(3) / 2) * d,
+  z: 0
+});
+
+const calculateL5R = (beta, d, v) => ({
+  x: d - (d / 2) * beta,
+  y: -(Math.sqrt(3) / 2) * d,
+  z: 0
+});
+
+export const getLagrangePoints = (m1, m2) => {
+  const d = Math.sqrt(getDistanceParams(m1, m2).dSquared);
+  const alpha = calculateAlpha(m1.m, m2.m);
+  const beta = calculateBeta(m1.m, m2.m);
+
+  return [
+    calculateL1R(alpha, d),
+    calculateL2R(alpha, d),
+    calculateL3R(alpha, d),
+    calculateL4R(beta, d),
+    calculateL5R(beta, d) 
+  ];
+};

@@ -8,7 +8,9 @@ import {
   setBarycenter,
   getEllipse,
   radiansToDegrees,
-  degreesToRadians
+  degreesToRadians,
+  getLagrangePoints,
+  getDistanceParams
 } from "../physics/utils";
 import ParticleService from "../physics/particles/ParticleService";
 import arena from "./arena";
@@ -20,7 +22,11 @@ import CollisionsService from "../physics/collisions/";
 import CustomEllipseCurve from "./CustomEllipseCurve";
 import ManifestationsService from "./ManifestationsService";
 import drawManifestation from "./drawManifestation";
-import { constructSOITree } from "../physics/spacecraft/lambert";
+import {
+  constructSOITree,
+  stateToKepler,
+  keplerToState
+} from "../physics/spacecraft/lambert";
 
 const TWEEN = require("@tweenjs/tween.js");
 
@@ -292,6 +298,148 @@ const scene = {
     ];
   },
 
+  drawLagrangePoints() {
+    const massOne = this.scenario.masses.find(
+      mass => mass.name === this.scenario.lagrangeMassOne
+    );
+    const massTwo = this.scenario.masses.find(
+      mass => mass.name === this.scenario.lagrangeMassTwo
+    );
+
+    if (!massOne || !massTwo) {
+      return;
+    }
+
+    let primary;
+    let secondary;
+
+    if (massOne.m > massTwo.m) {
+      primary = massOne;
+      secondary = massTwo;
+    } else {
+      primary = massTwo;
+      secondary = massOne;
+    }
+
+    const [l1, l2, l3] = getLagrangePoints(primary, secondary);
+
+    const secondaryOrbitalElements = stateToKepler(
+      {
+        x: primary.x - secondary.x,
+        y: primary.y - secondary.y,
+        z: primary.z - secondary.z
+      },
+      {
+        x: primary.vx - secondary.vx,
+        y: primary.vy - secondary.vy,
+        z: primary.vz - secondary.vz
+      },
+      primary.m * this.scenario.g
+    );
+
+    const l4 = keplerToState(
+      {
+        ...secondaryOrbitalElements,
+        e: 0,
+        eccAnom: secondaryOrbitalElements.eccAnom - degreesToRadians(120)
+      },
+      primary.m * this.scenario.g
+    );
+    const l5 = keplerToState(
+      {
+        ...secondaryOrbitalElements,
+        e: 0,
+        eccAnom: secondaryOrbitalElements.eccAnom + degreesToRadians(120)
+      },
+      primary.m * this.scenario.g
+    );
+
+    const rotatingReferenceFrame = this.camera.rotatingReferenceFrame;
+    const scale = this.scenario.scale;
+
+    const v1 = new H3();
+    const v2 = new H3();
+
+    const rotatedPrimary = v1
+      .set(primary)
+      .subtractFrom(rotatingReferenceFrame)
+      .multiplyByScalar(scale)
+      .toObject();
+
+    const rotatedSecondary = v1
+      .set(secondary)
+      .subtractFrom(rotatingReferenceFrame)
+      .multiplyByScalar(scale)
+      .toObject();
+
+    const points = [
+      v1
+        .set(rotatedSecondary)
+        .add(
+          v2
+            .set(rotatedPrimary)
+            .subtract(rotatedSecondary)
+            .normalise()
+            .multiplyByScalar(l1.x * scale)
+        )
+        .toObject(),
+      v1
+        .set(rotatedSecondary)
+        .add(
+          v2
+            .set(rotatedPrimary)
+            .subtract(rotatedSecondary)
+            .normalise()
+            .multiplyByScalar(l2.x * scale)
+        )
+        .toObject(),
+      v1
+        .set(rotatedSecondary)
+        .add(
+          v2
+            .set(rotatedPrimary)
+            .subtract(rotatedSecondary)
+            .normalise()
+            .multiplyByScalar(l3.x * scale)
+        )
+        .toObject(),
+      v1
+        .set(l4.posRel)
+        .add(primary)
+        .subtractFrom(rotatingReferenceFrame)
+        .multiplyByScalar(scale)
+        .toObject(),
+      v1
+        .set(l5.posRel)
+        .add(primary)
+        .subtractFrom(rotatingReferenceFrame)
+        .multiplyByScalar(scale)
+        .toObject()
+    ];
+
+    for (let i = 0; i < 5; i++) {
+      let z;
+
+      if (i <= 2) {
+        z = points[i].z;
+      } else if (i === 3) {
+        z = l4.posRel.z * scale;
+      } else if (i === 4) {
+        z = l5.posRel.z * scale;
+      }
+
+      this.graphics2D.drawLabel(
+        `L${i + 1}`,
+        this.utilityVector.set(points[i].x, points[i].y, z),
+        this.camera,
+        false,
+        "right",
+        "yellow",
+        drawMarkerLabel
+      );
+    }
+  },
+
   loop() {
     this.scenario = JSON.parse(JSON.stringify(this.store.getState().scenario));
 
@@ -438,6 +586,10 @@ const scene = {
         "limegreen",
         drawMarkerLabel
       );
+
+    if (this.scenario.lagrangePoints) {
+      this.drawLagrangePoints();
+    }
 
     const massesLen = this.system.masses.length;
 

@@ -31,7 +31,8 @@ export default ({
   useBarnesHut,
   collisions,
   dt,
-  tol,
+  lagrangeMassOne,
+  lagrangeMassTwo,
   minDt,
   maxDt,
   g,
@@ -119,6 +120,62 @@ export default ({
           </Dropdown>
         </Fragment>
       )}
+      <label className="top">
+        Lagrange Mass One
+        <Tooltip
+          position="left"
+          content="One of the masses in a two body system."
+        />
+      </label>
+      <Dropdown
+        selectedOption={lagrangeMassOne}
+        dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+        selectedOptionCssClassName="selected-option"
+        optionsWrapperCssClass="options"
+      >
+        {masses.map(mass => (
+          <div
+            data-name={mass.name}
+            key={mass.name}
+            onClick={() =>
+              modifyScenarioProperty({
+                key: "lagrangeMassOne",
+                value: mass.name
+              })
+            }
+          >
+            {mass.name}
+          </div>
+        ))}
+      </Dropdown>
+      <label className="top">
+        Lagrange Mass Two
+        <Tooltip
+          position="left"
+          content="One of the masses in a two body system."
+        />
+      </label>
+      <Dropdown
+        selectedOption={lagrangeMassTwo}
+        dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+        selectedOptionCssClassName="selected-option"
+        optionsWrapperCssClass="options"
+      >
+        {masses.map(mass => (
+          <div
+            data-name={mass.name}
+            key={mass.name}
+            onClick={() =>
+              modifyScenarioProperty({
+                key: "lagrangeMassTwo",
+                value: mass.name
+              })
+            }
+          >
+            {mass.name}
+          </div>
+        ))}
+      </Dropdown>
       <label className="top">
         Integrator
         <Tooltip

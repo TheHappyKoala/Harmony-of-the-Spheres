@@ -57,7 +57,23 @@ const Scenario = ({
           scenarioFromData.particles.shapes !== null
             ? scenarioFromData.particles.shapes
             : []
-      }
+      },
+      lagrangePoints:
+        scenarioFromData.lagrangePoints !== null
+          ? scenarioFromData.lagrangePoints
+          : false,
+      lagrangeMassOne:
+        scenarioFromData.lagrangeMassOne !== null
+          ? scenarioFromData.lagrangeMassOne
+          : scenarioFromData.masses.length
+          ? scenarioFromData.masses[0].name
+          : "-",
+      lagrangeMassTwo:
+        scenarioFromData.lagrangeMassTwo !== null
+          ? scenarioFromData.lagrangeMassTwo
+          : scenarioFromData.masses.length > 1
+          ? scenarioFromData.masses[1].name
+          : "-"
     };
 
     setScenario({ ...scenarioFromData, ...defaults });
@@ -131,6 +147,9 @@ export const pageQuery = graphql`
       systemBarycenter
       barycenterMassOne
       barycenterMassTwo
+      lagrangePoints
+      lagrangeMassOne
+      lagrangeMassTwo
       barycenterZ
       customCameraPosition {
         x
