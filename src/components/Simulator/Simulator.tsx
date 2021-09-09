@@ -79,6 +79,8 @@ export default ({
             systemBarycenter={scenario.systemBarycenter}
             barycenterMassOne={scenario.barycenterMassOne}
             barycenterMassTwo={scenario.barycenterMassTwo}
+            lagrangeMassOne={scenario.lagrangeMassOne}
+            lagrangeMassTwo={scenario.lagrangeMassTwo}
             masses={scenario.masses}
             collisions={scenario.collisions}
             g={scenario.g}
@@ -100,6 +102,7 @@ export default ({
             masses={scenario.masses}
             sizeAttenuation={scenario.sizeAttenuation}
             background={scenario.background}
+            lagrangePoints={scenario.lagrangePoints}
           />
         </div>
         <div data-label="Masses" data-icon="fas fa-globe">

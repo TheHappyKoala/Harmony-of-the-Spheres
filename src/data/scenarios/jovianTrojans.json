@@ -16,6 +16,7 @@
   "cameraPosition": "Free",
   "cameraFocus": "Barycenter",
   "barycenterZ": 40000000,
+  "lagrangePoints": true,
   "massBeingModified": "Sun",
   "primary": "Sun",
   "maximumDistance": { "name": "Sun to Kuiper Belt", "value": 55 },

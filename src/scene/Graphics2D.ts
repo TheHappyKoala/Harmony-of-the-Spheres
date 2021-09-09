@@ -96,7 +96,7 @@ export const drawMarkerLabel = (
   ctx.lineTo(x, y + 30);
   ctx.stroke();
 
-  ctx.moveTo(x, y);
+  ctx.moveTo(x - 30, y);
   ctx.lineTo(x + 30, y);
   ctx.stroke();
 };

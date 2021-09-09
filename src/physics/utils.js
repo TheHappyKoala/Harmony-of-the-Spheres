@@ -232,31 +232,31 @@ const calculateAlpha = (m1, m2) => m2 / (m1 + m2);
 const calculateBeta = (m1, m2) => (m1 - m2) / (m1 + m2);
 
 const calculateL1R = (alpha, d, v) => ({
-  x: d * (1 - Math.pow(alpha / 3, 1 / 3)),
+  x: d - d * (1 - Math.pow(alpha / 3, 1 / 3)),
   y: 0,
   z: 0
 });
 
 const calculateL2R = (alpha, d, v) => ({
-  x: d * (1 + Math.pow(alpha / 3, 1 / 3)),
+  x: d - d * (1 + Math.pow(alpha / 3, 1 / 3)),
   y: 0,
   z: 0
 });
 
 const calculateL3R = (alpha, d, v) => ({
-  x: -d * (1 + (5 * alpha) / 12),
+  x: d - -d * (1 + (5 * alpha) / 12),
   y: 0,
   z: 0
 });
 
 const calculateL4R = (beta, d, v) => ({
-  x: (d / 2) * beta,
+  x: d - (d / 2) * beta,
   y: (Math.sqrt(3) / 2) * d,
   z: 0
 });
 
 const calculateL5R = (beta, d, v) => ({
-  x: (d / 2) * beta,
+  x: d - (d / 2) * beta,
   y: -(Math.sqrt(3) / 2) * d,
   z: 0
 });
@@ -267,10 +267,10 @@ export const getLagrangePoints = (m1, m2) => {
   const beta = calculateBeta(m1.m, m2.m);
 
   return [
-    { ...calculateL1R(alpha, d), name: "L1" },
-    { ...calculateL2R(alpha, d), name: "L2" },
-    { ...calculateL3R(alpha, d), name: "L3" },
-    { ...calculateL4R(beta, d), name: "L4" },
-    { ...calculateL4R(beta, d), name: "L5" }
+    calculateL1R(alpha, d),
+    calculateL2R(alpha, d),
+    calculateL3R(alpha, d),
+    calculateL4R(beta, d),
+    calculateL5R(beta, d) 
   ];
 };

@@ -17,6 +17,7 @@ interface GraphicsProps {
   cameraPosition: string;
   sizeAttenuation: boolean;
   background: boolean;
+  lagrangePoints: boolean;
 }
 
 export default ({
@@ -31,7 +32,8 @@ export default ({
   cameraFocus,
   cameraPosition,
   sizeAttenuation,
-  background
+  background,
+  lagrangePoints
 }: GraphicsProps): ReactElement => (
   <Fragment>
     <h2>Graphics</h2>
@@ -183,6 +185,16 @@ export default ({
             value: !barycenter ? "Barycenter" : cameraFocus
           }
         )
+      }
+    />
+    <Toggle
+      label="Lagrange Points"
+      checked={lagrangePoints}
+      callback={() =>
+        modifyScenarioProperty({
+          key: "lagrangePoints",
+          value: !lagrangePoints
+        })
       }
     />
     <Toggle

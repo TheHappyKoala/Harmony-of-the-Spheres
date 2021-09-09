@@ -104,7 +104,8 @@ export default class extends PerspectiveCamera {
         m: mass.m,
         massType: mass.massType,
         scale,
-        radius: mass.radius
+        radius: mass.radius,
+        name: mass.name
       };
     }
 
