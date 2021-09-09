@@ -349,7 +349,7 @@ const scene = {
       {
         ...secondaryOrbitalElements,
         e: 0,
-        eccAnom: secondaryOrbitalElements.eccAnom + degreesToRadians(60)
+        eccAnom: secondaryOrbitalElements.eccAnom + degreesToRadians(120)
       },
       primary.m * this.scenario.g
     );
@@ -357,7 +357,7 @@ const scene = {
       {
         ...secondaryOrbitalElements,
         e: 0,
-        eccAnom: secondaryOrbitalElements.eccAnom - degreesToRadians(60)
+        eccAnom: secondaryOrbitalElements.eccAnom - degreesToRadians(120)
       },
       primary.m * this.scenario.g
     );
@@ -384,8 +384,14 @@ const scene = {
           .normalise()
           .multiplyByScalar(l3.x * this.scenario.scale)
       ),
-      new H3().set(rotatedMass1).rotate({ x: 0, y: 0, z: 1 }, 60),
-      new H3().set(rotatedMass1).rotate({ x: 0, y: 0, z: 1 }, -60)
+      new H3()
+        .set(l4.posRel)
+        .subtractFrom(this.camera.rotatingReferenceFrame)
+        .multiplyByScalar(this.scenario.scale),
+      new H3()
+        .set(l5.posRel)
+        .subtractFrom(this.camera.rotatingReferenceFrame)
+        .multiplyByScalar(this.scenario.scale)
     ];
 
     for (let i = 0; i < 5; i++) {
