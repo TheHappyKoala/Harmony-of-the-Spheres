@@ -323,14 +323,6 @@ const scene = {
 
     const [l1, l2, l3] = getLagrangePoints(primary, secondary);
 
-    const rotatedMass1 = this.camera.rotatedMasses.find(
-      mass => mass.name === secondary.name
-    );
-
-    const rotatedMass2 = this.camera.rotatedMasses.find(
-      mass => mass.name === primary.name
-    );
-
     const secondaryOrbitalElements = stateToKepler(
       {
         x: primary.x - secondary.x,
@@ -362,36 +354,67 @@ const scene = {
       primary.m * this.scenario.g
     );
 
+    const rotatingReferenceFrame = this.camera.rotatingReferenceFrame;
+    const scale = this.scenario.scale;
+
+    const v1 = new H3();
+    const v2 = new H3();
+
+    const rotatedPrimary = v1
+      .set(primary)
+      .subtractFrom(rotatingReferenceFrame)
+      .multiplyByScalar(scale)
+      .toObject();
+
+    const rotatedSecondary = v1
+      .set(secondary)
+      .subtractFrom(rotatingReferenceFrame)
+      .multiplyByScalar(scale)
+      .toObject();
+
     const points = [
-      new H3().set(rotatedMass1).add(
-        new H3()
-          .set(rotatedMass2)
-          .subtract(rotatedMass1)
-          .normalise()
-          .multiplyByScalar(l1.x * this.scenario.scale)
-      ),
-      new H3().set(rotatedMass1).add(
-        new H3()
-          .set(rotatedMass2)
-          .subtract(rotatedMass1)
-          .normalise()
-          .multiplyByScalar(l2.x * this.scenario.scale)
-      ),
-      new H3().set(rotatedMass1).add(
-        new H3()
-          .set(rotatedMass2)
-          .subtract(rotatedMass1)
-          .normalise()
-          .multiplyByScalar(l3.x * this.scenario.scale)
-      ),
-      new H3()
+      v1
+        .set(rotatedSecondary)
+        .add(
+          v2
+            .set(rotatedPrimary)
+            .subtract(rotatedSecondary)
+            .normalise()
+            .multiplyByScalar(l1.x * scale)
+        )
+        .toObject(),
+      v1
+        .set(rotatedSecondary)
+        .add(
+          v2
+            .set(rotatedPrimary)
+            .subtract(rotatedSecondary)
+            .normalise()
+            .multiplyByScalar(l2.x * scale)
+        )
+        .toObject(),
+      v1
+        .set(rotatedSecondary)
+        .add(
+          v2
+            .set(rotatedPrimary)
+            .subtract(rotatedSecondary)
+            .normalise()
+            .multiplyByScalar(l3.x * scale)
+        )
+        .toObject(),
+      v1
         .set(l4.posRel)
-        .subtractFrom(this.camera.rotatingReferenceFrame)
-        .multiplyByScalar(this.scenario.scale),
-      new H3()
+        .add(primary)
+        .subtractFrom(rotatingReferenceFrame)
+        .multiplyByScalar(scale)
+        .toObject(),
+      v1
         .set(l5.posRel)
-        .subtractFrom(this.camera.rotatingReferenceFrame)
-        .multiplyByScalar(this.scenario.scale)
+        .add(primary)
+        .subtractFrom(rotatingReferenceFrame)
+        .multiplyByScalar(scale)
+        .toObject()
     ];
 
     for (let i = 0; i < 5; i++) {
@@ -400,9 +423,9 @@ const scene = {
       if (i <= 2) {
         z = points[i].z;
       } else if (i === 3) {
-        z = l4.posRel.z * this.scenario.scale;
+        z = l4.posRel.z * scale;
       } else if (i === 4) {
-        z = l5.posRel.z * this.scenario.scale;
+        z = l5.posRel.z * scale;
       }
 
       this.graphics2D.drawLabel(
