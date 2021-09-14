@@ -116,3 +116,11 @@ export const getRangeValues = (min: number, max: number, nButtons: number) => {
     return geomspace(min, max/2, nButtons-1).concat([max])
   }
 }
+export const yearsToYearsMonthsDays = (value: number): string => {
+  const totalDays = value * 365;
+  const years = Math.floor(totalDays / 365);
+  const months = Math.floor((totalDays - years * 365) / 30);
+  const days = Math.floor(totalDays - years * 365 - months * 30);
+
+  return `${years} years, ${months} months, ${days} days`;
+};

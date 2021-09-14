@@ -14,6 +14,7 @@ import AddMass from "../Content/AddMass";
 import "./App.less";
 import NumberPicker from "../NumberPicker";
 import {getRangeValues} from '../../utils';
+import { yearsToYearsMonthsDays } from "../../utils";
 
 interface SimulatorProps {
   scenario: ScenarioState;
@@ -145,7 +146,10 @@ export default ({
       </Tabs>
       <div className="bottom-controls-bar">
         <Button cssClassName="button" callback={navigateToScenariosMenu}>
-          <i className={`fas fa-align-justify`} />
+          <Fragment>
+            <i className={`fas fa-align-justify`} />
+            Scenarios
+          </Fragment>
         </Button>
         {description && (
           <Button cssClassName="button wiki" callback={setWikiState}>
@@ -156,11 +160,14 @@ export default ({
           </Button>
         )}
         <Button cssClassName="button play-pause" callback={setPlayState}>
-          <i className={`fas fa-${scenario.playing ? "pause" : "play"}`} />
+          <Fragment>
+            <i className={`fas fa-${scenario.playing ? "pause" : "play"}`} />
+            {scenario.playing ? "pause" : "play"}
+          </Fragment>
         </Button>
         <div className="time-step-picker-wrapper">
-          {scenario.integrator !== "RKN64" &&
-            scenario.integrator !== "RKN12" && (
+          {scenario.integrator !== "RKN64" && scenario.integrator !== "RKN12" && (
+            <Fragment>
               <NumberPicker
                 numbers={getRangeValues(scenario.minDt, scenario.maxDt, 5)}
                 callback={modifyScenarioProperty}
@@ -168,7 +175,14 @@ export default ({
                 payload={{ key: "dt" }}
                 payloadKey="value"
               />
-            )}
+              <span>Simulation Speed</span>
+            </Fragment>
+          )}
+        </div>
+        <div className="elapsed-time">
+          {" "}
+          <i className="fas fa-clock-o" />
+          <span>{yearsToYearsMonthsDays(scenario.elapsedTime)}</span>
         </div>
       </div>
       <ReactCSSTransitionGroup
