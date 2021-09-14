@@ -13,7 +13,7 @@ import Masses from "../Content/Masses";
 import AddMass from "../Content/AddMass";
 import "./App.less";
 import NumberPicker from "../NumberPicker";
-import { yearsToYearsMonthsDays, getRangeValues } from "../../utils";
+import { yearsToYearsMonthsDays } from "../../utils";
 
 interface SimulatorProps {
   scenario: ScenarioState;
