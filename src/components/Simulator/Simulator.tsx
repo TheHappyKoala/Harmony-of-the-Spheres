@@ -13,6 +13,7 @@ import Masses from "../Content/Masses";
 import AddMass from "../Content/AddMass";
 import "./App.less";
 import NumberPicker from "../NumberPicker";
+import {getRangeValues} from '../../utils';
 import { yearsToYearsMonthsDays } from "../../utils";
 
 interface SimulatorProps {
@@ -168,7 +169,7 @@ export default ({
           {scenario.integrator !== "RKN64" && scenario.integrator !== "RKN12" && (
             <Fragment>
               <NumberPicker
-                numbers={[0.0000001, 0.00001, 0.0001, 0.001, 0.01]}
+                numbers={getRangeValues(scenario.minDt, scenario.maxDt, 5)}
                 callback={modifyScenarioProperty}
                 icon="fas fa-chevron-right"
                 payload={{ key: "dt" }}
