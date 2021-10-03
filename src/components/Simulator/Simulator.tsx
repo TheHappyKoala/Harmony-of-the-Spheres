@@ -145,28 +145,19 @@ export default ({
       </Tabs>
       <div className="bottom-controls-bar">
         <Button cssClassName="button" callback={navigateToScenariosMenu}>
-          <Fragment>
-            <i className={`fas fa-align-justify`} />
-            Scenarios
-          </Fragment>
+          <i className={`fas fa-align-justify`} />
         </Button>
         {description && (
           <Button cssClassName="button wiki" callback={setWikiState}>
-            <Fragment>
-              <i className="fas fa-wikipedia-w" />
-              Scenario Wiki
-            </Fragment>
+            <i className="fas fa-wikipedia-w" />
           </Button>
         )}
         <Button cssClassName="button play-pause" callback={setPlayState}>
-          <Fragment>
-            <i className={`fas fa-${scenario.playing ? "pause" : "play"}`} />
-            {scenario.playing ? "pause" : "play"}
-          </Fragment>
+          <i className={`fas fa-${scenario.playing ? "pause" : "play"}`} />
         </Button>
         <div className="time-step-picker-wrapper">
-          {scenario.integrator !== "RKN64" && scenario.integrator !== "RKN12" && (
-            <Fragment>
+          {scenario.integrator !== "RKN64" &&
+            scenario.integrator !== "RKN12" && (
               <NumberPicker
                 numbers={[0.0000001, 0.00001, 0.0001, 0.001, 0.01]}
                 callback={modifyScenarioProperty}
@@ -174,9 +165,7 @@ export default ({
                 payload={{ key: "dt" }}
                 payloadKey="value"
               />
-              <span>Simulation Speed</span>
-            </Fragment>
-          )}
+            )}
         </div>
         <div className="elapsed-time">
           {" "}

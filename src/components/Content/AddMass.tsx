@@ -103,7 +103,7 @@ export default props => {
             maxD: props.a + props.particleMaxD,
             tilt: [0, 0, 0],
             flatLand: isParticleSphere,
-            type: 'getRingParticle'
+            type: "getRingParticle"
           }
         ]
       }

@@ -67,8 +67,7 @@ export default function(
           (scenario.rotatingReferenceFrame !== mass.name &&
             scenario.mapMode &&
             scenario.cameraPosition === "Free" &&
-            currentSOI.name === scenario.rotatingReferenceFrame &&
-            scenario.cameraFocus === scenario.rotatingReferenceFrame) ||
+            currentSOI.name === scenario.rotatingReferenceFrame) ||
             ((scenario.rotatingReferenceFrame === "Barycenter" ||
               scenario.rotatingReferenceFrame === scenario.masses[0].name) &&
               scenario.cameraFocus === "Barycenter" &&

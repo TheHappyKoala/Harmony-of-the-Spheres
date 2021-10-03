@@ -271,6 +271,6 @@ export const getLagrangePoints = (m1, m2) => {
     calculateL2R(alpha, d),
     calculateL3R(alpha, d),
     calculateL4R(beta, d),
-    calculateL5R(beta, d) 
+    calculateL5R(beta, d)
   ];
 };

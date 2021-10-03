@@ -44,11 +44,15 @@ const Scenario = ({
         scenarioFromData.sizeAttenuation !== null
           ? scenarioFromData.sizeAttenuation
           : true,
+      cameraCustomHeight: false,
+      cameraCustomHeightNumber: 0,
+      mapMode: true,
+      massBeingModified: scenarioFromData.masses[1]?.name,
       massTypeToAdd: "Star",
       background: true,
       tol: 1e-27,
-      maxDt: 1e-2,
-      minDt: 1e-13,
+      //maxDt: 1e-2,
+      //minDt: 1e-13,
       particleNumber: 0,
       particleMaxD: 0,
       particles: {

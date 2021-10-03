@@ -271,7 +271,7 @@ export default class extends PerspectiveCamera {
           const customCameraPosition =
             mass.customCameraPosition !== null
               ? mass.customCameraPosition
-              : { x: 10, y: 0, z: 5 };
+              : { x: 10, y: 0, z: -5 };
 
           this.position.set(
             this.rotatedMasses[i].x - mass.radius * customCameraPosition.x,
