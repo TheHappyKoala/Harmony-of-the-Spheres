@@ -224,7 +224,7 @@ export default ({
       <div data-label="Objects">
         <Toggle
           label="Orbit Lines"
-          checked={trails}
+          checked={mapMode}
           callback={() =>
             modifyScenarioProperty({
               key: "mapMode",

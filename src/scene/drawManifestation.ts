@@ -69,14 +69,8 @@ export default function(
             currentSOI.name === scenario.rotatingReferenceFrame) ||
             ((scenario.rotatingReferenceFrame === "Barycenter" ||
               scenario.rotatingReferenceFrame === scenario.masses[0].name) &&
-              scenario.cameraFocus === "Barycenter") ||
-            ((scenario.rotatingReferenceFrame === "Barycenter" ||
-              scenario.rotatingReferenceFrame === scenario.masses[0].name) &&
-              scenario.cameraFocus === "Habitable Zone") ||
-            (scenario.type === "Exoplanets" &&
-              (scenario.rotatingReferenceFrame === "Barycenter" ||
-                scenario.rotatingReferenceFrame === scenario.masses[0].name) &&
-              scenario.cameraFocus === scenario.masses[0].name),
+              scenario.cameraFocus === "Barycenter" &&
+              scenario.mapMode),
           {
             mass,
             scenario,
