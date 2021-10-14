@@ -17,6 +17,10 @@ export default ({
 }: NumberPickerInterface) => {
   const [selectedNumber, setSelectedNumber] = useState(numbers[0]);
 
+  useEffect(() => {
+    setSelectedNumber(numbers[0]);
+  }, [numbers[0]]);
+
   useEffect(() => callback({ ...payload, [payloadKey]: selectedNumber }), []);
 
   const handleClick = useCallback(

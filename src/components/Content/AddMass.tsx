@@ -103,7 +103,7 @@ export default props => {
             maxD: props.a + props.particleMaxD,
             tilt: [0, 0, 0],
             flatLand: isParticleSphere,
-            type: 'getRingParticle'
+            type: "getRingParticle"
           }
         ]
       }
@@ -300,8 +300,8 @@ export default props => {
                 payload={{ key: "e" }}
                 value={props.e}
                 callback={props.modifyScenarioProperty}
-                max={1}
-                min={0}
+                max={0.99999999}
+                min={0.0000001}
                 step={0.001}
               />
               <label className="top">

@@ -5,7 +5,7 @@
   "description": "Gravity simulation, in 3D, of the Solar System, including all planets and dwarf planets.",
   "type": "Solar System",
   "g": 39.5,
-  "dt": 0.001,
+  "dt": 0.0001,
   "distMax": 60,
   "distMin": -60,
   "distStep": 0.1,

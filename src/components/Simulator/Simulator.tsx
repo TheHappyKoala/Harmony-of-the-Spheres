@@ -13,6 +13,8 @@ import Masses from "../Content/Masses";
 import AddMass from "../Content/AddMass";
 import "./App.less";
 import NumberPicker from "../NumberPicker";
+import { getRangeValues } from "../../utils";
+import { yearsToYearsMonthsDays } from "../../utils";
 
 interface SimulatorProps {
   scenario: ScenarioState;
@@ -103,6 +105,7 @@ export default ({
             sizeAttenuation={scenario.sizeAttenuation}
             background={scenario.background}
             lagrangePoints={scenario.lagrangePoints}
+            mapMode={scenario.mapMode}
           />
         </div>
         <div data-label="Masses" data-icon="fas fa-globe">
@@ -148,10 +151,7 @@ export default ({
         </Button>
         {description && (
           <Button cssClassName="button wiki" callback={setWikiState}>
-            <Fragment>
-              <i className="fas fa-wikipedia-w" />
-              Scenario Wiki
-            </Fragment>
+            <i className="fas fa-wikipedia-w" />
           </Button>
         )}
         <Button cssClassName="button play-pause" callback={setPlayState}>
@@ -161,13 +161,18 @@ export default ({
           {scenario.integrator !== "RKN64" &&
             scenario.integrator !== "RKN12" && (
               <NumberPicker
-                numbers={[0.00000001, 0.0000001, 0.00001, 0.0001, 0.001]}
+                numbers={getRangeValues(scenario.minDt, scenario.maxDt, 5)}
                 callback={modifyScenarioProperty}
                 icon="fas fa-chevron-right"
                 payload={{ key: "dt" }}
                 payloadKey="value"
               />
             )}
+        </div>
+        <div className="elapsed-time">
+          {" "}
+          <i className="fas fa-clock-o" />
+          <span>{yearsToYearsMonthsDays(scenario.elapsedTime)}</span>
         </div>
       </div>
       <ReactCSSTransitionGroup

@@ -8,7 +8,7 @@
   "integrator": "RK4",
   "cameraPosition": "Free",
   "g": 39.5,
-  "dt": 0.00001,
+  "dt": 0.000001,
   "rotatingReferenceFrame": "Jupiter",
   "labels": true,
   "cameraFocus": "Jupiter",

@@ -116,6 +116,28 @@
       "exoplanet": null,
       "customCameraPosition": { "x": -2200, "y": -500, "z": -500 }
     },
-    {"m":0.0009543,"radius":1027.5229357798166,"tilt":-3.13,"orbitalPeriod":11.86,"name":"Freyja","bodyType":"Planet","trailVertices":3000,"color":"#A9A17A","a":5.04912058030033,"e":0,"w":0,"i":0,"o":0,"x":-5.04912058030033,"y":-6.183389357173825e-16,"z":0,"vx":3.425322981189455e-16,"vy":-2.7969884733902854,"vz":0,"customCameraPosition":{"x":0,"y":0,"z":50},"texture":"Jupiter"}
+    {
+      "m": 0.0009543,
+      "radius": 1027.5229357798166,
+      "tilt": -3.13,
+      "orbitalPeriod": 11.86,
+      "name": "Freyja",
+      "bodyType": "Planet",
+      "trailVertices": 3000,
+      "color": "#A9A17A",
+      "a": 5.04912058030033,
+      "e": 0,
+      "w": 0,
+      "i": 0,
+      "o": 0,
+      "x": -5.04912058030033,
+      "y": -6.183389357173825e-16,
+      "z": 0,
+      "vx": 3.425322981189455e-16,
+      "vy": -2.7969884733902854,
+      "vz": 0,
+      "customCameraPosition": { "x": 0, "y": 0, "z": 50 },
+      "texture": "Jupiter"
+    }
   ]
 }
