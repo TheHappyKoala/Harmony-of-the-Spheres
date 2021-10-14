@@ -92,30 +92,30 @@ export const getPaginationRange = (
 export const linspace = (x1: number, x2: number, n: number) => {
   let result = [x1];
   const diff = (x2 - x1) / (n - 1);
-  for (let i = 0; i < n-1; i++) {
-    result.push(result[result.length-1] + diff)
+  for (let i = 0; i < n - 1; i++) {
+    result.push(result[result.length - 1] + diff);
   }
-  return result
-}
+  return result;
+};
 
 export const logspace = (e1: number, e2: number, n: number) => {
   // e1 and e2 are the logarithms of x1 and x2 (base 10)
-  const exponents = linspace(e1, e2, n)
-  return exponents.map((e) => Math.pow(10, e))
-}
+  const exponents = linspace(e1, e2, n);
+  return exponents.map(e => Math.pow(10, e));
+};
 
 export const geomspace = (x1: number, x2: number, n: number) => {
   // same as logspace, except you pass in x1 and x2 as is and log is taken internally.
-  return logspace(Math.log10(x1), Math.log10(x2), n)
-}
+  return logspace(Math.log10(x1), Math.log10(x2), n);
+};
 
 export const getRangeValues = (min: number, max: number, nButtons: number) => {
-  if (max/2 < min) {
-    return geomspace(min, max, nButtons)
+  if (max / 2 < min) {
+    return geomspace(min, max, nButtons);
   } else {
-    return geomspace(min, max/2, nButtons-1).concat([max])
+    return geomspace(min, max / 2, nButtons - 1).concat([max]);
   }
-}
+};
 export const yearsToYearsMonthsDays = (value: number): string => {
   const totalDays = value * 365;
   const years = Math.floor(totalDays / 365);

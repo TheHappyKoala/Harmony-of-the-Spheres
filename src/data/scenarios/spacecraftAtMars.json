@@ -7,7 +7,7 @@
   "particlesFun": false,
   "type": "Spaceflight",
   "g": 39.5,
-  "dt": 9e-8,
+  "dt": 9e-9,
   "distMax": 50,
   "displayGrid": true,
   "mapMode": true,
@@ -43,7 +43,7 @@
   "logarithmicDepthBuffer": true,
   "scale": 2100000,
   "barycenter": false,
-  "trails": true,
+  "trails": false,
   "labels": true,
   "trajectoryRendevouz": {
     "x": 0,

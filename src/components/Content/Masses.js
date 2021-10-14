@@ -186,9 +186,10 @@ export default props => {
                         payload={{ key: "a" }}
                         value={mass.orbitalElements.a}
                         callback={orbitalElementsChangeCallback}
-                        max={10}
+                        max={props.maximumDistance}
                         min={0}
-                        step={0.001}
+                        shouldUpdateOnMaxMinChange={true}
+                        step={props.maximumDistance / 200}
                       />
                     </td>
                   </tr>
@@ -204,8 +205,8 @@ export default props => {
                         value={mass.orbitalElements.e}
                         callback={orbitalElementsChangeCallback}
                         max={0.99}
-                        min={0}
-                        step={0.00001}
+                        min={0.0000001}
+                        step={0.001}
                       />
                     </td>
                   </tr>

@@ -6,7 +6,7 @@
   "particlesFun": false,
   "type": "Solar System",
   "g": 39.5,
-  "dt": 0.000009,
+  "dt": 0.0000009,
   "distMax": 50,
   "displayGrid": true,
   "distMin": -50,

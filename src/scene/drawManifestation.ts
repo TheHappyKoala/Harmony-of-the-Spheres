@@ -66,21 +66,17 @@ export default function(
         manifestation.handleTrajectoryUpdate(
           (scenario.rotatingReferenceFrame !== mass.name &&
             scenario.mapMode &&
-            scenario.cameraPosition === "Free" &&
             currentSOI.name === scenario.rotatingReferenceFrame) ||
             ((scenario.rotatingReferenceFrame === "Barycenter" ||
               scenario.rotatingReferenceFrame === scenario.masses[0].name) &&
-              scenario.cameraFocus === "Barycenter" &&
-              scenario.cameraPosition === "Free") ||
+              scenario.cameraFocus === "Barycenter") ||
             ((scenario.rotatingReferenceFrame === "Barycenter" ||
               scenario.rotatingReferenceFrame === scenario.masses[0].name) &&
-              scenario.cameraFocus === "Habitable Zone" &&
-              scenario.cameraPosition === "Free") ||
+              scenario.cameraFocus === "Habitable Zone") ||
             (scenario.type === "Exoplanets" &&
               (scenario.rotatingReferenceFrame === "Barycenter" ||
                 scenario.rotatingReferenceFrame === scenario.masses[0].name) &&
-              scenario.cameraFocus === scenario.masses[0].name &&
-              scenario.cameraPosition === "Free"),
+              scenario.cameraFocus === scenario.masses[0].name),
           {
             mass,
             scenario,
