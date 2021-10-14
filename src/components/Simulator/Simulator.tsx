@@ -105,6 +105,7 @@ export default ({
             sizeAttenuation={scenario.sizeAttenuation}
             background={scenario.background}
             lagrangePoints={scenario.lagrangePoints}
+            mapMode={scenario.mapMode}
           />
         </div>
         <div data-label="Masses" data-icon="fas fa-globe">

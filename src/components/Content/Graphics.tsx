@@ -19,6 +19,7 @@ interface GraphicsProps {
   sizeAttenuation: boolean;
   background: boolean;
   lagrangePoints: boolean;
+  mapMode: boolean;
 }
 
 export default ({
@@ -34,7 +35,8 @@ export default ({
   cameraPosition,
   sizeAttenuation,
   background,
-  lagrangePoints
+  lagrangePoints,
+  mapMode
 }: GraphicsProps): ReactElement => (
   <Fragment>
     <h2>Graphics</h2>
@@ -220,6 +222,16 @@ export default ({
         />
       </div>
       <div data-label="Objects">
+        <Toggle
+          label="Orbit Lines"
+          checked={trails}
+          callback={() =>
+            modifyScenarioProperty({
+              key: "mapMode",
+              value: !mapMode
+            })
+          }
+        />
         <Toggle
           label="Trails"
           checked={trails}

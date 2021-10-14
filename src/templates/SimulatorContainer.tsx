@@ -51,8 +51,6 @@ const Scenario = ({
       massTypeToAdd: "Star",
       background: true,
       tol: 1e-27,
-      //maxDt: 1e-2,
-      //minDt: 1e-13,
       particleNumber: 0,
       particleMaxD: 0,
       particles: {
