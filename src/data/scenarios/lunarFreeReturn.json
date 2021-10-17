@@ -14,6 +14,7 @@
   "displayGrid": true,
   "barycenterMassOne": "Earth",
   "barycenterMassTwo": "Moon",
+  "cameraPosition": "Free",
   "rotatingReferenceFrame": "Barycenter",
   "systemBarycenter": false,
   "cameraFocus": "Barycenter",

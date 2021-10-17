@@ -6,6 +6,7 @@ interface NumberPickerInterface {
   icon?: string;
   payload: any;
   payloadKey: string;
+  initialIndex: number;
 }
 
 export default ({
@@ -13,13 +14,15 @@ export default ({
   numbers,
   icon,
   payload,
-  payloadKey
+  payloadKey,
+  initialIndex
 }: NumberPickerInterface) => {
-  const [selectedNumber, setSelectedNumber] = useState(numbers[0]);
+  const [selectedNumber, setSelectedNumber] = useState(numbers[2]);
 
   useEffect(() => {
-    setSelectedNumber(numbers[0]);
-  }, [numbers[0]]);
+    setSelectedNumber(numbers[2]);
+    callback({ ...payload, [payloadKey]: numbers[2] });
+  }, [numbers[2]]);
 
   useEffect(() => callback({ ...payload, [payloadKey]: selectedNumber }), []);
 

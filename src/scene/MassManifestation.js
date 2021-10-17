@@ -356,8 +356,8 @@ export default class extends THREE.Object3D {
     if (main) {
       if (main.geometry) main.geometry.dispose();
       if (main.material) {
-        main.material.map.dispose();
-        main.material.bumpMap.dispose();
+        main.material.map && main.material.map.dispose();
+        main.material.bumpMap && main.material.bumpMap.dispose();
         main.material.dispose();
       }
 
