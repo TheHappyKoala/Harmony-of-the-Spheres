@@ -44,7 +44,7 @@
   "scale": 2100000,
   "barycenter": false,
   "mapMode": false,
-  "trails": true, 
+  "trails": true,
   "labels": true,
   "trajectoryRendevouz": {
     "x": 0,

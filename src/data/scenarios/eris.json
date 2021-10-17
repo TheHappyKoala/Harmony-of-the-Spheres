@@ -59,7 +59,7 @@
     "p": { "x": 0, "y": 0, "z": 0, "t": 0 }
   },
   "velMax": 5,
-  "velMin": -5, 
+  "velMin": -5,
   "velStep": 0.00000185765499287888,
   "isMassBeingAdded": false,
   "a": 0,

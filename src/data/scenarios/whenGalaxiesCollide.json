@@ -10,7 +10,7 @@
   "g": 39.5,
   "dt": 0.0005,
   "rotatingReferenceFrame": "Barycenter",
-  "background": false, 
+  "background": false,
   "barycenterZ": 9000000,
   "cameraPosition": "Free",
   "cameraFocus": "Athena",

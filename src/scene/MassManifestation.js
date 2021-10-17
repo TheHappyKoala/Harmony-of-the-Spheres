@@ -354,10 +354,13 @@ export default class extends THREE.Object3D {
     const main = this.getObjectByName("main");
 
     if (main) {
-      main.geometry.dispose();
-      if (main.material.map) main.material.map.dispose();
-      if (main.material.bumpMap) main.material.bumpMap.dispose();
-      main.material.dispose();
+      if (main.geometry) main.geometry.dispose();
+      if (main.material) {
+        main.material.map.dispose();
+        main.material.bumpMap.dispose();
+        main.material.dispose();
+      }
+
       this.remove(main);
     }
 

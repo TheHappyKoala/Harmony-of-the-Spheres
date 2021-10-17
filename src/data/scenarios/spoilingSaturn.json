@@ -87,7 +87,7 @@
   "playing": false,
   "customCameraToBodyDistanceFactor": false,
   "barycenterZ": 10000,
-  "elapsedTime": 0, 
+  "elapsedTime": 0,
   "useBarnesHut": false,
   "theta": 0.5,
   "collisions": true,
