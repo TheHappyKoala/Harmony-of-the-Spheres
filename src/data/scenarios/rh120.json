@@ -43,7 +43,8 @@
   "logarithmicDepthBuffer": false,
   "scale": 2100000,
   "barycenter": false,
-  "trails": true,
+  "mapMode": false,
+  "trails": true, 
   "labels": true,
   "trajectoryRendevouz": {
     "x": 0,

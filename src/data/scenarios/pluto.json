@@ -10,6 +10,7 @@
   "distMax": 50,
   "displayGrid": true,
   "distMin": -50,
+  "mapMode": false,
   "systemBarycenter": false,
   "barycenterMassOne": "Pluto",
   "barycenterMassTwo": "Charon",

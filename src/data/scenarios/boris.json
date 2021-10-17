@@ -41,7 +41,7 @@
   "logarithmicDepthBuffer": false,
   "scale": 2100000,
   "barycenter": false,
-  "trails": false,
+  "trails": true,
   "labels": true,
   "particles": { "max": 60000, "size": 50, "rings": [] },
   "trajectoryRendevouz": {

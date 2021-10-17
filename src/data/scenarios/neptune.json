@@ -25,7 +25,7 @@
   "barycenterMassOne": "Sun",
   "barycenterMassTwo": "Neptune",
   "tol": 1e-4,
-  "maxDt": 0.0000009,
+  "maxDt": 0.000005,
   "minDt": 0.000000009,
   "drawLineEvery": 6,
   "isLoaded": false,
