@@ -226,7 +226,7 @@ export default props => {
                         value={radiansToDegrees(mass.orbitalElements.i)}
                         callback={orbitalElementsChangeCallback}
                         max={180}
-                        min={-180}
+                        min={0}
                         step={0.1}
                       />
                     </td>
@@ -246,8 +246,8 @@ export default props => {
                         payload={{ key: "lAn" }}
                         value={radiansToDegrees(mass.orbitalElements.lAn)}
                         callback={orbitalElementsChangeCallback}
-                        max={180}
-                        min={-180}
+                        max={360}
+                        min={0}
                         step={0.1}
                       />
                     </td>
@@ -267,8 +267,8 @@ export default props => {
                         payload={{ key: "argP" }}
                         value={radiansToDegrees(mass.orbitalElements.argP)}
                         callback={orbitalElementsChangeCallback}
-                        max={180}
-                        min={-180}
+                        max={360}
+                        min={0}
                         step={0.1}
                       />
                     </td>
