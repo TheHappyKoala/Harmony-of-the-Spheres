@@ -417,27 +417,16 @@ const scene = {
         .toObject()
     ];
 
-    for (let i = 0; i < 5; i++) {
-      let z;
-
-      if (i <= 2) {
-        z = points[i].z;
-      } else if (i === 3) {
-        z = l4.posRel.z * scale;
-      } else if (i === 4) {
-        z = l5.posRel.z * scale;
-      }
-
+    for (let i = 0; i < 5; i++)
       this.graphics2D.drawLabel(
         `L${i + 1}`,
-        this.utilityVector.set(points[i].x, points[i].y, z),
+        this.utilityVector.set(points[i].x, points[i].y, points[i].z),
         this.camera,
         false,
         "right",
         "yellow",
         drawMarkerLabel
       );
-    }
   },
 
   loop() {
