@@ -1,5 +1,4 @@
 import React, { Fragment, useCallback, useEffect, useState } from "react";
-import Tabs from "../Tabs";
 import Dropdown from "../Dropdown";
 import Button from "../Button";
 import Slider from "../Slider";
@@ -10,7 +9,6 @@ import {
   findCurrentSOI,
   keplerToState,
   stateToKepler,
-  radiusSOI
 } from "../../physics/spacecraft/lambert";
 import { radiansToDegrees, degreesToRadians } from "../../physics/utils";
 
