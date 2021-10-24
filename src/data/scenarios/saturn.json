@@ -28,7 +28,7 @@
   "particles": {
     "max": 110000,
     "softening": 0,
-    "size": 30,
+    "size": 120,
     "shapes": [
       {
         "primary": "Saturn",

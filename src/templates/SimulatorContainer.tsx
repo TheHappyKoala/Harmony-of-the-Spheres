@@ -43,7 +43,7 @@ const Scenario = ({
       sizeAttenuation:
         scenarioFromData.sizeAttenuation !== null
           ? scenarioFromData.sizeAttenuation
-          : false,
+          : true,
       cameraCustomHeight: false,
       cameraCustomHeightNumber: 0,
       mapMode: true,
