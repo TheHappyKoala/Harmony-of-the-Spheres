@@ -1,4 +1,5 @@
 import React, { Fragment, useCallback, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Dropdown from "../Dropdown";
 import Button from "../Button";
 import Slider from "../Slider";
@@ -8,7 +9,7 @@ import {
   constructSOITree,
   findCurrentSOI,
   keplerToState,
-  stateToKepler,
+  stateToKepler
 } from "../../physics/spacecraft/lambert";
 import { radiansToDegrees, degreesToRadians } from "../../physics/utils";
 
@@ -25,30 +26,31 @@ const parseOrbitalElement = (orbitalElement, value) => {
 };
 
 export default props => {
+  const data = useSelector(data => data.scenario);
   const [selectedMass, setSelectedMass] = useState(bodies[0].name);
 
   const [mass, setMass] = useState({
-    tree: constructSOITree(props.masses),
+    tree: constructSOITree(data.masses),
     currentSOI: findCurrentSOI(
-      props.masses.find(mass => mass.name === props.massBeingModified),
-      constructSOITree(props.masses),
-      props.masses
+      data.masses.find(mass => mass.name === data.massBeingModified),
+      constructSOITree(data.masses),
+      data.masses
     ),
     orbitalElements: { a: 0, e: 0, i: 0, argP: 0, lAn: 0 }
   });
 
   useEffect(() => {
-    if (!props.masses.length) {
+    if (!data.masses.length) {
       return;
     }
 
-    const secondary = props.masses.find(
-      mass => mass.name === props.massBeingModified
+    const secondary = data.masses.find(
+      mass => mass.name === data.massBeingModified
     );
 
-    const tree = constructSOITree(props.masses);
+    const tree = constructSOITree(data.masses);
 
-    const currentSOI = findCurrentSOI(secondary, tree, props.masses);
+    const currentSOI = findCurrentSOI(secondary, tree, data.masses);
 
     const orbitalElements = stateToKepler(
       {
@@ -67,7 +69,7 @@ export default props => {
     const { name } = currentSOI;
 
     setMass({ currentSOI, orbitalElements, tree });
-  }, [props.masses, mass.currentSOI.m, props.massBeingModified]);
+  }, [data.masses, mass.currentSOI.m, data.massBeingModified]);
 
   const orbitalElementsChangeCallback = useCallback(
     data => {
@@ -83,39 +85,39 @@ export default props => {
 
       props.modifyMassProperty(
         {
-          name: props.massBeingModified,
+          name: data.massBeingModified,
           key: "x",
           value: mass.currentSOI.x - posRel.x
         },
         {
-          name: props.massBeingModified,
+          name: data.massBeingModified,
           key: "y",
           value: mass.currentSOI.y - posRel.y
         },
         {
-          name: props.massBeingModified,
+          name: data.massBeingModified,
           key: "z",
           value: mass.currentSOI.z - posRel.z
         },
         {
-          name: props.massBeingModified,
+          name: data.massBeingModified,
           key: "vx",
           value: mass.currentSOI.vx - velRel.x
         },
         {
-          name: props.massBeingModified,
+          name: data.massBeingModified,
           key: "vy",
           value: mass.currentSOI.vy - velRel.y
         },
         {
-          name: props.massBeingModified,
+          name: data.massBeingModified,
           key: "vz",
           value: mass.currentSOI.vz - velRel.z
         }
       );
     },
     [
-      props.massBeingModified,
+      data.massBeingModified,
       mass.orbitalElements.a,
       mass.orbitalElements.e,
       mass.orbitalElements.i,
@@ -136,7 +138,7 @@ export default props => {
   return (
     <Fragment>
       <h2>Masses</h2>
-      {!!props.masses.length && (
+      {!!data.masses.length && (
         <Fragment>
           <label className="top">
             Mass Being Modified
@@ -146,13 +148,13 @@ export default props => {
             />
           </label>
           <Dropdown
-            selectedOption={props.massBeingModified}
+            selectedOption={data.massBeingModified}
             dropdownWrapperCssClassName="tabs-dropdown-wrapper"
             selectedOptionCssClassName="selected-option"
             optionsWrapperCssClass="options"
-            dynamicChildrenLen={props.masses.length}
+            dynamicChildrenLen={data.masses.length}
           >
-            {props.masses.map(mass => (
+            {data.masses.map(mass => (
               <div
                 data-name={mass.name}
                 key={mass.name}
@@ -168,7 +170,7 @@ export default props => {
             ))}
           </Dropdown>
 
-          {props.massBeingModified !== mass.currentSOI.name && (
+          {data.massBeingModified !== mass.currentSOI.name && (
             <Fragment>
               <label className="top">Orbital Elements</label>
               <table className="mass-table">
@@ -184,10 +186,10 @@ export default props => {
                         payload={{ key: "a" }}
                         value={mass.orbitalElements.a}
                         callback={orbitalElementsChangeCallback}
-                        max={props.maximumDistance}
+                        max={data.maximumDistance}
                         min={0}
                         shouldUpdateOnMaxMinChange={true}
-                        step={props.maximumDistance / 200}
+                        step={data.maximumDistance / 200}
                       />
                     </td>
                   </tr>
@@ -296,9 +298,9 @@ export default props => {
               </table>
             </Fragment>
           )}
-          {props.masses.map(
+          {data.masses.map(
             mass =>
-              props.massBeingModified === mass.name && (
+              data.massBeingModified === mass.name && (
                 <div key={mass.name}>
                   <label className="top">
                     Mass

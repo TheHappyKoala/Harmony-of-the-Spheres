@@ -700,9 +700,10 @@ const scene = {
         },
         {
           key: "maximumDistance",
-          value:
+          value: (
             this.camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) /
             this.scenario.scale
+          ).toFixed(8)
         },
         {
           key: "barycenterData",

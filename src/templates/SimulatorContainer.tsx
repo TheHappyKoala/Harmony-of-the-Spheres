@@ -1,16 +1,21 @@
-import React, { ReactElement, useEffect, Fragment } from "react";
-import { AppState } from "../state/reducers";
+import React, { ReactElement, useLayoutEffect, Fragment } from "react";
 import { graphql } from "gatsby";
 import { connect } from "react-redux";
 import * as scenarioActionCreators from "../state/creators/scenario";
-import Simulator from "../components/Simulator/Simulator";
 import Head from "../components/Head";
+import Renderer from "../components/Renderer";
+import Tabs from "../components/Tabs";
+import Physics from "../components/Physics";
+import Graphics from "../components/Graphics";
+import Masses from "../components/Masses";
+import AddMass from "../components/AddMass";
+import BottomPanel from "../components/BottomPanel";
+import "../components/Simulator/App.less";
 
 interface ScenarioProps {
   data: {
     scenariosJson: ScenarioState;
   };
-  scenario: ScenarioState;
   setScenario: typeof scenarioActionCreators.setScenario;
   modifyScenarioProperty: typeof scenarioActionCreators.modifyScenarioProperty;
   modifyMassProperty: typeof scenarioActionCreators.modifyMassProperty;
@@ -32,13 +37,12 @@ const Scenario = ({
   addMass,
   deleteMass,
   data,
-  scenario,
   pageContext,
   location
 }: ScenarioProps): ReactElement => {
   const scenarioFromData = data.scenariosJson;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const defaults = {
       sizeAttenuation:
         scenarioFromData.sizeAttenuation !== null
@@ -79,7 +83,7 @@ const Scenario = ({
     };
 
     setScenario({ ...scenarioFromData, ...defaults });
-  }, [scenarioFromData.name]);
+  }, []);
 
   return (
     <Fragment>
@@ -91,22 +95,44 @@ const Scenario = ({
         bodyCssClass="body-with-overflow-hidden"
         fileName={scenarioFromData.fileName}
       />
-      <Simulator
-        modifyScenarioProperty={modifyScenarioProperty}
-        modifyMassProperty={modifyMassProperty}
-        addMass={addMass}
-        deleteMass={deleteMass}
-        scenario={scenario}
-        initTab={scenarioFromData.initTab}
+      <Renderer />
+      <Tabs
+        initTab={scenarioFromData.initTab ? scenarioFromData.initTab : 1}
+        tabsWrapperClassName="sidebar-wrapper"
+        tabsContentClassName="sidebar-content box"
+        transition={{
+          name: "slide",
+          enterTimeout: 250,
+          leaveTimeout: 250
+        }}
+      >
+        <div data-label="Physics" data-icon="fas fa-cube">
+          <Physics modifyScenarioProperty={modifyScenarioProperty} />
+        </div>
+        <div data-label="Graphics" data-icon="fas fa-paint-brush">
+          <Graphics modifyScenarioProperty={modifyScenarioProperty} />
+        </div>
+        <div data-label="Masses" data-icon="fas fa-globe">
+          <Masses
+            modifyScenarioProperty={modifyScenarioProperty}
+            modifyMassProperty={modifyMassProperty}
+            deleteMass={deleteMass}
+          />
+        </div>
+        <div data-label="Add" data-icon="fas fa-plus-circle">
+          <AddMass
+            addMass={addMass}
+            modifyScenarioProperty={modifyScenarioProperty}
+          />
+        </div>
+      </Tabs>
+      <BottomPanel
         description={scenarioFromData.scenarioDescription}
+        modifyScenarioProperty={modifyScenarioProperty}
       />
     </Fragment>
   );
 };
-
-const mapStateToProps = (state: AppState) => ({
-  scenario: state.scenario
-});
 
 const mapDispatchToProps = {
   setScenario: scenarioActionCreators.setScenario,
@@ -116,7 +142,7 @@ const mapDispatchToProps = {
   deleteMass: scenarioActionCreators.deleteMass
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Scenario);
+export default connect(null, mapDispatchToProps)(Scenario);
 
 export const pageQuery = graphql`
   query($id: String) {
