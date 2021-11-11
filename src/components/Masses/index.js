@@ -72,13 +72,13 @@ export default props => {
   }, [data.masses, mass.currentSOI.m, data.massBeingModified]);
 
   const orbitalElementsChangeCallback = useCallback(
-    data => {
-      if (!data.value) return;
+    eventData => {
+      if (!eventData.value) return;
 
       const { posRel, velRel } = keplerToState(
         {
           ...mass.orbitalElements,
-          [data.key]: parseOrbitalElement(data.key, data.value)
+          [eventData.key]: parseOrbitalElement(eventData.key, eventData.value)
         },
         mass.currentSOI.m * 39.5
       );
