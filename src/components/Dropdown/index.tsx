@@ -10,59 +10,55 @@ interface DropdownProps {
   optionsWrapperCssClass: string;
 }
 
-export default memo(
-  ({
-    children,
-    selectedOption,
-    dropdownWrapperCssClassName,
-    selectedOptionCssClassName,
-    optionsWrapperCssClass
-  }: DropdownProps): ReactElement => {
-    const [options, setOptions] = useState(false);
+export default ({
+  children,
+  selectedOption,
+  dropdownWrapperCssClassName,
+  selectedOptionCssClassName,
+  optionsWrapperCssClass
+}: DropdownProps): ReactElement => {
+  const [options, setOptions] = useState(false);
 
-    const optionsWrapper = useRef(null);
+  const optionsWrapper = useRef(null);
 
-    const handleOpenOptions = () => {
-      if (options) return;
+  const handleOpenOptions = () => {
+    if (options) return;
 
-      setOptions(true);
-      document.addEventListener("click", handleClickWhenOptionsAreOpen);
-    };
+    setOptions(true);
+    document.addEventListener("click", handleClickWhenOptionsAreOpen);
+  };
 
-    const handleClickWhenOptionsAreOpen = (e: MouseEvent) => {
-      if (e.target === optionsWrapper.current) return;
+  const handleClickWhenOptionsAreOpen = (e: MouseEvent) => {
+    if (e.target === optionsWrapper.current) return;
 
-      setOptions(false);
+    setOptions(false);
 
-      document.removeEventListener("click", handleClickWhenOptionsAreOpen);
-    };
+    document.removeEventListener("click", handleClickWhenOptionsAreOpen);
+  };
 
-    return (
-      <div className={dropdownWrapperCssClassName}>
-        <div
-          onClick={handleOpenOptions}
-          data-options={options}
-          className={selectedOptionCssClassName}
-        >
-          {selectedOption}
-          <i
-            className={`fa fa-chevron-down ${options ? "rotated-chevron" : ""}`}
-          />
-        </div>
-        <ReactCSSTransitionGroup
-          transitionName="fall"
-          transitionEnterTimeout={150}
-          transitionLeaveTimeout={150}
-        >
-          {options && (
-            <div ref={optionsWrapper} className={optionsWrapperCssClass}>
-              {children}
-            </div>
-          )}
-        </ReactCSSTransitionGroup>
+  return (
+    <div className={dropdownWrapperCssClassName}>
+      <div
+        onClick={handleOpenOptions}
+        data-options={options}
+        className={selectedOptionCssClassName}
+      >
+        {selectedOption}
+        <i
+          className={`fa fa-chevron-down ${options ? "rotated-chevron" : ""}`}
+        />
       </div>
-    );
-  },
-  (prevProps, nextProps) =>
-    prevProps.selectedOption === nextProps.selectedOption
-);
+      <ReactCSSTransitionGroup
+        transitionName="fall"
+        transitionEnterTimeout={150}
+        transitionLeaveTimeout={150}
+      >
+        {options && (
+          <div ref={optionsWrapper} className={optionsWrapperCssClass}>
+            {children}
+          </div>
+        )}
+      </ReactCSSTransitionGroup>
+    </div>
+  );
+};

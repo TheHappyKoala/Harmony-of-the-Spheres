@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useState, Fragment } from "react";
-
+import { useSelector } from "react-redux";
 import Dropdown from "../Dropdown";
 import Button from "../Button";
 import Slider from "../Slider";
@@ -23,13 +23,40 @@ const findAvailableMassName = (name, masses, number = 1) => {
   }
 };
 
+const shouldComponentUpdate = (prevScenario, nextScenario) => {
+  if (
+    prevScenario.massToAdd.name !== nextScenario.massToAdd.name ||
+    prevScenario.primary !== nextScenario.primary ||
+    prevScenario.masses.length !== nextScenario.masses.length ||
+    prevScenario.a !== nextScenario.a ||
+    prevScenario.e !== nextScenario.e ||
+    prevScenario.i !== nextScenario.i ||
+    prevScenario.w !== nextScenario.w ||
+    prevScenario.o !== nextScenario.o ||
+    prevScenario.massTypeToAdd !== nextScenario.massTypeToAdd ||
+    prevScenario.maximumDistance !== nextScenario.maximumDistance ||
+    prevScenario.particles.shapes.length !==
+      nextScenario.particles.shapes.length ||
+    prevScenario.ringToAdd !== nextScenario.ringToAdd ||
+    prevScenario.particleNumber !== nextScenario.particleNumber ||
+    prevScenario.particleMinD !== nextScenario.particleMinD ||
+    prevScenario.particleMaxD !== nextScenario.particleMaxD
+  ) {
+    return false;
+  }
+
+  return true;
+};
+
 export default props => {
+  const data = useSelector(data => data.scenario, shouldComponentUpdate);
+
   useEffect(() => {
     props.modifyScenarioProperty({
       key: "massToAdd",
-      value: bodies.filter(body => body.bodyType === props.massTypeToAdd)[0]
+      value: bodies.filter(body => body.bodyType === data.massTypeToAdd)[0]
     });
-  }, [props.massTypeToAdd]);
+  }, [data.massTypeToAdd]);
 
   useEffect(() => {
     props.modifyScenarioProperty({
@@ -49,33 +76,30 @@ export default props => {
   const [isParticleSphere, setIsParticleSphere] = useState(true);
 
   const addMassCallback = useCallback(() => {
-    const massAlreadyExists = props.masses.find(mass => mass.name === massName);
+    const massAlreadyExists = data.masses.find(mass => mass.name === massName);
 
     let name;
 
     if (massAlreadyExists) {
-      name = findAvailableMassName(massName, props.masses);
+      name = findAvailableMassName(massName, data.masses);
     } else if (!massName.length) {
-      name = findAvailableMassName(
-        `Custom-${props.massTypeToAdd}`,
-        props.masses
-      );
+      name = findAvailableMassName(`Custom-${data.massTypeToAdd}`, data.masses);
     } else {
       name = massName;
     }
 
     props.addMass({
-      primary: props.primary,
+      primary: data.primary,
       secondary: {
-        ...props.massToAdd,
+        ...data.massToAdd,
         name,
         trailVertices: 3000,
         color: getRandomColor(),
-        a: props.a,
-        e: props.e,
-        w: props.w,
-        i: props.i,
-        o: props.o,
+        a: data.a,
+        e: data.e,
+        w: data.w,
+        i: data.i,
+        o: data.o,
         x: 0,
         y: 0,
         z: 0,
@@ -83,24 +107,24 @@ export default props => {
         vy: 0,
         vz: 0,
         customCameraPosition: { x: 0, y: 0, z: 50 },
-        texture: props.massToAdd.name
+        texture: data.massToAdd.name
       }
     });
-  }, [props.massToAdd, massName, props.masses, props.massTypeToAdd]);
+  }, [data.massToAdd, massName, data.masses, data.massTypeToAdd]);
 
   const addRingCallback = useCallback(() => {
     props.modifyScenarioProperty({
       key: "particles",
       value: {
-        ...props.particles,
+        ...data.particles,
         shapes: [
-          ...props.particles.shapes,
+          ...data.particles.shapes,
           {
-            ...props.ringToAdd,
-            primary: props.primary,
-            number: props.particleNumber,
-            minD: props.a - props.particleMaxD,
-            maxD: props.a + props.particleMaxD,
+            ...data.ringToAdd,
+            primary: data.primary,
+            number: data.particleNumber,
+            minD: data.a - data.particleMaxD,
+            maxD: data.a + data.particleMaxD,
             tilt: [0, 0, 0],
             flatLand: isParticleSphere,
             type: "getRingParticle"
@@ -109,11 +133,11 @@ export default props => {
       }
     });
   }, [
-    props.particles,
-    props.primary,
-    props.particleNumber,
-    props.particleMinD,
-    props.particleMaxD,
+    data.particles,
+    data.primary,
+    data.particleNumber,
+    data.particleMinD,
+    data.particleMaxD,
     isParticleSphere
   ]);
 
@@ -132,7 +156,7 @@ export default props => {
         />
       </label>
       <Dropdown
-        selectedOption={props.massTypeToAdd}
+        selectedOption={data.massTypeToAdd}
         dropdownWrapperCssClassName="tabs-dropdown-wrapper"
         selectedOptionCssClassName="selected-option"
         optionsWrapperCssClass="options"
@@ -160,7 +184,7 @@ export default props => {
         />
       </label>
       <Dropdown
-        selectedOption={props.primary}
+        selectedOption={data.primary}
         dropdownWrapperCssClassName="tabs-dropdown-wrapper"
         selectedOptionCssClassName="selected-option"
         optionsWrapperCssClass="options"
@@ -179,7 +203,7 @@ export default props => {
         >
           Barycenter
         </div>
-        {props.masses?.map(mass => (
+        {data.masses?.map(mass => (
           <div
             data-name={mass.name}
             key={mass.name}
@@ -200,7 +224,7 @@ export default props => {
           </div>
         ))}
       </Dropdown>
-      {props.massTypeToAdd === "Ring" && (
+      {data.massTypeToAdd === "Ring" && (
         <Fragment>
           <label className="top">
             Number of Particles{" "}
@@ -211,7 +235,7 @@ export default props => {
           </label>
           <Slider
             payload={{ key: "particleNumber" }}
-            value={props.particleNumber}
+            value={data.particleNumber}
             callback={props.modifyScenarioProperty}
             max={10000}
             min={0}
@@ -227,12 +251,12 @@ export default props => {
           </label>
           <Slider
             payload={{ key: "a" }}
-            value={props.a}
+            value={data.a}
             callback={props.modifyScenarioProperty}
-            max={props.maximumDistance}
+            max={data.maximumDistance}
             min={0}
             shouldUpdateOnMaxMinChange={true}
-            step={props.maximumDistance / 200}
+            step={data.maximumDistance / 200}
           />
           <label className="top">
             Ring Width{" "}
@@ -240,12 +264,12 @@ export default props => {
           </label>
           <Slider
             payload={{ key: "particleMaxD" }}
-            value={props.particleMaxD}
+            value={data.particleMaxD}
             callback={props.modifyScenarioProperty}
-            max={props.maximumDistance}
+            max={data.maximumDistance}
             min={0}
             shouldUpdateOnMaxMinChange={true}
-            step={props.maximumDistance / 200}
+            step={data.maximumDistance / 200}
           />
           <Toggle
             label="Two Dimensional"
@@ -257,7 +281,7 @@ export default props => {
           </Button>
         </Fragment>
       )}
-      {props.massTypeToAdd !== "Ring" && (
+      {data.massTypeToAdd !== "Ring" && (
         <Fragment>
           <label className="top">
             Mass Name{" "}
@@ -271,7 +295,7 @@ export default props => {
             className="box text-input-field"
             onInput={nameFieldCallback}
           />
-          {!!props.masses?.length && (
+          {!!data.masses?.length && (
             <Fragment>
               <label className="top">
                 Semi-major Axis{" "}
@@ -282,12 +306,12 @@ export default props => {
               </label>
               <Slider
                 payload={{ key: "a" }}
-                value={props.a}
+                value={data.a}
                 callback={props.modifyScenarioProperty}
-                max={props.maximumDistance}
+                max={data.maximumDistance}
                 min={0}
                 shouldUpdateOnMaxMinChange={true}
-                step={props.maximumDistance / 200}
+                step={data.maximumDistance / 200}
               />
               <label className="top">
                 Eccentricity{" "}
@@ -298,7 +322,7 @@ export default props => {
               </label>
               <Slider
                 payload={{ key: "e" }}
-                value={props.e}
+                value={data.e}
                 callback={props.modifyScenarioProperty}
                 max={0.99999999}
                 min={0.0000001}
@@ -313,7 +337,7 @@ export default props => {
               </label>
               <Slider
                 payload={{ key: "w" }}
-                value={props.w}
+                value={data.w}
                 callback={props.modifyScenarioProperty}
                 max={360}
                 min={0}
@@ -328,7 +352,7 @@ export default props => {
               </label>
               <Slider
                 payload={{ key: "i" }}
-                value={props.i}
+                value={data.i}
                 callback={props.modifyScenarioProperty}
                 max={360}
                 min={0}
@@ -343,7 +367,7 @@ export default props => {
               </label>
               <Slider
                 payload={{ key: "o" }}
-                value={props.o}
+                value={data.o}
                 callback={props.modifyScenarioProperty}
                 max={360}
                 min={0}
@@ -359,13 +383,13 @@ export default props => {
             />
           </label>
           <Dropdown
-            selectedOption={props.massToAdd?.name}
+            selectedOption={data.massToAdd?.name}
             dropdownWrapperCssClassName="tabs-dropdown-wrapper"
             selectedOptionCssClassName="selected-option"
             optionsWrapperCssClass="options"
           >
             {bodies
-              .filter(body => body.bodyType === props.massTypeToAdd)
+              .filter(body => body.bodyType === data.massTypeToAdd)
               .map(body => {
                 return (
                   <div
@@ -384,7 +408,7 @@ export default props => {
               })}
           </Dropdown>
           <Button callback={addMassCallback} cssClassName="button box top">
-            Add {props.massToAdd?.name}
+            Add {data.massToAdd?.name}
           </Button>
         </Fragment>
       )}
