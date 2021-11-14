@@ -172,130 +172,97 @@ export default props => {
 
           {data.massBeingModified !== mass.currentSOI.name && (
             <Fragment>
-              <label className="top">Orbital Elements</label>
-              <table className="mass-table">
-                <tbody>
-                  <tr>
-                    <td>
-                      <i>a</i>
-                    </td>
-                    <td>{parseFloat(mass.orbitalElements.a).toFixed(5)}</td>
-                    <td>
-                      {" "}
-                      <Slider
-                        payload={{ key: "a" }}
-                        value={mass.orbitalElements.a}
-                        callback={orbitalElementsChangeCallback}
-                        max={data.maximumDistance}
-                        min={0}
-                        shouldUpdateOnMaxMinChange={true}
-                        step={data.maximumDistance / 200}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <i>e</i>
-                    </td>
-                    <td>{parseFloat(mass.orbitalElements.e).toFixed(5)}</td>
-                    <td>
-                      {" "}
-                      <Slider
-                        payload={{ key: "e" }}
-                        value={mass.orbitalElements.e}
-                        callback={orbitalElementsChangeCallback}
-                        max={0.99}
-                        min={0.0000001}
-                        step={0.001}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <i>i</i>
-                    </td>
-                    <td>
-                      {parseFloat(
-                        radiansToDegrees(mass.orbitalElements.i)
-                      ).toFixed(5)}
-                    </td>
-                    <td>
-                      {" "}
-                      <Slider
-                        payload={{ key: "i" }}
-                        value={radiansToDegrees(mass.orbitalElements.i)}
-                        callback={orbitalElementsChangeCallback}
-                        max={180}
-                        min={0}
-                        step={0.1}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <i>Ω</i>
-                    </td>
-                    <td>
-                      {parseFloat(
-                        radiansToDegrees(mass.orbitalElements.lAn)
-                      ).toFixed(5)}
-                    </td>
-                    <td>
-                      {" "}
-                      <Slider
-                        payload={{ key: "lAn" }}
-                        value={radiansToDegrees(mass.orbitalElements.lAn)}
-                        callback={orbitalElementsChangeCallback}
-                        max={360}
-                        min={0}
-                        step={0.1}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <i>ω</i>
-                    </td>
-                    <td>
-                      {parseFloat(
-                        radiansToDegrees(mass.orbitalElements.argP)
-                      ).toFixed(5)}
-                    </td>
-                    <td>
-                      {" "}
-                      <Slider
-                        payload={{ key: "argP" }}
-                        value={radiansToDegrees(mass.orbitalElements.argP)}
-                        callback={orbitalElementsChangeCallback}
-                        max={360}
-                        min={0}
-                        step={0.1}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <i>E</i>
-                    </td>
-                    <td>
-                      {parseFloat(
-                        radiansToDegrees(mass.orbitalElements.eccAnom)
-                      ).toFixed(5)}
-                    </td>
-                    <td>
-                      {" "}
-                      <Slider
-                        payload={{ key: "eccAnom" }}
-                        value={radiansToDegrees(mass.orbitalElements.eccAnom)}
-                        callback={orbitalElementsChangeCallback}
-                        max={180}
-                        min={-180}
-                        step={0.1}
-                      />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <label className="top">
+                Semi-major Axis{" "}
+                <Tooltip
+                  position="left"
+                  content="The semi-major axis, a, is half of the longest diameter of the ellipse the constitutes the shape of the orbit. "
+                />
+              </label>
+              <Slider
+                payload={{ key: "a" }}
+                value={mass.orbitalElements.a}
+                callback={orbitalElementsChangeCallback}
+                max={data.maximumDistance}
+                min={0}
+                shouldUpdateOnMaxMinChange={true}
+                step={data.maximumDistance / 200}
+              />
+              <label className="top">
+                Eccentricity{" "}
+                <Tooltip
+                  position="left"
+                  content="The orbital element that determines the shape of the orbit. Bound orbits always have a value between 0 and 1, a value of 0 means the orbit has the shape of a perfect circle."
+                />
+              </label>
+              <Slider
+                payload={{ key: "e" }}
+                value={mass.orbitalElements.e}
+                callback={orbitalElementsChangeCallback}
+                max={0.99}
+                min={0.0000001}
+                step={0.001}
+              />
+              <label className="top">
+                Inclination{" "}
+                <Tooltip
+                  position="left"
+                  content="Orbital inclination is the angle between the plane of an orbit and an arbitrarily defined equator. If a body has an orbital inclination of 90 degrees, orbits from the geographic South to North pole of its primary."
+                />
+              </label>
+              <Slider
+                payload={{ key: "i" }}
+                value={radiansToDegrees(mass.orbitalElements.i)}
+                callback={orbitalElementsChangeCallback}
+                max={180}
+                min={0}
+                step={0.1}
+              />
+              <label className="top">
+                Ascending Node{" "}
+                <Tooltip
+                  position="left"
+                  content="The ascending node is the angular position at which a celestial body passes from the southern side of an arbitrarily defined reference plane to the northern side."
+                />
+              </label>
+              <Slider
+                payload={{ key: "lAn" }}
+                value={radiansToDegrees(mass.orbitalElements.lAn)}
+                callback={orbitalElementsChangeCallback}
+                max={360}
+                min={0}
+                step={0.1}
+              />
+              <label className="top">
+                Argument of Periapsis{" "}
+                <Tooltip
+                  position="left"
+                  content="The angle, starting from the center of the orbit, between an orbiting body's periapsis, the point in space where it is the closest to the primary it is orbiting, and its ascending node."
+                />
+              </label>
+              <Slider
+                payload={{ key: "argP" }}
+                value={radiansToDegrees(mass.orbitalElements.argP)}
+                callback={orbitalElementsChangeCallback}
+                max={360}
+                min={0}
+                step={0.1}
+              />
+              <label className="top">
+              Eccentric Anomaly{" "}
+                <Tooltip
+                  position="left"
+                  content="The eccentric anomaly is the angle that defines the position of a body that is moving along an elliptical orbit."
+                />
+              </label>
+              <Slider
+                payload={{ key: "eccAnom" }}
+                value={radiansToDegrees(mass.orbitalElements.eccAnom)}
+                callback={orbitalElementsChangeCallback}
+                max={180}
+                min={-180}
+                step={0.1}
+              />
             </Fragment>
           )}
           {data.masses.map(

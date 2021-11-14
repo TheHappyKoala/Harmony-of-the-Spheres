@@ -8,9 +8,19 @@ interface ToggleProps {
 }
 
 export default ({ checked, label, callback }: ToggleProps): ReactElement => (
-  <label className="toggle">
-    {label}
-    <input type="checkbox" checked={checked} onChange={() => callback()} />
-    <span />
-  </label>
+  <div className="toggle-wrapper">
+    <span>{label}</span>
+    <div className="toggle-switch">
+      <input
+        type="checkbox"
+        name={label}
+        id={label}
+        checked={checked}
+        onChange={() => callback()}
+      />
+      <label htmlFor={label}>
+        <span className="toggle-track"></span>
+      </label>
+    </div>
+  </div>
 );

@@ -1,4 +1,4 @@
-@primary: rgba(0, 0, 0, 0.6);
+@primary: rgba(0, 0, 0, 0.5);
 @secondary: #A9A9A9;
 @input: #191919;
 @font-color: #fff;
@@ -68,7 +68,7 @@ button:focus {
   width: 100%;
   tr {
     td:nth-of-type(2) {
-      width: 75px;
+      width: 230px;
       overflow: hidden;
     }
   }
@@ -87,7 +87,7 @@ button:focus {
   position: relative;
   background-color: #000;
   border: 1px solid #545454;
-  padding: 15px;
+  padding: 10px;
 }
 
 .close-button {
@@ -144,7 +144,7 @@ body {
     font-family: FontAwesome;
     font-style: normal;
     color: #fff;
-    font-size: 1.5em !important;
+    font-size: 1.2em !important;
   }
   @media screen and (max-width: 700px) {
     overflow: auto;
@@ -193,7 +193,7 @@ body {
   z-index: 99999;
   width: 100%;
   padding: 0 10px;
-  background-color: #000;
+  background-color: @primary;
   border-top: 1px solid #545454;
   display: flex;
   align-items: center;
@@ -223,20 +223,21 @@ body {
   .absolute();
   top: 0;
   right: 0;
-  width: 300px;
+  width: 280px;
   .sidebar-content {
-    height: calc(100vh - 95px);
-    width: 300px;
+    height: calc(100vh - 150px);
+    width: 280px;
     float: right;
-    background-color: #000;
+    background-color: @primary;
     overflow: auto;
     padding-bottom: 120px;
+    border-bottom: none;
   }
 }
 
 .mass-tabs {
   .mass-content {
-    height: 150px;
+    height: 110px;
     overflow: auto;
     border: @border;
   }
@@ -246,7 +247,6 @@ body {
     text-align: center;
     border: none;
     border-top: @border;
-    background-color: #000;
     min-height: auto;
   }
   .lazy-dog-wrapper {
