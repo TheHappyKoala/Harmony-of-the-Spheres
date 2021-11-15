@@ -1,42 +1,33 @@
 @import '../Simulator/App.less';
 
-.toggle {
-  display: block;
-  background-color: @primary;
-  padding: 10px 16px 10px 12px;
-  width: 100%;
-  position: relative;
-  border: @border;
-  cursor: pointer;
+.toggle-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 25px;
 }
-
-.toggle span {
-  width: 30px;
-  height: 100%;
-  background-color: @primary;
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 14px;
-  z-index: 1;
-  text-align: center;
-  font-family: sans-serif;
-  font-weight: bold;
-  border-left: @border;
+.toggle-wrapper:last-child {
+  margin-left: auto;
+}
+.toggle-switch input[type=checkbox] {display:none}
+.toggle-switch label {cursor:pointer;}
+.toggle-switch label .toggle-track {
+  display:block;height:25px;width:60px;background:#1d1c1c;border-radius:10px;
+  position:relative;
+  border:2px solid rgb(83, 78, 78);
 }
 
-.toggle span:before {
-  content: '';
-  line-height: 35px;
+.toggle-switch .toggle-track:before{
+  content:'';
+  display:inline-block;height:20px;width:20px;background:#d8d8d8;
+  border-radius:10px;
+  position:absolute;
+  top:0;
+  right:0;
+  transition:right .1s ease-in;
 }
 
-.toggle input[type='checkbox'] {
-  opacity: 0;
-  position: absolute;
-}
-
-.toggle input[type='checkbox']:checked + span:before {
-  content: '\2713';
+.toggle-switch input[type="checkbox"]:checked + label .toggle-track:before{
+  background:#545454;
+  right:40px;
 }
