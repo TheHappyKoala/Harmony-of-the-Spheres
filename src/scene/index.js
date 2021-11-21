@@ -260,10 +260,10 @@ const scene = {
       uniforms.impacts.value[impactIndex].impactRadius =
         looser.m === 0
           ? survivor.radius * 2
-          : Math.min(Math.max(looser.radius * 50, 300), survivor.radius * 2);
+          : Math.min(Math.max(looser.radius * 20, 300), survivor.radius * 2);
 
       const tween = new TWEEN.Tween({ value: 0 })
-        .to({ value: 1 }, 2000)
+        .to({ value: 1 }, 0.001 / this.scenario.dt)
         .onUpdate(val => {
           uniforms.impacts.value[impactIndex].impactRatio = val.value;
         })
