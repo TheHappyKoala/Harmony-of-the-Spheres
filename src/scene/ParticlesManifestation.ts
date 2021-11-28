@@ -99,7 +99,7 @@ export default class extends Object3D {
 
     mesh.name = "system";
 
-    mesh.frustumCulled = false;
+    mesh.frustumCulled = true;
 
     this.add(mesh);
   }
@@ -117,6 +117,7 @@ export default class extends Object3D {
     geometry.setDrawRange(0, particlesLen);
 
     const positions = geometry.attributes.position.array as Float32Array;
+    const sizes = geometry.attributes.size.array as Float32Array;
 
     let j = 0;
 
@@ -134,9 +135,11 @@ export default class extends Object3D {
       positions[j + 2] = z;
 
       j += 3;
+      sizes[i] = particle.size;
     }
 
     (<BufferAttribute>geometry.getAttribute("position")).needsUpdate = true;
+    (<BufferAttribute>geometry.getAttribute("size")).needsUpdate = true;
   }
 
   dispose() {

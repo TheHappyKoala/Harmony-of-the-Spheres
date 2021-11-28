@@ -160,7 +160,7 @@ export default class extends THREE.Object3D {
        * The max number of impacts, duh
        */
 
-      const maxImpactAmount = 5;
+      const maxImpactAmount = 7;
 
       /*
        * Create some impact uniforms

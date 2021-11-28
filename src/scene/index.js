@@ -10,7 +10,7 @@ import {
   radiansToDegrees,
   degreesToRadians,
   getLagrangePoints,
-  getDistanceParams
+  clampAbs
 } from "../physics/utils";
 import ParticleService from "../physics/particles/ParticleService";
 import arena from "./arena";
@@ -260,7 +260,7 @@ const scene = {
       uniforms.impacts.value[impactIndex].impactRadius =
         looser.m === 0
           ? survivor.radius * 2
-          : Math.min(Math.max(looser.radius * 20, 300), survivor.radius * 2);
+          : Math.min(Math.max(looser.radius * 10, 300), survivor.radius * 2);
 
       const tween = new TWEEN.Tween({ value: 0 })
         .to({ value: 1 }, 0.001 / this.scenario.dt)
@@ -275,7 +275,7 @@ const scene = {
       tween.start();
     }
 
-    const numberOfFragments = 200;
+    const numberOfFragments = parseInt(clampAbs(50, 1000, looser.radius * 4));
 
     const totalWithAddedFragments =
       this.particlePhysics.particles.length + numberOfFragments;
@@ -284,8 +284,6 @@ const scene = {
 
     if (excessFragments < 0)
       this.particlePhysics.particles.splice(0, -excessFragments);
-
-    const maxAngle = 35;
 
     this.particlePhysics.particles = [
       ...this.particlePhysics.particles,

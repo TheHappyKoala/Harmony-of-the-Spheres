@@ -6,13 +6,13 @@ export default depthTest =>
     uniforms: {
       color: { value: new THREE.Color(0xffffff) },
       texture: {
-        value: new THREE.TextureLoader().load("/textures/cloud.png")
+        value: new THREE.TextureLoader().load("/textures/particle.png")
       },
       sizeAttenuation: { value: true }
     },
     vertexShader: particle.vertex,
     fragmentShader: particle.fragment,
     blending: THREE.AdditiveBlending,
-    depthTest,
+    depthTest: false,
     transparent: true
-  });
+});
