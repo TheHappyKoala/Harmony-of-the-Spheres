@@ -64,7 +64,7 @@ export default class extends Object3D {
     const sizes = new Float32Array(particlesLen);
     const colors = new Float32Array(particlesLen * 3);
 
-    var color = new Color(0xffffff);
+    const color = new Color(0xffffff);
 
     let j = 0;
 
@@ -81,7 +81,7 @@ export default class extends Object3D {
           this.particles[i].hsl[1],
           this.particles[i].hsl[2]
         );
-      } else color.setHSL(0.6, 0.6, 0.6);
+      } else color.setHSL(1, 1, 1);
 
       color.toArray(colors, i * 3);
 

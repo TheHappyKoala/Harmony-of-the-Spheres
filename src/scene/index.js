@@ -275,7 +275,7 @@ const scene = {
       tween.start();
     }
 
-    const numberOfFragments = parseInt(clampAbs(50, 1000, looser.radius * 4));
+    const numberOfFragments = parseInt(clampAbs(50, 4000, looser.radius * 5));
 
     const totalWithAddedFragments =
       this.particlePhysics.particles.length + numberOfFragments;

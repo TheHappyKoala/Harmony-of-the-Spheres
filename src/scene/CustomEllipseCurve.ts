@@ -145,6 +145,7 @@ export default class extends Object3D {
     };
 
     const mesh = new Line(ellipseGeometry, ellipseMaterial);
+    mesh.frustumCulled = false;
     mesh.name = "CustomEllipse";
 
     this.add(mesh);

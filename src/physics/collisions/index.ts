@@ -75,11 +75,11 @@ export default class {
     const looserRadius = looser.radius / scale;
 
     return [...new Array(fragments)].map(_fragment => {
-      const ejectaRotationVector = this.getRandomRotationVector(45);
+      const ejectaRotationVector = this.getRandomRotationVector(25);
 
       const particleVelocity = new H3()
         .set(velocity)
-        .multiplyByScalar(getRandomNumberInRange(0.3, 1.2))
+        .multiplyByScalar(getRandomNumberInRange(0.1, 0.9))
         .rotate({ x: 1, y: 0, z: 0 }, ejectaRotationVector.x)
         .rotate({ x: 0, y: 1, z: 0 }, ejectaRotationVector.y)
         .rotate({ x: 0, y: 0, z: 1 }, ejectaRotationVector.z)
@@ -106,7 +106,7 @@ export default class {
         vy: particleVelocity.y,
         vz: particleVelocity.z,
         lives: 20,
-        size: survivor.radius / 1.5
+        size: survivor.radius
       };
     });
   }
