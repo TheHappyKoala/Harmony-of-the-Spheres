@@ -106,7 +106,7 @@ export default class {
         vy: particleVelocity.y,
         vz: particleVelocity.z,
         lives: 20,
-        size: survivor.radius
+        size: survivor.radius / 5
       };
     });
   }

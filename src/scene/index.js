@@ -131,6 +131,8 @@ const scene = {
       this.scenario.forAllMankind
     );
 
+    console.log(this.scenario.particles.size);
+
     this.particles = new ParticlesManifestation({
       particles: this.particlePhysics.particles,
       scenarioScale: this.scenario.scale,

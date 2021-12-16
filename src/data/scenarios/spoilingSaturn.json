@@ -80,7 +80,7 @@
   "barycenterMassOne": "Earth",
   "barycenterMassTwo": "Sun",
   "tol": 1e-9,
-  "maxDt": 0.00005,
+  "maxDt": 0.000005,
   "minDt": 0.0000005,
   "drawLineEvery": 6,
   "isLoaded": false,

@@ -249,7 +249,7 @@ export default props => {
                 step={0.1}
               />
               <label className="top">
-              Eccentric Anomaly{" "}
+                Eccentric Anomaly{" "}
                 <Tooltip
                   position="left"
                   content="The eccentric anomaly is the angle that defines the position of a body that is moving along an elliptical orbit."

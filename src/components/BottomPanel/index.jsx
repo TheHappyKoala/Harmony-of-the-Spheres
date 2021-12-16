@@ -46,7 +46,7 @@ export default ({ description, modifyScenarioProperty }) => {
         </Button>
         <div className="time-step-picker-wrapper">
           {scenario.integrator !== "RKN64" &&
-            scenario.integrator !== "RKN12" && (
+            scenario.integrator !== "RKN12" && scenario.minDt && (
               <NumberPicker
                 numbers={getRangeValues(scenario.minDt, scenario.maxDt, 5)}
                 callback={modifyScenarioProperty}

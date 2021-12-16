@@ -135,7 +135,7 @@ export default class extends Object3D {
       positions[j + 2] = z;
 
       j += 3;
-      sizes[i] = particle.size;
+      sizes[i] = particle.size ? particle.size : this.size;
     }
 
     (<BufferAttribute>geometry.getAttribute("position")).needsUpdate = true;

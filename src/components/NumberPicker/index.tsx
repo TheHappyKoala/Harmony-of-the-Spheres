@@ -15,7 +15,6 @@ export default ({
   icon,
   payload,
   payloadKey,
-  initialIndex
 }: NumberPickerInterface) => {
   const [selectedNumber, setSelectedNumber] = useState(numbers[2]);
 

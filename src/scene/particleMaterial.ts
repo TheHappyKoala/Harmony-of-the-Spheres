@@ -13,6 +13,6 @@ export default depthTest =>
     vertexShader: particle.vertex,
     fragmentShader: particle.fragment,
     blending: THREE.AdditiveBlending,
-    depthTest: false,
+    depthTest: true,
     transparent: true
 });
