@@ -44,11 +44,11 @@ export default class extends MassManifestation {
         `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
       ),
       blending: THREE.AdditiveBlending,
-      opacity: 0.6
+      opacity: 0.5
     });
 
     const halo = new THREE.Sprite(haloMaterial);
-    halo.scale.set(10, 10, 10);
+    halo.scale.set(5, 5, 5);
 
     mesh.add(halo);
 
