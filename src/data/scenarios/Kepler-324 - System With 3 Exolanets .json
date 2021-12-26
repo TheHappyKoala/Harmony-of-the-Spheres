@@ -118,7 +118,7 @@
       "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
-  "hallOfFame": true,
+  "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanetary system Kepler-324, which contains 3 exoplanets and was discovered by the Kepler.",
   "name": "Kepler-324 - System With 3 Exoplanets ",
   "cameraFocus": "Barycenter",

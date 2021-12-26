@@ -78,7 +78,7 @@
       "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
-  "hallOfFame": true,
+  "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 13189, which contains 1 exoplanets and was discovered by the Thueringer Landessternwarte Tautenburg.",
   "name": "HD 13189 - Most Massive Star Known to Have a Planet in Orbit Around It",
   "cameraFocus": "Barycenter",

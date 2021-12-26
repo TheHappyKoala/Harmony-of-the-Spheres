@@ -80,7 +80,7 @@
       "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
-  "hallOfFame": true,
+  "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanetary system HAT-P-62, which contains 1 exoplanets and was discovered by the HATNet.",
   "name": "HAT-P-62 - System With 1 Exoplanet ",
   "cameraFocus": "Barycenter",

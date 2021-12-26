@@ -194,7 +194,7 @@
       "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
-  "hallOfFame": true,
+  "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanetary system TRAPPIST-1, which contains 7 exoplanets, of which 3 are potentially habitable, and was discovered by the La Silla Observatory.",
   "name": "TRAPPIST-1 - System With 7 Exoplanets of Which 3 Are Potentially Habitable",
   "cameraFocus": "TRAPPIST-1-g",

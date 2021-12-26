@@ -97,7 +97,7 @@
       "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
-  "hallOfFame": true,
+  "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 39091, which contains 2 exoplanets and was discovered by the Anglo-Australian Telescope.",
   "name": "HD 39091 c - First Planet Discovered by TESS",
   "cameraFocus": "Barycenter",

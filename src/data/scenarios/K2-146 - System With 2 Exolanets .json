@@ -99,7 +99,7 @@
       "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
-  "hallOfFame": true,
+  "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanetary system K2-146, which contains 2 exoplanets and was discovered by the K2.",
   "name": "K2-146 - System With 2 Exoplanets ",
   "cameraFocus": "Barycenter",

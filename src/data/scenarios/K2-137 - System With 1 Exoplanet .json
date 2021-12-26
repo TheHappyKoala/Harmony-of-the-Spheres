@@ -78,7 +78,7 @@
       "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
-  "hallOfFame": true,
+  "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanetary system K2-137, which contains 1 exoplanets and was discovered by the K2.",
   "name": "K2-137 - Exoplanet Around a Main Sequence Star With the Shortest Orbital Period",
   "cameraFocus": "K2-137",

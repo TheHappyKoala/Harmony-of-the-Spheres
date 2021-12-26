@@ -78,7 +78,7 @@
       "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
-  "hallOfFame": true,
+  "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanetary system HD 190007, which contains 1 exoplanets and was discovered by the Multiple Observatories.",
   "name": "HD 190007 - System With 1 Exoplanet ",
   "cameraFocus": "Barycenter",

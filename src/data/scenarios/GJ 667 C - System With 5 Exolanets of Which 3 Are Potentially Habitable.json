@@ -154,7 +154,7 @@
       "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
-  "hallOfFame": true,
+  "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanetary system GJ 667 C, which contains 5 exoplanets, of which 3 are potentially habitable, and was discovered by the La Silla Observatory.",
   "name": "GJ 667 C - System With 5 Exoplanets of Which 3 Are Potentially Habitable",
   "cameraFocus": "GJ 667 C-f",
