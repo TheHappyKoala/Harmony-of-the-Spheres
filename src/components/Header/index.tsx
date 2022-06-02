@@ -53,13 +53,27 @@ export default ({
             overflow: "hidden"
           }}
         >
-          <NavItem>
-            <Button cssClassName="button" callback={setContactFormState}>
-              <span>
-                <i className="fas fa-envelope-open-o fa-2x" />
-                Contact
-              </span>
-            </Button>
+          <NavItem active={location.pathname === "/"}>
+            <Link to="/">
+              {" "}
+              <Button cssClassName="button">
+                <span>
+                  <i className="fas fa-home fa-2x button" />
+                  Home
+                </span>
+              </Button>
+            </Link>
+          </NavItem>
+          <NavItem active={location.pathname === "/changelog"}>
+            <Link to="/changelog">
+              {" "}
+              <Button cssClassName="button">
+                <span>
+                  <i className="fas fa-history fa-2x button" />
+                  Changelog
+                </span>
+              </Button>
+            </Link>
           </NavItem>
           <NavItem active={location.pathname === "/credits"}>
             <Link to="/credits">
@@ -83,6 +97,14 @@ export default ({
                   Contribute
                 </span>
               </a>
+            </Button>
+          </NavItem>
+          <NavItem>
+            <Button cssClassName="button" callback={setContactFormState}>
+              <span>
+                <i className="fas fa-envelope-open-o fa-2x" />
+                Contact
+              </span>
             </Button>
           </NavItem>
         </Nav>

@@ -25,7 +25,7 @@ module.exports = class {
 
     this.simplex = new Simplex();
     this.noiseDetail = noiseDetail;
-    this.simplex.noiseDetail(noiseDetail, 0.7);
+    this.simplex.noiseDetail(noiseDetail, 0.75);
 
     this.addTerrain();
   }

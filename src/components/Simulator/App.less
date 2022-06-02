@@ -380,6 +380,37 @@ body {
   margin-right: -280px;
   transition: margin-right 150ms ease-in;
 }
+
+
+
+
+
+.slide-left-enter {
+  margin-left: -350px;
+}
+
+.slide-left-enter.slide-left-enter-active {
+  margin-left: 0;
+  transition: margin-left 150ms ease-in;
+}
+
+.slide-left-leave {
+  margin-left: 0;
+}
+
+.slide-left-leave.slide-left-leave-active {
+  margin-left: -350px;
+  transition: margin-left 150ms ease-in;
+}
+
+
+
+
+
+
+
+
+
 .spinner {
   margin: 100px auto 0;
   width: 70px;
@@ -428,4 +459,72 @@ body {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
+}
+
+.exoplanet-wiki-wrapper {
+  padding-bottom: 90px;
+  h1 {
+    margin-top: 35px;
+  }
+  .exoplanets-navigation-menu {
+    background-color: #000;
+    position: fixed; 
+    bottom: 65px;
+    width: 343px;
+    left: 0;
+    z-index: 2;
+    border: 1px solid #545454;
+    border-bottom: none;
+    li {
+      display: inline-block;
+      padding: 10px;
+      font-weight: bold;
+    }
+  }
+  .celestial-object-wrapper {
+    padding: 15px;
+    border: 1px solid #545454;
+    margin-top: 35px;
+    width: calc(350px - 37px);
+    overflow-x: auto;
+    section {
+      width: fit-content;
+    }
+  }
+  .size-comparison-wrapper {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-evenly;
+    padding: 15px;
+    padding-bottom: 45px;
+  }
+  .celestial-sphere {
+    color: #fff; 
+    border-radius: 100%; 
+    background-color: #fff;
+    position: relative;
+    margin: 0 15px;
+    label {
+      text-align: center;
+      bottom: -25px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      text-shadow: 2px 1px #000;
+    }
+  }
+  table {
+    margin-top: 15px;
+    width: 100%;
+  }
+  td {
+    padding: 10px;
+  }
+  tr:nth-child(odd) td{
+    background-color: transparent;
+}
+  tr:nth-child(even) td{
+    background-color: #545454;
+}
 }

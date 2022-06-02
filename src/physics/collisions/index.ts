@@ -83,7 +83,7 @@ export default class {
         .rotate({ x: 1, y: 0, z: 0 }, ejectaRotationVector.x)
         .rotate({ x: 0, y: 1, z: 0 }, ejectaRotationVector.y)
         .rotate({ x: 0, y: 0, z: 1 }, ejectaRotationVector.z)
-        .add({ x: survivor.vx, y: survivor.vy, z: survivor.vz })
+        .add({ x: survivor.vx, y: survivor.vy, z: survivor.vz });
 
       const position = new H3()
         .set({

@@ -1,8 +1,7 @@
-import React, { ReactElement, Fragment, useCallback } from "react";
-import { graphql, navigate } from "gatsby";
+import React, { ReactElement, Fragment } from "react";
+import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Header from "../components/Header";
-import Button from "../components/Button";
 import "./credits.less";
 
 interface IndexProps {
@@ -12,36 +11,10 @@ interface IndexProps {
         fluid: any;
       };
     };
-    darrell: {
-      childImageSharp: {
-        fixed: any;
-      };
-    };
-    hugo: {
-      childImageSharp: {
-        fixed: any;
-      };
-    };
-    prisoner: {
-      childImageSharp: {
-        fixed: any;
-      };
-    };
-    john: {
-      childImageSharp: {
-        fixed: any;
-      };
-    };
   };
-  location: any;
 }
 
-export default ({ data, location }: IndexProps): ReactElement => {
-  const navigateBack = useCallback(() => {
-    if (window.PREVIOUS_PATH == null) navigate(`/`);
-    else window.history.back();
-  }, []);
-
+export default ({ data }: IndexProps): ReactElement => {
   return (
     <Fragment>
       <Img
@@ -55,13 +28,8 @@ export default ({ data, location }: IndexProps): ReactElement => {
         location={location}
       />
       <section className="credits-wrapper">
-        <Button cssClassName="button credits-back" callback={navigateBack}>
-          <Fragment>
-            <i className={`fas fa-chevron-left fa-2x`} />
-          </Fragment>
-        </Button>
         <article>
-          <h2>Contributors</h2>
+          <h2>Credits</h2>
           <ul>
             <li className="credits-list-item">
               <section className="contributor-details">
