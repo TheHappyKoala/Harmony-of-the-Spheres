@@ -21,11 +21,11 @@ export default ({ data }: IndexProps): ReactElement => {
       <Img
         fluid={data.background.childImageSharp.fluid}
         style={{ position: "fixed", top: 0, bottom: 0, width: "100%" }}
-        alt="Mars from orbit"
+        alt="Colourful nebula"
       />
       <Header
         pageTitle="Changelog"
-        pageDescription="Learn about the people that developed Gravity Simulator."
+        pageDescription="Learn about the newest updates to Gravity Simulator."
         location={location}
       />
       <section className="credits-wrapper">
@@ -35,17 +35,9 @@ export default ({ data }: IndexProps): ReactElement => {
             <li className="credits-list-item">
               <section className="contributor-details">
                 <h3 className="italic">2022-06-01</h3>
-                <p className="italic">Maintainer and Developer</p>
+                <p><b>Exoplanets Update</b></p>
                 <p className="contributor-description">
-                  Environmental economist and software developer with a strong
-                  interest in science. Has no clue what he is doing.{" "}
-                  <a
-                    href="https://darrellhuffman.me"
-                    target="blank"
-                    className="credits-learn-more"
-                  >
-                    Learn More
-                  </a>
+                  New exoplanet scenarios have been added and the exoplanet wiki has been revamped, in addition to a better model for generating the colour of a star based on its temperature.{" "}
                 </p>
               </section>
             </li>

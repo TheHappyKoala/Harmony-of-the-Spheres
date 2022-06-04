@@ -196,7 +196,7 @@ module.exports = (scenario, habitableZoneBounds) => {
   ${scenario.map((planet) => `<li><button href="#${hostname}-${planet.pl_letter}">${planet.pl_letter}</button></li>`).join(" ")}
   </ul>
   ${mainTitle}
-  <p>The ${hostname} system is known to contain ${sy_pnum} exoplanet${sy_pnum > 1 ? "s" : ""} in orbit around it. ${
+  <p>The ${hostname} system contains ${sy_pnum} exoplanet${sy_pnum > 1 ? "s" : ""}. ${
     !isNaN(sy_dist)
       ? `It is located ${(sy_dist * 3.26156).toFixed(
           2
