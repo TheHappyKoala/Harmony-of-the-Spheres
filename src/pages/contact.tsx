@@ -13,9 +13,10 @@ interface IndexProps {
       };
     };
   };
+  location: any;
 }
 
-export default ({ data }: IndexProps): ReactElement => {
+export default ({ data, location }: IndexProps): ReactElement => {
 
   return (
     <Fragment>
