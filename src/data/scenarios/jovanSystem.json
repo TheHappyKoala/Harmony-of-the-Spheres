@@ -18,7 +18,7 @@
   "trajectoryArrivalVelocity": 0,
   "trajectoryRelativeTo": "Earth",
   "cameraFocus": "Jupiter",
-  "particles": { "max": 20000, "size": 400, "rings": [] },
+  "particles": { "max": 20000, "size": 1, "rings": [] },
   "massBeingModified": "Jupiter",
   "distMax": 50,
   "distMin": -50,

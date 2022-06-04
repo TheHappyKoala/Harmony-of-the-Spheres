@@ -50,9 +50,8 @@ const Scenario = ({
           : true,
       cameraCustomHeight: false,
       cameraCustomHeightNumber: 0,
-      mapMode:  scenarioFromData.mapMode !== null
-      ? scenarioFromData.mapMode
-      : true,
+      mapMode:
+        scenarioFromData.mapMode !== null ? scenarioFromData.mapMode : true,
       massBeingModified: scenarioFromData.masses[0]?.name,
       massTypeToAdd: "Star",
       background: true,

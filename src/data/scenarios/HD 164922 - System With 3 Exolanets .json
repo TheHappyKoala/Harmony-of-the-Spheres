@@ -116,7 +116,7 @@
       "customCameraPosition": { "x": 2, "y": 2, "z": 0 }
     }
   ],
-  "hallOfFame": true,
+  "hallOfFame": false,
   "description": "3D visualisation and gravity simulation of the exoplanet system HD 164922, which contains 3 exoplanets and was discovered by the W. M. Keck Observatory.",
   "name": "HD 164922 - Oldest Star With a Planetary System",
   "cameraFocus": "Barycenter",

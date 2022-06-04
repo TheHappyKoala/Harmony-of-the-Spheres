@@ -1,12 +1,9 @@
-import React, { ReactElement, Fragment, useState, useCallback } from "react";
+import React, { ReactElement, Fragment } from "react";
 import { Link } from "gatsby";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import Nav from "../Nav";
 import NavItem from "../NavItem";
 import Button from "../Button";
 import Head from "../Head";
-import Modal from "../Modal";
-import ContactForm from "../ContactForm";
 import "./Header.less";
 
 interface HeaderProps {
@@ -24,13 +21,6 @@ export default ({
   location,
   image
 }: HeaderProps): ReactElement => {
-  const [displayContactForm, setDisplayContactForm] = useState(false);
-
-  const setContactFormState = useCallback(
-    () => setDisplayContactForm(!displayContactForm),
-    [displayContactForm]
-  );
-
   return (
     <Fragment>
       <Head
@@ -53,13 +43,27 @@ export default ({
             overflow: "hidden"
           }}
         >
-          <NavItem>
-            <Button cssClassName="button" callback={setContactFormState}>
-              <span>
-                <i className="fas fa-envelope-open-o fa-2x" />
-                Contact
-              </span>
-            </Button>
+          <NavItem active={location.pathname === "/"}>
+            <Link to="/">
+              {" "}
+              <Button cssClassName="button">
+                <span>
+                  <i className="fas fa-home fa-2x button" />
+                  Home
+                </span>
+              </Button>
+            </Link>
+          </NavItem>
+          <NavItem active={location.pathname === "/changelog"}>
+            <Link to="/changelog">
+              {" "}
+              <Button cssClassName="button">
+                <span>
+                  <i className="fas fa-history fa-2x button" />
+                  Changelog
+                </span>
+              </Button>
+            </Link>
           </NavItem>
           <NavItem active={location.pathname === "/credits"}>
             <Link to="/credits">
@@ -85,23 +89,19 @@ export default ({
               </a>
             </Button>
           </NavItem>
+          <NavItem active={location.pathname === "/contact"}>
+            <Link to="/contact">
+              {" "}
+              <Button cssClassName="button">
+                <span>
+                  <i className="fas fa-envelope-open-o fa-2x button" />
+                  Contact
+                </span>
+              </Button>
+            </Link>
+          </NavItem>
         </Nav>
       </header>
-      <ReactCSSTransitionGroup
-        transitionName="fade"
-        transitionEnterTimeout={250}
-        transitionLeaveTimeout={250}
-      >
-        {displayContactForm && (
-          <Modal
-            callback={setContactFormState}
-            modalWrapperCssClass="contact-modal-wrapper"
-            modalCssClass="modal"
-          >
-            <ContactForm />
-          </Modal>
-        )}
-      </ReactCSSTransitionGroup>
     </Fragment>
   );
 };

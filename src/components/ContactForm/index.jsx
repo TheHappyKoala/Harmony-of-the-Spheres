@@ -1,6 +1,3 @@
-// Then import it with 'import MyForm from "./myform.js"'.
-// Finally, add a <MyForm/> element whereever you wish to display the form.
-
 import React from "react";
 
 export default class MyForm extends React.Component {
@@ -20,16 +17,15 @@ export default class MyForm extends React.Component {
         action="https://formspree.io/f/mjvbdard"
         method="POST"
       >
-        <h2>Contact</h2>
         <p>
           If you have feedback, want to report a bug, say hi or suggest a
           feature, feel free to send us a message by using the contact form
           below.
         </p>
         <label className="top">Email:</label>
-        <input type="email" name="email" />
+        <input type="box input email" name="email" />
         <label className="top">Message:</label>
-        <textarea name="message" />
+        <textarea className="box top" name="message" />
         {status === "SUCCESS" ? (
           <p>Thanks. We will get in touch with you as soon as possible.</p>
         ) : (

@@ -15,4 +15,4 @@ export default depthTest =>
     blending: THREE.AdditiveBlending,
     depthTest: true,
     transparent: true
-});
+  });

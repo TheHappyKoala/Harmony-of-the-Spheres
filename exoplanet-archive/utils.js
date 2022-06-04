@@ -20,15 +20,7 @@ const getPlanetProperties = (mass, radius) => {
   const { JUPITER_MASS, JUPITER_RADIUS } = physicalQuantities;
   const properties = [];
 
-  if (mass === null) {
-    properties.push((inferPlanetProperty(radius, "radius", "mass") * JUPITER_MASS));
-  } else {
-    properties.push(mass * JUPITER_MASS);
-  }
-
-  if (radius === null) {
-    return [...properties, inferPlanetProperty(mass, "mass", "radius") * JUPITER_RADIUS];
-  }
+  properties.push(mass * JUPITER_MASS);
 
   return [...properties, radius * JUPITER_RADIUS];
 };
@@ -51,7 +43,7 @@ const chunkScenarios = (data, scenarios, i, currentScenarioName) => {
   if (i === data.length) {
     return scenarios;
   } else {
-    if (data[i]["pl_hostname"] === currentScenarioName) {
+    if (data[i]["hostname"] === currentScenarioName) {
       scenarios[scenarios.length - 1].push(data[i]);
     } else {
       scenarios.push([data[i]]);
@@ -59,7 +51,7 @@ const chunkScenarios = (data, scenarios, i, currentScenarioName) => {
 
     i += 1;
 
-    return chunkScenarios(data, scenarios, i, data[i - 1]["pl_hostname"]);
+    return chunkScenarios(data, scenarios, i, data[i - 1]["hostname"]);
   }
 };
 
@@ -133,11 +125,50 @@ const calculatePlanetTemperature = (stellarMass, a) => {
   return Math.sqrt(Math.sqrt(T_sur));
 };
 
-const getWidestOrbit = masses => Math.max(...masses.map(mass => mass.pl_orbsmax));
+const getWidestOrbit = masses =>
+  Math.max(...masses.map(mass => mass.pl_orbsmax));
 
 const isGasGiant = worldType => worldType.includes("sudarsky");
 
 const isHabitableWorld = worldType => worldType === worldTypes.HABITABLE_WORLD;
+
+const isOceanWorld = worldType => worldType === worldTypes.OCEAN_WORLD;
+
+const isWorldWithClouds = worldType => isOceanWorld(worldType);
+
+const colorTemperatureToRGB = kelvin => {
+  var temp = kelvin / 100;
+
+  var red, green, blue;
+
+  if (temp <= 66) {
+    red = 255;
+
+    green = temp;
+    green = 99.4708025861 * Math.log(green) - 161.1195681661;
+
+    if (temp <= 19) {
+      blue = 0;
+    } else {
+      blue = temp - 10;
+      blue = 138.5177312231 * Math.log(blue) - 305.0447927307;
+    }
+  } else {
+    red = temp - 60;
+    red = 329.698727446 * Math.pow(red, -0.1332047592);
+
+    green = temp - 60;
+    green = 288.1221695283 * Math.pow(green, -0.0755148492);
+
+    blue = 255;
+  }
+
+  return {
+    r: clamp(red, 0, 255),
+    g: clamp(green, 0, 255),
+    b: clamp(blue, 0, 255)
+  };
+};
 
 module.exports = {
   getRandomColor,
@@ -151,5 +182,7 @@ module.exports = {
   getWidestOrbit,
   isGasGiant,
   isHabitableWorld,
-  getPlanetProperties
+  getPlanetProperties,
+  isWorldWithClouds,
+  colorTemperatureToRGB
 };
