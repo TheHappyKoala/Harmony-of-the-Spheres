@@ -80,7 +80,11 @@ const Scenario = ({
           ? scenarioFromData.lagrangeMassTwo
           : scenarioFromData.masses.length > 1
           ? scenarioFromData.masses[1].name
-          : "-"
+          : "-",
+      units: "Earth Units",
+      mass: 1,
+      radius: 1,
+      temperature: 1000
     };
 
     setScenario({ ...scenarioFromData, ...defaults });

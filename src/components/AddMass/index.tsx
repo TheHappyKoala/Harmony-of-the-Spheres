@@ -23,6 +23,23 @@ const findAvailableMassName = (name, masses, number = 1) => {
   }
 };
 
+const convertSelectedUnitsToSolarUnits = (selectedUnits: string) => {
+  switch (selectedUnits) {
+    case "Earth Units":
+      return { m: 3.003e-6, r: 0.00916794 };
+    case "Neptunian Units":
+      return { m: 5.149e-5, r: 0.035392 };
+    case "Solar Units":
+      return { m: 1, r: 1 };
+    case "Lunar Units":
+      return { m: 3.69396868e-8, r: 0.0024973 };
+    case "TRAPPIST-1 Units":
+      return { m: 0.0898, r: 0.121 };
+    default:
+      return {};
+  }
+};
+
 const shouldComponentUpdate = (prevScenario, nextScenario) => {
   if (
     prevScenario.massToAdd.name !== nextScenario.massToAdd.name ||
@@ -40,7 +57,11 @@ const shouldComponentUpdate = (prevScenario, nextScenario) => {
     prevScenario.ringToAdd !== nextScenario.ringToAdd ||
     prevScenario.particleNumber !== nextScenario.particleNumber ||
     prevScenario.particleMinD !== nextScenario.particleMinD ||
-    prevScenario.particleMaxD !== nextScenario.particleMaxD
+    prevScenario.particleMaxD !== nextScenario.particleMaxD ||
+    prevScenario.units !== nextScenario.units ||
+    prevScenario.mass !== nextScenario.mass ||
+    prevScenario.radius !== nextScenario.radius ||
+    prevScenario.temperature !== nextScenario.temperature
   ) {
     return false;
   }
@@ -75,6 +96,13 @@ export default props => {
 
   const [isParticleSphere, setIsParticleSphere] = useState(true);
 
+  const [useMassTemplate, setUseMassTemplate] = useState(true);
+
+  const setUseMassTemplateCallback = useCallback(
+    () => setUseMassTemplate(!useMassTemplate),
+    [useMassTemplate]
+  );
+
   const addMassCallback = useCallback(() => {
     const massAlreadyExists = data.masses.find(mass => mass.name === massName);
 
@@ -88,10 +116,18 @@ export default props => {
       name = massName;
     }
 
+    let convertedUnits;
+
+    if (!useMassTemplate) {
+      convertedUnits = convertSelectedUnitsToSolarUnits(data.units);
+    }
+
     props.addMass({
       primary: data.primary,
       secondary: {
         ...data.massToAdd,
+        m: useMassTemplate ? data.massToAdd.m : convertedUnits.m * data.mass,
+        radius: useMassTemplate ? data.massToAdd.r : convertedUnits.r * 10270,
         name,
         trailVertices: 3000,
         color: getRandomColor(),
@@ -107,10 +143,20 @@ export default props => {
         vy: 0,
         vz: 0,
         customCameraPosition: { x: 0, y: 0, z: 50 },
-        texture: data.massToAdd.name
+        texture: useMassTemplate ? data.massToAdd.name : "Apollo 11",
+        temperature: data.temperature
       }
     });
-  }, [data.massToAdd, massName, data.masses, data.massTypeToAdd]);
+  }, [
+    data.massToAdd,
+    massName,
+    data.masses,
+    data.massTypeToAdd,
+    data.units,
+    data.mass,
+    data.radius,
+    data.temperature
+  ]);
 
   const addRingCallback = useCallback(() => {
     props.modifyScenarioProperty({
@@ -375,40 +421,167 @@ export default props => {
               />
             </Fragment>
           )}
-          <label className="top">
-            Mass Template
-            <Tooltip
-              position="left"
-              content="The mass, radius, texture, type and color of the mass you're adding."
-            />
-          </label>
-          <Dropdown
-            selectedOption={data.massToAdd?.name}
-            dropdownWrapperCssClassName="tabs-dropdown-wrapper"
-            selectedOptionCssClassName="selected-option"
-            optionsWrapperCssClass="options"
-          >
-            {bodies
-              .filter(body => body.bodyType === data.massTypeToAdd)
-              .map(body => {
-                return (
-                  <div
-                    data-name={body.name}
-                    key={body.name}
-                    onClick={() =>
-                      props.modifyScenarioProperty({
-                        key: "massToAdd",
-                        value: body
-                      })
-                    }
-                  >
-                    {body.name}
-                  </div>
-                );
-              })}
-          </Dropdown>
+          <Toggle
+            label="Use Mass Template"
+            checked={useMassTemplate}
+            callback={setUseMassTemplateCallback}
+          />
+          {useMassTemplate ? (
+            <Fragment>
+              <label className="top">
+                Mass Template
+                <Tooltip
+                  position="left"
+                  content="The mass, radius, texture, type and color of the mass you're adding."
+                />
+              </label>
+              <Dropdown
+                selectedOption={data.massToAdd?.name}
+                dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+                selectedOptionCssClassName="selected-option"
+                optionsWrapperCssClass="options"
+              >
+                {bodies
+                  .filter(body => body.bodyType === data.massTypeToAdd)
+                  .map(body => {
+                    return (
+                      <div
+                        data-name={body.name}
+                        key={body.name}
+                        onClick={() =>
+                          props.modifyScenarioProperty({
+                            key: "massToAdd",
+                            value: body
+                          })
+                        }
+                      >
+                        {body.name}
+                      </div>
+                    );
+                  })}
+              </Dropdown>
+            </Fragment>
+          ) : (
+            <Fragment>
+              <label className="top">Units </label>
+              <Dropdown
+                selectedOption={data.units}
+                dropdownWrapperCssClassName="tabs-dropdown-wrapper"
+                selectedOptionCssClassName="selected-option"
+                optionsWrapperCssClass="options"
+              >
+                <div
+                  data-name="earth"
+                  onClick={() =>
+                    props.modifyScenarioProperty({
+                      key: "units",
+                      value: "Earth Units"
+                    })
+                  }
+                >
+                  Earth Units
+                </div>
+                <div
+                  data-name="lunar"
+                  onClick={() =>
+                    props.modifyScenarioProperty({
+                      key: "units",
+                      value: "Lunar Units"
+                    })
+                  }
+                >
+                  Lunar Units
+                </div>
+                <div
+                  data-name="neptunian"
+                  onClick={() =>
+                    props.modifyScenarioProperty({
+                      key: "units",
+                      value: "Neptunian Units"
+                    })
+                  }
+                >
+                  Neptunian Units
+                </div>
+                <div
+                  data-name="solar"
+                  onClick={() =>
+                    props.modifyScenarioProperty({
+                      key: "units",
+                      value: "Solar Units"
+                    })
+                  }
+                >
+                  Solar Units
+                </div>
+                <div
+                  data-name="trappist-1"
+                  onClick={() =>
+                    props.modifyScenarioProperty({
+                      key: "units",
+                      value: "TRAPPIST-1 Units"
+                    })
+                  }
+                >
+                  TRAPPIST-1 Units
+                </div>
+              </Dropdown>
+              <label className="top">
+                Mass{" "}
+                <Tooltip
+                  position="left"
+                  content="The mass of the body to be added."
+                />
+              </label>
+              <Slider
+                payload={{ key: "mass" }}
+                value={data.mass}
+                callback={props.modifyScenarioProperty}
+                max={50}
+                min={0.1}
+                shouldUpdateOnMaxMinChange={true}
+                step={0.1}
+              />
+              <label className="top">
+                Radius{" "}
+                <Tooltip
+                  position="left"
+                  content="The radius of the body to be added."
+                />
+              </label>
+              <Slider
+                payload={{ key: "radius" }}
+                value={data.radius}
+                callback={props.modifyScenarioProperty}
+                max={10}
+                min={0.1}
+                shouldUpdateOnMaxMinChange={true}
+                step={0.2}
+              />
+              {data.massTypeToAdd === "Star" && (
+                <Fragment>
+                  <label className="top">
+                    Temperature{" "}
+                    <Tooltip
+                      position="left"
+                      content="The temperature of the star to be added."
+                    />
+                  </label>
+                  <Slider
+                    payload={{ key: "temperature" }}
+                    value={data.temperature}
+                    callback={props.modifyScenarioProperty}
+                    max={80000}
+                    min={1000}
+                    shouldUpdateOnMaxMinChange={true}
+                    step={1000}
+                  />
+                </Fragment>
+              )}
+            </Fragment>
+          )}
           <Button callback={addMassCallback} cssClassName="button box top">
-            Add {data.massToAdd?.name}
+            Add Mass
           </Button>
         </Fragment>
       )}

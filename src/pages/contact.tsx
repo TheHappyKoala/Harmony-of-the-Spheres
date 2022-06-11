@@ -17,7 +17,6 @@ interface IndexProps {
 }
 
 export default ({ data, location }: IndexProps): ReactElement => {
-
   return (
     <Fragment>
       <Img
@@ -31,8 +30,8 @@ export default ({ data, location }: IndexProps): ReactElement => {
         location={location}
       />
       <section className="credits-wrapper">
-          <h2>Contact</h2>
-          <ContactForm />
+        <h2>Contact</h2>
+        <ContactForm />
       </section>
     </Fragment>
   );

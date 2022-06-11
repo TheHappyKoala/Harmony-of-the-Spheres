@@ -13,6 +13,83 @@ export default [
     bodyType: "Star"
   },
   {
+    name: "Teegarden's Star",
+    m: 0.09,
+    radius: 1074.418604651163,
+    temperature: 2904,
+    massType: "star",
+    bodyType: "Star"
+  },
+  {
+    name: "Kepler-62",
+    m: 0.69,
+    radius: 6251.162790697675,
+    temperature: 4925,
+    massType: "star",
+    bodyType: "Star"
+  },
+  {
+    name: "GJ 667 C",
+    m: 0.33,
+    radius: 3125.5813953488373,
+    temperature: 3350,
+    massType: "star",
+    bodyType: "Star"
+  },
+  {
+    name: "Epsilon Eridani",
+    m: 0.78,
+    radius: 7423.2558139534885,
+    temperature: 4400,
+    massType: "star",
+    bodyType: "Star"
+  },
+  {
+    name: "16 Cygni B",
+    m: 1.08,
+    radius: 11037.20930232558,
+    temperature: 5750,
+    massType: "star",
+    bodyType: "Star"
+  },
+  {
+    name: "Gliese 581",
+    m: 0.31,
+    radius: 3223.2558139534885,
+    temperature: 3396,
+    massType: "star",
+    bodyType: "Star"
+  },
+  {
+    name: "18 Delphini",
+    m: 2.3,
+    radius: 83023.2558139535,
+    temperature: 4979,
+    massType: "star",
+    bodyType: "Star"
+  },
+  {
+    name: "42 Draconis",
+    m: 0.98,
+    radius: 215176.74418604653,
+    temperature: 4200,
+    massType: "star",
+    bodyType: "Star"
+  },
+  {
+    name: "Luyten's Star",
+    m: 0.26,
+    radius: 3594,
+    massType: "star",
+    bump: false,
+    luminosity: 0.0088,
+    temperature: 3150,
+    tilt: 0,
+    spacecraft: false,
+    orbitalPeriod: 0,
+    bodyType: "Star"
+  },
+  {
     m: 3.69396868e-8,
     radius: 22.93577981651376,
     tilt: -1.54,

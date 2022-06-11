@@ -16,7 +16,6 @@ interface IndexProps {
 }
 
 export default ({ data, location }: IndexProps): ReactElement => {
-
   return (
     <Fragment>
       <Img
@@ -35,10 +34,32 @@ export default ({ data, location }: IndexProps): ReactElement => {
           <ul>
             <li className="credits-list-item">
               <section className="contributor-details">
-                <h3 className="italic">2022-06-01</h3>
-                <p><b>Exoplanets Update</b></p>
+                <h3 className="italic">2022-06-11</h3>
+                <p>
+                  <b>Exoplanets and New Add Mass Functionality</b>
+                </p>
                 <p className="contributor-description">
-                  New exoplanet scenarios have been added and the exoplanet wiki has been revamped, in addition to a better model for generating the colour of a star based on its temperature.{" "}
+                  Six exoplanet scenarios have been added, one of which
+                  simulates a system with a grand total of three confirmed
+                  planets. Some stellar mass templates have been added, and more
+                  than that, it is now possible to choose not to use a mass
+                  template and specify the mass and radius of the mass you are
+                  adding yourself. Feedback on this feature would be much
+                  welcome, and yes, textures will be added in a future release
+                  for these custom masses!{" "}
+                </p>
+              </section>
+            </li>
+            <li className="credits-list-item">
+              <section className="contributor-details">
+                <h3 className="italic">2022-06-01</h3>
+                <p>
+                  <b>Exoplanets Update</b>
+                </p>
+                <p className="contributor-description">
+                  New exoplanet scenarios have been added and the exoplanet wiki
+                  has been revamped, in addition to a better model for
+                  generating the colour of a star based on its temperature.{" "}
                 </p>
               </section>
             </li>

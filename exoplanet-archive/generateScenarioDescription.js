@@ -10,10 +10,14 @@ const generateStarMarkup = star => {
   <section>
   <h2>Star</h2>
   <div class="size-comparison-wrapper">
-  <div class="celestial-sphere" style="width: 100px; height: 100px; background-color: rgb(${Object.values(utils.colorTemperatureToRGB(5778)).join(", ")});">
+  <div class="celestial-sphere" style="width: 100px; height: 100px; background-color: rgb(${Object.values(
+    utils.colorTemperatureToRGB(5778)
+  ).join(", ")});">
     <label>Sun</label>
   </div>
-  <div class="celestial-sphere" style="width: ${starDimensions}px; height: ${starDimensions}px; background-color: rgb(${Object.values(utils.colorTemperatureToRGB(st_teff)).join(", ")})">
+  <div class="celestial-sphere" style="width: ${starDimensions}px; height: ${starDimensions}px; background-color: rgb(${Object.values(
+    utils.colorTemperatureToRGB(st_teff)
+  ).join(", ")})">
 <label>${hostname}</label>
 </div>
 </div>
@@ -29,15 +33,15 @@ const generateStarMarkup = star => {
   </tr>
   <tr>
     <td>Temperature</td>
-    <td>${isNaN(st_teff) ? '-': st_teff} kelvin</td>
+    <td>${isNaN(st_teff) ? "-" : st_teff} kelvin</td>
   </tr>
   <tr>
     <td>Stellar Metallicity</td>
-    <td>${isNaN(st_met) ? '-': st_met} decimal exponent</td>
+    <td>${isNaN(st_met) ? "-" : st_met} decimal exponent</td>
   </tr>
   <tr>
     <td>Age</td>
-    <td>${isNaN(st_age) ? '-': st_age} billion years</td>
+    <td>${isNaN(st_age) ? "-" : st_age} billion years</td>
   </tr>
 </table>
 </div>`;
@@ -110,11 +114,11 @@ const generatePlanetsMarkup = (scenario, habitableZoneBounds) =>
         disc_instrument,
         discoverymethod,
         disc_pubdate,
-        disc_refname,
+        disc_refname
       } = planet;
       const planetName = `${hostname}-${pl_letter}`;
 
-    const planetDimensions = 10 * pl_rade;
+      const planetDimensions = 10 * pl_rade;
 
       return ` 
     <div class="celestial-object-wrapper" id="${hostname}-${pl_letter}">
@@ -180,7 +184,7 @@ const generatePlanetsMarkup = (scenario, habitableZoneBounds) =>
           </tr>
         </table>
       </section>
-    </div></a>`
+    </div></a>`;
     })
     .join(" ");
 
@@ -193,23 +197,35 @@ module.exports = (scenario, habitableZoneBounds) => {
   <ul class="exoplanets-navigation-menu">
   <li><button href="#system">System</button>
   <li><button href="#${hostname}">Star</button>
-  ${scenario.map((planet) => `<li><button href="#${hostname}-${planet.pl_letter}">${planet.pl_letter}</button></li>`).join(" ")}
+  ${scenario
+    .map(
+      planet =>
+        `<li><button href="#${hostname}-${planet.pl_letter}">${planet.pl_letter}</button></li>`
+    )
+    .join(" ")}
   </ul>
   ${mainTitle}
-  <p>The ${hostname} system contains ${sy_pnum} exoplanet${sy_pnum > 1 ? "s" : ""}. ${
+  <p>The ${hostname} system contains ${sy_pnum} exoplanet${
+    sy_pnum > 1 ? "s" : ""
+  }. ${
     !isNaN(sy_dist)
       ? `It is located ${(sy_dist * 3.26156).toFixed(
           2
         )} light years away from the solar system.`
       : ""
   }</p>
-    ${generateStarMarkup({ ...scenario[0], st_rad: !st_rad ? (() => {
-      for (let i = 0; i < stellarMassRadiusData.length; i++) {
-        if (st_mass > stellarMassRadiusData[i].mass) {
-          return stellarMassRadiusData[i].radius;
-        }
-      }
-    })() : st_rad})}
+    ${generateStarMarkup({
+      ...scenario[0],
+      st_rad: !st_rad
+        ? (() => {
+            for (let i = 0; i < stellarMassRadiusData.length; i++) {
+              if (st_mass > stellarMassRadiusData[i].mass) {
+                return stellarMassRadiusData[i].radius;
+              }
+            }
+          })()
+        : st_rad
+    })}
     ${generatePlanetsMarkup(scenario, habitableZoneBounds)}
   `;
 };

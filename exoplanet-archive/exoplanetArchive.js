@@ -271,16 +271,17 @@ const createExoplanetScenarios = async () => {
     if (!fs.existsSync(filePath)) {
       fs.writeFileSync(filePath, JSON.stringify(scenario));
     } else {
-      const scenarioJSON = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      const scenarioJSON = JSON.parse(fs.readFileSync(filePath, "utf8"));
       scenarioJSON.scenarioDescription = scenario.scenarioDescription;
       scenarioJSON.masses[0].radius = scenario.masses[0].radius;
-      if (scenarioJSON.masses[0].temperature === null) scenarioJSON.masses[0].temperature = (() => {
-        for (let i = 0; i < stellarMassRadiusData.length; i++) {
-          if (scenarioJSON.masses[0].m > stellarMassRadiusData[i].mass) {
-            return stellarMassRadiusData[i].temp;
+      if (scenarioJSON.masses[0].temperature === null)
+        scenarioJSON.masses[0].temperature = (() => {
+          for (let i = 0; i < stellarMassRadiusData.length; i++) {
+            if (scenarioJSON.masses[0].m > stellarMassRadiusData[i].mass) {
+              return stellarMassRadiusData[i].temp;
+            }
           }
-        }
-      })();
+        })();
       fs.writeFileSync(filePath, JSON.stringify(scenarioJSON));
     }
   });
