@@ -131,8 +131,6 @@ const scene = {
       this.scenario.forAllMankind
     );
 
-    console.log(this.scenario.particles.size);
-
     this.particles = new ParticlesManifestation({
       particles: this.particlePhysics.particles,
       scenarioScale: this.scenario.scale,
@@ -703,7 +701,7 @@ const scene = {
           value: (
             this.camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) /
             this.scenario.scale
-          ).toFixed(8)
+          )
         },
         {
           key: "barycenterData",

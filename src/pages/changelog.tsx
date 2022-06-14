@@ -32,6 +32,17 @@ export default ({ data, location }: IndexProps): ReactElement => {
         <article>
           <h2>Changelog</h2>
           <ul>
+          <li className="credits-list-item">
+              <section className="contributor-details">
+                <h3 className="italic">2022-06-15</h3>
+                <p>
+                  <b>Add Mass Bug Fix</b>
+                </p>
+                <p className="contributor-description">
+                  The preceding update added a bug that caused the simulation to crash when you tried to add a mass to a simulation with no masses: this has now been fixed.{" "}
+                </p>
+              </section>
+            </li>
             <li className="credits-list-item">
               <section className="contributor-details">
                 <h3 className="italic">2022-06-11</h3>

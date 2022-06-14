@@ -127,7 +127,7 @@ export default props => {
       secondary: {
         ...data.massToAdd,
         m: useMassTemplate ? data.massToAdd.m : convertedUnits.m * data.mass,
-        radius: useMassTemplate ? data.massToAdd.r : convertedUnits.r * 10270,
+        radius: useMassTemplate ? data.massToAdd.radius : convertedUnits.r * 10270,
         name,
         trailVertices: 3000,
         color: getRandomColor(),
@@ -144,7 +144,7 @@ export default props => {
         vz: 0,
         customCameraPosition: { x: 0, y: 0, z: 50 },
         texture: useMassTemplate ? data.massToAdd.name : "Apollo 11",
-        temperature: data.temperature
+        temperature: useMassTemplate ? data.massToAdd.temperature : data.temperature
       }
     });
   }, [
