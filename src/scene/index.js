@@ -765,6 +765,49 @@ const scene = {
 
     this.graphics2D.setDimensions(this.w, this.h);
   },
+
+  reset() {
+    if (this.camera && this.camera.controls) this.camera.controls.dispose();
+
+    if (this.manifestationsService) this.manifestationsService.dispose();
+
+    if (this.particles) {
+      this.particles.dispose();
+      this.scene.remove(this.scene.getObjectByName("ParticlesManifestation"));
+    }
+
+    if (this.ellipseCurve) {
+      this.ellipseCurve.dispose();
+      this.scene.remove(this.ellipseCurve);
+    }
+
+    let arena;
+
+    if (this.scene) {
+      arena = this.scene.getObjectByName("Arena");
+
+      if (arena) {
+        arena.geometry.dispose();
+        arena.material.map.dispose();
+        arena.material.dispose();
+        this.scene.remove(arena);
+      }
+
+      this.scene.dispose();
+    }
+
+    if (this.renderer) {
+      this.renderer.renderLists.dispose();
+      this.renderer.dispose();
+    }
+
+    cancelAnimationFrame(this.requestAnimationFrameId);
+
+    window.removeEventListener("resize", this.onWindowResize);
+    window.removeEventListener("orientationchange", this.onWindowResize);
+
+    return this;
+  }
 };
 
 export default { ...scene, drawManifestation };
