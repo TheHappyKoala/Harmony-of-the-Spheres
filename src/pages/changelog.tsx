@@ -34,12 +34,25 @@ export default ({ data, location }: IndexProps): ReactElement => {
           <ul>
           <li className="credits-list-item">
               <section className="contributor-details">
+                <h3 className="italic">2022-06-19</h3>
+                <p>
+                  <b>Add Button for Resetting Scenarios</b>
+                </p>
+                <p className="contributor-description">
+                  A button for resetting scenarios has been added to the bottom panel, which means that scenarios can be reset without having to reload the website.{" "}
+                </p>
+              </section>
+            </li>
+            <li className="credits-list-item">
+              <section className="contributor-details">
                 <h3 className="italic">2022-06-15</h3>
                 <p>
                   <b>Add Mass Bug Fix</b>
                 </p>
                 <p className="contributor-description">
-                  The preceding update added a bug that caused the simulation to crash when you tried to add a mass to a simulation with no masses: this has now been fixed.{" "}
+                  The preceding update added a bug that caused the simulation to
+                  crash when you tried to add a mass to a simulation with no
+                  masses: this has now been fixed.{" "}
                 </p>
               </section>
             </li>

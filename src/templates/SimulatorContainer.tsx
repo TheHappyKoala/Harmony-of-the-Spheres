@@ -36,6 +36,7 @@ const Scenario = ({
   modifyMassProperty,
   addMass,
   deleteMass,
+  resetScenario,
   data,
   pageContext,
   location
@@ -87,6 +88,10 @@ const Scenario = ({
       temperature: 1000
     };
 
+    window.sessionStorage.setItem(
+      "currentScenario",
+      JSON.stringify({ ...scenarioFromData, ...defaults })
+    );
     setScenario({ ...scenarioFromData, ...defaults });
   }, []);
 
@@ -134,6 +139,7 @@ const Scenario = ({
       <BottomPanel
         description={scenarioFromData.scenarioDescription}
         modifyScenarioProperty={modifyScenarioProperty}
+        resetScenario={resetScenario}
       />
     </Fragment>
   );
@@ -144,7 +150,8 @@ const mapDispatchToProps = {
   modifyScenarioProperty: scenarioActionCreators.modifyScenarioProperty,
   modifyMassProperty: scenarioActionCreators.modifyMassProperty,
   addMass: scenarioActionCreators.addMass,
-  deleteMass: scenarioActionCreators.deleteMass
+  deleteMass: scenarioActionCreators.deleteMass,
+  resetScenario: scenarioActionCreators.resetScenario
 };
 
 export default connect(null, mapDispatchToProps)(Scenario);

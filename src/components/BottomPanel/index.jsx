@@ -8,7 +8,7 @@ import Button from "../Button";
 import Modal from "../Modal";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
-export default ({ description, modifyScenarioProperty }) => {
+export default ({ description, modifyScenarioProperty, resetScenario }) => {
   const scenario = useSelector(data => data.scenario);
   const [displayWiki, setDisplayWiki] = useState(true);
 
@@ -43,6 +43,9 @@ export default ({ description, modifyScenarioProperty }) => {
         )}
         <Button cssClassName="button play-pause" callback={setPlayState}>
           <i className={`fas fa-${scenario.playing ? "pause" : "play"}`} />
+        </Button>
+        <Button cssClassName="button reset" callback={() => resetScenario()}>
+          <i className="fas fa-refresh" />
         </Button>
         <div className="time-step-picker-wrapper">
           {scenario.integrator !== "RKN64" &&
