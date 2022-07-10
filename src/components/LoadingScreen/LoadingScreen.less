@@ -1,0 +1,74 @@
+.loading-screen-wrapper {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #545454;
+    background-image: url(../../images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    @keyframes glow {
+      to {
+        text-shadow: 15px 0 8px #fff;
+      }
+    }
+    h1 {
+      margin-top: 35vh;
+      font-size: 24px;
+      font-weight: normal;
+    }
+    .sub-title {
+      font-size: 12px;
+      margin-top: 8px;
+      font-style: italic;
+    }
+    .asset-being-loaded {
+      margin-top: 15px;
+      font-size: 11px;
+    }
+    .author-title {
+      font-size: 10px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .splash-screen-image-credit {
+      font-size: 9px;
+      width: 90%;
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      a {
+        color: lightblue;
+      }
+    }
+  }
+  
+  @media only screen and (min-width: 800px) {
+    .loading-screen-wrapper {
+      h1 {
+        margin-top: 45vh;
+        font-size: 44px;
+      }
+      .sub-title {
+        font-size: 25px;
+        margin-top: 25px;
+      }
+      .asset-being-loaded {
+        margin-top: 15px;
+        font-size: 14px;
+      }
+      .author-title {
+        font-size: 18px;
+        margin-top: 50px;
+      }
+      .splash-screen-image-credit {
+        font-size: 14px;
+      }
+    }
+  }
