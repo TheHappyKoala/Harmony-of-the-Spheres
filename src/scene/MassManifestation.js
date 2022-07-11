@@ -131,7 +131,7 @@ export default class extends THREE.Object3D {
             ? `/textures/${this.mass.texture}.jpg`
             : `/textures/${this.mass.texture}Bump.jpg`
         ),
-        bumpScale: 0.75,
+        bumpScale: 0.5,
         roughness: 0.75
       });
     } else

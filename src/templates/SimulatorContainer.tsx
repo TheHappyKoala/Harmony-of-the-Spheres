@@ -11,6 +11,7 @@ import Masses from "../components/Masses";
 import AddMass from "../components/AddMass";
 import BottomPanel from "../components/BottomPanel";
 import "../components/Simulator/App.less";
+import LoadingScreen from "../components/LoadingScreen";
 
 interface ScenarioProps {
   data: {
@@ -59,6 +60,7 @@ const Scenario = ({
       tol: 1e-27,
       particleNumber: 0,
       particleMaxD: 0,
+      isLoading: true,
       particles: {
         ...scenarioFromData.particles,
         shapes:
@@ -141,6 +143,7 @@ const Scenario = ({
         modifyScenarioProperty={modifyScenarioProperty}
         resetScenario={resetScenario}
       />
+      <LoadingScreen />
     </Fragment>
   );
 };

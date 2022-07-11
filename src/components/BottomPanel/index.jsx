@@ -7,6 +7,7 @@ import { getRangeValues, yearsToYearsMonthsDays } from "../../utils";
 import Button from "../Button";
 import Modal from "../Modal";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import LoadingScreen from "../LoadingScreen";
 
 export default ({ description, modifyScenarioProperty, resetScenario }) => {
   const scenario = useSelector(data => data.scenario);
@@ -86,6 +87,9 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
           </Modal>
         )}
       </ReactCSSTransitionGroup>
+      {scenario.isLoading && (
+        <LoadingScreen whatIsLoding={scenario.whatIsLoading} />
+      )}
     </Fragment>
   );
 };

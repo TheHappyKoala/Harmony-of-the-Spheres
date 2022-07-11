@@ -100,7 +100,7 @@
       "radius": 1027.5229357798166,
       "tilt": -3.13,
       "orbitalPeriod": 32,
-      "texture": "Jupiter",
+      "texture": "JupiterHighRes",
       "bodyType": "Planet",
       "color": "orange",
       "atmosphere": "beige",

@@ -88,7 +88,7 @@
       "bump": true,
       "bodyType": "Planet",
       "color": "red",
-      "texture": "Mars",
+      "texture": "MarsHighRes",
       "spacecraft": false,
       "massType": "sphere",
       "luminosity": 0,

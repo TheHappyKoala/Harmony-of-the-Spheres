@@ -130,7 +130,7 @@
       "tilt": -23.44,
       "spacecraft": false,
       "orbitalPeriod": 1,
-      "texture": "Earth",
+      "texture": "EarthHighRes",
       "bodyType": "Planet"
     },
     {
@@ -151,7 +151,7 @@
       "tilt": -3.13,
       "spacecraft": false,
       "orbitalPeriod": 13,
-      "texture": "Jupiter",
+      "texture": "JupiterHighRes",
       "bodyType": "Planet",
       "atmosphere": "beige"
     }

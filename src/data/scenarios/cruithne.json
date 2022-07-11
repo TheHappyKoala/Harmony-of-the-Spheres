@@ -68,7 +68,7 @@
       "bump": true,
       "bodyType": "Planet",
       "color": "skyblue",
-      "texture": "Earth",
+      "texture": "EarthHighRes",
       "clouds": true,
       "spacecraft": false,
       "massType": "sphere",

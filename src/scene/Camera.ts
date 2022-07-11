@@ -4,8 +4,6 @@ import H3 from "../physics/vectors";
 import { Manifestation } from "./ManifestationsService";
 import StellarService from "../physics/stars";
 
-const TWEEN = require("@tweenjs/tween.js");
-
 export default class extends PerspectiveCamera {
   controls: any;
   rotatingReferenceFrame: H3;
@@ -160,23 +158,10 @@ export default class extends PerspectiveCamera {
           this.rotatedBarycenter.z
         );
 
-        this.tween(
-          {
-            x: this.rotatedBarycenter.x + barycenterZ,
-            y: this.rotatedBarycenter.y,
-            z: this.rotatedBarycenter.z
-          },
-          {
-            x: this.rotatedBarycenter.x,
-            y: this.rotatedBarycenter.y + barycenterZ / 3,
-            z: this.rotatedBarycenter.z + barycenterZ
-          },
-          {
-            x: this.rotatedBarycenter.x,
-            y: this.rotatedBarycenter.y,
-            z: this.rotatedBarycenter.z
-          },
-          5000
+        this.position.set(
+          this.rotatedBarycenter.x,
+          this.rotatedBarycenter.y + barycenterZ / 3,
+          this.rotatedBarycenter.z + barycenterZ
         );
       }
 
@@ -189,24 +174,7 @@ export default class extends PerspectiveCamera {
       if (cameraFocus === "Origo") {
         this.controls.target.set(0, 0, 0);
 
-        this.tween(
-          {
-            x: barycenterZ,
-            y: 0,
-            z: 0
-          },
-          {
-            x: 0,
-            y: barycenterZ / 3,
-            z: barycenterZ
-          },
-          {
-            x: 0,
-            y: 0,
-            z: 0
-          },
-          5000
-        );
+        this.position.set(0, barycenterZ / 3, barycenterZ);
       }
 
       return;
@@ -234,23 +202,10 @@ export default class extends PerspectiveCamera {
             star.m
           )[1];
 
-          this.tween(
-            {
-              x: star.x,
-              y: star.y + star.radius * 3,
-              z: star.z
-            },
-            {
-              x: star.x,
-              y: star.y + star.radius * 3,
-              z: habitableZoneEnd * star.scale * 5
-            },
-            {
-              x: star.x,
-              y: star.y,
-              z: star.z
-            },
-            5000
+          this.position.set(
+            star.x,
+            star.y + star.radius * 3,
+            habitableZoneEnd * star.scale * 5
           );
         }
       }
@@ -294,16 +249,5 @@ export default class extends PerspectiveCamera {
           this.trackMovingObjectWithControls(manifestations[i]);
       }
     }
-  }
-
-  tween(from: Vector, to: Vector, lookAt: Vector, duration: number) {
-    new TWEEN.Tween(from)
-      .to(to, duration)
-      .easing(TWEEN.Easing.Exponential.InOut)
-      .onUpdate(() => {
-        this.position.set(from.x, from.y, from.z);
-        this.lookAt(new Vector3(lookAt.x, lookAt.y, lookAt.z));
-      })
-      .start();
   }
 }

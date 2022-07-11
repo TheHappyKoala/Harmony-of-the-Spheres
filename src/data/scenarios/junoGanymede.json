@@ -111,7 +111,7 @@
       "radius": 950.5229357798166,
       "tilt": -3.13,
       "orbitalPeriod": 11.86,
-      "texture": "Jupiter",
+      "texture": "JupiterHighRes",
       "bodyType": "Planet",
       "color": "orange",
       "atmosphere": "beige",
@@ -148,13 +148,13 @@
       "orbitalPeriod": 0.004794521,
       "radius": 24.082568807339452,
       "bodyType": "Moon",
-      "bump": false,
+      "bump": true,
       "spacecraft": false,
       "massType": "sphere",
       "luminosity": 0,
       "temperature": 0,
       "tilt": -3.13,
-      "texture": "Io",
+      "texture": "IoHighRes",
       "color": "yellow"
     },
     {
@@ -175,7 +175,7 @@
       "luminosity": 0,
       "temperature": 0,
       "tilt": -3.13,
-      "texture": "Europa",
+      "texture": "EuropaHighRes",
       "color": "skyblue"
     },
     {
@@ -190,13 +190,13 @@
       "orbitalPeriod": 0.01963471233,
       "radius": 22.633027522935784,
       "bodyType": "Moon",
-      "bump": false,
+      "bump": true,
       "spacecraft": false,
       "massType": "sphere",
       "luminosity": 0,
       "temperature": 0,
       "tilt": -3.13,
-      "texture": "Ganymede",
+      "texture": "GanymedeHighRes",
       "color": "limegreen"
     },
     {
@@ -211,13 +211,13 @@
       "orbitalPeriod": 0.0465753,
       "radius": 35.74007220216607,
       "bodyType": "Moon",
-      "bump": false,
+      "bump": true,
       "spacecraft": false,
       "massType": "sphere",
       "luminosity": 0,
       "temperature": 0,
       "tilt": -3.13,
-      "texture": "Callisto",
+      "texture": "CallistoHighRes",
       "color": "grey"
     },
     {

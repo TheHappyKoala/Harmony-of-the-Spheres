@@ -99,7 +99,7 @@
       "radius": 355.9633027522936,
       "tilt": -28.32,
       "orbitalPeriod": 164.8,
-      "texture": "Neptune",
+      "texture": "NeptuneHighRes",
       "bodyType": "Planet",
       "color": "blue",
       "atmosphere": "skyblue"

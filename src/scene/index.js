@@ -87,11 +87,14 @@ const scene = {
 
     this.grid = undefined;
 
+    this.manager = new THREE.LoadingManager();
+
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas,
-      antialias: true,
+      antialias: false,
       powerPreference: "high-performance",
-      logarithmicDepthBuffer: this.scenario.logarithmicDepthBuffer
+      logarithmicDepthBuffer: this.scenario.logarithmicDepthBuffer,
+      physicallyCorrectLights: true
     });
     this.renderer.setSize(this.w, this.h);
 
@@ -103,7 +106,7 @@ const scene = {
       this.graphics2D.canvas
     );
 
-    this.textureLoader = new THREE.TextureLoader();
+    this.textureLoader = new THREE.TextureLoader(this.manager);
 
     this.clock = new THREE.Clock();
 
@@ -153,12 +156,27 @@ const scene = {
     this.store.dispatch({
       type: "SET_LOADING",
       payload: {
-        loading: false,
+        loading: true,
         whatIsLoading: ""
       }
     });
 
-    this.loop();
+    this.manager.onProgress = (url, itemsLoaded, itemsTotal) => {
+      store.dispatch(
+        modifyScenarioProperty({ key: "whatIsLoading", value: url })
+      );
+    };
+
+    this.manager.onLoad = () => {
+      store.dispatch(
+        modifyScenarioProperty({ key: "isLoading", value: false })
+      );
+
+      this.loop();
+
+      this.textureLoader.manager = undefined;
+      this.manager = undefined;
+    };
   },
 
   updateAddMassTrajectory() {

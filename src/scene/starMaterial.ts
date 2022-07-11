@@ -5,7 +5,7 @@ export default (temperature: number) => {
   return new THREE.ShaderMaterial({
     uniforms: {
       time: { type: "f", value: 1.0 },
-      scale: { type: "f", value: 80 },
+      scale: { type: "f", value: 60 },
       highTemp: { type: "f", value: temperature },
       lowTemp: { type: "f", value: temperature / 2 }
     },
@@ -13,7 +13,7 @@ export default (temperature: number) => {
     fragmentShader: star.fragment,
     transparent: false,
     depthTest: true,
-    depthWrite: false,
+    depthWrite: true,
     polygonOffset: true,
     polygonOffsetFactor: -4
   });

@@ -1,5 +1,5 @@
 export default class {
-  static getHabitableZoneBounds(stellarMass: number): [number, number] {
+  static getLuminosity(stellarMass: number): number {
     //First, calculate the luminosity of the star as a function of its mass using the mass-luminosity relationship
     //https://en.wikipedia.org/wiki/Mass%E2%80%93luminosity_relation
 
@@ -24,6 +24,11 @@ export default class {
       lum = 32000 * (stellarMass / 1);
     }
 
+    return lum;
+  }
+
+  static getHabitableZoneBounds(stellarMass: number): [number, number] {
+    const lum = this.getLuminosity(stellarMass);
     let start;
     let end;
 

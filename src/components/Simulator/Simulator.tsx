@@ -8,6 +8,8 @@ import Masses from "../Masses";
 import AddMass from "../AddMass";
 import BottomPanel from "../BottomPanel";
 import "./App.less";
+import LoadingScreen from "../LoadingScreen";
+import { useSelector } from "react-redux";
 
 interface SimulatorProps {
   modifyScenarioProperty: typeof scenarioActionCreators.modifyScenarioProperty;
@@ -17,6 +19,17 @@ interface SimulatorProps {
   description?: string;
 }
 
+const shouldComponentUpdate = (prevScenario, nextScenario) => {
+  if (
+    prevScenario.isLoaded !== nextScenario.isLoaded ||
+    prevScenario.whatIsLoading !== nextScenario.whatIsLoading
+  ) {
+    return false;
+  }
+
+  return true;
+};
+
 export default ({
   modifyScenarioProperty,
   modifyMassProperty,
@@ -25,6 +38,8 @@ export default ({
   description,
   initTab
 }: SimulatorProps): ReactElement => {
+  const scenario = useSelector(data => data.scenario, shouldComponentUpdate);
+  console.log("poop", scenario.isLoading);
   return (
     <Fragment>
       <Renderer />
@@ -62,6 +77,9 @@ export default ({
         description={description}
         modifyScenarioProperty={modifyScenarioProperty}
       />
+      {scenario.isLoading && (
+        <LoadingScreen whatIsLoding={scenario.whatIsLoading} />
+      )}
     </Fragment>
   );
 };
