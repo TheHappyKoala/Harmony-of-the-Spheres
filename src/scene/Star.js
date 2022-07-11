@@ -52,7 +52,9 @@ export default class extends MassManifestation {
 
     mesh.add(halo);
 
-    const light = new THREE.PointLight(0xffffff, 1.25, 2100000 * 800, 2);
+    const light = new THREE.PointLight(new THREE.Color(
+      `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
+    ), 1.25, 2100000 * 800, 2);
     light.position.set(0, 0, 0);
 
     mesh.add(light);
