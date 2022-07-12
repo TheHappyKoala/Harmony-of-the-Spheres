@@ -3,6 +3,7 @@ import MassManifestation from "./MassManifestation";
 import starMaterial from "./starMaterial";
 import habitableZone from "./habitableZone";
 import { colorTemperatureToRGB } from "../physics/utils";
+import StellarService from "../physics/stars";
 
 export default class extends MassManifestation {
   constructor(mass, textureLoader) {
@@ -52,9 +53,11 @@ export default class extends MassManifestation {
 
     mesh.add(halo);
 
+    const luminosity = StellarService.getLuminosity(this.mass.m);
+
     const light = new THREE.PointLight(new THREE.Color(
       `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
-    ), 1.25, 2100000 * 800, 2);
+    ), 1.25, luminosity * (2100000 * 1000), 2);
     light.position.set(0, 0, 0);
 
     mesh.add(light);
