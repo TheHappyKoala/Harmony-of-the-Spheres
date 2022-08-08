@@ -10,7 +10,8 @@ import {
   radiansToDegrees,
   degreesToRadians,
   getLagrangePoints,
-  clampAbs
+  clampAbs,
+  clamp
 } from "../physics/utils";
 import ParticleService from "../physics/particles/ParticleService";
 import arena from "./arena";
@@ -91,7 +92,7 @@ const scene = {
 
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas,
-      antialias: false,
+      antialias: true,
       powerPreference: "high-performance",
       logarithmicDepthBuffer: this.scenario.logarithmicDepthBuffer,
       physicallyCorrectLights: true
@@ -596,6 +597,8 @@ const scene = {
 
     const massesLen = this.system.masses.length;
 
+    this.camera.updateMatrixWorld();
+
     for (let i = 0; i < massesLen; i++) {
       const mass = this.system.masses[i];
       const massManifestation = this.manifestationsService.manifestations[i];
@@ -609,6 +612,43 @@ const scene = {
         mass,
         SOITree
       );
+
+      const atmosphere = massManifestation.getObjectByName("atmosphere");
+
+      if (atmosphere) {
+        const distanceFromCameraToPlanet = this.camera.position.distanceTo(
+          massManifestation.getObjectByName("main").position
+        );
+
+        const { radius } = mass;
+
+        if (distanceFromCameraToPlanet > mass.radius * 15) {
+          atmosphere.visible = false;
+        } else {
+          atmosphere.visible = true;
+          atmosphere.material.uniforms.lightPosition.value
+            .copy(
+              this.manifestationsService.manifestations
+                .find(manifestation => manifestation.mass.massType === "star")
+                .getObjectByName("main").position
+            )
+            .applyMatrix4(this.camera.matrixWorldInverse);
+
+          if (distanceFromCameraToPlanet > mass.radius * 8) {
+            atmosphere.material.uniforms.intensityConstant.value = 0.95;
+          } else {
+            atmosphere.material.uniforms.intensityConstant.value = clampAbs(
+              1.1,
+              1.3,
+              (mass.radius /
+                this.camera.position.distanceTo(
+                  massManifestation.getObjectByName("main").position
+                )) *
+                3.25
+            );
+          }
+        }
+      }
 
       if (this.scenario.labels && this.scenario.cameraPosition !== mass.name)
         this.graphics2D.drawLabel(

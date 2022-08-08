@@ -55,9 +55,14 @@ export default class extends MassManifestation {
 
     const luminosity = StellarService.getLuminosity(this.mass.m);
 
-    const light = new THREE.PointLight(new THREE.Color(
-      `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
-    ), 2, luminosity * (2100000 * 1000), 2);
+    const light = new THREE.PointLight(
+      new THREE.Color(
+        `rgb(${parseInt(rgb.r)}, ${parseInt(rgb.g)}, ${parseInt(rgb.b)})`
+      ),
+      1.3,
+      luminosity * (2100000 * 1000),
+      2
+    );
     light.position.set(0, 0, 0);
 
     mesh.add(light);

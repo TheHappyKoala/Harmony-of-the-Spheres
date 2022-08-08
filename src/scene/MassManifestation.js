@@ -3,6 +3,8 @@ import { degreesToRadians, calculateOrbitalVertices } from "../physics/utils";
 import CustomEllipseCurve from "./CustomEllipseCurve";
 import { stateToKepler } from "../physics/spacecraft/lambert";
 import { getEllipse } from "../physics/utils";
+import { createNoSubstitutionTemplateLiteral } from "typescript";
+import atmosphereMaterial from "./atmosphereMaterial";
 
 function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -239,6 +241,8 @@ export default class extends THREE.Object3D {
 
     this.add(mesh);
 
+    if (this.mass.atmosphere) this.getAtmosphere();
+
     if (this.mass.clouds) this.getClouds();
   }
 
@@ -262,6 +266,22 @@ export default class extends THREE.Object3D {
     const mesh = new THREE.Mesh(geometry, material);
 
     mesh.name = "clouds";
+
+    this.getObjectByName("main").add(mesh);
+  }
+
+  getAtmosphere() {
+    const geometry = new THREE.SphereBufferGeometry(
+      this.mass.radius * 1.05,
+      32,
+      32
+    );
+
+    const material = atmosphereMaterial(this.mass.atmosphere);
+
+    const mesh = new THREE.Mesh(geometry, material);
+
+    mesh.name = "atmosphere";
 
     this.getObjectByName("main").add(mesh);
   }

@@ -6,7 +6,11 @@ const utils = require("./utils");
 const determineWorldType = require("./determineWorldType");
 const generateScenarioDescription = require("./generateScenarioDescription");
 const PlanetTextureGenerator = require("./PlanetTextureGenerator");
-const { graphicalQuantities, physicalQuantities } = require("./constants");
+const {
+  graphicalQuantities,
+  physicalQuantities,
+  worldTypes
+} = require("./constants");
 
 const stellarMassRadiusData = require("./stellarMassRadiusData");
 
@@ -142,6 +146,41 @@ const createExoplanetScenarios = async () => {
             planet.pl_dens
           );
 
+          let atmosphere;
+
+          switch (worldType) {
+            case worldTypes.LAVA_WORLD:
+              atmosphere = "darkgrey";
+              break;
+
+            case worldTypes.HABITABLE_WORLD:
+            case worldTypes.OCEAN_WORLD:
+            case worldTypes.ICY_WORLD:
+            case worldTypes.ICE_GIANT:
+              atmosphere = "dodgerblue";
+              break;
+
+            case worldTypes.SUDARSKY_CLASS_ONE:
+              atmosphere = "bisque";
+              break;
+
+            case worldTypes.SUDARSKY_CLASS_TWO:
+              atmosphere = "grey";
+              break;
+
+            case worldTypes.SUDARSKY_CLASS_THREE:
+              atmosphere = "dodgerblue";
+              break;
+
+            case worldTypes.SUDARSKY_CLASS_FOUR:
+              atmosphere = "grey";
+              break;
+
+            case worldTypes.SUDARSKY_CLASS_FIVE:
+              atmosphere = "forestgreen";
+              break;
+          }
+
           const filePath = `./static/textures/${planet.hostname}-${planet.pl_letter}.jpg`;
 
           const isGasGiant = mass > 0.000015015;
@@ -188,6 +227,8 @@ const createExoplanetScenarios = async () => {
             name: `${planet.hostname}-${planet.pl_letter}`,
             texture: `${planet.hostname}-${planet.pl_letter}`,
             m: mass,
+            worldType: worldType,
+            atmosphere,
             discoveryFacility: scenario[0].discoverymethod,
             potentiallyHabitableWorld: utils.isHabitableWorld(worldType),
             radius,
@@ -201,7 +242,7 @@ const createExoplanetScenarios = async () => {
             w: !planet.pl_orblper
               ? Math.random() * (360 - 0) + 0
               : planet.pl_orblper,
-            i: planet.pl_orbinc === null ? 0 : planet.pl_orbinc,
+            i: planet.pl_orbincl === null ? 0 : planet.pl_orbincl,
             o: 0,
             orbitalPeriod: planet.pl_orbper,
             temperature: planetTemperature,
@@ -282,6 +323,7 @@ const createExoplanetScenarios = async () => {
             }
           }
         })();
+      scenarioJSON.masses = scenario.masses;
       fs.writeFileSync(filePath, JSON.stringify(scenarioJSON));
     }
   });

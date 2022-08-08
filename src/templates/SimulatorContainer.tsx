@@ -45,6 +45,17 @@ const Scenario = ({
   const scenarioFromData = data.scenariosJson;
 
   useLayoutEffect(() => {
+    const atmospheres = {
+      Venus: "bisque",
+      Earth: "dodgerblue",
+      Mars: "coral",
+      Jupiter: "bisque",
+      Saturn: "bisque",
+      Uranus: "lightcyan",
+      Neptune: "dodgerblue",
+      Pluto: "royalblue"
+    };
+
     const defaults = {
       sizeAttenuation:
         scenarioFromData.sizeAttenuation !== null
@@ -61,6 +72,7 @@ const Scenario = ({
       particleNumber: 0,
       particleMaxD: 0,
       isLoading: true,
+      displayGrid: false,
       particles: {
         ...scenarioFromData.particles,
         shapes:
@@ -87,7 +99,21 @@ const Scenario = ({
       units: "Earth Units",
       mass: 1,
       radius: 1,
-      temperature: 1000
+      temperature: 1000,
+      masses: scenarioFromData.masses.map(mass => {
+        if (atmospheres.hasOwnProperty(mass.name)) {
+          return {
+            ...mass,
+            atmosphere: atmospheres[mass.name]
+          };
+        }
+
+        if (mass.exoplanet && mass.atmosphere) {
+          return mass.atmosphere;
+        }
+
+        return mass;
+      })
     };
 
     window.sessionStorage.setItem(
