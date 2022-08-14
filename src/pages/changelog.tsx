@@ -32,6 +32,17 @@ export default ({ data, location }: IndexProps): ReactElement => {
         <article>
           <h2>Changelog</h2>
           <ul>
+          <li className="credits-list-item">
+              <section className="contributor-details">
+                <h3 className="italic">2022-08-14</h3>
+                <p>
+                  <b>More Small Stuff</b>
+                </p>
+                <p className="contributor-description">
+                  Added planetary atmospheres, which are very much a work in progress, in addition to a couple of new exoplanet scenarios. The contact form has been temporarily been disabled because of the large amount of spam received over the past couple of weeks.{" "}
+                </p>
+              </section>
+            </li>
             <li className="credits-list-item">
               <section className="contributor-details">
                 <h3 className="italic">2022-07-11</h3>
