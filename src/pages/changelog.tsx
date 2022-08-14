@@ -32,14 +32,20 @@ export default ({ data, location }: IndexProps): ReactElement => {
         <article>
           <h2>Changelog</h2>
           <ul>
-          <li className="credits-list-item">
+            <li className="credits-list-item">
               <section className="contributor-details">
                 <h3 className="italic">2022-07-11</h3>
                 <p>
                   <b>Bunch of Small Stuff</b>
                 </p>
                 <p className="contributor-description">
-                  New high resolution textures have been added for all the planets of the solar system, Earth's moon, the Galilean moons and the dwarf planets Eris and Makemake. Since these textures take much longer to load, a loading screen has been added, as well. Moreover, light now decays according to the inverse-square law and its colour depends on which part of the spectrum most of a star's light is emitted.{" "}
+                  New high resolution textures have been added for all the
+                  planets of the solar system, Earth's moon, the Galilean moons
+                  and the dwarf planets Eris and Makemake. Since these textures
+                  take much longer to load, a loading screen has been added, as
+                  well. Moreover, light now decays according to the
+                  inverse-square law and its colour depends on which part of the
+                  spectrum most of a star's light is emitted.{" "}
                 </p>
               </section>
             </li>

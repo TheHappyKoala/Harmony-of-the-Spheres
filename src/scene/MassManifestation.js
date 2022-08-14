@@ -137,12 +137,13 @@ export default class extends THREE.Object3D {
         roughness: 0.75
       });
     } else
-      material = new THREE.MeshLambertMaterial({
+      material = new THREE.MeshStandardMaterial({
         map: this.textureLoader.load(
           this.mass.massType === "asteroid"
             ? "/textures/Deimos.jpg"
             : `/textures/${this.mass.texture}.jpg`
-        )
+        ),
+        roughness: 1
       });
 
     /*

@@ -53,7 +53,9 @@ const Scenario = ({
       Saturn: "bisque",
       Uranus: "lightcyan",
       Neptune: "dodgerblue",
-      Pluto: "royalblue"
+      Pluto: "royalblue",
+      Titan: "bisque",
+      Triton: "cyan"
     };
 
     const defaults = {
@@ -109,7 +111,10 @@ const Scenario = ({
         }
 
         if (mass.exoplanet && mass.atmosphere) {
-          return mass.atmosphere;
+          return {
+            ...mass,
+            atmosphere: mass.atmosphere
+          };
         }
 
         return mass;

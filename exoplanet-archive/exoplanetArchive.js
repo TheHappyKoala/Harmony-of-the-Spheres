@@ -149,8 +149,12 @@ const createExoplanetScenarios = async () => {
           let atmosphere;
 
           switch (worldType) {
+            case worldTypes.DESERT_WORLD:
+              atmosphere = "coral";
+              break;
+
             case worldTypes.LAVA_WORLD:
-              atmosphere = "darkgrey";
+              atmosphere = "black";
               break;
 
             case worldTypes.HABITABLE_WORLD:
@@ -177,7 +181,7 @@ const createExoplanetScenarios = async () => {
               break;
 
             case worldTypes.SUDARSKY_CLASS_FIVE:
-              atmosphere = "forestgreen";
+              atmosphere = "darkolivegreen";
               break;
           }
 

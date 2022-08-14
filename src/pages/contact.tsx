@@ -30,8 +30,7 @@ export default ({ data, location }: IndexProps): ReactElement => {
         location={location}
       />
       <section className="credits-wrapper">
-        <h2>Contact</h2>
-        <ContactForm />
+        <h2>The contact form has been temporarily disabled because of spam.</h2>
       </section>
     </Fragment>
   );

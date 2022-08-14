@@ -622,7 +622,7 @@ const scene = {
 
         const { radius } = mass;
 
-        if (distanceFromCameraToPlanet > mass.radius * 15) {
+        if (distanceFromCameraToPlanet > mass.radius * 30) {
           atmosphere.visible = false;
         } else {
           atmosphere.visible = true;
