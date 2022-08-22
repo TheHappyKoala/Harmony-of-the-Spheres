@@ -51,12 +51,12 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "three": "^0.108.0",
-    "typescript": "^3.6.4",
     "webworkify-webpack": "^2.1.5"
   },
   "devDependencies": {
-    "@types/react-helmet": "^5.0.13",
     "prettier": "^1.19.1",
+    "@types/react-helmet": "^5.0.13",
+    "typescript": "^3.6.4",
     "webpack": "^4.41.2"
   }
 }
