@@ -1,3 +1,7 @@
+/** @category Components
+ * 
+ */
+
 import React, { useEffect, useCallback, useState, Fragment } from "react";
 import { useSelector } from "react-redux";
 import Dropdown from "../Dropdown";
@@ -8,11 +12,19 @@ import { getRandomColor } from "../../utils";
 import bodies from "../../masses";
 import Toggle from "../Toggle";
 
+/** @type {*} */
 const bodyTypes = [
   "Ring",
   ...new Set(bodies.map(body => body.bodyType))
 ].filter(Boolean);
 
+/**
+ * @description returns the 
+ * @param {String} name
+ * @param {*} masses
+ * @param {number} [number=1]
+ * @return {Object} 
+ */
 const findAvailableMassName = (name, masses, number = 1) => {
   const nameToTest = `${name}-[${number}]`;
 
@@ -53,7 +65,7 @@ const shouldComponentUpdate = (prevScenario, nextScenario) => {
     prevScenario.massTypeToAdd !== nextScenario.massTypeToAdd ||
     prevScenario.maximumDistance !== nextScenario.maximumDistance ||
     prevScenario.particles.shapes.length !==
-      nextScenario.particles.shapes.length ||
+    nextScenario.particles.shapes.length ||
     prevScenario.ringToAdd !== nextScenario.ringToAdd ||
     prevScenario.particleNumber !== nextScenario.particleNumber ||
     prevScenario.particleMinD !== nextScenario.particleMinD ||

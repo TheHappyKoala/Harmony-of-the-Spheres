@@ -3,13 +3,14 @@
   "version": "0.1.50",
   "description": "Newtonian n-body gravity simulator.",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build":    "gatsby build",
+    "clean":    "rm -rf .cache",
+    "develop":  "gatsby develop",
+    "docs":     "jsdoc -c jsdoc.json",
     "exoplanets": "node ./exoplanet-archive/exoplanetArchive.js",
-    "clean": "rm -rf .cache",
     "format": "prettier --write \"**/*.{js,jsx,tsx,ts,json,md}\"",
-    "start": "npm run develop",
     "lint": "tsc --noEmit",
+    "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },

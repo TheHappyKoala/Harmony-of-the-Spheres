@@ -1,11 +1,14 @@
 {
     "plugins": ["plugins/markdown", "node_modules/better-docs", 
-        "typescript"],
+        "node_modules/better_docs/typescript","node_modules/better-docs/category","node_modules/better-docs/component"],
     "opts": {
-        "template": "node_modules/better-docs"
+        "template":     "node_modules/better-docs",
+        "destination":  "docs/",
+        "recurse":      true,
+        "vesrbose":     true
     },
     "tags": {
-        "allowUnknownTags": ["optional"]    
+        "allowUnknownTags": ["component", "category", "optional"]    
     },  
     "source": {
         "includePattern": "\\.(jsx|js|ts|tsx)$"
