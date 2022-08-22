@@ -1,0 +1,13 @@
+{
+    "plugins": ["plugins/markdown", "node_modules/better-docs", 
+        "typescript"],
+    "opts": {
+        "template": "node_modules/better-docs"
+    },
+    "tags": {
+        "allowUnknownTags": ["optional"]    
+    },  
+    "source": {
+        "includePattern": "\\.(jsx|js|ts|tsx)$"
+    }
+}
