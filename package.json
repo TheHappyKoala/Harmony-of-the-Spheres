@@ -54,8 +54,9 @@
     "webworkify-webpack": "^2.1.5"
   },
   "devDependencies": {
-    "prettier": "^1.19.1",
     "@types/react-helmet": "^5.0.13",
+    "better-docs": "^2.7.2",
+    "prettier": "^1.19.1",
     "typescript": "^3.6.4",
     "webpack": "^4.41.2"
   }
