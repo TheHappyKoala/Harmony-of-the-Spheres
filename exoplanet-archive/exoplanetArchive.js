@@ -246,7 +246,9 @@ const createExoplanetScenarios = async () => {
             w: !planet.pl_orblper
               ? Math.random() * (360 - 0) + 0
               : planet.pl_orblper,
-            i: isNaN(planet.pl_orbincl) ? 0 : scenario[0].pl_orbincl - planet.pl_orbincl,
+            i: isNaN(planet.pl_orbincl)
+              ? 0
+              : scenario[0].pl_orbincl - planet.pl_orbincl,
             o: 0,
             orbitalPeriod: planet.pl_orbper,
             temperature: planetTemperature,

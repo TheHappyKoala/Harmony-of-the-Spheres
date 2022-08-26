@@ -3,13 +3,14 @@
   "version": "0.1.50",
   "description": "Newtonian n-body gravity simulator.",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build":    "gatsby build",
+    "clean":    "rm -rf .cache",
+    "develop":  "gatsby develop",
+    "docs":     "jsdoc -c jsdoc.json",
     "exoplanets": "node ./exoplanet-archive/exoplanetArchive.js",
-    "clean": "rm -rf .cache",
     "format": "prettier --write \"**/*.{js,jsx,tsx,ts,json,md}\"",
-    "start": "npm run develop",
     "lint": "tsc --noEmit",
+    "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
@@ -26,7 +27,7 @@
     "@types/react-dom": "^16.9.4",
     "@types/react-redux": "^7.1.5",
     "colladaloader2asmodule": "^1.0.5",
-    "gatsby": "^2.18.5",
+    "gatsby": "^4.21.0",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-advanced-sitemap": "^1.5.5",
     "gatsby-plugin-canonical-urls": "^2.1.16",
@@ -51,12 +52,13 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "three": "^0.108.0",
-    "typescript": "^3.6.4",
     "webworkify-webpack": "^2.1.5"
   },
   "devDependencies": {
     "@types/react-helmet": "^5.0.13",
+    "better-docs": "^2.7.2",
     "prettier": "^1.19.1",
+    "typescript": "^3.6.4",
     "webpack": "^4.41.2"
   }
 }
