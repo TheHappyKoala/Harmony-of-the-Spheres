@@ -1,3 +1,7 @@
+/** takes an element and makes it an object?? 
+ *  Used by gatsby-ssr and gatsby-browser
+*/
+
 import React from "react";
 import { Provider } from "react-redux";
 import createStore from "./src/state/store";
