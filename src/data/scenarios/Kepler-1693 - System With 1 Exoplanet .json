@@ -37,7 +37,7 @@
   "mapMode": true,
   "referenceOrbits": false,
   "softeningConstant": 0,
-  "logarithmicDepthBuffer": true,
+  "logarithmicDepthBuffer": false,
   "scale": 2100000,
   "trails": false,
   "labels": true,

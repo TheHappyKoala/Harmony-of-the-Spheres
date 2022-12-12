@@ -35,7 +35,7 @@ export default class extends MassManifestation {
 
     mesh.scale.x = mesh.scale.y = mesh.scale.z = this.mass.radius;
 
-    const spriteMap = new THREE.TextureLoader().load("/textures/glow.png");
+    const spriteMap = this.textureLoader.load("/textures/glow.png");
 
     const rgb = colorTemperatureToRGB(this.mass.temperature);
 
