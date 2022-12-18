@@ -83,7 +83,7 @@
       "name": "Mars",
       "m": 3.213e-7,
       "radius": 48.62385321100918,
-      "tilt": -25.19,
+      "tilt": 25.19,
       "orbitalPeriod": 1.88,
       "bump": true,
       "bodyType": "Planet",
