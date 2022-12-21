@@ -491,12 +491,6 @@ const scene = {
       }
     }
 
-    const arena = this.scene.getObjectByName("Arena");
-
-    if (this.scenario.background && !arena.visible) arena.visible = true;
-
-    if (!this.scenario.background && arena.visible) arena.visible = false;
-
     if (
       this.oldNumberOfParticleSystmes !==
       this.scenario.particles?.shapes?.length

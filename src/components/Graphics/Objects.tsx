@@ -87,16 +87,6 @@ export default ({ modifyScenarioProperty }) => {
           })
         }
       />
-      <Toggle
-        label="Starfield Background"
-        checked={background}
-        callback={() =>
-          modifyScenarioProperty({
-            key: "background",
-            value: !background
-          })
-        }
-      />
     </Fragment>
   );
 };
