@@ -49,7 +49,7 @@ export default class {
     if (p) {
       const ctx = this.ctx;
 
-      this.ctx.font = "14px Arial";
+      this.ctx.font = "16px Arial";
 
       const { x, y } = p;
 
