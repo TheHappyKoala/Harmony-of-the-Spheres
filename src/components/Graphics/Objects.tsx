@@ -7,7 +7,6 @@ const shouldComponentUpdate = (prevState, nextState) => {
     prevState.cameraFocus !== nextState.cameraFocus ||
     prevState.sizeAttenuation !== nextState.sizeAttenuation ||
     prevState.background !== nextState.background ||
-    prevState.displayGrid !== nextState.displayGrid ||
     prevState.background !== nextState.background ||
     prevState.habitableZone !== nextState.habitableZone ||
     prevState.trails !== nextState.trails ||
@@ -24,7 +23,6 @@ export default ({ modifyScenarioProperty }) => {
     cameraFocus,
     sizeAttenuation,
     background,
-    displayGrid,
     habitableZone,
     mapMode,
     trails
@@ -35,7 +33,6 @@ export default ({ modifyScenarioProperty }) => {
       cameraFocus: scenario.cameraFocus,
       sizeAttenuation: scenario.sizeAttenuation,
       background: scenario.background,
-      displayGrid: scenario.displayGrid,
       habitableZone: scenario.habitableZone,
       mapMode: scenario.mapMode,
       trails: scenario.trails
@@ -97,16 +94,6 @@ export default ({ modifyScenarioProperty }) => {
           modifyScenarioProperty({
             key: "background",
             value: !background
-          })
-        }
-      />
-      <Toggle
-        label="Grid"
-        checked={displayGrid}
-        callback={() =>
-          modifyScenarioProperty({
-            key: "displayGrid",
-            value: !displayGrid
           })
         }
       />

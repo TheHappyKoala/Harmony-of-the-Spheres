@@ -11,7 +11,6 @@ import {
   degreesToRadians,
   getLagrangePoints,
   clampAbs,
-  clamp
 } from "../physics/utils";
 import ParticleService from "../physics/particles/ParticleService";
 import arena from "./arena";
@@ -85,8 +84,6 @@ const scene = {
     this.requestAnimationFrameId = null;
 
     this.scene = new THREE.Scene();
-
-    this.grid = undefined;
 
     this.manager = new THREE.LoadingManager();
 
@@ -703,35 +700,6 @@ const scene = {
           this.scenario.scale,
           this.collisionCallback
         );
-    }
-
-    if (this.scenario.displayGrid) {
-      if (!this.grid) {
-        this.grid = new THREE.GridHelper(
-          this.scenario.scale,
-          80,
-          "yellow",
-          "skyblue"
-        );
-
-        this.grid.rotateX(degreesToRadians(90));
-
-        this.grid.material.transparent = true;
-        this.grid.material.opacity = 0.5;
-
-        this.scene.add(this.grid);
-      }
-
-      this.grid.scale.setScalar(
-        (this.camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) /
-          this.scenario.scale) *
-          8
-      );
-    } else {
-      if (this.grid) {
-        this.scene.remove(this.grid);
-        this.grid = undefined;
-      }
     }
 
     this.store.dispatch(
