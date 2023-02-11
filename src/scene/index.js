@@ -437,7 +437,9 @@ const scene = {
         this.utilityVector.set(points[i].x, points[i].y, points[i].z),
         this.camera,
         false,
-        "yellow"
+        "right",
+        "yellow",
+        drawMarkerLabel
       );
   },
 
@@ -575,7 +577,9 @@ const scene = {
         ),
         this.camera,
         cameraFocus === "Barycenter" ? true : false,
-        "limegreen"
+        "left",
+        "limegreen",
+        drawMarkerLabel
       );
 
     if (this.scenario.lagrangePoints) {
@@ -647,7 +651,9 @@ const scene = {
           ),
           this.camera,
           this.scenario.cameraFocus === mass.name ? true : false,
-          "white"
+          "right",
+          "white",
+          drawMassLabel
         );
     }
 
