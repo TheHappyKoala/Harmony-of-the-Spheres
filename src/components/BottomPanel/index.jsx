@@ -6,6 +6,7 @@ import NumberPicker from "../NumberPicker";
 import { getRangeValues, yearsToYearsMonthsDays } from "../../utils";
 import Button from "../Button";
 import Modal from "../Modal";
+import Tooltip from "../Tooltip";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import LoadingScreen from "../LoadingScreen";
 
@@ -16,6 +17,14 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
   const setWikiState = useCallback(() => setDisplayWiki(!displayWiki), [
     displayWiki
   ]);
+
+  const [displaySaveScenarioModal, setDisplaySaveScenarioModal] = useState(
+    false
+  );
+  const displaySaveScenarioModalCallback = useCallback(
+    () => setDisplaySaveScenarioModal(!displaySaveScenarioModal),
+    [displaySaveScenarioModal]
+  );
 
   const setPlayState = useCallback(
     () =>
@@ -29,6 +38,17 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
   const navigateToScenariosMenu = useCallback(() => {
     if (window.PREVIOUS_PATH == null) navigate(`/${kebabCase(scenario.type)}/`);
     else window.history.back();
+  }, []);
+
+  const [savedScenarioName, setSavedScenarioName] = useState("");
+
+  const setSavedScenarioNameCallback = useCallback(
+    e => setSavedScenarioName(e.target.value),
+    [setSavedScenarioName]
+  );
+
+  const saveScenarioCallback = useCallback(() => {
+    alert('Hello');
   }, []);
 
   return (
@@ -47,6 +67,12 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
         </Button>
         <Button cssClassName="button reset" callback={() => resetScenario()}>
           <i className="fas fa-refresh" />
+        </Button>
+        <Button
+          cssClassName="button reset"
+          callback={displaySaveScenarioModalCallback}
+        >
+          <i className="fas fa-save" />
         </Button>
         <div className="time-step-picker-wrapper">
           {scenario.integrator !== "RKN64" &&
@@ -84,6 +110,35 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
               }}
               className="exoplanet-wiki-wrapper"
             />
+          </Modal>
+        )}
+      </ReactCSSTransitionGroup>
+      <ReactCSSTransitionGroup
+        transitionName="fade"
+        transitionEnterTimeout={250}
+        transitionLeaveTimeout={250}
+      >
+        {displaySaveScenarioModal && (
+          <Modal
+            callback={displaySaveScenarioModalCallback}
+            modalWrapperCssClass="save-scenario-modal-wrapper"
+            modalCssClass=""
+          >
+            <label className="top">
+              Scenario Name{" "}
+              <Tooltip
+                position="left"
+                content="The name of the scenario that you wish to save."
+              />
+            </label>
+            <input
+              type="text"
+              className="box text-input-field"
+              onInput={setSavedScenarioNameCallback}
+            />
+          <Button callback={saveScenarioCallback} cssClassName="button box top">
+            Save Scenario
+          </Button>
           </Modal>
         )}
       </ReactCSSTransitionGroup>
