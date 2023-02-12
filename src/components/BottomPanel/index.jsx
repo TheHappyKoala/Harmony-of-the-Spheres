@@ -48,7 +48,7 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
   );
 
   const saveScenarioCallback = useCallback(() => {
-    alert('Hello');
+    alert("Hello");
   }, []);
 
   return (
@@ -136,9 +136,12 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
               className="box text-input-field"
               onInput={setSavedScenarioNameCallback}
             />
-          <Button callback={saveScenarioCallback} cssClassName="button box top">
-            Save Scenario
-          </Button>
+            <Button
+              callback={saveScenarioCallback}
+              cssClassName="button box top"
+            >
+              Save Scenario
+            </Button>
           </Modal>
         )}
       </ReactCSSTransitionGroup>

@@ -10,7 +10,7 @@ import {
   radiansToDegrees,
   degreesToRadians,
   getLagrangePoints,
-  clampAbs,
+  clampAbs
 } from "../physics/utils";
 import ParticleService from "../physics/particles/ParticleService";
 import arena from "./arena";

@@ -39,7 +39,7 @@ export default ({
   initTab
 }: SimulatorProps): ReactElement => {
   const scenario = useSelector(data => data.scenario, shouldComponentUpdate);
-  
+
   return (
     <Fragment>
       <Renderer />
