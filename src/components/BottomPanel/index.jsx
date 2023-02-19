@@ -48,8 +48,24 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
   );
 
   const saveScenarioCallback = useCallback(() => {
-    alert("Hello");
-  }, []);
+    const nameSpace = "saved scenarios";
+
+    const savedScenarios = JSON.parse(window.localStorage.getItem(nameSpace));
+
+    const savedScenarioNameWithTimeStamp = `${savedScenarioName} - ${
+      new Date().toString().split("GMT")[0]
+    }`;
+
+    const payload = {
+      ...savedScenarios,
+      [savedScenarioNameWithTimeStamp]: {
+        ...scenario,
+        name: savedScenarioNameWithTimeStamp
+      }
+    };
+
+    window.localStorage.setItem(nameSpace, JSON.stringify(payload));
+  }, [savedScenarioName, scenario]);
 
   return (
     <Fragment>
