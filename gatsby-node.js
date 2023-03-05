@@ -169,6 +169,19 @@ exports.createPages = async ({ actions, graphql }) => {
     });
   });
 
+  createPage({
+    path: "/saved-scenarios",
+    component: require.resolve(`./src/templates/Navigation.tsx`),
+    context: {
+      pagePath: "/saved-scenarios",
+      type: "Saved Scenarios",
+      background: `Saved.jpg`,
+      categoryDescription: "",
+      currentPageName: "Saved",
+      pageType: "navigation"
+    }
+  });
+
   results.data.allScenariosJson.discoveryFacilities.forEach(
     ({ fieldValue }, i) => {
       const numberOfScenariosPerCategory = results.data.allScenariosJson.edges.filter(

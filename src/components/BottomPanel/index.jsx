@@ -56,13 +56,15 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
       new Date().toString().split("GMT")[0]
     }`;
 
-    const payload = {
-      ...savedScenarios,
-      [savedScenarioNameWithTimeStamp]: {
+    let payload = [
+      {
         ...scenario,
         name: savedScenarioNameWithTimeStamp
       }
-    };
+    ];
+
+    if (Array.isArray(savedScenarios))
+      payload = [...savedScenarios, ...payload];
 
     window.localStorage.setItem(nameSpace, JSON.stringify(payload));
   }, [savedScenarioName, scenario]);
