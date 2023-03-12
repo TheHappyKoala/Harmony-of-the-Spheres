@@ -247,6 +247,15 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   );
 
+  createPage({
+    path: `/saved-scenario`,
+    component: require.resolve(`./src/templates/SimulatorContainer.tsx`),
+    context: {
+      id: "saved scenario",
+      pageType: "simulator"
+    }
+  });
+
   results.data.allScenariosJson.edges.forEach(({ node }, i) =>
     createPage({
       path: `/${_.kebabCase(node.type)}/${_.kebabCase(node.name)}`,

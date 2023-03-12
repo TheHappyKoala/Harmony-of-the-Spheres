@@ -1,4 +1,10 @@
-import React, { ReactElement, Fragment, useState, useEffect } from "react";
+import React, {
+  ReactElement,
+  Fragment,
+  useState,
+  useEffect,
+  useCallback
+} from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import kebabCase from "lodash/kebabCase";
@@ -66,6 +72,13 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
     if (savedScenariosObject !== null) {
       setSavedScenarios(JSON.parse(savedScenariosObject));
     }
+  }, []);
+
+  const setSavedScenarioToLoadCallback = useCallback(event => {
+    window.localStorage.setItem(
+      "scenario-to-load",
+      event.target.getAttribute("data-saved-scenario")
+    );
   }, []);
 
   return (
@@ -188,8 +201,12 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
                 </Link>
               ))
             : savedScenarios.map(savedScenario => (
-                <Link to="">
-                  <div className="scenario-link">
+                <Link to="/saved-scenario">
+                  <div
+                    className="scenario-link"
+                    data-saved-scenario={savedScenario.name}
+                    onClick={setSavedScenarioToLoadCallback}
+                  >
                     <p className="scenario-name">{savedScenario.name}</p>
                   </div>
                 </Link>
