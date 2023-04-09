@@ -1,4 +1,10 @@
-import React, { Fragment, useState, useCallback } from "react";
+import React, {
+  Fragment,
+  useEffect,
+  useState,
+  useCallback,
+  useRef
+} from "react";
 import { useSelector } from "react-redux";
 import { navigate } from "gatsby";
 import kebabCase from "lodash/kebabCase";
@@ -47,6 +53,21 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
     [setSavedScenarioName]
   );
 
+  const [
+    displayScenarioHasBeenSaved,
+    setDisplayScenarioHasBeenSaved
+  ] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDisplayScenarioHasBeenSaved(false);
+    }, 2500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [displayScenarioHasBeenSaved]);
+
   const saveScenarioCallback = useCallback(() => {
     const nameSpace = "saved scenarios";
 
@@ -67,7 +88,13 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
       payload = [...savedScenarios, ...payload];
 
     window.localStorage.setItem(nameSpace, JSON.stringify(payload));
-  }, [savedScenarioName, scenario]);
+
+    savedScenarioNameInputFieldRef.current.value = "";
+
+    setDisplayScenarioHasBeenSaved(true);
+  }, [savedScenarioName, scenario, displayScenarioHasBeenSaved]);
+
+  const savedScenarioNameInputFieldRef = useRef(null);
 
   return (
     <Fragment>
@@ -153,6 +180,7 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
               type="text"
               className="box text-input-field"
               onInput={setSavedScenarioNameCallback}
+              ref={savedScenarioNameInputFieldRef}
             />
             <Button
               callback={saveScenarioCallback}
@@ -160,6 +188,17 @@ export default ({ description, modifyScenarioProperty, resetScenario }) => {
             >
               Save Scenario
             </Button>
+            <ReactCSSTransitionGroup
+              transitionName="fade"
+              transitionEnterTimeout={250}
+              transitionLeaveTimeout={250}
+            >
+              {displayScenarioHasBeenSaved && (
+                <p className="saved-scenario-toaster">
+                  Scenario has been saved successfully.
+                </p>
+              )}
+            </ReactCSSTransitionGroup>
           </Modal>
         )}
       </ReactCSSTransitionGroup>
