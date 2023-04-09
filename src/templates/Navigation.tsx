@@ -1,4 +1,10 @@
-import React, { ReactElement, Fragment } from "react";
+import React, {
+  ReactElement,
+  Fragment,
+  useState,
+  useEffect,
+  useCallback
+} from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import kebabCase from "lodash/kebabCase";
@@ -54,6 +60,27 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
   const categories = data.categories.group;
   const scenarios = data.scenarios.edges;
 
+  const [savedScenarios, setSavedScenarios] = useState([]);
+
+  useEffect(() => {
+    const savedScenariosNamespace = "saved scenarios";
+
+    const savedScenariosObject = window.localStorage.getItem(
+      savedScenariosNamespace
+    );
+
+    if (savedScenariosObject !== null) {
+      setSavedScenarios(JSON.parse(savedScenariosObject));
+    }
+  }, []);
+
+  const setSavedScenarioToLoadCallback = useCallback(event => {
+    window.localStorage.setItem(
+      "scenario-to-load",
+      event.target.getAttribute("data-saved-scenario")
+    );
+  }, []);
+
   return (
     <Fragment>
       <Img
@@ -89,6 +116,9 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
             </Link>
             <Link to={"/misc/create-new-gravity-simulation"}>
               <NavItem>Create New Simulation</NavItem>
+            </Link>
+            <Link to={"/saved-scenarios"}>
+              <NavItem>Saved Scenarios</NavItem>
             </Link>
             {categories.map(category => (
               <Link
@@ -159,14 +189,28 @@ export default ({ data, pageContext, location }: IndexProps): ReactElement => {
           <h2>{`${pageContext.currentPageName} Scenarios`}</h2>
         </section>
         <div className="scenarios-gallery">
-          {scenarios.map(({ node }) => (
-            <Link to={`/${kebabCase(node.type)}/${kebabCase(node.name)}`}>
-              <div className="scenario-link">
-                <Img fixed={node.fields.scenarioImage.childImageSharp.fixed} />
-                <p className="scenario-name">{node.name}</p>
-              </div>
-            </Link>
-          ))}
+          {pageContext.type !== "Saved Scenarios"
+            ? scenarios.map(({ node }) => (
+                <Link to={`/${kebabCase(node.type)}/${kebabCase(node.name)}`}>
+                  <div className="scenario-link">
+                    <Img
+                      fixed={node.fields.scenarioImage.childImageSharp.fixed}
+                    />
+                    <p className="scenario-name">{node.name}</p>
+                  </div>
+                </Link>
+              ))
+            : savedScenarios.map(savedScenario => (
+                <Link to="/saved-scenario">
+                  <div
+                    className="scenario-link"
+                    data-saved-scenario={savedScenario.name}
+                    onClick={setSavedScenarioToLoadCallback}
+                  >
+                    <p className="scenario-name">{savedScenario.name}</p>
+                  </div>
+                </Link>
+              ))}
         </div>
       </section>
     </Fragment>

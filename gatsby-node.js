@@ -169,6 +169,19 @@ exports.createPages = async ({ actions, graphql }) => {
     });
   });
 
+  createPage({
+    path: "/saved-scenarios",
+    component: require.resolve(`./src/templates/Navigation.tsx`),
+    context: {
+      pagePath: "/saved-scenarios",
+      type: "Saved Scenarios",
+      background: `Saved.jpg`,
+      categoryDescription: "",
+      currentPageName: "Saved",
+      pageType: "navigation"
+    }
+  });
+
   results.data.allScenariosJson.discoveryFacilities.forEach(
     ({ fieldValue }, i) => {
       const numberOfScenariosPerCategory = results.data.allScenariosJson.edges.filter(
@@ -233,6 +246,15 @@ exports.createPages = async ({ actions, graphql }) => {
       });
     }
   );
+
+  createPage({
+    path: `/saved-scenario`,
+    component: require.resolve(`./src/templates/SimulatorContainer.tsx`),
+    context: {
+      id: "saved scenario",
+      pageType: "simulator"
+    }
+  });
 
   results.data.allScenariosJson.edges.forEach(({ node }, i) =>
     createPage({

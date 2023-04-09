@@ -42,7 +42,18 @@ const Scenario = ({
   pageContext,
   location
 }: ScenarioProps): ReactElement => {
-  const scenarioFromData = data.scenariosJson;
+  let scenarioFromData;
+  console.log(pageContext);
+
+  if (pageContext.id !== "saved scenario") {
+    scenarioFromData = data.scenariosJson;
+  } else {
+    const scenarioToLoad = window.localStorage.getItem("scenario-to-load");
+
+    scenarioFromData = JSON.parse(
+      window.localStorage.getItem("saved scenarios")
+    ).find(savedScenario => savedScenario.name === scenarioToLoad);
+  }
 
   useLayoutEffect(() => {
     const atmospheres = {

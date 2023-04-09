@@ -42,19 +42,73 @@ export default class {
     p: Vector3,
     camera: PerspectiveCamera,
     isTarget: boolean,
-    color: string
+    placement: string,
+    color: string,
+    drawSymbolCallback: (
+      ctx: CanvasRenderingContext2D,
+      x: number,
+      y: number,
+      color: string
+    ) => void,
+    topOffset = 0
   ): void {
     p = this.threeToTwo(p, camera, isTarget);
 
     if (p) {
       const ctx = this.ctx;
 
-      this.ctx.font = "16px Arial";
+      this.ctx.font = "12px Arial";
 
       const { x, y } = p;
 
+      const textBoxWidth = ctx.measureText(name).width + 6;
+
+      const offset = placement === "right" ? 0 : textBoxWidth + 20;
+
+      drawSymbolCallback(ctx, x, y + topOffset, color);
+
+      ctx.lineWidth = 1;
+
+      ctx.globalAlpha = 0.5;
+      ctx.fillStyle = "#545454";
+      ctx.fillRect(x + 13 - offset, y - 10 + topOffset, textBoxWidth, 20);
+
+      ctx.globalAlpha = 1;
       ctx.fillStyle = color;
-      ctx.fillText(name, x, y);
+      ctx.fillText(name, x + 16 - offset, y + 3 + topOffset);
+
+      ctx.strokeRect(x + 13 - offset, y - 10 + topOffset, textBoxWidth, 20);
     }
   }
 }
+
+export const drawMarkerLabel = (
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  color: string
+): void => {
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+
+  ctx.moveTo(x, y - 30);
+  ctx.lineTo(x, y + 30);
+  ctx.stroke();
+
+  ctx.moveTo(x - 30, y);
+  ctx.lineTo(x + 30, y);
+  ctx.stroke();
+};
+
+export const drawMassLabel = (
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  color: string
+): void => {
+  ctx.strokeStyle = color;
+  ctx.beginPath();
+  ctx.arc(x, y, 8, 0, 2 * Math.PI);
+  ctx.stroke();
+};
