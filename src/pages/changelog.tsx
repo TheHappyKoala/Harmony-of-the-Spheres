@@ -32,6 +32,17 @@ export default ({ data, location }: IndexProps): ReactElement => {
         <article>
           <h2>Changelog</h2>
           <ul>
+          <li className="credits-list-item">
+              <section className="contributor-details">
+                <h3 className="italic">2023-04-09</h3>
+                <p>
+                  <b>Enable Saving and Loading Scenarios</b>
+                </p>
+                <p className="contributor-description">
+                  It is now possible to save and load non starship scenarios. Further work on this functionality is certainly needed, but this is a start.{" "}
+                </p>
+              </section>
+            </li>
             <li className="credits-list-item">
               <section className="contributor-details">
                 <h3 className="italic">2022-12-12</h3>
