@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Renderer from "../components/renderer";
 import { ScenarioType } from "../types/scenario";
-import useHydrateStory from "../hooks/useHydrateStore";
+import useHydrateStore from "../hooks/useHydrateStore";
 
 type Props = {
   data: {
@@ -23,7 +23,7 @@ const Scenario = ({
 }: Props) => {
   const scenario = scenarios?.[0]?.scenario;
 
-  useHydrateStory(scenario);
+  useHydrateStore(scenario);
 
   return (
     <Layout>
