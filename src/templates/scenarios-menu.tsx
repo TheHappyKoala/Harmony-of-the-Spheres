@@ -4,10 +4,8 @@ import Layout from "../components/layout";
 import NavigationMenu from "../components/navigation-menu";
 import NavigationMenuItem from "../components/navigation-menu/navigation-menu-item";
 import { kebabCase } from "../utils/text-utils";
-import {
-  ScenariosCategoryTreeType,
-  ScenarioCategoryType,
-} from "../types/scenario";
+import { ScenariosCategoryTreeType } from "../types/category";
+import { ScenarioCategoryType } from "../types/scenario";
 import "../css/index.less";
 
 type Props = {

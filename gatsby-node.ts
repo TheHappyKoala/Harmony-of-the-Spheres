@@ -1,14 +1,15 @@
 import type { GatsbyNode } from "gatsby";
 import path from "path";
 import {
-  ScenarioCategoryType,
   ScenariosCategoryTreeType,
   ScenarioCategoryBranchType,
-} from "./src/types/scenario";
+} from "./src/types/category";
+import { ScenarioCategoryType } from "./src/types/scenario";
 import { kebabCase } from "./src/utils/text-utils";
 
 type FetchedScenariosArray = {
   scenario: {
+    name: string;
     category: {
       name: string;
       subCategory: string;
@@ -33,6 +34,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       scenariosJson: allScenariosJson {
         scenarios: edges {
           scenario: node {
+            name
             category {
               name
               subCategory
@@ -122,4 +124,20 @@ export const createPages: GatsbyNode["createPages"] = async ({
       }
     },
   );
+
+  data?.scenariosJson.scenarios.forEach(({ scenario }) => {
+    const component = path.resolve("./src/templates/scenario.tsx");
+    const { category, name } = scenario;
+
+    createPage({
+      path: `/${kebabCase(category.name)}${
+        category.subCategory ? `/${kebabCase(category.subCategory)}` : ""
+      }/${kebabCase(name)}`,
+      component,
+      context: {
+        scenarioName: name,
+      },
+      defer: true,
+    });
+  });
 };
