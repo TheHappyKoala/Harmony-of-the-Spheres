@@ -2,9 +2,9 @@ import { degreesToRadians } from "./misc";
 import { VectorType } from "../../types/physics";
 
 class Vector {
-  x: number;
-  y: number;
-  z: number;
+  public x: number;
+  public y: number;
+  public z: number;
 
   constructor() {
     this.x = 0;
@@ -12,7 +12,7 @@ class Vector {
     this.z = 0;
   }
 
-  set(v: Vector): this {
+  public set(v: Vector): this {
     this.x = v.x;
     this.y = v.y;
     this.z = v.z;
@@ -20,23 +20,23 @@ class Vector {
     return this;
   }
 
-  toArray(): [number, number, number] {
+  public toArray(): [number, number, number] {
     return [this.x, this.y, this.z];
   }
 
-  toObject(): VectorType {
+  public toObject(): VectorType {
     return { x: this.x, y: this.y, z: this.z };
   }
 
-  getLength(): number {
+  public getLength(): number {
     return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
   }
 
-  normalise(): this {
+  public normalise(): this {
     return this.divideByScalar(this.getLength());
   }
 
-  getDistanceParameters(v: VectorType): {
+  public getDistanceParameters(v: VectorType): {
     dx: number;
     dy: number;
     dz: number;
@@ -52,7 +52,7 @@ class Vector {
     return { dx, dy, dz, dSquared, d: Math.sqrt(dSquared) };
   }
 
-  getDirectionalSlope(v: VectorType) {
+  public getDirectionalSlope(v: VectorType) {
     const dParams = this.getDistanceParameters(v);
 
     const dx = dParams.dx;
@@ -68,7 +68,7 @@ class Vector {
     };
   }
 
-  add(v: VectorType): this {
+  public add(v: VectorType): this {
     this.x += v.x;
     this.y += v.y;
     this.z += v.z;
@@ -76,7 +76,7 @@ class Vector {
     return this;
   }
 
-  subtract(v: VectorType): this {
+  public subtract(v: VectorType): this {
     this.x -= v.x;
     this.y -= v.y;
     this.z -= v.z;
@@ -84,7 +84,7 @@ class Vector {
     return this;
   }
 
-  subtractFrom(v: VectorType): this {
+  public subtractFrom(v: VectorType): this {
     this.x = v.x - this.x;
     this.y = v.y - this.y;
     this.z = v.z - this.z;
@@ -92,7 +92,7 @@ class Vector {
     return this;
   }
 
-  multiply(v: VectorType): this {
+  public multiply(v: VectorType): this {
     this.x *= v.x;
     this.y *= v.y;
     this.z *= v.z;
@@ -100,7 +100,7 @@ class Vector {
     return this;
   }
 
-  divide(v: VectorType): this {
+  public divide(v: VectorType): this {
     this.x /= v.x;
     this.y /= v.y;
     this.z /= v.z;
@@ -108,7 +108,7 @@ class Vector {
     return this;
   }
 
-  multiplyByScalar(scalar: number): this {
+  public multiplyByScalar(scalar: number): this {
     this.x *= scalar;
     this.y *= scalar;
     this.z *= scalar;
@@ -116,7 +116,7 @@ class Vector {
     return this;
   }
 
-  divideByScalar(scalar: number): this {
+  public divideByScalar(scalar: number): this {
     this.x /= scalar;
     this.y /= scalar;
     this.z /= scalar;
@@ -124,7 +124,7 @@ class Vector {
     return this;
   }
 
-  addScaledVector(scalar: number, v: VectorType): this {
+  public addScaledVector(scalar: number, v: VectorType): this {
     this.x += scalar * v.x;
     this.y += scalar * v.y;
     this.z += scalar * v.z;
@@ -132,7 +132,7 @@ class Vector {
     return this;
   }
 
-  subtractScaledVector(scalar: number, v: VectorType): this {
+  public subtractScaledVector(scalar: number, v: VectorType): this {
     this.x -= scalar * v.x;
     this.y -= scalar * v.y;
     this.z -= scalar * v.z;
@@ -140,11 +140,11 @@ class Vector {
     return this;
   }
 
-  dot(v: VectorType): number {
+  public dot(v: VectorType): number {
     return this.x * v.x + this.y * v.y + this.z * v.z;
   }
 
-  cross(v: VectorType): this {
+  public cross(v: VectorType): this {
     const x = this.y * v.z - this.z * v.y;
     const y = this.z * v.x - this.x * v.z;
     const z = this.x * v.y - this.y * v.x;
@@ -156,7 +156,7 @@ class Vector {
     return this;
   }
 
-  rotate(axis: VectorType, angle: number): this {
+  public rotate(axis: VectorType, angle: number): this {
     const radians = degreesToRadians(angle);
 
     const halfAngle = radians / 2;
