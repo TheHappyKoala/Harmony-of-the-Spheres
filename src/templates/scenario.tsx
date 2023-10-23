@@ -76,7 +76,6 @@ export const pageQuery = graphql`
             trails
             labels
             habitableZone
-            scale
           }
           masses {
             name

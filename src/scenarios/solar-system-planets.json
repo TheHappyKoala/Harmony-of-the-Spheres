@@ -34,7 +34,6 @@
   "graphics": {
     "orbits": true,
     "habitableZone": false,
-    "scale": 2100000,
     "trails": false,
     "labels": true
   },

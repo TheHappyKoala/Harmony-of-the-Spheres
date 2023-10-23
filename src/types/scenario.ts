@@ -34,7 +34,6 @@ export type ScenarioBarycenterType = {
 export type ScenarioGraphicsType = {
   orbits: boolean;
   habitableZone: boolean;
-  scale: number;
   trails: boolean;
   labels: boolean;
 };
