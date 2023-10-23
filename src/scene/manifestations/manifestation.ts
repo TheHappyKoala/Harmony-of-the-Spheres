@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { ScenarioMassType } from "../../types/scenario";
+import { VectorType } from "../../types/physics";
 
 class Manifestation {
   protected mass: ScenarioMassType;
@@ -14,11 +15,12 @@ class Manifestation {
     this.object3D = new THREE.Object3D();
   }
 
-  createManifestation() {
+  public createManifestation() {
     const segments = 32;
 
     const geometry = new THREE.SphereGeometry(
-      this.mass.radius,
+      //this.mass.radius,
+      15000,
       segments,
       segments,
     );
@@ -29,6 +31,16 @@ class Manifestation {
     sphere.name = "sphere";
 
     this.object3D.add(sphere);
+
+    return this;
+  }
+
+  public setPosition(position: THREE.Vector3) {
+    const object3D = this.object3D;
+
+    const { x, y, z } = position;
+
+    object3D.position.set(x, y, z);
 
     return this;
   }
