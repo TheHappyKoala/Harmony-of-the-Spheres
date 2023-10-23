@@ -16,6 +16,8 @@ class SceneBase {
   protected renderer: THREE.WebGLRenderer;
   protected textureLoader: THREE.TextureLoader;
 
+  protected requestAnimationFrameId: number | null;
+
   constructor(webGlCanvas: HTMLCanvasElement) {
     this.windowWidth = window.innerWidth;
     this.windowHeight = window.innerHeight;
@@ -43,6 +45,8 @@ class SceneBase {
     );
 
     this.textureLoader = new THREE.TextureLoader();
+
+    this.requestAnimationFrameId = null;
   }
 }
 
