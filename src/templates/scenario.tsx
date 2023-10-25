@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { ThunkDispatch } from "redux-thunk";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Renderer from "../components/renderer";
 import { ScenarioType } from "../types/scenario";
+import { ModifyScenarioPropertyType } from "../types/actions";
 import useHydrateStore from "../hooks/useHydrateStore";
+import Button from "../components/button";
+import { modifyScenarioProperty } from "../state/creators";
 
 type Props = {
   data: {
@@ -21,13 +26,37 @@ const Scenario = ({
     scenariosJson: { scenarios },
   },
 }: Props) => {
+  const dispatch = useDispatch();
   const scenario = scenarios[0]!.scenario;
 
   useHydrateStore(scenario);
 
+  const { playing } = useSelector((state: ScenarioType) => {
+    const { playing } = state;
+
+    return { playing };
+  });
+
+  const handlePlayButtonClick = useCallback(
+    () =>
+      (
+        dispatch as ThunkDispatch<
+          ScenarioType,
+          void,
+          ModifyScenarioPropertyType
+        >
+      )(modifyScenarioProperty({ key: "playing", value: !playing })),
+    [playing],
+  );
+
   return (
     <Layout>
       <Renderer />
+      <section>
+        <Button callback={handlePlayButtonClick}>
+          <i className={`fa-solid fa-${playing ? "pause" : "play"}`} />
+        </Button>
+      </section>
     </Layout>
   );
 };
