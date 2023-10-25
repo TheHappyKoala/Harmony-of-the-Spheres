@@ -12,7 +12,7 @@ class Vector {
     this.z = 0;
   }
 
-  public set(v: Vector): this {
+  public set(v: Vector | VectorType): this {
     this.x = v.x;
     this.y = v.y;
     this.z = v.z;

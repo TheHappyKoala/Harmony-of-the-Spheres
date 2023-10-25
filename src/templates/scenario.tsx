@@ -21,7 +21,7 @@ const Scenario = ({
     scenariosJson: { scenarios },
   },
 }: Props) => {
-  const scenario = scenarios?.[0]?.scenario;
+  const scenario = scenarios[0]!.scenario;
 
   useHydrateStore(scenario);
 

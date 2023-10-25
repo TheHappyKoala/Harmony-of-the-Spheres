@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import { ScenarioMassType } from "../../types/scenario";
-import { VectorType } from "../../types/physics";
 
 class Manifestation {
   protected mass: ScenarioMassType;
