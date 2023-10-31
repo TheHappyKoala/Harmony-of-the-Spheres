@@ -4,7 +4,7 @@ import {
   ScenariosCategoryTreeType,
   ScenarioCategoryBranchType,
 } from "./src/types/category";
-import { ScenarioCategoryType } from "./src/types/scenario";
+import { ScenarioType } from "./src/types/scenario";
 import { kebabCase } from "./src/utils/text-utils";
 
 type FetchedScenariosArray = {
@@ -21,6 +21,7 @@ type FetchedScenariosJsonType = {
   scenariosJson: {
     scenarios: FetchedScenariosArray;
   };
+  categoryTree: ScenariosCategoryTreeType;
 };
 
 export const createPages: GatsbyNode["createPages"] = async ({
@@ -42,54 +43,15 @@ export const createPages: GatsbyNode["createPages"] = async ({
           }
         }
       }
+
+      categoryTree {
+        name
+        subCategories
+      }
     }
   `);
 
-  const categoryTree = data?.scenariosJson.scenarios.reduce(
-    (
-      accumulator: ScenariosCategoryTreeType,
-      {
-        scenario: {
-          category: { name },
-        },
-      }: { scenario: { category: ScenarioCategoryType } },
-      _index: number,
-      array,
-    ) => {
-      const hasCategoryBeenAdded = accumulator.find(
-        (category: ScenarioCategoryBranchType) => category.name === name,
-      );
-
-      if (!hasCategoryBeenAdded) {
-        const subCategories = array.reduce(
-          (
-            accumulator: string[],
-            {
-              scenario: { category },
-            }: { scenario: { category: ScenarioCategoryType } },
-          ) => {
-            if (
-              category.name === name &&
-              category.subCategory &&
-              !accumulator.includes(category.subCategory)
-            ) {
-              accumulator.push(category.subCategory);
-            }
-
-            return accumulator;
-          },
-          [],
-        );
-
-        const categoryBranch = { name, subCategories };
-
-        accumulator.push(categoryBranch);
-      }
-
-      return accumulator;
-    },
-    [],
-  );
+  const categoryTree = data?.categoryTree;
 
   categoryTree?.forEach(
     (scenarioCategoryBranch: ScenarioCategoryBranchType) => {
@@ -101,7 +63,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
         path: `/${kebabCase(name)}${withSubCategories ? "/all" : ""}`,
         component,
         context: {
-          categoryTree,
           category: name,
         },
         defer: true,
@@ -113,7 +74,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
             path: `/${kebabCase(name)}/${kebabCase(subCategory)}`,
             component,
             context: {
-              categoryTree,
               category: name,
               subCategory,
               subCategoryRegex: `/${subCategory}/g`,
@@ -141,3 +101,73 @@ export const createPages: GatsbyNode["createPages"] = async ({
     });
   });
 };
+
+export const createResolvers: GatsbyNode["createResolvers"] = ({
+  createResolvers,
+  getNodesByType,
+}) => {
+  const scenarios = getNodesByType(
+    "ScenariosJson",
+  ) as unknown as ScenarioType[];
+
+  const categoryTree = scenarios.reduce(
+    (
+      accumulator: ScenariosCategoryTreeType,
+      { category: { name } },
+      _index: number,
+      array,
+    ) => {
+      const hasCategoryBeenAdded = accumulator.find(
+        (category: ScenarioCategoryBranchType) => category.name === name,
+      );
+
+      if (!hasCategoryBeenAdded) {
+        const subCategories = array.reduce(
+          (accumulator: string[], { category }) => {
+            if (
+              category.name === name &&
+              category.subCategory &&
+              !accumulator.includes(category.subCategory)
+            ) {
+              accumulator.push(category.subCategory);
+            }
+
+            return accumulator;
+          },
+          [],
+        );
+
+        const categoryBranch = { name, subCategories };
+
+        accumulator.push(categoryBranch);
+      }
+
+      return accumulator;
+    },
+    [],
+  );
+
+  createResolvers({
+    Query: {
+      categoryTree: {
+        resolve: async () => categoryTree,
+      },
+    },
+  });
+};
+
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
+  ({ actions }) => {
+    const { createTypes } = actions;
+
+    createTypes(`
+    type CategoryBranch {
+      name: String
+      subCategories: [String]
+    }
+
+    type Query implements Node {
+      categoryTree: [CategoryBranch]
+    }
+`);
+  };
