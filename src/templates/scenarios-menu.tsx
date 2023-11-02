@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import { getImage, GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import Layout from "../components/layout";
 import NavigationMenu from "../components/navigation-menu";
 import NavigationMenuItem from "../components/navigation-menu/navigation-menu-item";
@@ -19,6 +20,7 @@ type Props = {
       }[];
     };
     categoryTree: ScenariosCategoryTreeType;
+    background: IGatsbyImageData;
   };
   pageContext: {
     category: string;
@@ -26,11 +28,18 @@ type Props = {
 };
 
 const IndexPage = ({
-  data: { categoryTree, scenariosJson },
+  data: { categoryTree, scenariosJson, background },
   pageContext: { category },
 }: Props) => {
+  const backgroundImage = getImage(background) as IGatsbyImageData;
+
   return (
     <Layout>
+      <GatsbyImage
+        image={backgroundImage}
+        className="background-image"
+        alt="Website background image"
+      />
       <section>
         <NavigationMenu>
           {categoryTree.map((categoryBranch) => (
@@ -65,7 +74,11 @@ const IndexPage = ({
 };
 
 export const pageQuery = graphql`
-  query ($category: String, $subCategoryRegex: String = "//") {
+  query (
+    $category: String
+    $subCategoryRegex: String = "//"
+    $backgroundImage: String = "Solar System.jpg"
+  ) {
     scenariosJson: allScenariosJson(
       filter: {
         category: {
@@ -88,6 +101,12 @@ export const pageQuery = graphql`
     categoryTree {
       name
       subCategories
+    }
+
+    background: file(relativePath: { eq: $backgroundImage }) {
+      childImageSharp {
+        gatsbyImageData(quality: 90, layout: FULL_WIDTH)
+      }
     }
   }
 `;
