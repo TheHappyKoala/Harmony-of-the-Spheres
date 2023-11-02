@@ -27,7 +27,7 @@ type Props = {
   };
 };
 
-const IndexPage = ({
+const ScenarioMenu = ({
   data: { categoryTree, scenariosJson, background },
   pageContext: { category },
 }: Props) => {
@@ -111,4 +111,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default IndexPage;
+export default ScenarioMenu;
