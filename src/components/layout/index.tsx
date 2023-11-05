@@ -1,4 +1,7 @@
-import React, { ReactElement, ReactNode } from "react";
+import React, { ReactElement, ReactNode, Fragment } from "react";
+import { Link } from "gatsby";
+import NavigationMenu from "../navigation-menu";
+import NavigationMenuItem from "../navigation-menu/navigation-menu-item";
 
 type Props = {
   children: ReactNode;
@@ -6,16 +9,23 @@ type Props = {
 
 const Layout = ({ children }: Props): ReactElement => {
   return (
-    <div>
-      <header>
+    <Fragment>
+      <header className="container container--site-header">
         <div>
-          <h1>Gravity Simulator</h1>
+          <Link to="/">
+            <h1 className="site-title">Gravity Simulator</h1>
+          </Link>
         </div>
-        <nav></nav>
+        <nav>
+          <NavigationMenu>
+            <NavigationMenuItem>
+              <Link to="/solar-system/all">Scenarios</Link>
+            </NavigationMenuItem>
+          </NavigationMenu>
+        </nav>
       </header>
-      {children}
-      <footer></footer>
-    </div>
+      <main>{children}</main>
+    </Fragment>
   );
 };
 

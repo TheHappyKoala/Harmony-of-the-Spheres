@@ -6,13 +6,11 @@
   src: url("./jura/static/Jura-Regular.ttf");
 }
 
-@import "./renderer.less";
-
 @primary-color: rgba(0, 0, 0, 0.5);
 @secondary-color: #111;
 
-@primary-font-color: #999;
-@secondary-font-color: #fff;
+@primary-font-color: #fff;
+@secondary-font-color: #999;
 
 @primary-border-color: #333;
 @secondary-border-color: #555;
@@ -22,6 +20,13 @@ body {
   color: @primary-font-color;
   overflow: hidden;
   margin: 0;
+  font-family: "Gill Sans", sans-serif;
+}
+
+a:link,
+a:visited {
+  text-decoration: inherit;
+  color: @primary-font-color;
 }
 
 .background-image {
@@ -34,31 +39,6 @@ body {
 
 .container {
   background-color: @primary-color;
-  padding: 6px;
+  padding: 12px;
   color: @primary-font-color;
-}
-
-.container--border-top {
-  border-top: 1px solid @primary-border-color;
-}
-
-.container--border-bottom {
-  border-bottom: 1px solid @primary-border-color;
-}
-
-.container--top-position {
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.container--bottom-position {
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.container__site-title {
-  font-family: jura-regular;
-  margin: 0;
 }

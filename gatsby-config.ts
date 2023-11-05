@@ -4,6 +4,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `Gravity Simulator`,
     siteUrl: `https://www.yourdomain.tld`,
+    description: `3D gravity and space simulator. Simulate the solar system, exoplanets and even colliding galaxies. Add, delete and modify planets, stars and moons, and change the laws of physics.`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

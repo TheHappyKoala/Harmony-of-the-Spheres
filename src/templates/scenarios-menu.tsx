@@ -7,7 +7,7 @@ import NavigationMenuItem from "../components/navigation-menu/navigation-menu-it
 import { kebabCase } from "../utils/text-utils";
 import { ScenariosCategoryTreeType } from "../types/category";
 import { ScenarioCategoryType } from "../types/scenario";
-import "../css/index.less";
+import "../css/templates/scenarios-menu.less";
 
 type Props = {
   data: {
@@ -105,7 +105,11 @@ export const pageQuery = graphql`
 
     background: file(relativePath: { eq: $backgroundImage }) {
       childImageSharp {
-        gatsbyImageData(quality: 90, layout: FULL_WIDTH)
+        gatsbyImageData(
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+          layout: FULL_WIDTH
+        )
       }
     }
   }

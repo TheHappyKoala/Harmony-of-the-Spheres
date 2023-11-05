@@ -14,8 +14,14 @@ export default (): ReactElement => {
 
   return (
     <Fragment>
-      <canvas ref={webGlCanvas} />
-      <canvas ref={graphics2DCanvas} />
+      <canvas
+        ref={webGlCanvas}
+        className="canvas-element canvas-element--webGlCanvas"
+      />
+      <canvas
+        ref={graphics2DCanvas}
+        className="canvas-element canvas-element--graphics2dCanvas"
+      />
     </Fragment>
   );
 };

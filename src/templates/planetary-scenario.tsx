@@ -1,8 +1,7 @@
-import React, { useCallback } from "react";
+import React, { useCallback, Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ThunkDispatch } from "redux-thunk";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
 import Renderer from "../components/renderer";
 import { ScenarioType } from "../types/scenario";
 import { ModifyScenarioPropertyType } from "../types/actions";
@@ -50,14 +49,14 @@ const Scenario = ({
   );
 
   return (
-    <Layout>
+    <Fragment>
       <Renderer />
-      <section>
+      <section className="container container--scenario-bottom-panel">
         <Button callback={handlePlayButtonClick}>
           <i className={`fa-solid fa-${playing ? "pause" : "play"}`} />
         </Button>
       </section>
-    </Layout>
+    </Fragment>
   );
 };
 
