@@ -24,49 +24,74 @@ type Props = {
   };
   pageContext: {
     category: string;
+    subCategory: string;
   };
 };
 
 const ScenarioMenu = ({
   data: { categoryTree, scenariosJson, background },
-  pageContext: { category },
+  pageContext: { category, subCategory },
 }: Props) => {
   const backgroundImage = getImage(background) as IGatsbyImageData;
 
+  const subCategories = categoryTree?.find(({ name }) => name === category)
+    ?.subCategories;
+
   return (
-    <Layout>
+    <Layout currentPage="scenarios">
       <GatsbyImage
         image={backgroundImage}
         className="background-image"
         alt="Website background image"
       />
       <section>
-        <NavigationMenu>
+        <NavigationMenu modifierCssClassName="navigation-menu--scenarios-menu">
           {categoryTree.map((categoryBranch) => (
             <Link
               to={`/${kebabCase(categoryBranch.name)}${
                 categoryBranch.subCategories.length ? "/all" : ""
               }`}
             >
-              <NavigationMenuItem>{categoryBranch.name}</NavigationMenuItem>
+              <NavigationMenuItem active={category === categoryBranch.name}>
+                {categoryBranch.name}
+              </NavigationMenuItem>
             </Link>
           ))}
         </NavigationMenu>{" "}
-        {
-          <NavigationMenu>
-            {categoryTree
-              ?.find(({ name }) => name === category)
-              ?.subCategories.map((subCategory) => (
-                <Link to={`/${kebabCase(category)}/${kebabCase(subCategory)}`}>
-                  <NavigationMenuItem>{subCategory}</NavigationMenuItem>
-                </Link>
-              ))}
+        {subCategories?.length ? (
+          <NavigationMenu modifierCssClassName="navigation-menu--scenarios-menu navigation-menu--scenarios-menu-border-bottom">
+            <Link to={`/${kebabCase(category)}/all`}>
+              <NavigationMenuItem active={subCategory === "all"}>
+                All
+              </NavigationMenuItem>
+            </Link>
+            {subCategories.map((subCategoryEntry) => (
+              <Link
+                to={`/${kebabCase(category)}/${kebabCase(subCategoryEntry)}`}
+              >
+                <NavigationMenuItem active={subCategory === subCategoryEntry}>
+                  {subCategoryEntry}
+                </NavigationMenuItem>
+              </Link>
+            ))}
           </NavigationMenu>
-        }
+        ) : null}
       </section>
-      <section>
+      <section className="scenarios-list">
         {scenariosJson.scenarios.map(({ scenario }) => (
-          <div>{scenario.name}</div>
+          <Link
+            to={`/${kebabCase(category)}${
+              scenario.category.subCategory
+                ? `/${kebabCase(scenario.category.subCategory)}/${kebabCase(
+                    scenario.name,
+                  )}`
+                : `/${kebabCase(scenario.name)}`
+            }`}
+          >
+            <div className="scenarios-list__scenarios-list-item">
+              {scenario.name}
+            </div>
+          </Link>
         ))}
       </section>
     </Layout>
@@ -77,7 +102,7 @@ export const pageQuery = graphql`
   query (
     $category: String
     $subCategoryRegex: String = "//"
-    $backgroundImage: String = "Solar System.jpg"
+    $backgroundImage: String
   ) {
     scenariosJson: allScenariosJson(
       filter: {

@@ -1,0 +1,94 @@
+{
+  "name": "The Figure Eight",
+  "playing": false,
+  "isLoaded": false,
+  "elapsedTime": 0,
+  "collisions": true,
+  "category": {
+    "name": "Choreography",
+    "subCategory": null
+  },
+  "camera": {
+    "cameraFocus": "Barycenter",
+    "cameraPosition": "Free",
+    "logarithmicDepthBuffer": false,
+    "rotatingReferenceFrame": "Barycenter"
+  },
+  "integrator": {
+    "name": "PEFRL",
+    "g": 39.5,
+    "dt": 0.0001,
+    "tol": 0.025,
+    "maxDt": 0.01,
+    "minDt": 0.0001,
+    "useBarnesHut": false,
+    "theta": 0.5,
+    "softeningConstant": 0
+  },
+  "barycenter": {
+    "display": false,
+    "barycenterMassOne": "Eva",
+    "barycenterMassTwo": "Arjuna",
+    "systemBarycenter": true
+  },
+  "graphics": {
+    "orbits": true,
+    "habitableZone": false,
+    "trails": false,
+    "labels": true
+  },
+  "masses": [
+    {
+      "name": "Eva",
+      "type": "star",
+      "m": 10000,
+      "radius": 6000000,
+      "tilt": 0,
+
+      "position:": {
+        "x": -100,
+        "y": 0,
+        "z": 0
+      },
+      "velocity": {
+        "x": 34.7111,
+        "y": 53.2728,
+        "z": 0
+      }
+    },
+    {
+      "name": "Sarada",
+      "type": "star",
+      "m": 10000,
+      "radius": 6000000,
+      "tilt": 0,
+      "position:": {
+        "x": 100,
+        "y": 0,
+        "z": 0
+      },
+      "velocity": {
+        "x": 34.7111,
+        "y": 53.2728,
+        "z": 0
+      }
+    },
+    {
+      "name": "Arjuna",
+      "type": "star",
+      "m": 10000,
+      "radius": 6000000,
+      "tilt": 0,
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "velocity": {
+        "x": -69.4222,
+        "y": -106.5456,
+        "z": 0
+      }
+    }
+  ]
+}

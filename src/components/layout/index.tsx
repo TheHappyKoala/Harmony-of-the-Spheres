@@ -5,9 +5,10 @@ import NavigationMenuItem from "../navigation-menu/navigation-menu-item";
 
 type Props = {
   children: ReactNode;
+  currentPage: string;
 };
 
-const Layout = ({ children }: Props): ReactElement => {
+const Layout = ({ children, currentPage }: Props): ReactElement => {
   return (
     <Fragment>
       <header className="container container--site-header">
@@ -18,9 +19,11 @@ const Layout = ({ children }: Props): ReactElement => {
         </div>
         <nav>
           <NavigationMenu>
-            <NavigationMenuItem>
-              <Link to="/solar-system/all">Scenarios</Link>
-            </NavigationMenuItem>
+            <Link to="/solar-system/all">
+              <NavigationMenuItem active={currentPage === "scenarios"}>
+                Scenarios
+              </NavigationMenuItem>
+            </Link>
           </NavigationMenu>
         </nav>
       </header>

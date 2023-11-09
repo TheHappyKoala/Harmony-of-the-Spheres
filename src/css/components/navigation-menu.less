@@ -1,0 +1,28 @@
+.navigation-menu {
+  list-style-type: none;
+  background-color: @secondary-color;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+}
+
+.navigation-menu__navigation-menu-item {
+  padding: 6px;
+  display: inline-block;
+}
+
+.navigation-menu--scenarios-menu {
+  background-color: @primary-color;
+  width: 100%;
+  padding: 6px 0;
+}
+
+.navigation-menu--scenarios-menu-border-bottom {
+  border-bottom: 1px solid @primary-border-color;
+  border-top: 1px solid @primary-border-color;
+}
+
+.navigation-menu__navigation-menu-item--active,
+.navigation-menu__navigation-menu-item:hover {
+  background-color: lighten(@secondary-color, 10%);
+}

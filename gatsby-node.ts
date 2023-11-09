@@ -64,6 +64,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
         component,
         context: {
           category: name,
+          subCategory: "all",
           backgroundImage: `${name}.jpg`,
         },
         defer: true,

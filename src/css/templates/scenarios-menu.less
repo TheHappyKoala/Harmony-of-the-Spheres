@@ -1,3 +1,17 @@
 @import "../index.less";
 @import "../components/layout.less";
 @import "../components/navigation-menu.less";
+
+.scenarios-list {
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 4rem;
+  padding-top: 25px;
+}
+
+.scenarios-list__scenarios-list-item {
+  background-color: @secondary-color;
+  height: 200px;
+  width: 200px;
+}
