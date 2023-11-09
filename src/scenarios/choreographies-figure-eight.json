@@ -10,7 +10,6 @@
   },
   "camera": {
     "cameraFocus": "Barycenter",
-    "cameraPosition": "Free",
     "logarithmicDepthBuffer": false,
     "rotatingReferenceFrame": "Barycenter"
   },

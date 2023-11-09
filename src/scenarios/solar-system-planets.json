@@ -10,7 +10,6 @@
   },
   "camera": {
     "cameraFocus": "Sun",
-    "cameraPosition": "Free",
     "logarithmicDepthBuffer": false,
     "rotatingReferenceFrame": "Sun"
   },
@@ -40,7 +39,7 @@
   "masses": [
     {
       "name": "Sun",
-      "type": "Star",
+      "type": "star",
       "m": 1,
       "radius": 10270,
       "tilt": 0,
@@ -57,7 +56,7 @@
     },
     {
       "name": "Earth",
-      "type": "Planet",
+      "type": "planet",
       "m": 0.000003003,
       "radius": 91.74311926605505,
       "tilt": -23.44,
