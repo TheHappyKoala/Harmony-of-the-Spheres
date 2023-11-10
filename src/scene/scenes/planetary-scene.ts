@@ -25,10 +25,6 @@ class PlanetaryScene extends SceneBase {
 
     this.scale = 2100000;
 
-    this.camera.position.z = 6050000;
-
-    this.camera.lookAt(new THREE.Vector3(0, 0, 0));
-
     this.integrator = getIntegrator(this.scenario.integrator.name, {
       g: this.scenario.integrator.g,
       dt: this.scenario.integrator.dt,
@@ -44,6 +40,8 @@ class PlanetaryScene extends SceneBase {
       rotatingReferenceFrame: null,
       integrator: this.scenario.integrator.name,
     };
+
+    this.controls.noPan = true;
   }
 
   iterate = () => {
@@ -74,14 +72,32 @@ class PlanetaryScene extends SceneBase {
       this.integrator.iterate();
     }
 
+    const { cameraFocus } = this.scenario.camera;
+
     for (let i = 0; i < massesLength; i++) {
       const manifestation = manifestations[i];
 
-      const { x, y, z } = this.scenario.masses[i]!.position;
+      const mass = this.scenario.masses[i]!;
+      const { name } = mass;
+      const { x, y, z } = mass.position;
 
       const scaledPosition = new THREE.Vector3(x * scale, y * scale, z * scale);
 
       manifestation!.setPosition(scaledPosition);
+
+      if (this.previous.cameraFocus !== cameraFocus && cameraFocus === name) {
+        this.previous.cameraFocus = cameraFocus;
+
+        this.controls.target.copy(scaledPosition);
+      }
+
+      if (cameraFocus === name) {
+        this.controls.customPan.add(
+          scaledPosition.clone().sub(this.controls.target),
+        );
+
+        this.controls.update();
+      }
     }
 
     (

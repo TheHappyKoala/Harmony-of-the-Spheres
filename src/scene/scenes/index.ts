@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import store from "../../state";
 import { ScenarioType } from "../../types/scenario";
+import OrbitControls from "../controls/custom-orbit-controls";
 
 class SceneBase {
   protected windowWidth: number;
@@ -13,6 +14,7 @@ class SceneBase {
 
   protected scene: THREE.Scene;
   protected camera: THREE.PerspectiveCamera;
+  protected controls: any;
   protected renderer: THREE.WebGLRenderer;
   protected textureLoader: THREE.TextureLoader;
 
@@ -42,6 +44,11 @@ class SceneBase {
       this.windowWidth / this.windowHeight,
       0.1,
       1500000000000,
+    );
+
+    this.controls = new (OrbitControls as any)(
+      this.camera,
+      this.renderer.domElement,
     );
 
     this.textureLoader = new THREE.TextureLoader();
