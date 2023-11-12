@@ -1,6 +1,5 @@
-@import "../index.less";
-@import "../components/layout.less";
-@import "../components/navigation-menu.less";
+@import (reference) "../theme/variables.less";
+@import (reference) "../theme/mixins.less";
 
 .home-page-banner-wrapper {
   height: 70vh;
@@ -10,18 +9,19 @@
   justify-content: center;
 }
 
-.container--home-page-banner {
+.home-page-banner {
+  .container();
   max-width: 300px;
   border: 1px solid @secondary-border-color;
   padding: 12px;
 }
 
-.container__home-page-banner-description {
+.home-page-banner__description {
   font-size: 22px;
   font-weight: 100;
 }
 
-.container__home-page-banner-explore-scenarios-button {
+.home-page-banner__explore-scenarios-button {
   padding: 12px;
   background-color: @secondary-color;
   font-size: 26px;

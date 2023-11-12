@@ -1,6 +1,11 @@
-.container--scenario-bottom-panel {
+@import "../fontawesome/less/fontawesome.less";
+
+@import (reference) "../theme/variables.less";
+@import (reference) "../theme/mixins.less";
+
+.planetary-scenario-bottom-panel {
+  .container();
+  .position-absolute(4);
   bottom: 0;
-  left: 0;
-  right: 0;
-  border-top: 1px solid @primary-border-color;
+  width: 100%;
 }

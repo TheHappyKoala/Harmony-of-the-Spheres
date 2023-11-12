@@ -7,7 +7,7 @@ import NavigationMenuItem from "../components/navigation-menu/navigation-menu-it
 import { kebabCase } from "../utils/text-utils";
 import { ScenariosCategoryTreeType } from "../types/category";
 import { ScenarioCategoryType } from "../types/scenario";
-import "../css/templates/scenarios-menu.less";
+import "../css/index.less";
 
 type Props = {
   data: {

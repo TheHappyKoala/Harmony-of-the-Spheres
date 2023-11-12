@@ -7,7 +7,9 @@ import { ScenarioType } from "../types/scenario";
 import { ModifyScenarioPropertyType } from "../types/actions";
 import useHydrateStore from "../hooks/useHydrateStore";
 import Button from "../components/button";
+import Tabs from "../components/tabs";
 import { modifyScenarioProperty } from "../state/creators";
+import "../css/index.less";
 
 type Props = {
   data: {
@@ -51,10 +53,17 @@ const Scenario = ({
   return (
     <Fragment>
       <Renderer />
-      <section className="container container--scenario-bottom-panel">
+      <section className="planetary-scenario-bottom-panel">
         <Button callback={handlePlayButtonClick}>
           <i className={`fa-solid fa-${playing ? "pause" : "play"}`} />
         </Button>
+        <Tabs>
+          <div data-icon="fa-solid fa-video">
+            <span>Heja</span>
+            <span>Heja</span>
+            <span>Heja</span>
+          </div>
+        </Tabs>
       </section>
     </Fragment>
   );
@@ -78,7 +87,6 @@ export const pageQuery = graphql`
           }
           camera {
             cameraFocus
-            cameraPosition
             logarithmicDepthBuffer
             rotatingReferenceFrame
           }

@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import { getImage, GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import Layout from "../components/layout";
-import "../css/pages/home.less";
+import "../css/index.less";
 
 type Props = {
   data: {
@@ -33,12 +33,12 @@ const Home = ({
         alt="Website background image"
       />
       <div className="home-page-banner-wrapper">
-        <section className="container container--home-page-banner">
-          <p className="container__home-page-banner-description">
+        <section className="home-page-banner">
+          <p className="home-page-banner__explore-scenarios-button">
             {description}
           </p>
           <Link to="/solar-system/all">
-            <div className="container__home-page-banner-explore-scenarios-button">
+            <div className="home-page-banner__explore-scenarios-button">
               <span>Explore Scenarios</span>{" "}
               <i className="fa-solid fa-angles-right" />
             </div>

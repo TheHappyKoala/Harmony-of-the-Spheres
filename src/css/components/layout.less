@@ -1,12 +1,12 @@
-.container--site-header {
-  top: 0;
-  left: 0;
-  right: 0;
+@import (reference) "../theme/variables.less";
+@import (reference) "../theme/mixins.less";
+
+.site-header {
+  .container();
   border-bottom: 1px solid @primary-border-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px;
 }
 
 .site-title {

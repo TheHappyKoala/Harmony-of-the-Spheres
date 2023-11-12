@@ -11,7 +11,7 @@ type Props = {
 const Layout = ({ children, currentPage }: Props): ReactElement => {
   return (
     <Fragment>
-      <header className="container container--site-header">
+      <header className="site-header">
         <div>
           <Link to="/">
             <h1 className="site-title">Gravity Simulator</h1>
