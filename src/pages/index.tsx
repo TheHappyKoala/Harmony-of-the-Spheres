@@ -32,19 +32,17 @@ const Home = ({
         className="background-image"
         alt="Website background image"
       />
-      <div className="home-page-banner-wrapper">
         <section className="home-page-banner">
-          <p className="home-page-banner__explore-scenarios-button">
+          <p className="home-page-banner__description">
             {description}
           </p>
           <Link to="/solar-system/all">
-            <div className="home-page-banner__explore-scenarios-button">
+            <div className="home-page-banner__explore-button">
               <span>Explore Scenarios</span>{" "}
               <i className="fa-solid fa-angles-right" />
             </div>
           </Link>
         </section>
-      </div>
     </Layout>
   );
 };
@@ -57,7 +55,7 @@ export const pageQuery = graphql`
       }
     }
 
-    background: file(relativePath: { eq: "Home.jpg" }) {
+    background: file(relativePath: { eq: "backgrounds/Home.jpg" }) {
       childImageSharp {
         gatsbyImageData(
           placeholder: BLURRED

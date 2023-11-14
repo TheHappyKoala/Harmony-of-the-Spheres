@@ -1,6 +1,17 @@
 @import (reference) "../theme/variables.less";
 @import (reference) "../theme/mixins.less";
 
+.navigation-menu--scenarios-menu {
+  background-color: @primary-color;
+  width: 100%;
+  padding: 6px 12px;
+}
+
+.navigation-menu--scenarios-menu-border-bottom-top {
+  border-bottom: 1px solid @primary-border-color;
+  border-top: 1px solid @primary-border-color;
+}
+
 .scenarios-list {
   display: grid;
   justify-content: space-evenly;
@@ -10,7 +21,29 @@
 }
 
 .scenarios-list__scenarios-list-item {
+  position: relative;
   background-color: @secondary-color;
   height: 200px;
   width: 200px;
+  border: 1px solid @primary-border-color;
+}
+
+.scenarios-list__scenarios-list-item:hover {
+  border: 1px solid @secondary-border-color;
+}
+
+.scenarios-list__scenarios-list-item:hover
+  > .scenarios-list__scenarios-list-item-name {
+  border-top: 1px solid @secondary-border-color;
+}
+
+.scenarios-list__scenarios-list-item-name {
+  .position-absolute(2);
+  bottom: 0;
+  width: 100%;
+  background-color: @primary-color;
+  border-top: 1px solid @primary-border-color;
+  text-align: center;
+  padding: 3px;
+  box-sizing: border-box;
 }

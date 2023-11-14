@@ -59,7 +59,7 @@ const ScenarioMenu = ({
           ))}
         </NavigationMenu>{" "}
         {subCategories?.length ? (
-          <NavigationMenu modifierCssClassName="navigation-menu--scenarios-menu navigation-menu--scenarios-menu-border-bottom">
+          <NavigationMenu modifierCssClassName="navigation-menu--scenarios-menu navigation-menu--scenarios-menu-border-bottom-top">
             <Link to={`/${kebabCase(category)}/all`}>
               <NavigationMenuItem active={subCategory === "all"}>
                 All
@@ -89,7 +89,7 @@ const ScenarioMenu = ({
             }`}
           >
             <div className="scenarios-list__scenarios-list-item">
-              {scenario.name}
+              <span className="scenarios-list__scenarios-list-item-name">{scenario.name}</span>
             </div>
           </Link>
         ))}
