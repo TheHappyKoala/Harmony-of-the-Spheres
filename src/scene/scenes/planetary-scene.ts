@@ -88,6 +88,12 @@ class PlanetaryScene extends SceneBase {
       if (this.previous.cameraFocus !== cameraFocus && cameraFocus === name) {
         this.previous.cameraFocus = cameraFocus;
 
+        this.camera.position.set(
+          scaledPosition.x,
+          scaledPosition.y,
+          scaledPosition.z + mass.radius * 10,
+        );
+
         this.controls.target.copy(scaledPosition);
       }
 
