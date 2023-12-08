@@ -44,35 +44,45 @@ const ScenarioMenu = ({
         className="background-image"
         alt="Website background image"
       />
-      <section>
-        <NavigationMenu modifierCssClassName="navigation-menu--scenarios-menu">
+      <section className="scenarios-navigation-menu-wrapper">
+        <NavigationMenu cssClassName="navigation-menu">
           {categoryTree.map((categoryBranch) => (
-            <Link
-              to={`/${kebabCase(categoryBranch.name)}${
-                categoryBranch.subCategories.length ? "/all" : ""
-              }`}
+            <NavigationMenuItem
+              cssClassName="navigation-menu-item"
+              active={category === categoryBranch.name}
+              activeCssClassName="navigation-menu-item-active"
             >
-              <NavigationMenuItem active={category === categoryBranch.name}>
+              <Link
+                to={`/${kebabCase(categoryBranch.name)}${
+                  categoryBranch.subCategories.length ? "/all" : ""
+                }`}
+              >
                 {categoryBranch.name}
-              </NavigationMenuItem>
-            </Link>
+              </Link>
+            </NavigationMenuItem>
           ))}
         </NavigationMenu>{" "}
         {subCategories?.length ? (
-          <NavigationMenu modifierCssClassName="navigation-menu--scenarios-menu navigation-menu--scenarios-menu-border-bottom-top">
-            <Link to={`/${kebabCase(category)}/all`}>
-              <NavigationMenuItem active={subCategory === "all"}>
-                All
-              </NavigationMenuItem>
-            </Link>
+          <NavigationMenu cssClassName="navigation-menu">
+            <NavigationMenuItem
+              cssClassName="navigation-menu-item"
+              active={subCategory === "all"}
+              activeCssClassName="navigation-menu-item-active"
+            >
+              <Link to={`/${kebabCase(category)}/all`}>All</Link>
+            </NavigationMenuItem>
             {subCategories.map((subCategoryEntry) => (
-              <Link
-                to={`/${kebabCase(category)}/${kebabCase(subCategoryEntry)}`}
+              <NavigationMenuItem
+                cssClassName="navigation-menu-item"
+                active={subCategory === subCategoryEntry}
+                activeCssClassName="navigation-menu-item-active"
               >
-                <NavigationMenuItem active={subCategory === subCategoryEntry}>
+                <Link
+                  to={`/${kebabCase(category)}/${kebabCase(subCategoryEntry)}`}
+                >
                   {subCategoryEntry}
-                </NavigationMenuItem>
-              </Link>
+                </Link>
+              </NavigationMenuItem>
             ))}
           </NavigationMenu>
         ) : null}
@@ -89,7 +99,9 @@ const ScenarioMenu = ({
             }`}
           >
             <div className="scenarios-list__scenarios-list-item">
-              <span className="scenarios-list__scenarios-list-item-name">{scenario.name}</span>
+              <span className="scenarios-list__scenarios-list-item-name">
+                {scenario.name}
+              </span>
             </div>
           </Link>
         ))}

@@ -17,15 +17,15 @@ const Layout = ({ children, currentPage }: Props): ReactElement => {
             <h1 className="site-title">Gravity Simulator</h1>
           </Link>
         </div>
-        <nav>
-          <NavigationMenu>
-            <Link to="/solar-system/all">
-              <NavigationMenuItem active={currentPage === "scenarios"}>
-                Scenarios
-              </NavigationMenuItem>
-            </Link>
-          </NavigationMenu>
-        </nav>
+        <NavigationMenu cssClassName="navigation-menu">
+          <NavigationMenuItem
+            cssClassName="navigation-menu-item"
+            active={currentPage === "scenarios"}
+            activeCssClassName="navigation-menu-item-active"
+          >
+            <Link to="/solar-system/all">Scenarios</Link>
+          </NavigationMenuItem>
+        </NavigationMenu>
       </header>
       <main>{children}</main>
     </Fragment>

@@ -1,15 +1,13 @@
 @import (reference) "../theme/variables.less";
 @import (reference) "../theme/mixins.less";
 
-.navigation-menu--scenarios-menu {
-  background-color: @primary-color;
-  width: 100%;
-  padding: 6px 12px;
+.scenarios-navigation-menu-wrapper {
+  background-color: @theme-color-one;
+  border-bottom: 1px solid @theme-color-two;
 }
 
-.navigation-menu--scenarios-menu-border-bottom-top {
-  border-bottom: 1px solid @primary-border-color;
-  border-top: 1px solid @primary-border-color;
+.scenarios-navigation-menu-wrapper .navigation-menu:first-child {
+  border-bottom: 1px solid @theme-color-two;
 }
 
 .scenarios-list {

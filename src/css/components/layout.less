@@ -2,15 +2,50 @@
 @import (reference) "../theme/mixins.less";
 
 .site-header {
-  .container();
-  border-bottom: 1px solid @primary-border-color;
+  background-color: @theme-color-one;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 40px;
+  padding-left: 10px;
+  border-bottom: 1px solid @theme-color-two;
 }
 
 .site-title {
   font-size: 22px;
   font-family: jura-regular;
   margin: 0;
+}
+
+.navigation-menu {
+  height: 100%;
+  ul {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 5px 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.navigation-menu-item {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  padding: 5px 0;
+  margin-left: 10px;
+  &:hover > a {
+    color: #fff;
+  }
+}
+
+.site-header .navigation-menu-item:last-child {
+  margin-right: 10px;
+}
+
+.navigation-menu-item-active {
+  background-color: @theme-color-two;
+  padding: 5px;
 }

@@ -32,17 +32,15 @@ const Home = ({
         className="background-image"
         alt="Website background image"
       />
-        <section className="home-page-banner">
-          <p className="home-page-banner__description">
-            {description}
-          </p>
-          <Link to="/solar-system/all">
-            <div className="home-page-banner__explore-button">
-              <span>Explore Scenarios</span>{" "}
-              <i className="fa-solid fa-angles-right" />
-            </div>
-          </Link>
-        </section>
+      <section className="home-page-banner">
+        <p className="home-page-banner__description">{description}</p>
+        <Link to="/solar-system/all">
+          <div className="home-page-banner__explore-button">
+            <span>Explore Scenarios</span>{" "}
+            <i className="fa-solid fa-angles-right" />
+          </div>
+        </Link>
+      </section>
     </Layout>
   );
 };

@@ -2,20 +2,13 @@ import React, { ReactElement, ReactNode } from "react";
 
 type Props = {
   children: ReactNode[] | ReactNode;
-  modifierCssClassName?: string;
+  cssClassName?: string;
 };
 
-const NavigationMenu = ({
-  children,
-  modifierCssClassName,
-}: Props): ReactElement => (
-  <ul
-    className={`navigation-menu ${
-      modifierCssClassName ? modifierCssClassName : ""
-    }`}
-  >
-    {children}
-  </ul>
+const NavigationMenu = ({ children, cssClassName }: Props): ReactElement => (
+  <nav className={cssClassName ? cssClassName : ""}>
+    <ul>{children}</ul>
+  </nav>
 );
 
 export default NavigationMenu;
