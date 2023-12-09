@@ -45,6 +45,7 @@ class SceneBase {
       0.1,
       1500000000000,
     );
+    this.camera.up = new THREE.Vector3(0, 0, 1);
 
     this.controls = new (OrbitControls as any)(
       this.camera,
