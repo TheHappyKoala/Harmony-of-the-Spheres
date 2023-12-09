@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import SceneBase from ".";
 import ManifestationManager from "../manifestations";
+import background from "../misc/background";
 import getIntegrator from "../../physics/integrators";
 import H3 from "../../physics/utils/vector";
 import { modifyScenarioProperty } from "../../state/creators";
@@ -21,6 +22,7 @@ class PlanetaryScene extends SceneBase {
 
   constructor(webGlCanvas: HTMLCanvasElement) {
     super(webGlCanvas);
+    this.scene.add(background(this.textureLoader));
 
     this.manifestationManager = new ManifestationManager(
       this.scenario.masses,
