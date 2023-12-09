@@ -15,6 +15,8 @@ const shouldSelectorNotRun = (
   nextState: { camera: ScenarioCameraType; masses: ScenarioMassesType },
 ) => {
   if (
+    prevState.camera.rotatingReferenceFrame !==
+      nextState.camera.rotatingReferenceFrame ||
     prevState.camera.cameraFocus !== nextState.camera.cameraFocus ||
     prevState.masses.length !== nextState.masses.length
   ) {
@@ -33,10 +35,43 @@ const CameraControls = () => {
     return { camera, masses };
   }, shouldSelectorNotRun);
 
-  console.log("fart");
+  console.log("LOL", camera);
 
   return (
     <Fragment>
+      <div className="input-wrapper">
+        <label>Rotating Reference Frame</label>
+        <Dropdown
+          selectedOption={camera.rotatingReferenceFrame}
+          dropdownWrapperCssClassName="dropdown-wrapper"
+          selectedOptionCssClassName="dropdown-selected-option"
+          optionsWrapperCssClass="dropdown-options-wrapper"
+        >
+          {masses.map((mass) => {
+            return (
+              <div
+                key={mass.name}
+                onClick={() => {
+                  (
+                    dispatch as ThunkDispatch<
+                      ScenarioType,
+                      void,
+                      ModifyScenarioPropertyType
+                    >
+                  )(
+                    modifyScenarioProperty({
+                      key: "camera",
+                      value: { ...camera, rotatingReferenceFrame: mass.name },
+                    }),
+                  );
+                }}
+              >
+                {mass.name}
+              </div>
+            );
+          })}
+        </Dropdown>
+      </div>
       <div className="input-wrapper">
         <label>Camera Focus</label>
         <Dropdown
@@ -50,7 +85,6 @@ const CameraControls = () => {
               <div
                 key={mass.name}
                 onClick={() => {
-                  console.log("Hello");
                   (
                     dispatch as ThunkDispatch<
                       ScenarioType,

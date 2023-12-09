@@ -76,14 +76,6 @@ class PlanetaryScene extends SceneBase {
 
     const { cameraFocus } = this.scenario.camera;
 
-    if (
-      this.scenario.camera.rotatingReferenceFrame !==
-      this.previous.rotatingReferenceFrame
-    ) {
-      this.previous.rotatingReferenceFrame =
-        this.scenario.camera.rotatingReferenceFrame;
-    }
-
     const rotatingReferenceFrame = this.scenario.masses.find(
       (mass) => this.scenario.camera.rotatingReferenceFrame === mass.name,
     )!.position;
@@ -104,16 +96,25 @@ class PlanetaryScene extends SceneBase {
 
       const trail = manifestation?.object3D.getObjectByName("trail");
 
-      if (this.scenario.graphics.trails && !trail) {
-        manifestation?.addTrail();
-      }
-
-      if (!this.scenario.graphics.trails && trail) {
+      if (
+        (!this.scenario.graphics.trails && trail) ||
+        (trail &&
+          this.scenario.camera.rotatingReferenceFrame !==
+            this.previous.rotatingReferenceFrame)
+      ) {
         manifestation?.removeTrail();
       }
 
-      if (this.scenario.playing && this.scenario.graphics.trails) {
-        manifestation?.drawTrail(rotatedPosition);
+      if (this.scenario.graphics.trails) {
+        const trail = manifestation?.object3D.getObjectByName("trail");
+
+        if (!trail) {
+          manifestation?.addTrail();
+        }
+
+        if (this.scenario.playing) {
+          manifestation?.drawTrail(rotatedPosition);
+        }
       }
 
       if (this.previous.cameraFocus !== cameraFocus && cameraFocus === name) {
@@ -142,6 +143,13 @@ class PlanetaryScene extends SceneBase {
         this.controls.update();
       }
     }
+
+    if (
+      this.scenario.camera.rotatingReferenceFrame !==
+      this.previous.rotatingReferenceFrame
+    )
+      this.previous.rotatingReferenceFrame =
+        this.scenario.camera.rotatingReferenceFrame;
 
     (
       this.store.dispatch as ThunkDispatch<
