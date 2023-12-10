@@ -8,7 +8,6 @@ const getIntegrator = (
   integrator: string,
   config: FixedTimeStepIntegratorConfigType,
 ) => {
-  alert(integrator);
   switch (integrator) {
     case "Euler":
       return new Euler(config);
