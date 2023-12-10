@@ -3,6 +3,7 @@ import SceneBase from ".";
 import ManifestationManager from "../manifestations";
 import background from "../misc/background";
 import getIntegrator from "../../physics/integrators";
+import { drawMassLabel } from "../labels/labelCallbacks";
 import H3 from "../../physics/utils/vector";
 import { modifyScenarioProperty } from "../../state/creators";
 import { ThunkDispatch } from "redux-thunk";
@@ -19,10 +20,11 @@ class PlanetaryScene extends SceneBase {
     integrator: string;
   };
   utilVector: H3;
+  threeUtilityVector: THREE.Vector3;
   clock: THREE.Clock;
 
-  constructor(webGlCanvas: HTMLCanvasElement) {
-    super(webGlCanvas);
+  constructor(webGlCanvas: HTMLCanvasElement, labelsCanvas: HTMLCanvasElement) {
+    super(webGlCanvas, labelsCanvas);
     this.clock = new THREE.Clock();
 
     this.scene.add(background(this.textureLoader));
@@ -35,6 +37,7 @@ class PlanetaryScene extends SceneBase {
     this.manifestationManager.addManifestations();
 
     this.utilVector = new H3();
+    this.threeUtilityVector = new THREE.Vector3();
 
     this.scale = 2100000;
 
@@ -56,6 +59,8 @@ class PlanetaryScene extends SceneBase {
 
   iterate = () => {
     const delta = this.clock.getDelta();
+
+    this.labels.clear();
 
     this.scenario = JSON.parse(JSON.stringify(this.store.getState()));
 
@@ -106,6 +111,22 @@ class PlanetaryScene extends SceneBase {
         .subtractFrom(rotatingReferenceFrame)
         .multiplyByScalar(scale)
         .toObject();
+
+      if (this.scenario.graphics.labels) {
+        this.labels.drawLabel(
+          mass.name,
+          this.threeUtilityVector.set(
+            rotatedPosition.x,
+            rotatedPosition.y,
+            rotatedPosition.z,
+          ),
+          this.camera,
+          this.scenario.camera.cameraFocus === mass.name ? true : false,
+          "right",
+          "white",
+          drawMassLabel,
+        );
+      }
 
       manifestation!.setPosition(rotatedPosition);
 
@@ -162,9 +183,10 @@ class PlanetaryScene extends SceneBase {
     if (
       this.scenario.camera.rotatingReferenceFrame !==
       this.previous.rotatingReferenceFrame
-    )
+    ) {
       this.previous.rotatingReferenceFrame =
         this.scenario.camera.rotatingReferenceFrame;
+    }
 
     (
       this.store.dispatch as ThunkDispatch<
