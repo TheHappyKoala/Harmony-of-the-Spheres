@@ -19,9 +19,12 @@ class PlanetaryScene extends SceneBase {
     integrator: string;
   };
   utilVector: H3;
+  clock: THREE.Clock;
 
   constructor(webGlCanvas: HTMLCanvasElement) {
     super(webGlCanvas);
+    this.clock = new THREE.Clock();
+
     this.scene.add(background(this.textureLoader));
 
     this.manifestationManager = new ManifestationManager(
@@ -52,6 +55,8 @@ class PlanetaryScene extends SceneBase {
   }
 
   iterate = () => {
+    const delta = this.clock.getDelta();
+
     this.scenario = JSON.parse(JSON.stringify(this.store.getState()));
 
     this.integrator.sync(this.scenario);
@@ -87,6 +92,14 @@ class PlanetaryScene extends SceneBase {
 
       const mass = this.scenario.masses[i]!;
       const { name } = mass;
+
+      if (mass.type === "star") {
+        const starMaterial =
+          // @ts-ignore
+          manifestation!.object3D!.getObjectByName("sphere").material;
+
+        starMaterial.uniforms.time.value += 0.007 * delta;
+      }
 
       const rotatedPosition = this.utilVector
         .set(mass.position)

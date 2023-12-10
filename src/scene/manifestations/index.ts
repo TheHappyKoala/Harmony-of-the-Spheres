@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import Manifestation from "./manifestation";
+import Star from "./star";
 import { ScenarioMassesType, ScenarioMassType } from "../../types/scenario";
 
 class ManifestationManager {
@@ -25,6 +26,8 @@ class ManifestationManager {
 
   createManifestation(mass: ScenarioMassType): Manifestation {
     switch (mass.type) {
+      case "star":
+        return new Star(mass, this.textureLoader).createManifestation();
       default:
         return new Manifestation(
           mass,
