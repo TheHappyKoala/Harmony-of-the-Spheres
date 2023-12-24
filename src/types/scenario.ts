@@ -1,4 +1,4 @@
-import { VectorType } from "./physics";
+import { ShapesType, VectorType } from "./physics";
 
 export type ScenarioCategoryType = {
   name: string;
@@ -51,6 +51,13 @@ export type ScenarioMassType = {
 
 export type ScenarioMassesType = ScenarioMassType[];
 
+export type ParticlesConfigurationType = {
+  max: number;
+  softening: number;
+  size: number;
+  shapes: ShapesType;
+};
+
 export type ScenarioType = {
   name: string;
   playing: boolean;
@@ -63,4 +70,5 @@ export type ScenarioType = {
   barycenter: ScenarioBarycenterType;
   graphics: ScenarioGraphicsType;
   masses: ScenarioMassesType;
+  particlesConfiguration?: ParticlesConfigurationType;
 };

@@ -135,6 +135,20 @@ export const pageQuery = graphql`
             }
             atmosphere
           }
+          particlesConfiguration {
+            max
+            softening
+            size
+            shapes {
+              primary
+              type
+              flatLand
+              tilt
+              number
+              minD
+              maxD
+            }
+          }
         }
       }
     }

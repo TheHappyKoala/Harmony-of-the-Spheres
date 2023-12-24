@@ -4,6 +4,9 @@ import ManifestationManager from "../manifestations";
 import background from "../misc/background";
 import getIntegrator from "../../physics/integrators";
 import { drawMassLabel } from "../labels/labelCallbacks";
+import addParticleSystems from "../../physics/particles/particle-system";
+import ParticleIntegrator from "../../physics/particles/particles-integrator";
+import Particles from "../particles/particles";
 import H3 from "../../physics/utils/vector";
 import { modifyScenarioProperty } from "../../state/creators";
 import { ThunkDispatch } from "redux-thunk";
@@ -14,6 +17,7 @@ class PlanetaryScene extends SceneBase {
   manifestationManager: ManifestationManager;
   scale: number;
   integrator: ReturnType<typeof getIntegrator>;
+  particleIntegrator: ParticleIntegrator;
   previous: {
     cameraFocus: string | null;
     rotatingReferenceFrame: string | null;
@@ -22,6 +26,7 @@ class PlanetaryScene extends SceneBase {
   utilVector: H3;
   threeUtilityVector: THREE.Vector3;
   clock: THREE.Clock;
+  particles: Particles | null;
 
   constructor(webGlCanvas: HTMLCanvasElement, labelsCanvas: HTMLCanvasElement) {
     super(webGlCanvas, labelsCanvas);
@@ -48,6 +53,30 @@ class PlanetaryScene extends SceneBase {
       elapsedTime: this.scenario.elapsedTime,
     });
 
+    this.particleIntegrator = new ParticleIntegrator(this.scale);
+
+    this.particles = null;
+
+    if (this.scenario?.particlesConfiguration?.shapes) {
+      addParticleSystems(
+        this.scenario.particlesConfiguration.shapes,
+        this.scenario.masses,
+        this.scenario.integrator.g,
+        this.particleIntegrator.particles,
+      );
+
+      this.particles = new Particles(
+        this.particleIntegrator.particles,
+        this.scale,
+        this.textureLoader,
+      );
+
+      this.particles.createParticleSystem();
+
+      // @ts-ignore
+      this.scene.add(this.particles.mesh);
+    }
+
     this.previous = {
       cameraFocus: null,
       rotatingReferenceFrame: null,
@@ -59,8 +88,6 @@ class PlanetaryScene extends SceneBase {
 
   iterate = () => {
     const delta = this.clock.getDelta();
-
-    this.labels.clear();
 
     this.scenario = JSON.parse(JSON.stringify(this.store.getState()));
 
@@ -92,6 +119,24 @@ class PlanetaryScene extends SceneBase {
       (mass) => this.scenario.camera.rotatingReferenceFrame === mass.name,
     )!.position;
 
+    if (this.particles) {
+      if (this.scenario.playing) {
+        this.particleIntegrator.iterate(
+          this.integrator.masses,
+          this.integrator.g,
+          this.integrator.dt,
+          0,
+        );
+      }
+
+      this.particles.setPositions(
+        this.particleIntegrator.particles,
+        rotatingReferenceFrame,
+      );
+    }
+
+    this.labels.clear();
+
     for (let i = 0; i < massesLength; i++) {
       const manifestation = manifestations[i];
 
@@ -111,22 +156,6 @@ class PlanetaryScene extends SceneBase {
         .subtractFrom(rotatingReferenceFrame)
         .multiplyByScalar(scale)
         .toObject();
-
-      if (this.scenario.graphics.labels) {
-        this.labels.drawLabel(
-          mass.name,
-          this.threeUtilityVector.set(
-            rotatedPosition.x,
-            rotatedPosition.y,
-            rotatedPosition.z,
-          ),
-          this.camera,
-          this.scenario.camera.cameraFocus === mass.name ? true : false,
-          "right",
-          "white",
-          drawMassLabel,
-        );
-      }
 
       manifestation!.setPosition(rotatedPosition);
 
@@ -177,6 +206,22 @@ class PlanetaryScene extends SceneBase {
         );
 
         this.controls.update();
+      }
+
+      if (this.scenario.graphics.labels) {
+        this.labels.drawLabel(
+          mass.name,
+          this.threeUtilityVector.set(
+            rotatedPosition.x,
+            rotatedPosition.y,
+            rotatedPosition.z,
+          ),
+          this.camera,
+          this.scenario.camera.cameraFocus === mass.name ? true : false,
+          "right",
+          "white",
+          drawMassLabel,
+        );
       }
     }
 

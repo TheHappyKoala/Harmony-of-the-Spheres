@@ -12,3 +12,26 @@ export type FixedTimeStepIntegratorConfigType = {
   masses: ScenarioMassesType;
   elapsedTime: number;
 };
+
+export type ParticleType = {
+  lives: number;
+  position: VectorType;
+  velocity: VectorType;
+  hsl?: [number, number, number];
+};
+
+export type ParticlesType = ParticleType[];
+
+export type ShapeType = {
+  primary: string;
+  type: string;
+  flatLand: boolean;
+  tilt: [number, number, number];
+  number: number;
+  minD: number;
+  maxD: number;
+  verticalDispersion?: number;
+  hsl?: [number, number, number];
+};
+
+export type ShapesType = ShapeType[];

@@ -1,0 +1,145 @@
+{
+  "name": "Earth Versus the Rings of Saturn",
+  "playing": false,
+  "isLoaded": false,
+  "elapsedTime": 0,
+  "collisions": true,
+  "category": {
+    "name": "What If",
+    "subCategory": null
+  },
+  "camera": {
+    "cameraFocus": "Saturn",
+    "logarithmicDepthBuffer": false,
+    "rotatingReferenceFrame": "Saturn"
+  },
+  "integrator": {
+    "name": "RK4",
+    "g": 39.5,
+    "dt": 0.0000005,
+    "tol": 1e-9,
+    "maxDt": 0.000005,
+    "minDt": 0.0000005,
+    "useBarnesHut": false,
+    "theta": 0.5,
+    "softeningConstant": 0
+  },
+  "barycenter": {
+    "display": false,
+    "barycenterMassOne": "Saturn",
+    "barycenterMassTwo": "Earth",
+    "systemBarycenter": false
+  },
+  "graphics": {
+    "orbits": false,
+    "habitableZone": false,
+    "trails": true,
+    "labels": true
+  },
+  "masses": [
+    {
+      "name": "Sun",
+      "type": "star",
+      "m": 1,
+      "radius": 10270,
+      "tilt": 0,
+      "position": {
+        "x": -0.00001135841603717545,
+        "y": 0.007200805435052814,
+        "z": -0.00007608241832106424
+      },
+      "velocity": {
+        "x": -0.0027531411153919037,
+        "y": 0.0010072803591140611,
+        "z": 0.0000687504175911851
+      }
+    },
+    {
+      "name": "Earth",
+      "type": "planet",
+      "m": 0.000003003,
+      "radius": 91.74311926605505,
+      "tilt": -23.44,
+      "atmosphere": "skyblue",
+      "position": {
+        "x": 1.456680725273908,
+        "y": -9.949880746961366,
+        "z": 0.1150689429678489
+      },
+      "velocity": {
+        "x": 1.90060271026863,
+        "y": 3.2523894933628767,
+        "z": -0.08092749245870556
+      }
+    },
+    {
+      "name": "Saturn",
+      "type": "planet",
+      "m": 0.0002857,
+      "radius": 862.3853211009175,
+      "tilt": -26.73,
+      "position": {
+        "x": 1.455395947628908,
+        "y": -9.949880746961366,
+        "z": 0.1150689429678489
+      },
+      "velocity": {
+        "x": 1.904060271026863,
+        "y": 0.2886523546718628,
+        "z": -0.08092749245870556
+      }
+    }
+  ],
+  "particlesConfiguration": {
+    "max": 50000,
+    "softening": 0,
+    "size": 80,
+    "shapes": [
+      {
+        "primary": "Saturn",
+        "type": "getRingParticle",
+        "flatLand": true,
+        "tilt": [-26.73, 0, 0],
+        "number": 2000,
+        "minD": 0.00044719888,
+        "maxD": 0.00049806859
+      },
+      {
+        "primary": "Saturn",
+        "type": "getRingParticle",
+        "flatLand": true,
+        "tilt": [-26.73, 0, 0],
+        "number": 3500,
+        "minD": 0.000499057905,
+        "maxD": 0.00061498202
+      },
+      {
+        "primary": "Saturn",
+        "type": "getRingParticle",
+        "flatLand": true,
+        "tilt": [-26.73, 0, 0],
+        "number": 15000,
+        "minD": 0.00061498202,
+        "maxD": 0.000785973754
+      },
+      {
+        "primary": "Saturn",
+        "type": "getRingParticle",
+        "flatLand": true,
+        "tilt": [-26.73, 0, 0],
+        "number": 10000,
+        "minD": 0.000816656009,
+        "maxD": 0.0009142844036
+      },
+      {
+        "primary": "Saturn",
+        "type": "getRingParticle",
+        "flatLand": true,
+        "tilt": [-26.73, 0, 0],
+        "number": 2000,
+        "minD": 0.000937045423,
+        "maxD": 0.00094373001012226841264
+      }
+    ]
+  }
+}

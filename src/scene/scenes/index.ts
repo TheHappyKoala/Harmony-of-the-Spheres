@@ -39,8 +39,6 @@ class SceneBase {
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.webGlCanvas,
       antialias: true,
-      powerPreference: "high-performance",
-      logarithmicDepthBuffer: this.scenario.camera.logarithmicDepthBuffer,
     });
     this.renderer.setSize(this.windowWidth, this.windowHeight);
 
