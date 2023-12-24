@@ -24,7 +24,7 @@ class ManifestationManager {
     this.manifestations = [];
   }
 
-  createManifestation(mass: ScenarioMassType): Manifestation {
+  public createManifestation(mass: ScenarioMassType): Manifestation {
     switch (mass.type) {
       case "star":
         return new Star(mass, this.textureLoader).createManifestation();
@@ -36,7 +36,7 @@ class ManifestationManager {
     }
   }
 
-  addManifestations() {
+  public addManifestations() {
     this.masses.forEach((mass) => {
       const manifestation = this.createManifestation(mass);
 
