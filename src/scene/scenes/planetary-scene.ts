@@ -93,9 +93,6 @@ class PlanetaryScene extends SceneBase {
 
     this.integrator.sync(this.scenario);
 
-    let massesLength = this.scenario.masses.length;
-    const manifestations = this.manifestationManager.manifestations;
-
     const scale = this.scale;
 
     if (this.scenario.integrator.name !== this.previous.integrator) {
@@ -113,9 +110,11 @@ class PlanetaryScene extends SceneBase {
       this.integrator.iterate();
     }
 
+    this.manifestationManager.diff(this.integrator.masses);
+
     const { cameraFocus } = this.scenario.camera;
 
-    const rotatingReferenceFrame = this.scenario.masses.find(
+    const rotatingReferenceFrame = this.integrator.masses.find(
       (mass) => this.scenario.camera.rotatingReferenceFrame === mass.name,
     )!.position;
 
@@ -137,10 +136,14 @@ class PlanetaryScene extends SceneBase {
 
     this.labels.clear();
 
+    const manifestations = this.manifestationManager.manifestations;
+
+    let massesLength = this.integrator.masses.length;
+
     for (let i = 0; i < massesLength; i++) {
       const manifestation = manifestations[i];
 
-      const mass = this.scenario.masses[i]!;
+      const mass = this.integrator.masses[i]!;
       const { name } = mass;
 
       if (mass.type === "star") {

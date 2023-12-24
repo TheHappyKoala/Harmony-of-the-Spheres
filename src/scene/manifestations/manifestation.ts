@@ -3,7 +3,7 @@ import { ScenarioMassType } from "../../types/scenario";
 import { VectorType } from "../../types/physics";
 
 class Manifestation {
-  protected mass: ScenarioMassType;
+  public mass: ScenarioMassType;
   protected textureLoader: THREE.TextureLoader;
   protected trailVertices: number;
   public object3D: THREE.Object3D;
@@ -14,6 +14,7 @@ class Manifestation {
     this.textureLoader = textureLoader;
 
     this.object3D = new THREE.Object3D();
+    this.object3D.name = this.mass.name;
 
     this.trailVertices = 3000;
   }
