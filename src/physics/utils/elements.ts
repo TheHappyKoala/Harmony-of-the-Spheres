@@ -9,7 +9,7 @@ https://github.com/HugoGranstrom
 
 */
 
-const stateToKepler = (r: VectorType, v: VectorType, mu: number) => {
+const stateToKepler = (r: VectorType, v: VectorType, gm: number) => {
   let v1 = new H3();
   let v2 = new H3();
   const kHat = { x: 0, y: 0, z: 1 };
@@ -22,19 +22,19 @@ const stateToKepler = (r: VectorType, v: VectorType, mu: number) => {
   const nNorm = v1.set(n).getLength();
   const e1 = v1
     .set(r)
-    .multiplyByScalar(vNorm ** 2 - mu / rNorm)
+    .multiplyByScalar(vNorm ** 2 - gm / rNorm)
     .toObject();
   const e2 = v1.set(r).dot(v2.set(v));
   const eVec = v1
     .set(e1)
     .subtractScaledVector(e2, v2.set(v))
-    .divideByScalar(mu)
+    .divideByScalar(gm)
     .toObject();
   const e = v1.set(eVec).getLength();
-  const E = vNorm ** 2 / 2 - mu / rNorm;
+  const E = vNorm ** 2 / 2 - gm / rNorm;
   let a = 0;
   if (e != 1) {
-    a = -mu / (2 * E);
+    a = -gm / (2 * E);
   } else {
     a = Infinity;
   }
@@ -96,4 +96,77 @@ const stateToKepler = (r: VectorType, v: VectorType, mu: number) => {
   };
 };
 
-export { stateToKepler };
+const keplerToState = (
+  orb: any,
+  gm: number,
+): { posRel: VectorType; velRel: VectorType } => {
+  // returns the position and velocity of the orbiting body RELATIVE to the primary body.
+  const a = orb.a;
+  const e = orb.e;
+  const i = orb.i;
+  const argP = orb.argP;
+  const lAn = orb.lAn;
+  const eccAnom = orb.eccAnom;
+
+  let o = { x: 0, y: 0, z: 0 };
+  let o_dot = { x: 0, y: 0, z: 0 };
+  if (e < 1) {
+    const r_c = a * (1 - e * Math.cos(eccAnom)); // distance to central body
+    //vectors in orbital plane
+    //o = {x: r_c * Math.cos(trueAnom), y: r_c * Math.sin(trueAnom), z: 0}; // position in orbital plane
+    const o_dot_factor = Math.sqrt(gm * a) / r_c;
+    o.x = a * (Math.cos(eccAnom) - e);
+    o.y = a * Math.sin(eccAnom) * Math.sqrt(1 - Math.pow(e, 2));
+    o_dot = {
+      x: -Math.sin(eccAnom) * o_dot_factor,
+      y: Math.sqrt(1 - e * e) * Math.cos(eccAnom) * o_dot_factor,
+      z: 0,
+    }; // velocity in orbital plane
+  } else if (e > 1) {
+    o = {
+      x: -a * (e - Math.cosh(eccAnom)),
+      y: -a * Math.sqrt(e * e - 1) * Math.sinh(eccAnom),
+      z: 0,
+    };
+    const mean_motion = Math.sqrt(gm / Math.pow(Math.abs(a), 3));
+    const o_dot_factor = (a * mean_motion) / (e * Math.cosh(eccAnom) - 1);
+    o_dot.x = o_dot_factor * Math.sinh(eccAnom);
+    o_dot.y = -o_dot_factor * Math.sqrt(e * e - 1) * Math.cosh(eccAnom);
+  }
+  const X =
+    o.x *
+      (Math.cos(argP) * Math.cos(lAn) -
+        Math.sin(argP) * Math.cos(i) * Math.sin(lAn)) -
+    o.y *
+      (Math.sin(argP) * Math.cos(lAn) +
+        Math.cos(argP) * Math.cos(i) * Math.sin(lAn)); // x-coordinate of position in inertial reference frame
+  const Y =
+    o.x *
+      (Math.cos(argP) * Math.sin(lAn) +
+        Math.sin(argP) * Math.cos(i) * Math.cos(lAn)) +
+    o.y *
+      (Math.cos(argP) * Math.cos(i) * Math.cos(lAn) -
+        Math.sin(argP) * Math.sin(lAn));
+  const Z =
+    o.x * (Math.sin(argP) * Math.sin(i)) + o.y * (Math.cos(argP) * Math.sin(i));
+  const VX =
+    o_dot.x *
+      (Math.cos(argP) * Math.cos(lAn) -
+        Math.sin(argP) * Math.cos(i) * Math.sin(lAn)) -
+    o_dot.y *
+      (Math.sin(argP) * Math.cos(lAn) +
+        Math.cos(argP) * Math.cos(i) * Math.sin(lAn));
+  const VY =
+    o_dot.x *
+      (Math.cos(argP) * Math.sin(lAn) +
+        Math.sin(argP) * Math.cos(i) * Math.cos(lAn)) +
+    o_dot.y *
+      (Math.cos(argP) * Math.cos(i) * Math.cos(lAn) -
+        Math.sin(argP) * Math.sin(lAn));
+  const VZ =
+    o_dot.x * (Math.sin(argP) * Math.sin(i)) +
+    o_dot.y * (Math.cos(argP) * Math.sin(i));
+  return { posRel: { x: X, y: Y, z: Z }, velRel: { x: VX, y: VY, z: VZ } };
+};
+
+export { stateToKepler, keplerToState };
