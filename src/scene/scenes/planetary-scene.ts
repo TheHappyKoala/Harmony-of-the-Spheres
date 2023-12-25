@@ -6,6 +6,7 @@ import getIntegrator from "../../physics/integrators";
 import { drawMassLabel } from "../labels/labelCallbacks";
 import addParticleSystems from "../../physics/particles/particle-system";
 import ParticleIntegrator from "../../physics/particles/particles-integrator";
+import collisionsCheck from "../../physics/collisions/collisions-check";
 import Particles from "../particles/particles";
 import H3 from "../../physics/utils/vector";
 import { modifyScenarioProperty } from "../../state/creators";
@@ -108,6 +109,10 @@ class PlanetaryScene extends SceneBase {
 
     if (this.scenario.playing) {
       this.integrator.iterate();
+    }
+
+    if (this.scenario.collisions) {
+      collisionsCheck(this.integrator.masses, scale);
     }
 
     this.manifestationManager.diff(this.integrator.masses);
