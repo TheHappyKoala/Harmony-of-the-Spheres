@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { ParticlesType, VectorType } from "../../types/physics";
+import { ParticlesType, VectorType, ParticleType } from "../../types/physics";
 
 class Particles {
   particles: ParticlesType;
@@ -67,21 +67,23 @@ class Particles {
     particles: ParticlesType,
     rotatingReferenceFrame: VectorType,
   ) {
+    const particlesLength = particles.length;
+
     const geometry = this.mesh!.geometry;
+    geometry.setDrawRange(0, particlesLength);
+
     const positions = geometry.attributes.position!.array;
 
     let j = 0;
 
     const scale = this.scale;
 
-    const particlesLength = positions.length;
-
     for (let i = 0; i < particlesLength; i++) {
-      const particle = particles[i];
+      const particle = particles[i] as ParticleType;
 
-      let x = (rotatingReferenceFrame.x - particle!.position.x) * scale;
-      let y = (rotatingReferenceFrame.y - particle!.position.y) * scale;
-      let z = (rotatingReferenceFrame.z - particle!.position.z) * scale;
+      let x = (rotatingReferenceFrame.x - particle.position.x) * scale;
+      let y = (rotatingReferenceFrame.y - particle.position.y) * scale;
+      let z = (rotatingReferenceFrame.z - particle.position.z) * scale;
 
       positions[j] = x;
       positions[j + 1] = y;
