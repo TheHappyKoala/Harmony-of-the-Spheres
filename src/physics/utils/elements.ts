@@ -169,4 +169,125 @@ const keplerToState = (
   return { posRel: { x: X, y: Y, z: Z }, velRel: { x: VX, y: VY, z: VZ } };
 };
 
-export { stateToKepler, keplerToState };
+const getDistanceParams = (p1: VectorType, p2: VectorType) => {
+  const dx = p2.x - p1.x;
+  const dy = p2.y - p1.y;
+  const dz = p2.z - p1.z;
+
+  return { dx, dy, dz, dSquared: dx * dx + dy * dy + dz * dz };
+};
+
+const getObjFromArrByKeyValuePair = (arr: any[], key: string, val: any) => {
+  const obj = arr.filter((entry) => entry[key].indexOf(val) > -1)[0];
+
+  return typeof obj !== "undefined" ? obj : {};
+};
+
+const radiusSOI = (largerMass: any, smallerMass: any): number => {
+  const d = Math.sqrt(getDistanceParams(largerMass, smallerMass).dSquared);
+  return d * Math.pow(smallerMass.m / largerMass.m, 2 / 5);
+};
+
+const recursiveTree = (tree: any): any => {
+  if (tree.children.length == 0) {
+    return tree;
+  }
+  let children = tree.children;
+  // Calculate the Sphere of Influence relative to the tree root
+  for (let i = 0; i < tree.children.length; i++) {
+    children[i].SOIradius = radiusSOI(tree, children[i]);
+  }
+  // Sort and place bodies
+  var len = children.length;
+  var i = 0;
+  while (i < len) {
+    var j = 0;
+    while (j < len) {
+      if (i != j) {
+        const d = Math.sqrt(
+          getDistanceParams(children[i], children[j]).dSquared,
+        );
+        if (d < children[i].SOIradius) {
+          children[i].children.push(children[j]);
+          children.splice(j, 1);
+          len -= 1;
+          if (j < i) {
+            i--;
+          }
+        } else {
+          j++;
+        }
+      } else {
+        j++;
+      }
+    }
+    i = i + 1;
+  }
+  // Do all of the above recursivly for all remaining direct children of the root
+  for (let i = 0; i < children.length; i++) {
+    children[i] = recursiveTree(children[i]);
+  }
+  tree.children = children;
+  return tree;
+};
+
+// remove position as it may change
+const simplifyTree = (tree: any): any => {
+  let newTree = {
+    name: tree.name,
+    children: tree.children,
+    SOIradius: tree.SOIradius,
+  };
+  if (newTree.children.length == 0) {
+    return newTree;
+  }
+  for (let i = 0; i < newTree.children.length; i++) {
+    newTree.children[i] = simplifyTree(newTree.children[i]);
+  }
+  return newTree;
+};
+
+// masses is scenario.masses
+const constructSOITree = (masses: any): any => {
+  //const sun: MassType = getObjFromArrByKeyValuePair(masses, 'name', 'Sun');
+  let sun = masses[0];
+  // Search for the first star, otherwise use the first mass as root
+  for (let i = 0; i < masses.length; i++) {
+    if (masses[i].type == "star") {
+      sun = masses[i];
+      break;
+    }
+  }
+  let tree = {
+    SOIradius: 1e100,
+    children: [],
+    name: sun?.name,
+    m: sun?.m,
+    x: sun?.position.x,
+    y: sun?.position.y,
+    z: sun?.position.z,
+  };
+
+  masses.forEach((val: any) => {
+    if (val.name != sun.name) {
+      let newVal = {
+        SOIradius: 0,
+        children: [],
+        name: val.name,
+        m: val.m,
+        x: val.position.x,
+        y: val.position.y,
+        z: val.position.z,
+      };
+
+      // @ts-ignore
+      tree.children.push(newVal);
+    }
+  });
+  tree = recursiveTree(tree);
+  // construct simplified tree with just name and SOIradius
+  const simpleTree = simplifyTree(tree);
+  return simpleTree;
+};
+
+export { stateToKepler, keplerToState, constructSOITree };
