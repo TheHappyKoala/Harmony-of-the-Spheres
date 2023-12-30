@@ -1,4 +1,4 @@
-import { ShapesType, VectorType } from "./physics";
+import { ShapesType, VectorType, ElementsType } from "./physics";
 
 export type ScenarioCategoryType = {
   name: string;
@@ -47,6 +47,7 @@ export type ScenarioMassType = {
   atmosphere: number;
   position: VectorType;
   velocity: VectorType;
+  elements?: ElementsType;
 };
 
 export type ScenarioMassesType = ScenarioMassType[];

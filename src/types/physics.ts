@@ -6,6 +6,17 @@ export type VectorType = {
   z: number;
 };
 
+export type ElementsType = {
+  a: number;
+  e: number;
+  i: number;
+  argP: number;
+  lAn: number;
+  trueAnom: number;
+  eccAnom: number;
+  meanAnom: number;
+};
+
 export type FixedTimeStepIntegratorConfigType = {
   g: number;
   dt: number;
