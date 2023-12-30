@@ -48,6 +48,7 @@ export type ScenarioMassType = {
   position: VectorType;
   velocity: VectorType;
   elements?: ElementsType;
+  rotatedPosition?: VectorType;
 };
 
 export type ScenarioMassesType = ScenarioMassType[];
