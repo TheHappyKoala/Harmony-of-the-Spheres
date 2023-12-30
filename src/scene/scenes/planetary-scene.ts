@@ -8,11 +8,17 @@ import addParticleSystems from "../../physics/particles/particle-system";
 import ParticleIntegrator from "../../physics/particles/particles-integrator";
 import collisionsCheck from "../../physics/collisions/collisions-check";
 import Particles from "../particles/particles";
+import {
+  stateToKepler,
+  constructSOITree,
+  findCurrentSOI,
+} from "../../physics/utils/elements";
 import H3 from "../../physics/utils/vector";
 import { modifyScenarioProperty } from "../../state/creators";
 import { ThunkDispatch } from "redux-thunk";
 import { ModifyScenarioPropertyType } from "../../types/actions";
 import { ScenarioType } from "../../types/scenario";
+import Manifestation from "../manifestations/manifestation";
 
 class PlanetaryScene extends SceneBase {
   manifestationManager: ManifestationManager;
@@ -115,6 +121,8 @@ class PlanetaryScene extends SceneBase {
       collisionsCheck(this.integrator.masses, scale);
     }
 
+    const soiTree = constructSOITree(this.integrator.masses);
+
     this.manifestationManager.diff(this.integrator.masses);
 
     const { cameraFocus } = this.scenario.camera;
@@ -146,10 +154,37 @@ class PlanetaryScene extends SceneBase {
     let massesLength = this.integrator.masses.length;
 
     for (let i = 0; i < massesLength; i++) {
-      const manifestation = manifestations[i];
-
       const mass = this.integrator.masses[i]!;
       const { name } = mass;
+
+      const currentSOI = findCurrentSOI(mass, soiTree, this.integrator.masses);
+
+      const elements = stateToKepler(
+        {
+          x: currentSOI.position.x - mass.position.x,
+          y: currentSOI.position.y - mass.position.y,
+          z: currentSOI.position.z - mass.position.z,
+        },
+        {
+          x: currentSOI.velocity.x - mass.velocity.x,
+          y: currentSOI.velocity.y - mass.velocity.y,
+          z: currentSOI.velocity.z - mass.velocity.z,
+        },
+        39.5 * currentSOI.m,
+      );
+
+      mass.elements = elements;
+
+      const rotatedPosition = this.utilVector
+        .set(mass.position)
+        .subtractFrom(rotatingReferenceFrame)
+        .multiplyByScalar(scale)
+        .toObject();
+
+      mass.rotatedPosition = rotatedPosition;
+
+      const manifestation = manifestations[i] as Manifestation;
+      manifestation.mass = mass;
 
       if (mass.type === "star") {
         const starMaterial =
@@ -159,13 +194,7 @@ class PlanetaryScene extends SceneBase {
         starMaterial.uniforms.time.value += 0.007 * delta;
       }
 
-      const rotatedPosition = this.utilVector
-        .set(mass.position)
-        .subtractFrom(rotatingReferenceFrame)
-        .multiplyByScalar(scale)
-        .toObject();
-
-      manifestation!.setPosition(rotatedPosition);
+      manifestation!.setPosition();
 
       const trail = manifestation?.object3D.getObjectByName("trail");
 
@@ -186,7 +215,7 @@ class PlanetaryScene extends SceneBase {
         }
 
         if (this.scenario.playing) {
-          manifestation?.drawTrail(rotatedPosition);
+          manifestation?.drawTrail();
         }
       }
 
