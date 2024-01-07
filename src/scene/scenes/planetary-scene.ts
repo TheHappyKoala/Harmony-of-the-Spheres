@@ -196,6 +196,26 @@ class PlanetaryScene extends SceneBase {
 
       manifestation!.setPosition();
 
+      const orbit = manifestation.orbit;
+
+      if (
+        this.scenario.graphics.orbits &&
+        this.scenario.camera.rotatingReferenceFrame !== mass.name &&
+        currentSOI.name === this.scenario.camera.rotatingReferenceFrame
+      ) {
+        if (!orbit) {
+          manifestation.addOrbit();
+        }
+
+        manifestation.updateOrbit(
+          rotatingReferenceFrame,
+          currentSOI.position,
+          scale,
+        );
+      } else if (orbit) {
+        manifestation.removeOrbit();
+      }
+
       const trail = manifestation?.object3D.getObjectByName("trail");
 
       if (

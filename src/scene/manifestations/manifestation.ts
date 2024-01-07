@@ -1,12 +1,15 @@
 import * as THREE from "three";
+import EllipseCurve from "../misc/ellipse-curve";
+import { getEllipse } from "../../physics/utils/misc";
 import { ScenarioMassType } from "../../types/scenario";
-import { VectorType } from "../../types/physics";
+import { ElementsType, VectorType } from "../../types/physics";
 
 class Manifestation {
   public mass: ScenarioMassType;
   protected textureLoader: THREE.TextureLoader;
   protected trailVertices: number;
   public object3D: THREE.Object3D;
+  public orbit: EllipseCurve | null;
 
   constructor(mass: ScenarioMassType, textureLoader: THREE.TextureLoader) {
     this.mass = mass;
@@ -15,6 +18,8 @@ class Manifestation {
 
     this.object3D = new THREE.Object3D();
     this.object3D.name = this.mass.name;
+
+    this.orbit = null;
 
     this.trailVertices = 3000;
   }
@@ -38,6 +43,65 @@ class Manifestation {
     this.object3D.add(sphere);
 
     return this;
+  }
+
+  public addOrbit() {
+    this.orbit = new EllipseCurve(
+      0,
+      0,
+      0,
+      0,
+      0,
+      2 * Math.PI,
+      false,
+      0,
+      500,
+      "green",
+    );
+
+    this.object3D.add(this.orbit.object3D);
+
+    return this;
+  }
+
+  public removeOrbit() {
+    this.object3D.remove(this.orbit!.object3D);
+
+    this.orbit!.dispose();
+
+    this.orbit = null;
+  }
+
+  public updateOrbit(
+    rotatingReferenceFrame: VectorType,
+    primaryPosition: VectorType,
+    scale: number,
+  ) {
+    const elements = this.mass.elements as ElementsType;
+
+    const a = elements.a;
+    const e = elements.e;
+    const w = elements.argP * (180 / Math.PI);
+    const i = elements.i * (180 / Math.PI);
+    const o = elements.lAn * (180 / Math.PI);
+
+    const ellipse = getEllipse(a, e);
+
+    const orbit = this.object3D.getObjectByName("ellipse") as THREE.Object3D;
+
+    orbit.position.z = (rotatingReferenceFrame.z - primaryPosition.z) * scale;
+
+    this.orbit!.update(
+      (rotatingReferenceFrame.x - primaryPosition.x + ellipse.focus) * scale,
+      (rotatingReferenceFrame.y - primaryPosition.y) * scale,
+      ellipse.xRadius * scale,
+      ellipse.yRadius * scale,
+      0,
+      2 * Math.PI,
+      false,
+      0,
+      { x: i, y: o, z: w - 180 },
+    );
   }
 
   public addTrail() {
@@ -80,7 +144,7 @@ class Manifestation {
     }
   }
 
-  public drawTrail(position: VectorType) {
+  public drawTrail() {
     const trail = this.object3D.getObjectByName("trail");
 
     // @ts-ignore
@@ -91,17 +155,19 @@ class Manifestation {
       positions[i] = positions[i - 3];
     }
 
-    positions[0] = position.x;
-    positions[1] = position.y;
-    positions[2] = position.z;
+    const { x, y, z } = this.mass.rotatedPosition as VectorType;
+
+    positions[0] = x;
+    positions[1] = y;
+    positions[2] = z;
 
     geometry.getAttribute("position").needsUpdate = true;
   }
 
-  public setPosition(position: VectorType) {
+  public setPosition() {
     const object3D = this.object3D;
 
-    const { x, y, z } = position;
+    const { x, y, z } = this.mass.rotatedPosition as VectorType;
 
     const sphere = object3D.getObjectByName("sphere");
     sphere?.position.set(x, y, z);

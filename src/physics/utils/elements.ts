@@ -290,4 +290,30 @@ const constructSOITree = (masses: any): any => {
   return simpleTree;
 };
 
-export { stateToKepler, keplerToState, constructSOITree };
+const findCurrentSOI = (pos: any, tree: any, masses: any): any => {
+  if (tree.children.length == 0) {
+    return getObjFromArrByKeyValuePair(masses, "name", tree.name);
+  }
+  for (let i = 0; i < tree.children.length; i++) {
+    if (tree.children[i].name == pos.name) {
+      continue;
+    }
+    const currentBody = getObjFromArrByKeyValuePair(
+      masses,
+      "name",
+      tree.children[i].name,
+    );
+    const d = Math.sqrt(
+      getDistanceParams(currentBody.position, pos.position).dSquared,
+    );
+    if (d < tree.children[i].SOIradius) {
+      return findCurrentSOI(pos, tree.children[i], masses);
+    }
+  }
+  return {
+    ...getObjFromArrByKeyValuePair(masses, "name", tree.name),
+    soi: tree.SOIradius,
+  };
+};
+
+export { stateToKepler, keplerToState, constructSOITree, findCurrentSOI };

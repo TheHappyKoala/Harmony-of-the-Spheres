@@ -193,14 +193,13 @@ class EllipseCurve {
       "ellipse",
     ) as THREE.Line;
 
-    if (customEllipse) {
-      customEllipse.geometry.dispose();
+    customEllipse.geometry.dispose();
 
-      const material = customEllipse.material as THREE.LineBasicMaterial;
+    const material = customEllipse.material as THREE.LineBasicMaterial;
 
-      material.dispose();
-      this.object3D.remove(customEllipse);
-    }
+    material.dispose();
+
+    this.object3D.remove(customEllipse);
   }
 }
 
