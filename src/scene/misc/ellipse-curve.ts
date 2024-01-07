@@ -18,7 +18,7 @@ class EllipseCurve {
   private verticesIndices: Float32Array;
   private color: string;
 
-  public object3D: THREE.Object3D;
+  public object3D: THREE.Object3D | undefined;
 
   constructor(
     aX: number,
@@ -147,22 +147,26 @@ class EllipseCurve {
     mesh.frustumCulled = false;
     mesh.name = "ellipse";
 
-    this.object3D.add(mesh);
+    if (this.object3D) {
+      this.object3D.add(mesh);
+    }
   }
 
   private rotateAroundFocus(axisRotations: VectorType): void {
-    const ellipse = this.object3D.getObjectByName("ellipse");
+    if (this.object3D) {
+      const ellipse = this.object3D.getObjectByName("ellipse");
 
-    if (!ellipse) return;
+      if (!ellipse) return;
 
-    ellipse.rotation.z = degreesToRadians(axisRotations.z);
-    ellipse.rotation.x = degreesToRadians(axisRotations.x);
+      ellipse.rotation.z = degreesToRadians(axisRotations.z);
+      ellipse.rotation.x = degreesToRadians(axisRotations.x);
 
-    //No can do ZXZ rotations, so we rotate the z axis of the parent object
-    //of the ellipse instead to give the ellipse the correct orientation in 3D space around
-    //its focus
+      //No can do ZXZ rotations, so we rotate the z axis of the parent object
+      //of the ellipse instead to give the ellipse the correct orientation in 3D space around
+      //its focus
 
-    this.object3D.rotation.z = degreesToRadians(axisRotations.y);
+      this.object3D.rotation.z = degreesToRadians(axisRotations.y);
+    }
   }
 
   public update(
@@ -189,17 +193,33 @@ class EllipseCurve {
   }
 
   public dispose() {
-    const customEllipse = this.object3D.getObjectByName(
-      "ellipse",
-    ) as THREE.Line;
+    if (this.object3D) {
+      let ellipse = this.object3D.getObjectByName("ellipse") as
+        | THREE.Line
+        | undefined;
 
-    customEllipse.geometry.dispose();
+      if (ellipse) {
+        let geometry = ellipse.geometry as
+          | THREE.BufferGeometry<THREE.NormalBufferAttributes>
+          | undefined;
 
-    const material = customEllipse.material as THREE.LineBasicMaterial;
+        if (geometry) {
+          geometry.dispose();
+          geometry = undefined;
+        }
 
-    material.dispose();
+        let material = ellipse.material as THREE.LineBasicMaterial | undefined;
 
-    this.object3D.remove(customEllipse);
+        if (material) {
+          material.dispose();
+          material = undefined;
+        }
+
+        this.object3D.remove(ellipse);
+
+        ellipse = undefined;
+      }
+    }
   }
 }
 
