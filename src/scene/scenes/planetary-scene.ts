@@ -17,8 +17,7 @@ import H3 from "../../physics/utils/vector";
 import { modifyScenarioProperty } from "../../state/creators";
 import { ThunkDispatch } from "redux-thunk";
 import { ModifyScenarioPropertyType } from "../../types/actions";
-import { ScenarioType } from "../../types/scenario";
-import Manifestation from "../manifestations/manifestation";
+import { ScenarioMassType, ScenarioType } from "../../types/scenario";
 
 class PlanetaryScene extends SceneBase {
   manifestationManager: ManifestationManager;
@@ -26,14 +25,14 @@ class PlanetaryScene extends SceneBase {
   integrator: ReturnType<typeof getIntegrator>;
   particleIntegrator: ParticleIntegrator;
   previous: {
-    cameraFocus: string | null;
-    rotatingReferenceFrame: string | null;
+    cameraFocus: string | undefined;
+    rotatingReferenceFrame: string | undefined;
     integrator: string;
   };
   utilVector: H3;
   threeUtilityVector: THREE.Vector3;
   clock: THREE.Clock;
-  particles: Particles | null;
+  particles: Particles | undefined;
 
   constructor(webGlCanvas: HTMLCanvasElement, labelsCanvas: HTMLCanvasElement) {
     super(webGlCanvas, labelsCanvas);
@@ -62,7 +61,7 @@ class PlanetaryScene extends SceneBase {
 
     this.particleIntegrator = new ParticleIntegrator(this.scale);
 
-    this.particles = null;
+    this.particles = undefined;
 
     if (this.scenario?.particlesConfiguration?.shapes) {
       addParticleSystems(
@@ -80,13 +79,12 @@ class PlanetaryScene extends SceneBase {
 
       this.particles.createParticleSystem();
 
-      // @ts-ignore
       this.scene.add(this.particles.mesh);
     }
 
     this.previous = {
-      cameraFocus: null,
-      rotatingReferenceFrame: null,
+      cameraFocus: undefined,
+      rotatingReferenceFrame: undefined,
       integrator: this.scenario.integrator.name,
     };
 
@@ -127,9 +125,11 @@ class PlanetaryScene extends SceneBase {
 
     const { cameraFocus } = this.scenario.camera;
 
-    const rotatingReferenceFrame = this.integrator.masses.find(
+    const rotatingReferenceFrameMass = this.integrator.masses.find(
       (mass) => this.scenario.camera.rotatingReferenceFrame === mass.name,
-    )!.position;
+    ) as ScenarioMassType;
+
+    const rotatingReferenceFrame = rotatingReferenceFrameMass.position;
 
     if (this.particles) {
       if (this.scenario.playing) {
@@ -154,7 +154,7 @@ class PlanetaryScene extends SceneBase {
     let massesLength = this.integrator.masses.length;
 
     for (let i = 0; i < massesLength; i++) {
-      const mass = this.integrator.masses[i]!;
+      const mass = this.integrator.masses[i];
       const { name } = mass;
 
       const currentSOI = findCurrentSOI(mass, soiTree, this.integrator.masses);
@@ -183,59 +183,75 @@ class PlanetaryScene extends SceneBase {
 
       mass.rotatedPosition = rotatedPosition;
 
-      const manifestation = manifestations[i] as Manifestation;
+      const manifestation = manifestations[i];
+      const manifestationObject3D = manifestation.object3D;
+
       manifestation.mass = mass;
 
-      if (mass.type === "star") {
-        const starMaterial =
-          // @ts-ignore
-          manifestation!.object3D!.getObjectByName("sphere").material;
+      if (manifestationObject3D) {
+        if (mass.type === "star") {
+          /*
+           * Object3D (the expected return type of getObjectByName as per the THREE.js typings)
+           * does not have the material property, so we must tell the TypeScript compiler
+           * that a mesh will be returned by the getObjectByName method
+           */
+          const starSphere = manifestationObject3D.getObjectByName(
+            "sphere",
+          ) as THREE.Mesh;
 
-        starMaterial.uniforms.time.value += 0.007 * delta;
-      }
+          /*
+           * The type for THREE.Mesh.material is THREE.Material, but it can also be, and in this case is,
+           * THREE.ShaderMaterial, so we cast material as THREE.ShaderMaterial
+           * This is necessary since the THREE.Material type does not have the uniforms property
+           */
+          const starMaterial = starSphere.material as THREE.ShaderMaterial;
 
-      manifestation!.setPosition();
-
-      const orbit = manifestation.orbit;
-
-      if (
-        this.scenario.graphics.orbits &&
-        this.scenario.camera.rotatingReferenceFrame !== mass.name &&
-        currentSOI.name === this.scenario.camera.rotatingReferenceFrame
-      ) {
-        if (!orbit) {
-          manifestation.addOrbit();
+          starMaterial.uniforms["time"].value += 0.007 * delta;
         }
 
-        manifestation.updateOrbit(
-          rotatingReferenceFrame,
-          currentSOI.position,
-          scale,
-        );
-      } else if (orbit) {
-        manifestation.removeOrbit();
-      }
+        manifestation.setPosition();
 
-      const trail = manifestation?.object3D.getObjectByName("trail");
+        const orbit = manifestation.orbit;
 
-      if (
-        (!this.scenario.graphics.trails && trail) ||
-        (trail &&
-          this.scenario.camera.rotatingReferenceFrame !==
-            this.previous.rotatingReferenceFrame)
-      ) {
-        manifestation?.removeTrail();
-      }
+        if (
+          this.scenario.graphics.orbits &&
+          this.scenario.camera.rotatingReferenceFrame !== mass.name &&
+          currentSOI.name === this.scenario.camera.rotatingReferenceFrame
+        ) {
+          if (!orbit) {
+            manifestation.addOrbit();
+          }
 
-      if (this.scenario.graphics.trails) {
-        const trail = manifestation?.object3D.getObjectByName("trail");
-
-        if (!trail) {
-          manifestation?.addTrail();
+          manifestation.updateOrbit(
+            rotatingReferenceFrame,
+            currentSOI.position,
+            scale,
+          );
+        } else if (orbit) {
+          manifestation.removeOrbit();
         }
 
-        if (this.scenario.playing) {
-          manifestation?.drawTrail();
+        const trail = manifestationObject3D.getObjectByName("trail");
+
+        if (
+          (!this.scenario.graphics.trails && trail) ||
+          (trail &&
+            this.scenario.camera.rotatingReferenceFrame !==
+              this.previous.rotatingReferenceFrame)
+        ) {
+          manifestation?.removeTrail();
+        }
+
+        if (this.scenario.graphics.trails) {
+          const trail = manifestationObject3D.getObjectByName("trail");
+
+          if (!trail) {
+            manifestation?.addTrail();
+          }
+
+          if (this.scenario.playing) {
+            manifestation?.drawTrail();
+          }
         }
       }
 
