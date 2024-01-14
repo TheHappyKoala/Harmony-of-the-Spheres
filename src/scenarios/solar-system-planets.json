@@ -14,9 +14,9 @@
     "rotatingReferenceFrame": "Sun"
   },
   "integrator": {
-    "name": "PEFRL",
+    "name": "RK4",
     "g": 39.5,
-    "dt": 0.0001,
+    "dt": 0.0005,
     "tol": 0.025,
     "maxDt": 0.01,
     "minDt": 0.0001,
@@ -33,7 +33,7 @@
   "graphics": {
     "orbits": true,
     "habitableZone": false,
-    "trails": false,
+    "trails": true,
     "labels": true
   },
   "masses": [
