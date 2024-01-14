@@ -1,11 +1,11 @@
 import * as THREE from "three";
-import { ParticlesType, VectorType, ParticleType } from "../../types/physics";
+import { ParticlesType, VectorType } from "../../types/physics";
 
 class Particles {
   particles: ParticlesType;
   scale: number;
   textureLoader: THREE.TextureLoader;
-  mesh: THREE.Points | null;
+  mesh: THREE.Points;
 
   constructor(
     particles: ParticlesType,
@@ -18,7 +18,7 @@ class Particles {
 
     this.textureLoader = textureLoader;
 
-    this.mesh = null;
+    this.mesh = this.createParticleSystem();
   }
 
   public createParticleSystem() {
@@ -31,7 +31,7 @@ class Particles {
     const particles = this.particles;
 
     for (let i = 0; i < particlesLength; i++) {
-      const particlePosition = particles[i]!.position;
+      const particlePosition = particles[i].position;
 
       const x = particlePosition.x * scale;
       const y = particlePosition.y * scale;
@@ -60,7 +60,7 @@ class Particles {
     const mesh = new THREE.Points(geometry, material);
     mesh.name = "particles";
 
-    this.mesh = mesh;
+    return mesh;
   }
 
   public setPositions(
@@ -69,17 +69,17 @@ class Particles {
   ) {
     const particlesLength = particles.length;
 
-    const geometry = this.mesh!.geometry;
+    const geometry = this.mesh.geometry;
     geometry.setDrawRange(0, particlesLength);
 
-    const positions = geometry.attributes.position!.array;
+    const positions = geometry.attributes["position"].array;
 
     let j = 0;
 
     const scale = this.scale;
 
     for (let i = 0; i < particlesLength; i++) {
-      const particle = particles[i] as ParticleType;
+      const particle = particles[i];
 
       let x = (rotatingReferenceFrame.x - particle.position.x) * scale;
       let y = (rotatingReferenceFrame.y - particle.position.y) * scale;
@@ -91,6 +91,7 @@ class Particles {
 
       j += 3;
     }
+
     geometry.getAttribute("position").needsUpdate = true;
   }
 }

@@ -46,9 +46,9 @@ class Euler {
     for (let i = 0; i < massesLength; i++) {
       let massI = masses[i];
 
-      positionVectors[i] = massI!.position;
+      positionVectors[i] = massI.position;
 
-      velocityVectors[i] = massI!.velocity;
+      velocityVectors[i] = massI.velocity;
     }
 
     return { positionVectors, velocityVectors };
@@ -58,13 +58,13 @@ class Euler {
     const massesLength = p.length;
 
     for (let i = 0; i < massesLength; i++) {
-      const positionVectorI = p[i]!;
-      const velocityVectorI = v[i]!;
+      const positionVectorI = p[i];
+      const velocityVectorI = v[i];
 
       const mass = this.masses[i];
 
-      mass!.position = positionVectorI;
-      mass!.velocity = velocityVectorI;
+      mass.position = positionVectorI;
+      mass.velocity = velocityVectorI;
     }
   }
 
@@ -73,11 +73,11 @@ class Euler {
     const massesLength = velocityVectors.length;
 
     for (let i = 0; i < massesLength; i++) {
-      let velocityVectorI = velocityVectors[i]!;
+      let velocityVectorI = velocityVectors[i];
       let mass = this.masses[i];
 
       positionVectors[i] = this.positionVector
-        .set(mass!.position)
+        .set(mass.position)
         .addScaledVector(dt, velocityVectorI)
         .toObject();
     }
@@ -92,11 +92,11 @@ class Euler {
     for (let i = 0; i < massesLength; i++) {
       this.accelerationVector.set({ x: 0, y: 0, z: 0 });
 
-      let positionVectorI = positionVectors[i]!;
+      let positionVectorI = positionVectors[i];
 
       for (let j = 0; j < massesLength; j++) {
-        if (i !== j && this.masses[j]!.m > 0) {
-          let positionVectorJ = positionVectors[j]!;
+        if (i !== j && this.masses[j].m > 0) {
+          let positionVectorJ = positionVectors[j];
 
           let distanceParams = this.getDistanceParams(
             positionVectorI,
@@ -105,7 +105,7 @@ class Euler {
           let distance = Math.sqrt(distanceParams.dSquared);
 
           let fact =
-            (this.g * this.masses[j]!.m) / (distanceParams.dSquared * distance);
+            (this.g * this.masses[j].m) / (distanceParams.dSquared * distance);
 
           this.accelerationVector.addScaledVector(fact, {
             x: distanceParams.dx,
@@ -126,11 +126,11 @@ class Euler {
     const massesLength = accelerationVectors.length;
 
     for (let i = 0; i < massesLength; i++) {
-      let accelerationVectorI = accelerationVectors[i]!;
+      let accelerationVectorI = accelerationVectors[i];
       let mass = this.masses[i];
 
       velocityVectors[i] = this.velocityVector
-        .set(mass!.velocity)
+        .set(mass.velocity)
         .addScaledVector(dt, accelerationVectorI)
         .toObject();
     }

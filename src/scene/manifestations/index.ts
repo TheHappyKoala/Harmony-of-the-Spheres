@@ -65,6 +65,10 @@ class ManifestationManager {
 
         this.scene.remove(massToBeDeleted);
 
+        this.manifestations[i]?.dispose();
+        if (this.manifestations[i]!.object3D) {
+          this.manifestations[i]!.object3D = undefined;
+        }
         this.manifestations.splice(i, 1);
       }
     }

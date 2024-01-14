@@ -48,38 +48,38 @@ class RK4 extends Euler {
     for (let i = 0; i < massesLength; i++) {
       accelerationVectors[i] = {
         x:
-          accelerationVectors1[i]!.x / 6 +
-          accelerationVectors2[i]!.x / 3 +
-          accelerationVectors3[i]!.x / 3 +
-          accelerationVectors4[i]!.x / 6,
+          accelerationVectors1[i].x / 6 +
+          accelerationVectors2[i].x / 3 +
+          accelerationVectors3[i].x / 3 +
+          accelerationVectors4[i].x / 6,
         y:
-          accelerationVectors1[i]!.y / 6 +
-          accelerationVectors2[i]!.y / 3 +
-          accelerationVectors3[i]!.y / 3 +
-          accelerationVectors4[i]!.y / 6,
+          accelerationVectors1[i].y / 6 +
+          accelerationVectors2[i].y / 3 +
+          accelerationVectors3[i].y / 3 +
+          accelerationVectors4[i].y / 6,
         z:
-          accelerationVectors1[i]!.z / 6 +
-          accelerationVectors2[i]!.z / 3 +
-          accelerationVectors3[i]!.z / 3 +
-          accelerationVectors4[i]!.z / 6,
+          accelerationVectors1[i].z / 6 +
+          accelerationVectors2[i].z / 3 +
+          accelerationVectors3[i].z / 3 +
+          accelerationVectors4[i].z / 6,
       };
 
       velocityVectors[i] = {
         x:
-          stateVectors.velocityVectors[i]!.x / 6 +
-          velocityVectors2[i]!.x / 3 +
-          velocityVectors3[i]!.x / 3 +
-          velocityVectors4[i]!.x / 6,
+          stateVectors.velocityVectors[i].x / 6 +
+          velocityVectors2[i].x / 3 +
+          velocityVectors3[i].x / 3 +
+          velocityVectors4[i].x / 6,
         y:
-          stateVectors.velocityVectors[i]!.y / 6 +
-          velocityVectors2[i]!.y / 3 +
-          velocityVectors3[i]!.y / 3 +
-          velocityVectors4[i]!.y / 6,
+          stateVectors.velocityVectors[i].y / 6 +
+          velocityVectors2[i].y / 3 +
+          velocityVectors3[i].y / 3 +
+          velocityVectors4[i].y / 6,
         z:
-          stateVectors.velocityVectors[i]!.z / 6 +
-          velocityVectors2[i]!.z / 3 +
-          velocityVectors3[i]!.z / 3 +
-          velocityVectors4[i]!.z / 6,
+          stateVectors.velocityVectors[i].z / 6 +
+          velocityVectors2[i].z / 3 +
+          velocityVectors3[i].z / 3 +
+          velocityVectors4[i].z / 6,
       };
     }
 
