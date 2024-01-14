@@ -1,0 +1,94 @@
+{
+  "name": "The Sun, Earth and Moon System",
+  "playing": false,
+  "isLoaded": false,
+  "elapsedTime": 0,
+  "collisions": true,
+  "category": {
+    "name": "Solar System",
+    "subCategory": "Moons"
+  },
+  "camera": {
+    "cameraFocus": "Earth",
+    "logarithmicDepthBuffer": false,
+    "rotatingReferenceFrame": "Earth"
+  },
+  "integrator": {
+    "name": "RK4",
+    "g": 39.5,
+    "dt": 0.00005,
+    "tol": 1e-4,
+    "maxDt": 0.00085,
+    "minDt": 0.00000085,
+    "useBarnesHut": false,
+    "theta": 0.5,
+    "softeningConstant": 0
+  },
+  "barycenter": {
+    "display": false,
+    "barycenterMassOne": "Earth",
+    "barycenterMassTwo": "Moon",
+    "systemBarycenter": false
+  },
+  "graphics": {
+    "orbits": true,
+    "habitableZone": false,
+    "trails": true,
+    "labels": true
+  },
+
+  "masses": [
+    {
+      "name": "Sun",
+      "type": "star",
+      "m": 1,
+      "radius": 10270,
+      "tilt": 0,
+      "position": {
+        "x": 0.00257729957449904,
+        "y": -0.004392340734313888,
+        "z": -0.00006978730929619852
+      },
+      "velocity": {
+        "x": 0.0029586689261267758,
+        "y": 0.00013186850299206433,
+        "z": -0.00008036276531728809
+      }
+    },
+    {
+      "name": "Earth",
+      "type": "planet",
+      "m": 0.000003003,
+      "radius": 91.74311926605505,
+      "tilt": -23.44,
+      "atmosphere": "skyblue",
+      "position": {
+        "x": 0.9939017404234283,
+        "y": 0.1352478854409775,
+        "z": -0.0000563711820259021
+      },
+      "velocity": {
+        "x": -0.9740470647877054,
+        "y": 6.197562901988265,
+        "z": 0.00041377604204935426
+      }
+    },
+    {
+      "name": "Moon",
+      "type": "moon",
+      "m": 3.69396868e-8,
+      "radius": 22.93577981651376,
+      "tilt": -1.54,
+      "position": {
+        "x": 0.9956218231659631,
+        "y": 0.1372984436242337,
+        "z": -0.0001963882374615497
+      },
+      "velocity": {
+        "x": -1.1283327200261632,
+        "y": 6.334444083774614,
+        "z": -0.015608356925550449
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+@import (reference) "../theme/variables.less";
+@import (reference) "../theme/mixins.less";
+
+.dropdown-wrapper {
+  position: relative;
+  width: inherit;
+}
+
+.dropdown-selected-option {
+  width: inherit;
+  background-color: #222;
+  border: 1px solid @primary-border-color;
+  padding: 12px;
+  line-height: 15px;
+  cursor: pointer;
+  i {
+    float: right;
+    font-size: 1em !important;
+  }
+
+  .rotated-chevron {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown-options-wrapper {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  background-color: #222;
+  border: 1px solid @primary-border-color;
+  border-top: none;
+  max-height: 150px;
+  white-space: nowrap;
+  overflow: auto;
+  cursor: pointer;
+  * {
+    display: block;
+    padding: 12px;
+    border-bottom: 1px solid #000;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}

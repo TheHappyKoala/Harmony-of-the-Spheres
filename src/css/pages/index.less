@@ -1,0 +1,42 @@
+@import (reference) "../theme/variables.less";
+@import (reference) "../theme/mixins.less";
+
+.home-page-banner {
+  .container();
+  margin: 25vh auto;
+  max-width: 300px;
+  border: 1px solid @secondary-border-color;
+  padding: 12px;
+}
+
+.home-page-banner__description {
+  font-size: @secondary-font-size;
+  font-weight: 100;
+}
+
+.home-page-banner__explore-button {
+  position: relative;
+  box-sizing: border-box;
+  padding: 12px;
+  background-color: @secondary-color;
+  font-size: @secondary-font-size;
+  font-weight: 200;
+  border: 1px solid @primary-border-color;
+  display: flex;
+  justify-content: space-between;
+  i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    transition: font-size 0.25s;
+  }
+}
+
+.home-page-banner__explore-button:hover {
+  border: 1px solid @secondary-border-color;
+}
+
+.home-page-banner__explore-button:hover > i {
+  font-size: 20px;
+}

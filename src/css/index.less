@@ -1,0 +1,44 @@
+@import "./fontawesome/less/fontawesome.less";
+
+@import (reference) "./theme/variables.less";
+@import (reference) "./theme/mixins.less";
+
+@import "./fontawesome/less/solid.less";
+
+@import "./components/navigation-menu.less";
+@import "./components/renderer.less";
+@import "./components/layout.less";
+@import "./components/dropdown.less";
+@import "./components/tabs.less";
+
+@import "./templates/scenarios-menu.less";
+@import "./templates/planetary-scenario.less";
+
+@import "./pages/index.less";
+
+@font-face {
+  font-family: jura-regular;
+  src: url("./jura/static/Jura-Regular.ttf");
+}
+
+body {
+  background-color: @primary-color;
+  color: @theme-color-two;
+  margin: 0;
+  font-family: "Gill Sans", sans-serif;
+  font-size: @primary-font-size;
+}
+
+a:link,
+a:visited {
+  text-decoration: inherit;
+  color: @primary-font-color;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}

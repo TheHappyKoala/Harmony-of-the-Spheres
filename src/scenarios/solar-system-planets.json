@@ -1,0 +1,76 @@
+{
+  "name": "The Planets of the Solar System",
+  "playing": false,
+  "isLoaded": false,
+  "elapsedTime": 0,
+  "collisions": true,
+  "category": {
+    "name": "Solar System",
+    "subCategory": "Planets"
+  },
+  "camera": {
+    "cameraFocus": "Sun",
+    "logarithmicDepthBuffer": false,
+    "rotatingReferenceFrame": "Sun"
+  },
+  "integrator": {
+    "name": "RK4",
+    "g": 39.5,
+    "dt": 0.0005,
+    "tol": 0.025,
+    "maxDt": 0.01,
+    "minDt": 0.0001,
+    "useBarnesHut": false,
+    "theta": 0.5,
+    "softeningConstant": 0
+  },
+  "barycenter": {
+    "display": false,
+    "barycenterMassOne": "Earth",
+    "barycenterMassTwo": "Sun",
+    "systemBarycenter": true
+  },
+  "graphics": {
+    "orbits": true,
+    "habitableZone": false,
+    "trails": true,
+    "labels": true
+  },
+  "masses": [
+    {
+      "name": "Sun",
+      "type": "star",
+      "m": 1,
+      "radius": 10270,
+      "tilt": 0,
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "velocity": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "name": "Earth",
+      "type": "planet",
+      "m": 0.000003003,
+      "radius": 91.74311926605505,
+      "tilt": -23.44,
+      "atmosphere": "blue",
+      "position": {
+        "x": -0.1791160223523504,
+        "y": 0.9668129273179595,
+        "z": -0.00004685127363094524
+      },
+      "velocity": {
+        "x": -6.2790350280202,
+        "y": -1.1669755301003375,
+        "z": -0.00009692745780137322
+      }
+    }
+  ]
+}

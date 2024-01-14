@@ -1,0 +1,47 @@
+@import (reference) "../theme/variables.less";
+@import (reference) "../theme/mixins.less";
+
+.scenarios-navigation-menu-wrapper {
+  background-color: @theme-color-one;
+  border-bottom: 1px solid @theme-color-two;
+}
+
+.scenarios-navigation-menu-wrapper .navigation-menu:first-child {
+  border-bottom: 1px solid @theme-color-two;
+}
+
+.scenarios-list {
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 4rem;
+  padding-top: 25px;
+}
+
+.scenarios-list__scenarios-list-item {
+  position: relative;
+  background-color: @secondary-color;
+  height: 200px;
+  width: 200px;
+  border: 1px solid @primary-border-color;
+}
+
+.scenarios-list__scenarios-list-item:hover {
+  border: 1px solid @secondary-border-color;
+}
+
+.scenarios-list__scenarios-list-item:hover
+  > .scenarios-list__scenarios-list-item-name {
+  border-top: 1px solid @secondary-border-color;
+}
+
+.scenarios-list__scenarios-list-item-name {
+  .position-absolute(2);
+  bottom: 0;
+  width: 100%;
+  background-color: @primary-color;
+  border-top: 1px solid @primary-border-color;
+  text-align: center;
+  padding: 3px;
+  box-sizing: border-box;
+}
