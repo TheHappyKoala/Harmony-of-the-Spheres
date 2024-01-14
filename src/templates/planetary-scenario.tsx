@@ -1,10 +1,8 @@
 import React, { useCallback, Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ThunkDispatch } from "redux-thunk";
 import { graphql } from "gatsby";
 import Renderer from "../components/renderer";
 import { ScenarioType } from "../types/scenario";
-import { ModifyScenarioPropertyType } from "../types/actions";
 import useHydrateStore from "../hooks/useHydrateStore";
 import Button from "../components/button";
 import Tabs from "../components/tabs";
@@ -29,7 +27,7 @@ const Scenario = ({
   },
 }: Props) => {
   const dispatch = useDispatch();
-  const scenario = scenarios[0]!.scenario;
+  const scenario = scenarios[0].scenario;
 
   useHydrateStore(scenario);
 
@@ -40,14 +38,7 @@ const Scenario = ({
   });
 
   const handlePlayButtonClick = useCallback(
-    () =>
-      (
-        dispatch as ThunkDispatch<
-          ScenarioType,
-          void,
-          ModifyScenarioPropertyType
-        >
-      )(modifyScenarioProperty({ key: "playing", value: !playing })),
+    () => dispatch(modifyScenarioProperty({ key: "playing", value: !playing })),
     [playing],
   );
 

@@ -15,9 +15,6 @@ import {
 } from "../../physics/utils/elements";
 import H3 from "../../physics/utils/vector";
 import { modifyScenarioProperty } from "../../state/creators";
-import { ThunkDispatch } from "redux-thunk";
-import { ModifyScenarioPropertyType } from "../../types/actions";
-import { ScenarioMassType, ScenarioType } from "../../types/scenario";
 
 class PlanetaryScene extends SceneBase {
   manifestationManager: ManifestationManager;
@@ -127,9 +124,11 @@ class PlanetaryScene extends SceneBase {
 
     const rotatingReferenceFrameMass = this.integrator.masses.find(
       (mass) => this.scenario.camera.rotatingReferenceFrame === mass.name,
-    ) as ScenarioMassType;
+    );
 
-    const rotatingReferenceFrame = rotatingReferenceFrameMass.position;
+    const rotatingReferenceFrame = rotatingReferenceFrameMass
+      ? rotatingReferenceFrameMass.position
+      : { x: 0, y: 0, z: 0 };
 
     if (this.particles) {
       if (this.scenario.playing) {
@@ -239,18 +238,18 @@ class PlanetaryScene extends SceneBase {
             this.scenario.camera.rotatingReferenceFrame !==
               this.previous.rotatingReferenceFrame)
         ) {
-          manifestation?.removeTrail();
+          manifestation.removeTrail();
         }
 
         if (this.scenario.graphics.trails) {
           const trail = manifestationObject3D.getObjectByName("trail");
 
           if (!trail) {
-            manifestation?.addTrail();
+            manifestation.addTrail();
           }
 
           if (this.scenario.playing) {
-            manifestation?.drawTrail();
+            manifestation.drawTrail();
           }
         }
       }
@@ -306,13 +305,9 @@ class PlanetaryScene extends SceneBase {
         this.scenario.camera.rotatingReferenceFrame;
     }
 
-    (
-      this.store.dispatch as ThunkDispatch<
-        ScenarioType,
-        void,
-        ModifyScenarioPropertyType
-      >
-    )(modifyScenarioProperty({ key: "masses", value: this.integrator.masses }));
+    this.store.dispatch(
+      modifyScenarioProperty({ key: "masses", value: this.integrator.masses }),
+    );
 
     this.renderer.render(this.scene, this.camera);
 

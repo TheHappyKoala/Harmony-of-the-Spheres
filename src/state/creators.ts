@@ -5,25 +5,16 @@ import {
   ScenarioPropertyType,
   ModifyScenarioPropertyType,
 } from "../types/actions";
-import { Dispatch } from "redux";
-import { ThunkAction } from "redux-thunk";
 
 export const setScenario = (scenario: ScenarioType): SetScenarioActionType => ({
   type: SET_SCENARIO,
   payload: scenario,
 });
 
-export const modifyScenarioProperty =
-  (
-    ...scenarioProperties: ScenarioPropertyType[]
-  ): ThunkAction<void, ScenarioType, void, ModifyScenarioPropertyType> =>
-  (dispatch: Dispatch<ModifyScenarioPropertyType>) =>
-    scenarioProperties.forEach((scenarioProperty) =>
-      dispatch({
-        type: MODIFY_SCENARIO_PROPERTY,
-        payload: {
-          key: scenarioProperty.key,
-          value: scenarioProperty.value,
-        },
-      }),
-    );
+export const modifyScenarioProperty = ({
+  key,
+  value,
+}: ScenarioPropertyType): ModifyScenarioPropertyType => ({
+  type: MODIFY_SCENARIO_PROPERTY,
+  payload: { key, value },
+});

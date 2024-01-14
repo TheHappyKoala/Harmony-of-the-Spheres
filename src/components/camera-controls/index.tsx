@@ -1,13 +1,11 @@
 import React, { Fragment, memo } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ThunkDispatch } from "redux-thunk";
 import {
   ScenarioType,
   ScenarioCameraType,
   ScenarioMassesType,
 } from "../../types/scenario";
 import { modifyScenarioProperty } from "../../state/creators";
-import { ModifyScenarioPropertyType } from "../../types/actions";
 import Dropdown from "../dropdown";
 
 const shouldSelectorNotRun = (
@@ -35,8 +33,6 @@ const CameraControls = () => {
     return { camera, masses };
   }, shouldSelectorNotRun);
 
-  console.log("LOL", camera);
-
   return (
     <Fragment>
       <div className="input-wrapper">
@@ -51,20 +47,14 @@ const CameraControls = () => {
             return (
               <div
                 key={mass.name}
-                onClick={() => {
-                  (
-                    dispatch as ThunkDispatch<
-                      ScenarioType,
-                      void,
-                      ModifyScenarioPropertyType
-                    >
-                  )(
+                onClick={() =>
+                  dispatch(
                     modifyScenarioProperty({
                       key: "camera",
                       value: { ...camera, rotatingReferenceFrame: mass.name },
                     }),
-                  );
-                }}
+                  )
+                }
               >
                 {mass.name}
               </div>
@@ -84,20 +74,14 @@ const CameraControls = () => {
             return (
               <div
                 key={mass.name}
-                onClick={() => {
-                  (
-                    dispatch as ThunkDispatch<
-                      ScenarioType,
-                      void,
-                      ModifyScenarioPropertyType
-                    >
-                  )(
+                onClick={() =>
+                  dispatch(
                     modifyScenarioProperty({
                       key: "camera",
                       value: { ...camera, cameraFocus: mass.name },
                     }),
-                  );
-                }}
+                  )
+                }
               >
                 {mass.name}
               </div>
