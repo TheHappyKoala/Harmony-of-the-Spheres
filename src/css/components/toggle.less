@@ -1,0 +1,35 @@
+@import (reference) "../theme/variables.less";
+@import (reference) "../theme/mixins.less";
+
+.toggle input[type="checkbox"] {
+  display: none;
+}
+
+.toggle label .toggle-track {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  width: 100%;
+  background-color: #222;
+  position: relative;
+  border: 1px solid @primary-border-color;
+  cursor: pointer;
+}
+
+.toggle .toggle-track:before {
+  content: "";
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  background: #444;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: calc(100% - 20px);
+  transition: right 0.1s ease-in;
+}
+
+.toggle input[type="checkbox"]:checked + label .toggle-track:before {
+  right: 5px;
+}
