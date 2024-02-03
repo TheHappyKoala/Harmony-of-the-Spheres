@@ -46,6 +46,14 @@ const ScenarioMenu = ({
       />
       <section className="scenarios-navigation-menu-wrapper">
         <NavigationMenu cssClassName="navigation-menu">
+          <NavigationMenuItem
+            cssClassName="navigation-menu-item"
+            active={category === "all"}
+            activeCssClassName="navigation-menu-item-active"
+          >
+            <Link to={`/all`}>All</Link>
+          </NavigationMenuItem>
+
           {categoryTree.map((categoryBranch) => (
             <NavigationMenuItem
               cssClassName="navigation-menu-item"
@@ -112,14 +120,14 @@ const ScenarioMenu = ({
 
 export const pageQuery = graphql`
   query (
-    $category: String
-    $subCategoryRegex: String = "//"
+    $categoryRegex: String = "//g"
+    $subCategoryRegex: String = "//g"
     $backgroundImage: String
   ) {
     scenariosJson: allScenariosJson(
       filter: {
         category: {
-          name: { eq: $category }
+          name: { regex: $categoryRegex }
           subCategory: { regex: $subCategoryRegex }
         }
       }

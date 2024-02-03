@@ -30,6 +30,17 @@ export const createPages: GatsbyNode["createPages"] = async ({
 }) => {
   const { createPage } = actions;
 
+  createPage({
+    path: `/all`,
+    component: path.resolve("./src/templates/scenarios-menu.tsx"),
+    context: {
+      category: "all",
+      subCategory: "all",
+      backgroundImage: `backgrounds/Home.jpg`,
+    },
+    defer: true,
+  });
+
   const { data } = await graphql<FetchedScenariosJsonType>(`
     {
       scenariosJson: allScenariosJson {
@@ -58,12 +69,14 @@ export const createPages: GatsbyNode["createPages"] = async ({
       const component = path.resolve("./src/templates/scenarios-menu.tsx");
       const { name, subCategories } = scenarioCategoryBranch;
       const withSubCategories = subCategories.length;
+      const categoryRegex = `/${name}/g`;
 
       createPage({
         path: `/${kebabCase(name)}${withSubCategories ? "/all" : ""}`,
         component,
         context: {
           category: name,
+          categoryRegex,
           subCategory: "all",
           backgroundImage: `backgrounds/${name}.jpg`,
         },
@@ -77,6 +90,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
             component,
             context: {
               category: name,
+              categoryRegex,
               subCategory,
               subCategoryRegex: `/${subCategory}/g`,
               backgroundImage: `backgrounds/${name} - ${subCategory}.jpg`,
