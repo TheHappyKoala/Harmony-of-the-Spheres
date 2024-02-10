@@ -32,7 +32,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   createPage({
     path: `/scenarios/all`,
-    component: path.resolve("./src/templates/scenarios-menu.tsx"),
+    component: path.resolve("./src/templates/scenarios-menu/index.tsx"),
     context: {
       category: "all",
       subCategory: "all",
@@ -66,7 +66,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   categoryTree?.forEach(
     (scenarioCategoryBranch: ScenarioCategoryBranchType) => {
-      const component = path.resolve("./src/templates/scenarios-menu.tsx");
+      const component = path.resolve("./src/templates/scenarios-menu/index.tsx");
       const { name, subCategories } = scenarioCategoryBranch;
       const withSubCategories = subCategories.length;
       const categoryRegex = `/${name}/g`;
