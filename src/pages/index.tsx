@@ -2,7 +2,6 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import { getImage, GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import Layout from "../components/layout";
-import "../css/index.less";
 
 type Props = {
   data: {
