@@ -31,7 +31,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const { createPage } = actions;
 
   createPage({
-    path: `/all`,
+    path: `/scenarios/all`,
     component: path.resolve("./src/templates/scenarios-menu.tsx"),
     context: {
       category: "all",
@@ -72,7 +72,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       const categoryRegex = `/${name}/g`;
 
       createPage({
-        path: `/${kebabCase(name)}${withSubCategories ? "/all" : ""}`,
+        path: `/scenarios/${kebabCase(name)}${withSubCategories ? "/all" : ""}`,
         component,
         context: {
           category: name,
@@ -86,7 +86,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       if (withSubCategories) {
         subCategories.forEach((subCategory: string) => {
           createPage({
-            path: `/${kebabCase(name)}/${kebabCase(subCategory)}`,
+            path: `/scenarios/${kebabCase(name)}/${kebabCase(subCategory)}`,
             component,
             context: {
               category: name,
@@ -107,7 +107,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
     const { category, name } = scenario;
 
     createPage({
-      path: `/${kebabCase(category.name)}${
+      path: `/scenarios/${kebabCase(category.name)}${
         category.subCategory ? `/${kebabCase(category.subCategory)}` : ""
       }/${kebabCase(name)}`,
       component,

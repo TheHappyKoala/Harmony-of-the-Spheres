@@ -51,7 +51,7 @@ const ScenarioMenu = ({
             active={category === "all"}
             activeCssClassName="navigation-menu-item-active"
           >
-            <Link to={`/all`}>All</Link>
+            <Link to={`/scenarios/all`}>All</Link>
           </NavigationMenuItem>
 
           {categoryTree.map((categoryBranch) => (
@@ -61,7 +61,7 @@ const ScenarioMenu = ({
               activeCssClassName="navigation-menu-item-active"
             >
               <Link
-                to={`/${kebabCase(categoryBranch.name)}${
+                to={`/scenarios/${kebabCase(categoryBranch.name)}${
                   categoryBranch.subCategories.length ? "/all" : ""
                 }`}
               >
@@ -77,7 +77,7 @@ const ScenarioMenu = ({
               active={subCategory === "all"}
               activeCssClassName="navigation-menu-item-active"
             >
-              <Link to={`/${kebabCase(category)}/all`}>All</Link>
+              <Link to={`/scenarios/${kebabCase(category)}/all`}>All</Link>
             </NavigationMenuItem>
             {subCategories.map((subCategoryEntry) => (
               <NavigationMenuItem
@@ -86,7 +86,9 @@ const ScenarioMenu = ({
                 activeCssClassName="navigation-menu-item-active"
               >
                 <Link
-                  to={`/${kebabCase(category)}/${kebabCase(subCategoryEntry)}`}
+                  to={`/scenarios/${kebabCase(category)}/${kebabCase(
+                    subCategoryEntry,
+                  )}`}
                 >
                   {subCategoryEntry}
                 </Link>
@@ -98,7 +100,7 @@ const ScenarioMenu = ({
       <section className="scenarios-list">
         {scenariosJson.scenarios.map(({ scenario }) => (
           <Link
-            to={`/${kebabCase(category)}${
+            to={`/scenarios/${kebabCase(category)}${
               scenario.category.subCategory
                 ? `/${kebabCase(scenario.category.subCategory)}/${kebabCase(
                     scenario.name,
