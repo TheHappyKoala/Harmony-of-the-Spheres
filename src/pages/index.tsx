@@ -34,7 +34,7 @@ const Home = ({
       />
       <section className="home-page-banner">
         <p className="home-page-banner__description">{description}</p>
-        <Link to="/solar-system/all">
+        <Link to="/scenarios/all">
           <div className="home-page-banner__explore-button">
             <span>Explore Scenarios</span>{" "}
             <i className="fa-solid fa-angles-right" />

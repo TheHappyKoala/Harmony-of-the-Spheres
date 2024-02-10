@@ -46,6 +46,14 @@ const ScenarioMenu = ({
       />
       <section className="scenarios-navigation-menu-wrapper">
         <NavigationMenu cssClassName="navigation-menu">
+          <NavigationMenuItem
+            cssClassName="navigation-menu-item"
+            active={category === "all"}
+            activeCssClassName="navigation-menu-item-active"
+          >
+            <Link to={`/scenarios/all`}>All</Link>
+          </NavigationMenuItem>
+
           {categoryTree.map((categoryBranch) => (
             <NavigationMenuItem
               cssClassName="navigation-menu-item"
@@ -53,7 +61,7 @@ const ScenarioMenu = ({
               activeCssClassName="navigation-menu-item-active"
             >
               <Link
-                to={`/${kebabCase(categoryBranch.name)}${
+                to={`/scenarios/${kebabCase(categoryBranch.name)}${
                   categoryBranch.subCategories.length ? "/all" : ""
                 }`}
               >
@@ -69,7 +77,7 @@ const ScenarioMenu = ({
               active={subCategory === "all"}
               activeCssClassName="navigation-menu-item-active"
             >
-              <Link to={`/${kebabCase(category)}/all`}>All</Link>
+              <Link to={`/scenarios/${kebabCase(category)}/all`}>All</Link>
             </NavigationMenuItem>
             {subCategories.map((subCategoryEntry) => (
               <NavigationMenuItem
@@ -78,7 +86,9 @@ const ScenarioMenu = ({
                 activeCssClassName="navigation-menu-item-active"
               >
                 <Link
-                  to={`/${kebabCase(category)}/${kebabCase(subCategoryEntry)}`}
+                  to={`/scenarios/${kebabCase(category)}/${kebabCase(
+                    subCategoryEntry,
+                  )}`}
                 >
                   {subCategoryEntry}
                 </Link>
@@ -90,7 +100,7 @@ const ScenarioMenu = ({
       <section className="scenarios-list">
         {scenariosJson.scenarios.map(({ scenario }) => (
           <Link
-            to={`/${kebabCase(category)}${
+            to={`/scenarios/${kebabCase(category)}${
               scenario.category.subCategory
                 ? `/${kebabCase(scenario.category.subCategory)}/${kebabCase(
                     scenario.name,
@@ -112,14 +122,14 @@ const ScenarioMenu = ({
 
 export const pageQuery = graphql`
   query (
-    $category: String
-    $subCategoryRegex: String = "//"
+    $categoryRegex: String = "//g"
+    $subCategoryRegex: String = "//g"
     $backgroundImage: String
   ) {
     scenariosJson: allScenariosJson(
       filter: {
         category: {
-          name: { eq: $category }
+          name: { regex: $categoryRegex }
           subCategory: { regex: $subCategoryRegex }
         }
       }

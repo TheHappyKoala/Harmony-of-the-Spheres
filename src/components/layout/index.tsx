@@ -23,7 +23,7 @@ const Layout = ({ children, currentPage }: Props): ReactElement => {
             active={currentPage === "scenarios"}
             activeCssClassName="navigation-menu-item-active"
           >
-            <Link to="/solar-system/all">Scenarios</Link>
+            <Link to="/scenarios/all">Scenarios</Link>
           </NavigationMenuItem>
         </NavigationMenu>
       </header>
