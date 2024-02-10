@@ -103,7 +103,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   );
 
   data?.scenariosJson.scenarios.forEach(({ scenario }) => {
-    const component = path.resolve("./src/templates/planetary-scenario.tsx");
+    const component = path.resolve("./src/templates/planetary-scenario/index.tsx");
     const { category, name } = scenario;
 
     createPage({
