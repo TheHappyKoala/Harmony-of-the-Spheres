@@ -36,7 +36,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
     context: {
       category: "all",
       subCategory: "all",
-      backgroundImage: `backgrounds/Home.jpg`,
     },
     defer: true,
   });
@@ -66,7 +65,9 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   categoryTree?.forEach(
     (scenarioCategoryBranch: ScenarioCategoryBranchType) => {
-      const component = path.resolve("./src/templates/scenarios-menu/index.tsx");
+      const component = path.resolve(
+        "./src/templates/scenarios-menu/index.tsx",
+      );
       const { name, subCategories } = scenarioCategoryBranch;
       const withSubCategories = subCategories.length;
       const categoryRegex = `/${name}/g`;
@@ -78,7 +79,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
           category: name,
           categoryRegex,
           subCategory: "all",
-          backgroundImage: `backgrounds/${name}.jpg`,
         },
         defer: true,
       });
@@ -93,7 +93,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
               categoryRegex,
               subCategory,
               subCategoryRegex: `/${subCategory}/g`,
-              backgroundImage: `backgrounds/${name} - ${subCategory}.jpg`,
             },
             defer: true,
           });
@@ -103,7 +102,9 @@ export const createPages: GatsbyNode["createPages"] = async ({
   );
 
   data?.scenariosJson.scenarios.forEach(({ scenario }) => {
-    const component = path.resolve("./src/templates/planetary-scenario/index.tsx");
+    const component = path.resolve(
+      "./src/templates/planetary-scenario/index.tsx",
+    );
     const { category, name } = scenario;
 
     createPage({

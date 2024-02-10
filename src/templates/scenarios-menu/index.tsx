@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import { getImage, GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import Layout from "../../components/layout";
 import NavigationMenu from "../../components/navigation-menu";
 import NavigationMenuItem from "../../components/navigation-menu/navigation-menu-item";
@@ -19,7 +18,6 @@ type Props = {
       }[];
     };
     categoryTree: ScenariosCategoryTreeType;
-    background: IGatsbyImageData;
   };
   pageContext: {
     category: string;
@@ -28,21 +26,14 @@ type Props = {
 };
 
 const ScenarioMenu = ({
-  data: { categoryTree, scenariosJson, background },
+  data: { categoryTree, scenariosJson },
   pageContext: { category, subCategory },
 }: Props) => {
-  const backgroundImage = getImage(background) as IGatsbyImageData;
-
   const subCategories = categoryTree?.find(({ name }) => name === category)
     ?.subCategories;
 
   return (
     <Layout currentPage="scenarios">
-      <GatsbyImage
-        image={backgroundImage}
-        className="background-image"
-        alt="Website background image"
-      />
       <section className="scenarios-navigation-menu-wrapper">
         <NavigationMenu cssClassName="navigation-menu">
           <NavigationMenuItem
@@ -120,11 +111,7 @@ const ScenarioMenu = ({
 };
 
 export const pageQuery = graphql`
-  query (
-    $categoryRegex: String = "//g"
-    $subCategoryRegex: String = "//g"
-    $backgroundImage: String
-  ) {
+  query ($categoryRegex: String = "//g", $subCategoryRegex: String = "//g") {
     scenariosJson: allScenariosJson(
       filter: {
         category: {
@@ -147,16 +134,6 @@ export const pageQuery = graphql`
     categoryTree {
       name
       subCategories
-    }
-
-    background: file(relativePath: { eq: $backgroundImage }) {
-      childImageSharp {
-        gatsbyImageData(
-          placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
-          layout: FULL_WIDTH
-        )
-      }
     }
   }
 `;
