@@ -3,6 +3,8 @@ import { Link } from "gatsby";
 import NavigationMenu from "../navigation-menu";
 import NavigationMenuItem from "../navigation-menu/navigation-menu-item";
 
+import "the-new-css-reset/css/reset.css";
+
 type Props = {
   children: ReactNode;
   currentPage: string;
