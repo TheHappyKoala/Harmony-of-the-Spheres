@@ -5,5 +5,9 @@
   --theme-color-4: #90e0ef;
   --theme-color-5: #caf0f8;
 
-  --page-header-height: 50px;
+  --header-font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif; 
+
+  --page-header-height: 4rem;
+
+  font-size: 62.5%;
 }

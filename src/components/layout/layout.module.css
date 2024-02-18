@@ -1,6 +1,11 @@
-@import "../../theme/variables.css";
+@import "../../theme/theme.css";
 
 .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
   height: var(--page-header-height);
   background-color: var(--theme-color-1);
+  box-shadow: 0 6px 4px -4px var(--theme-color-4);
 }

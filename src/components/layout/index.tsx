@@ -5,6 +5,7 @@ import NavigationMenuItem from "../navigation-menu/navigation-menu-item";
 import Background from "../background";
 
 import "the-new-css-reset/css/reset.css";
+import { header1 } from "../../theme/headers.module.css";
 import { pageHeader } from "./layout.module.css";
 
 type Props = {
@@ -18,7 +19,7 @@ const Layout = ({ children, currentPage }: Props): ReactElement => {
       <header className={pageHeader}>
         <div>
           <Link to="/">
-            <h1 className="site-title">Gravity Simulator</h1>
+            <h1 className={header1}>Gravity Simulator</h1>
           </Link>
         </div>
         <NavigationMenu cssClassName="navigation-menu">
