@@ -1,3 +1,4 @@
 {
-  "*.ts": ["prettier --write", "tsc --noEmit"]
+  "*.ts": ["prettier --write", "tsc --noEmit"],
+  "*.css": ["prettier --write"]
 }
