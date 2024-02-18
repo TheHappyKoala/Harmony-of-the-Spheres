@@ -1,0 +1,80 @@
+@import "../../theme/variables.css";
+
+.background-wrapper {
+  position: absolute;
+  top: var(--page-header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  height: calc(100vh - var(--page-header-height));
+  overflow: hidden;
+  background-image: linear-gradient(
+    to bottom,
+    var(--theme-color-1),
+    var(--theme-color-2)
+  );
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: radial-gradient(
+      3px 3px at 20px 30px,
+      turquoise,
+      transparent
+    ),
+    radial-gradient(2px 2px at 40px 70px, white, transparent),
+    radial-gradient(3px 3px at 50px 160px, yellow, transparent),
+    radial-gradient(2px 2px at 90px 40px, skyblue, transparent),
+    radial-gradient(3px 3px at 130px 80px, green, transparent),
+    radial-gradient(2px 2px at 160px 120px, pink, transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+.planet {
+  position: absolute;
+  bottom: -8vh;
+  right: -12vw;
+  height: 30vw;
+  width: 30vw;
+  border-radius: 100%;
+  background-color: var(--theme-color-2);
+  box-shadow: 0 0 8px 8px var(--theme-color-3);
+}
+
+@keyframes host-star-corona-pulse {
+  0% {
+    box-shadow:
+      0 0 40px 10px yellow,
+      0 0 25px 10px yellow inset;
+  }
+  50% {
+    box-shadow:
+      0 0 45px 15px yellow,
+      0 0 25px 10px yellow inset;
+  }
+  100% {
+    box-shadow:
+      0 0 40px 10px yellow,
+      0 0 25px 10px yellow inset;
+  }
+}
+
+.planet-host-star {
+  position: absolute;
+  top: 30vh;
+  left: 30vw;
+  border-radius: 100%;
+  width: 5vw;
+  height: 5vw;
+  background-color: orange;
+  box-shadow:
+    0 0 35px 5px yellow,
+    0 0 25px 10px yellow inset;
+  animation: host-star-corona-pulse 3s ease-in-out infinite;
+}

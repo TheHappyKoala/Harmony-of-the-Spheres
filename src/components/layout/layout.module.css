@@ -1,0 +1,6 @@
+@import "../../theme/variables.css";
+
+.page-header {
+  height: var(--page-header-height);
+  background-color: var(--theme-color-1);
+}
