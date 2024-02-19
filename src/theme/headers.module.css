@@ -1,14 +1,17 @@
 @import "./theme.css";
 
-.header-1, .header-2 {
-    font-family: var(--header-font-family);
-    color: var(--theme-color-5);
+.header-1,
+.header-2 {
+  font-family: var(--header-font-family);
+  color: var(--theme-color-4);
+  text-shadow: 0 0 20px var(--theme-color-5);
+  font-weight: 100;
 }
 
 .header-1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 .header-2 {
-    font-size: 2rem;
-  }
+  font-size: 2.5rem;
+}
