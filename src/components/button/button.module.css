@@ -1,0 +1,25 @@
+.button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--theme-color-2);
+  font-size: 1.3rem;
+  color: var(--theme-color-5);
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.25s color;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: var(--theme-color-5);
+  box-shadow: 0 0 4px var(--theme-color-5);
+}
+
+.button:active {
+  box-shadow: inset var(--theme-color-1) 0px 0px 5px;
+}
