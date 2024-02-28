@@ -1,0 +1,23 @@
+@import "../../theme/theme.css";
+
+.navigation-menu {
+  display: flex;
+  list-style: none;
+  background-color: var(--theme-color-1);
+  font-size: 1.2rem;
+  width: fit-content;
+}
+
+.navigation-menu-item {
+  padding: 1rem;
+}
+
+.navigation-menu-item:hover {
+  text-shadow: 0 0 5px var(--theme-color-5);
+}
+
+.navigation-menu-item-active {
+  text-shadow: 0 0 5px var(--theme-color-5);
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}

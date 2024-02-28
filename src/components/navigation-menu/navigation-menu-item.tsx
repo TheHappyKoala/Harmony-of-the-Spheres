@@ -1,24 +1,28 @@
 import React, { ReactElement, ReactNode } from "react";
 
+import {
+  navigationMenuItem,
+  navigationMenuItemActive,
+} from "./navigation-menu.module.css";
+
 interface NavItemProps {
   active: boolean;
   children: ReactNode;
-  cssClassName?: string;
-  activeCssClassName?: string;
+  dataTextContent?: string;
   callback?: <T>(t: T) => void;
 }
 
 const NavigationMenuItem = ({
   active,
   children,
-  cssClassName,
-  activeCssClassName,
+  dataTextContent,
   callback,
 }: NavItemProps): ReactElement => (
   <li
-    className={`${cssClassName ? cssClassName : ""} ${
-      active && activeCssClassName ? activeCssClassName : ""
+    className={`${navigationMenuItem} ${
+      active ? navigationMenuItemActive : ""
     }`}
+    data-text-content={dataTextContent}
     onClick={callback}
   >
     {children}
