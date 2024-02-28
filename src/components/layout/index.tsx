@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, Fragment } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import { Link } from "gatsby";
 import NavigationMenu from "../navigation-menu";
 import NavigationMenuItem from "../navigation-menu/navigation-menu-item";
@@ -6,7 +6,12 @@ import Background from "../background";
 
 import "the-new-css-reset/css/reset.css";
 import { header1 } from "../../theme/headers.module.css";
-import { pageHeader } from "./layout.module.css";
+import {
+  pageWrapper,
+  pageHeader,
+  pageMain,
+  pageFooter,
+} from "./layout.module.css";
 
 type Props = {
   children: ReactNode;
@@ -15,26 +20,49 @@ type Props = {
 
 const Layout = ({ children, currentPage }: Props): ReactElement => {
   return (
-    <Fragment>
+    <section className={pageWrapper}>
       <header className={pageHeader}>
         <div>
           <Link to="/">
             <h1 className={header1}>Gravity Simulator</h1>
           </Link>
         </div>
-        <NavigationMenu cssClassName="navigation-menu">
-          <NavigationMenuItem
-            cssClassName="navigation-menu-item"
-            active={currentPage === "scenarios"}
-            activeCssClassName="navigation-menu-item-active"
-          >
-            <Link to="/scenarios/all">Scenarios</Link>
-          </NavigationMenuItem>
-        </NavigationMenu>
+        <nav>
+          <NavigationMenu>
+            <Link to="/scenarios/all">
+              <NavigationMenuItem active={currentPage === "scenarios"}>
+                Scenarios
+              </NavigationMenuItem>
+            </Link>
+            <Link to="/about">
+              <NavigationMenuItem active={currentPage === "about"}>
+                About
+              </NavigationMenuItem>
+            </Link>
+            <Link to="/changelog">
+              <NavigationMenuItem active={currentPage === "changelog"}>
+                Changelog
+              </NavigationMenuItem>
+            </Link>
+            <Link to="/credits">
+              <NavigationMenuItem active={currentPage === "credits"}>
+                Credits
+              </NavigationMenuItem>
+            </Link>
+            <Link to="/contact">
+              <NavigationMenuItem active={currentPage === "contact"}>
+                Contact
+              </NavigationMenuItem>
+            </Link>
+          </NavigationMenu>
+        </nav>
       </header>
-      <main>{children}</main>
+      <main className={pageMain}>{children}</main>
+      <footer className={pageFooter}>
+        <small>Copyright &copy; Darrell Arjuna Huffman 2024</small>
+      </footer>
       <Background />
-    </Fragment>
+    </section>
   );
 };
 

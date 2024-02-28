@@ -7,7 +7,18 @@
 
   --header-font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 
-  --page-header-height: 5rem;
+  --page-header-height: 4rem;
+  --page-footer-height: 5rem;
 
+  --page-section-padding: 1rem;
+
+  --border: 1px solid var(--theme-color-2);
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 62.5%;
+  color: var(--theme-color-5);
+}
+
+p {
+  margin-bottom: 2rem;
 }

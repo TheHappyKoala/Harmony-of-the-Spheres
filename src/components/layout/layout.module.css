@@ -1,11 +1,36 @@
 @import "../../theme/theme.css";
 
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .page-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
-  height: var(--page-header-height);
   background-color: var(--theme-color-1);
-  box-shadow: 0 2px 1px 1px var(--theme-color-2);
+  padding: 0 var(--page-section-padding);
+  height: var(--page-header-height);
+  border-bottom: var(--border);
+}
+
+.page-main {
+  flex-grow: 1;
+  font-size: 1.2rem;
+}
+
+.page-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: var(--page-footer-height);
+  background-color: var(--theme-color-1);
+  border-top: var(--border);
+  font-size: 1.2rem;
+  font-style: italic;
 }
