@@ -2,12 +2,12 @@
 
 .background-wrapper {
   position: absolute;
-  top: var(--page-header-height);
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: -1;
-  height: calc(100vh - var(--page-header-height));
+  height: 100vh;
   overflow: hidden;
   background-image: linear-gradient(
     to bottom,
