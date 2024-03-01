@@ -1,5 +1,10 @@
 import React, { ReactElement, useEffect, Fragment, useRef } from "react";
 import PlanetaryScene from "../../scene/scenes/planetary-scene";
+import {
+  fullScreenCanvasElement,
+  webglCanvas,
+  labels2dCanvas,
+} from "./renderer.module.css";
 
 export default (): ReactElement => {
   const labelsCanvas = useRef<HTMLCanvasElement>(null);
@@ -19,11 +24,11 @@ export default (): ReactElement => {
     <Fragment>
       <canvas
         ref={webGlCanvas}
-        className="canvas-element canvas-element--webGlCanvas"
+        className={`${fullScreenCanvasElement} ${webglCanvas}`}
       />
       <canvas
         ref={labelsCanvas}
-        className="canvas-element canvas-element--graphics2dCanvas"
+        className={`${fullScreenCanvasElement} ${labels2dCanvas}`}
       />
     </Fragment>
   );
