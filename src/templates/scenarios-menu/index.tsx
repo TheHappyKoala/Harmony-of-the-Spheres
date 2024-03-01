@@ -7,6 +7,14 @@ import { kebabCase } from "../../utils/text-utils";
 import { ScenariosCategoryTreeType } from "../../types/category";
 import { ScenarioCategoryType } from "../../types/scenario";
 
+import {
+  scenariosMenuWrapper,
+  navigationMenuCssModifier,
+  scenariosListWrapper,
+  scenariosListItem,
+  scenariosListItemTitle,
+} from "./scenarios-menu.module.css";
+
 type Props = {
   data: {
     scenariosJson: {
@@ -34,22 +42,13 @@ const ScenarioMenu = ({
 
   return (
     <Layout currentPage="scenarios">
-      <section className="scenarios-navigation-menu-wrapper">
-        <NavigationMenu cssClassName="navigation-menu">
-          <NavigationMenuItem
-            cssClassName="navigation-menu-item"
-            active={category === "all"}
-            activeCssClassName="navigation-menu-item-active"
-          >
+      <section className={scenariosMenuWrapper}>
+        <NavigationMenu cssModifier={navigationMenuCssModifier}>
+          <NavigationMenuItem active={category === "all"}>
             <Link to={`/scenarios/all`}>All</Link>
           </NavigationMenuItem>
-
           {categoryTree.map((categoryBranch) => (
-            <NavigationMenuItem
-              cssClassName="navigation-menu-item"
-              active={category === categoryBranch.name}
-              activeCssClassName="navigation-menu-item-active"
-            >
+            <NavigationMenuItem active={category === categoryBranch.name}>
               <Link
                 to={`/scenarios/${kebabCase(categoryBranch.name)}${
                   categoryBranch.subCategories.length ? "/all" : ""
@@ -61,20 +60,12 @@ const ScenarioMenu = ({
           ))}
         </NavigationMenu>{" "}
         {subCategories?.length ? (
-          <NavigationMenu cssClassName="navigation-menu">
-            <NavigationMenuItem
-              cssClassName="navigation-menu-item"
-              active={subCategory === "all"}
-              activeCssClassName="navigation-menu-item-active"
-            >
+          <NavigationMenu cssModifier={navigationMenuCssModifier}>
+            <NavigationMenuItem active={subCategory === "all"}>
               <Link to={`/scenarios/${kebabCase(category)}/all`}>All</Link>
             </NavigationMenuItem>
             {subCategories.map((subCategoryEntry) => (
-              <NavigationMenuItem
-                cssClassName="navigation-menu-item"
-                active={subCategory === subCategoryEntry}
-                activeCssClassName="navigation-menu-item-active"
-              >
+              <NavigationMenuItem active={subCategory === subCategoryEntry}>
                 <Link
                   to={`/scenarios/${kebabCase(category)}/${kebabCase(
                     subCategoryEntry,
@@ -87,7 +78,7 @@ const ScenarioMenu = ({
           </NavigationMenu>
         ) : null}
       </section>
-      <section className="scenarios-list">
+      <section className={scenariosListWrapper}>
         {scenariosJson.scenarios.map(({ scenario }) => (
           <Link
             to={`/scenarios/${kebabCase(category)}${
@@ -98,10 +89,8 @@ const ScenarioMenu = ({
                 : `/${kebabCase(scenario.name)}`
             }`}
           >
-            <div className="scenarios-list__scenarios-list-item">
-              <span className="scenarios-list__scenarios-list-item-name">
-                {scenario.name}
-              </span>
+            <div className={scenariosListItem}>
+              <span className={scenariosListItemTitle}>{scenario.name}</span>
             </div>
           </Link>
         ))}
