@@ -1,6 +1,9 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
+import Button from "../components/button";
+
+import { bannerWrapper, bannerText } from "./index.module.css";
 
 type Props = {
   data: {
@@ -21,13 +24,12 @@ const Home = ({
 }: Props) => {
   return (
     <Layout>
-      <section className="home-page-banner">
-        <p className="home-page-banner__description">{description}</p>
+      <section className={bannerWrapper}>
+        <p className={bannerText}>{description}</p>
         <Link to="/scenarios/all">
-          <div className="home-page-banner__explore-button">
-            <span>Explore Scenarios</span>{" "}
-            <i className="fa-solid fa-angles-right" />
-          </div>
+          <Button callback={() => {}}>
+            <span>Explore Scenarios</span>
+          </Button>
         </Link>
       </section>
     </Layout>
