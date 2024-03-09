@@ -1,0 +1,22 @@
+.planetary-scenario-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--theme-color-1);
+  border-top: var(--border);
+}
+
+.play-button-modifier {
+  width: fit-content;
+}
+
+.simulation-controls-tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  overflow-x: auto;
+  border-left: var(--border);
+}

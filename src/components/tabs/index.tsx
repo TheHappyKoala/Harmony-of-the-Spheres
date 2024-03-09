@@ -11,22 +11,16 @@ import NavigationMenuItem from "../navigation-menu/navigation-menu-item";
 
 type Props = {
   children: ReactNode;
-  contentClassName?: string;
-  navigationMenuCssClassName?: string;
-  navigationMenuItemCssClassName?: string;
-  navigationMenuItemActiveCssClassName?: string;
+  contentWrapperCssClassName?: string;
+  navigationMenuCssModifier?: string;
   closeButton?: boolean;
-  closeButtonIconCssClassName?: string;
 };
 
 const Tabs = ({
   children,
-  contentClassName,
-  navigationMenuCssClassName,
-  navigationMenuItemCssClassName,
-  navigationMenuItemActiveCssClassName,
+  contentWrapperCssClassName,
+  navigationMenuCssModifier,
   closeButton,
-  closeButtonIconCssClassName,
 }: Props): ReactElement => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(-1);
 
@@ -34,14 +28,12 @@ const Tabs = ({
 
   return (
     <div>
-      <NavigationMenu cssClassName={navigationMenuCssClassName}>
+      <NavigationMenu cssModifier={navigationMenuCssModifier}>
         {content.map((child, i) => {
           return (
             <NavigationMenuItem
               active={selectedTabIndex === i}
-              activeCssClassName={navigationMenuItemActiveCssClassName}
               callback={() => setSelectedTabIndex(i)}
-              cssClassName={navigationMenuItemCssClassName}
             >
               {isValidElement<{
                 ["data-label"]?: string;
@@ -61,14 +53,13 @@ const Tabs = ({
         })}
       </NavigationMenu>
       {selectedTabIndex !== -1 ? (
-        <div className={contentClassName ? contentClassName : ""}>
+        <div
+          className={
+            contentWrapperCssClassName ? contentWrapperCssClassName : ""
+          }
+        >
           {closeButton && (
-            <i
-              className={
-                closeButtonIconCssClassName ? closeButtonIconCssClassName : ""
-              }
-              onClick={() => setSelectedTabIndex(-1)}
-            />
+            <i className="" onClick={() => setSelectedTabIndex(-1)} />
           )}
           {content[selectedTabIndex]}
         </div>

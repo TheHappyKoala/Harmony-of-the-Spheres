@@ -28,6 +28,7 @@ const Home = ({
         <p className={bannerText}>{description}</p>
         <Link to="/scenarios/all">
           <Button callback={() => {}}>
+            <i className="fa-solid fa-magnifying-glass" />
             <span>Explore Scenarios</span>
           </Button>
         </Link>

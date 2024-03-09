@@ -10,13 +10,16 @@
 
 .navigation-menu-item {
   padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.navigation-menu-item:hover {
+.navigation-menu-item:hover > span {
   text-shadow: 0 0 5px var(--theme-color-5);
 }
 
-.navigation-menu-item-active {
+.navigation-menu-item-active > span {
   text-shadow: 0 0 5px var(--theme-color-5);
   text-decoration: underline;
   text-underline-offset: 0.3rem;

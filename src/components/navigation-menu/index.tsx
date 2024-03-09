@@ -4,7 +4,7 @@ import { navigationMenu } from "./navigation-menu.module.css";
 
 type Props = {
   children: ReactNode[] | ReactNode;
-  cssModifier?: string;
+  cssModifier?: string | undefined;
 };
 
 const NavigationMenu = ({ children, cssModifier }: Props) => (

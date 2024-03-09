@@ -8,8 +8,10 @@ export default (textureLoader: THREE.TextureLoader): THREE.Mesh => {
     20,
   );
 
+  const texture = textureLoader.load("/textures/milkyway.jpg");
+
   const material = new THREE.MeshBasicMaterial({
-    map: textureLoader.load("/textures/milkyway.jpg"),
+    map: texture,
     side: THREE.BackSide,
   });
 

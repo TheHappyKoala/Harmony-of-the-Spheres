@@ -8,21 +8,18 @@ import {
 interface NavItemProps {
   active: boolean;
   children: ReactNode;
-  dataTextContent?: string;
   callback?: <T>(t: T) => void;
 }
 
 const NavigationMenuItem = ({
   active,
   children,
-  dataTextContent,
   callback,
 }: NavItemProps): ReactElement => (
   <li
     className={`${navigationMenuItem} ${
       active ? navigationMenuItemActive : ""
     }`}
-    data-text-content={dataTextContent}
     onClick={callback}
   >
     {children}

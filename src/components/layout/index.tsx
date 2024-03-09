@@ -12,6 +12,9 @@ import {
   pageMain,
   pageFooter,
 } from "./layout.module.css";
+import "../../assets/fontawesome/css/fontawesome.min.css";
+import "../../assets/fontawesome/css/regular.min.css";
+import "../../assets/fontawesome/css/solid.min.css";
 
 type Props = {
   children: ReactNode;
@@ -31,27 +34,32 @@ const Layout = ({ children, currentPage }: Props): ReactElement => {
           <NavigationMenu>
             <Link to="/scenarios/all">
               <NavigationMenuItem active={currentPage === "scenarios"}>
-                Scenarios
+                <i className="fa-solid fa-sun" />
+                <span>Scenarios</span>
               </NavigationMenuItem>
             </Link>
             <Link to="/about">
               <NavigationMenuItem active={currentPage === "about"}>
-                About
+                <i className="fa-solid fa-circle-info" />
+                <span>About</span>
               </NavigationMenuItem>
             </Link>
             <Link to="/changelog">
               <NavigationMenuItem active={currentPage === "changelog"}>
-                Changelog
+                <i className="fa-solid fa-file-lines" />
+                <span>Changelog</span>
               </NavigationMenuItem>
             </Link>
             <Link to="/credits">
               <NavigationMenuItem active={currentPage === "credits"}>
-                Credits
+                <i className="fa-solid fa-medal" />
+                <span>Credits</span>
               </NavigationMenuItem>
             </Link>
             <Link to="/contact">
               <NavigationMenuItem active={currentPage === "contact"}>
-                Contact
+                <i className="fa-solid fa-envelope" />
+                <span>Contact</span>
               </NavigationMenuItem>
             </Link>
           </NavigationMenu>
