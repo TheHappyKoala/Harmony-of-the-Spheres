@@ -5,9 +5,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--theme-color-1);
-  box-shadow: 0 0 10px var(--theme-color-3);
-  border-radius: 0.5rem;
+  background-color: #111;
+  border: var(--border);
 }
 
 .banner-text {

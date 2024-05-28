@@ -12,6 +12,7 @@ import NavigationMenuItem from "../navigation-menu/navigation-menu-item";
 type Props = {
   children: ReactNode;
   contentWrapperCssClassName?: string;
+  contentWrapperCloseButtonCssClassName?: string;
   navigationMenuCssModifier?: string;
   closeButton?: boolean;
 };
@@ -19,6 +20,7 @@ type Props = {
 const Tabs = ({
   children,
   contentWrapperCssClassName,
+  contentWrapperCloseButtonCssClassName,
   navigationMenuCssModifier,
   closeButton,
 }: Props): ReactElement => {
@@ -27,7 +29,7 @@ const Tabs = ({
   const content = Children.toArray(children);
 
   return (
-    <div>
+    <Fragment>
       <NavigationMenu cssModifier={navigationMenuCssModifier}>
         {content.map((child, i) => {
           return (
@@ -44,7 +46,7 @@ const Tabs = ({
                     <i className={child.props["data-icon"]} />
                   ) : null}
                   {child.props["data-label"] ? (
-                    <label>{child.props["data-label"]}</label>
+                    <span>{child.props["data-label"]}</span>
                   ) : null}
                 </Fragment>
               )}
@@ -59,12 +61,19 @@ const Tabs = ({
           }
         >
           {closeButton && (
-            <i className="" onClick={() => setSelectedTabIndex(-1)} />
+            <i
+              className={`fa-solid fa-xmark ${
+                contentWrapperCloseButtonCssClassName
+                  ? contentWrapperCloseButtonCssClassName
+                  : ""
+              }`}
+              onClick={() => setSelectedTabIndex(-1)}
+            />
           )}
           {content[selectedTabIndex]}
         </div>
       ) : null}
-    </div>
+    </Fragment>
   );
 };
 

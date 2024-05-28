@@ -3,8 +3,6 @@
 .header-1,
 .header-2 {
   font-family: var(--header-font-family);
-  color: var(--theme-color-4);
-  text-shadow: 0 0 20px var(--theme-color-5);
   font-weight: 100;
 }
 

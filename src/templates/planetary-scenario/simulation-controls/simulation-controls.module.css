@@ -5,18 +5,50 @@
   z-index: 2;
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
   background-color: var(--theme-color-1);
   border-top: var(--border);
+  height: 5rem;
 }
 
 .play-button-modifier {
+  background-color: transparent;
   width: fit-content;
+  margin-left: 0.75rem;
+  border: none;
+}
+
+.play-button-modifier:hover {
+  color: var(--theme-color-5);
+  box-shadow: none;
+}
+
+.play-button-modifier:active {
+  box-shadow: none;
 }
 
 .simulation-controls-tabs {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  width: 30rem;
   overflow-x: auto;
   border-left: var(--border);
+}
+
+.simulation-controls-content-wrapper {
+  position: absolute;
+  bottom: var(--page-footer-height);
+  right: 0;
+  height: calc(100vh - var(--page-footer-height));
+  z-index: 2;
+  width: 30rem;
+  border-left: var(--border);
+  background-color: var(--theme-color-1);
+  padding: 1rem;
+}
+
+.simulation-controls-content-wrapper-close-button {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
 }

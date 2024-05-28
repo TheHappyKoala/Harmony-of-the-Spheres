@@ -1,18 +1,18 @@
 :root {
-  --theme-color-1: #03045e;
-  --theme-color-2: #0077b6;
-  --theme-color-3: #00b4d8;
-  --theme-color-4: #90e0ef;
-  --theme-color-5: #caf0f8;
+  --theme-color-1: #000;
+  --theme-color-2: #222;
+  --theme-color-3: #333;
+  --theme-color-4: #444;
+  --theme-color-5: #999;
 
   --header-font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 
-  --page-header-height: 4rem;
+  --page-header-height: 5rem;
   --page-footer-height: 5rem;
 
   --page-section-padding: 1rem;
 
-  --border: 1px solid var(--theme-color-2);
+  --border: 1px solid var(--theme-color-4);
 
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 62.5%;

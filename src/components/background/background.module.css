@@ -1,7 +1,15 @@
 @import "../../theme/theme.css";
 
+/*
+  --theme-color-1: #03045e;
+  --theme-color-2: #0077b6;
+  --theme-color-3: #00b4d8;
+  --theme-color-4: #90e0ef;
+  --theme-color-5: #caf0f8;
+*/
+
 .background-wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -9,11 +17,7 @@
   z-index: -1;
   height: 100vh;
   overflow: hidden;
-  background-image: linear-gradient(
-    to bottom,
-    var(--theme-color-1),
-    var(--theme-color-2)
-  );
+  background: radial-gradient(circle at bottom, blue 0, black 100%);
 }
 
 .stars {
@@ -43,8 +47,8 @@
   height: 30vw;
   width: 30vw;
   border-radius: 100%;
-  background-color: var(--theme-color-2);
-  box-shadow: 0 0 8px 8px var(--theme-color-3);
+  background-color: #0077b6;
+  box-shadow: 0 0 8px 8px #00b4d8;
 }
 
 @keyframes host-star-corona-pulse {

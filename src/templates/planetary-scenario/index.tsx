@@ -5,6 +5,12 @@ import { ScenarioType } from "../../types/scenario";
 import useHydrateStore from "../../hooks/useHydrateStore";
 import PlanetaryScenarioFooter from "./simulation-controls";
 
+import "../../theme/theme.css";
+import "../../theme/headers.module.css";
+import "../../assets/fontawesome/css/fontawesome.min.css";
+import "../../assets/fontawesome/css/regular.min.css";
+import "../../assets/fontawesome/css/solid.min.css";
+
 type Props = {
   data: {
     scenariosJson: {

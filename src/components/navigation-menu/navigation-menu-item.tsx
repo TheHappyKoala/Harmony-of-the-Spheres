@@ -5,11 +5,11 @@ import {
   navigationMenuItemActive,
 } from "./navigation-menu.module.css";
 
-interface NavItemProps {
+type NavItemProps = {
   active: boolean;
   children: ReactNode;
   callback?: <T>(t: T) => void;
-}
+};
 
 const NavigationMenuItem = ({
   active,

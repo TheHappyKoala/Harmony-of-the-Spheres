@@ -19,7 +19,6 @@
   background-color: var(--theme-color-2);
   border: var(--border);
   height: 200px;
-  border-radius: 0.5rem;
 }
 
 .scenarios-list-item:hover {

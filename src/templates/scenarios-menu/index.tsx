@@ -44,36 +44,40 @@ const ScenarioMenu = ({
     <Layout currentPage="scenarios">
       <section className={scenariosMenuWrapper}>
         <NavigationMenu cssModifier={navigationMenuCssModifier}>
-          <NavigationMenuItem active={category === "all"}>
-            <Link to={`/scenarios/all`}>All</Link>
-          </NavigationMenuItem>
-          {categoryTree.map((categoryBranch) => (
-            <NavigationMenuItem active={category === categoryBranch.name}>
-              <Link
-                to={`/scenarios/${kebabCase(categoryBranch.name)}${
-                  categoryBranch.subCategories.length ? "/all" : ""
-                }`}
-              >
-                {categoryBranch.name}
-              </Link>
+          <Link to={`/scenarios/all`}>
+            <NavigationMenuItem active={category === "all"}>
+              <span>All</span>
             </NavigationMenuItem>
+          </Link>
+          {categoryTree.map((categoryBranch) => (
+            <Link
+              to={`/scenarios/${kebabCase(categoryBranch.name)}${
+                categoryBranch.subCategories.length ? "/all" : ""
+              }`}
+            >
+              <NavigationMenuItem active={category === categoryBranch.name}>
+                <span>{categoryBranch.name}</span>
+              </NavigationMenuItem>
+            </Link>
           ))}
         </NavigationMenu>{" "}
         {subCategories?.length ? (
           <NavigationMenu cssModifier={navigationMenuCssModifier}>
-            <NavigationMenuItem active={subCategory === "all"}>
-              <Link to={`/scenarios/${kebabCase(category)}/all`}>All</Link>
-            </NavigationMenuItem>
-            {subCategories.map((subCategoryEntry) => (
-              <NavigationMenuItem active={subCategory === subCategoryEntry}>
-                <Link
-                  to={`/scenarios/${kebabCase(category)}/${kebabCase(
-                    subCategoryEntry,
-                  )}`}
-                >
-                  {subCategoryEntry}
-                </Link>
+            <Link to={`/scenarios/${kebabCase(category)}/all`}>
+              <NavigationMenuItem active={subCategory === "all"}>
+                <span>All</span>
               </NavigationMenuItem>
+            </Link>
+            {subCategories.map((subCategoryEntry) => (
+              <Link
+                to={`/scenarios/${kebabCase(category)}/${kebabCase(
+                  subCategoryEntry,
+                )}`}
+              >
+                <NavigationMenuItem active={subCategory === subCategoryEntry}>
+                  <span>{subCategoryEntry}</span>
+                </NavigationMenuItem>
+              </Link>
             ))}
           </NavigationMenu>
         ) : null}
@@ -81,7 +85,7 @@ const ScenarioMenu = ({
       <section className={scenariosListWrapper}>
         {scenariosJson.scenarios.map(({ scenario }) => (
           <Link
-            to={`/scenarios/${kebabCase(category)}${
+            to={`/scenarios/${kebabCase(scenario.category.name)}${
               scenario.category.subCategory
                 ? `/${kebabCase(scenario.category.subCategory)}/${kebabCase(
                     scenario.name,

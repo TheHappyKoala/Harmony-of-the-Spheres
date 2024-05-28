@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { Fragment, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Button from "../../../components/button";
 import Tabs from "../../../components/tabs";
@@ -9,6 +9,8 @@ import {
   planetaryScenarioFooter,
   playButtonModifier,
   simulationControlsTabs,
+  simulationControlsContentWrapper,
+  simulationControlsContentWrapperCloseButton,
 } from "./simulation-controls.module.css";
 
 const PlanetaryScenarioFooter = () => {
@@ -28,33 +30,23 @@ const PlanetaryScenarioFooter = () => {
   return (
     <section className={planetaryScenarioFooter}>
       <Button callback={handlePlayButtonClick} cssModifier={playButtonModifier}>
-        {playing ? "stop" : "play"}
+        <i className={`fa-solid fa-${playing ? "pause" : "play"}`} />
       </Button>
-      <Tabs navigationMenuCssModifier={simulationControlsTabs}>
-        <div data-label="Integrator"></div>
-        <div data-label="Camera"></div>
-        <div data-label="Graphics"></div>
+      <Tabs
+        contentWrapperCssClassName={simulationControlsContentWrapper}
+        contentWrapperCloseButtonCssClassName={
+          simulationControlsContentWrapperCloseButton
+        }
+        navigationMenuCssModifier={simulationControlsTabs}
+        closeButton
+      >
+        <div data-label="Integrator" data-icon="fa-solid fa-gear"></div>
+        <div data-label="Graphics" data-icon="fa-solid fa-paintbrush"></div>
+        <div data-label="Masses" data-icon="fa-solid fa-globe"></div>
+        <div data-label="Add Mass" data-icon="fa-solid fa-plus"></div>
       </Tabs>
     </section>
   );
 };
-
-/*
-      <section className="planetary-scenario-bottom-panel">
-        <Button callback={handlePlayButtonClick}>
-          <i className={`fa-solid fa-${playing ? "pause" : "play"}`} />
-        </Button>
-        <Tabs
-          contentClassName="scenario-controls-content"
-          navigationMenuCssClassName="scenario-controls-menu"
-          navigationMenuItemCssClassName="scenario-controls-menu-navigation-item"
-          navigationMenuItemActiveCssClassName="scenario-controls-menu-navigation-item-active"
-        >
-          <div data-icon="fa-solid fa-video" data-label="Camera">
-            <CameraControls />
-          </div>
-        </Tabs>
-      </section>
-*/
 
 export default PlanetaryScenarioFooter;

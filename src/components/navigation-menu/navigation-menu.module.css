@@ -12,7 +12,9 @@
   padding: 1rem;
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  text-wrap: nowrap;
 }
 
 .navigation-menu-item:hover > span {
