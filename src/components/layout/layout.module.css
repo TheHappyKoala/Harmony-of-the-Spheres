@@ -64,6 +64,14 @@
   align-items: center;
 }
 
+p {
+  margin-bottom: 2rem;
+}
+
+i {
+  font-size: 1.7rem;
+}
+
 @media only screen and (min-width: 700px) {
   .display-hamburger-menu-button {
     display: none;

@@ -1,5 +1,3 @@
-@import "./theme.css";
-
 .header-1,
 .header-2 {
   font-family: var(--header-font-family);
