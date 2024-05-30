@@ -5,8 +5,8 @@ import {
   ScenarioCameraType,
   ScenarioMassesType,
 } from "../../types/scenario";
-import { modifyScenarioProperty } from "../../state/creators";
 import Dropdown from "../dropdown";
+import { modifyScenarioProperty } from "../../state/creators";
 
 const shouldSelectorNotRun = (
   prevState: { camera: ScenarioCameraType; masses: ScenarioMassesType },
@@ -37,12 +37,7 @@ const CameraControls = () => {
     <Fragment>
       <div className="input-wrapper">
         <label>Rotating Reference Frame</label>
-        <Dropdown
-          selectedOption={camera.rotatingReferenceFrame}
-          dropdownWrapperCssClassName="dropdown-wrapper"
-          selectedOptionCssClassName="dropdown-selected-option"
-          optionsWrapperCssClass="dropdown-options-wrapper"
-        >
+        <Dropdown selectedOption={camera.rotatingReferenceFrame}>
           {masses.map((mass) => {
             return (
               <div
@@ -64,12 +59,7 @@ const CameraControls = () => {
       </div>
       <div className="input-wrapper">
         <label>Camera Focus</label>
-        <Dropdown
-          selectedOption={camera.cameraFocus}
-          dropdownWrapperCssClassName="dropdown-wrapper"
-          selectedOptionCssClassName="dropdown-selected-option"
-          optionsWrapperCssClass="dropdown-options-wrapper"
-        >
+        <Dropdown selectedOption={camera.cameraFocus}>
           {masses.map((mass) => {
             return (
               <div

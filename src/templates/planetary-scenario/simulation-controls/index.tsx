@@ -1,10 +1,10 @@
-import React, { Fragment, useCallback } from "react";
+import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Button from "../../../components/button";
 import Tabs from "../../../components/tabs";
 import { modifyScenarioProperty } from "../../../state/creators";
 import { ScenarioType } from "../../../types/scenario";
-
+import CameraControls from "../../../components/camera-controls";
 import {
   planetaryScenarioFooter,
   playButtonModifier,
@@ -41,7 +41,9 @@ const PlanetaryScenarioFooter = () => {
         closeButton
       >
         <div data-label="Integrator" data-icon="fa-solid fa-gear"></div>
-        <div data-label="Graphics" data-icon="fa-solid fa-paintbrush"></div>
+        <div data-label="Camera" data-icon="fa-solid fa-video">
+          <CameraControls />
+        </div>
         <div data-label="Masses" data-icon="fa-solid fa-globe"></div>
         <div data-label="Add Mass" data-icon="fa-solid fa-plus"></div>
       </Tabs>

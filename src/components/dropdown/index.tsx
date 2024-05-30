@@ -6,22 +6,19 @@ import React, {
   useCallback,
   ReactNode,
 } from "react";
+import {
+  dropdownWrapper,
+  dropdownSelectedOption,
+  dropdownOptionsWrapper,
+  rotatedChevron,
+} from "./dropdown.module.css";
 
 type DropdownProps = {
   children: ReactNode;
   selectedOption: string;
-  dropdownWrapperCssClassName: string;
-  selectedOptionCssClassName: string;
-  optionsWrapperCssClass: string;
 };
 
-export default ({
-  children,
-  selectedOption,
-  dropdownWrapperCssClassName,
-  selectedOptionCssClassName,
-  optionsWrapperCssClass,
-}: DropdownProps): ReactElement => {
+export default ({ children, selectedOption }: DropdownProps): ReactElement => {
   const [displayOptions, setDisplayOptions] = useState(false);
 
   const handleOpenOptions = useCallback(() => {
@@ -45,21 +42,21 @@ export default ({
   }, [selectedOptionRef, setDisplayOptions, displayOptions]);
 
   return (
-    <div className={dropdownWrapperCssClassName}>
+    <div className={dropdownWrapper}>
       <div
         onClick={handleOpenOptions}
-        className={selectedOptionCssClassName}
+        className={dropdownSelectedOption}
         ref={selectedOptionRef}
       >
         {selectedOption}
         <i
           className={`fa fa-chevron-down ${
-            displayOptions ? "rotated-chevron" : ""
+            displayOptions ? rotatedChevron : ""
           }`}
         />
       </div>
       {displayOptions && (
-        <div ref={optionsWrapper} className={optionsWrapperCssClass}>
+        <div ref={optionsWrapper} className={dropdownOptionsWrapper}>
           {children}
         </div>
       )}
