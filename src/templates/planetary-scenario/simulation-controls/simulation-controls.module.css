@@ -45,6 +45,7 @@
   background-color: var(--theme-color-1);
   padding: 1rem;
   border-top: var(--border);
+  font-size: 1.2rem;
 }
 
 @media screen and (min-width: 500px) {
