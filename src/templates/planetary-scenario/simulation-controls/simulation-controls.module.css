@@ -9,6 +9,7 @@
   background-color: var(--theme-color-1);
   border-top: var(--border);
   height: var(--page-footer-height);
+  --controls-menu-width: 35rem;
 }
 
 .play-button-modifier {
@@ -30,7 +31,7 @@
 .simulation-controls-tabs {
   display: flex;
   justify-content: space-between;
-  width: 30rem;
+  width: var(--controls-menu-width);
   overflow-x: auto;
   border-left: var(--border);
 }
@@ -51,7 +52,7 @@
 @media screen and (min-width: 500px) {
   .simulation-controls-content-wrapper {
     height: calc(100vh - var(--page-footer-height));
-    width: 30rem;
+    width: var(--controls-menu-width);
     border-left: var(--border);
     border-top: none;
     background-color: var(--theme-color-1);
