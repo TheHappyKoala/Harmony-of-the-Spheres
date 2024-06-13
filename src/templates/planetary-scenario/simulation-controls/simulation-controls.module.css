@@ -39,16 +39,26 @@
   position: absolute;
   bottom: var(--page-footer-height);
   right: 0;
-  height: calc(100vh - var(--page-footer-height));
+  height: 45vh;
   z-index: 2;
-  width: 30rem;
-  border-left: var(--border);
+  width: 100vw;
   background-color: var(--theme-color-1);
   padding: 1rem;
+  border-top: var(--border);
+}
+
+@media screen and (min-width: 500px) {
+  .simulation-controls-content-wrapper {
+    height: calc(100vh - var(--page-footer-height));
+    width: 30rem;
+    border-left: var(--border);
+    border-top: none;
+    background-color: var(--theme-color-1);
+  }
 }
 
 .simulation-controls-content-wrapper-close-button {
-  position: absolute;
-  right: 1rem;
+  float: right;
+  margin-bottom: 2rem;
   cursor: pointer;
 }
