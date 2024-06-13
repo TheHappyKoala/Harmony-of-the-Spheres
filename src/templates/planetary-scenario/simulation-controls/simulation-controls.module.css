@@ -8,7 +8,7 @@
   align-items: stretch;
   background-color: var(--theme-color-1);
   border-top: var(--border);
-  height: 5rem;
+  height: var(--page-footer-height);
 }
 
 .play-button-modifier {
