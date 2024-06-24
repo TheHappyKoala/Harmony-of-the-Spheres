@@ -8,7 +8,6 @@ import {
 import Dropdown from "../dropdown";
 import { modifyScenarioProperty } from "../../state/creators";
 import { control } from "../../theme/controls.module.css";
-import { header2 } from "../../theme/headers.module.css";
 
 const shouldSelectorNotRun = (
   prevState: { camera: ScenarioCameraType; masses: ScenarioMassesType },
@@ -37,7 +36,7 @@ const CameraControls = () => {
 
   return (
     <Fragment>
-      <h2 className={header2}>Camera</h2>
+      <h2>Camera</h2>
       <div className={control}>
         <label>Rotating Reference Frame</label>
         <Dropdown selectedOption={camera.rotatingReferenceFrame}>

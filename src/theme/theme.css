@@ -18,3 +18,22 @@
   font-size: 62.5%;
   color: var(--theme-color-5);
 }
+
+h1,
+h2,
+h3 {
+  font-family: var(--header-font-family);
+  font-weight: 100;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
