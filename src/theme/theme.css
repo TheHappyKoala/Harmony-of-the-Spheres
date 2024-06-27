@@ -1,22 +1,42 @@
 :root {
+  /* Theme palette variables */
+
   --theme-color-1: #000;
   --theme-color-2: #222;
   --theme-color-3: #333;
   --theme-color-4: #444;
   --theme-color-5: #999;
+  --theme-color-6: #fff;
+
+  /* Font variables */
+
+  --font-family: Verdana, Geneva, Tahoma, sans-serif;
+  --root-font-size: 62.5%;
+  --font-color: var(--theme-color-5);
+
+  /* Font header variables */
 
   --header-font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  --h1-font-size: 3rem;
+  --h2-font-size: 2.5rem;
+  --h3-font-size: 2rem;
+
+  /* Icon variables */
+
+  --icons-font-size: 2rem;
+
+  /* Layout variables */
 
   --page-header-height: 6rem;
   --page-footer-height: 6rem;
-
-  --page-section-padding: 1rem;
-
+  --scenario-controls-width-small-screens: 100%;
+  --scenario-controls-width-large-screens: 35rem;
+  --padding: 1rem;
   --border: 1px solid var(--theme-color-4);
 
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 62.5%;
-  color: var(--theme-color-5);
+  font-family: var(--font-family);
+  font-size: var(--root-font-size);
+  color: var(--font-color);
 }
 
 h1,
@@ -27,13 +47,17 @@ h3 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: var(--h1-font-size);
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: var(--h2-font-size);
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: var(--h3-font-size);
+}
+
+i {
+  font-size: var(--icons-font-size);
 }

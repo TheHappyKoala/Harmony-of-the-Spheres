@@ -1,6 +1,7 @@
 .button {
   width: 100%;
-  padding: 1rem;
+  height: fit-content;
+  padding: var(--padding);
   background-color: var(--theme-color-2);
   font-size: 1.3rem;
   color: var(--theme-color-5);
@@ -8,9 +9,13 @@
   font-weight: bold;
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   transition: 0.25s color;
   cursor: pointer;
   border: var(--border);
+}
+
+.button:hover {
+  color: var(--theme-color-6);
 }

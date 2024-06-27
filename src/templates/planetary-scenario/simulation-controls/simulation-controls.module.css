@@ -5,27 +5,17 @@
   z-index: 2;
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
   background-color: var(--theme-color-1);
   border-top: var(--border);
   height: var(--page-footer-height);
+  padding-left: var(--padding);
   --controls-menu-width: 35rem;
 }
 
 .play-button-modifier {
-  background-color: transparent;
   width: fit-content;
-  margin-left: 0.75rem;
-  border: none;
-}
-
-.play-button-modifier:hover {
-  color: var(--theme-color-5);
-  box-shadow: none;
-}
-
-.play-button-modifier:active {
-  box-shadow: none;
+  padding: var(--padding) calc(2 * var(--padding));
 }
 
 .simulation-controls-tabs {

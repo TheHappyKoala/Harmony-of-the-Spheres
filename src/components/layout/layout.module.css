@@ -9,12 +9,11 @@
 }
 
 .page-header {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--theme-color-1);
-  padding: 0 var(--page-section-padding);
+  padding: 0 var(--padding);
   height: var(--page-header-height);
   border-bottom: var(--border);
   overflow: hidden;
@@ -62,14 +61,6 @@
 .responsive-navigation-menu {
   flex-direction: column;
   align-items: center;
-}
-
-p {
-  margin-bottom: 2rem;
-}
-
-i {
-  font-size: 1.7rem;
 }
 
 @media only screen and (min-width: 700px) {
