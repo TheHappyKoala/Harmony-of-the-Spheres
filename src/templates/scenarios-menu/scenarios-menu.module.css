@@ -1,0 +1,45 @@
+@import "../../theme/theme.css";
+
+.scenarios-menu-wrapper {
+  background-color: var(--theme-color-1);
+}
+
+.navigation-menu-css-modifier {
+  width: 100%;
+  overflow-x: auto;
+  border-bottom: var(--border);
+}
+
+.scenarios-menu-item {
+  border-right: var(--border);
+}
+
+.scenarios-list-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-content: center;
+  grid-gap: 10rem;
+  margin-top: 4rem;
+}
+
+.scenarios-list-item {
+  position: relative;
+  background-color: var(--theme-color-2);
+  border: var(--border);
+  height: 200px;
+}
+
+.scenarios-list-item:hover {
+  box-shadow: 0 0 10px var(--theme-color-4);
+}
+
+.scenarios-list-item-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--theme-color-1);
+  border-top: var(--border);
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}

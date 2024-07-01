@@ -1,0 +1,91 @@
+.planetary-scenario-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--theme-color-1);
+  border-top: var(--border);
+  height: var(--page-footer-height);
+  padding-left: var(--padding);
+}
+
+.play-button-modifier {
+  width: fit-content;
+  padding: var(--padding) calc(2 * var(--padding));
+}
+
+.simulation-controls-tabs {
+  display: flex;
+  align-items: center;
+  width: var(--scenario-controls-tabs-width-small-screens);
+  overflow-x: auto;
+}
+
+.simulation-control-tab {
+  height: var(--page-footer-height);
+  flex: 1 1 0;
+  border-right: var(--border);
+}
+
+.simulation-control-tab:first-child {
+  border-left: var(--border);
+}
+
+.simulation-control-tab:last-child {
+  border-right: none;
+}
+
+.simulation-controls-content-wrapper {
+  position: absolute;
+  bottom: var(--page-footer-height);
+  right: 0;
+  height: 45vh;
+  z-index: 2;
+  width: 100vw;
+  background-color: var(--theme-color-1);
+  padding: 1rem;
+  border-top: var(--border);
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 500px) {
+  .simulation-controls-content-wrapper {
+    height: calc(100vh - var(--page-footer-height));
+    width: var(--scenario-controls-width-medium-screens);
+    border-left: var(--border);
+    border-top: none;
+    background-color: var(--theme-color-1);
+  }
+
+  .simulation-controls-tabs {
+    display: flex;
+    width: var(--scenario-controls-width-medium-screens);
+    border-left: var(--border);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .simulation-controls-content-wrapper {
+    height: calc(100vh - var(--page-footer-height));
+    width: var(--scenario-controls-width-large-screens);
+    border-left: var(--border);
+    border-top: none;
+    background-color: var(--theme-color-1);
+  }
+
+  .simulation-controls-tabs {
+    display: flex;
+    width: var(--scenario-controls-width-large-screens);
+    border-left: var(--border);
+  }
+}
+
+.simulation-controls-content-wrapper-close-button {
+  float: right;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}

@@ -1,0 +1,24 @@
+@import "../../theme/theme.css";
+
+.navigation-menu {
+  display: flex;
+  list-style: none;
+  font-size: var(--tab-font-size);
+  width: fit-content;
+}
+
+.navigation-menu-item {
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-wrap: nowrap;
+}
+
+.navigation-menu-item:hover,
+.navigation-menu-item-active {
+  background-color: var(--theme-color-3);
+  color: var(--theme-color-6);
+}

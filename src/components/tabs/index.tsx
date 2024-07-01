@@ -11,37 +11,38 @@ import NavigationMenuItem from "../navigation-menu/navigation-menu-item";
 
 type Props = {
   children: ReactNode;
-  contentClassName?: string;
-  navigationMenuCssClassName?: string;
-  navigationMenuItemCssClassName?: string;
-  navigationMenuItemActiveCssClassName?: string;
+  contentWrapperCssClassName?: string;
+  contentWrapperCloseButtonCssClassName?: string;
+  navigationMenuCssModifier?: string;
+  navigationMenuItemCssModifier?: string;
   closeButton?: boolean;
-  closeButtonIconCssClassName?: string;
 };
 
 const Tabs = ({
   children,
-  contentClassName,
-  navigationMenuCssClassName,
-  navigationMenuItemCssClassName,
-  navigationMenuItemActiveCssClassName,
+  contentWrapperCssClassName,
+  contentWrapperCloseButtonCssClassName,
+  navigationMenuCssModifier,
+  navigationMenuItemCssModifier,
   closeButton,
-  closeButtonIconCssClassName,
 }: Props): ReactElement => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(-1);
 
   const content = Children.toArray(children);
 
   return (
-    <div>
-      <NavigationMenu cssClassName={navigationMenuCssClassName}>
+    <Fragment>
+      <NavigationMenu cssModifier={navigationMenuCssModifier}>
         {content.map((child, i) => {
           return (
             <NavigationMenuItem
               active={selectedTabIndex === i}
-              activeCssClassName={navigationMenuItemActiveCssClassName}
               callback={() => setSelectedTabIndex(i)}
-              cssClassName={navigationMenuItemCssClassName}
+              cssModifier={
+                navigationMenuItemCssModifier
+                  ? navigationMenuItemCssModifier
+                  : ""
+              }
             >
               {isValidElement<{
                 ["data-label"]?: string;
@@ -52,7 +53,7 @@ const Tabs = ({
                     <i className={child.props["data-icon"]} />
                   ) : null}
                   {child.props["data-label"] ? (
-                    <label>{child.props["data-label"]}</label>
+                    <span>{child.props["data-label"]}</span>
                   ) : null}
                 </Fragment>
               )}
@@ -61,19 +62,25 @@ const Tabs = ({
         })}
       </NavigationMenu>
       {selectedTabIndex !== -1 ? (
-        <div className={contentClassName ? contentClassName : ""}>
+        <div
+          className={
+            contentWrapperCssClassName ? contentWrapperCssClassName : ""
+          }
+        >
           {closeButton && (
             <i
-              className={
-                closeButtonIconCssClassName ? closeButtonIconCssClassName : ""
-              }
+              className={`fa-solid fa-xmark ${
+                contentWrapperCloseButtonCssClassName
+                  ? contentWrapperCloseButtonCssClassName
+                  : ""
+              }`}
               onClick={() => setSelectedTabIndex(-1)}
             />
           )}
           {content[selectedTabIndex]}
         </div>
       ) : null}
-    </div>
+    </Fragment>
   );
 };
 
