@@ -14,6 +14,7 @@ type Props = {
   contentWrapperCssClassName?: string;
   contentWrapperCloseButtonCssClassName?: string;
   navigationMenuCssModifier?: string;
+  navigationMenuItemCssModifier?: string;
   closeButton?: boolean;
 };
 
@@ -22,6 +23,7 @@ const Tabs = ({
   contentWrapperCssClassName,
   contentWrapperCloseButtonCssClassName,
   navigationMenuCssModifier,
+  navigationMenuItemCssModifier,
   closeButton,
 }: Props): ReactElement => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(-1);
@@ -36,6 +38,11 @@ const Tabs = ({
             <NavigationMenuItem
               active={selectedTabIndex === i}
               callback={() => setSelectedTabIndex(i)}
+              cssModifier={
+                navigationMenuItemCssModifier
+                  ? navigationMenuItemCssModifier
+                  : ""
+              }
             >
               {isValidElement<{
                 ["data-label"]?: string;

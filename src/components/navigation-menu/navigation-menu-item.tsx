@@ -8,16 +8,18 @@ import {
 type NavItemProps = {
   active: boolean;
   children: ReactNode;
+  cssModifier?: string;
   callback?: <T>(t: T) => void;
 };
 
 const NavigationMenuItem = ({
   active,
   children,
+  cssModifier,
   callback,
 }: NavItemProps): ReactElement => (
   <li
-    className={`${navigationMenuItem} ${
+    className={`${navigationMenuItem} ${cssModifier ? cssModifier : ""} ${
       active ? navigationMenuItemActive : ""
     }`}
     onClick={callback}

@@ -1,9 +1,17 @@
 @import "../../theme/theme.css";
 
+.scenarios-menu-wrapper {
+  background-color: var(--theme-color-1);
+}
+
 .navigation-menu-css-modifier {
   width: 100%;
   overflow-x: auto;
   border-bottom: var(--border);
+}
+
+.scenarios-menu-item {
+  border-right: var(--border);
 }
 
 .scenarios-list-wrapper {

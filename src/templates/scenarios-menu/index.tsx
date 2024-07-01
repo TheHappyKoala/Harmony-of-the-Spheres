@@ -10,6 +10,7 @@ import { ScenarioCategoryType } from "../../types/scenario";
 import {
   scenariosMenuWrapper,
   navigationMenuCssModifier,
+  scenariosMenuItem,
   scenariosListWrapper,
   scenariosListItem,
   scenariosListItemTitle,
@@ -45,8 +46,11 @@ const ScenarioMenu = ({
       <section className={scenariosMenuWrapper}>
         <NavigationMenu cssModifier={navigationMenuCssModifier}>
           <Link to={`/scenarios/all`}>
-            <NavigationMenuItem active={category === "all"}>
-              <span>All</span>
+            <NavigationMenuItem
+              active={category === "all"}
+              cssModifier={scenariosMenuItem}
+            >
+              All
             </NavigationMenuItem>
           </Link>
           {categoryTree.map((categoryBranch) => (
@@ -55,8 +59,11 @@ const ScenarioMenu = ({
                 categoryBranch.subCategories.length ? "/all" : ""
               }`}
             >
-              <NavigationMenuItem active={category === categoryBranch.name}>
-                <span>{categoryBranch.name}</span>
+              <NavigationMenuItem
+                active={category === categoryBranch.name}
+                cssModifier={scenariosMenuItem}
+              >
+                {categoryBranch.name}
               </NavigationMenuItem>
             </Link>
           ))}
@@ -64,8 +71,11 @@ const ScenarioMenu = ({
         {subCategories?.length ? (
           <NavigationMenu cssModifier={navigationMenuCssModifier}>
             <Link to={`/scenarios/${kebabCase(category)}/all`}>
-              <NavigationMenuItem active={subCategory === "all"}>
-                <span>All</span>
+              <NavigationMenuItem
+                active={subCategory === "all"}
+                cssModifier={scenariosMenuItem}
+              >
+                All
               </NavigationMenuItem>
             </Link>
             {subCategories.map((subCategoryEntry) => (
@@ -74,8 +84,11 @@ const ScenarioMenu = ({
                   subCategoryEntry,
                 )}`}
               >
-                <NavigationMenuItem active={subCategory === subCategoryEntry}>
-                  <span>{subCategoryEntry}</span>
+                <NavigationMenuItem
+                  active={subCategory === subCategoryEntry}
+                  cssModifier={scenariosMenuItem}
+                >
+                  {subCategoryEntry}
                 </NavigationMenuItem>
               </Link>
             ))}

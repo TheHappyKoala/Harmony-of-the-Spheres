@@ -9,6 +9,7 @@ import {
   planetaryScenarioFooter,
   playButtonModifier,
   simulationControlsTabs,
+  simulationControlTab,
   simulationControlsContentWrapper,
   simulationControlsContentWrapperCloseButton,
 } from "./simulation-controls.module.css";
@@ -38,6 +39,7 @@ const PlanetaryScenarioFooter = () => {
           simulationControlsContentWrapperCloseButton
         }
         navigationMenuCssModifier={simulationControlsTabs}
+        navigationMenuItemCssModifier={simulationControlTab}
         closeButton
       >
         <div data-label="Integrator" data-icon="fa-solid fa-gear"></div>

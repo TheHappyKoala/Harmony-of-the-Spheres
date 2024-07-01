@@ -1,6 +1,7 @@
 .planetary-scenario-footer {
   position: absolute;
   bottom: 0;
+  right: 0;
   width: 100%;
   z-index: 2;
   display: flex;
@@ -10,7 +11,6 @@
   border-top: var(--border);
   height: var(--page-footer-height);
   padding-left: var(--padding);
-  --controls-menu-width: 35rem;
 }
 
 .play-button-modifier {
@@ -20,10 +20,23 @@
 
 .simulation-controls-tabs {
   display: flex;
-  justify-content: space-between;
-  width: var(--controls-menu-width);
+  align-items: center;
+  width: var(--scenario-controls-tabs-width-small-screens);
   overflow-x: auto;
+}
+
+.simulation-control-tab {
+  height: var(--page-footer-height);
+  flex: 1 1 0;
+  border-right: var(--border);
+}
+
+.simulation-control-tab:first-child {
   border-left: var(--border);
+}
+
+.simulation-control-tab:last-child {
+  border-right: none;
 }
 
 .simulation-controls-content-wrapper {
@@ -42,10 +55,32 @@
 @media screen and (min-width: 500px) {
   .simulation-controls-content-wrapper {
     height: calc(100vh - var(--page-footer-height));
-    width: var(--controls-menu-width);
+    width: var(--scenario-controls-width-medium-screens);
     border-left: var(--border);
     border-top: none;
     background-color: var(--theme-color-1);
+  }
+
+  .simulation-controls-tabs {
+    display: flex;
+    width: var(--scenario-controls-width-medium-screens);
+    border-left: var(--border);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .simulation-controls-content-wrapper {
+    height: calc(100vh - var(--page-footer-height));
+    width: var(--scenario-controls-width-large-screens);
+    border-left: var(--border);
+    border-top: none;
+    background-color: var(--theme-color-1);
+  }
+
+  .simulation-controls-tabs {
+    display: flex;
+    width: var(--scenario-controls-width-large-screens);
+    border-left: var(--border);
   }
 }
 

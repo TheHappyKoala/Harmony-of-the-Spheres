@@ -3,8 +3,7 @@
 .navigation-menu {
   display: flex;
   list-style: none;
-  background-color: var(--theme-color-1);
-  font-size: 1.2rem;
+  font-size: var(--tab-font-size);
   width: fit-content;
 }
 
@@ -14,15 +13,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-wrap: nowrap;
 }
 
-.navigation-menu-item:hover > span {
-  text-shadow: 0 0 5px var(--theme-color-5);
-}
-
-.navigation-menu-item-active > span {
-  text-shadow: 0 0 5px var(--theme-color-5);
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+.navigation-menu-item:hover,
+.navigation-menu-item-active {
+  background-color: var(--theme-color-3);
+  color: var(--theme-color-6);
 }

@@ -10,18 +10,29 @@
 
 .page-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   background-color: var(--theme-color-1);
-  padding: 0 var(--padding);
-  height: var(--page-header-height);
   border-bottom: var(--border);
   overflow: hidden;
 }
 
+.page-title {
+  margin: 1rem;
+}
+
+.main-navigation-menu-wrapper {
+  width: 100%;
+  border-top: var(--border);
+}
+
+.main-navigation-menu-item {
+  height: var(--page-header-height);
+  border-right: var(--border);
+}
+
 .page-main {
   flex-grow: 1;
-  font-size: 1.2rem;
+  font-size: var(--bread-text-font-size);
 }
 
 .page-footer {
@@ -32,66 +43,27 @@
   height: var(--page-footer-height);
   background-color: var(--theme-color-1);
   border-top: var(--border);
-  font-size: 1.2rem;
+  font-size: var(--bread-text-font-size);
   font-style: italic;
 }
 
-.display-hamburger-menu-button,
-.hamburger-menu-close-button {
-  cursor: pointer;
-}
-
-.navigation-wrapper {
-  position: fixed;
-  z-index: 99999999;
-  width: 100vw;
-  height: calc(100vh - var(--page-header-height));
-  top: var(--page-header-height);
-  left: 0;
-  background-color: var(--theme-color-1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navigation-wrapper-hide {
-  display: none;
-}
-
-.responsive-navigation-menu {
-  flex-direction: column;
-  align-items: center;
-}
-
-@media only screen and (min-width: 700px) {
-  .display-hamburger-menu-button {
-    display: none;
-  }
-
-  .navigation-wrapper {
-    position: unset;
-    z-index: unset;
-    width: unset;
-    height: unset;
-    top: unset;
-    left: unset;
-    background-color: unset;
-    display: unset;
-    justify-content: unset;
-    align-items: unset;
-  }
-
-  .responsive-navigation-menu {
+@media only screen and (min-width: 600px) {
+  .page-header {
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
 
-  .hamburger-menu-close-button {
-    position: unset;
-    z-index: unset;
-    top: unset;
-    right: unset;
-    cursor: unset;
-    display: none;
+  .main-navigation-menu-wrapper {
+    width: fit-content;
+    border-top: none;
+  }
+
+  .main-navigation-menu-item:first-child {
+    border-left: var(--border);
+  }
+
+  .main-navigation-menu-item:last-child {
+    border-right: none;
   }
 }

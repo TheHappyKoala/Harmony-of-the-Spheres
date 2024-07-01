@@ -2,7 +2,6 @@
   width: 100%;
   height: fit-content;
   padding: var(--padding);
-  background-color: var(--theme-color-2);
   font-size: 1.3rem;
   color: var(--theme-color-5);
   text-transform: uppercase;
