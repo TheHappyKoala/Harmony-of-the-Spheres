@@ -33,6 +33,7 @@
 .page-main {
   flex-grow: 1;
   font-size: var(--bread-text-font-size);
+  background-color: var(--theme-color-3);
 }
 
 .page-footer {

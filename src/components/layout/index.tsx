@@ -2,7 +2,6 @@ import React, { ReactElement, ReactNode } from "react";
 import { Link } from "gatsby";
 import NavigationMenu from "../navigation-menu";
 import NavigationMenuItem from "../navigation-menu/navigation-menu-item";
-import Background from "../background";
 
 import "the-new-css-reset/css/reset.css";
 import {
@@ -27,7 +26,7 @@ const Layout = ({ children, currentPage }: Props): ReactElement => {
   return (
     <section className={pageWrapper}>
       <header className={pageHeader}>
-        <Link to="/" className={pageTitle}>
+        <Link to="/scenarios/all/" className={pageTitle}>
           <h1>Gravity Simulator</h1>
         </Link>
         <nav className={mainNavigationMenuWrapper}>
@@ -84,7 +83,6 @@ const Layout = ({ children, currentPage }: Props): ReactElement => {
       <footer className={pageFooter}>
         <small>Copyright &copy; Darrell Arjuna Huffman 2024</small>
       </footer>
-      <Background />
     </section>
   );
 };
