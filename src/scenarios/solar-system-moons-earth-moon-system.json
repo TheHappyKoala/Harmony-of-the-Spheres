@@ -18,8 +18,8 @@
     "g": 39.5,
     "dt": 0.00005,
     "tol": 1e-4,
-    "maxDt": 0.00085,
-    "minDt": 0.00000085,
+    "maxDt": 0.00009,
+    "minDt": 0.00001,
     "useBarnesHut": false,
     "theta": 0.5,
     "softeningConstant": 0
@@ -36,7 +36,6 @@
     "trails": true,
     "labels": true
   },
-
   "masses": [
     {
       "name": "Sun",

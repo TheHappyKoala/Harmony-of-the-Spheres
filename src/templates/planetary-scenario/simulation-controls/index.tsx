@@ -5,6 +5,7 @@ import Tabs from "../../../components/tabs";
 import { modifyScenarioProperty } from "../../../state/creators";
 import { ScenarioType } from "../../../types/scenario";
 import CameraControls from "../../../components/camera-controls";
+import IntegratorControls from "../../../components/integrator-controls";
 import {
   planetaryScenarioFooter,
   playButtonModifier,
@@ -42,7 +43,9 @@ const PlanetaryScenarioFooter = () => {
         navigationMenuItemCssModifier={simulationControlTab}
         closeButton
       >
-        <div data-label="Integrator" data-icon="fa-solid fa-gear"></div>
+        <div data-label="Integrator" data-icon="fa-solid fa-gear">
+          <IntegratorControls />
+        </div>
         <div data-label="Camera" data-icon="fa-solid fa-video">
           <CameraControls />
         </div>
