@@ -1,13 +1,12 @@
 .control {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   width: 100%;
   margin-bottom: 3rem;
 }
 
 @media screen and (min-width: 1024px) {
-  .control > * {
-    flex: 1 1 0;
+  .control > label {
+    flex: 0 0 15rem;
   }
 }
