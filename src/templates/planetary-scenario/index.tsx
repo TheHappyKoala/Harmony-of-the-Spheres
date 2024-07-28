@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { graphql } from "gatsby";
 import Renderer from "../../components/renderer";
 import { ScenarioType } from "../../types/scenario";
@@ -31,10 +31,10 @@ const Scenario = ({
   useHydrateStore(scenario);
 
   return (
-    <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
+    <Fragment>
       <Renderer />
       <PlanetaryScenarioFooter />
-    </div>
+    </Fragment>
   );
 };
 
