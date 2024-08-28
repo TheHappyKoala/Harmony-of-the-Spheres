@@ -1,4 +1,5 @@
 .dropdown-wrapper {
+  width: 100%;
   position: relative;
   width: inherit;
 }

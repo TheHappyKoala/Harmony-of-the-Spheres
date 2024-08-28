@@ -7,7 +7,11 @@ import {
 } from "../../types/scenario";
 import Dropdown from "../dropdown";
 import { modifyScenarioProperty } from "../../state/creators";
-import { control } from "../../theme/controls.module.css";
+import {
+  control,
+  controlLabel,
+  controlInput,
+} from "../../theme/controls.module.css";
 
 const shouldSelectorNotRun = (
   prevState: { camera: ScenarioCameraType; masses: ScenarioMassesType },
@@ -38,48 +42,56 @@ const CameraControls = () => {
     <Fragment>
       <h2>Camera</h2>
       <div className={control}>
-        <label>Rotating Reference Frame</label>
-        <Dropdown selectedOption={camera.rotatingReferenceFrame}>
-          {masses.map((mass) => {
-            return (
-              <div
-                key={mass.name}
-                onClick={() =>
-                  dispatch(
-                    modifyScenarioProperty({
-                      key: "camera",
-                      value: { ...camera, rotatingReferenceFrame: mass.name },
-                    }),
-                  )
-                }
-              >
-                {mass.name}
-              </div>
-            );
-          })}
-        </Dropdown>
+        <div className={controlLabel}>
+          <label>Rotating Reference Frame</label>
+        </div>
+        <div className={controlInput}>
+          <Dropdown selectedOption={camera.rotatingReferenceFrame}>
+            {masses.map((mass) => {
+              return (
+                <div
+                  key={mass.name}
+                  onClick={() =>
+                    dispatch(
+                      modifyScenarioProperty({
+                        key: "camera",
+                        value: { ...camera, rotatingReferenceFrame: mass.name },
+                      }),
+                    )
+                  }
+                >
+                  {mass.name}
+                </div>
+              );
+            })}
+          </Dropdown>
+        </div>
       </div>
       <div className={control}>
-        <label>Camera Focus</label>
-        <Dropdown selectedOption={camera.cameraFocus}>
-          {masses.map((mass) => {
-            return (
-              <div
-                key={mass.name}
-                onClick={() =>
-                  dispatch(
-                    modifyScenarioProperty({
-                      key: "camera",
-                      value: { ...camera, cameraFocus: mass.name },
-                    }),
-                  )
-                }
-              >
-                {mass.name}
-              </div>
-            );
-          })}
-        </Dropdown>
+        <div className={controlLabel}>
+          <label>Camera Focus</label>
+        </div>
+        <div className={controlInput}>
+          <Dropdown selectedOption={camera.cameraFocus}>
+            {masses.map((mass) => {
+              return (
+                <div
+                  key={mass.name}
+                  onClick={() =>
+                    dispatch(
+                      modifyScenarioProperty({
+                        key: "camera",
+                        value: { ...camera, cameraFocus: mass.name },
+                      }),
+                    )
+                  }
+                >
+                  {mass.name}
+                </div>
+              );
+            })}
+          </Dropdown>
+        </div>
       </div>
     </Fragment>
   );

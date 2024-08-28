@@ -1,12 +1,20 @@
 .control {
   display: flex;
-  align-items: center;
-  width: 100%;
+  flex-direction: column;
   margin-bottom: 3rem;
 }
 
 @media screen and (min-width: 1024px) {
-  .control > label {
+  .control {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .control-label {
     flex: 0 0 15rem;
+  }
+
+  .control-input {
+    flex: 1;
   }
 }

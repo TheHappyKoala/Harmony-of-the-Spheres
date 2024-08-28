@@ -61,6 +61,14 @@ class SceneBase {
 
     this.requestAnimationFrameId = null;
   }
+
+  public resizeRenderer(width: number, height: number) {
+    this.camera.aspect = width / height;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(width, height);
+
+    this.labels.setDimensions(width, height);
+  }
 }
 
 export default SceneBase;

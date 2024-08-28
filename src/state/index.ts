@@ -23,3 +23,5 @@ const scenarioReducer = (
 const store = createStore(scenarioReducer, applyMiddleware(thunk));
 
 export default store;
+
+export type ScenarioStateType = ReturnType<typeof store.getState>;

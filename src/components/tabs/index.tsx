@@ -5,6 +5,8 @@ import React, {
   ReactNode,
   isValidElement,
   Fragment,
+  useRef,
+  useEffect,
 } from "react";
 import NavigationMenu from "../navigation-menu";
 import NavigationMenuItem from "../navigation-menu/navigation-menu-item";
@@ -16,6 +18,7 @@ type Props = {
   navigationMenuCssModifier?: string;
   navigationMenuItemCssModifier?: string;
   closeButton?: boolean;
+  onTabIndexChangeCallback?: (selectedTabIndex: number) => void;
 };
 
 const Tabs = ({
@@ -25,8 +28,15 @@ const Tabs = ({
   navigationMenuCssModifier,
   navigationMenuItemCssModifier,
   closeButton,
+  onTabIndexChangeCallback,
 }: Props): ReactElement => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(-1);
+
+  useEffect(() => {
+    if (onTabIndexChangeCallback) {
+      onTabIndexChangeCallback(selectedTabIndex);
+    }
+  }, [selectedTabIndex]);
 
   const content = Children.toArray(children);
 
