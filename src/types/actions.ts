@@ -2,7 +2,7 @@ import { ScenarioType } from "./scenario";
 import {
   MODIFY_SCENARIO_PROPERTY,
   SET_SCENARIO,
-  MODIFY_MASS_PROPERTY,
+  MODIFY_SCENARIO_MASS_PROPERTY,
 } from "../state/types";
 
 export type SetScenarioActionType = {
@@ -27,7 +27,7 @@ export type ModifyScenarioPropertyType = {
 };
 
 export type ModifyScenarioMassPropertyType = {
-  type: typeof MODIFY_MASS_PROPERTY;
+  type: typeof MODIFY_SCENARIO_MASS_PROPERTY;
   payload: ScenarioMassPropertyType;
 };
 

@@ -1,7 +1,7 @@
 import {
   MODIFY_SCENARIO_PROPERTY,
   SET_SCENARIO,
-  MODIFY_MASS_PROPERTY,
+  MODIFY_SCENARIO_MASS_PROPERTY,
 } from "./types";
 import { ScenarioType } from "../types/scenario";
 import {
@@ -30,6 +30,6 @@ export const modifyScenarioMassProperty = ({
   value,
   name,
 }: ScenarioMassPropertyType): ModifyScenarioMassPropertyType => ({
-  type: MODIFY_MASS_PROPERTY,
+  type: MODIFY_SCENARIO_MASS_PROPERTY,
   payload: { key, value, name },
 });
