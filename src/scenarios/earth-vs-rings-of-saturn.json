@@ -4,6 +4,7 @@
   "isLoaded": false,
   "elapsedTime": 0,
   "collisions": true,
+  "massBeingModified": "Saturn",
   "category": {
     "name": "What If",
     "subCategory": null

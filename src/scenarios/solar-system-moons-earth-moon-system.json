@@ -4,6 +4,7 @@
   "isLoaded": false,
   "elapsedTime": 0,
   "collisions": true,
+  "massBeingModified": "Earth",
   "category": {
     "name": "Solar System",
     "subCategory": "Moons"

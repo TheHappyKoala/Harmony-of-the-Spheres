@@ -4,6 +4,7 @@
   "isLoaded": false,
   "elapsedTime": 0,
   "collisions": true,
+  "massBeingModified": "Sun",
   "category": {
     "name": "Solar System",
     "subCategory": "Planets"

@@ -66,6 +66,7 @@ export type ScenarioType = {
   isLoaded: boolean;
   elapsedTime: number;
   collisions: true;
+  massBeingModified: string;
   category: ScenarioCategoryType;
   camera: ScenarioCameraType;
   integrator: ScenarioIntegratorType;
