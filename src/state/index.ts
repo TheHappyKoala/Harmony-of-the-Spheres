@@ -1,7 +1,11 @@
 import { legacy_createStore as createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { MODIFY_SCENARIO_PROPERTY, SET_SCENARIO } from "./types";
-import { ScenarioType } from "../types/scenario";
+import {
+  MODIFY_SCENARIO_PROPERTY,
+  SET_SCENARIO,
+  MODIFY_MASS_PROPERTY,
+} from "./types";
+import { ScenarioType, ScenarioMassType } from "../types/scenario";
 import { ScenarioActionTypes } from "../types/actions";
 
 const scenarioReducer = (
@@ -14,6 +18,18 @@ const scenarioReducer = (
 
     case MODIFY_SCENARIO_PROPERTY:
       return { ...state, [action.payload.key]: action.payload.value };
+
+    case MODIFY_MASS_PROPERTY:
+      return {
+        ...state,
+        masses: state.masses.map((mass: ScenarioMassType) => {
+          if (mass.name === action.payload.name) {
+            return { ...mass, [action.payload.key]: action.payload.value };
+          }
+
+          return mass;
+        }),
+      };
 
     default:
       return state;
