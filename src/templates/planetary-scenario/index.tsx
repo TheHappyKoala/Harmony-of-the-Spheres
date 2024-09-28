@@ -202,6 +202,7 @@ export const pageQuery = graphql`
             cameraFocus
             logarithmicDepthBuffer
             rotatingReferenceFrame
+            cameraDistanceToOrigoInAu
           }
           integrator {
             name
@@ -232,6 +233,14 @@ export const pageQuery = graphql`
             m
             radius
             tilt
+            elements {
+              a
+              e
+              i
+              argP
+              lAn
+              eccAnom
+            }
             position {
               x
               y
@@ -257,6 +266,12 @@ export const pageQuery = graphql`
               minD
               maxD
             }
+          }
+          massBeingModified {
+            name
+            unitName
+            unitMassQuantity
+            m
           }
         }
       }

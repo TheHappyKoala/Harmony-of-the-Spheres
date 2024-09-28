@@ -12,9 +12,7 @@ export type ElementsType = {
   i: number;
   argP: number;
   lAn: number;
-  trueAnom: number;
   eccAnom: number;
-  meanAnom: number;
 };
 
 export type FixedTimeStepIntegratorConfigType = {

@@ -4,7 +4,12 @@
   "isLoaded": false,
   "elapsedTime": 0,
   "collisions": true,
-  "massBeingModified": "Sun",
+  "massBeingModified": {
+    "name": "Sun",
+    "unitName": "Solar Units",
+    "unitMassQuantity": 1,
+    "m": 1
+  },
   "category": {
     "name": "Solar System",
     "subCategory": "Planets"
@@ -12,7 +17,8 @@
   "camera": {
     "cameraFocus": "Sun",
     "logarithmicDepthBuffer": false,
-    "rotatingReferenceFrame": "Sun"
+    "rotatingReferenceFrame": "Sun",
+    "cameraDistanceToOrigoInAu": 0
   },
   "integrator": {
     "name": "RK4",
@@ -44,6 +50,14 @@
       "m": 1,
       "radius": 10270,
       "tilt": 0,
+      "elements": {
+        "a": 0,
+        "e": 0,
+        "i": 0,
+        "argP": 0,
+        "lAn": 0,
+        "eccAnom": 0
+      },
       "position": {
         "x": 0,
         "y": 0,
@@ -62,6 +76,14 @@
       "radius": 91.74311926605505,
       "tilt": -23.44,
       "atmosphere": "blue",
+      "elements": {
+        "a": 0,
+        "e": 0,
+        "i": 0,
+        "argP": 0,
+        "lAn": 0,
+        "eccAnom": 0
+      },
       "position": {
         "x": -0.1791160223523504,
         "y": 0.9668129273179595,

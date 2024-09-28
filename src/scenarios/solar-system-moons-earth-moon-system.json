@@ -4,7 +4,12 @@
   "isLoaded": false,
   "elapsedTime": 0,
   "collisions": true,
-  "massBeingModified": "Earth",
+  "massBeingModified": {
+    "name": "Earth",
+    "unitName": "Lunar Units",
+    "unitMassQuantity": 3.69396868e-8,
+    "m": 1
+  },
   "category": {
     "name": "Solar System",
     "subCategory": "Moons"
@@ -12,7 +17,8 @@
   "camera": {
     "cameraFocus": "Earth",
     "logarithmicDepthBuffer": false,
-    "rotatingReferenceFrame": "Earth"
+    "rotatingReferenceFrame": "Earth",
+    "cameraDistanceToOrigoInAu": 0
   },
   "integrator": {
     "name": "RK4",
@@ -44,6 +50,14 @@
       "m": 1,
       "radius": 10270,
       "tilt": 0,
+      "elements": {
+        "a": 0,
+        "e": 0,
+        "i": 0,
+        "argP": 0,
+        "lAn": 0,
+        "eccAnom": 0
+      },
       "position": {
         "x": 0.00257729957449904,
         "y": -0.004392340734313888,
@@ -62,6 +76,16 @@
       "radius": 91.74311926605505,
       "tilt": -23.44,
       "atmosphere": "skyblue",
+      "elements": {
+        "a": 0,
+        "e": 0,
+        "i": 0,
+        "argP": 0,
+        "lAn": 0,
+        "trueAnom": 0,
+        "eccAnom": 0,
+        "meanAnom": 0
+      },
       "position": {
         "x": 0.9939017404234283,
         "y": 0.1352478854409775,
@@ -79,6 +103,16 @@
       "m": 3.69396868e-8,
       "radius": 22.93577981651376,
       "tilt": -1.54,
+      "elements": {
+        "a": 0,
+        "e": 0,
+        "i": 0,
+        "argP": 0,
+        "lAn": 0,
+        "trueAnom": 0,
+        "eccAnom": 0,
+        "meanAnom": 0
+      },
       "position": {
         "x": 0.9956218231659631,
         "y": 0.1372984436242337,

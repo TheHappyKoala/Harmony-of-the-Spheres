@@ -4,7 +4,12 @@
   "isLoaded": false,
   "elapsedTime": 0,
   "collisions": true,
-  "massBeingModified": "Saturn",
+  "massBeingModified": {
+    "name": "Saturn",
+    "unitName": "Neptunian Units",
+    "unitMassQuantity": 5.149e-5,
+    "m": 1
+  },
   "category": {
     "name": "What If",
     "subCategory": null
@@ -12,7 +17,8 @@
   "camera": {
     "cameraFocus": "Saturn",
     "logarithmicDepthBuffer": false,
-    "rotatingReferenceFrame": "Saturn"
+    "rotatingReferenceFrame": "Saturn",
+    "cameraDistanceToOrigoInAu": 0
   },
   "integrator": {
     "name": "RK4",
@@ -44,6 +50,14 @@
       "m": 1,
       "radius": 10270,
       "tilt": 0,
+      "elements": {
+        "a": 0,
+        "e": 0,
+        "i": 0,
+        "argP": 0,
+        "lAn": 0,
+        "eccAnom": 0
+      },
       "position": {
         "x": -0.00001135841603717545,
         "y": 0.007200805435052814,
@@ -61,6 +75,14 @@
       "m": 0.0002857,
       "radius": 862.3853211009175,
       "tilt": -26.73,
+      "elements": {
+        "a": 0,
+        "e": 0,
+        "i": 0,
+        "argP": 0,
+        "lAn": 0,
+        "eccAnom": 0
+      },
       "position": {
         "x": 1.455395947628908,
         "y": -9.949880746961366,
@@ -79,6 +101,14 @@
       "radius": 91.74311926605505,
       "tilt": -23.44,
       "atmosphere": "skyblue",
+      "elements": {
+        "a": 0,
+        "e": 0,
+        "i": 0,
+        "argP": 0,
+        "lAn": 0,
+        "eccAnom": 0
+      },
       "position": {
         "x": 1.456680725273908,
         "y": -9.949880746961366,
