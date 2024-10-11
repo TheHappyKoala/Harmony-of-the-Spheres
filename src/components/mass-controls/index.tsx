@@ -16,6 +16,7 @@ import { keplerToState } from "../../physics/utils/elements";
 import { degreesToRadians, radiansToDegrees } from "../../physics/utils/misc";
 import Slider from "../slider";
 import Tabs from "../tabs";
+import Button from "../button";
 import {
   massControlTabsMenuModifier,
   massControlTabsMenuItemModifier,
@@ -191,7 +192,7 @@ const MassControls = () => {
                 max={10}
                 step={0.1}
                 value={massBeingModified.m}
-                onChange={(event) => {
+                onChange={(event) =>
                   dispatch(
                     modifyScenarioProperty({
                       key: "massBeingModified",
@@ -200,20 +201,26 @@ const MassControls = () => {
                         m: parseFloat(event.target.value),
                       },
                     }),
-                  );
-
-                  dispatch(
-                    modifyScenarioMassProperty({
-                      key: "m",
-                      value:
-                        massBeingModified.m *
-                        massBeingModified.unitMassQuantity,
-                      name: massBeingModified.name,
-                    }),
-                  );
-                }}
+                  )
+                }
               />
             </div>
+          </div>
+          <div className={control}>
+            <Button
+              callback={() =>
+                dispatch(
+                  modifyScenarioMassProperty({
+                    key: "m",
+                    value:
+                      massBeingModified.m * massBeingModified.unitMassQuantity,
+                    name: massBeingModified.name,
+                  }),
+                )
+              }
+            >
+              Update Mass
+            </Button>
           </div>
         </div>
         <div data-label="Orbital Elements">
