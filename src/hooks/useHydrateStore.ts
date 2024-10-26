@@ -8,7 +8,28 @@ const useHydrateStore = (scenario: ScenarioType): void => {
 
   useMemo(() => {
     if (scenario) {
-      dispatch(setScenario(scenario));
+      const processedScenario = {
+        ...scenario,
+        masses: scenario.masses.map((mass) => {
+          return {
+            ...mass,
+            position: {
+              ...mass.position,
+              x: -mass.position.x,
+              y: -mass.position.z,
+              z: mass.position.y,
+            },
+            velocity: {
+              ...mass.velocity,
+              x: -mass.velocity.x,
+              y: -mass.velocity.z,
+              z: mass.velocity.y,
+            },
+          };
+        }),
+      };
+
+      dispatch(setScenario(processedScenario));
     }
   }, [dispatch]);
 };
