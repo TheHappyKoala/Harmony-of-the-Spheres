@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import store from "../../state";
 import { ScenarioType } from "../../types/scenario";
-import OrbitControls from "../controls/custom-orbit-controls";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import Labels from "../labels";
 
 class SceneBase {
@@ -16,7 +16,7 @@ class SceneBase {
 
   protected scene: THREE.Scene;
   protected camera: THREE.PerspectiveCamera;
-  protected controls: any;
+  protected controls: typeof OrbitControls;
   protected renderer: THREE.WebGLRenderer;
   protected textureLoader: THREE.TextureLoader;
 
@@ -49,9 +49,8 @@ class SceneBase {
       0.1,
       1500000000000,
     );
-    this.camera.up = new THREE.Vector3(0, 0, 1);
 
-    this.controls = new (OrbitControls as any)(this.camera, this.labelsCanvas);
+    this.controls = new OrbitControls(this.camera, this.labelsCanvas);
 
     this.textureLoader = new THREE.TextureLoader();
 

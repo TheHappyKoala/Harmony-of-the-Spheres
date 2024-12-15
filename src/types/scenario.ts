@@ -43,6 +43,7 @@ export type PrimaryType = {
   gm: number;
   position: VectorType;
   velocity: VectorType;
+  name: string;
 };
 
 export type ScenarioMassType = {

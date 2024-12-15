@@ -4,11 +4,12 @@ import {
   MODIFY_SCENARIO_PROPERTY,
   SET_SCENARIO,
   MODIFY_SCENARIO_MASS_PROPERTY,
+  DELETE_MASS,
 } from "./types";
 import { ScenarioType, ScenarioMassType } from "../types/scenario";
 import { ScenarioActionTypes } from "../types/actions";
 
-const scenarioReducer = (
+export const scenarioReducer = (
   state = <ScenarioType>{},
   action: ScenarioActionTypes,
 ): ScenarioType => {
@@ -29,6 +30,14 @@ const scenarioReducer = (
 
           return mass;
         }),
+      };
+
+    case DELETE_MASS:
+      return {
+        ...state,
+        masses: state.masses.filter(
+          (mass: ScenarioMassType) => action.payload !== mass.name,
+        ),
       };
 
     default:

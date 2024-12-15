@@ -3,6 +3,7 @@ import {
   MODIFY_SCENARIO_PROPERTY,
   SET_SCENARIO,
   MODIFY_SCENARIO_MASS_PROPERTY,
+  DELETE_MASS,
 } from "../state/types";
 
 export type SetScenarioActionType = {
@@ -31,7 +32,13 @@ export type ModifyScenarioMassPropertyType = {
   payload: ScenarioMassPropertyType;
 };
 
+export type DeleteScenarioMassType = {
+  type: typeof DELETE_MASS;
+  payload: string;
+};
+
 export type ScenarioActionTypes =
   | SetScenarioActionType
   | ModifyScenarioPropertyType
-  | ModifyScenarioMassPropertyType;
+  | ModifyScenarioMassPropertyType
+  | DeleteScenarioMassType;

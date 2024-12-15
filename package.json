@@ -33,7 +33,7 @@
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
     "the-new-css-reset": "^1.11.2",
-    "three": "^0.157.0"
+    "three": "^0.169.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",

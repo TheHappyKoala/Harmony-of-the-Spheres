@@ -4,6 +4,7 @@ import Dropdown from "../dropdown";
 import {
   modifyScenarioProperty,
   modifyScenarioMassProperty,
+  deleteScenarioMass,
 } from "../../state/creators";
 import {
   control,
@@ -25,13 +26,9 @@ import {
 const MassControls = () => {
   const dispatch = useDispatch();
 
-  const { cameraDistanceToOrigoInAu, massBeingModified, masses } = useSelector(
+  const { camera, massBeingModified, masses } = useSelector(
     (state: ScenarioStateType) => {
-      const {
-        massBeingModified,
-        masses,
-        camera: { cameraDistanceToOrigoInAu },
-      } = state;
+      const { massBeingModified, masses, camera } = state;
 
       const mass = masses.find((mass) => mass.name === massBeingModified.name);
 
@@ -45,6 +42,7 @@ const MassControls = () => {
       };
 
       let primary = {
+        name: "",
         gm: 0,
         position: { x: 0, y: 0, z: 0 },
         velocity: { x: 0, y: 0, z: 0 },
@@ -56,16 +54,91 @@ const MassControls = () => {
       }
 
       return {
+        camera,
         massBeingModified: {
           ...massBeingModified,
           elements,
           primary,
         },
         masses,
-        cameraDistanceToOrigoInAu,
       };
     },
   );
+
+  const deleteMassCallback = useCallback(() => {
+    let newMassBeingModified;
+
+    let cameraPayload = { ...camera };
+
+    if (massBeingModified.name !== massBeingModified.primary.name) {
+      newMassBeingModified = masses.find(
+        (mass) => massBeingModified.primary.name === mass.name,
+      );
+    } else {
+      const indexOfMassToBeDeleted = masses
+        .map((mass) => mass.name)
+        .indexOf(massBeingModified.name);
+
+      if (masses.length > 1) {
+        if (masses.length !== 1) {
+          if (indexOfMassToBeDeleted === 0) {
+            newMassBeingModified = masses[1];
+          } else {
+            newMassBeingModified = masses[0];
+          }
+        }
+      }
+    }
+
+    dispatch(deleteScenarioMass(massBeingModified.name));
+
+    if (newMassBeingModified) {
+      if (massBeingModified.name === camera.rotatingReferenceFrame) {
+        cameraPayload = {
+          ...cameraPayload,
+          rotatingReferenceFrame:
+            massBeingModified.name !== massBeingModified.primary.name
+              ? massBeingModified.primary.name
+              : newMassBeingModified.name,
+        };
+      }
+
+      if (massBeingModified.name === camera.cameraFocus) {
+        cameraPayload = {
+          ...cameraPayload,
+          cameraFocus:
+            massBeingModified.name !== massBeingModified.primary.name
+              ? massBeingModified.primary.name
+              : newMassBeingModified.name,
+        };
+      }
+    } else {
+      cameraPayload = {
+        ...cameraPayload,
+        cameraFocus: "Origo",
+        rotatingReferenceFrame: "Origo",
+      };
+    }
+
+    dispatch(
+      modifyScenarioProperty({
+        key: "camera",
+        value: cameraPayload,
+      }),
+    );
+
+    dispatch(
+      modifyScenarioProperty({
+        key: "massBeingModified",
+        value: {
+          name: newMassBeingModified ? newMassBeingModified.name : "",
+          m: massBeingModified.m,
+          unitName: massBeingModified.unitName,
+          unitMassQuantity: massBeingModified.unitMassQuantity,
+        },
+      }),
+    );
+  }, [camera, massBeingModified, masses]);
 
   const onOrbitalElementsChangeCallback = useCallback(
     (event: ChangeEvent<HTMLInputElement>, elementName: string) => {
@@ -118,6 +191,15 @@ const MassControls = () => {
     [massBeingModified],
   );
 
+  if (!masses.length) {
+    return (
+      <Fragment>
+        <h2>Masses</h2>
+        <p>There are no masses to modify.</p>
+      </Fragment>
+    );
+  }
+
   return (
     <Fragment>
       <h2>Masses</h2>
@@ -146,6 +228,9 @@ const MassControls = () => {
             })}
           </Dropdown>
         </div>
+      </div>
+      <div className={control}>
+        <Button callback={deleteMassCallback}>Delete Mass</Button>
       </div>
       <Tabs
         navigationMenuCssModifier={massControlTabsMenuModifier}
@@ -231,8 +316,8 @@ const MassControls = () => {
             <div className={controlInput}>
               <Slider
                 min={0}
-                max={cameraDistanceToOrigoInAu}
-                step={cameraDistanceToOrigoInAu / 200}
+                max={camera.cameraDistanceToOrigoInAu}
+                step={camera.cameraDistanceToOrigoInAu / 200}
                 value={massBeingModified?.elements?.a}
                 onChange={(event) =>
                   onOrbitalElementsChangeCallback(event, "a")
