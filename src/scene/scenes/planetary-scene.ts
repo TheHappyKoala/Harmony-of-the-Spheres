@@ -109,11 +109,11 @@ class PlanetaryScene extends SceneBase {
     }
 
     if (this.scenario.playing) {
-      this.integrator.iterate();
-    }
+      if (this.scenario.collisions) {
+        collisionsCheck(this.integrator.masses, scale);
+      }
 
-    if (this.scenario.collisions) {
-      collisionsCheck(this.integrator.masses, scale);
+      this.integrator.iterate();
     }
 
     const soiTree = constructSOITree(this.integrator.masses);
@@ -121,6 +121,18 @@ class PlanetaryScene extends SceneBase {
     this.manifestationManager.diff(this.integrator.masses);
 
     const { cameraFocus } = this.scenario.camera;
+
+    if (this.previous.cameraFocus !== cameraFocus && cameraFocus === "Origo") {
+      this.previous.cameraFocus = cameraFocus;
+
+      if (cameraFocus === "Origo") {
+        this.camera.position.set(0, 0, 10000);
+
+        this.controls.target.set(0, 0, 0);
+
+        this.controls.update();
+      }
+    }
 
     const rotatingReferenceFrameMass = this.integrator.masses.find(
       (mass) => this.scenario.camera.rotatingReferenceFrame === mass.name,
@@ -169,10 +181,17 @@ class PlanetaryScene extends SceneBase {
           y: currentSOI.velocity.y - mass.velocity.y,
           z: currentSOI.velocity.z - mass.velocity.z,
         },
-        39.5 * currentSOI.m,
+        this.integrator.g * currentSOI.m,
       );
 
       mass.elements = elements;
+
+      mass.primary = {
+        position: currentSOI.position,
+        velocity: currentSOI.velocity,
+        gm: this.integrator.g * currentSOI.m,
+        name: currentSOI.name,
+      };
 
       const rotatedPosition = this.utilVector
         .set(mass.position)
@@ -259,15 +278,15 @@ class PlanetaryScene extends SceneBase {
 
         this.camera.position.set(
           rotatedPosition.x,
-          rotatedPosition.y,
-          rotatedPosition.z + mass.radius * 10,
+          rotatedPosition.y + mass.radius * 100,
+          rotatedPosition.z,
         );
 
         this.controls.target.copy(rotatedPosition);
       }
 
       if (cameraFocus === name) {
-        this.controls.customPan.add(
+        this.controls._panOffset.add(
           new THREE.Vector3(
             rotatedPosition.x,
             rotatedPosition.y,
@@ -307,6 +326,18 @@ class PlanetaryScene extends SceneBase {
 
     this.store.dispatch(
       modifyScenarioProperty({ key: "masses", value: this.integrator.masses }),
+    );
+
+    this.store.dispatch(
+      modifyScenarioProperty({
+        key: "camera",
+        value: {
+          ...this.scenario.camera,
+          cameraDistanceToOrigoInAu:
+            this.camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) /
+            this.scale,
+        },
+      }),
     );
 
     this.renderer.render(this.scene, this.camera);

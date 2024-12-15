@@ -47,6 +47,18 @@ const CameraControls = () => {
         </div>
         <div className={controlInput}>
           <Dropdown selectedOption={camera.rotatingReferenceFrame}>
+            <div
+              onClick={() =>
+                dispatch(
+                  modifyScenarioProperty({
+                    key: "camera",
+                    value: { ...camera, rotatingReferenceFrame: "Origo" },
+                  }),
+                )
+              }
+            >
+              Origo
+            </div>
             {masses.map((mass) => {
               return (
                 <div
@@ -73,6 +85,18 @@ const CameraControls = () => {
         </div>
         <div className={controlInput}>
           <Dropdown selectedOption={camera.cameraFocus}>
+            <div
+              onClick={() =>
+                dispatch(
+                  modifyScenarioProperty({
+                    key: "camera",
+                    value: { ...camera, cameraFocus: "Origo" },
+                  }),
+                )
+              }
+            >
+              Origo
+            </div>
             {masses.map((mass) => {
               return (
                 <div

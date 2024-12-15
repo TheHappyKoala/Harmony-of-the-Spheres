@@ -5,7 +5,6 @@ import Dropdown from "../dropdown";
 import { modifyScenarioProperty } from "../../state/creators";
 import { integrators } from "../../physics/integrators";
 import Slider from "../slider";
-import Toggle from "../toggle";
 import {
   control,
   controlLabel,
@@ -15,10 +14,10 @@ import {
 const IntegratorControls = () => {
   const dispatch = useDispatch();
 
-  const { integrator, collisions } = useSelector((state: ScenarioType) => {
-    const { integrator, collisions } = state;
+  const { integrator } = useSelector((state: ScenarioType) => {
+    const { integrator } = state;
 
-    return { integrator, collisions };
+    return { integrator };
   });
 
   return (
@@ -110,25 +109,6 @@ const IntegratorControls = () => {
                     ...integrator,
                     softeningConstant: parseFloat(event.target.value),
                   },
-                }),
-              )
-            }
-          />
-        </div>
-      </div>
-      <div className={control}>
-        <div className={controlLabel}>
-          <label>Collisions</label>
-        </div>
-        <div className={controlInput}>
-          <Toggle
-            label="Collisions"
-            checked={collisions}
-            callback={() =>
-              dispatch(
-                modifyScenarioProperty({
-                  key: "collisions",
-                  value: !collisions,
                 }),
               )
             }

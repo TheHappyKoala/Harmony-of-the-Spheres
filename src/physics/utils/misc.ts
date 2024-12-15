@@ -2,6 +2,8 @@ import { ScenarioMassType } from "../../types/scenario";
 
 const degreesToRadians = (degrees: number) => (Math.PI / 180) * degrees;
 
+const radiansToDegrees = (radians: number) => radians * 57.295779513;
+
 const getRandomNumberInRange = (min: number, max: number) =>
   Math.random() * (max - min) + min;
 
@@ -40,4 +42,5 @@ export {
   getFocusOfEllipse,
   getSemiMinorAxis,
   getEllipse,
+  radiansToDegrees,
 };

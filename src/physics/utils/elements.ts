@@ -1,5 +1,10 @@
 import H3 from "./vector";
 import { VectorType } from "../../types/physics";
+import {
+  ScenarioMassType,
+  ScenarioMassesType,
+  SOITree,
+} from "../../types/scenario";
 
 /*
 
@@ -101,7 +106,7 @@ const keplerToState = (
   gm: number,
 ): { posRel: VectorType; velRel: VectorType } => {
   // returns the position and velocity of the orbiting body RELATIVE to the primary body.
-  const a = orb.a;
+  const a = orb.a === 0 ? 0.000000000000001 : orb.a;
   const e = orb.e;
   const i = orb.i;
   const argP = orb.argP;
@@ -248,7 +253,7 @@ const simplifyTree = (tree: any): any => {
 };
 
 // masses is scenario.masses
-const constructSOITree = (masses: any): any => {
+const constructSOITree = (masses: ScenarioMassesType): SOITree => {
   //const sun: MassType = getObjFromArrByKeyValuePair(masses, 'name', 'Sun');
   let sun = masses[0];
   // Search for the first star, otherwise use the first mass as root
@@ -290,7 +295,11 @@ const constructSOITree = (masses: any): any => {
   return simpleTree;
 };
 
-const findCurrentSOI = (pos: any, tree: any, masses: any): any => {
+const findCurrentSOI = (
+  pos: ScenarioMassType,
+  tree: SOITree,
+  masses: ScenarioMassesType,
+): ScenarioMassType => {
   if (tree.children.length == 0) {
     return getObjFromArrByKeyValuePair(masses, "name", tree.name);
   }

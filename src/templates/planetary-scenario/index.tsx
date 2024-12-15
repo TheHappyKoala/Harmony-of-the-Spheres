@@ -15,6 +15,7 @@ import PlanetaryScene from "../../scene/scenes/planetary-scene";
 import Tabs from "../../components/tabs";
 import CameraControls from "../../components/camera-controls";
 import IntegratorControls from "../../components/integrator-controls";
+import MassControls from "../../components/mass-controls";
 import Button from "../../components/button";
 import { modifyScenarioProperty } from "../../state/creators";
 import { getRendererDimensions } from "../../utils/renderer-utils";
@@ -171,7 +172,9 @@ const Scenario = ({
           <div data-label="Camera" data-icon="fa-solid fa-video">
             <CameraControls />
           </div>
-          <div data-label="Masses" data-icon="fa-solid fa-globe"></div>
+          <div data-label="Masses" data-icon="fa-solid fa-globe">
+            <MassControls />
+          </div>
           <div data-label="Add Mass" data-icon="fa-solid fa-plus"></div>
         </Tabs>
       </section>
@@ -199,6 +202,7 @@ export const pageQuery = graphql`
             cameraFocus
             logarithmicDepthBuffer
             rotatingReferenceFrame
+            cameraDistanceToOrigoInAu
           }
           integrator {
             name
@@ -229,6 +233,14 @@ export const pageQuery = graphql`
             m
             radius
             tilt
+            elements {
+              a
+              e
+              i
+              argP
+              lAn
+              eccAnom
+            }
             position {
               x
               y
@@ -254,6 +266,12 @@ export const pageQuery = graphql`
               minD
               maxD
             }
+          }
+          massBeingModified {
+            name
+            unitName
+            unitMassQuantity
+            m
           }
         }
       }

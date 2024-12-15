@@ -10,6 +10,7 @@ export type ScenarioCameraType = {
   cameraPosition: string;
   logarithmicDepthBuffer: boolean;
   rotatingReferenceFrame: string;
+  cameraDistanceToOrigoInAu: number;
 };
 
 export type ScenarioIntegratorType = {
@@ -38,6 +39,13 @@ export type ScenarioGraphicsType = {
   labels: boolean;
 };
 
+export type PrimaryType = {
+  gm: number;
+  position: VectorType;
+  velocity: VectorType;
+  name: string;
+};
+
 export type ScenarioMassType = {
   name: string;
   type: string;
@@ -47,8 +55,26 @@ export type ScenarioMassType = {
   atmosphere: number;
   position: VectorType;
   velocity: VectorType;
-  elements?: ElementsType;
+  primary: PrimaryType;
+  elements: ElementsType;
   rotatedPosition?: VectorType;
+};
+
+export type SOITree = {
+  name: string;
+  SOIradius: number;
+  children: SOITree[];
+  m?: number;
+  x?: number;
+  y?: number;
+  z?: number;
+};
+
+export type ScenarioMassBeingModifiedType = {
+  name: string;
+  unitName: string;
+  unitMassQuantity: number;
+  m: number;
 };
 
 export type ScenarioMassesType = ScenarioMassType[];
@@ -66,6 +92,7 @@ export type ScenarioType = {
   isLoaded: boolean;
   elapsedTime: number;
   collisions: true;
+  massBeingModified: ScenarioMassBeingModifiedType;
   category: ScenarioCategoryType;
   camera: ScenarioCameraType;
   integrator: ScenarioIntegratorType;

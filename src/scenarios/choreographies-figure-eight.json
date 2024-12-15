@@ -4,6 +4,12 @@
   "isLoaded": false,
   "elapsedTime": 0,
   "collisions": true,
+  "massBeingModified": {
+    "name": "Eva",
+    "unitName": "Solar Units",
+    "unitMassQuantity": 1,
+    "m": 1
+  },
   "category": {
     "name": "Choreographies",
     "subCategory": null
@@ -11,7 +17,8 @@
   "camera": {
     "cameraFocus": "Barycenter",
     "logarithmicDepthBuffer": false,
-    "rotatingReferenceFrame": "Barycenter"
+    "rotatingReferenceFrame": "Barycenter",
+    "cameraDistanceToOrigoInAu": 0
   },
   "integrator": {
     "name": "PEFRL",
@@ -43,7 +50,14 @@
       "m": 10000,
       "radius": 6000000,
       "tilt": 0,
-
+      "elements": {
+        "a": 0,
+        "e": 0,
+        "i": 0,
+        "argP": 0,
+        "lAn": 0,
+        "eccAnom": 0
+      },
       "position:": {
         "x": -100,
         "y": 0,
@@ -61,6 +75,14 @@
       "m": 10000,
       "radius": 6000000,
       "tilt": 0,
+      "elements": {
+        "a": 0,
+        "e": 0,
+        "i": 0,
+        "argP": 0,
+        "lAn": 0,
+        "eccAnom": 0
+      },
       "position:": {
         "x": 100,
         "y": 0,
@@ -78,6 +100,14 @@
       "m": 10000,
       "radius": 6000000,
       "tilt": 0,
+      "elements": {
+        "a": 0,
+        "e": 0,
+        "i": 0,
+        "argP": 0,
+        "lAn": 0,
+        "eccAnom": 0
+      },
       "position": {
         "x": 0,
         "y": 0,
